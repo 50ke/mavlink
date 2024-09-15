@@ -82,9 +82,9 @@
         <message id="50009" name="USV_SYSTEM_INFORMATION">
             <description>system information</description>
             <field type="char[128]" name="name">system name</field>
-            <field type="uint8_t" name="connect">0: not connected. 1: connected.</field>
-            <field type="int32_t" name="lat" units="degE7">Latitude (WGS84, EGM96 ellipsoid)</field>
-            <field type="int32_t" name="lon" units="degE7">Longitude (WGS84, EGM96 ellipsoid)</field>
+            <field type="uint8_t" name="connected">0: not connected. 1: connected.</field>
+            <field type="float" name="lat">Latitude (WGS84, EGM96 ellipsoid)</field>
+            <field type="float" name="lon">Longitude (WGS84, EGM96 ellipsoid)</field>
         </message>
     </messages>
 </mavlink>
