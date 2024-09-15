@@ -513,13 +513,13 @@ static void mavlink_test_usv_system_information(uint8_t system_id, uint8_t compo
         uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
         uint16_t i;
     mavlink_usv_system_information_t packet_in = {
-        963497464,963497672,"IJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDE",157
+        17.0,45.0,"IJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDE",157
     };
     mavlink_usv_system_information_t packet1, packet2;
         memset(&packet1, 0, sizeof(packet1));
         packet1.lat = packet_in.lat;
         packet1.lon = packet_in.lon;
-        packet1.connect = packet_in.connect;
+        packet1.connected = packet_in.connected;
         
         mav_array_memcpy(packet1.name, packet_in.name, sizeof(char)*128);
         
@@ -535,12 +535,12 @@ static void mavlink_test_usv_system_information(uint8_t system_id, uint8_t compo
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_usv_system_information_pack(system_id, component_id, &msg , packet1.name , packet1.connect , packet1.lat , packet1.lon );
+    mavlink_msg_usv_system_information_pack(system_id, component_id, &msg , packet1.name , packet1.connected , packet1.lat , packet1.lon );
     mavlink_msg_usv_system_information_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_usv_system_information_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.name , packet1.connect , packet1.lat , packet1.lon );
+    mavlink_msg_usv_system_information_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.name , packet1.connected , packet1.lat , packet1.lon );
     mavlink_msg_usv_system_information_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
@@ -553,7 +553,7 @@ static void mavlink_test_usv_system_information(uint8_t system_id, uint8_t compo
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
         
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_usv_system_information_send(MAVLINK_COMM_1 , packet1.name , packet1.connect , packet1.lat , packet1.lon );
+    mavlink_msg_usv_system_information_send(MAVLINK_COMM_1 , packet1.name , packet1.connected , packet1.lat , packet1.lon );
     mavlink_msg_usv_system_information_decode(last_msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 

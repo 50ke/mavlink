@@ -511,9 +511,9 @@ TEST(USV, USV_SYSTEM_INFORMATION)
 
     mavlink::USV::msg::USV_SYSTEM_INFORMATION packet_in{};
     packet_in.name = to_char_array("IJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDE");
-    packet_in.connect = 157;
-    packet_in.lat = 963497464;
-    packet_in.lon = 963497672;
+    packet_in.connected = 157;
+    packet_in.lat = 17.0;
+    packet_in.lon = 45.0;
 
     mavlink::USV::msg::USV_SYSTEM_INFORMATION packet1{};
     mavlink::USV::msg::USV_SYSTEM_INFORMATION packet2{};
@@ -529,7 +529,7 @@ TEST(USV, USV_SYSTEM_INFORMATION)
     packet2.deserialize(map2);
 
     EXPECT_EQ(packet1.name, packet2.name);
-    EXPECT_EQ(packet1.connect, packet2.connect);
+    EXPECT_EQ(packet1.connected, packet2.connected);
     EXPECT_EQ(packet1.lat, packet2.lat);
     EXPECT_EQ(packet1.lon, packet2.lon);
 }
@@ -543,14 +543,14 @@ TEST(USV_interop, USV_SYSTEM_INFORMATION)
     memset(&msg, 0, sizeof(msg));
 
     mavlink_usv_system_information_t packet_c {
-         963497464, 963497672, "IJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDE", 157
+         17.0, 45.0, "IJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDE", 157
     };
 
     mavlink::USV::msg::USV_SYSTEM_INFORMATION packet_in{};
     packet_in.name = to_char_array("IJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDE");
-    packet_in.connect = 157;
-    packet_in.lat = 963497464;
-    packet_in.lon = 963497672;
+    packet_in.connected = 157;
+    packet_in.lat = 17.0;
+    packet_in.lon = 45.0;
 
     mavlink::USV::msg::USV_SYSTEM_INFORMATION packet2{};
 
@@ -564,7 +564,7 @@ TEST(USV_interop, USV_SYSTEM_INFORMATION)
     } (&msg);
 
     EXPECT_EQ(packet_in.name, packet2.name);
-    EXPECT_EQ(packet_in.connect, packet2.connect);
+    EXPECT_EQ(packet_in.connected, packet2.connected);
     EXPECT_EQ(packet_in.lat, packet2.lat);
     EXPECT_EQ(packet_in.lon, packet2.lon);
 

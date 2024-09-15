@@ -5,10 +5,10 @@
 
 
 typedef struct __mavlink_usv_system_information_t {
- int32_t lat; /*< [degE7] Latitude (WGS84, EGM96 ellipsoid)*/
- int32_t lon; /*< [degE7] Longitude (WGS84, EGM96 ellipsoid)*/
+ float lat; /*<  Latitude (WGS84, EGM96 ellipsoid)*/
+ float lon; /*<  Longitude (WGS84, EGM96 ellipsoid)*/
  char name[128]; /*<  system name*/
- uint8_t connect; /*<  0: not connected. 1: connected.*/
+ uint8_t connected; /*<  0: not connected. 1: connected.*/
 } mavlink_usv_system_information_t;
 
 #define MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN 137
@@ -16,8 +16,8 @@ typedef struct __mavlink_usv_system_information_t {
 #define MAVLINK_MSG_ID_50009_LEN 137
 #define MAVLINK_MSG_ID_50009_MIN_LEN 137
 
-#define MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_CRC 59
-#define MAVLINK_MSG_ID_50009_CRC 59
+#define MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_CRC 147
+#define MAVLINK_MSG_ID_50009_CRC 147
 
 #define MAVLINK_MSG_USV_SYSTEM_INFORMATION_FIELD_NAME_LEN 128
 
@@ -27,9 +27,9 @@ typedef struct __mavlink_usv_system_information_t {
     "USV_SYSTEM_INFORMATION", \
     4, \
     {  { "name", NULL, MAVLINK_TYPE_CHAR, 128, 8, offsetof(mavlink_usv_system_information_t, name) }, \
-         { "connect", NULL, MAVLINK_TYPE_UINT8_T, 0, 136, offsetof(mavlink_usv_system_information_t, connect) }, \
-         { "lat", NULL, MAVLINK_TYPE_INT32_T, 0, 0, offsetof(mavlink_usv_system_information_t, lat) }, \
-         { "lon", NULL, MAVLINK_TYPE_INT32_T, 0, 4, offsetof(mavlink_usv_system_information_t, lon) }, \
+         { "connected", NULL, MAVLINK_TYPE_UINT8_T, 0, 136, offsetof(mavlink_usv_system_information_t, connected) }, \
+         { "lat", NULL, MAVLINK_TYPE_FLOAT, 0, 0, offsetof(mavlink_usv_system_information_t, lat) }, \
+         { "lon", NULL, MAVLINK_TYPE_FLOAT, 0, 4, offsetof(mavlink_usv_system_information_t, lon) }, \
          } \
 }
 #else
@@ -37,9 +37,9 @@ typedef struct __mavlink_usv_system_information_t {
     "USV_SYSTEM_INFORMATION", \
     4, \
     {  { "name", NULL, MAVLINK_TYPE_CHAR, 128, 8, offsetof(mavlink_usv_system_information_t, name) }, \
-         { "connect", NULL, MAVLINK_TYPE_UINT8_T, 0, 136, offsetof(mavlink_usv_system_information_t, connect) }, \
-         { "lat", NULL, MAVLINK_TYPE_INT32_T, 0, 0, offsetof(mavlink_usv_system_information_t, lat) }, \
-         { "lon", NULL, MAVLINK_TYPE_INT32_T, 0, 4, offsetof(mavlink_usv_system_information_t, lon) }, \
+         { "connected", NULL, MAVLINK_TYPE_UINT8_T, 0, 136, offsetof(mavlink_usv_system_information_t, connected) }, \
+         { "lat", NULL, MAVLINK_TYPE_FLOAT, 0, 0, offsetof(mavlink_usv_system_information_t, lat) }, \
+         { "lon", NULL, MAVLINK_TYPE_FLOAT, 0, 4, offsetof(mavlink_usv_system_information_t, lon) }, \
          } \
 }
 #endif
@@ -51,26 +51,26 @@ typedef struct __mavlink_usv_system_information_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param name  system name
- * @param connect  0: not connected. 1: connected.
- * @param lat [degE7] Latitude (WGS84, EGM96 ellipsoid)
- * @param lon [degE7] Longitude (WGS84, EGM96 ellipsoid)
+ * @param connected  0: not connected. 1: connected.
+ * @param lat  Latitude (WGS84, EGM96 ellipsoid)
+ * @param lon  Longitude (WGS84, EGM96 ellipsoid)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_usv_system_information_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
-                               const char *name, uint8_t connect, int32_t lat, int32_t lon)
+                               const char *name, uint8_t connected, float lat, float lon)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN];
-    _mav_put_int32_t(buf, 0, lat);
-    _mav_put_int32_t(buf, 4, lon);
-    _mav_put_uint8_t(buf, 136, connect);
+    _mav_put_float(buf, 0, lat);
+    _mav_put_float(buf, 4, lon);
+    _mav_put_uint8_t(buf, 136, connected);
     _mav_put_char_array(buf, 8, name, 128);
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN);
 #else
     mavlink_usv_system_information_t packet;
     packet.lat = lat;
     packet.lon = lon;
-    packet.connect = connect;
+    packet.connected = connected;
     mav_array_memcpy(packet.name, name, sizeof(char)*128);
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), &packet, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN);
 #endif
@@ -87,26 +87,26 @@ static inline uint16_t mavlink_msg_usv_system_information_pack(uint8_t system_id
  * @param msg The MAVLink message to compress the data into
  *
  * @param name  system name
- * @param connect  0: not connected. 1: connected.
- * @param lat [degE7] Latitude (WGS84, EGM96 ellipsoid)
- * @param lon [degE7] Longitude (WGS84, EGM96 ellipsoid)
+ * @param connected  0: not connected. 1: connected.
+ * @param lat  Latitude (WGS84, EGM96 ellipsoid)
+ * @param lon  Longitude (WGS84, EGM96 ellipsoid)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_usv_system_information_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
-                               const char *name, uint8_t connect, int32_t lat, int32_t lon)
+                               const char *name, uint8_t connected, float lat, float lon)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN];
-    _mav_put_int32_t(buf, 0, lat);
-    _mav_put_int32_t(buf, 4, lon);
-    _mav_put_uint8_t(buf, 136, connect);
+    _mav_put_float(buf, 0, lat);
+    _mav_put_float(buf, 4, lon);
+    _mav_put_uint8_t(buf, 136, connected);
     _mav_put_char_array(buf, 8, name, 128);
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN);
 #else
     mavlink_usv_system_information_t packet;
     packet.lat = lat;
     packet.lon = lon;
-    packet.connect = connect;
+    packet.connected = connected;
     mav_array_memcpy(packet.name, name, sizeof(char)*128);
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), &packet, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN);
 #endif
@@ -126,27 +126,27 @@ static inline uint16_t mavlink_msg_usv_system_information_pack_status(uint8_t sy
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param name  system name
- * @param connect  0: not connected. 1: connected.
- * @param lat [degE7] Latitude (WGS84, EGM96 ellipsoid)
- * @param lon [degE7] Longitude (WGS84, EGM96 ellipsoid)
+ * @param connected  0: not connected. 1: connected.
+ * @param lat  Latitude (WGS84, EGM96 ellipsoid)
+ * @param lon  Longitude (WGS84, EGM96 ellipsoid)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_usv_system_information_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
                                mavlink_message_t* msg,
-                                   const char *name,uint8_t connect,int32_t lat,int32_t lon)
+                                   const char *name,uint8_t connected,float lat,float lon)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN];
-    _mav_put_int32_t(buf, 0, lat);
-    _mav_put_int32_t(buf, 4, lon);
-    _mav_put_uint8_t(buf, 136, connect);
+    _mav_put_float(buf, 0, lat);
+    _mav_put_float(buf, 4, lon);
+    _mav_put_uint8_t(buf, 136, connected);
     _mav_put_char_array(buf, 8, name, 128);
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN);
 #else
     mavlink_usv_system_information_t packet;
     packet.lat = lat;
     packet.lon = lon;
-    packet.connect = connect;
+    packet.connected = connected;
     mav_array_memcpy(packet.name, name, sizeof(char)*128);
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), &packet, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN);
 #endif
@@ -165,7 +165,7 @@ static inline uint16_t mavlink_msg_usv_system_information_pack_chan(uint8_t syst
  */
 static inline uint16_t mavlink_msg_usv_system_information_encode(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg, const mavlink_usv_system_information_t* usv_system_information)
 {
-    return mavlink_msg_usv_system_information_pack(system_id, component_id, msg, usv_system_information->name, usv_system_information->connect, usv_system_information->lat, usv_system_information->lon);
+    return mavlink_msg_usv_system_information_pack(system_id, component_id, msg, usv_system_information->name, usv_system_information->connected, usv_system_information->lat, usv_system_information->lon);
 }
 
 /**
@@ -179,7 +179,7 @@ static inline uint16_t mavlink_msg_usv_system_information_encode(uint8_t system_
  */
 static inline uint16_t mavlink_msg_usv_system_information_encode_chan(uint8_t system_id, uint8_t component_id, uint8_t chan, mavlink_message_t* msg, const mavlink_usv_system_information_t* usv_system_information)
 {
-    return mavlink_msg_usv_system_information_pack_chan(system_id, component_id, chan, msg, usv_system_information->name, usv_system_information->connect, usv_system_information->lat, usv_system_information->lon);
+    return mavlink_msg_usv_system_information_pack_chan(system_id, component_id, chan, msg, usv_system_information->name, usv_system_information->connected, usv_system_information->lat, usv_system_information->lon);
 }
 
 /**
@@ -193,7 +193,7 @@ static inline uint16_t mavlink_msg_usv_system_information_encode_chan(uint8_t sy
  */
 static inline uint16_t mavlink_msg_usv_system_information_encode_status(uint8_t system_id, uint8_t component_id, mavlink_status_t* _status, mavlink_message_t* msg, const mavlink_usv_system_information_t* usv_system_information)
 {
-    return mavlink_msg_usv_system_information_pack_status(system_id, component_id, _status, msg,  usv_system_information->name, usv_system_information->connect, usv_system_information->lat, usv_system_information->lon);
+    return mavlink_msg_usv_system_information_pack_status(system_id, component_id, _status, msg,  usv_system_information->name, usv_system_information->connected, usv_system_information->lat, usv_system_information->lon);
 }
 
 /**
@@ -201,26 +201,26 @@ static inline uint16_t mavlink_msg_usv_system_information_encode_status(uint8_t 
  * @param chan MAVLink channel to send the message
  *
  * @param name  system name
- * @param connect  0: not connected. 1: connected.
- * @param lat [degE7] Latitude (WGS84, EGM96 ellipsoid)
- * @param lon [degE7] Longitude (WGS84, EGM96 ellipsoid)
+ * @param connected  0: not connected. 1: connected.
+ * @param lat  Latitude (WGS84, EGM96 ellipsoid)
+ * @param lon  Longitude (WGS84, EGM96 ellipsoid)
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
-static inline void mavlink_msg_usv_system_information_send(mavlink_channel_t chan, const char *name, uint8_t connect, int32_t lat, int32_t lon)
+static inline void mavlink_msg_usv_system_information_send(mavlink_channel_t chan, const char *name, uint8_t connected, float lat, float lon)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN];
-    _mav_put_int32_t(buf, 0, lat);
-    _mav_put_int32_t(buf, 4, lon);
-    _mav_put_uint8_t(buf, 136, connect);
+    _mav_put_float(buf, 0, lat);
+    _mav_put_float(buf, 4, lon);
+    _mav_put_uint8_t(buf, 136, connected);
     _mav_put_char_array(buf, 8, name, 128);
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION, buf, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_MIN_LEN, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_CRC);
 #else
     mavlink_usv_system_information_t packet;
     packet.lat = lat;
     packet.lon = lon;
-    packet.connect = connect;
+    packet.connected = connected;
     mav_array_memcpy(packet.name, name, sizeof(char)*128);
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION, (const char *)&packet, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_MIN_LEN, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_CRC);
 #endif
@@ -234,7 +234,7 @@ static inline void mavlink_msg_usv_system_information_send(mavlink_channel_t cha
 static inline void mavlink_msg_usv_system_information_send_struct(mavlink_channel_t chan, const mavlink_usv_system_information_t* usv_system_information)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-    mavlink_msg_usv_system_information_send(chan, usv_system_information->name, usv_system_information->connect, usv_system_information->lat, usv_system_information->lon);
+    mavlink_msg_usv_system_information_send(chan, usv_system_information->name, usv_system_information->connected, usv_system_information->lat, usv_system_information->lon);
 #else
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION, (const char *)usv_system_information, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_MIN_LEN, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_CRC);
 #endif
@@ -248,20 +248,20 @@ static inline void mavlink_msg_usv_system_information_send_struct(mavlink_channe
   is usually the receive buffer for the channel, and allows a reply to an
   incoming message with minimum stack space usage.
  */
-static inline void mavlink_msg_usv_system_information_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  const char *name, uint8_t connect, int32_t lat, int32_t lon)
+static inline void mavlink_msg_usv_system_information_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  const char *name, uint8_t connected, float lat, float lon)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char *buf = (char *)msgbuf;
-    _mav_put_int32_t(buf, 0, lat);
-    _mav_put_int32_t(buf, 4, lon);
-    _mav_put_uint8_t(buf, 136, connect);
+    _mav_put_float(buf, 0, lat);
+    _mav_put_float(buf, 4, lon);
+    _mav_put_uint8_t(buf, 136, connected);
     _mav_put_char_array(buf, 8, name, 128);
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION, buf, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_MIN_LEN, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_CRC);
 #else
     mavlink_usv_system_information_t *packet = (mavlink_usv_system_information_t *)msgbuf;
     packet->lat = lat;
     packet->lon = lon;
-    packet->connect = connect;
+    packet->connected = connected;
     mav_array_memcpy(packet->name, name, sizeof(char)*128);
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION, (const char *)packet, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_MIN_LEN, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_CRC);
 #endif
@@ -284,11 +284,11 @@ static inline uint16_t mavlink_msg_usv_system_information_get_name(const mavlink
 }
 
 /**
- * @brief Get field connect from usv_system_information message
+ * @brief Get field connected from usv_system_information message
  *
  * @return  0: not connected. 1: connected.
  */
-static inline uint8_t mavlink_msg_usv_system_information_get_connect(const mavlink_message_t* msg)
+static inline uint8_t mavlink_msg_usv_system_information_get_connected(const mavlink_message_t* msg)
 {
     return _MAV_RETURN_uint8_t(msg,  136);
 }
@@ -296,21 +296,21 @@ static inline uint8_t mavlink_msg_usv_system_information_get_connect(const mavli
 /**
  * @brief Get field lat from usv_system_information message
  *
- * @return [degE7] Latitude (WGS84, EGM96 ellipsoid)
+ * @return  Latitude (WGS84, EGM96 ellipsoid)
  */
-static inline int32_t mavlink_msg_usv_system_information_get_lat(const mavlink_message_t* msg)
+static inline float mavlink_msg_usv_system_information_get_lat(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  0);
+    return _MAV_RETURN_float(msg,  0);
 }
 
 /**
  * @brief Get field lon from usv_system_information message
  *
- * @return [degE7] Longitude (WGS84, EGM96 ellipsoid)
+ * @return  Longitude (WGS84, EGM96 ellipsoid)
  */
-static inline int32_t mavlink_msg_usv_system_information_get_lon(const mavlink_message_t* msg)
+static inline float mavlink_msg_usv_system_information_get_lon(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_int32_t(msg,  4);
+    return _MAV_RETURN_float(msg,  4);
 }
 
 /**
@@ -325,7 +325,7 @@ static inline void mavlink_msg_usv_system_information_decode(const mavlink_messa
     usv_system_information->lat = mavlink_msg_usv_system_information_get_lat(msg);
     usv_system_information->lon = mavlink_msg_usv_system_information_get_lon(msg);
     mavlink_msg_usv_system_information_get_name(msg, usv_system_information->name);
-    usv_system_information->connect = mavlink_msg_usv_system_information_get_connect(msg);
+    usv_system_information->connected = mavlink_msg_usv_system_information_get_connected(msg);
 #else
         uint8_t len = msg->len < MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN? msg->len : MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN;
         memset(usv_system_information, 0, MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION_LEN);

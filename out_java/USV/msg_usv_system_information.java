@@ -26,15 +26,15 @@ public class msg_usv_system_information extends MAVLinkMessage {
      * Latitude (WGS84, EGM96 ellipsoid)
      */
     @Description("Latitude (WGS84, EGM96 ellipsoid)")
-    @Units("degE7")
-    public int lat;
+    @Units("")
+    public float lat;
     
     /**
      * Longitude (WGS84, EGM96 ellipsoid)
      */
     @Description("Longitude (WGS84, EGM96 ellipsoid)")
-    @Units("degE7")
-    public int lon;
+    @Units("")
+    public float lon;
     
     /**
      * system name
@@ -48,7 +48,7 @@ public class msg_usv_system_information extends MAVLinkMessage {
      */
     @Description("0: not connected. 1: connected.")
     @Units("")
-    public short connect;
+    public short connected;
     
 
     /**
@@ -62,14 +62,14 @@ public class msg_usv_system_information extends MAVLinkMessage {
         packet.compid = compid;
         packet.msgid = MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION;
 
-        packet.payload.putInt(lat);
-        packet.payload.putInt(lon);
+        packet.payload.putFloat(lat);
+        packet.payload.putFloat(lon);
         
         for (int i = 0; i < name.length; i++) {
             packet.payload.putByte(name[i]);
         }
                     
-        packet.payload.putUnsignedByte(connect);
+        packet.payload.putUnsignedByte(connected);
         
         if (isMavlink2) {
             
@@ -86,14 +86,14 @@ public class msg_usv_system_information extends MAVLinkMessage {
     public void unpack(MAVLinkPayload payload) {
         payload.resetIndex();
 
-        this.lat = payload.getInt();
-        this.lon = payload.getInt();
+        this.lat = payload.getFloat();
+        this.lon = payload.getFloat();
         
         for (int i = 0; i < this.name.length; i++) {
             this.name[i] = payload.getByte();
         }
                 
-        this.connect = payload.getUnsignedByte();
+        this.connected = payload.getUnsignedByte();
         
         if (isMavlink2) {
             
@@ -110,20 +110,20 @@ public class msg_usv_system_information extends MAVLinkMessage {
     /**
      * Constructor for a new message, initializes msgid and all payload variables
      */
-    public msg_usv_system_information( int lat, int lon, byte[] name, short connect) {
+    public msg_usv_system_information( float lat, float lon, byte[] name, short connected) {
         this.msgid = MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION;
 
         this.lat = lat;
         this.lon = lon;
         this.name = name;
-        this.connect = connect;
+        this.connected = connected;
         
     }
 
     /**
      * Constructor for a new message, initializes everything
      */
-    public msg_usv_system_information( int lat, int lon, byte[] name, short connect, int sysid, int compid, boolean isMavlink2) {
+    public msg_usv_system_information( float lat, float lon, byte[] name, short connected, int sysid, int compid, boolean isMavlink2) {
         this.msgid = MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION;
         this.sysid = sysid;
         this.compid = compid;
@@ -132,7 +132,7 @@ public class msg_usv_system_information extends MAVLinkMessage {
         this.lat = lat;
         this.lon = lon;
         this.name = name;
-        this.connect = connect;
+        this.connected = connected;
         
     }
 
@@ -185,7 +185,7 @@ public class msg_usv_system_information extends MAVLinkMessage {
      */
     @Override
     public String toString() {
-        return "MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION - sysid:"+sysid+" compid:"+compid+" lat:"+lat+" lon:"+lon+" name:"+name+" connect:"+connect+"";
+        return "MAVLINK_MSG_ID_USV_SYSTEM_INFORMATION - sysid:"+sysid+" compid:"+compid+" lat:"+lat+" lon:"+lon+" name:"+name+" connected:"+connected+"";
     }
 
     /**

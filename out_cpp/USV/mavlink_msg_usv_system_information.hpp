@@ -15,14 +15,14 @@ struct USV_SYSTEM_INFORMATION : mavlink::Message {
     static constexpr msgid_t MSG_ID = 50009;
     static constexpr size_t LENGTH = 137;
     static constexpr size_t MIN_LENGTH = 137;
-    static constexpr uint8_t CRC_EXTRA = 59;
+    static constexpr uint8_t CRC_EXTRA = 147;
     static constexpr auto NAME = "USV_SYSTEM_INFORMATION";
 
 
     std::array<char, 128> name; /*<  system name */
-    uint8_t connect; /*<  0: not connected. 1: connected. */
-    int32_t lat; /*< [degE7] Latitude (WGS84, EGM96 ellipsoid) */
-    int32_t lon; /*< [degE7] Longitude (WGS84, EGM96 ellipsoid) */
+    uint8_t connected; /*<  0: not connected. 1: connected. */
+    float lat; /*<  Latitude (WGS84, EGM96 ellipsoid) */
+    float lon; /*<  Longitude (WGS84, EGM96 ellipsoid) */
 
 
     inline std::string get_name(void) const override
@@ -41,7 +41,7 @@ struct USV_SYSTEM_INFORMATION : mavlink::Message {
 
         ss << NAME << ":" << std::endl;
         ss << "  name: \"" << to_string(name) << "\"" << std::endl;
-        ss << "  connect: " << +connect << std::endl;
+        ss << "  connected: " << +connected << std::endl;
         ss << "  lat: " << lat << std::endl;
         ss << "  lon: " << lon << std::endl;
 
@@ -55,7 +55,7 @@ struct USV_SYSTEM_INFORMATION : mavlink::Message {
         map << lat;                           // offset: 0
         map << lon;                           // offset: 4
         map << name;                          // offset: 8
-        map << connect;                       // offset: 136
+        map << connected;                     // offset: 136
     }
 
     inline void deserialize(mavlink::MsgMap &map) override
@@ -63,7 +63,7 @@ struct USV_SYSTEM_INFORMATION : mavlink::Message {
         map >> lat;                           // offset: 0
         map >> lon;                           // offset: 4
         map >> name;                          // offset: 8
-        map >> connect;                       // offset: 136
+        map >> connected;                     // offset: 136
     }
 };
 
