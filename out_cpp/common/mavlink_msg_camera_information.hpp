@@ -10,6 +10,7 @@ namespace msg {
  * @brief CAMERA_INFORMATION message
  *
  * Information about a camera. Can be requested with a MAV_CMD_REQUEST_MESSAGE command.
+            
  */
 struct CAMERA_INFORMATION : mavlink::Message {
     static constexpr msgid_t MSG_ID = 259;
@@ -22,18 +23,45 @@ struct CAMERA_INFORMATION : mavlink::Message {
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
     std::array<uint8_t, 32> vendor_name; /*<  Name of the camera vendor */
     std::array<uint8_t, 32> model_name; /*<  Name of the camera model */
-    uint32_t firmware_version; /*<  Version of the camera firmware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff). Use 0 if not known. */
+    uint32_t firmware_version; /*<  Version of the camera firmware, encoded as: (Dev
+                & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major &
+                0xff). Use 0 if not known.
+             */
     float focal_length; /*< [mm] Focal length. Use NaN if not known. */
-    float sensor_size_h; /*< [mm] Image sensor size horizontal. Use NaN if not known. */
-    float sensor_size_v; /*< [mm] Image sensor size vertical. Use NaN if not known. */
-    uint16_t resolution_h; /*< [pix] Horizontal image resolution. Use 0 if not known. */
-    uint16_t resolution_v; /*< [pix] Vertical image resolution. Use 0 if not known. */
-    uint8_t lens_id; /*<  Reserved for a lens ID.  Use 0 if not known. */
-    uint32_t flags; /*<  Bitmap of camera capability flags. */
-    uint16_t cam_definition_version; /*<  Camera definition version (iteration).  Use 0 if not known. */
-    std::array<char, 140> cam_definition_uri; /*<  Camera definition URI (if any, otherwise only basic functions will be available). HTTP- (http://) and MAVLink FTP- (mavlinkftp://) formatted URIs are allowed (and both must be supported by any GCS that implements the Camera Protocol). The definition file may be xz compressed, which will be indicated by the file extension .xml.xz (a GCS that implements the protocol must support decompressing the file). The string needs to be zero terminated.  Use a zero-length string if not known. */
-    uint8_t gimbal_device_id; /*<  Gimbal id of a gimbal associated with this camera. This is the component id of the gimbal device, or 1-6 for non mavlink gimbals. Use 0 if no gimbal is associated with the camera. */
-    uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id). */
+    float sensor_size_h; /*< [mm] Image sensor size horizontal. Use NaN if
+                not known.
+             */
+    float sensor_size_v; /*< [mm] Image sensor size vertical. Use NaN if not
+                known.
+             */
+    uint16_t resolution_h; /*< [pix] Horizontal image resolution. Use 0 if not
+                known.
+             */
+    uint16_t resolution_v; /*< [pix] Vertical image resolution. Use 0 if not
+                known.
+             */
+    uint8_t lens_id; /*<  Reserved for a lens ID. Use 0 if not known. */
+    uint32_t flags; /*<  Bitmap of camera capability
+                flags.
+             */
+    uint16_t cam_definition_version; /*<  Camera definition version (iteration). Use 0 if not
+                known.
+             */
+    std::array<char, 140> cam_definition_uri; /*<  Camera definition URI (if any, otherwise only basic
+                functions will be available). HTTP- (http://) and MAVLink FTP- (mavlinkftp://) formatted URIs are
+                allowed (and both must be supported by any GCS that implements the Camera Protocol). The definition file
+                may be xz compressed, which will be indicated by the file extension .xml.xz (a GCS that implements the
+                protocol must support decompressing the file). The string needs to be zero terminated. Use a zero-length
+                string if not known.
+             */
+    uint8_t gimbal_device_id; /*<  Gimbal id of a gimbal associated with this camera.
+                This is the component id of the gimbal device, or 1-6 for non mavlink gimbals. Use 0 if no gimbal is
+                associated with the camera.
+             */
+    uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+             */
 
 
     inline std::string get_name(void) const override

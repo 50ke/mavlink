@@ -5,7 +5,9 @@
 
 
 typedef struct __mavlink_high_latency_t {
- uint32_t custom_mode; /*<  A bitfield for use for autopilot-specific flags.*/
+ uint32_t custom_mode; /*<  A bitfield for use for autopilot-specific
+                flags.
+            */
  int32_t latitude; /*< [degE7] Latitude*/
  int32_t longitude; /*< [degE7] Longitude*/
  int16_t roll; /*< [cdeg] roll*/
@@ -15,19 +17,28 @@ typedef struct __mavlink_high_latency_t {
  int16_t altitude_amsl; /*< [m] Altitude above mean sea level*/
  int16_t altitude_sp; /*< [m] Altitude setpoint relative to the home position*/
  uint16_t wp_distance; /*< [m] distance to target*/
- uint8_t base_mode; /*<  Bitmap of enabled system modes.*/
- uint8_t landed_state; /*<  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.*/
+ uint8_t base_mode; /*<  Bitmap of enabled system
+                modes.
+            */
+ uint8_t landed_state; /*<  The landed state. Is set to
+                MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            */
  int8_t throttle; /*< [%] throttle (percentage)*/
  uint8_t airspeed; /*< [m/s] airspeed*/
  uint8_t airspeed_sp; /*< [m/s] airspeed setpoint*/
  uint8_t groundspeed; /*< [m/s] groundspeed*/
  int8_t climb_rate; /*< [m/s] climb rate*/
- uint8_t gps_nsat; /*<  Number of satellites visible. If unknown, set to UINT8_MAX*/
+ uint8_t gps_nsat; /*<  Number of satellites visible. If unknown, set to
+                UINT8_MAX
+            */
  uint8_t gps_fix_type; /*<  GPS Fix type.*/
  uint8_t battery_remaining; /*< [%] Remaining battery (percentage)*/
  int8_t temperature; /*< [degC] Autopilot temperature (degrees C)*/
- int8_t temperature_air; /*< [degC] Air temperature (degrees C) from airspeed sensor*/
- uint8_t failsafe; /*<  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)*/
+ int8_t temperature_air; /*< [degC] Air temperature (degrees C) from airspeed sensor
+            */
+ uint8_t failsafe; /*<  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active
+                (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+            */
  uint8_t wp_num; /*<  current waypoint number*/
 } mavlink_high_latency_t;
 
@@ -110,9 +121,15 @@ typedef struct __mavlink_high_latency_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param base_mode  Bitmap of enabled system modes.
- * @param custom_mode  A bitfield for use for autopilot-specific flags.
- * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+ * @param base_mode  Bitmap of enabled system
+                modes.
+            
+ * @param custom_mode  A bitfield for use for autopilot-specific
+                flags.
+            
+ * @param landed_state  The landed state. Is set to
+                MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            
  * @param roll [cdeg] roll
  * @param pitch [cdeg] pitch
  * @param heading [cdeg] heading
@@ -126,12 +143,17 @@ typedef struct __mavlink_high_latency_t {
  * @param airspeed_sp [m/s] airspeed setpoint
  * @param groundspeed [m/s] groundspeed
  * @param climb_rate [m/s] climb rate
- * @param gps_nsat  Number of satellites visible. If unknown, set to UINT8_MAX
+ * @param gps_nsat  Number of satellites visible. If unknown, set to
+                UINT8_MAX
+            
  * @param gps_fix_type  GPS Fix type.
  * @param battery_remaining [%] Remaining battery (percentage)
  * @param temperature [degC] Autopilot temperature (degrees C)
  * @param temperature_air [degC] Air temperature (degrees C) from airspeed sensor
- * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+            
+ * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active
+                (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+            
  * @param wp_num  current waypoint number
  * @param wp_distance [m] distance to target
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -208,9 +230,15 @@ static inline uint16_t mavlink_msg_high_latency_pack(uint8_t system_id, uint8_t 
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param base_mode  Bitmap of enabled system modes.
- * @param custom_mode  A bitfield for use for autopilot-specific flags.
- * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+ * @param base_mode  Bitmap of enabled system
+                modes.
+            
+ * @param custom_mode  A bitfield for use for autopilot-specific
+                flags.
+            
+ * @param landed_state  The landed state. Is set to
+                MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            
  * @param roll [cdeg] roll
  * @param pitch [cdeg] pitch
  * @param heading [cdeg] heading
@@ -224,12 +252,17 @@ static inline uint16_t mavlink_msg_high_latency_pack(uint8_t system_id, uint8_t 
  * @param airspeed_sp [m/s] airspeed setpoint
  * @param groundspeed [m/s] groundspeed
  * @param climb_rate [m/s] climb rate
- * @param gps_nsat  Number of satellites visible. If unknown, set to UINT8_MAX
+ * @param gps_nsat  Number of satellites visible. If unknown, set to
+                UINT8_MAX
+            
  * @param gps_fix_type  GPS Fix type.
  * @param battery_remaining [%] Remaining battery (percentage)
  * @param temperature [degC] Autopilot temperature (degrees C)
  * @param temperature_air [degC] Air temperature (degrees C) from airspeed sensor
- * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+            
+ * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active
+                (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+            
  * @param wp_num  current waypoint number
  * @param wp_distance [m] distance to target
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -309,9 +342,15 @@ static inline uint16_t mavlink_msg_high_latency_pack_status(uint8_t system_id, u
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param base_mode  Bitmap of enabled system modes.
- * @param custom_mode  A bitfield for use for autopilot-specific flags.
- * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+ * @param base_mode  Bitmap of enabled system
+                modes.
+            
+ * @param custom_mode  A bitfield for use for autopilot-specific
+                flags.
+            
+ * @param landed_state  The landed state. Is set to
+                MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            
  * @param roll [cdeg] roll
  * @param pitch [cdeg] pitch
  * @param heading [cdeg] heading
@@ -325,12 +364,17 @@ static inline uint16_t mavlink_msg_high_latency_pack_status(uint8_t system_id, u
  * @param airspeed_sp [m/s] airspeed setpoint
  * @param groundspeed [m/s] groundspeed
  * @param climb_rate [m/s] climb rate
- * @param gps_nsat  Number of satellites visible. If unknown, set to UINT8_MAX
+ * @param gps_nsat  Number of satellites visible. If unknown, set to
+                UINT8_MAX
+            
  * @param gps_fix_type  GPS Fix type.
  * @param battery_remaining [%] Remaining battery (percentage)
  * @param temperature [degC] Autopilot temperature (degrees C)
  * @param temperature_air [degC] Air temperature (degrees C) from airspeed sensor
- * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+            
+ * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active
+                (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+            
  * @param wp_num  current waypoint number
  * @param wp_distance [m] distance to target
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -446,9 +490,15 @@ static inline uint16_t mavlink_msg_high_latency_encode_status(uint8_t system_id,
  * @brief Send a high_latency message
  * @param chan MAVLink channel to send the message
  *
- * @param base_mode  Bitmap of enabled system modes.
- * @param custom_mode  A bitfield for use for autopilot-specific flags.
- * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+ * @param base_mode  Bitmap of enabled system
+                modes.
+            
+ * @param custom_mode  A bitfield for use for autopilot-specific
+                flags.
+            
+ * @param landed_state  The landed state. Is set to
+                MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            
  * @param roll [cdeg] roll
  * @param pitch [cdeg] pitch
  * @param heading [cdeg] heading
@@ -462,12 +512,17 @@ static inline uint16_t mavlink_msg_high_latency_encode_status(uint8_t system_id,
  * @param airspeed_sp [m/s] airspeed setpoint
  * @param groundspeed [m/s] groundspeed
  * @param climb_rate [m/s] climb rate
- * @param gps_nsat  Number of satellites visible. If unknown, set to UINT8_MAX
+ * @param gps_nsat  Number of satellites visible. If unknown, set to
+                UINT8_MAX
+            
  * @param gps_fix_type  GPS Fix type.
  * @param battery_remaining [%] Remaining battery (percentage)
  * @param temperature [degC] Autopilot temperature (degrees C)
  * @param temperature_air [degC] Air temperature (degrees C) from airspeed sensor
- * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+            
+ * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active
+                (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+            
  * @param wp_num  current waypoint number
  * @param wp_distance [m] distance to target
  */
@@ -626,7 +681,9 @@ static inline void mavlink_msg_high_latency_send_buf(mavlink_message_t *msgbuf, 
 /**
  * @brief Get field base_mode from high_latency message
  *
- * @return  Bitmap of enabled system modes.
+ * @return  Bitmap of enabled system
+                modes.
+            
  */
 static inline uint8_t mavlink_msg_high_latency_get_base_mode(const mavlink_message_t* msg)
 {
@@ -636,7 +693,9 @@ static inline uint8_t mavlink_msg_high_latency_get_base_mode(const mavlink_messa
 /**
  * @brief Get field custom_mode from high_latency message
  *
- * @return  A bitfield for use for autopilot-specific flags.
+ * @return  A bitfield for use for autopilot-specific
+                flags.
+            
  */
 static inline uint32_t mavlink_msg_high_latency_get_custom_mode(const mavlink_message_t* msg)
 {
@@ -646,7 +705,9 @@ static inline uint32_t mavlink_msg_high_latency_get_custom_mode(const mavlink_me
 /**
  * @brief Get field landed_state from high_latency message
  *
- * @return  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+ * @return  The landed state. Is set to
+                MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            
  */
 static inline uint8_t mavlink_msg_high_latency_get_landed_state(const mavlink_message_t* msg)
 {
@@ -786,7 +847,9 @@ static inline int8_t mavlink_msg_high_latency_get_climb_rate(const mavlink_messa
 /**
  * @brief Get field gps_nsat from high_latency message
  *
- * @return  Number of satellites visible. If unknown, set to UINT8_MAX
+ * @return  Number of satellites visible. If unknown, set to
+                UINT8_MAX
+            
  */
 static inline uint8_t mavlink_msg_high_latency_get_gps_nsat(const mavlink_message_t* msg)
 {
@@ -827,6 +890,7 @@ static inline int8_t mavlink_msg_high_latency_get_temperature(const mavlink_mess
  * @brief Get field temperature_air from high_latency message
  *
  * @return [degC] Air temperature (degrees C) from airspeed sensor
+            
  */
 static inline int8_t mavlink_msg_high_latency_get_temperature_air(const mavlink_message_t* msg)
 {
@@ -836,7 +900,9 @@ static inline int8_t mavlink_msg_high_latency_get_temperature_air(const mavlink_
 /**
  * @brief Get field failsafe from high_latency message
  *
- * @return  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+ * @return  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active
+                (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+            
  */
 static inline uint8_t mavlink_msg_high_latency_get_failsafe(const mavlink_message_t* msg)
 {

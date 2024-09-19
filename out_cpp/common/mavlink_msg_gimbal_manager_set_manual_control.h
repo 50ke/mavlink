@@ -6,13 +6,24 @@
 
 typedef struct __mavlink_gimbal_manager_set_manual_control_t {
  uint32_t flags; /*<  High level gimbal manager flags.*/
- float pitch; /*<  Pitch angle unitless (-1..1, positive: up, negative: down, NaN to be ignored).*/
- float yaw; /*<  Yaw angle unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).*/
- float pitch_rate; /*<  Pitch angular rate unitless (-1..1, positive: up, negative: down, NaN to be ignored).*/
- float yaw_rate; /*<  Yaw angular rate unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).*/
+ float pitch; /*<  Pitch angle unitless (-1..1, positive: up, negative: down,
+                NaN to be ignored).
+            */
+ float yaw; /*<  Yaw angle unitless (-1..1, positive: to the right, negative: to
+                the left, NaN to be ignored).
+            */
+ float pitch_rate; /*<  Pitch angular rate unitless (-1..1, positive: up,
+                negative: down, NaN to be ignored).
+            */
+ float yaw_rate; /*<  Yaw angular rate unitless (-1..1, positive: to the right,
+                negative: to the left, NaN to be ignored).
+            */
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
- uint8_t gimbal_device_id; /*<  Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).*/
+ uint8_t gimbal_device_id; /*<  Component ID of gimbal device to address (or
+                1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more
+                than one gimbal (but not all gimbals).
+            */
 } mavlink_gimbal_manager_set_manual_control_t;
 
 #define MAVLINK_MSG_ID_GIMBAL_MANAGER_SET_MANUAL_CONTROL_LEN 23
@@ -65,11 +76,22 @@ typedef struct __mavlink_gimbal_manager_set_manual_control_t {
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param flags  High level gimbal manager flags.
- * @param gimbal_device_id  Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).
- * @param pitch  Pitch angle unitless (-1..1, positive: up, negative: down, NaN to be ignored).
- * @param yaw  Yaw angle unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).
- * @param pitch_rate  Pitch angular rate unitless (-1..1, positive: up, negative: down, NaN to be ignored).
- * @param yaw_rate  Yaw angular rate unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).
+ * @param gimbal_device_id  Component ID of gimbal device to address (or
+                1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more
+                than one gimbal (but not all gimbals).
+            
+ * @param pitch  Pitch angle unitless (-1..1, positive: up, negative: down,
+                NaN to be ignored).
+            
+ * @param yaw  Yaw angle unitless (-1..1, positive: to the right, negative: to
+                the left, NaN to be ignored).
+            
+ * @param pitch_rate  Pitch angular rate unitless (-1..1, positive: up,
+                negative: down, NaN to be ignored).
+            
+ * @param yaw_rate  Yaw angular rate unitless (-1..1, positive: to the right,
+                negative: to the left, NaN to be ignored).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_manager_set_manual_control_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -115,11 +137,22 @@ static inline uint16_t mavlink_msg_gimbal_manager_set_manual_control_pack(uint8_
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param flags  High level gimbal manager flags.
- * @param gimbal_device_id  Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).
- * @param pitch  Pitch angle unitless (-1..1, positive: up, negative: down, NaN to be ignored).
- * @param yaw  Yaw angle unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).
- * @param pitch_rate  Pitch angular rate unitless (-1..1, positive: up, negative: down, NaN to be ignored).
- * @param yaw_rate  Yaw angular rate unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).
+ * @param gimbal_device_id  Component ID of gimbal device to address (or
+                1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more
+                than one gimbal (but not all gimbals).
+            
+ * @param pitch  Pitch angle unitless (-1..1, positive: up, negative: down,
+                NaN to be ignored).
+            
+ * @param yaw  Yaw angle unitless (-1..1, positive: to the right, negative: to
+                the left, NaN to be ignored).
+            
+ * @param pitch_rate  Pitch angular rate unitless (-1..1, positive: up,
+                negative: down, NaN to be ignored).
+            
+ * @param yaw_rate  Yaw angular rate unitless (-1..1, positive: to the right,
+                negative: to the left, NaN to be ignored).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_manager_set_manual_control_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -168,11 +201,22 @@ static inline uint16_t mavlink_msg_gimbal_manager_set_manual_control_pack_status
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param flags  High level gimbal manager flags.
- * @param gimbal_device_id  Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).
- * @param pitch  Pitch angle unitless (-1..1, positive: up, negative: down, NaN to be ignored).
- * @param yaw  Yaw angle unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).
- * @param pitch_rate  Pitch angular rate unitless (-1..1, positive: up, negative: down, NaN to be ignored).
- * @param yaw_rate  Yaw angular rate unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).
+ * @param gimbal_device_id  Component ID of gimbal device to address (or
+                1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more
+                than one gimbal (but not all gimbals).
+            
+ * @param pitch  Pitch angle unitless (-1..1, positive: up, negative: down,
+                NaN to be ignored).
+            
+ * @param yaw  Yaw angle unitless (-1..1, positive: to the right, negative: to
+                the left, NaN to be ignored).
+            
+ * @param pitch_rate  Pitch angular rate unitless (-1..1, positive: up,
+                negative: down, NaN to be ignored).
+            
+ * @param yaw_rate  Yaw angular rate unitless (-1..1, positive: to the right,
+                negative: to the left, NaN to be ignored).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_manager_set_manual_control_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -257,11 +301,22 @@ static inline uint16_t mavlink_msg_gimbal_manager_set_manual_control_encode_stat
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param flags  High level gimbal manager flags.
- * @param gimbal_device_id  Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).
- * @param pitch  Pitch angle unitless (-1..1, positive: up, negative: down, NaN to be ignored).
- * @param yaw  Yaw angle unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).
- * @param pitch_rate  Pitch angular rate unitless (-1..1, positive: up, negative: down, NaN to be ignored).
- * @param yaw_rate  Yaw angular rate unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).
+ * @param gimbal_device_id  Component ID of gimbal device to address (or
+                1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more
+                than one gimbal (but not all gimbals).
+            
+ * @param pitch  Pitch angle unitless (-1..1, positive: up, negative: down,
+                NaN to be ignored).
+            
+ * @param yaw  Yaw angle unitless (-1..1, positive: to the right, negative: to
+                the left, NaN to be ignored).
+            
+ * @param pitch_rate  Pitch angular rate unitless (-1..1, positive: up,
+                negative: down, NaN to be ignored).
+            
+ * @param yaw_rate  Yaw angular rate unitless (-1..1, positive: to the right,
+                negative: to the left, NaN to be ignored).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -384,7 +439,10 @@ static inline uint32_t mavlink_msg_gimbal_manager_set_manual_control_get_flags(c
 /**
  * @brief Get field gimbal_device_id from gimbal_manager_set_manual_control message
  *
- * @return  Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).
+ * @return  Component ID of gimbal device to address (or
+                1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more
+                than one gimbal (but not all gimbals).
+            
  */
 static inline uint8_t mavlink_msg_gimbal_manager_set_manual_control_get_gimbal_device_id(const mavlink_message_t* msg)
 {
@@ -394,7 +452,9 @@ static inline uint8_t mavlink_msg_gimbal_manager_set_manual_control_get_gimbal_d
 /**
  * @brief Get field pitch from gimbal_manager_set_manual_control message
  *
- * @return  Pitch angle unitless (-1..1, positive: up, negative: down, NaN to be ignored).
+ * @return  Pitch angle unitless (-1..1, positive: up, negative: down,
+                NaN to be ignored).
+            
  */
 static inline float mavlink_msg_gimbal_manager_set_manual_control_get_pitch(const mavlink_message_t* msg)
 {
@@ -404,7 +464,9 @@ static inline float mavlink_msg_gimbal_manager_set_manual_control_get_pitch(cons
 /**
  * @brief Get field yaw from gimbal_manager_set_manual_control message
  *
- * @return  Yaw angle unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).
+ * @return  Yaw angle unitless (-1..1, positive: to the right, negative: to
+                the left, NaN to be ignored).
+            
  */
 static inline float mavlink_msg_gimbal_manager_set_manual_control_get_yaw(const mavlink_message_t* msg)
 {
@@ -414,7 +476,9 @@ static inline float mavlink_msg_gimbal_manager_set_manual_control_get_yaw(const 
 /**
  * @brief Get field pitch_rate from gimbal_manager_set_manual_control message
  *
- * @return  Pitch angular rate unitless (-1..1, positive: up, negative: down, NaN to be ignored).
+ * @return  Pitch angular rate unitless (-1..1, positive: up,
+                negative: down, NaN to be ignored).
+            
  */
 static inline float mavlink_msg_gimbal_manager_set_manual_control_get_pitch_rate(const mavlink_message_t* msg)
 {
@@ -424,7 +488,9 @@ static inline float mavlink_msg_gimbal_manager_set_manual_control_get_pitch_rate
 /**
  * @brief Get field yaw_rate from gimbal_manager_set_manual_control message
  *
- * @return  Yaw angular rate unitless (-1..1, positive: to the right, negative: to the left, NaN to be ignored).
+ * @return  Yaw angular rate unitless (-1..1, positive: to the right,
+                negative: to the left, NaN to be ignored).
+            
  */
 static inline float mavlink_msg_gimbal_manager_set_manual_control_get_yaw_rate(const mavlink_message_t* msg)
 {

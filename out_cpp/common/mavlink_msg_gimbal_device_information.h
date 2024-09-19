@@ -7,20 +7,43 @@
 typedef struct __mavlink_gimbal_device_information_t {
  uint64_t uid; /*<  UID of gimbal hardware (0 if unknown).*/
  uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot).*/
- uint32_t firmware_version; /*<  Version of the gimbal firmware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).*/
- uint32_t hardware_version; /*<  Version of the gimbal hardware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).*/
- float roll_min; /*< [rad] Minimum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.*/
- float roll_max; /*< [rad] Maximum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.*/
- float pitch_min; /*< [rad] Minimum hardware pitch angle (positive: up, negative: down). NAN if unknown.*/
- float pitch_max; /*< [rad] Maximum hardware pitch angle (positive: up, negative: down). NAN if unknown.*/
- float yaw_min; /*< [rad] Minimum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.*/
- float yaw_max; /*< [rad] Maximum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.*/
- uint16_t cap_flags; /*<  Bitmap of gimbal capability flags.*/
- uint16_t custom_cap_flags; /*<  Bitmap for use for gimbal-specific capability flags.*/
+ uint32_t firmware_version; /*<  Version of the gimbal firmware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            */
+ uint32_t hardware_version; /*<  Version of the gimbal hardware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            */
+ float roll_min; /*< [rad] Minimum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            */
+ float roll_max; /*< [rad] Maximum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            */
+ float pitch_min; /*< [rad] Minimum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            */
+ float pitch_max; /*< [rad] Maximum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            */
+ float yaw_min; /*< [rad] Minimum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            */
+ float yaw_max; /*< [rad] Maximum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            */
+ uint16_t cap_flags; /*<  Bitmap of gimbal
+                capability flags.
+            */
+ uint16_t custom_cap_flags; /*<  Bitmap for use for gimbal-specific
+                capability flags.
+            */
  char vendor_name[32]; /*<  Name of the gimbal vendor.*/
  char model_name[32]; /*<  Name of the gimbal model.*/
  char custom_name[32]; /*<  Custom name of the gimbal given to it by the user.*/
- uint8_t gimbal_device_id; /*<  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set to a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.*/
+ uint8_t gimbal_device_id; /*<  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set to
+                a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            */
 } mavlink_gimbal_device_information_t;
 
 #define MAVLINK_MSG_ID_GIMBAL_DEVICE_INFORMATION_LEN 145
@@ -92,18 +115,41 @@ typedef struct __mavlink_gimbal_device_information_t {
  * @param vendor_name  Name of the gimbal vendor.
  * @param model_name  Name of the gimbal model.
  * @param custom_name  Custom name of the gimbal given to it by the user.
- * @param firmware_version  Version of the gimbal firmware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
- * @param hardware_version  Version of the gimbal hardware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+ * @param firmware_version  Version of the gimbal firmware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            
+ * @param hardware_version  Version of the gimbal hardware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            
  * @param uid  UID of gimbal hardware (0 if unknown).
- * @param cap_flags  Bitmap of gimbal capability flags.
- * @param custom_cap_flags  Bitmap for use for gimbal-specific capability flags.
- * @param roll_min [rad] Minimum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.
- * @param roll_max [rad] Maximum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.
- * @param pitch_min [rad] Minimum hardware pitch angle (positive: up, negative: down). NAN if unknown.
- * @param pitch_max [rad] Maximum hardware pitch angle (positive: up, negative: down). NAN if unknown.
- * @param yaw_min [rad] Minimum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.
- * @param yaw_max [rad] Maximum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.
- * @param gimbal_device_id  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set to a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+ * @param cap_flags  Bitmap of gimbal
+                capability flags.
+            
+ * @param custom_cap_flags  Bitmap for use for gimbal-specific
+                capability flags.
+            
+ * @param roll_min [rad] Minimum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            
+ * @param roll_max [rad] Maximum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            
+ * @param pitch_min [rad] Minimum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            
+ * @param pitch_max [rad] Maximum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            
+ * @param yaw_min [rad] Minimum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            
+ * @param yaw_max [rad] Maximum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            
+ * @param gimbal_device_id  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set to
+                a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_device_information_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -164,18 +210,41 @@ static inline uint16_t mavlink_msg_gimbal_device_information_pack(uint8_t system
  * @param vendor_name  Name of the gimbal vendor.
  * @param model_name  Name of the gimbal model.
  * @param custom_name  Custom name of the gimbal given to it by the user.
- * @param firmware_version  Version of the gimbal firmware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
- * @param hardware_version  Version of the gimbal hardware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+ * @param firmware_version  Version of the gimbal firmware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            
+ * @param hardware_version  Version of the gimbal hardware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            
  * @param uid  UID of gimbal hardware (0 if unknown).
- * @param cap_flags  Bitmap of gimbal capability flags.
- * @param custom_cap_flags  Bitmap for use for gimbal-specific capability flags.
- * @param roll_min [rad] Minimum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.
- * @param roll_max [rad] Maximum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.
- * @param pitch_min [rad] Minimum hardware pitch angle (positive: up, negative: down). NAN if unknown.
- * @param pitch_max [rad] Maximum hardware pitch angle (positive: up, negative: down). NAN if unknown.
- * @param yaw_min [rad] Minimum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.
- * @param yaw_max [rad] Maximum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.
- * @param gimbal_device_id  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set to a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+ * @param cap_flags  Bitmap of gimbal
+                capability flags.
+            
+ * @param custom_cap_flags  Bitmap for use for gimbal-specific
+                capability flags.
+            
+ * @param roll_min [rad] Minimum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            
+ * @param roll_max [rad] Maximum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            
+ * @param pitch_min [rad] Minimum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            
+ * @param pitch_max [rad] Maximum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            
+ * @param yaw_min [rad] Minimum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            
+ * @param yaw_max [rad] Maximum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            
+ * @param gimbal_device_id  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set to
+                a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_device_information_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -239,18 +308,41 @@ static inline uint16_t mavlink_msg_gimbal_device_information_pack_status(uint8_t
  * @param vendor_name  Name of the gimbal vendor.
  * @param model_name  Name of the gimbal model.
  * @param custom_name  Custom name of the gimbal given to it by the user.
- * @param firmware_version  Version of the gimbal firmware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
- * @param hardware_version  Version of the gimbal hardware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+ * @param firmware_version  Version of the gimbal firmware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            
+ * @param hardware_version  Version of the gimbal hardware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            
  * @param uid  UID of gimbal hardware (0 if unknown).
- * @param cap_flags  Bitmap of gimbal capability flags.
- * @param custom_cap_flags  Bitmap for use for gimbal-specific capability flags.
- * @param roll_min [rad] Minimum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.
- * @param roll_max [rad] Maximum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.
- * @param pitch_min [rad] Minimum hardware pitch angle (positive: up, negative: down). NAN if unknown.
- * @param pitch_max [rad] Maximum hardware pitch angle (positive: up, negative: down). NAN if unknown.
- * @param yaw_min [rad] Minimum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.
- * @param yaw_max [rad] Maximum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.
- * @param gimbal_device_id  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set to a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+ * @param cap_flags  Bitmap of gimbal
+                capability flags.
+            
+ * @param custom_cap_flags  Bitmap for use for gimbal-specific
+                capability flags.
+            
+ * @param roll_min [rad] Minimum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            
+ * @param roll_max [rad] Maximum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            
+ * @param pitch_min [rad] Minimum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            
+ * @param pitch_max [rad] Maximum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            
+ * @param yaw_min [rad] Minimum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            
+ * @param yaw_max [rad] Maximum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            
+ * @param gimbal_device_id  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set to
+                a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_device_information_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -350,18 +442,41 @@ static inline uint16_t mavlink_msg_gimbal_device_information_encode_status(uint8
  * @param vendor_name  Name of the gimbal vendor.
  * @param model_name  Name of the gimbal model.
  * @param custom_name  Custom name of the gimbal given to it by the user.
- * @param firmware_version  Version of the gimbal firmware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
- * @param hardware_version  Version of the gimbal hardware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+ * @param firmware_version  Version of the gimbal firmware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            
+ * @param hardware_version  Version of the gimbal hardware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            
  * @param uid  UID of gimbal hardware (0 if unknown).
- * @param cap_flags  Bitmap of gimbal capability flags.
- * @param custom_cap_flags  Bitmap for use for gimbal-specific capability flags.
- * @param roll_min [rad] Minimum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.
- * @param roll_max [rad] Maximum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.
- * @param pitch_min [rad] Minimum hardware pitch angle (positive: up, negative: down). NAN if unknown.
- * @param pitch_max [rad] Maximum hardware pitch angle (positive: up, negative: down). NAN if unknown.
- * @param yaw_min [rad] Minimum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.
- * @param yaw_max [rad] Maximum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.
- * @param gimbal_device_id  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set to a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+ * @param cap_flags  Bitmap of gimbal
+                capability flags.
+            
+ * @param custom_cap_flags  Bitmap for use for gimbal-specific
+                capability flags.
+            
+ * @param roll_min [rad] Minimum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            
+ * @param roll_max [rad] Maximum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            
+ * @param pitch_min [rad] Minimum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            
+ * @param pitch_max [rad] Maximum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            
+ * @param yaw_min [rad] Minimum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            
+ * @param yaw_max [rad] Maximum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            
+ * @param gimbal_device_id  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set to
+                a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -522,7 +637,9 @@ static inline uint16_t mavlink_msg_gimbal_device_information_get_custom_name(con
 /**
  * @brief Get field firmware_version from gimbal_device_information message
  *
- * @return  Version of the gimbal firmware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+ * @return  Version of the gimbal firmware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            
  */
 static inline uint32_t mavlink_msg_gimbal_device_information_get_firmware_version(const mavlink_message_t* msg)
 {
@@ -532,7 +649,9 @@ static inline uint32_t mavlink_msg_gimbal_device_information_get_firmware_versio
 /**
  * @brief Get field hardware_version from gimbal_device_information message
  *
- * @return  Version of the gimbal hardware, encoded as: (Dev & 0xff) << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+ * @return  Version of the gimbal hardware, encoded as: (Dev & 0xff)
+                << 24 | (Patch & 0xff) << 16 | (Minor & 0xff) << 8 | (Major & 0xff).
+            
  */
 static inline uint32_t mavlink_msg_gimbal_device_information_get_hardware_version(const mavlink_message_t* msg)
 {
@@ -552,7 +671,9 @@ static inline uint64_t mavlink_msg_gimbal_device_information_get_uid(const mavli
 /**
  * @brief Get field cap_flags from gimbal_device_information message
  *
- * @return  Bitmap of gimbal capability flags.
+ * @return  Bitmap of gimbal
+                capability flags.
+            
  */
 static inline uint16_t mavlink_msg_gimbal_device_information_get_cap_flags(const mavlink_message_t* msg)
 {
@@ -562,7 +683,9 @@ static inline uint16_t mavlink_msg_gimbal_device_information_get_cap_flags(const
 /**
  * @brief Get field custom_cap_flags from gimbal_device_information message
  *
- * @return  Bitmap for use for gimbal-specific capability flags.
+ * @return  Bitmap for use for gimbal-specific
+                capability flags.
+            
  */
 static inline uint16_t mavlink_msg_gimbal_device_information_get_custom_cap_flags(const mavlink_message_t* msg)
 {
@@ -572,7 +695,9 @@ static inline uint16_t mavlink_msg_gimbal_device_information_get_custom_cap_flag
 /**
  * @brief Get field roll_min from gimbal_device_information message
  *
- * @return [rad] Minimum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.
+ * @return [rad] Minimum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_information_get_roll_min(const mavlink_message_t* msg)
 {
@@ -582,7 +707,9 @@ static inline float mavlink_msg_gimbal_device_information_get_roll_min(const mav
 /**
  * @brief Get field roll_max from gimbal_device_information message
  *
- * @return [rad] Maximum hardware roll angle (positive: rolling to the right, negative: rolling to the left). NAN if unknown.
+ * @return [rad] Maximum hardware roll angle (positive: rolling
+                to the right, negative: rolling to the left). NAN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_information_get_roll_max(const mavlink_message_t* msg)
 {
@@ -592,7 +719,9 @@ static inline float mavlink_msg_gimbal_device_information_get_roll_max(const mav
 /**
  * @brief Get field pitch_min from gimbal_device_information message
  *
- * @return [rad] Minimum hardware pitch angle (positive: up, negative: down). NAN if unknown.
+ * @return [rad] Minimum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_information_get_pitch_min(const mavlink_message_t* msg)
 {
@@ -602,7 +731,9 @@ static inline float mavlink_msg_gimbal_device_information_get_pitch_min(const ma
 /**
  * @brief Get field pitch_max from gimbal_device_information message
  *
- * @return [rad] Maximum hardware pitch angle (positive: up, negative: down). NAN if unknown.
+ * @return [rad] Maximum hardware pitch angle (positive: up,
+                negative: down). NAN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_information_get_pitch_max(const mavlink_message_t* msg)
 {
@@ -612,7 +743,9 @@ static inline float mavlink_msg_gimbal_device_information_get_pitch_max(const ma
 /**
  * @brief Get field yaw_min from gimbal_device_information message
  *
- * @return [rad] Minimum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.
+ * @return [rad] Minimum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_information_get_yaw_min(const mavlink_message_t* msg)
 {
@@ -622,7 +755,9 @@ static inline float mavlink_msg_gimbal_device_information_get_yaw_min(const mavl
 /**
  * @brief Get field yaw_max from gimbal_device_information message
  *
- * @return [rad] Maximum hardware yaw angle (positive: to the right, negative: to the left). NAN if unknown.
+ * @return [rad] Maximum hardware yaw angle (positive: to the
+                right, negative: to the left). NAN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_information_get_yaw_max(const mavlink_message_t* msg)
 {
@@ -632,7 +767,10 @@ static inline float mavlink_msg_gimbal_device_information_get_yaw_max(const mavl
 /**
  * @brief Get field gimbal_device_id from gimbal_device_information message
  *
- * @return  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set to a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+ * @return  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set to
+                a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
  */
 static inline uint8_t mavlink_msg_gimbal_device_information_get_gimbal_device_id(const mavlink_message_t* msg)
 {

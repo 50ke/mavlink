@@ -6,17 +6,35 @@
 
 typedef struct __mavlink_gimbal_device_attitude_status_t {
  uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot).*/
- float q[4]; /*<  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame is described in the message description.*/
- float angular_velocity_x; /*< [rad/s] X component of angular velocity (positive: rolling to the right). The frame is described in the message description. NaN if unknown.*/
- float angular_velocity_y; /*< [rad/s] Y component of angular velocity (positive: pitching up). The frame is described in the message description. NaN if unknown.*/
- float angular_velocity_z; /*< [rad/s] Z component of angular velocity (positive: yawing to the right). The frame is described in the message description. NaN if unknown.*/
- uint32_t failure_flags; /*<  Failure flags (0 for no failure)*/
- uint16_t flags; /*<  Current gimbal flags set.*/
+ float q[4]; /*<  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame
+                is described in the message description.
+            */
+ float angular_velocity_x; /*< [rad/s] X component of angular velocity
+                (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
+            */
+ float angular_velocity_y; /*< [rad/s] Y component of angular velocity
+                (positive: pitching up). The frame is described in the message description. NaN if unknown.
+            */
+ float angular_velocity_z; /*< [rad/s] Z component of angular velocity
+                (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
+            */
+ uint32_t failure_flags; /*<  Failure flags
+                (0 for no failure)
+            */
+ uint16_t flags; /*<  Current gimbal flags set.
+            */
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
- float delta_yaw; /*< [rad] Yaw angle relating the quaternions in earth and body frames (see message description). NaN if unknown.*/
- float delta_yaw_velocity; /*< [rad/s] Yaw angular velocity relating the angular velocities in earth and body frames (see message description). NaN if unknown.*/
- uint8_t gimbal_device_id; /*<  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.*/
+ float delta_yaw; /*< [rad] Yaw angle relating the quaternions in earth
+                and body frames (see message description). NaN if unknown.
+            */
+ float delta_yaw_velocity; /*< [rad/s] Yaw angular velocity relating the
+                angular velocities in earth and body frames (see message description). NaN if unknown.
+            */
+ uint8_t gimbal_device_id; /*<  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set a
+                number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            */
 } mavlink_gimbal_device_attitude_status_t;
 
 #define MAVLINK_MSG_ID_GIMBAL_DEVICE_ATTITUDE_STATUS_LEN 49
@@ -78,14 +96,32 @@ typedef struct __mavlink_gimbal_device_attitude_status_t {
  * @param target_component  Component ID
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param flags  Current gimbal flags set.
- * @param q  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame is described in the message description.
- * @param angular_velocity_x [rad/s] X component of angular velocity (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
- * @param angular_velocity_y [rad/s] Y component of angular velocity (positive: pitching up). The frame is described in the message description. NaN if unknown.
- * @param angular_velocity_z [rad/s] Z component of angular velocity (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
- * @param failure_flags  Failure flags (0 for no failure)
- * @param delta_yaw [rad] Yaw angle relating the quaternions in earth and body frames (see message description). NaN if unknown.
- * @param delta_yaw_velocity [rad/s] Yaw angular velocity relating the angular velocities in earth and body frames (see message description). NaN if unknown.
- * @param gimbal_device_id  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
+ * @param q  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame
+                is described in the message description.
+            
+ * @param angular_velocity_x [rad/s] X component of angular velocity
+                (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
+            
+ * @param angular_velocity_y [rad/s] Y component of angular velocity
+                (positive: pitching up). The frame is described in the message description. NaN if unknown.
+            
+ * @param angular_velocity_z [rad/s] Z component of angular velocity
+                (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
+            
+ * @param failure_flags  Failure flags
+                (0 for no failure)
+            
+ * @param delta_yaw [rad] Yaw angle relating the quaternions in earth
+                and body frames (see message description). NaN if unknown.
+            
+ * @param delta_yaw_velocity [rad/s] Yaw angular velocity relating the
+                angular velocities in earth and body frames (see message description). NaN if unknown.
+            
+ * @param gimbal_device_id  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set a
+                number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_device_attitude_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -138,14 +174,32 @@ static inline uint16_t mavlink_msg_gimbal_device_attitude_status_pack(uint8_t sy
  * @param target_component  Component ID
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param flags  Current gimbal flags set.
- * @param q  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame is described in the message description.
- * @param angular_velocity_x [rad/s] X component of angular velocity (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
- * @param angular_velocity_y [rad/s] Y component of angular velocity (positive: pitching up). The frame is described in the message description. NaN if unknown.
- * @param angular_velocity_z [rad/s] Z component of angular velocity (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
- * @param failure_flags  Failure flags (0 for no failure)
- * @param delta_yaw [rad] Yaw angle relating the quaternions in earth and body frames (see message description). NaN if unknown.
- * @param delta_yaw_velocity [rad/s] Yaw angular velocity relating the angular velocities in earth and body frames (see message description). NaN if unknown.
- * @param gimbal_device_id  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
+ * @param q  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame
+                is described in the message description.
+            
+ * @param angular_velocity_x [rad/s] X component of angular velocity
+                (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
+            
+ * @param angular_velocity_y [rad/s] Y component of angular velocity
+                (positive: pitching up). The frame is described in the message description. NaN if unknown.
+            
+ * @param angular_velocity_z [rad/s] Z component of angular velocity
+                (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
+            
+ * @param failure_flags  Failure flags
+                (0 for no failure)
+            
+ * @param delta_yaw [rad] Yaw angle relating the quaternions in earth
+                and body frames (see message description). NaN if unknown.
+            
+ * @param delta_yaw_velocity [rad/s] Yaw angular velocity relating the
+                angular velocities in earth and body frames (see message description). NaN if unknown.
+            
+ * @param gimbal_device_id  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set a
+                number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_device_attitude_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -201,14 +255,32 @@ static inline uint16_t mavlink_msg_gimbal_device_attitude_status_pack_status(uin
  * @param target_component  Component ID
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param flags  Current gimbal flags set.
- * @param q  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame is described in the message description.
- * @param angular_velocity_x [rad/s] X component of angular velocity (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
- * @param angular_velocity_y [rad/s] Y component of angular velocity (positive: pitching up). The frame is described in the message description. NaN if unknown.
- * @param angular_velocity_z [rad/s] Z component of angular velocity (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
- * @param failure_flags  Failure flags (0 for no failure)
- * @param delta_yaw [rad] Yaw angle relating the quaternions in earth and body frames (see message description). NaN if unknown.
- * @param delta_yaw_velocity [rad/s] Yaw angular velocity relating the angular velocities in earth and body frames (see message description). NaN if unknown.
- * @param gimbal_device_id  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
+ * @param q  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame
+                is described in the message description.
+            
+ * @param angular_velocity_x [rad/s] X component of angular velocity
+                (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
+            
+ * @param angular_velocity_y [rad/s] Y component of angular velocity
+                (positive: pitching up). The frame is described in the message description. NaN if unknown.
+            
+ * @param angular_velocity_z [rad/s] Z component of angular velocity
+                (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
+            
+ * @param failure_flags  Failure flags
+                (0 for no failure)
+            
+ * @param delta_yaw [rad] Yaw angle relating the quaternions in earth
+                and body frames (see message description). NaN if unknown.
+            
+ * @param delta_yaw_velocity [rad/s] Yaw angular velocity relating the
+                angular velocities in earth and body frames (see message description). NaN if unknown.
+            
+ * @param gimbal_device_id  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set a
+                number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_device_attitude_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -300,14 +372,32 @@ static inline uint16_t mavlink_msg_gimbal_device_attitude_status_encode_status(u
  * @param target_component  Component ID
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param flags  Current gimbal flags set.
- * @param q  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame is described in the message description.
- * @param angular_velocity_x [rad/s] X component of angular velocity (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
- * @param angular_velocity_y [rad/s] Y component of angular velocity (positive: pitching up). The frame is described in the message description. NaN if unknown.
- * @param angular_velocity_z [rad/s] Z component of angular velocity (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
- * @param failure_flags  Failure flags (0 for no failure)
- * @param delta_yaw [rad] Yaw angle relating the quaternions in earth and body frames (see message description). NaN if unknown.
- * @param delta_yaw_velocity [rad/s] Yaw angular velocity relating the angular velocities in earth and body frames (see message description). NaN if unknown.
- * @param gimbal_device_id  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
+ * @param q  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame
+                is described in the message description.
+            
+ * @param angular_velocity_x [rad/s] X component of angular velocity
+                (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
+            
+ * @param angular_velocity_y [rad/s] Y component of angular velocity
+                (positive: pitching up). The frame is described in the message description. NaN if unknown.
+            
+ * @param angular_velocity_z [rad/s] Z component of angular velocity
+                (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
+            
+ * @param failure_flags  Failure flags
+                (0 for no failure)
+            
+ * @param delta_yaw [rad] Yaw angle relating the quaternions in earth
+                and body frames (see message description). NaN if unknown.
+            
+ * @param delta_yaw_velocity [rad/s] Yaw angular velocity relating the
+                angular velocities in earth and body frames (see message description). NaN if unknown.
+            
+ * @param gimbal_device_id  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set a
+                number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -443,6 +533,7 @@ static inline uint32_t mavlink_msg_gimbal_device_attitude_status_get_time_boot_m
  * @brief Get field flags from gimbal_device_attitude_status message
  *
  * @return  Current gimbal flags set.
+            
  */
 static inline uint16_t mavlink_msg_gimbal_device_attitude_status_get_flags(const mavlink_message_t* msg)
 {
@@ -452,7 +543,9 @@ static inline uint16_t mavlink_msg_gimbal_device_attitude_status_get_flags(const
 /**
  * @brief Get field q from gimbal_device_attitude_status message
  *
- * @return  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame is described in the message description.
+ * @return  Quaternion components, w, x, y, z (1 0 0 0 is the null-rotation). The frame
+                is described in the message description.
+            
  */
 static inline uint16_t mavlink_msg_gimbal_device_attitude_status_get_q(const mavlink_message_t* msg, float *q)
 {
@@ -462,7 +555,9 @@ static inline uint16_t mavlink_msg_gimbal_device_attitude_status_get_q(const mav
 /**
  * @brief Get field angular_velocity_x from gimbal_device_attitude_status message
  *
- * @return [rad/s] X component of angular velocity (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
+ * @return [rad/s] X component of angular velocity
+                (positive: rolling to the right). The frame is described in the message description. NaN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_attitude_status_get_angular_velocity_x(const mavlink_message_t* msg)
 {
@@ -472,7 +567,9 @@ static inline float mavlink_msg_gimbal_device_attitude_status_get_angular_veloci
 /**
  * @brief Get field angular_velocity_y from gimbal_device_attitude_status message
  *
- * @return [rad/s] Y component of angular velocity (positive: pitching up). The frame is described in the message description. NaN if unknown.
+ * @return [rad/s] Y component of angular velocity
+                (positive: pitching up). The frame is described in the message description. NaN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_attitude_status_get_angular_velocity_y(const mavlink_message_t* msg)
 {
@@ -482,7 +579,9 @@ static inline float mavlink_msg_gimbal_device_attitude_status_get_angular_veloci
 /**
  * @brief Get field angular_velocity_z from gimbal_device_attitude_status message
  *
- * @return [rad/s] Z component of angular velocity (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
+ * @return [rad/s] Z component of angular velocity
+                (positive: yawing to the right). The frame is described in the message description. NaN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_attitude_status_get_angular_velocity_z(const mavlink_message_t* msg)
 {
@@ -492,7 +591,9 @@ static inline float mavlink_msg_gimbal_device_attitude_status_get_angular_veloci
 /**
  * @brief Get field failure_flags from gimbal_device_attitude_status message
  *
- * @return  Failure flags (0 for no failure)
+ * @return  Failure flags
+                (0 for no failure)
+            
  */
 static inline uint32_t mavlink_msg_gimbal_device_attitude_status_get_failure_flags(const mavlink_message_t* msg)
 {
@@ -502,7 +603,9 @@ static inline uint32_t mavlink_msg_gimbal_device_attitude_status_get_failure_fla
 /**
  * @brief Get field delta_yaw from gimbal_device_attitude_status message
  *
- * @return [rad] Yaw angle relating the quaternions in earth and body frames (see message description). NaN if unknown.
+ * @return [rad] Yaw angle relating the quaternions in earth
+                and body frames (see message description). NaN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_attitude_status_get_delta_yaw(const mavlink_message_t* msg)
 {
@@ -512,7 +615,9 @@ static inline float mavlink_msg_gimbal_device_attitude_status_get_delta_yaw(cons
 /**
  * @brief Get field delta_yaw_velocity from gimbal_device_attitude_status message
  *
- * @return [rad/s] Yaw angular velocity relating the angular velocities in earth and body frames (see message description). NaN if unknown.
+ * @return [rad/s] Yaw angular velocity relating the
+                angular velocities in earth and body frames (see message description). NaN if unknown.
+            
  */
 static inline float mavlink_msg_gimbal_device_attitude_status_get_delta_yaw_velocity(const mavlink_message_t* msg)
 {
@@ -522,7 +627,10 @@ static inline float mavlink_msg_gimbal_device_attitude_status_get_delta_yaw_velo
 /**
  * @brief Get field gimbal_device_id from gimbal_device_attitude_status message
  *
- * @return  This field is to be used if the gimbal manager and the gimbal device are the same component and hence have the same component ID. This field is then set a number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+ * @return  This field is to be used if the gimbal manager and
+                the gimbal device are the same component and hence have the same component ID. This field is then set a
+                number between 1-6. If the component ID is separate, this field is not required and must be set to 0.
+            
  */
 static inline uint8_t mavlink_msg_gimbal_device_attitude_status_get_gimbal_device_id(const mavlink_message_t* msg)
 {

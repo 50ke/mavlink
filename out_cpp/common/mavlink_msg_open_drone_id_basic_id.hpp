@@ -9,7 +9,12 @@ namespace msg {
 /**
  * @brief OPEN_DRONE_ID_BASIC_ID message
  *
- * Data for filling the OpenDroneID Basic ID message. This and the below messages are primarily meant for feeding data to/from an OpenDroneID implementation. E.g. https://github.com/opendroneid/opendroneid-core-c. These messages are compatible with the ASTM F3411 Remote ID standard and the ASD-STAN prEN 4709-002 Direct Remote ID standard. Additional information and usage of these messages is documented at https://mavlink.io/en/services/opendroneid.html.
+ * Data for filling the OpenDroneID Basic ID message. This and the below messages are primarily
+                meant for feeding data to/from an OpenDroneID implementation. E.g.
+                https://github.com/opendroneid/opendroneid-core-c. These messages are compatible with the ASTM F3411
+                Remote ID standard and the ASD-STAN prEN 4709-002 Direct Remote ID standard. Additional information and
+                usage of these messages is documented at https://mavlink.io/en/services/opendroneid.html.
+            
  */
 struct OPEN_DRONE_ID_BASIC_ID : mavlink::Message {
     static constexpr msgid_t MSG_ID = 12900;
@@ -21,10 +26,17 @@ struct OPEN_DRONE_ID_BASIC_ID : mavlink::Message {
 
     uint8_t target_system; /*<  System ID (0 for broadcast). */
     uint8_t target_component; /*<  Component ID (0 for broadcast). */
-    std::array<uint8_t, 20> id_or_mac; /*<  Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html.  */
-    uint8_t id_type; /*<  Indicates the format for the uas_id field of this message. */
-    uint8_t ua_type; /*<  Indicates the type of UA (Unmanned Aircraft). */
-    std::array<uint8_t, 20> uas_id; /*<  UAS (Unmanned Aircraft System) ID following the format specified by id_type. Shall be filled with nulls in the unused portion of the field. */
+    std::array<uint8_t, 20> id_or_mac; /*<  Only used for drone ID data received from other UAs. See detailed
+                description at https://mavlink.io/en/services/opendroneid.html.
+             */
+    uint8_t id_type; /*<  Indicates the format for the uas_id field of
+                this message.
+             */
+    uint8_t ua_type; /*<  Indicates the type of UA (Unmanned Aircraft).
+             */
+    std::array<uint8_t, 20> uas_id; /*<  UAS (Unmanned Aircraft System) ID following the format specified by
+                id_type. Shall be filled with nulls in the unused portion of the field.
+             */
 
 
     inline std::string get_name(void) const override

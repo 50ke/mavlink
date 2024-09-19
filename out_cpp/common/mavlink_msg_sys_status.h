@@ -5,22 +5,46 @@
 
 MAVPACKED(
 typedef struct __mavlink_sys_status_t {
- uint32_t onboard_control_sensors_present; /*<  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.*/
- uint32_t onboard_control_sensors_enabled; /*<  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.*/
- uint32_t onboard_control_sensors_health; /*<  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.*/
- uint16_t load; /*< [d%] Maximum usage in percent of the mainloop time. Values: [0-1000] - should always be below 1000*/
- uint16_t voltage_battery; /*< [mV] Battery voltage, UINT16_MAX: Voltage not sent by autopilot*/
- int16_t current_battery; /*< [cA] Battery current, -1: Current not sent by autopilot*/
- uint16_t drop_rate_comm; /*< [c%] Communication drop rate, (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)*/
- uint16_t errors_comm; /*<  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)*/
+ uint32_t onboard_control_sensors_present; /*<  Bitmap showing which onboard controllers and sensors are present. Value of 0:
+                not present. Value of 1: present.
+            */
+ uint32_t onboard_control_sensors_enabled; /*<  Bitmap showing which onboard controllers and sensors are enabled: Value of 0:
+                not enabled. Value of 1: enabled.
+            */
+ uint32_t onboard_control_sensors_health; /*<  Bitmap showing which onboard controllers and sensors have an error (or are
+                operational). Value of 0: error. Value of 1: healthy.
+            */
+ uint16_t load; /*< [d%] Maximum usage in percent of the mainloop time. Values:
+                [0-1000] - should always be below 1000
+            */
+ uint16_t voltage_battery; /*< [mV] Battery voltage, UINT16_MAX:
+                Voltage not sent by autopilot
+            */
+ int16_t current_battery; /*< [cA] Battery current, -1: Current not sent
+                by autopilot
+            */
+ uint16_t drop_rate_comm; /*< [c%] Communication drop rate, (UART, I2C, SPI, CAN),
+                dropped packets on all links (packets that were corrupted on reception on the MAV)
+            */
+ uint16_t errors_comm; /*<  Communication errors (UART, I2C, SPI, CAN), dropped packets on all
+                links (packets that were corrupted on reception on the MAV)
+            */
  uint16_t errors_count1; /*<  Autopilot-specific errors*/
  uint16_t errors_count2; /*<  Autopilot-specific errors*/
  uint16_t errors_count3; /*<  Autopilot-specific errors*/
  uint16_t errors_count4; /*<  Autopilot-specific errors*/
- int8_t battery_remaining; /*< [%] Battery energy remaining, -1: Battery remaining energy not sent by autopilot*/
- uint32_t onboard_control_sensors_present_extended; /*<  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.*/
- uint32_t onboard_control_sensors_enabled_extended; /*<  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.*/
- uint32_t onboard_control_sensors_health_extended; /*<  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.*/
+ int8_t battery_remaining; /*< [%] Battery energy remaining, -1: Battery
+                remaining energy not sent by autopilot
+            */
+ uint32_t onboard_control_sensors_present_extended; /*<  Bitmap showing which onboard controllers and sensors are
+                present. Value of 0: not present. Value of 1: present.
+            */
+ uint32_t onboard_control_sensors_enabled_extended; /*<  Bitmap showing which onboard controllers and sensors are
+                enabled: Value of 0: not enabled. Value of 1: enabled.
+            */
+ uint32_t onboard_control_sensors_health_extended; /*<  Bitmap showing which onboard controllers and sensors have an
+                error (or are operational). Value of 0: error. Value of 1: healthy.
+            */
 }) mavlink_sys_status_t;
 
 #define MAVLINK_MSG_ID_SYS_STATUS_LEN 43
@@ -86,22 +110,46 @@ typedef struct __mavlink_sys_status_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param onboard_control_sensors_present  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.
- * @param onboard_control_sensors_enabled  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.
- * @param onboard_control_sensors_health  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.
- * @param load [d%] Maximum usage in percent of the mainloop time. Values: [0-1000] - should always be below 1000
- * @param voltage_battery [mV] Battery voltage, UINT16_MAX: Voltage not sent by autopilot
- * @param current_battery [cA] Battery current, -1: Current not sent by autopilot
- * @param battery_remaining [%] Battery energy remaining, -1: Battery remaining energy not sent by autopilot
- * @param drop_rate_comm [c%] Communication drop rate, (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
- * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
+ * @param onboard_control_sensors_present  Bitmap showing which onboard controllers and sensors are present. Value of 0:
+                not present. Value of 1: present.
+            
+ * @param onboard_control_sensors_enabled  Bitmap showing which onboard controllers and sensors are enabled: Value of 0:
+                not enabled. Value of 1: enabled.
+            
+ * @param onboard_control_sensors_health  Bitmap showing which onboard controllers and sensors have an error (or are
+                operational). Value of 0: error. Value of 1: healthy.
+            
+ * @param load [d%] Maximum usage in percent of the mainloop time. Values:
+                [0-1000] - should always be below 1000
+            
+ * @param voltage_battery [mV] Battery voltage, UINT16_MAX:
+                Voltage not sent by autopilot
+            
+ * @param current_battery [cA] Battery current, -1: Current not sent
+                by autopilot
+            
+ * @param battery_remaining [%] Battery energy remaining, -1: Battery
+                remaining energy not sent by autopilot
+            
+ * @param drop_rate_comm [c%] Communication drop rate, (UART, I2C, SPI, CAN),
+                dropped packets on all links (packets that were corrupted on reception on the MAV)
+            
+ * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all
+                links (packets that were corrupted on reception on the MAV)
+            
  * @param errors_count1  Autopilot-specific errors
  * @param errors_count2  Autopilot-specific errors
  * @param errors_count3  Autopilot-specific errors
  * @param errors_count4  Autopilot-specific errors
- * @param onboard_control_sensors_present_extended  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.
- * @param onboard_control_sensors_enabled_extended  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.
- * @param onboard_control_sensors_health_extended  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.
+ * @param onboard_control_sensors_present_extended  Bitmap showing which onboard controllers and sensors are
+                present. Value of 0: not present. Value of 1: present.
+            
+ * @param onboard_control_sensors_enabled_extended  Bitmap showing which onboard controllers and sensors are
+                enabled: Value of 0: not enabled. Value of 1: enabled.
+            
+ * @param onboard_control_sensors_health_extended  Bitmap showing which onboard controllers and sensors have an
+                error (or are operational). Value of 0: error. Value of 1: healthy.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_sys_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -160,22 +208,46 @@ static inline uint16_t mavlink_msg_sys_status_pack(uint8_t system_id, uint8_t co
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param onboard_control_sensors_present  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.
- * @param onboard_control_sensors_enabled  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.
- * @param onboard_control_sensors_health  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.
- * @param load [d%] Maximum usage in percent of the mainloop time. Values: [0-1000] - should always be below 1000
- * @param voltage_battery [mV] Battery voltage, UINT16_MAX: Voltage not sent by autopilot
- * @param current_battery [cA] Battery current, -1: Current not sent by autopilot
- * @param battery_remaining [%] Battery energy remaining, -1: Battery remaining energy not sent by autopilot
- * @param drop_rate_comm [c%] Communication drop rate, (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
- * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
+ * @param onboard_control_sensors_present  Bitmap showing which onboard controllers and sensors are present. Value of 0:
+                not present. Value of 1: present.
+            
+ * @param onboard_control_sensors_enabled  Bitmap showing which onboard controllers and sensors are enabled: Value of 0:
+                not enabled. Value of 1: enabled.
+            
+ * @param onboard_control_sensors_health  Bitmap showing which onboard controllers and sensors have an error (or are
+                operational). Value of 0: error. Value of 1: healthy.
+            
+ * @param load [d%] Maximum usage in percent of the mainloop time. Values:
+                [0-1000] - should always be below 1000
+            
+ * @param voltage_battery [mV] Battery voltage, UINT16_MAX:
+                Voltage not sent by autopilot
+            
+ * @param current_battery [cA] Battery current, -1: Current not sent
+                by autopilot
+            
+ * @param battery_remaining [%] Battery energy remaining, -1: Battery
+                remaining energy not sent by autopilot
+            
+ * @param drop_rate_comm [c%] Communication drop rate, (UART, I2C, SPI, CAN),
+                dropped packets on all links (packets that were corrupted on reception on the MAV)
+            
+ * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all
+                links (packets that were corrupted on reception on the MAV)
+            
  * @param errors_count1  Autopilot-specific errors
  * @param errors_count2  Autopilot-specific errors
  * @param errors_count3  Autopilot-specific errors
  * @param errors_count4  Autopilot-specific errors
- * @param onboard_control_sensors_present_extended  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.
- * @param onboard_control_sensors_enabled_extended  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.
- * @param onboard_control_sensors_health_extended  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.
+ * @param onboard_control_sensors_present_extended  Bitmap showing which onboard controllers and sensors are
+                present. Value of 0: not present. Value of 1: present.
+            
+ * @param onboard_control_sensors_enabled_extended  Bitmap showing which onboard controllers and sensors are
+                enabled: Value of 0: not enabled. Value of 1: enabled.
+            
+ * @param onboard_control_sensors_health_extended  Bitmap showing which onboard controllers and sensors have an
+                error (or are operational). Value of 0: error. Value of 1: healthy.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_sys_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -237,22 +309,46 @@ static inline uint16_t mavlink_msg_sys_status_pack_status(uint8_t system_id, uin
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param onboard_control_sensors_present  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.
- * @param onboard_control_sensors_enabled  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.
- * @param onboard_control_sensors_health  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.
- * @param load [d%] Maximum usage in percent of the mainloop time. Values: [0-1000] - should always be below 1000
- * @param voltage_battery [mV] Battery voltage, UINT16_MAX: Voltage not sent by autopilot
- * @param current_battery [cA] Battery current, -1: Current not sent by autopilot
- * @param battery_remaining [%] Battery energy remaining, -1: Battery remaining energy not sent by autopilot
- * @param drop_rate_comm [c%] Communication drop rate, (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
- * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
+ * @param onboard_control_sensors_present  Bitmap showing which onboard controllers and sensors are present. Value of 0:
+                not present. Value of 1: present.
+            
+ * @param onboard_control_sensors_enabled  Bitmap showing which onboard controllers and sensors are enabled: Value of 0:
+                not enabled. Value of 1: enabled.
+            
+ * @param onboard_control_sensors_health  Bitmap showing which onboard controllers and sensors have an error (or are
+                operational). Value of 0: error. Value of 1: healthy.
+            
+ * @param load [d%] Maximum usage in percent of the mainloop time. Values:
+                [0-1000] - should always be below 1000
+            
+ * @param voltage_battery [mV] Battery voltage, UINT16_MAX:
+                Voltage not sent by autopilot
+            
+ * @param current_battery [cA] Battery current, -1: Current not sent
+                by autopilot
+            
+ * @param battery_remaining [%] Battery energy remaining, -1: Battery
+                remaining energy not sent by autopilot
+            
+ * @param drop_rate_comm [c%] Communication drop rate, (UART, I2C, SPI, CAN),
+                dropped packets on all links (packets that were corrupted on reception on the MAV)
+            
+ * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all
+                links (packets that were corrupted on reception on the MAV)
+            
  * @param errors_count1  Autopilot-specific errors
  * @param errors_count2  Autopilot-specific errors
  * @param errors_count3  Autopilot-specific errors
  * @param errors_count4  Autopilot-specific errors
- * @param onboard_control_sensors_present_extended  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.
- * @param onboard_control_sensors_enabled_extended  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.
- * @param onboard_control_sensors_health_extended  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.
+ * @param onboard_control_sensors_present_extended  Bitmap showing which onboard controllers and sensors are
+                present. Value of 0: not present. Value of 1: present.
+            
+ * @param onboard_control_sensors_enabled_extended  Bitmap showing which onboard controllers and sensors are
+                enabled: Value of 0: not enabled. Value of 1: enabled.
+            
+ * @param onboard_control_sensors_health_extended  Bitmap showing which onboard controllers and sensors have an
+                error (or are operational). Value of 0: error. Value of 1: healthy.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_sys_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -350,22 +446,46 @@ static inline uint16_t mavlink_msg_sys_status_encode_status(uint8_t system_id, u
  * @brief Send a sys_status message
  * @param chan MAVLink channel to send the message
  *
- * @param onboard_control_sensors_present  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.
- * @param onboard_control_sensors_enabled  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.
- * @param onboard_control_sensors_health  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.
- * @param load [d%] Maximum usage in percent of the mainloop time. Values: [0-1000] - should always be below 1000
- * @param voltage_battery [mV] Battery voltage, UINT16_MAX: Voltage not sent by autopilot
- * @param current_battery [cA] Battery current, -1: Current not sent by autopilot
- * @param battery_remaining [%] Battery energy remaining, -1: Battery remaining energy not sent by autopilot
- * @param drop_rate_comm [c%] Communication drop rate, (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
- * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
+ * @param onboard_control_sensors_present  Bitmap showing which onboard controllers and sensors are present. Value of 0:
+                not present. Value of 1: present.
+            
+ * @param onboard_control_sensors_enabled  Bitmap showing which onboard controllers and sensors are enabled: Value of 0:
+                not enabled. Value of 1: enabled.
+            
+ * @param onboard_control_sensors_health  Bitmap showing which onboard controllers and sensors have an error (or are
+                operational). Value of 0: error. Value of 1: healthy.
+            
+ * @param load [d%] Maximum usage in percent of the mainloop time. Values:
+                [0-1000] - should always be below 1000
+            
+ * @param voltage_battery [mV] Battery voltage, UINT16_MAX:
+                Voltage not sent by autopilot
+            
+ * @param current_battery [cA] Battery current, -1: Current not sent
+                by autopilot
+            
+ * @param battery_remaining [%] Battery energy remaining, -1: Battery
+                remaining energy not sent by autopilot
+            
+ * @param drop_rate_comm [c%] Communication drop rate, (UART, I2C, SPI, CAN),
+                dropped packets on all links (packets that were corrupted on reception on the MAV)
+            
+ * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all
+                links (packets that were corrupted on reception on the MAV)
+            
  * @param errors_count1  Autopilot-specific errors
  * @param errors_count2  Autopilot-specific errors
  * @param errors_count3  Autopilot-specific errors
  * @param errors_count4  Autopilot-specific errors
- * @param onboard_control_sensors_present_extended  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.
- * @param onboard_control_sensors_enabled_extended  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.
- * @param onboard_control_sensors_health_extended  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.
+ * @param onboard_control_sensors_present_extended  Bitmap showing which onboard controllers and sensors are
+                present. Value of 0: not present. Value of 1: present.
+            
+ * @param onboard_control_sensors_enabled_extended  Bitmap showing which onboard controllers and sensors are
+                enabled: Value of 0: not enabled. Value of 1: enabled.
+            
+ * @param onboard_control_sensors_health_extended  Bitmap showing which onboard controllers and sensors have an
+                error (or are operational). Value of 0: error. Value of 1: healthy.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -490,7 +610,9 @@ static inline void mavlink_msg_sys_status_send_buf(mavlink_message_t *msgbuf, ma
 /**
  * @brief Get field onboard_control_sensors_present from sys_status message
  *
- * @return  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.
+ * @return  Bitmap showing which onboard controllers and sensors are present. Value of 0:
+                not present. Value of 1: present.
+            
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_present(const mavlink_message_t* msg)
 {
@@ -500,7 +622,9 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_presen
 /**
  * @brief Get field onboard_control_sensors_enabled from sys_status message
  *
- * @return  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.
+ * @return  Bitmap showing which onboard controllers and sensors are enabled: Value of 0:
+                not enabled. Value of 1: enabled.
+            
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_enabled(const mavlink_message_t* msg)
 {
@@ -510,7 +634,9 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_enable
 /**
  * @brief Get field onboard_control_sensors_health from sys_status message
  *
- * @return  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.
+ * @return  Bitmap showing which onboard controllers and sensors have an error (or are
+                operational). Value of 0: error. Value of 1: healthy.
+            
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_health(const mavlink_message_t* msg)
 {
@@ -520,7 +646,9 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_health
 /**
  * @brief Get field load from sys_status message
  *
- * @return [d%] Maximum usage in percent of the mainloop time. Values: [0-1000] - should always be below 1000
+ * @return [d%] Maximum usage in percent of the mainloop time. Values:
+                [0-1000] - should always be below 1000
+            
  */
 static inline uint16_t mavlink_msg_sys_status_get_load(const mavlink_message_t* msg)
 {
@@ -530,7 +658,9 @@ static inline uint16_t mavlink_msg_sys_status_get_load(const mavlink_message_t* 
 /**
  * @brief Get field voltage_battery from sys_status message
  *
- * @return [mV] Battery voltage, UINT16_MAX: Voltage not sent by autopilot
+ * @return [mV] Battery voltage, UINT16_MAX:
+                Voltage not sent by autopilot
+            
  */
 static inline uint16_t mavlink_msg_sys_status_get_voltage_battery(const mavlink_message_t* msg)
 {
@@ -540,7 +670,9 @@ static inline uint16_t mavlink_msg_sys_status_get_voltage_battery(const mavlink_
 /**
  * @brief Get field current_battery from sys_status message
  *
- * @return [cA] Battery current, -1: Current not sent by autopilot
+ * @return [cA] Battery current, -1: Current not sent
+                by autopilot
+            
  */
 static inline int16_t mavlink_msg_sys_status_get_current_battery(const mavlink_message_t* msg)
 {
@@ -550,7 +682,9 @@ static inline int16_t mavlink_msg_sys_status_get_current_battery(const mavlink_m
 /**
  * @brief Get field battery_remaining from sys_status message
  *
- * @return [%] Battery energy remaining, -1: Battery remaining energy not sent by autopilot
+ * @return [%] Battery energy remaining, -1: Battery
+                remaining energy not sent by autopilot
+            
  */
 static inline int8_t mavlink_msg_sys_status_get_battery_remaining(const mavlink_message_t* msg)
 {
@@ -560,7 +694,9 @@ static inline int8_t mavlink_msg_sys_status_get_battery_remaining(const mavlink_
 /**
  * @brief Get field drop_rate_comm from sys_status message
  *
- * @return [c%] Communication drop rate, (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
+ * @return [c%] Communication drop rate, (UART, I2C, SPI, CAN),
+                dropped packets on all links (packets that were corrupted on reception on the MAV)
+            
  */
 static inline uint16_t mavlink_msg_sys_status_get_drop_rate_comm(const mavlink_message_t* msg)
 {
@@ -570,7 +706,9 @@ static inline uint16_t mavlink_msg_sys_status_get_drop_rate_comm(const mavlink_m
 /**
  * @brief Get field errors_comm from sys_status message
  *
- * @return  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
+ * @return  Communication errors (UART, I2C, SPI, CAN), dropped packets on all
+                links (packets that were corrupted on reception on the MAV)
+            
  */
 static inline uint16_t mavlink_msg_sys_status_get_errors_comm(const mavlink_message_t* msg)
 {
@@ -620,7 +758,9 @@ static inline uint16_t mavlink_msg_sys_status_get_errors_count4(const mavlink_me
 /**
  * @brief Get field onboard_control_sensors_present_extended from sys_status message
  *
- * @return  Bitmap showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present.
+ * @return  Bitmap showing which onboard controllers and sensors are
+                present. Value of 0: not present. Value of 1: present.
+            
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_present_extended(const mavlink_message_t* msg)
 {
@@ -630,7 +770,9 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_presen
 /**
  * @brief Get field onboard_control_sensors_enabled_extended from sys_status message
  *
- * @return  Bitmap showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled.
+ * @return  Bitmap showing which onboard controllers and sensors are
+                enabled: Value of 0: not enabled. Value of 1: enabled.
+            
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_enabled_extended(const mavlink_message_t* msg)
 {
@@ -640,7 +782,9 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_enable
 /**
  * @brief Get field onboard_control_sensors_health_extended from sys_status message
  *
- * @return  Bitmap showing which onboard controllers and sensors have an error (or are operational). Value of 0: error. Value of 1: healthy.
+ * @return  Bitmap showing which onboard controllers and sensors have an
+                error (or are operational). Value of 0: error. Value of 1: healthy.
+            
  */
 static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_health_extended(const mavlink_message_t* msg)
 {

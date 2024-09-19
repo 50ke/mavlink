@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief WIND_COV message
  *
- * Wind estimate from vehicle. Note that despite the name, this message does not actually contain any covariances but instead variability and accuracy fields in terms of standard deviation (1-STD).
+ * Wind estimate from vehicle. Note that despite the name, this message does not actually contain
+                any covariances but instead variability and accuracy fields in terms of standard deviation (1-STD).
+            
  */
 struct WIND_COV : mavlink::Message {
     static constexpr msgid_t MSG_ID = 231;
@@ -19,15 +21,31 @@ struct WIND_COV : mavlink::Message {
     static constexpr auto NAME = "WIND_COV";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
-    float wind_x; /*< [m/s] Wind in North (NED) direction (NAN if unknown) */
-    float wind_y; /*< [m/s] Wind in East (NED) direction (NAN if unknown) */
-    float wind_z; /*< [m/s] Wind in down (NED) direction (NAN if unknown) */
-    float var_horiz; /*< [m/s] Variability of wind in XY, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown) */
-    float var_vert; /*< [m/s] Variability of wind in Z, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown) */
-    float wind_alt; /*< [m] Altitude (MSL) that this measurement was taken at (NAN if unknown) */
-    float horiz_accuracy; /*< [m/s] Horizontal speed 1-STD accuracy (0 if unknown) */
-    float vert_accuracy; /*< [m/s] Vertical speed 1-STD accuracy (0 if unknown) */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
+    float wind_x; /*< [m/s] Wind in North (NED) direction (NAN if unknown)
+             */
+    float wind_y; /*< [m/s] Wind in East (NED) direction (NAN if unknown)
+             */
+    float wind_z; /*< [m/s] Wind in down (NED) direction (NAN if unknown)
+             */
+    float var_horiz; /*< [m/s] Variability of wind in XY, 1-STD estimated
+                from a 1 Hz lowpassed wind estimate (NAN if unknown)
+             */
+    float var_vert; /*< [m/s] Variability of wind in Z, 1-STD estimated from
+                a 1 Hz lowpassed wind estimate (NAN if unknown)
+             */
+    float wind_alt; /*< [m] Altitude (MSL) that this measurement was taken
+                at (NAN if unknown)
+             */
+    float horiz_accuracy; /*< [m/s] Horizontal speed 1-STD accuracy (0 if
+                unknown)
+             */
+    float vert_accuracy; /*< [m/s] Vertical speed 1-STD accuracy (0 if
+                unknown)
+             */
 
 
     inline std::string get_name(void) const override

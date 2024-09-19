@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief SYSTEM_TIME message
  *
- * The system time is the time of the master clock, typically the computer clock of the main onboard computer.
+ * The system time is the time of the master clock, typically the computer clock of the main
+                onboard computer.
+            
  */
 struct SYSTEM_TIME : mavlink::Message {
     static constexpr msgid_t MSG_ID = 2;

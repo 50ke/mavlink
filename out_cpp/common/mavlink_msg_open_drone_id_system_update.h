@@ -5,10 +5,18 @@
 
 
 typedef struct __mavlink_open_drone_id_system_update_t {
- int32_t operator_latitude; /*< [degE7] Latitude of the operator. If unknown: 0 (both Lat/Lon).*/
- int32_t operator_longitude; /*< [degE7] Longitude of the operator. If unknown: 0 (both Lat/Lon).*/
- float operator_altitude_geo; /*< [m] Geodetic altitude of the operator relative to WGS84. If unknown: -1000 m.*/
- uint32_t timestamp; /*< [s] 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.*/
+ int32_t operator_latitude; /*< [degE7] Latitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            */
+ int32_t operator_longitude; /*< [degE7] Longitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            */
+ float operator_altitude_geo; /*< [m] Geodetic altitude of the operator
+                relative to WGS84. If unknown: -1000 m.
+            */
+ uint32_t timestamp; /*< [s] 32 bit Unix Timestamp in seconds since 00:00:00
+                01/01/2019.
+            */
  uint8_t target_system; /*<  System ID (0 for broadcast).*/
  uint8_t target_component; /*<  Component ID (0 for broadcast).*/
 } mavlink_open_drone_id_system_update_t;
@@ -58,10 +66,18 @@ typedef struct __mavlink_open_drone_id_system_update_t {
  *
  * @param target_system  System ID (0 for broadcast).
  * @param target_component  Component ID (0 for broadcast).
- * @param operator_latitude [degE7] Latitude of the operator. If unknown: 0 (both Lat/Lon).
- * @param operator_longitude [degE7] Longitude of the operator. If unknown: 0 (both Lat/Lon).
- * @param operator_altitude_geo [m] Geodetic altitude of the operator relative to WGS84. If unknown: -1000 m.
- * @param timestamp [s] 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.
+ * @param operator_latitude [degE7] Latitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            
+ * @param operator_longitude [degE7] Longitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            
+ * @param operator_altitude_geo [m] Geodetic altitude of the operator
+                relative to WGS84. If unknown: -1000 m.
+            
+ * @param timestamp [s] 32 bit Unix Timestamp in seconds since 00:00:00
+                01/01/2019.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_open_drone_id_system_update_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -102,10 +118,18 @@ static inline uint16_t mavlink_msg_open_drone_id_system_update_pack(uint8_t syst
  *
  * @param target_system  System ID (0 for broadcast).
  * @param target_component  Component ID (0 for broadcast).
- * @param operator_latitude [degE7] Latitude of the operator. If unknown: 0 (both Lat/Lon).
- * @param operator_longitude [degE7] Longitude of the operator. If unknown: 0 (both Lat/Lon).
- * @param operator_altitude_geo [m] Geodetic altitude of the operator relative to WGS84. If unknown: -1000 m.
- * @param timestamp [s] 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.
+ * @param operator_latitude [degE7] Latitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            
+ * @param operator_longitude [degE7] Longitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            
+ * @param operator_altitude_geo [m] Geodetic altitude of the operator
+                relative to WGS84. If unknown: -1000 m.
+            
+ * @param timestamp [s] 32 bit Unix Timestamp in seconds since 00:00:00
+                01/01/2019.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_open_drone_id_system_update_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -149,10 +173,18 @@ static inline uint16_t mavlink_msg_open_drone_id_system_update_pack_status(uint8
  * @param msg The MAVLink message to compress the data into
  * @param target_system  System ID (0 for broadcast).
  * @param target_component  Component ID (0 for broadcast).
- * @param operator_latitude [degE7] Latitude of the operator. If unknown: 0 (both Lat/Lon).
- * @param operator_longitude [degE7] Longitude of the operator. If unknown: 0 (both Lat/Lon).
- * @param operator_altitude_geo [m] Geodetic altitude of the operator relative to WGS84. If unknown: -1000 m.
- * @param timestamp [s] 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.
+ * @param operator_latitude [degE7] Latitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            
+ * @param operator_longitude [degE7] Longitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            
+ * @param operator_altitude_geo [m] Geodetic altitude of the operator
+                relative to WGS84. If unknown: -1000 m.
+            
+ * @param timestamp [s] 32 bit Unix Timestamp in seconds since 00:00:00
+                01/01/2019.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_open_drone_id_system_update_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -232,10 +264,18 @@ static inline uint16_t mavlink_msg_open_drone_id_system_update_encode_status(uin
  *
  * @param target_system  System ID (0 for broadcast).
  * @param target_component  Component ID (0 for broadcast).
- * @param operator_latitude [degE7] Latitude of the operator. If unknown: 0 (both Lat/Lon).
- * @param operator_longitude [degE7] Longitude of the operator. If unknown: 0 (both Lat/Lon).
- * @param operator_altitude_geo [m] Geodetic altitude of the operator relative to WGS84. If unknown: -1000 m.
- * @param timestamp [s] 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.
+ * @param operator_latitude [degE7] Latitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            
+ * @param operator_longitude [degE7] Longitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            
+ * @param operator_altitude_geo [m] Geodetic altitude of the operator
+                relative to WGS84. If unknown: -1000 m.
+            
+ * @param timestamp [s] 32 bit Unix Timestamp in seconds since 00:00:00
+                01/01/2019.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -340,7 +380,9 @@ static inline uint8_t mavlink_msg_open_drone_id_system_update_get_target_compone
 /**
  * @brief Get field operator_latitude from open_drone_id_system_update message
  *
- * @return [degE7] Latitude of the operator. If unknown: 0 (both Lat/Lon).
+ * @return [degE7] Latitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            
  */
 static inline int32_t mavlink_msg_open_drone_id_system_update_get_operator_latitude(const mavlink_message_t* msg)
 {
@@ -350,7 +392,9 @@ static inline int32_t mavlink_msg_open_drone_id_system_update_get_operator_latit
 /**
  * @brief Get field operator_longitude from open_drone_id_system_update message
  *
- * @return [degE7] Longitude of the operator. If unknown: 0 (both Lat/Lon).
+ * @return [degE7] Longitude of the operator. If
+                unknown: 0 (both Lat/Lon).
+            
  */
 static inline int32_t mavlink_msg_open_drone_id_system_update_get_operator_longitude(const mavlink_message_t* msg)
 {
@@ -360,7 +404,9 @@ static inline int32_t mavlink_msg_open_drone_id_system_update_get_operator_longi
 /**
  * @brief Get field operator_altitude_geo from open_drone_id_system_update message
  *
- * @return [m] Geodetic altitude of the operator relative to WGS84. If unknown: -1000 m.
+ * @return [m] Geodetic altitude of the operator
+                relative to WGS84. If unknown: -1000 m.
+            
  */
 static inline float mavlink_msg_open_drone_id_system_update_get_operator_altitude_geo(const mavlink_message_t* msg)
 {
@@ -370,7 +416,9 @@ static inline float mavlink_msg_open_drone_id_system_update_get_operator_altitud
 /**
  * @brief Get field timestamp from open_drone_id_system_update message
  *
- * @return [s] 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.
+ * @return [s] 32 bit Unix Timestamp in seconds since 00:00:00
+                01/01/2019.
+            
  */
 static inline uint32_t mavlink_msg_open_drone_id_system_update_get_timestamp(const mavlink_message_t* msg)
 {

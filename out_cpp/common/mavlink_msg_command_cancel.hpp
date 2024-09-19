@@ -9,7 +9,12 @@ namespace msg {
 /**
  * @brief COMMAND_CANCEL message
  *
- * Cancel a long running command. The target system should respond with a COMMAND_ACK to the original command with result=MAV_RESULT_CANCELLED if the long running process was cancelled. If it has already completed, the cancel action can be ignored. The cancel action can be retried until some sort of acknowledgement to the original command has been received. The command microservice is documented at https://mavlink.io/en/services/command.html
+ * Cancel a long running command. The target system should respond with a COMMAND_ACK to the
+                original command with result=MAV_RESULT_CANCELLED if the long running process was cancelled. If it has
+                already completed, the cancel action can be ignored. The cancel action can be retried until some sort of
+                acknowledgement to the original command has been received. The command microservice is documented at
+                https://mavlink.io/en/services/command.html
+            
  */
 struct COMMAND_CANCEL : mavlink::Message {
     static constexpr msgid_t MSG_ID = 80;
@@ -19,7 +24,9 @@ struct COMMAND_CANCEL : mavlink::Message {
     static constexpr auto NAME = "COMMAND_CANCEL";
 
 
-    uint8_t target_system; /*<  System executing long running command. Should not be broadcast (0). */
+    uint8_t target_system; /*<  System executing long running command. Should not be broadcast
+                (0).
+             */
     uint8_t target_component; /*<  Component executing long running command. */
     uint16_t command; /*<  Command ID (of command to cancel). */
 

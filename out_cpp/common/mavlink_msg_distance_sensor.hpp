@@ -25,12 +25,29 @@ struct DISTANCE_SENSOR : mavlink::Message {
     uint16_t current_distance; /*< [cm] Current distance reading */
     uint8_t type; /*<  Type of distance sensor. */
     uint8_t id; /*<  Onboard ID of the sensor */
-    uint8_t orientation; /*<  Direction the sensor faces. downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing: ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing: ROTATION_YAW_270 */
-    uint8_t covariance; /*< [cm^2] Measurement variance. Max standard deviation is 6cm. UINT8_MAX if unknown. */
-    float horizontal_fov; /*< [rad] Horizontal Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0. */
-    float vertical_fov; /*< [rad] Vertical Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0. */
-    std::array<float, 4> quaternion; /*<  Quaternion of the sensor orientation in vehicle body frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis. This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid." */
-    uint8_t signal_quality; /*< [%] Signal quality of the sensor. Specific to each sensor type, representing the relation of the signal strength with the target reflectivity, distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid signal, 100 = perfect signal. */
+    uint8_t orientation; /*<  Direction the sensor faces.
+                downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing:
+                ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing:
+                ROTATION_YAW_270
+             */
+    uint8_t covariance; /*< [cm^2] Measurement variance. Max standard
+                deviation is 6cm. UINT8_MAX if unknown.
+             */
+    float horizontal_fov; /*< [rad] Horizontal Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+             */
+    float vertical_fov; /*< [rad] Vertical Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+             */
+    std::array<float, 4> quaternion; /*<  Quaternion of the sensor orientation in vehicle body
+                frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis.
+                This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
+             */
+    uint8_t signal_quality; /*< [%] Signal quality of the sensor. Specific to
+                each sensor type, representing the relation of the signal strength with the target reflectivity,
+                distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid
+                signal, 100 = perfect signal.
+             */
 
 
     inline std::string get_name(void) const override

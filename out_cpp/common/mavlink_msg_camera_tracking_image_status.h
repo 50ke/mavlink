@@ -5,17 +5,37 @@
 
 
 typedef struct __mavlink_camera_tracking_image_status_t {
- float point_x; /*<  Current tracked point x value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is left, 1 is right), NAN if unknown*/
- float point_y; /*<  Current tracked point y value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown*/
- float radius; /*<  Current tracked radius if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown*/
- float rec_top_x; /*<  Current tracked rectangle top x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown*/
- float rec_top_y; /*<  Current tracked rectangle top y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown*/
- float rec_bottom_x; /*<  Current tracked rectangle bottom x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown*/
- float rec_bottom_y; /*<  Current tracked rectangle bottom y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown*/
- uint8_t tracking_status; /*<  Current tracking status*/
+ float point_x; /*<  Current tracked point x value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            */
+ float point_y; /*<  Current tracked point y value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            */
+ float radius; /*<  Current tracked radius if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
+            */
+ float rec_top_x; /*<  Current tracked rectangle top x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            */
+ float rec_top_y; /*<  Current tracked rectangle top y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            */
+ float rec_bottom_x; /*<  Current tracked rectangle bottom x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            */
+ float rec_bottom_y; /*<  Current tracked rectangle bottom y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            */
+ uint8_t tracking_status; /*<  Current tracking status
+            */
  uint8_t tracking_mode; /*<  Current tracking mode*/
- uint8_t target_data; /*<  Defines location of target data*/
- uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).*/
+ uint8_t target_data; /*<  Defines location of target
+                data
+            */
+ uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            */
 } mavlink_camera_tracking_image_status_t;
 
 #define MAVLINK_MSG_ID_CAMERA_TRACKING_IMAGE_STATUS_LEN 32
@@ -72,16 +92,36 @@ typedef struct __mavlink_camera_tracking_image_status_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param tracking_status  Current tracking status
+            
  * @param tracking_mode  Current tracking mode
- * @param target_data  Defines location of target data
- * @param point_x  Current tracked point x value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param point_y  Current tracked point y value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param radius  Current tracked radius if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
- * @param rec_top_x  Current tracked rectangle top x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param rec_top_y  Current tracked rectangle top y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param rec_bottom_x  Current tracked rectangle bottom x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param rec_bottom_y  Current tracked rectangle bottom y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param target_data  Defines location of target
+                data
+            
+ * @param point_x  Current tracked point x value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param point_y  Current tracked point y value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param radius  Current tracked radius if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
+            
+ * @param rec_top_x  Current tracked rectangle top x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param rec_top_y  Current tracked rectangle top y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param rec_bottom_x  Current tracked rectangle bottom x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param rec_bottom_y  Current tracked rectangle bottom y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_tracking_image_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -131,16 +171,36 @@ static inline uint16_t mavlink_msg_camera_tracking_image_status_pack(uint8_t sys
  * @param msg The MAVLink message to compress the data into
  *
  * @param tracking_status  Current tracking status
+            
  * @param tracking_mode  Current tracking mode
- * @param target_data  Defines location of target data
- * @param point_x  Current tracked point x value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param point_y  Current tracked point y value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param radius  Current tracked radius if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
- * @param rec_top_x  Current tracked rectangle top x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param rec_top_y  Current tracked rectangle top y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param rec_bottom_x  Current tracked rectangle bottom x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param rec_bottom_y  Current tracked rectangle bottom y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param target_data  Defines location of target
+                data
+            
+ * @param point_x  Current tracked point x value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param point_y  Current tracked point y value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param radius  Current tracked radius if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
+            
+ * @param rec_top_x  Current tracked rectangle top x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param rec_top_y  Current tracked rectangle top y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param rec_bottom_x  Current tracked rectangle bottom x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param rec_bottom_y  Current tracked rectangle bottom y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_tracking_image_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -193,16 +253,36 @@ static inline uint16_t mavlink_msg_camera_tracking_image_status_pack_status(uint
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param tracking_status  Current tracking status
+            
  * @param tracking_mode  Current tracking mode
- * @param target_data  Defines location of target data
- * @param point_x  Current tracked point x value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param point_y  Current tracked point y value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param radius  Current tracked radius if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
- * @param rec_top_x  Current tracked rectangle top x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param rec_top_y  Current tracked rectangle top y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param rec_bottom_x  Current tracked rectangle bottom x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param rec_bottom_y  Current tracked rectangle bottom y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param target_data  Defines location of target
+                data
+            
+ * @param point_x  Current tracked point x value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param point_y  Current tracked point y value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param radius  Current tracked radius if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
+            
+ * @param rec_top_x  Current tracked rectangle top x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param rec_top_y  Current tracked rectangle top y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param rec_bottom_x  Current tracked rectangle bottom x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param rec_bottom_y  Current tracked rectangle bottom y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_tracking_image_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -291,16 +371,36 @@ static inline uint16_t mavlink_msg_camera_tracking_image_status_encode_status(ui
  * @param chan MAVLink channel to send the message
  *
  * @param tracking_status  Current tracking status
+            
  * @param tracking_mode  Current tracking mode
- * @param target_data  Defines location of target data
- * @param point_x  Current tracked point x value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param point_y  Current tracked point y value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param radius  Current tracked radius if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
- * @param rec_top_x  Current tracked rectangle top x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param rec_top_y  Current tracked rectangle top y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param rec_bottom_x  Current tracked rectangle bottom x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
- * @param rec_bottom_y  Current tracked rectangle bottom y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param target_data  Defines location of target
+                data
+            
+ * @param point_x  Current tracked point x value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param point_y  Current tracked point y value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param radius  Current tracked radius if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
+            
+ * @param rec_top_x  Current tracked rectangle top x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param rec_top_y  Current tracked rectangle top y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param rec_bottom_x  Current tracked rectangle bottom x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
+ * @param rec_bottom_y  Current tracked rectangle bottom y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -406,6 +506,7 @@ static inline void mavlink_msg_camera_tracking_image_status_send_buf(mavlink_mes
  * @brief Get field tracking_status from camera_tracking_image_status message
  *
  * @return  Current tracking status
+            
  */
 static inline uint8_t mavlink_msg_camera_tracking_image_status_get_tracking_status(const mavlink_message_t* msg)
 {
@@ -425,7 +526,9 @@ static inline uint8_t mavlink_msg_camera_tracking_image_status_get_tracking_mode
 /**
  * @brief Get field target_data from camera_tracking_image_status message
  *
- * @return  Defines location of target data
+ * @return  Defines location of target
+                data
+            
  */
 static inline uint8_t mavlink_msg_camera_tracking_image_status_get_target_data(const mavlink_message_t* msg)
 {
@@ -435,7 +538,9 @@ static inline uint8_t mavlink_msg_camera_tracking_image_status_get_target_data(c
 /**
  * @brief Get field point_x from camera_tracking_image_status message
  *
- * @return  Current tracked point x value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+ * @return  Current tracked point x value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_image_status_get_point_x(const mavlink_message_t* msg)
 {
@@ -445,7 +550,9 @@ static inline float mavlink_msg_camera_tracking_image_status_get_point_x(const m
 /**
  * @brief Get field point_y from camera_tracking_image_status message
  *
- * @return  Current tracked point y value if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+ * @return  Current tracked point y value if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_image_status_get_point_y(const mavlink_message_t* msg)
 {
@@ -455,7 +562,9 @@ static inline float mavlink_msg_camera_tracking_image_status_get_point_y(const m
 /**
  * @brief Get field radius from camera_tracking_image_status message
  *
- * @return  Current tracked radius if CAMERA_TRACKING_MODE_POINT (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
+ * @return  Current tracked radius if CAMERA_TRACKING_MODE_POINT
+                (normalized 0..1, 0 is image left, 1 is image right), NAN if unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_image_status_get_radius(const mavlink_message_t* msg)
 {
@@ -465,7 +574,9 @@ static inline float mavlink_msg_camera_tracking_image_status_get_radius(const ma
 /**
  * @brief Get field rec_top_x from camera_tracking_image_status message
  *
- * @return  Current tracked rectangle top x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+ * @return  Current tracked rectangle top x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_image_status_get_rec_top_x(const mavlink_message_t* msg)
 {
@@ -475,7 +586,9 @@ static inline float mavlink_msg_camera_tracking_image_status_get_rec_top_x(const
 /**
  * @brief Get field rec_top_y from camera_tracking_image_status message
  *
- * @return  Current tracked rectangle top y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+ * @return  Current tracked rectangle top y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_image_status_get_rec_top_y(const mavlink_message_t* msg)
 {
@@ -485,7 +598,9 @@ static inline float mavlink_msg_camera_tracking_image_status_get_rec_top_y(const
 /**
  * @brief Get field rec_bottom_x from camera_tracking_image_status message
  *
- * @return  Current tracked rectangle bottom x value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+ * @return  Current tracked rectangle bottom x value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is left, 1 is right), NAN if unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_image_status_get_rec_bottom_x(const mavlink_message_t* msg)
 {
@@ -495,7 +610,9 @@ static inline float mavlink_msg_camera_tracking_image_status_get_rec_bottom_x(co
 /**
  * @brief Get field rec_bottom_y from camera_tracking_image_status message
  *
- * @return  Current tracked rectangle bottom y value if CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+ * @return  Current tracked rectangle bottom y value if
+                CAMERA_TRACKING_MODE_RECTANGLE (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_image_status_get_rec_bottom_y(const mavlink_message_t* msg)
 {
@@ -505,7 +622,10 @@ static inline float mavlink_msg_camera_tracking_image_status_get_rec_bottom_y(co
 /**
  * @brief Get field camera_device_id from camera_tracking_image_status message
  *
- * @return  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @return  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 static inline uint8_t mavlink_msg_camera_tracking_image_status_get_camera_device_id(const mavlink_message_t* msg)
 {

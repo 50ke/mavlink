@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief OPEN_DRONE_ID_ARM_STATUS message
  *
- * Transmitter (remote ID system) is enabled and ready to start sending location and other required information. This is streamed by transmitter. A flight controller uses it as a condition to arm.
+ * Transmitter (remote ID system) is enabled and ready to start sending location and other
+                required information. This is streamed by transmitter. A flight controller uses it as a condition to
+                arm.
+            
  */
 struct OPEN_DRONE_ID_ARM_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 12918;
@@ -19,8 +22,12 @@ struct OPEN_DRONE_ID_ARM_STATUS : mavlink::Message {
     static constexpr auto NAME = "OPEN_DRONE_ID_ARM_STATUS";
 
 
-    uint8_t status; /*<  Status level indicating if arming is allowed. */
-    std::array<char, 50> error; /*<  Text error message, should be empty if status is good to arm. Fill with nulls in unused portion. */
+    uint8_t status; /*<  Status level indicating if arming is
+                allowed.
+             */
+    std::array<char, 50> error; /*<  Text error message, should be empty if status is good to arm. Fill with
+                nulls in unused portion.
+             */
 
 
     inline std::string get_name(void) const override

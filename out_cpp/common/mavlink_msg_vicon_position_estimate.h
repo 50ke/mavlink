@@ -12,7 +12,11 @@ typedef struct __mavlink_vicon_position_estimate_t {
  float roll; /*< [rad] Roll angle*/
  float pitch; /*< [rad] Pitch angle*/
  float yaw; /*< [rad] Yaw angle*/
- float covariance[21]; /*<  Row-major representation of 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.*/
+ float covariance[21]; /*<  Row-major representation of 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            */
 } mavlink_vicon_position_estimate_t;
 
 #define MAVLINK_MSG_ID_VICON_POSITION_ESTIMATE_LEN 116
@@ -69,7 +73,11 @@ typedef struct __mavlink_vicon_position_estimate_t {
  * @param roll [rad] Roll angle
  * @param pitch [rad] Pitch angle
  * @param yaw [rad] Yaw angle
- * @param covariance  Row-major representation of 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
+ * @param covariance  Row-major representation of 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_vicon_position_estimate_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -117,7 +125,11 @@ static inline uint16_t mavlink_msg_vicon_position_estimate_pack(uint8_t system_i
  * @param roll [rad] Roll angle
  * @param pitch [rad] Pitch angle
  * @param yaw [rad] Yaw angle
- * @param covariance  Row-major representation of 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
+ * @param covariance  Row-major representation of 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_vicon_position_estimate_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -168,7 +180,11 @@ static inline uint16_t mavlink_msg_vicon_position_estimate_pack_status(uint8_t s
  * @param roll [rad] Roll angle
  * @param pitch [rad] Pitch angle
  * @param yaw [rad] Yaw angle
- * @param covariance  Row-major representation of 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
+ * @param covariance  Row-major representation of 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_vicon_position_estimate_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -255,7 +271,11 @@ static inline uint16_t mavlink_msg_vicon_position_estimate_encode_status(uint8_t
  * @param roll [rad] Roll angle
  * @param pitch [rad] Pitch angle
  * @param yaw [rad] Yaw angle
- * @param covariance  Row-major representation of 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
+ * @param covariance  Row-major representation of 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -414,7 +434,11 @@ static inline float mavlink_msg_vicon_position_estimate_get_yaw(const mavlink_me
 /**
  * @brief Get field covariance from vicon_position_estimate message
  *
- * @return  Row-major representation of 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
+ * @return  Row-major representation of 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            
  */
 static inline uint16_t mavlink_msg_vicon_position_estimate_get_covariance(const mavlink_message_t* msg, float *covariance)
 {

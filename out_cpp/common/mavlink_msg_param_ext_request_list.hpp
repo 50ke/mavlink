@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief PARAM_EXT_REQUEST_LIST message
  *
- * Request all parameters of this component. All parameters should be emitted in response as PARAM_EXT_VALUE.
+ * Request all parameters of this component. All parameters should be emitted in response as
+                PARAM_EXT_VALUE.
+            
  */
 struct PARAM_EXT_REQUEST_LIST : mavlink::Message {
     static constexpr msgid_t MSG_ID = 321;

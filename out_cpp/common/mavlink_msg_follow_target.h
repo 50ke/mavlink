@@ -11,11 +11,15 @@ typedef struct __mavlink_follow_target_t {
  int32_t lon; /*< [degE7] Longitude (WGS84)*/
  float alt; /*< [m] Altitude (MSL)*/
  float vel[3]; /*< [m/s] target velocity (0,0,0) for unknown*/
- float acc[3]; /*< [m/s/s] linear target acceleration (0,0,0) for unknown*/
+ float acc[3]; /*< [m/s/s] linear target acceleration (0,0,0) for
+                unknown
+            */
  float attitude_q[4]; /*<  (0 0 0 0 for unknown)*/
  float rates[3]; /*<  (0 0 0 for unknown)*/
  float position_cov[3]; /*<  eph epv*/
- uint8_t est_capabilities; /*<  bit positions for tracker reporting capabilities (POS = 0, VEL = 1, ACCEL = 2, ATT + RATES = 3)*/
+ uint8_t est_capabilities; /*<  bit positions for tracker reporting capabilities (POS = 0, VEL
+                = 1, ACCEL = 2, ATT + RATES = 3)
+            */
 } mavlink_follow_target_t;
 
 #define MAVLINK_MSG_ID_FOLLOW_TARGET_LEN 93
@@ -76,12 +80,16 @@ typedef struct __mavlink_follow_target_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param timestamp [ms] Timestamp (time since system boot).
- * @param est_capabilities  bit positions for tracker reporting capabilities (POS = 0, VEL = 1, ACCEL = 2, ATT + RATES = 3)
+ * @param est_capabilities  bit positions for tracker reporting capabilities (POS = 0, VEL
+                = 1, ACCEL = 2, ATT + RATES = 3)
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [m] Altitude (MSL)
  * @param vel [m/s] target velocity (0,0,0) for unknown
- * @param acc [m/s/s] linear target acceleration (0,0,0) for unknown
+ * @param acc [m/s/s] linear target acceleration (0,0,0) for
+                unknown
+            
  * @param attitude_q  (0 0 0 0 for unknown)
  * @param rates  (0 0 0 for unknown)
  * @param position_cov  eph epv
@@ -133,12 +141,16 @@ static inline uint16_t mavlink_msg_follow_target_pack(uint8_t system_id, uint8_t
  * @param msg The MAVLink message to compress the data into
  *
  * @param timestamp [ms] Timestamp (time since system boot).
- * @param est_capabilities  bit positions for tracker reporting capabilities (POS = 0, VEL = 1, ACCEL = 2, ATT + RATES = 3)
+ * @param est_capabilities  bit positions for tracker reporting capabilities (POS = 0, VEL
+                = 1, ACCEL = 2, ATT + RATES = 3)
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [m] Altitude (MSL)
  * @param vel [m/s] target velocity (0,0,0) for unknown
- * @param acc [m/s/s] linear target acceleration (0,0,0) for unknown
+ * @param acc [m/s/s] linear target acceleration (0,0,0) for
+                unknown
+            
  * @param attitude_q  (0 0 0 0 for unknown)
  * @param rates  (0 0 0 for unknown)
  * @param position_cov  eph epv
@@ -193,12 +205,16 @@ static inline uint16_t mavlink_msg_follow_target_pack_status(uint8_t system_id, 
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param timestamp [ms] Timestamp (time since system boot).
- * @param est_capabilities  bit positions for tracker reporting capabilities (POS = 0, VEL = 1, ACCEL = 2, ATT + RATES = 3)
+ * @param est_capabilities  bit positions for tracker reporting capabilities (POS = 0, VEL
+                = 1, ACCEL = 2, ATT + RATES = 3)
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [m] Altitude (MSL)
  * @param vel [m/s] target velocity (0,0,0) for unknown
- * @param acc [m/s/s] linear target acceleration (0,0,0) for unknown
+ * @param acc [m/s/s] linear target acceleration (0,0,0) for
+                unknown
+            
  * @param attitude_q  (0 0 0 0 for unknown)
  * @param rates  (0 0 0 for unknown)
  * @param position_cov  eph epv
@@ -289,12 +305,16 @@ static inline uint16_t mavlink_msg_follow_target_encode_status(uint8_t system_id
  * @param chan MAVLink channel to send the message
  *
  * @param timestamp [ms] Timestamp (time since system boot).
- * @param est_capabilities  bit positions for tracker reporting capabilities (POS = 0, VEL = 1, ACCEL = 2, ATT + RATES = 3)
+ * @param est_capabilities  bit positions for tracker reporting capabilities (POS = 0, VEL
+                = 1, ACCEL = 2, ATT + RATES = 3)
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [m] Altitude (MSL)
  * @param vel [m/s] target velocity (0,0,0) for unknown
- * @param acc [m/s/s] linear target acceleration (0,0,0) for unknown
+ * @param acc [m/s/s] linear target acceleration (0,0,0) for
+                unknown
+            
  * @param attitude_q  (0 0 0 0 for unknown)
  * @param rates  (0 0 0 for unknown)
  * @param position_cov  eph epv
@@ -409,7 +429,9 @@ static inline uint64_t mavlink_msg_follow_target_get_timestamp(const mavlink_mes
 /**
  * @brief Get field est_capabilities from follow_target message
  *
- * @return  bit positions for tracker reporting capabilities (POS = 0, VEL = 1, ACCEL = 2, ATT + RATES = 3)
+ * @return  bit positions for tracker reporting capabilities (POS = 0, VEL
+                = 1, ACCEL = 2, ATT + RATES = 3)
+            
  */
 static inline uint8_t mavlink_msg_follow_target_get_est_capabilities(const mavlink_message_t* msg)
 {
@@ -459,7 +481,9 @@ static inline uint16_t mavlink_msg_follow_target_get_vel(const mavlink_message_t
 /**
  * @brief Get field acc from follow_target message
  *
- * @return [m/s/s] linear target acceleration (0,0,0) for unknown
+ * @return [m/s/s] linear target acceleration (0,0,0) for
+                unknown
+            
  */
 static inline uint16_t mavlink_msg_follow_target_get_acc(const mavlink_message_t* msg, float *acc)
 {

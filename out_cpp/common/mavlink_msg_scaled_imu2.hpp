@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief SCALED_IMU2 message
  *
- * The RAW IMU readings for secondary 9DOF sensor setup. This message should contain the scaled values to the described units
+ * The RAW IMU readings for secondary 9DOF sensor setup. This message should contain the scaled
+                values to the described units
+            
  */
 struct SCALED_IMU2 : mavlink::Message {
     static constexpr msgid_t MSG_ID = 116;
@@ -29,7 +31,9 @@ struct SCALED_IMU2 : mavlink::Message {
     int16_t xmag; /*< [mgauss] X Magnetic field */
     int16_t ymag; /*< [mgauss] Y Magnetic field */
     int16_t zmag; /*< [mgauss] Z Magnetic field */
-    int16_t temperature; /*< [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C). */
+    int16_t temperature; /*< [cdegC] Temperature, 0: IMU does not provide
+                temperature values. If the IMU is at 0C it must send 1 (0.01C).
+             */
 
 
     inline std::string get_name(void) const override

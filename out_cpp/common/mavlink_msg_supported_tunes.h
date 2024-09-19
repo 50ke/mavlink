@@ -5,7 +5,9 @@
 
 
 typedef struct __mavlink_supported_tunes_t {
- uint32_t format; /*<  Bitfield of supported tune formats.*/
+ uint32_t format; /*<  Bitfield of supported tune
+                formats.
+            */
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
 } mavlink_supported_tunes_t;
@@ -49,7 +51,9 @@ typedef struct __mavlink_supported_tunes_t {
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param format  Bitfield of supported tune formats.
+ * @param format  Bitfield of supported tune
+                formats.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_supported_tunes_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -84,7 +88,9 @@ static inline uint16_t mavlink_msg_supported_tunes_pack(uint8_t system_id, uint8
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param format  Bitfield of supported tune formats.
+ * @param format  Bitfield of supported tune
+                formats.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_supported_tunes_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -122,7 +128,9 @@ static inline uint16_t mavlink_msg_supported_tunes_pack_status(uint8_t system_id
  * @param msg The MAVLink message to compress the data into
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param format  Bitfield of supported tune formats.
+ * @param format  Bitfield of supported tune
+                formats.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_supported_tunes_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -196,7 +204,9 @@ static inline uint16_t mavlink_msg_supported_tunes_encode_status(uint8_t system_
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param format  Bitfield of supported tune formats.
+ * @param format  Bitfield of supported tune
+                formats.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -289,7 +299,9 @@ static inline uint8_t mavlink_msg_supported_tunes_get_target_component(const mav
 /**
  * @brief Get field format from supported_tunes message
  *
- * @return  Bitfield of supported tune formats.
+ * @return  Bitfield of supported tune
+                formats.
+            
  */
 static inline uint32_t mavlink_msg_supported_tunes_get_format(const mavlink_message_t* msg)
 {

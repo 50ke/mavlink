@@ -19,11 +19,13 @@ struct FENCE_STATUS : mavlink::Message {
     static constexpr auto NAME = "FENCE_STATUS";
 
 
-    uint8_t breach_status; /*<  Breach status (0 if currently inside fence, 1 if outside). */
+    uint8_t breach_status; /*<  Breach status (0 if currently inside fence, 1 if outside).
+             */
     uint16_t breach_count; /*<  Number of fence breaches. */
     uint8_t breach_type; /*<  Last breach type. */
     uint32_t breach_time; /*< [ms] Time (since boot) of last breach. */
-    uint8_t breach_mitigation; /*<  Active action to prevent fence breach */
+    uint8_t breach_mitigation; /*<  Active action to prevent fence breach
+             */
 
 
     inline std::string get_name(void) const override

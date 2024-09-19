@@ -8,8 +8,12 @@ typedef struct __mavlink_gps_status_t {
  uint8_t satellites_visible; /*<  Number of satellites visible*/
  uint8_t satellite_prn[20]; /*<  Global satellite ID*/
  uint8_t satellite_used[20]; /*<  0: Satellite not used, 1: used for localization*/
- uint8_t satellite_elevation[20]; /*< [deg] Elevation (0: right on top of receiver, 90: on the horizon) of satellite*/
- uint8_t satellite_azimuth[20]; /*< [deg] Direction of satellite, 0: 0 deg, 255: 360 deg.*/
+ uint8_t satellite_elevation[20]; /*< [deg] Elevation (0: right on top of receiver, 90:
+                on the horizon) of satellite
+            */
+ uint8_t satellite_azimuth[20]; /*< [deg] Direction of satellite,
+                0: 0 deg, 255: 360 deg.
+            */
  uint8_t satellite_snr[20]; /*< [dB] Signal to noise ratio of satellite*/
 } mavlink_gps_status_t;
 
@@ -63,8 +67,12 @@ typedef struct __mavlink_gps_status_t {
  * @param satellites_visible  Number of satellites visible
  * @param satellite_prn  Global satellite ID
  * @param satellite_used  0: Satellite not used, 1: used for localization
- * @param satellite_elevation [deg] Elevation (0: right on top of receiver, 90: on the horizon) of satellite
- * @param satellite_azimuth [deg] Direction of satellite, 0: 0 deg, 255: 360 deg.
+ * @param satellite_elevation [deg] Elevation (0: right on top of receiver, 90:
+                on the horizon) of satellite
+            
+ * @param satellite_azimuth [deg] Direction of satellite,
+                0: 0 deg, 255: 360 deg.
+            
  * @param satellite_snr [dB] Signal to noise ratio of satellite
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -105,8 +113,12 @@ static inline uint16_t mavlink_msg_gps_status_pack(uint8_t system_id, uint8_t co
  * @param satellites_visible  Number of satellites visible
  * @param satellite_prn  Global satellite ID
  * @param satellite_used  0: Satellite not used, 1: used for localization
- * @param satellite_elevation [deg] Elevation (0: right on top of receiver, 90: on the horizon) of satellite
- * @param satellite_azimuth [deg] Direction of satellite, 0: 0 deg, 255: 360 deg.
+ * @param satellite_elevation [deg] Elevation (0: right on top of receiver, 90:
+                on the horizon) of satellite
+            
+ * @param satellite_azimuth [deg] Direction of satellite,
+                0: 0 deg, 255: 360 deg.
+            
  * @param satellite_snr [dB] Signal to noise ratio of satellite
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -150,8 +162,12 @@ static inline uint16_t mavlink_msg_gps_status_pack_status(uint8_t system_id, uin
  * @param satellites_visible  Number of satellites visible
  * @param satellite_prn  Global satellite ID
  * @param satellite_used  0: Satellite not used, 1: used for localization
- * @param satellite_elevation [deg] Elevation (0: right on top of receiver, 90: on the horizon) of satellite
- * @param satellite_azimuth [deg] Direction of satellite, 0: 0 deg, 255: 360 deg.
+ * @param satellite_elevation [deg] Elevation (0: right on top of receiver, 90:
+                on the horizon) of satellite
+            
+ * @param satellite_azimuth [deg] Direction of satellite,
+                0: 0 deg, 255: 360 deg.
+            
  * @param satellite_snr [dB] Signal to noise ratio of satellite
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -231,8 +247,12 @@ static inline uint16_t mavlink_msg_gps_status_encode_status(uint8_t system_id, u
  * @param satellites_visible  Number of satellites visible
  * @param satellite_prn  Global satellite ID
  * @param satellite_used  0: Satellite not used, 1: used for localization
- * @param satellite_elevation [deg] Elevation (0: right on top of receiver, 90: on the horizon) of satellite
- * @param satellite_azimuth [deg] Direction of satellite, 0: 0 deg, 255: 360 deg.
+ * @param satellite_elevation [deg] Elevation (0: right on top of receiver, 90:
+                on the horizon) of satellite
+            
+ * @param satellite_azimuth [deg] Direction of satellite,
+                0: 0 deg, 255: 360 deg.
+            
  * @param satellite_snr [dB] Signal to noise ratio of satellite
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -344,7 +364,9 @@ static inline uint16_t mavlink_msg_gps_status_get_satellite_used(const mavlink_m
 /**
  * @brief Get field satellite_elevation from gps_status message
  *
- * @return [deg] Elevation (0: right on top of receiver, 90: on the horizon) of satellite
+ * @return [deg] Elevation (0: right on top of receiver, 90:
+                on the horizon) of satellite
+            
  */
 static inline uint16_t mavlink_msg_gps_status_get_satellite_elevation(const mavlink_message_t* msg, uint8_t *satellite_elevation)
 {
@@ -354,7 +376,9 @@ static inline uint16_t mavlink_msg_gps_status_get_satellite_elevation(const mavl
 /**
  * @brief Get field satellite_azimuth from gps_status message
  *
- * @return [deg] Direction of satellite, 0: 0 deg, 255: 360 deg.
+ * @return [deg] Direction of satellite,
+                0: 0 deg, 255: 360 deg.
+            
  */
 static inline uint16_t mavlink_msg_gps_status_get_satellite_azimuth(const mavlink_message_t* msg, uint8_t *satellite_azimuth)
 {

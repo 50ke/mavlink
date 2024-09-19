@@ -13,7 +13,13 @@ typedef struct __mavlink_attitude_quaternion_t {
  float rollspeed; /*< [rad/s] Roll angular speed*/
  float pitchspeed; /*< [rad/s] Pitch angular speed*/
  float yawspeed; /*< [rad/s] Yaw angular speed*/
- float repr_offset_q[4]; /*<  Rotation offset by which the attitude quaternion and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order, zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.*/
+ float repr_offset_q[4]; /*<  Rotation offset by which the attitude quaternion
+                and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order,
+                zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for
+                systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate
+                their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is
+                equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+            */
 } mavlink_attitude_quaternion_t;
 
 #define MAVLINK_MSG_ID_ATTITUDE_QUATERNION_LEN 48
@@ -73,7 +79,13 @@ typedef struct __mavlink_attitude_quaternion_t {
  * @param rollspeed [rad/s] Roll angular speed
  * @param pitchspeed [rad/s] Pitch angular speed
  * @param yawspeed [rad/s] Yaw angular speed
- * @param repr_offset_q  Rotation offset by which the attitude quaternion and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order, zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+ * @param repr_offset_q  Rotation offset by which the attitude quaternion
+                and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order,
+                zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for
+                systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate
+                their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is
+                equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_attitude_quaternion_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -124,7 +136,13 @@ static inline uint16_t mavlink_msg_attitude_quaternion_pack(uint8_t system_id, u
  * @param rollspeed [rad/s] Roll angular speed
  * @param pitchspeed [rad/s] Pitch angular speed
  * @param yawspeed [rad/s] Yaw angular speed
- * @param repr_offset_q  Rotation offset by which the attitude quaternion and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order, zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+ * @param repr_offset_q  Rotation offset by which the attitude quaternion
+                and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order,
+                zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for
+                systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate
+                their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is
+                equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_attitude_quaternion_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -178,7 +196,13 @@ static inline uint16_t mavlink_msg_attitude_quaternion_pack_status(uint8_t syste
  * @param rollspeed [rad/s] Roll angular speed
  * @param pitchspeed [rad/s] Pitch angular speed
  * @param yawspeed [rad/s] Yaw angular speed
- * @param repr_offset_q  Rotation offset by which the attitude quaternion and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order, zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+ * @param repr_offset_q  Rotation offset by which the attitude quaternion
+                and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order,
+                zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for
+                systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate
+                their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is
+                equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_attitude_quaternion_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -268,7 +292,13 @@ static inline uint16_t mavlink_msg_attitude_quaternion_encode_status(uint8_t sys
  * @param rollspeed [rad/s] Roll angular speed
  * @param pitchspeed [rad/s] Pitch angular speed
  * @param yawspeed [rad/s] Yaw angular speed
- * @param repr_offset_q  Rotation offset by which the attitude quaternion and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order, zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+ * @param repr_offset_q  Rotation offset by which the attitude quaternion
+                and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order,
+                zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for
+                systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate
+                their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is
+                equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -441,7 +471,13 @@ static inline float mavlink_msg_attitude_quaternion_get_yawspeed(const mavlink_m
 /**
  * @brief Get field repr_offset_q from attitude_quaternion message
  *
- * @return  Rotation offset by which the attitude quaternion and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order, zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+ * @return  Rotation offset by which the attitude quaternion
+                and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order,
+                zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for
+                systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate
+                their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is
+                equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.
+            
  */
 static inline uint16_t mavlink_msg_attitude_quaternion_get_repr_offset_q(const mavlink_message_t* msg, float *repr_offset_q)
 {

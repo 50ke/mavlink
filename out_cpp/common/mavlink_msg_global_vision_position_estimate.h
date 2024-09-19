@@ -12,8 +12,15 @@ typedef struct __mavlink_global_vision_position_estimate_t {
  float roll; /*< [rad] Roll angle*/
  float pitch; /*< [rad] Pitch angle*/
  float yaw; /*< [rad] Yaw angle*/
- float covariance[21]; /*<  Row-major representation of pose 6x6 cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.*/
- uint8_t reset_counter; /*<  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.*/
+ float covariance[21]; /*<  Row-major representation of pose 6x6
+                cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw;
+                first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN
+                value to first element in the array.
+            */
+ uint8_t reset_counter; /*<  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            */
 } mavlink_global_vision_position_estimate_t;
 
 #define MAVLINK_MSG_ID_GLOBAL_VISION_POSITION_ESTIMATE_LEN 117
@@ -72,8 +79,15 @@ typedef struct __mavlink_global_vision_position_estimate_t {
  * @param roll [rad] Roll angle
  * @param pitch [rad] Pitch angle
  * @param yaw [rad] Yaw angle
- * @param covariance  Row-major representation of pose 6x6 cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param reset_counter  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+ * @param covariance  Row-major representation of pose 6x6
+                cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw;
+                first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN
+                value to first element in the array.
+            
+ * @param reset_counter  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_global_vision_position_estimate_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -123,8 +137,15 @@ static inline uint16_t mavlink_msg_global_vision_position_estimate_pack(uint8_t 
  * @param roll [rad] Roll angle
  * @param pitch [rad] Pitch angle
  * @param yaw [rad] Yaw angle
- * @param covariance  Row-major representation of pose 6x6 cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param reset_counter  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+ * @param covariance  Row-major representation of pose 6x6
+                cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw;
+                first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN
+                value to first element in the array.
+            
+ * @param reset_counter  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_global_vision_position_estimate_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -177,8 +198,15 @@ static inline uint16_t mavlink_msg_global_vision_position_estimate_pack_status(u
  * @param roll [rad] Roll angle
  * @param pitch [rad] Pitch angle
  * @param yaw [rad] Yaw angle
- * @param covariance  Row-major representation of pose 6x6 cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param reset_counter  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+ * @param covariance  Row-major representation of pose 6x6
+                cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw;
+                first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN
+                value to first element in the array.
+            
+ * @param reset_counter  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_global_vision_position_estimate_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -267,8 +295,15 @@ static inline uint16_t mavlink_msg_global_vision_position_estimate_encode_status
  * @param roll [rad] Roll angle
  * @param pitch [rad] Pitch angle
  * @param yaw [rad] Yaw angle
- * @param covariance  Row-major representation of pose 6x6 cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param reset_counter  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+ * @param covariance  Row-major representation of pose 6x6
+                cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw;
+                first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN
+                value to first element in the array.
+            
+ * @param reset_counter  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -431,7 +466,11 @@ static inline float mavlink_msg_global_vision_position_estimate_get_yaw(const ma
 /**
  * @brief Get field covariance from global_vision_position_estimate message
  *
- * @return  Row-major representation of pose 6x6 cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
+ * @return  Row-major representation of pose 6x6
+                cross-covariance matrix upper right triangle (states: x_global, y_global, z_global, roll, pitch, yaw;
+                first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN
+                value to first element in the array.
+            
  */
 static inline uint16_t mavlink_msg_global_vision_position_estimate_get_covariance(const mavlink_message_t* msg, float *covariance)
 {
@@ -441,7 +480,10 @@ static inline uint16_t mavlink_msg_global_vision_position_estimate_get_covarianc
 /**
  * @brief Get field reset_counter from global_vision_position_estimate message
  *
- * @return  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+ * @return  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            
  */
 static inline uint8_t mavlink_msg_global_vision_position_estimate_get_reset_counter(const mavlink_message_t* msg)
 {

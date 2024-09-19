@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief HIL_RC_INPUTS_RAW message
  *
- * Sent from simulation to autopilot. The RAW values of the RC channels received. The standard PPM modulation is as follows: 1000 microseconds: 0%, 2000 microseconds: 100%. Individual receivers/transmitters might violate this specification.
+ * Sent from simulation to autopilot. The RAW values of the RC channels received. The standard PPM
+                modulation is as follows: 1000 microseconds: 0%, 2000 microseconds: 100%. Individual
+                receivers/transmitters might violate this specification.
+            
  */
 struct HIL_RC_INPUTS_RAW : mavlink::Message {
     static constexpr msgid_t MSG_ID = 92;
@@ -19,7 +22,10 @@ struct HIL_RC_INPUTS_RAW : mavlink::Message {
     static constexpr auto NAME = "HIL_RC_INPUTS_RAW";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     uint16_t chan1_raw; /*< [us] RC channel 1 value */
     uint16_t chan2_raw; /*< [us] RC channel 2 value */
     uint16_t chan3_raw; /*< [us] RC channel 3 value */
@@ -32,7 +38,9 @@ struct HIL_RC_INPUTS_RAW : mavlink::Message {
     uint16_t chan10_raw; /*< [us] RC channel 10 value */
     uint16_t chan11_raw; /*< [us] RC channel 11 value */
     uint16_t chan12_raw; /*< [us] RC channel 12 value */
-    uint8_t rssi; /*<  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown. */
+    uint8_t rssi; /*<  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+             */
 
 
     inline std::string get_name(void) const override

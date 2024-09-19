@@ -9,7 +9,11 @@ namespace msg {
 /**
  * @brief SERIAL_CONTROL message
  *
- * Control a serial port. This can be used for raw access to an onboard serial peripheral such as a GPS or telemetry radio. It is designed to make it possible to update the devices firmware via MAVLink messages or change the devices settings. A message with zero bytes can be used to change just the baudrate.
+ * Control a serial port. This can be used for raw access to an onboard serial peripheral such as
+                a GPS or telemetry radio. It is designed to make it possible to update the devices firmware via MAVLink
+                messages or change the devices settings. A message with zero bytes can be used to change just the
+                baudrate.
+            
  */
 struct SERIAL_CONTROL : mavlink::Message {
     static constexpr msgid_t MSG_ID = 126;
@@ -20,7 +24,9 @@ struct SERIAL_CONTROL : mavlink::Message {
 
 
     uint8_t device; /*<  Serial control device type. */
-    uint8_t flags; /*<  Bitmap of serial control flags. */
+    uint8_t flags; /*<  Bitmap of serial control
+                flags.
+             */
     uint16_t timeout; /*< [ms] Timeout for reply data */
     uint32_t baudrate; /*< [bits/s] Baudrate of transfer. Zero means no change. */
     uint8_t count; /*< [bytes] how many bytes in this transfer */

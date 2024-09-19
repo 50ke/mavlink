@@ -11,14 +11,18 @@ typedef struct __mavlink_mission_item_t {
  float param4; /*<  PARAM4, see MAV_CMD enum*/
  float x; /*<  PARAM5 / local: X coordinate, global: latitude*/
  float y; /*<  PARAM6 / local: Y coordinate, global: longitude*/
- float z; /*<  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending on frame).*/
+ float z; /*<  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending
+                on frame).
+            */
  uint16_t seq; /*<  Sequence*/
  uint16_t command; /*<  The scheduled action for the waypoint.*/
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
  uint8_t frame; /*<  The coordinate system of the waypoint.*/
  uint8_t current; /*<  false:0, true:1*/
- uint8_t autocontinue; /*<  Autocontinue to next waypoint. 0: false, 1: true. Set false to pause mission after the item completes.*/
+ uint8_t autocontinue; /*<  Autocontinue to next waypoint. 0: false, 1: true. Set false to
+                pause mission after the item completes.
+            */
  uint8_t mission_type; /*<  Mission type.*/
 } mavlink_mission_item_t;
 
@@ -89,14 +93,18 @@ typedef struct __mavlink_mission_item_t {
  * @param frame  The coordinate system of the waypoint.
  * @param command  The scheduled action for the waypoint.
  * @param current  false:0, true:1
- * @param autocontinue  Autocontinue to next waypoint. 0: false, 1: true. Set false to pause mission after the item completes.
+ * @param autocontinue  Autocontinue to next waypoint. 0: false, 1: true. Set false to
+                pause mission after the item completes.
+            
  * @param param1  PARAM1, see MAV_CMD enum
  * @param param2  PARAM2, see MAV_CMD enum
  * @param param3  PARAM3, see MAV_CMD enum
  * @param param4  PARAM4, see MAV_CMD enum
  * @param x  PARAM5 / local: X coordinate, global: latitude
  * @param y  PARAM6 / local: Y coordinate, global: longitude
- * @param z  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending on frame).
+ * @param z  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending
+                on frame).
+            
  * @param mission_type  Mission type.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -160,14 +168,18 @@ static inline uint16_t mavlink_msg_mission_item_pack(uint8_t system_id, uint8_t 
  * @param frame  The coordinate system of the waypoint.
  * @param command  The scheduled action for the waypoint.
  * @param current  false:0, true:1
- * @param autocontinue  Autocontinue to next waypoint. 0: false, 1: true. Set false to pause mission after the item completes.
+ * @param autocontinue  Autocontinue to next waypoint. 0: false, 1: true. Set false to
+                pause mission after the item completes.
+            
  * @param param1  PARAM1, see MAV_CMD enum
  * @param param2  PARAM2, see MAV_CMD enum
  * @param param3  PARAM3, see MAV_CMD enum
  * @param param4  PARAM4, see MAV_CMD enum
  * @param x  PARAM5 / local: X coordinate, global: latitude
  * @param y  PARAM6 / local: Y coordinate, global: longitude
- * @param z  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending on frame).
+ * @param z  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending
+                on frame).
+            
  * @param mission_type  Mission type.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -234,14 +246,18 @@ static inline uint16_t mavlink_msg_mission_item_pack_status(uint8_t system_id, u
  * @param frame  The coordinate system of the waypoint.
  * @param command  The scheduled action for the waypoint.
  * @param current  false:0, true:1
- * @param autocontinue  Autocontinue to next waypoint. 0: false, 1: true. Set false to pause mission after the item completes.
+ * @param autocontinue  Autocontinue to next waypoint. 0: false, 1: true. Set false to
+                pause mission after the item completes.
+            
  * @param param1  PARAM1, see MAV_CMD enum
  * @param param2  PARAM2, see MAV_CMD enum
  * @param param3  PARAM3, see MAV_CMD enum
  * @param param4  PARAM4, see MAV_CMD enum
  * @param x  PARAM5 / local: X coordinate, global: latitude
  * @param y  PARAM6 / local: Y coordinate, global: longitude
- * @param z  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending on frame).
+ * @param z  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending
+                on frame).
+            
  * @param mission_type  Mission type.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -344,14 +360,18 @@ static inline uint16_t mavlink_msg_mission_item_encode_status(uint8_t system_id,
  * @param frame  The coordinate system of the waypoint.
  * @param command  The scheduled action for the waypoint.
  * @param current  false:0, true:1
- * @param autocontinue  Autocontinue to next waypoint. 0: false, 1: true. Set false to pause mission after the item completes.
+ * @param autocontinue  Autocontinue to next waypoint. 0: false, 1: true. Set false to
+                pause mission after the item completes.
+            
  * @param param1  PARAM1, see MAV_CMD enum
  * @param param2  PARAM2, see MAV_CMD enum
  * @param param3  PARAM3, see MAV_CMD enum
  * @param param4  PARAM4, see MAV_CMD enum
  * @param x  PARAM5 / local: X coordinate, global: latitude
  * @param y  PARAM6 / local: Y coordinate, global: longitude
- * @param z  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending on frame).
+ * @param z  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending
+                on frame).
+            
  * @param mission_type  Mission type.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -533,7 +553,9 @@ static inline uint8_t mavlink_msg_mission_item_get_current(const mavlink_message
 /**
  * @brief Get field autocontinue from mission_item message
  *
- * @return  Autocontinue to next waypoint. 0: false, 1: true. Set false to pause mission after the item completes.
+ * @return  Autocontinue to next waypoint. 0: false, 1: true. Set false to
+                pause mission after the item completes.
+            
  */
 static inline uint8_t mavlink_msg_mission_item_get_autocontinue(const mavlink_message_t* msg)
 {
@@ -603,7 +625,9 @@ static inline float mavlink_msg_mission_item_get_y(const mavlink_message_t* msg)
 /**
  * @brief Get field z from mission_item message
  *
- * @return  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending on frame).
+ * @return  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending
+                on frame).
+            
  */
 static inline float mavlink_msg_mission_item_get_z(const mavlink_message_t* msg)
 {

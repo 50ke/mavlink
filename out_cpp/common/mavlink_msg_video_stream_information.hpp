@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief VIDEO_STREAM_INFORMATION message
  *
- * Information about video stream. It may be requested using MAV_CMD_REQUEST_MESSAGE, where param2 indicates the video stream id: 0 for all streams, 1 for first, 2 for second, etc.
+ * Information about video stream. It may be requested using MAV_CMD_REQUEST_MESSAGE, where param2
+                indicates the video stream id: 0 for all streams, 1 for first, 2 for second, etc.
+            
  */
 struct VIDEO_STREAM_INFORMATION : mavlink::Message {
     static constexpr msgid_t MSG_ID = 269;
@@ -19,7 +21,8 @@ struct VIDEO_STREAM_INFORMATION : mavlink::Message {
     static constexpr auto NAME = "VIDEO_STREAM_INFORMATION";
 
 
-    uint8_t stream_id; /*<  Video Stream ID (1 for first, 2 for second, etc.) */
+    uint8_t stream_id; /*<  Video Stream ID (1 for first, 2 for second, etc.)
+             */
     uint8_t count; /*<  Number of streams available. */
     uint8_t type; /*<  Type of stream. */
     uint16_t flags; /*<  Bitmap of stream status flags. */
@@ -30,9 +33,14 @@ struct VIDEO_STREAM_INFORMATION : mavlink::Message {
     uint16_t rotation; /*< [deg] Video image rotation clockwise. */
     uint16_t hfov; /*< [deg] Horizontal Field of view. */
     std::array<char, 32> name; /*<  Stream name. */
-    std::array<char, 160> uri; /*<  Video stream URI (TCP or RTSP URI ground station should connect to) or port number (UDP port ground station should listen to). */
+    std::array<char, 160> uri; /*<  Video stream URI (TCP or RTSP URI ground station should connect to) or
+                port number (UDP port ground station should listen to).
+             */
     uint8_t encoding; /*<  Encoding of stream. */
-    uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id). */
+    uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+             */
 
 
     inline std::string get_name(void) const override

@@ -5,26 +5,68 @@
 
 
 typedef struct __mavlink_onboard_computer_status_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
  uint32_t uptime; /*< [ms] Time since system boot.*/
- uint32_t ram_usage; /*< [MiB] Amount of used RAM on the component system. A value of UINT32_MAX implies the field is unused.*/
- uint32_t ram_total; /*< [MiB] Total amount of RAM on the component system. A value of UINT32_MAX implies the field is unused.*/
- uint32_t storage_type[4]; /*<  Storage type: 0: HDD, 1: SSD, 2: EMMC, 3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.*/
- uint32_t storage_usage[4]; /*< [MiB] Amount of used storage space on the component system. A value of UINT32_MAX implies the field is unused.*/
- uint32_t storage_total[4]; /*< [MiB] Total amount of storage space on the component system. A value of UINT32_MAX implies the field is unused.*/
- uint32_t link_type[6]; /*<  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39: Point-to-point proprietary, 40-49: Mesh proprietary*/
- uint32_t link_tx_rate[6]; /*< [KiB/s] Network traffic from the component system. A value of UINT32_MAX implies the field is unused.*/
- uint32_t link_rx_rate[6]; /*< [KiB/s] Network traffic to the component system. A value of UINT32_MAX implies the field is unused.*/
- uint32_t link_tx_max[6]; /*< [KiB/s] Network capacity from the component system. A value of UINT32_MAX implies the field is unused.*/
- uint32_t link_rx_max[6]; /*< [KiB/s] Network capacity to the component system. A value of UINT32_MAX implies the field is unused.*/
- int16_t fan_speed[4]; /*< [rpm] Fan speeds. A value of INT16_MAX implies the field is unused.*/
- uint8_t type; /*<  Type of the onboard computer: 0: Mission computer primary, 1: Mission computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload computers.*/
- uint8_t cpu_cores[8]; /*<  CPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.*/
- uint8_t cpu_combined[10]; /*<  Combined CPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.*/
- uint8_t gpu_cores[4]; /*<  GPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.*/
- uint8_t gpu_combined[10]; /*<  Combined GPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.*/
- int8_t temperature_board; /*< [degC] Temperature of the board. A value of INT8_MAX implies the field is unused.*/
- int8_t temperature_core[8]; /*< [degC] Temperature of the CPU core. A value of INT8_MAX implies the field is unused.*/
+ uint32_t ram_usage; /*< [MiB] Amount of used RAM on the component
+                system. A value of UINT32_MAX implies the field is unused.
+            */
+ uint32_t ram_total; /*< [MiB] Total amount of RAM on the
+                component system. A value of UINT32_MAX implies the field is unused.
+            */
+ uint32_t storage_type[4]; /*<  Storage type: 0: HDD, 1: SSD, 2: EMMC,
+                3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
+            */
+ uint32_t storage_usage[4]; /*< [MiB] Amount of used storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            */
+ uint32_t storage_total[4]; /*< [MiB] Total amount of storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            */
+ uint32_t link_type[6]; /*<  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39:
+                Point-to-point proprietary, 40-49: Mesh proprietary
+            */
+ uint32_t link_tx_rate[6]; /*< [KiB/s] Network traffic from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            */
+ uint32_t link_rx_rate[6]; /*< [KiB/s] Network traffic to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            */
+ uint32_t link_tx_max[6]; /*< [KiB/s] Network capacity from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            */
+ uint32_t link_rx_max[6]; /*< [KiB/s] Network capacity to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            */
+ int16_t fan_speed[4]; /*< [rpm] Fan speeds. A value of INT16_MAX
+                implies the field is unused.
+            */
+ uint8_t type; /*<  Type of the onboard computer: 0: Mission computer primary, 1: Mission
+                computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload
+                computers.
+            */
+ uint8_t cpu_cores[8]; /*<  CPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            */
+ uint8_t cpu_combined[10]; /*<  Combined CPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            */
+ uint8_t gpu_cores[4]; /*<  GPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            */
+ uint8_t gpu_combined[10]; /*<  Combined GPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            */
+ int8_t temperature_board; /*< [degC] Temperature of the board. A
+                value of INT8_MAX implies the field is unused.
+            */
+ int8_t temperature_core[8]; /*< [degC] Temperature of the CPU
+                core. A value of INT8_MAX implies the field is unused.
+            */
 } mavlink_onboard_computer_status_t;
 
 #define MAVLINK_MSG_ID_ONBOARD_COMPUTER_STATUS_LEN 238
@@ -111,26 +153,68 @@ typedef struct __mavlink_onboard_computer_status_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param uptime [ms] Time since system boot.
- * @param type  Type of the onboard computer: 0: Mission computer primary, 1: Mission computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload computers.
- * @param cpu_cores  CPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.
- * @param cpu_combined  Combined CPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.
- * @param gpu_cores  GPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.
- * @param gpu_combined  Combined GPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.
- * @param temperature_board [degC] Temperature of the board. A value of INT8_MAX implies the field is unused.
- * @param temperature_core [degC] Temperature of the CPU core. A value of INT8_MAX implies the field is unused.
- * @param fan_speed [rpm] Fan speeds. A value of INT16_MAX implies the field is unused.
- * @param ram_usage [MiB] Amount of used RAM on the component system. A value of UINT32_MAX implies the field is unused.
- * @param ram_total [MiB] Total amount of RAM on the component system. A value of UINT32_MAX implies the field is unused.
- * @param storage_type  Storage type: 0: HDD, 1: SSD, 2: EMMC, 3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
- * @param storage_usage [MiB] Amount of used storage space on the component system. A value of UINT32_MAX implies the field is unused.
- * @param storage_total [MiB] Total amount of storage space on the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_type  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39: Point-to-point proprietary, 40-49: Mesh proprietary
- * @param link_tx_rate [KiB/s] Network traffic from the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_rx_rate [KiB/s] Network traffic to the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_tx_max [KiB/s] Network capacity from the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_rx_max [KiB/s] Network capacity to the component system. A value of UINT32_MAX implies the field is unused.
+ * @param type  Type of the onboard computer: 0: Mission computer primary, 1: Mission
+                computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload
+                computers.
+            
+ * @param cpu_cores  CPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            
+ * @param cpu_combined  Combined CPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            
+ * @param gpu_cores  GPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            
+ * @param gpu_combined  Combined GPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            
+ * @param temperature_board [degC] Temperature of the board. A
+                value of INT8_MAX implies the field is unused.
+            
+ * @param temperature_core [degC] Temperature of the CPU
+                core. A value of INT8_MAX implies the field is unused.
+            
+ * @param fan_speed [rpm] Fan speeds. A value of INT16_MAX
+                implies the field is unused.
+            
+ * @param ram_usage [MiB] Amount of used RAM on the component
+                system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param ram_total [MiB] Total amount of RAM on the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_type  Storage type: 0: HDD, 1: SSD, 2: EMMC,
+                3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_usage [MiB] Amount of used storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_total [MiB] Total amount of storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_type  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39:
+                Point-to-point proprietary, 40-49: Mesh proprietary
+            
+ * @param link_tx_rate [KiB/s] Network traffic from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_rx_rate [KiB/s] Network traffic to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_tx_max [KiB/s] Network capacity from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_rx_max [KiB/s] Network capacity to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -195,26 +279,68 @@ static inline uint16_t mavlink_msg_onboard_computer_status_pack(uint8_t system_i
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param uptime [ms] Time since system boot.
- * @param type  Type of the onboard computer: 0: Mission computer primary, 1: Mission computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload computers.
- * @param cpu_cores  CPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.
- * @param cpu_combined  Combined CPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.
- * @param gpu_cores  GPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.
- * @param gpu_combined  Combined GPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.
- * @param temperature_board [degC] Temperature of the board. A value of INT8_MAX implies the field is unused.
- * @param temperature_core [degC] Temperature of the CPU core. A value of INT8_MAX implies the field is unused.
- * @param fan_speed [rpm] Fan speeds. A value of INT16_MAX implies the field is unused.
- * @param ram_usage [MiB] Amount of used RAM on the component system. A value of UINT32_MAX implies the field is unused.
- * @param ram_total [MiB] Total amount of RAM on the component system. A value of UINT32_MAX implies the field is unused.
- * @param storage_type  Storage type: 0: HDD, 1: SSD, 2: EMMC, 3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
- * @param storage_usage [MiB] Amount of used storage space on the component system. A value of UINT32_MAX implies the field is unused.
- * @param storage_total [MiB] Total amount of storage space on the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_type  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39: Point-to-point proprietary, 40-49: Mesh proprietary
- * @param link_tx_rate [KiB/s] Network traffic from the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_rx_rate [KiB/s] Network traffic to the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_tx_max [KiB/s] Network capacity from the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_rx_max [KiB/s] Network capacity to the component system. A value of UINT32_MAX implies the field is unused.
+ * @param type  Type of the onboard computer: 0: Mission computer primary, 1: Mission
+                computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload
+                computers.
+            
+ * @param cpu_cores  CPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            
+ * @param cpu_combined  Combined CPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            
+ * @param gpu_cores  GPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            
+ * @param gpu_combined  Combined GPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            
+ * @param temperature_board [degC] Temperature of the board. A
+                value of INT8_MAX implies the field is unused.
+            
+ * @param temperature_core [degC] Temperature of the CPU
+                core. A value of INT8_MAX implies the field is unused.
+            
+ * @param fan_speed [rpm] Fan speeds. A value of INT16_MAX
+                implies the field is unused.
+            
+ * @param ram_usage [MiB] Amount of used RAM on the component
+                system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param ram_total [MiB] Total amount of RAM on the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_type  Storage type: 0: HDD, 1: SSD, 2: EMMC,
+                3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_usage [MiB] Amount of used storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_total [MiB] Total amount of storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_type  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39:
+                Point-to-point proprietary, 40-49: Mesh proprietary
+            
+ * @param link_tx_rate [KiB/s] Network traffic from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_rx_rate [KiB/s] Network traffic to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_tx_max [KiB/s] Network capacity from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_rx_max [KiB/s] Network capacity to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -282,26 +408,68 @@ static inline uint16_t mavlink_msg_onboard_computer_status_pack_status(uint8_t s
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param uptime [ms] Time since system boot.
- * @param type  Type of the onboard computer: 0: Mission computer primary, 1: Mission computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload computers.
- * @param cpu_cores  CPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.
- * @param cpu_combined  Combined CPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.
- * @param gpu_cores  GPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.
- * @param gpu_combined  Combined GPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.
- * @param temperature_board [degC] Temperature of the board. A value of INT8_MAX implies the field is unused.
- * @param temperature_core [degC] Temperature of the CPU core. A value of INT8_MAX implies the field is unused.
- * @param fan_speed [rpm] Fan speeds. A value of INT16_MAX implies the field is unused.
- * @param ram_usage [MiB] Amount of used RAM on the component system. A value of UINT32_MAX implies the field is unused.
- * @param ram_total [MiB] Total amount of RAM on the component system. A value of UINT32_MAX implies the field is unused.
- * @param storage_type  Storage type: 0: HDD, 1: SSD, 2: EMMC, 3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
- * @param storage_usage [MiB] Amount of used storage space on the component system. A value of UINT32_MAX implies the field is unused.
- * @param storage_total [MiB] Total amount of storage space on the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_type  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39: Point-to-point proprietary, 40-49: Mesh proprietary
- * @param link_tx_rate [KiB/s] Network traffic from the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_rx_rate [KiB/s] Network traffic to the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_tx_max [KiB/s] Network capacity from the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_rx_max [KiB/s] Network capacity to the component system. A value of UINT32_MAX implies the field is unused.
+ * @param type  Type of the onboard computer: 0: Mission computer primary, 1: Mission
+                computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload
+                computers.
+            
+ * @param cpu_cores  CPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            
+ * @param cpu_combined  Combined CPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            
+ * @param gpu_cores  GPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            
+ * @param gpu_combined  Combined GPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            
+ * @param temperature_board [degC] Temperature of the board. A
+                value of INT8_MAX implies the field is unused.
+            
+ * @param temperature_core [degC] Temperature of the CPU
+                core. A value of INT8_MAX implies the field is unused.
+            
+ * @param fan_speed [rpm] Fan speeds. A value of INT16_MAX
+                implies the field is unused.
+            
+ * @param ram_usage [MiB] Amount of used RAM on the component
+                system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param ram_total [MiB] Total amount of RAM on the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_type  Storage type: 0: HDD, 1: SSD, 2: EMMC,
+                3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_usage [MiB] Amount of used storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_total [MiB] Total amount of storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_type  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39:
+                Point-to-point proprietary, 40-49: Mesh proprietary
+            
+ * @param link_tx_rate [KiB/s] Network traffic from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_rx_rate [KiB/s] Network traffic to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_tx_max [KiB/s] Network capacity from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_rx_max [KiB/s] Network capacity to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -405,26 +573,68 @@ static inline uint16_t mavlink_msg_onboard_computer_status_encode_status(uint8_t
  * @brief Send a onboard_computer_status message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param uptime [ms] Time since system boot.
- * @param type  Type of the onboard computer: 0: Mission computer primary, 1: Mission computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload computers.
- * @param cpu_cores  CPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.
- * @param cpu_combined  Combined CPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.
- * @param gpu_cores  GPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.
- * @param gpu_combined  Combined GPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.
- * @param temperature_board [degC] Temperature of the board. A value of INT8_MAX implies the field is unused.
- * @param temperature_core [degC] Temperature of the CPU core. A value of INT8_MAX implies the field is unused.
- * @param fan_speed [rpm] Fan speeds. A value of INT16_MAX implies the field is unused.
- * @param ram_usage [MiB] Amount of used RAM on the component system. A value of UINT32_MAX implies the field is unused.
- * @param ram_total [MiB] Total amount of RAM on the component system. A value of UINT32_MAX implies the field is unused.
- * @param storage_type  Storage type: 0: HDD, 1: SSD, 2: EMMC, 3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
- * @param storage_usage [MiB] Amount of used storage space on the component system. A value of UINT32_MAX implies the field is unused.
- * @param storage_total [MiB] Total amount of storage space on the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_type  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39: Point-to-point proprietary, 40-49: Mesh proprietary
- * @param link_tx_rate [KiB/s] Network traffic from the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_rx_rate [KiB/s] Network traffic to the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_tx_max [KiB/s] Network capacity from the component system. A value of UINT32_MAX implies the field is unused.
- * @param link_rx_max [KiB/s] Network capacity to the component system. A value of UINT32_MAX implies the field is unused.
+ * @param type  Type of the onboard computer: 0: Mission computer primary, 1: Mission
+                computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload
+                computers.
+            
+ * @param cpu_cores  CPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            
+ * @param cpu_combined  Combined CPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            
+ * @param gpu_cores  GPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            
+ * @param gpu_combined  Combined GPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            
+ * @param temperature_board [degC] Temperature of the board. A
+                value of INT8_MAX implies the field is unused.
+            
+ * @param temperature_core [degC] Temperature of the CPU
+                core. A value of INT8_MAX implies the field is unused.
+            
+ * @param fan_speed [rpm] Fan speeds. A value of INT16_MAX
+                implies the field is unused.
+            
+ * @param ram_usage [MiB] Amount of used RAM on the component
+                system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param ram_total [MiB] Total amount of RAM on the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_type  Storage type: 0: HDD, 1: SSD, 2: EMMC,
+                3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_usage [MiB] Amount of used storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param storage_total [MiB] Total amount of storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_type  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39:
+                Point-to-point proprietary, 40-49: Mesh proprietary
+            
+ * @param link_tx_rate [KiB/s] Network traffic from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_rx_rate [KiB/s] Network traffic to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_tx_max [KiB/s] Network capacity from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
+ * @param link_rx_max [KiB/s] Network capacity to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -561,7 +771,10 @@ static inline void mavlink_msg_onboard_computer_status_send_buf(mavlink_message_
 /**
  * @brief Get field time_usec from onboard_computer_status message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_onboard_computer_status_get_time_usec(const mavlink_message_t* msg)
 {
@@ -581,7 +794,10 @@ static inline uint32_t mavlink_msg_onboard_computer_status_get_uptime(const mavl
 /**
  * @brief Get field type from onboard_computer_status message
  *
- * @return  Type of the onboard computer: 0: Mission computer primary, 1: Mission computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload computers.
+ * @return  Type of the onboard computer: 0: Mission computer primary, 1: Mission
+                computer backup 1, 2: Mission computer backup 2, 3: Compute node, 4-5: Compute spares, 6-9: Payload
+                computers.
+            
  */
 static inline uint8_t mavlink_msg_onboard_computer_status_get_type(const mavlink_message_t* msg)
 {
@@ -591,7 +807,9 @@ static inline uint8_t mavlink_msg_onboard_computer_status_get_type(const mavlink
 /**
  * @brief Get field cpu_cores from onboard_computer_status message
  *
- * @return  CPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.
+ * @return  CPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_cpu_cores(const mavlink_message_t* msg, uint8_t *cpu_cores)
 {
@@ -601,7 +819,10 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_cpu_cores(const m
 /**
  * @brief Get field cpu_combined from onboard_computer_status message
  *
- * @return  Combined CPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.
+ * @return  Combined CPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_cpu_combined(const mavlink_message_t* msg, uint8_t *cpu_combined)
 {
@@ -611,7 +832,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_cpu_combined(cons
 /**
  * @brief Get field gpu_cores from onboard_computer_status message
  *
- * @return  GPU usage on the component in percent (100 - idle). A value of UINT8_MAX implies the field is unused.
+ * @return  GPU usage on the component in percent (100 -
+                idle). A value of UINT8_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_gpu_cores(const mavlink_message_t* msg, uint8_t *gpu_cores)
 {
@@ -621,7 +844,10 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_gpu_cores(const m
 /**
  * @brief Get field gpu_combined from onboard_computer_status message
  *
- * @return  Combined GPU usage as the last 10 slices of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a short amount of time. A value of UINT8_MAX implies the field is unused.
+ * @return  Combined GPU usage as the last 10 slices
+                of 100 MS (a histogram). This allows to identify spikes in load that max out the system, but only for a
+                short amount of time. A value of UINT8_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_gpu_combined(const mavlink_message_t* msg, uint8_t *gpu_combined)
 {
@@ -631,7 +857,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_gpu_combined(cons
 /**
  * @brief Get field temperature_board from onboard_computer_status message
  *
- * @return [degC] Temperature of the board. A value of INT8_MAX implies the field is unused.
+ * @return [degC] Temperature of the board. A
+                value of INT8_MAX implies the field is unused.
+            
  */
 static inline int8_t mavlink_msg_onboard_computer_status_get_temperature_board(const mavlink_message_t* msg)
 {
@@ -641,7 +869,9 @@ static inline int8_t mavlink_msg_onboard_computer_status_get_temperature_board(c
 /**
  * @brief Get field temperature_core from onboard_computer_status message
  *
- * @return [degC] Temperature of the CPU core. A value of INT8_MAX implies the field is unused.
+ * @return [degC] Temperature of the CPU
+                core. A value of INT8_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_temperature_core(const mavlink_message_t* msg, int8_t *temperature_core)
 {
@@ -651,7 +881,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_temperature_core(
 /**
  * @brief Get field fan_speed from onboard_computer_status message
  *
- * @return [rpm] Fan speeds. A value of INT16_MAX implies the field is unused.
+ * @return [rpm] Fan speeds. A value of INT16_MAX
+                implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_fan_speed(const mavlink_message_t* msg, int16_t *fan_speed)
 {
@@ -661,7 +893,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_fan_speed(const m
 /**
  * @brief Get field ram_usage from onboard_computer_status message
  *
- * @return [MiB] Amount of used RAM on the component system. A value of UINT32_MAX implies the field is unused.
+ * @return [MiB] Amount of used RAM on the component
+                system. A value of UINT32_MAX implies the field is unused.
+            
  */
 static inline uint32_t mavlink_msg_onboard_computer_status_get_ram_usage(const mavlink_message_t* msg)
 {
@@ -671,7 +905,9 @@ static inline uint32_t mavlink_msg_onboard_computer_status_get_ram_usage(const m
 /**
  * @brief Get field ram_total from onboard_computer_status message
  *
- * @return [MiB] Total amount of RAM on the component system. A value of UINT32_MAX implies the field is unused.
+ * @return [MiB] Total amount of RAM on the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
  */
 static inline uint32_t mavlink_msg_onboard_computer_status_get_ram_total(const mavlink_message_t* msg)
 {
@@ -681,7 +917,9 @@ static inline uint32_t mavlink_msg_onboard_computer_status_get_ram_total(const m
 /**
  * @brief Get field storage_type from onboard_computer_status message
  *
- * @return  Storage type: 0: HDD, 1: SSD, 2: EMMC, 3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
+ * @return  Storage type: 0: HDD, 1: SSD, 2: EMMC,
+                3: SD card (non-removable), 4: SD card (removable). A value of UINT32_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_type(const mavlink_message_t* msg, uint32_t *storage_type)
 {
@@ -691,7 +929,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_type(cons
 /**
  * @brief Get field storage_usage from onboard_computer_status message
  *
- * @return [MiB] Amount of used storage space on the component system. A value of UINT32_MAX implies the field is unused.
+ * @return [MiB] Amount of used storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_usage(const mavlink_message_t* msg, uint32_t *storage_usage)
 {
@@ -701,7 +941,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_usage(con
 /**
  * @brief Get field storage_total from onboard_computer_status message
  *
- * @return [MiB] Total amount of storage space on the component system. A value of UINT32_MAX implies the field is unused.
+ * @return [MiB] Total amount of storage
+                space on the component system. A value of UINT32_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_total(const mavlink_message_t* msg, uint32_t *storage_total)
 {
@@ -711,7 +953,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_storage_total(con
 /**
  * @brief Get field link_type from onboard_computer_status message
  *
- * @return  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39: Point-to-point proprietary, 40-49: Mesh proprietary
+ * @return  Link type: 0-9: UART, 10-19: Wired network, 20-29: Wifi, 30-39:
+                Point-to-point proprietary, 40-49: Mesh proprietary
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_link_type(const mavlink_message_t* msg, uint32_t *link_type)
 {
@@ -721,7 +965,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_link_type(const m
 /**
  * @brief Get field link_tx_rate from onboard_computer_status message
  *
- * @return [KiB/s] Network traffic from the component system. A value of UINT32_MAX implies the field is unused.
+ * @return [KiB/s] Network traffic from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_link_tx_rate(const mavlink_message_t* msg, uint32_t *link_tx_rate)
 {
@@ -731,7 +977,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_link_tx_rate(cons
 /**
  * @brief Get field link_rx_rate from onboard_computer_status message
  *
- * @return [KiB/s] Network traffic to the component system. A value of UINT32_MAX implies the field is unused.
+ * @return [KiB/s] Network traffic to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_link_rx_rate(const mavlink_message_t* msg, uint32_t *link_rx_rate)
 {
@@ -741,7 +989,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_link_rx_rate(cons
 /**
  * @brief Get field link_tx_max from onboard_computer_status message
  *
- * @return [KiB/s] Network capacity from the component system. A value of UINT32_MAX implies the field is unused.
+ * @return [KiB/s] Network capacity from the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_link_tx_max(const mavlink_message_t* msg, uint32_t *link_tx_max)
 {
@@ -751,7 +1001,9 @@ static inline uint16_t mavlink_msg_onboard_computer_status_get_link_tx_max(const
 /**
  * @brief Get field link_rx_max from onboard_computer_status message
  *
- * @return [KiB/s] Network capacity to the component system. A value of UINT32_MAX implies the field is unused.
+ * @return [KiB/s] Network capacity to the
+                component system. A value of UINT32_MAX implies the field is unused.
+            
  */
 static inline uint16_t mavlink_msg_onboard_computer_status_get_link_rx_max(const mavlink_message_t* msg, uint32_t *link_rx_max)
 {

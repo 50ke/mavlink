@@ -8,18 +8,40 @@ typedef struct __mavlink_home_position_t {
  int32_t latitude; /*< [degE7] Latitude (WGS84)*/
  int32_t longitude; /*< [degE7] Longitude (WGS84)*/
  int32_t altitude; /*< [mm] Altitude (MSL). Positive for up.*/
- float x; /*< [m] Local X position of this position in the local coordinate frame (NED)*/
- float y; /*< [m] Local Y position of this position in the local coordinate frame (NED)*/
- float z; /*< [m] Local Z position of this position in the local coordinate frame (NED: positive "down")*/
+ float x; /*< [m] Local X position of this position in the local coordinate frame
+                (NED)
+            */
+ float y; /*< [m] Local Y position of this position in the local coordinate frame
+                (NED)
+            */
+ float z; /*< [m] Local Z position of this position in the local coordinate frame (NED:
+                positive "down")
+            */
  float q[4]; /*<  
-        Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
-        Used to indicate the heading and slope of the ground.
-        All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be supplied.
-      */
- float approach_x; /*< [m] Local X position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.*/
- float approach_y; /*< [m] Local Y position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.*/
- float approach_z; /*< [m] Local Z position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.*/
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
+                Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
+                Used to indicate the heading and slope of the ground.
+                All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be
+                supplied.
+            */
+ float approach_x; /*< [m] Local X position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            */
+ float approach_y; /*< [m] Local Y position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            */
+ float approach_z; /*< [m] Local Z position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            */
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
 }) mavlink_home_position_t;
 
 #define MAVLINK_MSG_ID_HOME_POSITION_LEN 60
@@ -78,18 +100,40 @@ typedef struct __mavlink_home_position_t {
  * @param latitude [degE7] Latitude (WGS84)
  * @param longitude [degE7] Longitude (WGS84)
  * @param altitude [mm] Altitude (MSL). Positive for up.
- * @param x [m] Local X position of this position in the local coordinate frame (NED)
- * @param y [m] Local Y position of this position in the local coordinate frame (NED)
- * @param z [m] Local Z position of this position in the local coordinate frame (NED: positive "down")
+ * @param x [m] Local X position of this position in the local coordinate frame
+                (NED)
+            
+ * @param y [m] Local Y position of this position in the local coordinate frame
+                (NED)
+            
+ * @param z [m] Local Z position of this position in the local coordinate frame (NED:
+                positive "down")
+            
  * @param q  
-        Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
-        Used to indicate the heading and slope of the ground.
-        All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be supplied.
-      
- * @param approach_x [m] Local X position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param approach_y [m] Local Y position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param approach_z [m] Local Z position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+                Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
+                Used to indicate the heading and slope of the ground.
+                All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be
+                supplied.
+            
+ * @param approach_x [m] Local X position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param approach_y [m] Local Y position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param approach_z [m] Local Z position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_home_position_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -139,18 +183,40 @@ static inline uint16_t mavlink_msg_home_position_pack(uint8_t system_id, uint8_t
  * @param latitude [degE7] Latitude (WGS84)
  * @param longitude [degE7] Longitude (WGS84)
  * @param altitude [mm] Altitude (MSL). Positive for up.
- * @param x [m] Local X position of this position in the local coordinate frame (NED)
- * @param y [m] Local Y position of this position in the local coordinate frame (NED)
- * @param z [m] Local Z position of this position in the local coordinate frame (NED: positive "down")
+ * @param x [m] Local X position of this position in the local coordinate frame
+                (NED)
+            
+ * @param y [m] Local Y position of this position in the local coordinate frame
+                (NED)
+            
+ * @param z [m] Local Z position of this position in the local coordinate frame (NED:
+                positive "down")
+            
  * @param q  
-        Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
-        Used to indicate the heading and slope of the ground.
-        All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be supplied.
-      
- * @param approach_x [m] Local X position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param approach_y [m] Local Y position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param approach_z [m] Local Z position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+                Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
+                Used to indicate the heading and slope of the ground.
+                All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be
+                supplied.
+            
+ * @param approach_x [m] Local X position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param approach_y [m] Local Y position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param approach_z [m] Local Z position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_home_position_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -203,18 +269,40 @@ static inline uint16_t mavlink_msg_home_position_pack_status(uint8_t system_id, 
  * @param latitude [degE7] Latitude (WGS84)
  * @param longitude [degE7] Longitude (WGS84)
  * @param altitude [mm] Altitude (MSL). Positive for up.
- * @param x [m] Local X position of this position in the local coordinate frame (NED)
- * @param y [m] Local Y position of this position in the local coordinate frame (NED)
- * @param z [m] Local Z position of this position in the local coordinate frame (NED: positive "down")
+ * @param x [m] Local X position of this position in the local coordinate frame
+                (NED)
+            
+ * @param y [m] Local Y position of this position in the local coordinate frame
+                (NED)
+            
+ * @param z [m] Local Z position of this position in the local coordinate frame (NED:
+                positive "down")
+            
  * @param q  
-        Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
-        Used to indicate the heading and slope of the ground.
-        All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be supplied.
-      
- * @param approach_x [m] Local X position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param approach_y [m] Local Y position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param approach_z [m] Local Z position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+                Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
+                Used to indicate the heading and slope of the ground.
+                All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be
+                supplied.
+            
+ * @param approach_x [m] Local X position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param approach_y [m] Local Y position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param approach_z [m] Local Z position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_home_position_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -303,18 +391,40 @@ static inline uint16_t mavlink_msg_home_position_encode_status(uint8_t system_id
  * @param latitude [degE7] Latitude (WGS84)
  * @param longitude [degE7] Longitude (WGS84)
  * @param altitude [mm] Altitude (MSL). Positive for up.
- * @param x [m] Local X position of this position in the local coordinate frame (NED)
- * @param y [m] Local Y position of this position in the local coordinate frame (NED)
- * @param z [m] Local Z position of this position in the local coordinate frame (NED: positive "down")
+ * @param x [m] Local X position of this position in the local coordinate frame
+                (NED)
+            
+ * @param y [m] Local Y position of this position in the local coordinate frame
+                (NED)
+            
+ * @param z [m] Local Z position of this position in the local coordinate frame (NED:
+                positive "down")
+            
  * @param q  
-        Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
-        Used to indicate the heading and slope of the ground.
-        All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be supplied.
-      
- * @param approach_x [m] Local X position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param approach_y [m] Local Y position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param approach_z [m] Local Z position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+                Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
+                Used to indicate the heading and slope of the ground.
+                All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be
+                supplied.
+            
+ * @param approach_x [m] Local X position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param approach_y [m] Local Y position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param approach_z [m] Local Z position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -445,7 +555,9 @@ static inline int32_t mavlink_msg_home_position_get_altitude(const mavlink_messa
 /**
  * @brief Get field x from home_position message
  *
- * @return [m] Local X position of this position in the local coordinate frame (NED)
+ * @return [m] Local X position of this position in the local coordinate frame
+                (NED)
+            
  */
 static inline float mavlink_msg_home_position_get_x(const mavlink_message_t* msg)
 {
@@ -455,7 +567,9 @@ static inline float mavlink_msg_home_position_get_x(const mavlink_message_t* msg
 /**
  * @brief Get field y from home_position message
  *
- * @return [m] Local Y position of this position in the local coordinate frame (NED)
+ * @return [m] Local Y position of this position in the local coordinate frame
+                (NED)
+            
  */
 static inline float mavlink_msg_home_position_get_y(const mavlink_message_t* msg)
 {
@@ -465,7 +579,9 @@ static inline float mavlink_msg_home_position_get_y(const mavlink_message_t* msg
 /**
  * @brief Get field z from home_position message
  *
- * @return [m] Local Z position of this position in the local coordinate frame (NED: positive "down")
+ * @return [m] Local Z position of this position in the local coordinate frame (NED:
+                positive "down")
+            
  */
 static inline float mavlink_msg_home_position_get_z(const mavlink_message_t* msg)
 {
@@ -476,10 +592,11 @@ static inline float mavlink_msg_home_position_get_z(const mavlink_message_t* msg
  * @brief Get field q from home_position message
  *
  * @return  
-        Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
-        Used to indicate the heading and slope of the ground.
-        All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be supplied.
-      
+                Quaternion indicating world-to-surface-normal and heading transformation of the takeoff position.
+                Used to indicate the heading and slope of the ground.
+                All fields should be set to NaN if an accurate quaternion for both heading and surface slope cannot be
+                supplied.
+            
  */
 static inline uint16_t mavlink_msg_home_position_get_q(const mavlink_message_t* msg, float *q)
 {
@@ -489,7 +606,11 @@ static inline uint16_t mavlink_msg_home_position_get_q(const mavlink_message_t* 
 /**
  * @brief Get field approach_x from home_position message
  *
- * @return [m] Local X position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+ * @return [m] Local X position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
  */
 static inline float mavlink_msg_home_position_get_approach_x(const mavlink_message_t* msg)
 {
@@ -499,7 +620,11 @@ static inline float mavlink_msg_home_position_get_approach_x(const mavlink_messa
 /**
  * @brief Get field approach_y from home_position message
  *
- * @return [m] Local Y position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+ * @return [m] Local Y position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
  */
 static inline float mavlink_msg_home_position_get_approach_y(const mavlink_message_t* msg)
 {
@@ -509,7 +634,11 @@ static inline float mavlink_msg_home_position_get_approach_y(const mavlink_messa
 /**
  * @brief Get field approach_z from home_position message
  *
- * @return [m] Local Z position of the end of the approach vector. Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+ * @return [m] Local Z position of the end of the approach vector.
+                Multicopters should set this position based on their takeoff path. Grass-landing fixed wing aircraft
+                should set it the same way as multicopters. Runway-landing fixed wing aircraft should set it to the
+                opposite direction of the takeoff, assuming the takeoff happened from the threshold / touchdown zone.
+            
  */
 static inline float mavlink_msg_home_position_get_approach_z(const mavlink_message_t* msg)
 {
@@ -519,7 +648,10 @@ static inline float mavlink_msg_home_position_get_approach_z(const mavlink_messa
 /**
  * @brief Get field time_usec from home_position message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_home_position_get_time_usec(const mavlink_message_t* msg)
 {

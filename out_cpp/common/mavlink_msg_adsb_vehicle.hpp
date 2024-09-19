@@ -30,8 +30,12 @@ struct ADSB_VEHICLE : mavlink::Message {
     std::array<char, 9> callsign; /*<  The callsign, 8+null */
     uint8_t emitter_type; /*<  ADSB emitter type. */
     uint8_t tslc; /*< [s] Time since last communication in seconds */
-    uint16_t flags; /*<  Bitmap to indicate various statuses including valid data fields */
-    uint16_t squawk; /*<  Squawk code. Note that the code is in decimal: e.g. 7700 (general emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000 */
+    uint16_t flags; /*<  Bitmap to indicate various statuses
+                including valid data fields
+             */
+    uint16_t squawk; /*<  Squawk code. Note that the code is in decimal: e.g. 7700 (general
+                emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+             */
 
 
     inline std::string get_name(void) const override

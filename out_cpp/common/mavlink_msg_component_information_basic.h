@@ -5,14 +5,30 @@
 
 
 typedef struct __mavlink_component_information_basic_t {
- uint64_t capabilities; /*<  Component capability flags*/
+ uint64_t capabilities; /*<  Component
+                capability flags
+            */
  uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot).*/
- uint32_t time_manufacture_s; /*< [s] Date of manufacture as a UNIX Epoch time (since 1.1.1970) in seconds.*/
- char vendor_name[32]; /*<  Name of the component vendor. Needs to be zero terminated. The field is optional and can be empty/all zeros.*/
- char model_name[32]; /*<  Name of the component model. Needs to be zero terminated. The field is optional and can be empty/all zeros.*/
- char software_version[24]; /*<  Software version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.*/
- char hardware_version[24]; /*<  Hardware version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.*/
- char serial_number[32]; /*<  Hardware serial number. The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.*/
+ uint32_t time_manufacture_s; /*< [s] Date of manufacture as a UNIX Epoch
+                time (since 1.1.1970) in seconds.
+            */
+ char vendor_name[32]; /*<  Name of the component vendor. Needs to be zero terminated. The
+                field is optional and can be empty/all zeros.
+            */
+ char model_name[32]; /*<  Name of the component model. Needs to be zero terminated. The field
+                is optional and can be empty/all zeros.
+            */
+ char software_version[24]; /*<  Software version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            */
+ char hardware_version[24]; /*<  Hardware version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            */
+ char serial_number[32]; /*<  Hardware serial number. The field must be zero terminated if it
+                has a value. The field is optional and can be empty/all zeros.
+            */
 } mavlink_component_information_basic_t;
 
 #define MAVLINK_MSG_ID_COMPONENT_INFORMATION_BASIC_LEN 160
@@ -67,13 +83,29 @@ typedef struct __mavlink_component_information_basic_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param capabilities  Component capability flags
- * @param time_manufacture_s [s] Date of manufacture as a UNIX Epoch time (since 1.1.1970) in seconds.
- * @param vendor_name  Name of the component vendor. Needs to be zero terminated. The field is optional and can be empty/all zeros.
- * @param model_name  Name of the component model. Needs to be zero terminated. The field is optional and can be empty/all zeros.
- * @param software_version  Software version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
- * @param hardware_version  Hardware version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
- * @param serial_number  Hardware serial number. The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
+ * @param capabilities  Component
+                capability flags
+            
+ * @param time_manufacture_s [s] Date of manufacture as a UNIX Epoch
+                time (since 1.1.1970) in seconds.
+            
+ * @param vendor_name  Name of the component vendor. Needs to be zero terminated. The
+                field is optional and can be empty/all zeros.
+            
+ * @param model_name  Name of the component model. Needs to be zero terminated. The field
+                is optional and can be empty/all zeros.
+            
+ * @param software_version  Software version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            
+ * @param hardware_version  Hardware version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            
+ * @param serial_number  Hardware serial number. The field must be zero terminated if it
+                has a value. The field is optional and can be empty/all zeros.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_component_information_basic_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -115,13 +147,29 @@ static inline uint16_t mavlink_msg_component_information_basic_pack(uint8_t syst
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param capabilities  Component capability flags
- * @param time_manufacture_s [s] Date of manufacture as a UNIX Epoch time (since 1.1.1970) in seconds.
- * @param vendor_name  Name of the component vendor. Needs to be zero terminated. The field is optional and can be empty/all zeros.
- * @param model_name  Name of the component model. Needs to be zero terminated. The field is optional and can be empty/all zeros.
- * @param software_version  Software version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
- * @param hardware_version  Hardware version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
- * @param serial_number  Hardware serial number. The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
+ * @param capabilities  Component
+                capability flags
+            
+ * @param time_manufacture_s [s] Date of manufacture as a UNIX Epoch
+                time (since 1.1.1970) in seconds.
+            
+ * @param vendor_name  Name of the component vendor. Needs to be zero terminated. The
+                field is optional and can be empty/all zeros.
+            
+ * @param model_name  Name of the component model. Needs to be zero terminated. The field
+                is optional and can be empty/all zeros.
+            
+ * @param software_version  Software version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            
+ * @param hardware_version  Hardware version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            
+ * @param serial_number  Hardware serial number. The field must be zero terminated if it
+                has a value. The field is optional and can be empty/all zeros.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_component_information_basic_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -166,13 +214,29 @@ static inline uint16_t mavlink_msg_component_information_basic_pack_status(uint8
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param capabilities  Component capability flags
- * @param time_manufacture_s [s] Date of manufacture as a UNIX Epoch time (since 1.1.1970) in seconds.
- * @param vendor_name  Name of the component vendor. Needs to be zero terminated. The field is optional and can be empty/all zeros.
- * @param model_name  Name of the component model. Needs to be zero terminated. The field is optional and can be empty/all zeros.
- * @param software_version  Software version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
- * @param hardware_version  Hardware version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
- * @param serial_number  Hardware serial number. The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
+ * @param capabilities  Component
+                capability flags
+            
+ * @param time_manufacture_s [s] Date of manufacture as a UNIX Epoch
+                time (since 1.1.1970) in seconds.
+            
+ * @param vendor_name  Name of the component vendor. Needs to be zero terminated. The
+                field is optional and can be empty/all zeros.
+            
+ * @param model_name  Name of the component model. Needs to be zero terminated. The field
+                is optional and can be empty/all zeros.
+            
+ * @param software_version  Software version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            
+ * @param hardware_version  Hardware version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            
+ * @param serial_number  Hardware serial number. The field must be zero terminated if it
+                has a value. The field is optional and can be empty/all zeros.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_component_information_basic_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -253,13 +317,29 @@ static inline uint16_t mavlink_msg_component_information_basic_encode_status(uin
  * @param chan MAVLink channel to send the message
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param capabilities  Component capability flags
- * @param time_manufacture_s [s] Date of manufacture as a UNIX Epoch time (since 1.1.1970) in seconds.
- * @param vendor_name  Name of the component vendor. Needs to be zero terminated. The field is optional and can be empty/all zeros.
- * @param model_name  Name of the component model. Needs to be zero terminated. The field is optional and can be empty/all zeros.
- * @param software_version  Software version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
- * @param hardware_version  Hardware version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
- * @param serial_number  Hardware serial number. The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
+ * @param capabilities  Component
+                capability flags
+            
+ * @param time_manufacture_s [s] Date of manufacture as a UNIX Epoch
+                time (since 1.1.1970) in seconds.
+            
+ * @param vendor_name  Name of the component vendor. Needs to be zero terminated. The
+                field is optional and can be empty/all zeros.
+            
+ * @param model_name  Name of the component model. Needs to be zero terminated. The field
+                is optional and can be empty/all zeros.
+            
+ * @param software_version  Software version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            
+ * @param hardware_version  Hardware version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            
+ * @param serial_number  Hardware serial number. The field must be zero terminated if it
+                has a value. The field is optional and can be empty/all zeros.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -358,7 +438,9 @@ static inline uint32_t mavlink_msg_component_information_basic_get_time_boot_ms(
 /**
  * @brief Get field capabilities from component_information_basic message
  *
- * @return  Component capability flags
+ * @return  Component
+                capability flags
+            
  */
 static inline uint64_t mavlink_msg_component_information_basic_get_capabilities(const mavlink_message_t* msg)
 {
@@ -368,7 +450,9 @@ static inline uint64_t mavlink_msg_component_information_basic_get_capabilities(
 /**
  * @brief Get field time_manufacture_s from component_information_basic message
  *
- * @return [s] Date of manufacture as a UNIX Epoch time (since 1.1.1970) in seconds.
+ * @return [s] Date of manufacture as a UNIX Epoch
+                time (since 1.1.1970) in seconds.
+            
  */
 static inline uint32_t mavlink_msg_component_information_basic_get_time_manufacture_s(const mavlink_message_t* msg)
 {
@@ -378,7 +462,9 @@ static inline uint32_t mavlink_msg_component_information_basic_get_time_manufact
 /**
  * @brief Get field vendor_name from component_information_basic message
  *
- * @return  Name of the component vendor. Needs to be zero terminated. The field is optional and can be empty/all zeros.
+ * @return  Name of the component vendor. Needs to be zero terminated. The
+                field is optional and can be empty/all zeros.
+            
  */
 static inline uint16_t mavlink_msg_component_information_basic_get_vendor_name(const mavlink_message_t* msg, char *vendor_name)
 {
@@ -388,7 +474,9 @@ static inline uint16_t mavlink_msg_component_information_basic_get_vendor_name(c
 /**
  * @brief Get field model_name from component_information_basic message
  *
- * @return  Name of the component model. Needs to be zero terminated. The field is optional and can be empty/all zeros.
+ * @return  Name of the component model. Needs to be zero terminated. The field
+                is optional and can be empty/all zeros.
+            
  */
 static inline uint16_t mavlink_msg_component_information_basic_get_model_name(const mavlink_message_t* msg, char *model_name)
 {
@@ -398,7 +486,10 @@ static inline uint16_t mavlink_msg_component_information_basic_get_model_name(co
 /**
  * @brief Get field software_version from component_information_basic message
  *
- * @return  Software version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
+ * @return  Software version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            
  */
 static inline uint16_t mavlink_msg_component_information_basic_get_software_version(const mavlink_message_t* msg, char *software_version)
 {
@@ -408,7 +499,10 @@ static inline uint16_t mavlink_msg_component_information_basic_get_software_vers
 /**
  * @brief Get field hardware_version from component_information_basic message
  *
- * @return  Hardware version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
+ * @return  Hardware version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+            
  */
 static inline uint16_t mavlink_msg_component_information_basic_get_hardware_version(const mavlink_message_t* msg, char *hardware_version)
 {
@@ -418,7 +512,9 @@ static inline uint16_t mavlink_msg_component_information_basic_get_hardware_vers
 /**
  * @brief Get field serial_number from component_information_basic message
  *
- * @return  Hardware serial number. The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros.
+ * @return  Hardware serial number. The field must be zero terminated if it
+                has a value. The field is optional and can be empty/all zeros.
+            
  */
 static inline uint16_t mavlink_msg_component_information_basic_get_serial_number(const mavlink_message_t* msg, char *serial_number)
 {

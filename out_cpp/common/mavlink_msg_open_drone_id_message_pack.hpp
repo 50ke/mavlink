@@ -9,7 +9,11 @@ namespace msg {
 /**
  * @brief OPEN_DRONE_ID_MESSAGE_PACK message
  *
- * An OpenDroneID message pack is a container for multiple encoded OpenDroneID messages (i.e. not in the format given for the above message descriptions but after encoding into the compressed OpenDroneID byte format). Used e.g. when transmitting on Bluetooth 5.0 Long Range/Extended Advertising or on WiFi Neighbor Aware Networking or on WiFi Beacon.
+ * An OpenDroneID message pack is a container for multiple encoded OpenDroneID messages (i.e. not
+                in the format given for the above message descriptions but after encoding into the compressed
+                OpenDroneID byte format). Used e.g. when transmitting on Bluetooth 5.0 Long Range/Extended Advertising
+                or on WiFi Neighbor Aware Networking or on WiFi Beacon.
+            
  */
 struct OPEN_DRONE_ID_MESSAGE_PACK : mavlink::Message {
     static constexpr msgid_t MSG_ID = 12915;
@@ -21,10 +25,18 @@ struct OPEN_DRONE_ID_MESSAGE_PACK : mavlink::Message {
 
     uint8_t target_system; /*<  System ID (0 for broadcast). */
     uint8_t target_component; /*<  Component ID (0 for broadcast). */
-    std::array<uint8_t, 20> id_or_mac; /*<  Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html.  */
-    uint8_t single_message_size; /*< [bytes] This field must currently always be equal to 25 (bytes), since all encoded OpenDroneID messages are specified to have this length. */
-    uint8_t msg_pack_size; /*<  Number of encoded messages in the pack (not the number of bytes). Allowed range is 1 - 9. */
-    std::array<uint8_t, 225> messages; /*<  Concatenation of encoded OpenDroneID messages. Shall be filled with nulls in the unused portion of the field. */
+    std::array<uint8_t, 20> id_or_mac; /*<  Only used for drone ID data received from other UAs. See detailed
+                description at https://mavlink.io/en/services/opendroneid.html.
+             */
+    uint8_t single_message_size; /*< [bytes] This field must currently always be equal to
+                25 (bytes), since all encoded OpenDroneID messages are specified to have this length.
+             */
+    uint8_t msg_pack_size; /*<  Number of encoded messages in the pack (not the number of bytes).
+                Allowed range is 1 - 9.
+             */
+    std::array<uint8_t, 225> messages; /*<  Concatenation of encoded OpenDroneID messages. Shall be filled
+                with nulls in the unused portion of the field.
+             */
 
 
     inline std::string get_name(void) const override

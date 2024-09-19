@@ -13,7 +13,9 @@ typedef struct __mavlink_safety_set_allowed_area_t {
  float p2z; /*< [m] z position 2 / Altitude 2*/
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
- uint8_t frame; /*<  Coordinate frame. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.*/
+ uint8_t frame; /*<  Coordinate frame. Can be either global, GPS,
+                right-handed with Z axis up or local, right handed, Z axis down.
+            */
 } mavlink_safety_set_allowed_area_t;
 
 #define MAVLINK_MSG_ID_SAFETY_SET_ALLOWED_AREA_LEN 27
@@ -67,7 +69,9 @@ typedef struct __mavlink_safety_set_allowed_area_t {
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param frame  Coordinate frame. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.
+ * @param frame  Coordinate frame. Can be either global, GPS,
+                right-handed with Z axis up or local, right handed, Z axis down.
+            
  * @param p1x [m] x position 1 / Latitude 1
  * @param p1y [m] y position 1 / Longitude 1
  * @param p1z [m] z position 1 / Altitude 1
@@ -120,7 +124,9 @@ static inline uint16_t mavlink_msg_safety_set_allowed_area_pack(uint8_t system_i
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param frame  Coordinate frame. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.
+ * @param frame  Coordinate frame. Can be either global, GPS,
+                right-handed with Z axis up or local, right handed, Z axis down.
+            
  * @param p1x [m] x position 1 / Latitude 1
  * @param p1y [m] y position 1 / Longitude 1
  * @param p1z [m] z position 1 / Altitude 1
@@ -176,7 +182,9 @@ static inline uint16_t mavlink_msg_safety_set_allowed_area_pack_status(uint8_t s
  * @param msg The MAVLink message to compress the data into
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param frame  Coordinate frame. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.
+ * @param frame  Coordinate frame. Can be either global, GPS,
+                right-handed with Z axis up or local, right handed, Z axis down.
+            
  * @param p1x [m] x position 1 / Latitude 1
  * @param p1y [m] y position 1 / Longitude 1
  * @param p1z [m] z position 1 / Altitude 1
@@ -268,7 +276,9 @@ static inline uint16_t mavlink_msg_safety_set_allowed_area_encode_status(uint8_t
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param frame  Coordinate frame. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.
+ * @param frame  Coordinate frame. Can be either global, GPS,
+                right-handed with Z axis up or local, right handed, Z axis down.
+            
  * @param p1x [m] x position 1 / Latitude 1
  * @param p1y [m] y position 1 / Longitude 1
  * @param p1z [m] z position 1 / Altitude 1
@@ -391,7 +401,9 @@ static inline uint8_t mavlink_msg_safety_set_allowed_area_get_target_component(c
 /**
  * @brief Get field frame from safety_set_allowed_area message
  *
- * @return  Coordinate frame. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.
+ * @return  Coordinate frame. Can be either global, GPS,
+                right-handed with Z axis up or local, right handed, Z axis down.
+            
  */
 static inline uint8_t mavlink_msg_safety_set_allowed_area_get_frame(const mavlink_message_t* msg)
 {

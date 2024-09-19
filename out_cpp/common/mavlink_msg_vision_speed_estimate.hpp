@@ -23,8 +23,14 @@ struct VISION_SPEED_ESTIMATE : mavlink::Message {
     float x; /*< [m/s] Global X speed */
     float y; /*< [m/s] Global Y speed */
     float z; /*< [m/s] Global Z speed */
-    std::array<float, 9> covariance; /*<  Row-major representation of 3x3 linear velocity covariance matrix (states: vx, vy, vz; 1st three entries - 1st row, etc.). If unknown, assign NaN value to first element in the array. */
-    uint8_t reset_counter; /*<  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps. */
+    std::array<float, 9> covariance; /*<  Row-major representation of 3x3 linear velocity
+                covariance matrix (states: vx, vy, vz; 1st three entries - 1st row, etc.). If unknown, assign NaN value
+                to first element in the array.
+             */
+    uint8_t reset_counter; /*<  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+             */
 
 
     inline std::string get_name(void) const override

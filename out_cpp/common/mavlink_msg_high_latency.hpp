@@ -19,9 +19,15 @@ struct HIGH_LATENCY : mavlink::Message {
     static constexpr auto NAME = "HIGH_LATENCY";
 
 
-    uint8_t base_mode; /*<  Bitmap of enabled system modes. */
-    uint32_t custom_mode; /*<  A bitfield for use for autopilot-specific flags. */
-    uint8_t landed_state; /*<  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown. */
+    uint8_t base_mode; /*<  Bitmap of enabled system
+                modes.
+             */
+    uint32_t custom_mode; /*<  A bitfield for use for autopilot-specific
+                flags.
+             */
+    uint8_t landed_state; /*<  The landed state. Is set to
+                MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+             */
     int16_t roll; /*< [cdeg] roll */
     int16_t pitch; /*< [cdeg] pitch */
     uint16_t heading; /*< [cdeg] heading */
@@ -35,12 +41,17 @@ struct HIGH_LATENCY : mavlink::Message {
     uint8_t airspeed_sp; /*< [m/s] airspeed setpoint */
     uint8_t groundspeed; /*< [m/s] groundspeed */
     int8_t climb_rate; /*< [m/s] climb rate */
-    uint8_t gps_nsat; /*<  Number of satellites visible. If unknown, set to UINT8_MAX */
+    uint8_t gps_nsat; /*<  Number of satellites visible. If unknown, set to
+                UINT8_MAX
+             */
     uint8_t gps_fix_type; /*<  GPS Fix type. */
     uint8_t battery_remaining; /*< [%] Remaining battery (percentage) */
     int8_t temperature; /*< [degC] Autopilot temperature (degrees C) */
-    int8_t temperature_air; /*< [degC] Air temperature (degrees C) from airspeed sensor */
-    uint8_t failsafe; /*<  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence) */
+    int8_t temperature_air; /*< [degC] Air temperature (degrees C) from airspeed sensor
+             */
+    uint8_t failsafe; /*<  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active
+                (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
+             */
     uint8_t wp_num; /*<  current waypoint number */
     uint16_t wp_distance; /*< [m] distance to target */
 

@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief SUPPORTED_TUNES message
  *
- * Tune formats supported by vehicle. This should be emitted as response to MAV_CMD_REQUEST_MESSAGE.
+ * Tune formats supported by vehicle. This should be emitted as response to
+                MAV_CMD_REQUEST_MESSAGE.
+            
  */
 struct SUPPORTED_TUNES : mavlink::Message {
     static constexpr msgid_t MSG_ID = 401;
@@ -21,7 +23,9 @@ struct SUPPORTED_TUNES : mavlink::Message {
 
     uint8_t target_system; /*<  System ID */
     uint8_t target_component; /*<  Component ID */
-    uint32_t format; /*<  Bitfield of supported tune formats. */
+    uint32_t format; /*<  Bitfield of supported tune
+                formats.
+             */
 
 
     inline std::string get_name(void) const override

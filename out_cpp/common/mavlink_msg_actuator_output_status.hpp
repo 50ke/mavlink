@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief ACTUATOR_OUTPUT_STATUS message
  *
- * The raw values of the actuator outputs (e.g. on Pixhawk, from MAIN, AUX ports). This message supersedes SERVO_OUTPUT_RAW.
+ * The raw values of the actuator outputs (e.g. on Pixhawk, from MAIN, AUX ports). This message
+                supersedes SERVO_OUTPUT_RAW.
+            
  */
 struct ACTUATOR_OUTPUT_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 375;
@@ -21,7 +23,9 @@ struct ACTUATOR_OUTPUT_STATUS : mavlink::Message {
 
     uint64_t time_usec; /*< [us] Timestamp (since system boot). */
     uint32_t active; /*<  Active outputs */
-    std::array<float, 32> actuator; /*<  Servo / motor output array values. Zero values indicate unused channels. */
+    std::array<float, 32> actuator; /*<  Servo / motor output array values. Zero values indicate unused
+                channels.
+             */
 
 
     inline std::string get_name(void) const override

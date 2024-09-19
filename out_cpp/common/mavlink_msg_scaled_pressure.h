@@ -9,7 +9,9 @@ typedef struct __mavlink_scaled_pressure_t {
  float press_abs; /*< [hPa] Absolute pressure*/
  float press_diff; /*< [hPa] Differential pressure 1*/
  int16_t temperature; /*< [cdegC] Absolute pressure temperature*/
- int16_t temperature_press_diff; /*< [cdegC] Differential pressure temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.*/
+ int16_t temperature_press_diff; /*< [cdegC] Differential pressure
+                temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+            */
 } mavlink_scaled_pressure_t;
 
 #define MAVLINK_MSG_ID_SCALED_PRESSURE_LEN 16
@@ -57,7 +59,9 @@ typedef struct __mavlink_scaled_pressure_t {
  * @param press_abs [hPa] Absolute pressure
  * @param press_diff [hPa] Differential pressure 1
  * @param temperature [cdegC] Absolute pressure temperature
- * @param temperature_press_diff [cdegC] Differential pressure temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+ * @param temperature_press_diff [cdegC] Differential pressure
+                temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_scaled_pressure_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -98,7 +102,9 @@ static inline uint16_t mavlink_msg_scaled_pressure_pack(uint8_t system_id, uint8
  * @param press_abs [hPa] Absolute pressure
  * @param press_diff [hPa] Differential pressure 1
  * @param temperature [cdegC] Absolute pressure temperature
- * @param temperature_press_diff [cdegC] Differential pressure temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+ * @param temperature_press_diff [cdegC] Differential pressure
+                temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_scaled_pressure_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -142,7 +148,9 @@ static inline uint16_t mavlink_msg_scaled_pressure_pack_status(uint8_t system_id
  * @param press_abs [hPa] Absolute pressure
  * @param press_diff [hPa] Differential pressure 1
  * @param temperature [cdegC] Absolute pressure temperature
- * @param temperature_press_diff [cdegC] Differential pressure temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+ * @param temperature_press_diff [cdegC] Differential pressure
+                temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_scaled_pressure_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -222,7 +230,9 @@ static inline uint16_t mavlink_msg_scaled_pressure_encode_status(uint8_t system_
  * @param press_abs [hPa] Absolute pressure
  * @param press_diff [hPa] Differential pressure 1
  * @param temperature [cdegC] Absolute pressure temperature
- * @param temperature_press_diff [cdegC] Differential pressure temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+ * @param temperature_press_diff [cdegC] Differential pressure
+                temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -343,7 +353,9 @@ static inline int16_t mavlink_msg_scaled_pressure_get_temperature(const mavlink_
 /**
  * @brief Get field temperature_press_diff from scaled_pressure message
  *
- * @return [cdegC] Differential pressure temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+ * @return [cdegC] Differential pressure
+                temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+            
  */
 static inline int16_t mavlink_msg_scaled_pressure_get_temperature_press_diff(const mavlink_message_t* msg)
 {

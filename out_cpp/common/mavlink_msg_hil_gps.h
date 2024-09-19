@@ -5,21 +5,39 @@
 
 MAVPACKED(
 typedef struct __mavlink_hil_gps_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
  int32_t lat; /*< [degE7] Latitude (WGS84)*/
  int32_t lon; /*< [degE7] Longitude (WGS84)*/
  int32_t alt; /*< [mm] Altitude (MSL). Positive for up.*/
- uint16_t eph; /*<  GPS HDOP horizontal dilution of position (unitless * 100). If unknown, set to: UINT16_MAX*/
- uint16_t epv; /*<  GPS VDOP vertical dilution of position (unitless * 100). If unknown, set to: UINT16_MAX*/
- uint16_t vel; /*< [cm/s] GPS ground speed. If unknown, set to: UINT16_MAX*/
- int16_t vn; /*< [cm/s] GPS velocity in north direction in earth-fixed NED frame*/
+ uint16_t eph; /*<  GPS HDOP horizontal dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            */
+ uint16_t epv; /*<  GPS VDOP vertical dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            */
+ uint16_t vel; /*< [cm/s] GPS ground speed. If unknown, set to:
+                UINT16_MAX
+            */
+ int16_t vn; /*< [cm/s] GPS velocity in north direction in earth-fixed NED frame
+            */
  int16_t ve; /*< [cm/s] GPS velocity in east direction in earth-fixed NED frame*/
  int16_t vd; /*< [cm/s] GPS velocity in down direction in earth-fixed NED frame*/
- uint16_t cog; /*< [cdeg] Course over ground (NOT heading, but direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX*/
- uint8_t fix_type; /*<  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.*/
- uint8_t satellites_visible; /*<  Number of satellites visible. If unknown, set to UINT8_MAX*/
+ uint16_t cog; /*< [cdeg] Course over ground (NOT heading, but
+                direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
+            */
+ uint8_t fix_type; /*<  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the
+                value of this field unless it is at least two, so always correctly fill in the fix.
+            */
+ uint8_t satellites_visible; /*<  Number of satellites visible. If
+                unknown, set to UINT8_MAX
+            */
  uint8_t id; /*<  GPS ID (zero indexed). Used for multiple GPS inputs*/
- uint16_t yaw; /*< [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north*/
+ uint16_t yaw; /*< [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            */
 }) mavlink_hil_gps_t;
 
 #define MAVLINK_MSG_ID_HIL_GPS_LEN 39
@@ -83,21 +101,39 @@ typedef struct __mavlink_hil_gps_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the
+                value of this field unless it is at least two, so always correctly fill in the fix.
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [mm] Altitude (MSL). Positive for up.
- * @param eph  GPS HDOP horizontal dilution of position (unitless * 100). If unknown, set to: UINT16_MAX
- * @param epv  GPS VDOP vertical dilution of position (unitless * 100). If unknown, set to: UINT16_MAX
- * @param vel [cm/s] GPS ground speed. If unknown, set to: UINT16_MAX
+ * @param eph  GPS HDOP horizontal dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            
+ * @param epv  GPS VDOP vertical dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            
+ * @param vel [cm/s] GPS ground speed. If unknown, set to:
+                UINT16_MAX
+            
  * @param vn [cm/s] GPS velocity in north direction in earth-fixed NED frame
+            
  * @param ve [cm/s] GPS velocity in east direction in earth-fixed NED frame
  * @param vd [cm/s] GPS velocity in down direction in earth-fixed NED frame
- * @param cog [cdeg] Course over ground (NOT heading, but direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
- * @param satellites_visible  Number of satellites visible. If unknown, set to UINT8_MAX
+ * @param cog [cdeg] Course over ground (NOT heading, but
+                direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
+            
+ * @param satellites_visible  Number of satellites visible. If
+                unknown, set to UINT8_MAX
+            
  * @param id  GPS ID (zero indexed). Used for multiple GPS inputs
- * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_hil_gps_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -154,21 +190,39 @@ static inline uint16_t mavlink_msg_hil_gps_pack(uint8_t system_id, uint8_t compo
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the
+                value of this field unless it is at least two, so always correctly fill in the fix.
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [mm] Altitude (MSL). Positive for up.
- * @param eph  GPS HDOP horizontal dilution of position (unitless * 100). If unknown, set to: UINT16_MAX
- * @param epv  GPS VDOP vertical dilution of position (unitless * 100). If unknown, set to: UINT16_MAX
- * @param vel [cm/s] GPS ground speed. If unknown, set to: UINT16_MAX
+ * @param eph  GPS HDOP horizontal dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            
+ * @param epv  GPS VDOP vertical dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            
+ * @param vel [cm/s] GPS ground speed. If unknown, set to:
+                UINT16_MAX
+            
  * @param vn [cm/s] GPS velocity in north direction in earth-fixed NED frame
+            
  * @param ve [cm/s] GPS velocity in east direction in earth-fixed NED frame
  * @param vd [cm/s] GPS velocity in down direction in earth-fixed NED frame
- * @param cog [cdeg] Course over ground (NOT heading, but direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
- * @param satellites_visible  Number of satellites visible. If unknown, set to UINT8_MAX
+ * @param cog [cdeg] Course over ground (NOT heading, but
+                direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
+            
+ * @param satellites_visible  Number of satellites visible. If
+                unknown, set to UINT8_MAX
+            
  * @param id  GPS ID (zero indexed). Used for multiple GPS inputs
- * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_hil_gps_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -228,21 +282,39 @@ static inline uint16_t mavlink_msg_hil_gps_pack_status(uint8_t system_id, uint8_
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the
+                value of this field unless it is at least two, so always correctly fill in the fix.
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [mm] Altitude (MSL). Positive for up.
- * @param eph  GPS HDOP horizontal dilution of position (unitless * 100). If unknown, set to: UINT16_MAX
- * @param epv  GPS VDOP vertical dilution of position (unitless * 100). If unknown, set to: UINT16_MAX
- * @param vel [cm/s] GPS ground speed. If unknown, set to: UINT16_MAX
+ * @param eph  GPS HDOP horizontal dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            
+ * @param epv  GPS VDOP vertical dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            
+ * @param vel [cm/s] GPS ground speed. If unknown, set to:
+                UINT16_MAX
+            
  * @param vn [cm/s] GPS velocity in north direction in earth-fixed NED frame
+            
  * @param ve [cm/s] GPS velocity in east direction in earth-fixed NED frame
  * @param vd [cm/s] GPS velocity in down direction in earth-fixed NED frame
- * @param cog [cdeg] Course over ground (NOT heading, but direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
- * @param satellites_visible  Number of satellites visible. If unknown, set to UINT8_MAX
+ * @param cog [cdeg] Course over ground (NOT heading, but
+                direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
+            
+ * @param satellites_visible  Number of satellites visible. If
+                unknown, set to UINT8_MAX
+            
  * @param id  GPS ID (zero indexed). Used for multiple GPS inputs
- * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_hil_gps_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -338,21 +410,39 @@ static inline uint16_t mavlink_msg_hil_gps_encode_status(uint8_t system_id, uint
  * @brief Send a hil_gps message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the
+                value of this field unless it is at least two, so always correctly fill in the fix.
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [mm] Altitude (MSL). Positive for up.
- * @param eph  GPS HDOP horizontal dilution of position (unitless * 100). If unknown, set to: UINT16_MAX
- * @param epv  GPS VDOP vertical dilution of position (unitless * 100). If unknown, set to: UINT16_MAX
- * @param vel [cm/s] GPS ground speed. If unknown, set to: UINT16_MAX
+ * @param eph  GPS HDOP horizontal dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            
+ * @param epv  GPS VDOP vertical dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            
+ * @param vel [cm/s] GPS ground speed. If unknown, set to:
+                UINT16_MAX
+            
  * @param vn [cm/s] GPS velocity in north direction in earth-fixed NED frame
+            
  * @param ve [cm/s] GPS velocity in east direction in earth-fixed NED frame
  * @param vd [cm/s] GPS velocity in down direction in earth-fixed NED frame
- * @param cog [cdeg] Course over ground (NOT heading, but direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
- * @param satellites_visible  Number of satellites visible. If unknown, set to UINT8_MAX
+ * @param cog [cdeg] Course over ground (NOT heading, but
+                direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
+            
+ * @param satellites_visible  Number of satellites visible. If
+                unknown, set to UINT8_MAX
+            
  * @param id  GPS ID (zero indexed). Used for multiple GPS inputs
- * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -473,7 +563,10 @@ static inline void mavlink_msg_hil_gps_send_buf(mavlink_message_t *msgbuf, mavli
 /**
  * @brief Get field time_usec from hil_gps message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_hil_gps_get_time_usec(const mavlink_message_t* msg)
 {
@@ -483,7 +576,9 @@ static inline uint64_t mavlink_msg_hil_gps_get_time_usec(const mavlink_message_t
 /**
  * @brief Get field fix_type from hil_gps message
  *
- * @return  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.
+ * @return  0-1: no fix, 2: 2D fix, 3: 3D fix. Some applications will not use the
+                value of this field unless it is at least two, so always correctly fill in the fix.
+            
  */
 static inline uint8_t mavlink_msg_hil_gps_get_fix_type(const mavlink_message_t* msg)
 {
@@ -523,7 +618,9 @@ static inline int32_t mavlink_msg_hil_gps_get_alt(const mavlink_message_t* msg)
 /**
  * @brief Get field eph from hil_gps message
  *
- * @return  GPS HDOP horizontal dilution of position (unitless * 100). If unknown, set to: UINT16_MAX
+ * @return  GPS HDOP horizontal dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            
  */
 static inline uint16_t mavlink_msg_hil_gps_get_eph(const mavlink_message_t* msg)
 {
@@ -533,7 +630,9 @@ static inline uint16_t mavlink_msg_hil_gps_get_eph(const mavlink_message_t* msg)
 /**
  * @brief Get field epv from hil_gps message
  *
- * @return  GPS VDOP vertical dilution of position (unitless * 100). If unknown, set to: UINT16_MAX
+ * @return  GPS VDOP vertical dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+            
  */
 static inline uint16_t mavlink_msg_hil_gps_get_epv(const mavlink_message_t* msg)
 {
@@ -543,7 +642,9 @@ static inline uint16_t mavlink_msg_hil_gps_get_epv(const mavlink_message_t* msg)
 /**
  * @brief Get field vel from hil_gps message
  *
- * @return [cm/s] GPS ground speed. If unknown, set to: UINT16_MAX
+ * @return [cm/s] GPS ground speed. If unknown, set to:
+                UINT16_MAX
+            
  */
 static inline uint16_t mavlink_msg_hil_gps_get_vel(const mavlink_message_t* msg)
 {
@@ -554,6 +655,7 @@ static inline uint16_t mavlink_msg_hil_gps_get_vel(const mavlink_message_t* msg)
  * @brief Get field vn from hil_gps message
  *
  * @return [cm/s] GPS velocity in north direction in earth-fixed NED frame
+            
  */
 static inline int16_t mavlink_msg_hil_gps_get_vn(const mavlink_message_t* msg)
 {
@@ -583,7 +685,9 @@ static inline int16_t mavlink_msg_hil_gps_get_vd(const mavlink_message_t* msg)
 /**
  * @brief Get field cog from hil_gps message
  *
- * @return [cdeg] Course over ground (NOT heading, but direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
+ * @return [cdeg] Course over ground (NOT heading, but
+                direction of movement), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
+            
  */
 static inline uint16_t mavlink_msg_hil_gps_get_cog(const mavlink_message_t* msg)
 {
@@ -593,7 +697,9 @@ static inline uint16_t mavlink_msg_hil_gps_get_cog(const mavlink_message_t* msg)
 /**
  * @brief Get field satellites_visible from hil_gps message
  *
- * @return  Number of satellites visible. If unknown, set to UINT8_MAX
+ * @return  Number of satellites visible. If
+                unknown, set to UINT8_MAX
+            
  */
 static inline uint8_t mavlink_msg_hil_gps_get_satellites_visible(const mavlink_message_t* msg)
 {
@@ -613,7 +719,9 @@ static inline uint8_t mavlink_msg_hil_gps_get_id(const mavlink_message_t* msg)
 /**
  * @brief Get field yaw from hil_gps message
  *
- * @return [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
+ * @return [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            
  */
 static inline uint16_t mavlink_msg_hil_gps_get_yaw(const mavlink_message_t* msg)
 {

@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief CAMERA_FOV_STATUS message
  *
- * Information about the field of view of a camera. Can be requested with a MAV_CMD_REQUEST_MESSAGE command.
+ * Information about the field of view of a camera. Can be requested with a
+                MAV_CMD_REQUEST_MESSAGE command.
+            
  */
 struct CAMERA_FOV_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 271;
@@ -20,16 +22,33 @@ struct CAMERA_FOV_STATUS : mavlink::Message {
 
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
-    int32_t lat_camera; /*< [degE7] Latitude of camera (INT32_MAX if unknown). */
-    int32_t lon_camera; /*< [degE7] Longitude of camera (INT32_MAX if unknown). */
-    int32_t alt_camera; /*< [mm] Altitude (MSL) of camera (INT32_MAX if unknown). */
-    int32_t lat_image; /*< [degE7] Latitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon). */
-    int32_t lon_image; /*< [degE7] Longitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon). */
-    int32_t alt_image; /*< [mm] Altitude (MSL) of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon). */
-    std::array<float, 4> q; /*<  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0, 0, 0) */
+    int32_t lat_camera; /*< [degE7] Latitude of camera (INT32_MAX if
+                unknown).
+             */
+    int32_t lon_camera; /*< [degE7] Longitude of camera (INT32_MAX if
+                unknown).
+             */
+    int32_t alt_camera; /*< [mm] Altitude (MSL) of camera (INT32_MAX
+                if unknown).
+             */
+    int32_t lat_image; /*< [degE7] Latitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+             */
+    int32_t lon_image; /*< [degE7] Longitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+             */
+    int32_t alt_image; /*< [mm] Altitude (MSL) of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+             */
+    std::array<float, 4> q; /*<  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0,
+                0, 0)
+             */
     float hfov; /*< [deg] Horizontal field of view (NaN if unknown). */
     float vfov; /*< [deg] Vertical field of view (NaN if unknown). */
-    uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id). */
+    uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+             */
 
 
     inline std::string get_name(void) const override

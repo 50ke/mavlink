@@ -14,7 +14,9 @@ typedef struct __mavlink_illuminator_status_t {
  float min_strobe_period; /*< [s] Minimum strobing period in seconds*/
  float max_strobe_period; /*< [s] Maximum strobing period in seconds*/
  uint8_t enable; /*<  0: Illuminators OFF, 1: Illuminators ON*/
- uint8_t mode_bitmask; /*<  Supported illuminator modes*/
+ uint8_t mode_bitmask; /*<  Supported illuminator
+                modes
+            */
  uint8_t mode; /*<  Illuminator mode*/
 } mavlink_illuminator_status_t;
 
@@ -73,7 +75,9 @@ typedef struct __mavlink_illuminator_status_t {
  *
  * @param uptime_ms [ms] Time since the start-up of the illuminator in ms
  * @param enable  0: Illuminators OFF, 1: Illuminators ON
- * @param mode_bitmask  Supported illuminator modes
+ * @param mode_bitmask  Supported illuminator
+                modes
+            
  * @param error_status  Errors
  * @param mode  Illuminator mode
  * @param brightness [%] Illuminator brightness
@@ -132,7 +136,9 @@ static inline uint16_t mavlink_msg_illuminator_status_pack(uint8_t system_id, ui
  *
  * @param uptime_ms [ms] Time since the start-up of the illuminator in ms
  * @param enable  0: Illuminators OFF, 1: Illuminators ON
- * @param mode_bitmask  Supported illuminator modes
+ * @param mode_bitmask  Supported illuminator
+                modes
+            
  * @param error_status  Errors
  * @param mode  Illuminator mode
  * @param brightness [%] Illuminator brightness
@@ -194,7 +200,9 @@ static inline uint16_t mavlink_msg_illuminator_status_pack_status(uint8_t system
  * @param msg The MAVLink message to compress the data into
  * @param uptime_ms [ms] Time since the start-up of the illuminator in ms
  * @param enable  0: Illuminators OFF, 1: Illuminators ON
- * @param mode_bitmask  Supported illuminator modes
+ * @param mode_bitmask  Supported illuminator
+                modes
+            
  * @param error_status  Errors
  * @param mode  Illuminator mode
  * @param brightness [%] Illuminator brightness
@@ -292,7 +300,9 @@ static inline uint16_t mavlink_msg_illuminator_status_encode_status(uint8_t syst
  *
  * @param uptime_ms [ms] Time since the start-up of the illuminator in ms
  * @param enable  0: Illuminators OFF, 1: Illuminators ON
- * @param mode_bitmask  Supported illuminator modes
+ * @param mode_bitmask  Supported illuminator
+                modes
+            
  * @param error_status  Errors
  * @param mode  Illuminator mode
  * @param brightness [%] Illuminator brightness
@@ -425,7 +435,9 @@ static inline uint8_t mavlink_msg_illuminator_status_get_enable(const mavlink_me
 /**
  * @brief Get field mode_bitmask from illuminator_status message
  *
- * @return  Supported illuminator modes
+ * @return  Supported illuminator
+                modes
+            
  */
 static inline uint8_t mavlink_msg_illuminator_status_get_mode_bitmask(const mavlink_message_t* msg)
 {

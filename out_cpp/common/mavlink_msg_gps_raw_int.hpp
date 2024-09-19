@@ -10,7 +10,9 @@ namespace msg {
  * @brief GPS_RAW_INT message
  *
  * The global position, as returned by the Global Positioning System (GPS). This is
-                NOT the global position estimate of the system, but rather a RAW sensor value. See message GLOBAL_POSITION_INT for the global position estimate.
+                NOT the global position estimate of the system, but rather a RAW sensor value. See message
+                GLOBAL_POSITION_INT for the global position estimate.
+            
  */
 struct GPS_RAW_INT : mavlink::Message {
     static constexpr msgid_t MSG_ID = 24;
@@ -20,22 +22,42 @@ struct GPS_RAW_INT : mavlink::Message {
     static constexpr auto NAME = "GPS_RAW_INT";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     uint8_t fix_type; /*<  GPS fix type. */
     int32_t lat; /*< [degE7] Latitude (WGS84, EGM96 ellipsoid) */
     int32_t lon; /*< [degE7] Longitude (WGS84, EGM96 ellipsoid) */
-    int32_t alt; /*< [mm] Altitude (MSL). Positive for up. Note that virtually all GPS modules provide the MSL altitude in addition to the WGS84 altitude. */
-    uint16_t eph; /*<  GPS HDOP horizontal dilution of position (unitless * 100). If unknown, set to: UINT16_MAX */
-    uint16_t epv; /*<  GPS VDOP vertical dilution of position (unitless * 100). If unknown, set to: UINT16_MAX */
-    uint16_t vel; /*< [cm/s] GPS ground speed. If unknown, set to: UINT16_MAX */
-    uint16_t cog; /*< [cdeg] Course over ground (NOT heading, but direction of movement) in degrees * 100, 0.0..359.99 degrees. If unknown, set to: UINT16_MAX */
-    uint8_t satellites_visible; /*<  Number of satellites visible. If unknown, set to UINT8_MAX */
-    int32_t alt_ellipsoid; /*< [mm] Altitude (above WGS84, EGM96 ellipsoid). Positive for up. */
+    int32_t alt; /*< [mm] Altitude (MSL). Positive for up. Note that virtually all GPS
+                modules provide the MSL altitude in addition to the WGS84 altitude.
+             */
+    uint16_t eph; /*<  GPS HDOP horizontal dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+             */
+    uint16_t epv; /*<  GPS VDOP vertical dilution of
+                position (unitless * 100). If unknown, set to: UINT16_MAX
+             */
+    uint16_t vel; /*< [cm/s] GPS ground speed. If unknown, set to:
+                UINT16_MAX
+             */
+    uint16_t cog; /*< [cdeg] Course over ground (NOT heading, but
+                direction of movement) in degrees * 100, 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
+             */
+    uint8_t satellites_visible; /*<  Number of satellites visible. If
+                unknown, set to UINT8_MAX
+             */
+    int32_t alt_ellipsoid; /*< [mm] Altitude (above WGS84, EGM96 ellipsoid). Positive for
+                up.
+             */
     uint32_t h_acc; /*< [mm] Position uncertainty. */
     uint32_t v_acc; /*< [mm] Altitude uncertainty. */
     uint32_t vel_acc; /*< [mm] Speed uncertainty. */
     uint32_t hdg_acc; /*< [degE5] Heading / track uncertainty */
-    uint16_t yaw; /*< [cdeg] Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use UINT16_MAX if this GPS is configured to provide yaw and is currently unable to provide it. Use 36000 for north. */
+    uint16_t yaw; /*< [cdeg] Yaw in earth frame from north. Use 0 if this GPS
+                does not provide yaw. Use UINT16_MAX if this GPS is configured to provide yaw and is currently unable to
+                provide it. Use 36000 for north.
+             */
 
 
     inline std::string get_name(void) const override

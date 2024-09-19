@@ -9,7 +9,11 @@ namespace msg {
 /**
  * @brief COMMAND_LONG message
  *
- * Send a command with up to seven parameters to the MAV. COMMAND_INT is generally preferred when sending MAV_CMD commands that include positional information; it offers higher precision and allows the MAV_FRAME to be specified (which may otherwise be ambiguous, particularly for altitude). The command microservice is documented at https://mavlink.io/en/services/command.html
+ * Send a command with up to seven parameters to the MAV. COMMAND_INT is generally preferred when
+                sending MAV_CMD commands that include positional information; it offers higher precision and allows the
+                MAV_FRAME to be specified (which may otherwise be ambiguous, particularly for altitude). The command
+                microservice is documented at https://mavlink.io/en/services/command.html
+            
  */
 struct COMMAND_LONG : mavlink::Message {
     static constexpr msgid_t MSG_ID = 76;
@@ -20,9 +24,13 @@ struct COMMAND_LONG : mavlink::Message {
 
 
     uint8_t target_system; /*<  System which should execute the command */
-    uint8_t target_component; /*<  Component which should execute the command, 0 for all components */
+    uint8_t target_component; /*<  Component which should execute the command, 0 for all
+                components
+             */
     uint16_t command; /*<  Command ID (of command to send). */
-    uint8_t confirmation; /*<  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command) */
+    uint8_t confirmation; /*<  0: First transmission of this command. 1-255: Confirmation
+                transmissions (e.g. for kill command)
+             */
     float param1; /*<  Parameter 1 (for the specific command). */
     float param2; /*<  Parameter 2 (for the specific command). */
     float param3; /*<  Parameter 3 (for the specific command). */

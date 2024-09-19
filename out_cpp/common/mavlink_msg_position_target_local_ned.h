@@ -12,13 +12,23 @@ typedef struct __mavlink_position_target_local_ned_t {
  float vx; /*< [m/s] X velocity in NED frame*/
  float vy; /*< [m/s] Y velocity in NED frame*/
  float vz; /*< [m/s] Z velocity in NED frame*/
- float afx; /*< [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N*/
- float afy; /*< [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N*/
- float afz; /*< [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N*/
+ float afx; /*< [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            */
+ float afy; /*< [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            */
+ float afz; /*< [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            */
  float yaw; /*< [rad] yaw setpoint*/
  float yaw_rate; /*< [rad/s] yaw rate setpoint*/
- uint16_t type_mask; /*<  Bitmap to indicate which dimensions should be ignored by the vehicle.*/
- uint8_t coordinate_frame; /*<  Valid options are: MAV_FRAME_LOCAL_NED = 1, MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9*/
+ uint16_t type_mask; /*<  Bitmap to indicate
+                which dimensions should be ignored by the vehicle.
+            */
+ uint8_t coordinate_frame; /*<  Valid options are: MAV_FRAME_LOCAL_NED = 1,
+                MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
+            */
 } mavlink_position_target_local_ned_t;
 
 #define MAVLINK_MSG_ID_POSITION_TARGET_LOCAL_NED_LEN 51
@@ -81,17 +91,27 @@ typedef struct __mavlink_position_target_local_ned_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param coordinate_frame  Valid options are: MAV_FRAME_LOCAL_NED = 1, MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
- * @param type_mask  Bitmap to indicate which dimensions should be ignored by the vehicle.
+ * @param coordinate_frame  Valid options are: MAV_FRAME_LOCAL_NED = 1,
+                MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
+            
+ * @param type_mask  Bitmap to indicate
+                which dimensions should be ignored by the vehicle.
+            
  * @param x [m] X Position in NED frame
  * @param y [m] Y Position in NED frame
  * @param z [m] Z Position in NED frame (note, altitude is negative in NED)
  * @param vx [m/s] X velocity in NED frame
  * @param vy [m/s] Y velocity in NED frame
  * @param vz [m/s] Z velocity in NED frame
- * @param afx [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
- * @param afy [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
- * @param afz [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
+ * @param afx [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
+ * @param afy [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
+ * @param afz [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
  * @param yaw [rad] yaw setpoint
  * @param yaw_rate [rad/s] yaw rate setpoint
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -149,17 +169,27 @@ static inline uint16_t mavlink_msg_position_target_local_ned_pack(uint8_t system
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param coordinate_frame  Valid options are: MAV_FRAME_LOCAL_NED = 1, MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
- * @param type_mask  Bitmap to indicate which dimensions should be ignored by the vehicle.
+ * @param coordinate_frame  Valid options are: MAV_FRAME_LOCAL_NED = 1,
+                MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
+            
+ * @param type_mask  Bitmap to indicate
+                which dimensions should be ignored by the vehicle.
+            
  * @param x [m] X Position in NED frame
  * @param y [m] Y Position in NED frame
  * @param z [m] Z Position in NED frame (note, altitude is negative in NED)
  * @param vx [m/s] X velocity in NED frame
  * @param vy [m/s] Y velocity in NED frame
  * @param vz [m/s] Z velocity in NED frame
- * @param afx [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
- * @param afy [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
- * @param afz [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
+ * @param afx [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
+ * @param afy [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
+ * @param afz [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
  * @param yaw [rad] yaw setpoint
  * @param yaw_rate [rad/s] yaw rate setpoint
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -220,17 +250,27 @@ static inline uint16_t mavlink_msg_position_target_local_ned_pack_status(uint8_t
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param coordinate_frame  Valid options are: MAV_FRAME_LOCAL_NED = 1, MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
- * @param type_mask  Bitmap to indicate which dimensions should be ignored by the vehicle.
+ * @param coordinate_frame  Valid options are: MAV_FRAME_LOCAL_NED = 1,
+                MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
+            
+ * @param type_mask  Bitmap to indicate
+                which dimensions should be ignored by the vehicle.
+            
  * @param x [m] X Position in NED frame
  * @param y [m] Y Position in NED frame
  * @param z [m] Z Position in NED frame (note, altitude is negative in NED)
  * @param vx [m/s] X velocity in NED frame
  * @param vy [m/s] Y velocity in NED frame
  * @param vz [m/s] Z velocity in NED frame
- * @param afx [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
- * @param afy [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
- * @param afz [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
+ * @param afx [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
+ * @param afy [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
+ * @param afz [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
  * @param yaw [rad] yaw setpoint
  * @param yaw_rate [rad/s] yaw rate setpoint
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -327,17 +367,27 @@ static inline uint16_t mavlink_msg_position_target_local_ned_encode_status(uint8
  * @param chan MAVLink channel to send the message
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param coordinate_frame  Valid options are: MAV_FRAME_LOCAL_NED = 1, MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
- * @param type_mask  Bitmap to indicate which dimensions should be ignored by the vehicle.
+ * @param coordinate_frame  Valid options are: MAV_FRAME_LOCAL_NED = 1,
+                MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
+            
+ * @param type_mask  Bitmap to indicate
+                which dimensions should be ignored by the vehicle.
+            
  * @param x [m] X Position in NED frame
  * @param y [m] Y Position in NED frame
  * @param z [m] Z Position in NED frame (note, altitude is negative in NED)
  * @param vx [m/s] X velocity in NED frame
  * @param vy [m/s] Y velocity in NED frame
  * @param vz [m/s] Z velocity in NED frame
- * @param afx [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
- * @param afy [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
- * @param afz [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
+ * @param afx [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
+ * @param afy [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
+ * @param afz [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
  * @param yaw [rad] yaw setpoint
  * @param yaw_rate [rad/s] yaw rate setpoint
  */
@@ -466,7 +516,9 @@ static inline uint32_t mavlink_msg_position_target_local_ned_get_time_boot_ms(co
 /**
  * @brief Get field coordinate_frame from position_target_local_ned message
  *
- * @return  Valid options are: MAV_FRAME_LOCAL_NED = 1, MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
+ * @return  Valid options are: MAV_FRAME_LOCAL_NED = 1,
+                MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
+            
  */
 static inline uint8_t mavlink_msg_position_target_local_ned_get_coordinate_frame(const mavlink_message_t* msg)
 {
@@ -476,7 +528,9 @@ static inline uint8_t mavlink_msg_position_target_local_ned_get_coordinate_frame
 /**
  * @brief Get field type_mask from position_target_local_ned message
  *
- * @return  Bitmap to indicate which dimensions should be ignored by the vehicle.
+ * @return  Bitmap to indicate
+                which dimensions should be ignored by the vehicle.
+            
  */
 static inline uint16_t mavlink_msg_position_target_local_ned_get_type_mask(const mavlink_message_t* msg)
 {
@@ -546,7 +600,9 @@ static inline float mavlink_msg_position_target_local_ned_get_vz(const mavlink_m
 /**
  * @brief Get field afx from position_target_local_ned message
  *
- * @return [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
+ * @return [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
  */
 static inline float mavlink_msg_position_target_local_ned_get_afx(const mavlink_message_t* msg)
 {
@@ -556,7 +612,9 @@ static inline float mavlink_msg_position_target_local_ned_get_afx(const mavlink_
 /**
  * @brief Get field afy from position_target_local_ned message
  *
- * @return [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
+ * @return [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
  */
 static inline float mavlink_msg_position_target_local_ned_get_afy(const mavlink_message_t* msg)
 {
@@ -566,7 +624,9 @@ static inline float mavlink_msg_position_target_local_ned_get_afy(const mavlink_
 /**
  * @brief Get field afz from position_target_local_ned message
  *
- * @return [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N
+ * @return [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+            
  */
 static inline float mavlink_msg_position_target_local_ned_get_afz(const mavlink_message_t* msg)
 {

@@ -5,11 +5,18 @@
 
 
 typedef struct __mavlink_esc_status_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.*/
- int32_t rpm[4]; /*< [rpm] Reported motor RPM from each ESC (negative for reverse rotation).*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            */
+ int32_t rpm[4]; /*< [rpm] Reported motor RPM from each ESC (negative for reverse
+                rotation).
+            */
  float voltage[4]; /*< [V] Voltage measured from each ESC.*/
  float current[4]; /*< [A] Current measured from each ESC.*/
- uint8_t index; /*<  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.*/
+ uint8_t index; /*<  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            */
 } mavlink_esc_status_t;
 
 #define MAVLINK_MSG_ID_ESC_STATUS_LEN 57
@@ -55,9 +62,16 @@ typedef struct __mavlink_esc_status_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param index  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.
- * @param rpm [rpm] Reported motor RPM from each ESC (negative for reverse rotation).
+ * @param index  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            
+ * @param rpm [rpm] Reported motor RPM from each ESC (negative for reverse
+                rotation).
+            
  * @param voltage [V] Voltage measured from each ESC.
  * @param current [A] Current measured from each ESC.
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -94,9 +108,16 @@ static inline uint16_t mavlink_msg_esc_status_pack(uint8_t system_id, uint8_t co
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param index  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.
- * @param rpm [rpm] Reported motor RPM from each ESC (negative for reverse rotation).
+ * @param index  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            
+ * @param rpm [rpm] Reported motor RPM from each ESC (negative for reverse
+                rotation).
+            
  * @param voltage [V] Voltage measured from each ESC.
  * @param current [A] Current measured from each ESC.
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -136,9 +157,16 @@ static inline uint16_t mavlink_msg_esc_status_pack_status(uint8_t system_id, uin
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param index  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.
- * @param rpm [rpm] Reported motor RPM from each ESC (negative for reverse rotation).
+ * @param index  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            
+ * @param rpm [rpm] Reported motor RPM from each ESC (negative for reverse
+                rotation).
+            
  * @param voltage [V] Voltage measured from each ESC.
  * @param current [A] Current measured from each ESC.
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -214,9 +242,16 @@ static inline uint16_t mavlink_msg_esc_status_encode_status(uint8_t system_id, u
  * @brief Send a esc_status message
  * @param chan MAVLink channel to send the message
  *
- * @param index  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.
- * @param rpm [rpm] Reported motor RPM from each ESC (negative for reverse rotation).
+ * @param index  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            
+ * @param rpm [rpm] Reported motor RPM from each ESC (negative for reverse
+                rotation).
+            
  * @param voltage [V] Voltage measured from each ESC.
  * @param current [A] Current measured from each ESC.
  */
@@ -295,7 +330,9 @@ static inline void mavlink_msg_esc_status_send_buf(mavlink_message_t *msgbuf, ma
 /**
  * @brief Get field index from esc_status message
  *
- * @return  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.
+ * @return  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            
  */
 static inline uint8_t mavlink_msg_esc_status_get_index(const mavlink_message_t* msg)
 {
@@ -305,7 +342,10 @@ static inline uint8_t mavlink_msg_esc_status_get_index(const mavlink_message_t* 
 /**
  * @brief Get field time_usec from esc_status message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            
  */
 static inline uint64_t mavlink_msg_esc_status_get_time_usec(const mavlink_message_t* msg)
 {
@@ -315,7 +355,9 @@ static inline uint64_t mavlink_msg_esc_status_get_time_usec(const mavlink_messag
 /**
  * @brief Get field rpm from esc_status message
  *
- * @return [rpm] Reported motor RPM from each ESC (negative for reverse rotation).
+ * @return [rpm] Reported motor RPM from each ESC (negative for reverse
+                rotation).
+            
  */
 static inline uint16_t mavlink_msg_esc_status_get_rpm(const mavlink_message_t* msg, int32_t *rpm)
 {

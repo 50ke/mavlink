@@ -18,10 +18,13 @@ typedef struct __mavlink_mag_cal_report_t {
  uint8_t compass_id; /*<  Compass being calibrated.*/
  uint8_t cal_mask; /*<  Bitmask of compasses being calibrated.*/
  uint8_t cal_status; /*<  Calibration Status.*/
- uint8_t autosaved; /*<  0=requires a MAV_CMD_DO_ACCEPT_MAG_CAL, 1=saved to parameters.*/
+ uint8_t autosaved; /*<  0=requires a MAV_CMD_DO_ACCEPT_MAG_CAL, 1=saved to parameters.
+            */
  float orientation_confidence; /*<  Confidence in orientation (higher is better).*/
- uint8_t old_orientation; /*<  orientation before calibration.*/
- uint8_t new_orientation; /*<  orientation after calibration.*/
+ uint8_t old_orientation; /*<  orientation before calibration.
+            */
+ uint8_t new_orientation; /*<  orientation after calibration.
+            */
  float scale_factor; /*<  field radius correction factor*/
 }) mavlink_mag_cal_report_t;
 
@@ -96,6 +99,7 @@ typedef struct __mavlink_mag_cal_report_t {
  * @param cal_mask  Bitmask of compasses being calibrated.
  * @param cal_status  Calibration Status.
  * @param autosaved  0=requires a MAV_CMD_DO_ACCEPT_MAG_CAL, 1=saved to parameters.
+            
  * @param fitness [mgauss] RMS milligauss residuals.
  * @param ofs_x  X offset.
  * @param ofs_y  Y offset.
@@ -108,7 +112,9 @@ typedef struct __mavlink_mag_cal_report_t {
  * @param offdiag_z  Z off-diagonal (matrix 32 and 23).
  * @param orientation_confidence  Confidence in orientation (higher is better).
  * @param old_orientation  orientation before calibration.
+            
  * @param new_orientation  orientation after calibration.
+            
  * @param scale_factor  field radius correction factor
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -176,6 +182,7 @@ static inline uint16_t mavlink_msg_mag_cal_report_pack(uint8_t system_id, uint8_
  * @param cal_mask  Bitmask of compasses being calibrated.
  * @param cal_status  Calibration Status.
  * @param autosaved  0=requires a MAV_CMD_DO_ACCEPT_MAG_CAL, 1=saved to parameters.
+            
  * @param fitness [mgauss] RMS milligauss residuals.
  * @param ofs_x  X offset.
  * @param ofs_y  Y offset.
@@ -188,7 +195,9 @@ static inline uint16_t mavlink_msg_mag_cal_report_pack(uint8_t system_id, uint8_
  * @param offdiag_z  Z off-diagonal (matrix 32 and 23).
  * @param orientation_confidence  Confidence in orientation (higher is better).
  * @param old_orientation  orientation before calibration.
+            
  * @param new_orientation  orientation after calibration.
+            
  * @param scale_factor  field radius correction factor
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -259,6 +268,7 @@ static inline uint16_t mavlink_msg_mag_cal_report_pack_status(uint8_t system_id,
  * @param cal_mask  Bitmask of compasses being calibrated.
  * @param cal_status  Calibration Status.
  * @param autosaved  0=requires a MAV_CMD_DO_ACCEPT_MAG_CAL, 1=saved to parameters.
+            
  * @param fitness [mgauss] RMS milligauss residuals.
  * @param ofs_x  X offset.
  * @param ofs_y  Y offset.
@@ -271,7 +281,9 @@ static inline uint16_t mavlink_msg_mag_cal_report_pack_status(uint8_t system_id,
  * @param offdiag_z  Z off-diagonal (matrix 32 and 23).
  * @param orientation_confidence  Confidence in orientation (higher is better).
  * @param old_orientation  orientation before calibration.
+            
  * @param new_orientation  orientation after calibration.
+            
  * @param scale_factor  field radius correction factor
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -378,6 +390,7 @@ static inline uint16_t mavlink_msg_mag_cal_report_encode_status(uint8_t system_i
  * @param cal_mask  Bitmask of compasses being calibrated.
  * @param cal_status  Calibration Status.
  * @param autosaved  0=requires a MAV_CMD_DO_ACCEPT_MAG_CAL, 1=saved to parameters.
+            
  * @param fitness [mgauss] RMS milligauss residuals.
  * @param ofs_x  X offset.
  * @param ofs_y  Y offset.
@@ -390,7 +403,9 @@ static inline uint16_t mavlink_msg_mag_cal_report_encode_status(uint8_t system_i
  * @param offdiag_z  Z off-diagonal (matrix 32 and 23).
  * @param orientation_confidence  Confidence in orientation (higher is better).
  * @param old_orientation  orientation before calibration.
+            
  * @param new_orientation  orientation after calibration.
+            
  * @param scale_factor  field radius correction factor
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -555,6 +570,7 @@ static inline uint8_t mavlink_msg_mag_cal_report_get_cal_status(const mavlink_me
  * @brief Get field autosaved from mag_cal_report message
  *
  * @return  0=requires a MAV_CMD_DO_ACCEPT_MAG_CAL, 1=saved to parameters.
+            
  */
 static inline uint8_t mavlink_msg_mag_cal_report_get_autosaved(const mavlink_message_t* msg)
 {
@@ -675,6 +691,7 @@ static inline float mavlink_msg_mag_cal_report_get_orientation_confidence(const 
  * @brief Get field old_orientation from mag_cal_report message
  *
  * @return  orientation before calibration.
+            
  */
 static inline uint8_t mavlink_msg_mag_cal_report_get_old_orientation(const mavlink_message_t* msg)
 {
@@ -685,6 +702,7 @@ static inline uint8_t mavlink_msg_mag_cal_report_get_old_orientation(const mavli
  * @brief Get field new_orientation from mag_cal_report message
  *
  * @return  orientation after calibration.
+            
  */
 static inline uint8_t mavlink_msg_mag_cal_report_get_new_orientation(const mavlink_message_t* msg)
 {

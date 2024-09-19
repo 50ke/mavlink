@@ -19572,3 +19572,318 @@ TEST(common_interop, HYGROMETER_SENSOR)
 #endif
 }
 #endif
+
+TEST(common, USV_CONNECT_REQUEST)
+{
+    mavlink::mavlink_message_t msg;
+    mavlink::MsgMap map1(msg);
+    mavlink::MsgMap map2(msg);
+
+    mavlink::common::msg::USV_CONNECT_REQUEST packet_in{};
+    packet_in.target_system = 5;
+
+    mavlink::common::msg::USV_CONNECT_REQUEST packet1{};
+    mavlink::common::msg::USV_CONNECT_REQUEST packet2{};
+
+    packet1 = packet_in;
+
+    //std::cout << packet1.to_yaml() << std::endl;
+
+    packet1.serialize(map1);
+
+    mavlink::mavlink_finalize_message(&msg, 1, 1, packet1.MIN_LENGTH, packet1.LENGTH, packet1.CRC_EXTRA);
+
+    packet2.deserialize(map2);
+
+    EXPECT_EQ(packet1.target_system, packet2.target_system);
+}
+
+#ifdef TEST_INTEROP
+TEST(common_interop, USV_CONNECT_REQUEST)
+{
+    mavlink_message_t msg;
+
+    // to get nice print
+    memset(&msg, 0, sizeof(msg));
+
+    mavlink_usv_connect_request_t packet_c {
+         5
+    };
+
+    mavlink::common::msg::USV_CONNECT_REQUEST packet_in{};
+    packet_in.target_system = 5;
+
+    mavlink::common::msg::USV_CONNECT_REQUEST packet2{};
+
+    mavlink_msg_usv_connect_request_encode(1, 1, &msg, &packet_c);
+
+    // simulate message-handling callback
+    [&packet2](const mavlink_message_t *cmsg) {
+        MsgMap map2(cmsg);
+
+        packet2.deserialize(map2);
+    } (&msg);
+
+    EXPECT_EQ(packet_in.target_system, packet2.target_system);
+
+#ifdef PRINT_MSG
+    PRINT_MSG(msg);
+#endif
+}
+#endif
+
+TEST(common, USV_CONNECT_RESPONSE)
+{
+    mavlink::mavlink_message_t msg;
+    mavlink::MsgMap map1(msg);
+    mavlink::MsgMap map2(msg);
+
+    mavlink::common::msg::USV_CONNECT_RESPONSE packet_in{};
+    packet_in.target_system = 5;
+    packet_in.ack = 72;
+
+    mavlink::common::msg::USV_CONNECT_RESPONSE packet1{};
+    mavlink::common::msg::USV_CONNECT_RESPONSE packet2{};
+
+    packet1 = packet_in;
+
+    //std::cout << packet1.to_yaml() << std::endl;
+
+    packet1.serialize(map1);
+
+    mavlink::mavlink_finalize_message(&msg, 1, 1, packet1.MIN_LENGTH, packet1.LENGTH, packet1.CRC_EXTRA);
+
+    packet2.deserialize(map2);
+
+    EXPECT_EQ(packet1.target_system, packet2.target_system);
+    EXPECT_EQ(packet1.ack, packet2.ack);
+}
+
+#ifdef TEST_INTEROP
+TEST(common_interop, USV_CONNECT_RESPONSE)
+{
+    mavlink_message_t msg;
+
+    // to get nice print
+    memset(&msg, 0, sizeof(msg));
+
+    mavlink_usv_connect_response_t packet_c {
+         5, 72
+    };
+
+    mavlink::common::msg::USV_CONNECT_RESPONSE packet_in{};
+    packet_in.target_system = 5;
+    packet_in.ack = 72;
+
+    mavlink::common::msg::USV_CONNECT_RESPONSE packet2{};
+
+    mavlink_msg_usv_connect_response_encode(1, 1, &msg, &packet_c);
+
+    // simulate message-handling callback
+    [&packet2](const mavlink_message_t *cmsg) {
+        MsgMap map2(cmsg);
+
+        packet2.deserialize(map2);
+    } (&msg);
+
+    EXPECT_EQ(packet_in.target_system, packet2.target_system);
+    EXPECT_EQ(packet_in.ack, packet2.ack);
+
+#ifdef PRINT_MSG
+    PRINT_MSG(msg);
+#endif
+}
+#endif
+
+TEST(common, USV_DISCONNECT_REQUEST)
+{
+    mavlink::mavlink_message_t msg;
+    mavlink::MsgMap map1(msg);
+    mavlink::MsgMap map2(msg);
+
+    mavlink::common::msg::USV_DISCONNECT_REQUEST packet_in{};
+    packet_in.target_system = 5;
+
+    mavlink::common::msg::USV_DISCONNECT_REQUEST packet1{};
+    mavlink::common::msg::USV_DISCONNECT_REQUEST packet2{};
+
+    packet1 = packet_in;
+
+    //std::cout << packet1.to_yaml() << std::endl;
+
+    packet1.serialize(map1);
+
+    mavlink::mavlink_finalize_message(&msg, 1, 1, packet1.MIN_LENGTH, packet1.LENGTH, packet1.CRC_EXTRA);
+
+    packet2.deserialize(map2);
+
+    EXPECT_EQ(packet1.target_system, packet2.target_system);
+}
+
+#ifdef TEST_INTEROP
+TEST(common_interop, USV_DISCONNECT_REQUEST)
+{
+    mavlink_message_t msg;
+
+    // to get nice print
+    memset(&msg, 0, sizeof(msg));
+
+    mavlink_usv_disconnect_request_t packet_c {
+         5
+    };
+
+    mavlink::common::msg::USV_DISCONNECT_REQUEST packet_in{};
+    packet_in.target_system = 5;
+
+    mavlink::common::msg::USV_DISCONNECT_REQUEST packet2{};
+
+    mavlink_msg_usv_disconnect_request_encode(1, 1, &msg, &packet_c);
+
+    // simulate message-handling callback
+    [&packet2](const mavlink_message_t *cmsg) {
+        MsgMap map2(cmsg);
+
+        packet2.deserialize(map2);
+    } (&msg);
+
+    EXPECT_EQ(packet_in.target_system, packet2.target_system);
+
+#ifdef PRINT_MSG
+    PRINT_MSG(msg);
+#endif
+}
+#endif
+
+TEST(common, USV_DISCONNECT_RESPONSE)
+{
+    mavlink::mavlink_message_t msg;
+    mavlink::MsgMap map1(msg);
+    mavlink::MsgMap map2(msg);
+
+    mavlink::common::msg::USV_DISCONNECT_RESPONSE packet_in{};
+    packet_in.target_system = 5;
+    packet_in.ack = 72;
+
+    mavlink::common::msg::USV_DISCONNECT_RESPONSE packet1{};
+    mavlink::common::msg::USV_DISCONNECT_RESPONSE packet2{};
+
+    packet1 = packet_in;
+
+    //std::cout << packet1.to_yaml() << std::endl;
+
+    packet1.serialize(map1);
+
+    mavlink::mavlink_finalize_message(&msg, 1, 1, packet1.MIN_LENGTH, packet1.LENGTH, packet1.CRC_EXTRA);
+
+    packet2.deserialize(map2);
+
+    EXPECT_EQ(packet1.target_system, packet2.target_system);
+    EXPECT_EQ(packet1.ack, packet2.ack);
+}
+
+#ifdef TEST_INTEROP
+TEST(common_interop, USV_DISCONNECT_RESPONSE)
+{
+    mavlink_message_t msg;
+
+    // to get nice print
+    memset(&msg, 0, sizeof(msg));
+
+    mavlink_usv_disconnect_response_t packet_c {
+         5, 72
+    };
+
+    mavlink::common::msg::USV_DISCONNECT_RESPONSE packet_in{};
+    packet_in.target_system = 5;
+    packet_in.ack = 72;
+
+    mavlink::common::msg::USV_DISCONNECT_RESPONSE packet2{};
+
+    mavlink_msg_usv_disconnect_response_encode(1, 1, &msg, &packet_c);
+
+    // simulate message-handling callback
+    [&packet2](const mavlink_message_t *cmsg) {
+        MsgMap map2(cmsg);
+
+        packet2.deserialize(map2);
+    } (&msg);
+
+    EXPECT_EQ(packet_in.target_system, packet2.target_system);
+    EXPECT_EQ(packet_in.ack, packet2.ack);
+
+#ifdef PRINT_MSG
+    PRINT_MSG(msg);
+#endif
+}
+#endif
+
+TEST(common, USV_SYSTEM_INFORMATION)
+{
+    mavlink::mavlink_message_t msg;
+    mavlink::MsgMap map1(msg);
+    mavlink::MsgMap map2(msg);
+
+    mavlink::common::msg::USV_SYSTEM_INFORMATION packet_in{};
+    packet_in.name = to_char_array("IJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDE");
+    packet_in.connected = 157;
+    packet_in.lat = 17.0;
+    packet_in.lon = 45.0;
+
+    mavlink::common::msg::USV_SYSTEM_INFORMATION packet1{};
+    mavlink::common::msg::USV_SYSTEM_INFORMATION packet2{};
+
+    packet1 = packet_in;
+
+    //std::cout << packet1.to_yaml() << std::endl;
+
+    packet1.serialize(map1);
+
+    mavlink::mavlink_finalize_message(&msg, 1, 1, packet1.MIN_LENGTH, packet1.LENGTH, packet1.CRC_EXTRA);
+
+    packet2.deserialize(map2);
+
+    EXPECT_EQ(packet1.name, packet2.name);
+    EXPECT_EQ(packet1.connected, packet2.connected);
+    EXPECT_EQ(packet1.lat, packet2.lat);
+    EXPECT_EQ(packet1.lon, packet2.lon);
+}
+
+#ifdef TEST_INTEROP
+TEST(common_interop, USV_SYSTEM_INFORMATION)
+{
+    mavlink_message_t msg;
+
+    // to get nice print
+    memset(&msg, 0, sizeof(msg));
+
+    mavlink_usv_system_information_t packet_c {
+         17.0, 45.0, "IJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDE", 157
+    };
+
+    mavlink::common::msg::USV_SYSTEM_INFORMATION packet_in{};
+    packet_in.name = to_char_array("IJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDE");
+    packet_in.connected = 157;
+    packet_in.lat = 17.0;
+    packet_in.lon = 45.0;
+
+    mavlink::common::msg::USV_SYSTEM_INFORMATION packet2{};
+
+    mavlink_msg_usv_system_information_encode(1, 1, &msg, &packet_c);
+
+    // simulate message-handling callback
+    [&packet2](const mavlink_message_t *cmsg) {
+        MsgMap map2(cmsg);
+
+        packet2.deserialize(map2);
+    } (&msg);
+
+    EXPECT_EQ(packet_in.name, packet2.name);
+    EXPECT_EQ(packet_in.connected, packet2.connected);
+    EXPECT_EQ(packet_in.lat, packet2.lat);
+    EXPECT_EQ(packet_in.lon, packet2.lon);
+
+#ifdef PRINT_MSG
+    PRINT_MSG(msg);
+#endif
+}
+#endif

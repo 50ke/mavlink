@@ -10,8 +10,9 @@ namespace msg {
  * @brief CELLULAR_CONFIG message
  *
  * Configure cellular modems.
-        This message is re-emitted as an acknowledgement by the modem.
-        The message may also be explicitly requested using MAV_CMD_REQUEST_MESSAGE.
+                This message is re-emitted as an acknowledgement by the modem.
+                The message may also be explicitly requested using MAV_CMD_REQUEST_MESSAGE.
+            
  */
 struct CELLULAR_CONFIG : mavlink::Message {
     static constexpr msgid_t MSG_ID = 336;
@@ -21,14 +22,30 @@ struct CELLULAR_CONFIG : mavlink::Message {
     static constexpr auto NAME = "CELLULAR_CONFIG";
 
 
-    uint8_t enable_lte; /*<  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response. */
-    uint8_t enable_pin; /*<  Enable/disable PIN on the SIM card. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response. */
-    std::array<char, 16> pin; /*<  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message is sent back as a response. */
-    std::array<char, 16> new_pin; /*<  New PIN when changing the PIN. Blank to leave it unchanged. Empty when message is sent back as a response. */
-    std::array<char, 32> apn; /*<  Name of the cellular APN. Blank to leave it unchanged. Current APN when sent back as a response. */
-    std::array<char, 16> puk; /*<  Required PUK code in case the user failed to authenticate 3 times with the PIN. Empty when message is sent back as a response. */
-    uint8_t roaming; /*<  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response. */
-    uint8_t response; /*<  Message acceptance response (sent back to GS). */
+    uint8_t enable_lte; /*<  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+             */
+    uint8_t enable_pin; /*<  Enable/disable PIN on the SIM card. 0: setting unchanged, 1:
+                disabled, 2: enabled. Current setting when sent back as a response.
+             */
+    std::array<char, 16> pin; /*<  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message
+                is sent back as a response.
+             */
+    std::array<char, 16> new_pin; /*<  New PIN when changing the PIN. Blank to leave it unchanged. Empty when
+                message is sent back as a response.
+             */
+    std::array<char, 32> apn; /*<  Name of the cellular APN. Blank to leave it unchanged. Current APN when
+                sent back as a response.
+             */
+    std::array<char, 16> puk; /*<  Required PUK code in case the user failed to authenticate 3 times with the
+                PIN. Empty when message is sent back as a response.
+             */
+    uint8_t roaming; /*<  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+             */
+    uint8_t response; /*<  Message acceptance response (sent back
+                to GS).
+             */
 
 
     inline std::string get_name(void) const override

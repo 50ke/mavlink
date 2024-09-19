@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief TRAJECTORY_REPRESENTATION_BEZIER message
  *
- * Describe a trajectory using an array of up-to 5 bezier control points in the local frame (MAV_FRAME_LOCAL_NED).
+ * Describe a trajectory using an array of up-to 5 bezier control points in the local frame
+                (MAV_FRAME_LOCAL_NED).
+            
  */
 struct TRAJECTORY_REPRESENTATION_BEZIER : mavlink::Message {
     static constexpr msgid_t MSG_ID = 333;
@@ -19,12 +21,24 @@ struct TRAJECTORY_REPRESENTATION_BEZIER : mavlink::Message {
     static constexpr auto NAME = "TRAJECTORY_REPRESENTATION_BEZIER";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
-    uint8_t valid_points; /*<  Number of valid control points (up-to 5 points are possible) */
-    std::array<float, 5> pos_x; /*< [m] X-coordinate of bezier control points. Set to NaN if not being used */
-    std::array<float, 5> pos_y; /*< [m] Y-coordinate of bezier control points. Set to NaN if not being used */
-    std::array<float, 5> pos_z; /*< [m] Z-coordinate of bezier control points. Set to NaN if not being used */
-    std::array<float, 5> delta; /*< [s] Bezier time horizon. Set to NaN if velocity/acceleration should not be incorporated */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
+    uint8_t valid_points; /*<  Number of valid control points (up-to 5 points are possible)
+             */
+    std::array<float, 5> pos_x; /*< [m] X-coordinate of bezier control points. Set to
+                NaN if not being used
+             */
+    std::array<float, 5> pos_y; /*< [m] Y-coordinate of bezier control points. Set to
+                NaN if not being used
+             */
+    std::array<float, 5> pos_z; /*< [m] Z-coordinate of bezier control points. Set to
+                NaN if not being used
+             */
+    std::array<float, 5> delta; /*< [s] Bezier time horizon. Set to NaN if
+                velocity/acceleration should not be incorporated
+             */
     std::array<float, 5> pos_yaw; /*< [rad] Yaw. Set to NaN for unchanged */
 
 

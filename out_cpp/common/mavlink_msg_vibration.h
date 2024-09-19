@@ -5,7 +5,10 @@
 
 
 typedef struct __mavlink_vibration_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
  float vibration_x; /*<  Vibration levels on X-axis*/
  float vibration_y; /*<  Vibration levels on Y-axis*/
  float vibration_z; /*<  Vibration levels on Z-axis*/
@@ -59,7 +62,10 @@ typedef struct __mavlink_vibration_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param vibration_x  Vibration levels on X-axis
  * @param vibration_y  Vibration levels on Y-axis
  * @param vibration_z  Vibration levels on Z-axis
@@ -106,7 +112,10 @@ static inline uint16_t mavlink_msg_vibration_pack(uint8_t system_id, uint8_t com
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param vibration_x  Vibration levels on X-axis
  * @param vibration_y  Vibration levels on Y-axis
  * @param vibration_z  Vibration levels on Z-axis
@@ -156,7 +165,10 @@ static inline uint16_t mavlink_msg_vibration_pack_status(uint8_t system_id, uint
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param vibration_x  Vibration levels on X-axis
  * @param vibration_y  Vibration levels on Y-axis
  * @param vibration_z  Vibration levels on Z-axis
@@ -242,7 +254,10 @@ static inline uint16_t mavlink_msg_vibration_encode_status(uint8_t system_id, ui
  * @brief Send a vibration message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param vibration_x  Vibration levels on X-axis
  * @param vibration_y  Vibration levels on Y-axis
  * @param vibration_z  Vibration levels on Z-axis
@@ -337,7 +352,10 @@ static inline void mavlink_msg_vibration_send_buf(mavlink_message_t *msgbuf, mav
 /**
  * @brief Get field time_usec from vibration message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_vibration_get_time_usec(const mavlink_message_t* msg)
 {

@@ -10,6 +10,7 @@ namespace msg {
  * @brief LINK_NODE_STATUS message
  *
  * Status generated in each node in the communication chain and injected into MAVLink stream.
+            
  */
 struct LINK_NODE_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 8;
@@ -24,9 +25,15 @@ struct LINK_NODE_STATUS : mavlink::Message {
     uint8_t rx_buf; /*< [%] Remaining free receive buffer space */
     uint32_t tx_rate; /*< [bytes/s] Transmit rate */
     uint32_t rx_rate; /*< [bytes/s] Receive rate */
-    uint16_t rx_parse_err; /*< [bytes] Number of bytes that could not be parsed correctly. */
-    uint16_t tx_overflows; /*< [bytes] Transmit buffer overflows. This number wraps around as it reaches UINT16_MAX */
-    uint16_t rx_overflows; /*< [bytes] Receive buffer overflows. This number wraps around as it reaches UINT16_MAX */
+    uint16_t rx_parse_err; /*< [bytes] Number of bytes that could not be parsed
+                correctly.
+             */
+    uint16_t tx_overflows; /*< [bytes] Transmit buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+             */
+    uint16_t rx_overflows; /*< [bytes] Receive buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+             */
     uint32_t messages_sent; /*<  Messages sent */
     uint32_t messages_received; /*<  Messages received (estimated from counting seq) */
     uint32_t messages_lost; /*<  Messages lost (estimated from counting seq) */

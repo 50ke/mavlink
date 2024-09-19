@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief CURRENT_EVENT_SEQUENCE message
  *
- * Regular broadcast for the current latest event sequence number for a component. This is used to check for dropped events.
+ * Regular broadcast for the current latest event sequence number for a component. This is used to
+                check for dropped events.
+            
  */
 struct CURRENT_EVENT_SEQUENCE : mavlink::Message {
     static constexpr msgid_t MSG_ID = 411;
@@ -20,7 +22,8 @@ struct CURRENT_EVENT_SEQUENCE : mavlink::Message {
 
 
     uint16_t sequence; /*<  Sequence number. */
-    uint8_t flags; /*<  Flag bitset. */
+    uint8_t flags; /*<  Flag bitset.
+             */
 
 
     inline std::string get_name(void) const override

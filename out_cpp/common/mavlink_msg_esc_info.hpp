@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief ESC_INFO message
  *
- * ESC information for lower rate streaming. Recommended streaming rate 1Hz. See ESC_STATUS for higher-rate ESC data.
+ * ESC information for lower rate streaming. Recommended streaming rate 1Hz. See ESC_STATUS for
+                higher-rate ESC data.
+            
  */
 struct ESC_INFO : mavlink::Message {
     static constexpr msgid_t MSG_ID = 290;
@@ -19,15 +21,30 @@ struct ESC_INFO : mavlink::Message {
     static constexpr auto NAME = "ESC_INFO";
 
 
-    uint8_t index; /*<  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4. */
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number. */
+    uint8_t index; /*<  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+             */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+             */
     uint16_t counter; /*<  Counter of data packets received. */
-    uint8_t count; /*<  Total number of ESCs in all messages of this type. Message fields with an index higher than this should be ignored because they contain invalid data. */
-    uint8_t connection_type; /*<  Connection type protocol for all ESC. */
-    uint8_t info; /*<  Information regarding online/offline status of each ESC. */
-    std::array<uint16_t, 4> failure_flags; /*<  Bitmap of ESC failure flags. */
+    uint8_t count; /*<  Total number of ESCs in all messages of this type. Message fields with an
+                index higher than this should be ignored because they contain invalid data.
+             */
+    uint8_t connection_type; /*<  Connection type protocol for all
+                ESC.
+             */
+    uint8_t info; /*<  Information regarding online/offline status of each
+                ESC.
+             */
+    std::array<uint16_t, 4> failure_flags; /*<  Bitmap of ESC
+                failure flags.
+             */
     std::array<uint32_t, 4> error_count; /*<  Number of reported errors by each ESC since boot. */
-    std::array<int16_t, 4> temperature; /*< [cdegC] Temperature of each ESC. INT16_MAX: if data not supplied by ESC. */
+    std::array<int16_t, 4> temperature; /*< [cdegC] Temperature of each ESC.
+                INT16_MAX: if data not supplied by ESC.
+             */
 
 
     inline std::string get_name(void) const override

@@ -10,6 +10,7 @@ namespace msg {
  * @brief CONTROL_SYSTEM_STATE message
  *
  * The smoothed, monotonic system state used to feed the control loops of the system.
+            
  */
 struct CONTROL_SYSTEM_STATE : mavlink::Message {
     static constexpr msgid_t MSG_ID = 146;
@@ -19,7 +20,10 @@ struct CONTROL_SYSTEM_STATE : mavlink::Message {
     static constexpr auto NAME = "CONTROL_SYSTEM_STATE";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     float x_acc; /*< [m/s/s] X acceleration in body frame */
     float y_acc; /*< [m/s/s] Y acceleration in body frame */
     float z_acc; /*< [m/s/s] Z acceleration in body frame */

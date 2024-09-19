@@ -6,7 +6,8 @@
 
 typedef struct __mavlink_current_event_sequence_t {
  uint16_t sequence; /*<  Sequence number.*/
- uint8_t flags; /*<  Flag bitset.*/
+ uint8_t flags; /*<  Flag bitset.
+            */
 } mavlink_current_event_sequence_t;
 
 #define MAVLINK_MSG_ID_CURRENT_EVENT_SEQUENCE_LEN 3
@@ -46,6 +47,7 @@ typedef struct __mavlink_current_event_sequence_t {
  *
  * @param sequence  Sequence number.
  * @param flags  Flag bitset.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_current_event_sequence_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -78,6 +80,7 @@ static inline uint16_t mavlink_msg_current_event_sequence_pack(uint8_t system_id
  *
  * @param sequence  Sequence number.
  * @param flags  Flag bitset.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_current_event_sequence_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -113,6 +116,7 @@ static inline uint16_t mavlink_msg_current_event_sequence_pack_status(uint8_t sy
  * @param msg The MAVLink message to compress the data into
  * @param sequence  Sequence number.
  * @param flags  Flag bitset.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_current_event_sequence_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -184,6 +188,7 @@ static inline uint16_t mavlink_msg_current_event_sequence_encode_status(uint8_t 
  *
  * @param sequence  Sequence number.
  * @param flags  Flag bitset.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -263,6 +268,7 @@ static inline uint16_t mavlink_msg_current_event_sequence_get_sequence(const mav
  * @brief Get field flags from current_event_sequence message
  *
  * @return  Flag bitset.
+            
  */
 static inline uint8_t mavlink_msg_current_event_sequence_get_flags(const mavlink_message_t* msg)
 {

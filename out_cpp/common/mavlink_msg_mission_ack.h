@@ -9,13 +9,16 @@ typedef struct __mavlink_mission_ack_t {
  uint8_t target_component; /*<  Component ID*/
  uint8_t type; /*<  Mission result.*/
  uint8_t mission_type; /*<  Mission type.*/
- uint32_t opaque_id; /*<  Id of new on-vehicle mission, fence, or rally point plan (on upload to vehicle).
-        The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
-        The only requirement on the id is that it must change when there is any change to the on-vehicle plan type (there is no requirement that the id be globally unique).
-        0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-      */
+ uint32_t opaque_id; /*<  Id of new on-vehicle mission, fence, or rally point plan
+                (on upload to vehicle).
+                The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
+                The only requirement on the id is that it must change when there is any change to the on-vehicle plan
+                type (there is no requirement that the id be globally unique).
+                0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+            */
 } mavlink_mission_ack_t;
 
 #define MAVLINK_MSG_ID_MISSION_ACK_LEN 8
@@ -63,13 +66,16 @@ typedef struct __mavlink_mission_ack_t {
  * @param target_component  Component ID
  * @param type  Mission result.
  * @param mission_type  Mission type.
- * @param opaque_id  Id of new on-vehicle mission, fence, or rally point plan (on upload to vehicle).
-        The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
-        The only requirement on the id is that it must change when there is any change to the on-vehicle plan type (there is no requirement that the id be globally unique).
-        0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-      
+ * @param opaque_id  Id of new on-vehicle mission, fence, or rally point plan
+                (on upload to vehicle).
+                The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
+                The only requirement on the id is that it must change when there is any change to the on-vehicle plan
+                type (there is no requirement that the id be globally unique).
+                0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_ack_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -110,13 +116,16 @@ static inline uint16_t mavlink_msg_mission_ack_pack(uint8_t system_id, uint8_t c
  * @param target_component  Component ID
  * @param type  Mission result.
  * @param mission_type  Mission type.
- * @param opaque_id  Id of new on-vehicle mission, fence, or rally point plan (on upload to vehicle).
-        The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
-        The only requirement on the id is that it must change when there is any change to the on-vehicle plan type (there is no requirement that the id be globally unique).
-        0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-      
+ * @param opaque_id  Id of new on-vehicle mission, fence, or rally point plan
+                (on upload to vehicle).
+                The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
+                The only requirement on the id is that it must change when there is any change to the on-vehicle plan
+                type (there is no requirement that the id be globally unique).
+                0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_ack_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -160,13 +169,16 @@ static inline uint16_t mavlink_msg_mission_ack_pack_status(uint8_t system_id, ui
  * @param target_component  Component ID
  * @param type  Mission result.
  * @param mission_type  Mission type.
- * @param opaque_id  Id of new on-vehicle mission, fence, or rally point plan (on upload to vehicle).
-        The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
-        The only requirement on the id is that it must change when there is any change to the on-vehicle plan type (there is no requirement that the id be globally unique).
-        0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-      
+ * @param opaque_id  Id of new on-vehicle mission, fence, or rally point plan
+                (on upload to vehicle).
+                The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
+                The only requirement on the id is that it must change when there is any change to the on-vehicle plan
+                type (there is no requirement that the id be globally unique).
+                0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_ack_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -246,13 +258,16 @@ static inline uint16_t mavlink_msg_mission_ack_encode_status(uint8_t system_id, 
  * @param target_component  Component ID
  * @param type  Mission result.
  * @param mission_type  Mission type.
- * @param opaque_id  Id of new on-vehicle mission, fence, or rally point plan (on upload to vehicle).
-        The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
-        The only requirement on the id is that it must change when there is any change to the on-vehicle plan type (there is no requirement that the id be globally unique).
-        0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-      
+ * @param opaque_id  Id of new on-vehicle mission, fence, or rally point plan
+                (on upload to vehicle).
+                The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
+                The only requirement on the id is that it must change when there is any change to the on-vehicle plan
+                type (there is no requirement that the id be globally unique).
+                0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -373,13 +388,16 @@ static inline uint8_t mavlink_msg_mission_ack_get_mission_type(const mavlink_mes
 /**
  * @brief Get field opaque_id from mission_ack message
  *
- * @return  Id of new on-vehicle mission, fence, or rally point plan (on upload to vehicle).
-        The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
-        The only requirement on the id is that it must change when there is any change to the on-vehicle plan type (there is no requirement that the id be globally unique).
-        0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-      
+ * @return  Id of new on-vehicle mission, fence, or rally point plan
+                (on upload to vehicle).
+                The id is calculated and returned by a vehicle when a new plan is uploaded by a GCS.
+                The only requirement on the id is that it must change when there is any change to the on-vehicle plan
+                type (there is no requirement that the id be globally unique).
+                0 on download from the vehicle to the GCS (on download the ID is set in MISSION_COUNT).
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+            
  */
 static inline uint32_t mavlink_msg_mission_ack_get_opaque_id(const mavlink_message_t* msg)
 {

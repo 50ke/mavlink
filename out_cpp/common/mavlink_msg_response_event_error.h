@@ -6,7 +6,9 @@
 
 typedef struct __mavlink_response_event_error_t {
  uint16_t sequence; /*<  Sequence number.*/
- uint16_t sequence_oldest_available; /*<  Oldest Sequence number that is still available after the sequence set in REQUEST_EVENT.*/
+ uint16_t sequence_oldest_available; /*<  Oldest Sequence number that is still available after
+                the sequence set in REQUEST_EVENT.
+            */
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
  uint8_t reason; /*<  Error reason.*/
@@ -56,7 +58,9 @@ typedef struct __mavlink_response_event_error_t {
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param sequence  Sequence number.
- * @param sequence_oldest_available  Oldest Sequence number that is still available after the sequence set in REQUEST_EVENT.
+ * @param sequence_oldest_available  Oldest Sequence number that is still available after
+                the sequence set in REQUEST_EVENT.
+            
  * @param reason  Error reason.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -97,7 +101,9 @@ static inline uint16_t mavlink_msg_response_event_error_pack(uint8_t system_id, 
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param sequence  Sequence number.
- * @param sequence_oldest_available  Oldest Sequence number that is still available after the sequence set in REQUEST_EVENT.
+ * @param sequence_oldest_available  Oldest Sequence number that is still available after
+                the sequence set in REQUEST_EVENT.
+            
  * @param reason  Error reason.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -141,7 +147,9 @@ static inline uint16_t mavlink_msg_response_event_error_pack_status(uint8_t syst
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param sequence  Sequence number.
- * @param sequence_oldest_available  Oldest Sequence number that is still available after the sequence set in REQUEST_EVENT.
+ * @param sequence_oldest_available  Oldest Sequence number that is still available after
+                the sequence set in REQUEST_EVENT.
+            
  * @param reason  Error reason.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -221,7 +229,9 @@ static inline uint16_t mavlink_msg_response_event_error_encode_status(uint8_t sy
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param sequence  Sequence number.
- * @param sequence_oldest_available  Oldest Sequence number that is still available after the sequence set in REQUEST_EVENT.
+ * @param sequence_oldest_available  Oldest Sequence number that is still available after
+                the sequence set in REQUEST_EVENT.
+            
  * @param reason  Error reason.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -333,7 +343,9 @@ static inline uint16_t mavlink_msg_response_event_error_get_sequence(const mavli
 /**
  * @brief Get field sequence_oldest_available from response_event_error message
  *
- * @return  Oldest Sequence number that is still available after the sequence set in REQUEST_EVENT.
+ * @return  Oldest Sequence number that is still available after
+                the sequence set in REQUEST_EVENT.
+            
  */
 static inline uint16_t mavlink_msg_response_event_error_get_sequence_oldest_available(const mavlink_message_t* msg)
 {

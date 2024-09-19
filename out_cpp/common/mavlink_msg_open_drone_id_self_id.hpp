@@ -9,7 +9,12 @@ namespace msg {
 /**
  * @brief OPEN_DRONE_ID_SELF_ID message
  *
- * Data for filling the OpenDroneID Self ID message. The Self ID Message is an opportunity for the operator to (optionally) declare their identity and purpose of the flight. This message can provide additional information that could reduce the threat profile of a UA (Unmanned Aircraft) flying in a particular area or manner. This message can also be used to provide optional additional clarification in an emergency/remote ID system failure situation.
+ * Data for filling the OpenDroneID Self ID message. The Self ID Message is an opportunity for the
+                operator to (optionally) declare their identity and purpose of the flight. This message can provide
+                additional information that could reduce the threat profile of a UA (Unmanned Aircraft) flying in a
+                particular area or manner. This message can also be used to provide optional additional clarification in
+                an emergency/remote ID system failure situation.
+            
  */
 struct OPEN_DRONE_ID_SELF_ID : mavlink::Message {
     static constexpr msgid_t MSG_ID = 12903;
@@ -21,9 +26,15 @@ struct OPEN_DRONE_ID_SELF_ID : mavlink::Message {
 
     uint8_t target_system; /*<  System ID (0 for broadcast). */
     uint8_t target_component; /*<  Component ID (0 for broadcast). */
-    std::array<uint8_t, 20> id_or_mac; /*<  Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html.  */
-    uint8_t description_type; /*<  Indicates the type of the description field. */
-    std::array<char, 23> description; /*<  Text description or numeric value expressed as ASCII characters. Shall be filled with nulls in the unused portion of the field. */
+    std::array<uint8_t, 20> id_or_mac; /*<  Only used for drone ID data received from other UAs. See detailed
+                description at https://mavlink.io/en/services/opendroneid.html.
+             */
+    uint8_t description_type; /*<  Indicates the type of the
+                description field.
+             */
+    std::array<char, 23> description; /*<  Text description or numeric value expressed as ASCII characters.
+                Shall be filled with nulls in the unused portion of the field.
+             */
 
 
     inline std::string get_name(void) const override

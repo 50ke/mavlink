@@ -9,8 +9,10 @@ namespace msg {
 /**
  * @brief GLOBAL_POSITION_INT message
  *
- * The filtered global position (e.g. fused GPS and accelerometers). The position is in GPS-frame (right-handed, Z-up). It
-               is designed as scaled integer message since the resolution of float is not sufficient.
+ * The filtered global position (e.g. fused GPS and accelerometers). The position is in GPS-frame
+                (right-handed, Z-up). It
+                is designed as scaled integer message since the resolution of float is not sufficient.
+            
  */
 struct GLOBAL_POSITION_INT : mavlink::Message {
     static constexpr msgid_t MSG_ID = 33;
@@ -23,12 +25,16 @@ struct GLOBAL_POSITION_INT : mavlink::Message {
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
     int32_t lat; /*< [degE7] Latitude, expressed */
     int32_t lon; /*< [degE7] Longitude, expressed */
-    int32_t alt; /*< [mm] Altitude (MSL). Note that virtually all GPS modules provide both WGS84 and MSL. */
+    int32_t alt; /*< [mm] Altitude (MSL). Note that virtually all GPS modules provide both
+                WGS84 and MSL.
+             */
     int32_t relative_alt; /*< [mm] Altitude above home */
     int16_t vx; /*< [cm/s] Ground X Speed (Latitude, positive north) */
     int16_t vy; /*< [cm/s] Ground Y Speed (Longitude, positive east) */
     int16_t vz; /*< [cm/s] Ground Z Speed (Altitude, positive down) */
-    uint16_t hdg; /*< [cdeg] Vehicle heading (yaw angle), 0.0..359.99 degrees. If unknown, set to: UINT16_MAX */
+    uint16_t hdg; /*< [cdeg] Vehicle heading (yaw angle), 0.0..359.99
+                degrees. If unknown, set to: UINT16_MAX
+             */
 
 
     inline std::string get_name(void) const override

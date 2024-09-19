@@ -19,20 +19,38 @@ struct GPS2_RAW : mavlink::Message {
     static constexpr auto NAME = "GPS2_RAW";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     uint8_t fix_type; /*<  GPS fix type. */
     int32_t lat; /*< [degE7] Latitude (WGS84) */
     int32_t lon; /*< [degE7] Longitude (WGS84) */
     int32_t alt; /*< [mm] Altitude (MSL). Positive for up. */
-    uint16_t eph; /*<  GPS HDOP horizontal dilution of position (unitless * 100). If unknown, set to: UINT16_MAX */
-    uint16_t epv; /*<  GPS VDOP vertical dilution of position (unitless * 100). If unknown, set to: UINT16_MAX */
-    uint16_t vel; /*< [cm/s] GPS ground speed. If unknown, set to: UINT16_MAX */
-    uint16_t cog; /*< [cdeg] Course over ground (NOT heading, but direction of movement): 0.0..359.99 degrees. If unknown, set to: UINT16_MAX */
-    uint8_t satellites_visible; /*<  Number of satellites visible. If unknown, set to UINT8_MAX */
+    uint16_t eph; /*<  GPS HDOP horizontal dilution of position (unitless *
+                100). If unknown, set to: UINT16_MAX
+             */
+    uint16_t epv; /*<  GPS VDOP vertical dilution of position (unitless *
+                100). If unknown, set to: UINT16_MAX
+             */
+    uint16_t vel; /*< [cm/s] GPS ground speed. If unknown, set to:
+                UINT16_MAX
+             */
+    uint16_t cog; /*< [cdeg] Course over ground (NOT heading, but
+                direction of movement): 0.0..359.99 degrees. If unknown, set to: UINT16_MAX
+             */
+    uint8_t satellites_visible; /*<  Number of satellites visible. If
+                unknown, set to UINT8_MAX
+             */
     uint8_t dgps_numch; /*<  Number of DGPS satellites */
     uint32_t dgps_age; /*< [ms] Age of DGPS info */
-    uint16_t yaw; /*< [cdeg] Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use UINT16_MAX if this GPS is configured to provide yaw and is currently unable to provide it. Use 36000 for north. */
-    int32_t alt_ellipsoid; /*< [mm] Altitude (above WGS84, EGM96 ellipsoid). Positive for up. */
+    uint16_t yaw; /*< [cdeg] Yaw in earth frame from north. Use 0 if this GPS
+                does not provide yaw. Use UINT16_MAX if this GPS is configured to provide yaw and is currently unable to
+                provide it. Use 36000 for north.
+             */
+    int32_t alt_ellipsoid; /*< [mm] Altitude (above WGS84, EGM96 ellipsoid). Positive for
+                up.
+             */
     uint32_t h_acc; /*< [mm] Position uncertainty. */
     uint32_t v_acc; /*< [mm] Altitude uncertainty. */
     uint32_t vel_acc; /*< [mm] Speed uncertainty. */

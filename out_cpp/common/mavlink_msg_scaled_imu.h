@@ -15,7 +15,9 @@ typedef struct __mavlink_scaled_imu_t {
  int16_t xmag; /*< [mgauss] X Magnetic field*/
  int16_t ymag; /*< [mgauss] Y Magnetic field*/
  int16_t zmag; /*< [mgauss] Z Magnetic field*/
- int16_t temperature; /*< [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).*/
+ int16_t temperature; /*< [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            */
 } mavlink_scaled_imu_t;
 
 #define MAVLINK_MSG_ID_SCALED_IMU_LEN 24
@@ -81,7 +83,9 @@ typedef struct __mavlink_scaled_imu_t {
  * @param xmag [mgauss] X Magnetic field
  * @param ymag [mgauss] Y Magnetic field
  * @param zmag [mgauss] Z Magnetic field
- * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).
+ * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_scaled_imu_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -140,7 +144,9 @@ static inline uint16_t mavlink_msg_scaled_imu_pack(uint8_t system_id, uint8_t co
  * @param xmag [mgauss] X Magnetic field
  * @param ymag [mgauss] Y Magnetic field
  * @param zmag [mgauss] Z Magnetic field
- * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).
+ * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_scaled_imu_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -202,7 +208,9 @@ static inline uint16_t mavlink_msg_scaled_imu_pack_status(uint8_t system_id, uin
  * @param xmag [mgauss] X Magnetic field
  * @param ymag [mgauss] Y Magnetic field
  * @param zmag [mgauss] Z Magnetic field
- * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).
+ * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_scaled_imu_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -300,7 +308,9 @@ static inline uint16_t mavlink_msg_scaled_imu_encode_status(uint8_t system_id, u
  * @param xmag [mgauss] X Magnetic field
  * @param ymag [mgauss] Y Magnetic field
  * @param zmag [mgauss] Z Magnetic field
- * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).
+ * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -505,7 +515,9 @@ static inline int16_t mavlink_msg_scaled_imu_get_zmag(const mavlink_message_t* m
 /**
  * @brief Get field temperature from scaled_imu message
  *
- * @return [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).
+ * @return [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            
  */
 static inline int16_t mavlink_msg_scaled_imu_get_temperature(const mavlink_message_t* msg)
 {

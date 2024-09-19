@@ -20,12 +20,16 @@ struct FOLLOW_TARGET : mavlink::Message {
 
 
     uint64_t timestamp; /*< [ms] Timestamp (time since system boot). */
-    uint8_t est_capabilities; /*<  bit positions for tracker reporting capabilities (POS = 0, VEL = 1, ACCEL = 2, ATT + RATES = 3) */
+    uint8_t est_capabilities; /*<  bit positions for tracker reporting capabilities (POS = 0, VEL
+                = 1, ACCEL = 2, ATT + RATES = 3)
+             */
     int32_t lat; /*< [degE7] Latitude (WGS84) */
     int32_t lon; /*< [degE7] Longitude (WGS84) */
     float alt; /*< [m] Altitude (MSL) */
     std::array<float, 3> vel; /*< [m/s] target velocity (0,0,0) for unknown */
-    std::array<float, 3> acc; /*< [m/s/s] linear target acceleration (0,0,0) for unknown */
+    std::array<float, 3> acc; /*< [m/s/s] linear target acceleration (0,0,0) for
+                unknown
+             */
     std::array<float, 4> attitude_q; /*<  (0 0 0 0 for unknown) */
     std::array<float, 3> rates; /*<  (0 0 0 for unknown) */
     std::array<float, 3> position_cov; /*<  eph epv */

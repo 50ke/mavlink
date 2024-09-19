@@ -5,7 +5,10 @@
 
 
 typedef struct __mavlink_odometry_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
  float x; /*< [m] X Position*/
  float y; /*< [m] Y Position*/
  float z; /*< [m] Z Position*/
@@ -16,13 +19,31 @@ typedef struct __mavlink_odometry_t {
  float rollspeed; /*< [rad/s] Roll angular speed*/
  float pitchspeed; /*< [rad/s] Pitch angular speed*/
  float yawspeed; /*< [rad/s] Yaw angular speed*/
- float pose_covariance[21]; /*<  Row-major representation of a 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.*/
- float velocity_covariance[21]; /*<  Row-major representation of a 6x6 velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed, yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.*/
- uint8_t frame_id; /*<  Coordinate frame of reference for the pose data.*/
- uint8_t child_frame_id; /*<  Coordinate frame of reference for the velocity in free space (twist) data.*/
- uint8_t reset_counter; /*<  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.*/
- uint8_t estimator_type; /*<  Type of estimator that is providing the odometry.*/
- int8_t quality; /*< [%] Optional odometry quality metric as a percentage. -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality*/
+ float pose_covariance[21]; /*<  Row-major representation of a 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            */
+ float velocity_covariance[21]; /*<  Row-major representation of a 6x6
+                velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed,
+                yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown,
+                assign NaN value to first element in the array.
+            */
+ uint8_t frame_id; /*<  Coordinate frame of reference for the pose data.
+            */
+ uint8_t child_frame_id; /*<  Coordinate frame of reference for the velocity
+                in free space (twist) data.
+            */
+ uint8_t reset_counter; /*<  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            */
+ uint8_t estimator_type; /*<  Type of estimator that is providing
+                the odometry.
+            */
+ int8_t quality; /*< [%] Optional odometry quality metric as a percentage.
+                -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+            */
 } mavlink_odometry_t;
 
 #define MAVLINK_MSG_ID_ODOMETRY_LEN 233
@@ -94,9 +115,15 @@ typedef struct __mavlink_odometry_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param frame_id  Coordinate frame of reference for the pose data.
- * @param child_frame_id  Coordinate frame of reference for the velocity in free space (twist) data.
+            
+ * @param child_frame_id  Coordinate frame of reference for the velocity
+                in free space (twist) data.
+            
  * @param x [m] X Position
  * @param y [m] Y Position
  * @param z [m] Z Position
@@ -107,11 +134,26 @@ typedef struct __mavlink_odometry_t {
  * @param rollspeed [rad/s] Roll angular speed
  * @param pitchspeed [rad/s] Pitch angular speed
  * @param yawspeed [rad/s] Yaw angular speed
- * @param pose_covariance  Row-major representation of a 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param velocity_covariance  Row-major representation of a 6x6 velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed, yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param reset_counter  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
- * @param estimator_type  Type of estimator that is providing the odometry.
- * @param quality [%] Optional odometry quality metric as a percentage. -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+ * @param pose_covariance  Row-major representation of a 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            
+ * @param velocity_covariance  Row-major representation of a 6x6
+                velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed,
+                yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown,
+                assign NaN value to first element in the array.
+            
+ * @param reset_counter  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            
+ * @param estimator_type  Type of estimator that is providing
+                the odometry.
+            
+ * @param quality [%] Optional odometry quality metric as a percentage.
+                -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_odometry_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -172,9 +214,15 @@ static inline uint16_t mavlink_msg_odometry_pack(uint8_t system_id, uint8_t comp
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param frame_id  Coordinate frame of reference for the pose data.
- * @param child_frame_id  Coordinate frame of reference for the velocity in free space (twist) data.
+            
+ * @param child_frame_id  Coordinate frame of reference for the velocity
+                in free space (twist) data.
+            
  * @param x [m] X Position
  * @param y [m] Y Position
  * @param z [m] Z Position
@@ -185,11 +233,26 @@ static inline uint16_t mavlink_msg_odometry_pack(uint8_t system_id, uint8_t comp
  * @param rollspeed [rad/s] Roll angular speed
  * @param pitchspeed [rad/s] Pitch angular speed
  * @param yawspeed [rad/s] Yaw angular speed
- * @param pose_covariance  Row-major representation of a 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param velocity_covariance  Row-major representation of a 6x6 velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed, yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param reset_counter  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
- * @param estimator_type  Type of estimator that is providing the odometry.
- * @param quality [%] Optional odometry quality metric as a percentage. -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+ * @param pose_covariance  Row-major representation of a 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            
+ * @param velocity_covariance  Row-major representation of a 6x6
+                velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed,
+                yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown,
+                assign NaN value to first element in the array.
+            
+ * @param reset_counter  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            
+ * @param estimator_type  Type of estimator that is providing
+                the odometry.
+            
+ * @param quality [%] Optional odometry quality metric as a percentage.
+                -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_odometry_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -253,9 +316,15 @@ static inline uint16_t mavlink_msg_odometry_pack_status(uint8_t system_id, uint8
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param frame_id  Coordinate frame of reference for the pose data.
- * @param child_frame_id  Coordinate frame of reference for the velocity in free space (twist) data.
+            
+ * @param child_frame_id  Coordinate frame of reference for the velocity
+                in free space (twist) data.
+            
  * @param x [m] X Position
  * @param y [m] Y Position
  * @param z [m] Z Position
@@ -266,11 +335,26 @@ static inline uint16_t mavlink_msg_odometry_pack_status(uint8_t system_id, uint8
  * @param rollspeed [rad/s] Roll angular speed
  * @param pitchspeed [rad/s] Pitch angular speed
  * @param yawspeed [rad/s] Yaw angular speed
- * @param pose_covariance  Row-major representation of a 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param velocity_covariance  Row-major representation of a 6x6 velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed, yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param reset_counter  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
- * @param estimator_type  Type of estimator that is providing the odometry.
- * @param quality [%] Optional odometry quality metric as a percentage. -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+ * @param pose_covariance  Row-major representation of a 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            
+ * @param velocity_covariance  Row-major representation of a 6x6
+                velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed,
+                yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown,
+                assign NaN value to first element in the array.
+            
+ * @param reset_counter  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            
+ * @param estimator_type  Type of estimator that is providing
+                the odometry.
+            
+ * @param quality [%] Optional odometry quality metric as a percentage.
+                -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_odometry_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -370,9 +454,15 @@ static inline uint16_t mavlink_msg_odometry_encode_status(uint8_t system_id, uin
  * @brief Send a odometry message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param frame_id  Coordinate frame of reference for the pose data.
- * @param child_frame_id  Coordinate frame of reference for the velocity in free space (twist) data.
+            
+ * @param child_frame_id  Coordinate frame of reference for the velocity
+                in free space (twist) data.
+            
  * @param x [m] X Position
  * @param y [m] Y Position
  * @param z [m] Z Position
@@ -383,11 +473,26 @@ static inline uint16_t mavlink_msg_odometry_encode_status(uint8_t system_id, uin
  * @param rollspeed [rad/s] Roll angular speed
  * @param pitchspeed [rad/s] Pitch angular speed
  * @param yawspeed [rad/s] Yaw angular speed
- * @param pose_covariance  Row-major representation of a 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param velocity_covariance  Row-major representation of a 6x6 velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed, yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
- * @param reset_counter  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
- * @param estimator_type  Type of estimator that is providing the odometry.
- * @param quality [%] Optional odometry quality metric as a percentage. -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+ * @param pose_covariance  Row-major representation of a 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            
+ * @param velocity_covariance  Row-major representation of a 6x6
+                velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed,
+                yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown,
+                assign NaN value to first element in the array.
+            
+ * @param reset_counter  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            
+ * @param estimator_type  Type of estimator that is providing
+                the odometry.
+            
+ * @param quality [%] Optional odometry quality metric as a percentage.
+                -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -516,7 +621,10 @@ static inline void mavlink_msg_odometry_send_buf(mavlink_message_t *msgbuf, mavl
 /**
  * @brief Get field time_usec from odometry message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_odometry_get_time_usec(const mavlink_message_t* msg)
 {
@@ -527,6 +635,7 @@ static inline uint64_t mavlink_msg_odometry_get_time_usec(const mavlink_message_
  * @brief Get field frame_id from odometry message
  *
  * @return  Coordinate frame of reference for the pose data.
+            
  */
 static inline uint8_t mavlink_msg_odometry_get_frame_id(const mavlink_message_t* msg)
 {
@@ -536,7 +645,9 @@ static inline uint8_t mavlink_msg_odometry_get_frame_id(const mavlink_message_t*
 /**
  * @brief Get field child_frame_id from odometry message
  *
- * @return  Coordinate frame of reference for the velocity in free space (twist) data.
+ * @return  Coordinate frame of reference for the velocity
+                in free space (twist) data.
+            
  */
 static inline uint8_t mavlink_msg_odometry_get_child_frame_id(const mavlink_message_t* msg)
 {
@@ -646,7 +757,11 @@ static inline float mavlink_msg_odometry_get_yawspeed(const mavlink_message_t* m
 /**
  * @brief Get field pose_covariance from odometry message
  *
- * @return  Row-major representation of a 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
+ * @return  Row-major representation of a 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+            
  */
 static inline uint16_t mavlink_msg_odometry_get_pose_covariance(const mavlink_message_t* msg, float *pose_covariance)
 {
@@ -656,7 +771,11 @@ static inline uint16_t mavlink_msg_odometry_get_pose_covariance(const mavlink_me
 /**
  * @brief Get field velocity_covariance from odometry message
  *
- * @return  Row-major representation of a 6x6 velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed, yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array.
+ * @return  Row-major representation of a 6x6
+                velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed,
+                yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown,
+                assign NaN value to first element in the array.
+            
  */
 static inline uint16_t mavlink_msg_odometry_get_velocity_covariance(const mavlink_message_t* msg, float *velocity_covariance)
 {
@@ -666,7 +785,10 @@ static inline uint16_t mavlink_msg_odometry_get_velocity_covariance(const mavlin
 /**
  * @brief Get field reset_counter from odometry message
  *
- * @return  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+ * @return  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+            
  */
 static inline uint8_t mavlink_msg_odometry_get_reset_counter(const mavlink_message_t* msg)
 {
@@ -676,7 +798,9 @@ static inline uint8_t mavlink_msg_odometry_get_reset_counter(const mavlink_messa
 /**
  * @brief Get field estimator_type from odometry message
  *
- * @return  Type of estimator that is providing the odometry.
+ * @return  Type of estimator that is providing
+                the odometry.
+            
  */
 static inline uint8_t mavlink_msg_odometry_get_estimator_type(const mavlink_message_t* msg)
 {
@@ -686,7 +810,9 @@ static inline uint8_t mavlink_msg_odometry_get_estimator_type(const mavlink_mess
 /**
  * @brief Get field quality from odometry message
  *
- * @return [%] Optional odometry quality metric as a percentage. -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+ * @return [%] Optional odometry quality metric as a percentage.
+                -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+            
  */
 static inline int8_t mavlink_msg_odometry_get_quality(const mavlink_message_t* msg)
 {

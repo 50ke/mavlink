@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief CAMERA_TRACKING_GEO_STATUS message
  *
- * Camera tracking status, sent while in active tracking. Use MAV_CMD_SET_MESSAGE_INTERVAL to define message interval.
+ * Camera tracking status, sent while in active tracking. Use MAV_CMD_SET_MESSAGE_INTERVAL to
+                define message interval.
+            
  */
 struct CAMERA_TRACKING_GEO_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 276;
@@ -19,20 +21,31 @@ struct CAMERA_TRACKING_GEO_STATUS : mavlink::Message {
     static constexpr auto NAME = "CAMERA_TRACKING_GEO_STATUS";
 
 
-    uint8_t tracking_status; /*<  Current tracking status */
+    uint8_t tracking_status; /*<  Current tracking status
+             */
     int32_t lat; /*< [degE7] Latitude of tracked object */
     int32_t lon; /*< [degE7] Longitude of tracked object */
     float alt; /*< [m] Altitude of tracked object(AMSL, WGS84) */
     float h_acc; /*< [m] Horizontal accuracy. NAN if unknown */
     float v_acc; /*< [m] Vertical accuracy. NAN if unknown */
-    float vel_n; /*< [m/s] North velocity of tracked object. NAN if unknown */
-    float vel_e; /*< [m/s] East velocity of tracked object. NAN if unknown */
-    float vel_d; /*< [m/s] Down velocity of tracked object. NAN if unknown */
+    float vel_n; /*< [m/s] North velocity of tracked object. NAN if
+                unknown
+             */
+    float vel_e; /*< [m/s] East velocity of tracked object. NAN if unknown
+             */
+    float vel_d; /*< [m/s] Down velocity of tracked object. NAN if unknown
+             */
     float vel_acc; /*< [m/s] Velocity accuracy. NAN if unknown */
-    float dist; /*< [m] Distance between camera and tracked object. NAN if unknown */
+    float dist; /*< [m] Distance between camera and tracked object. NAN if
+                unknown
+             */
     float hdg; /*< [rad] Heading in radians, in NED. NAN if unknown */
-    float hdg_acc; /*< [rad] Accuracy of heading, in NED. NAN if unknown */
-    uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id). */
+    float hdg_acc; /*< [rad] Accuracy of heading, in NED. NAN if unknown
+             */
+    uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+             */
 
 
     inline std::string get_name(void) const override

@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief MEMORY_VECT message
  *
- * Send raw controller memory. The use of this message is discouraged for normal packets, but a quite efficient way for testing new messages and getting experimental debug output.
+ * Send raw controller memory. The use of this message is discouraged for normal packets, but a
+                quite efficient way for testing new messages and getting experimental debug output.
+            
  */
 struct MEMORY_VECT : mavlink::Message {
     static constexpr msgid_t MSG_ID = 249;
@@ -20,8 +22,12 @@ struct MEMORY_VECT : mavlink::Message {
 
 
     uint16_t address; /*<  Starting address of the debug variables */
-    uint8_t ver; /*<  Version code of the type variable. 0=unknown, type ignored and assumed int16_t. 1=as below */
-    uint8_t type; /*<  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x uint16_t, 2=16 x Q15, 3=16 x 1Q14 */
+    uint8_t ver; /*<  Version code of the type variable. 0=unknown, type ignored and
+                assumed int16_t. 1=as below
+             */
+    uint8_t type; /*<  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x
+                uint16_t, 2=16 x Q15, 3=16 x 1Q14
+             */
     std::array<int8_t, 32> value; /*<  Memory contents at specified address */
 
 

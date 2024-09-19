@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief LOCAL_POSITION_NED_COV message
  *
- * The filtered local position (e.g. fused computer vision and accelerometers). Coordinate frame is right-handed, Z-axis down (aeronautical frame, NED / north-east-down convention)
+ * The filtered local position (e.g. fused computer vision and accelerometers). Coordinate frame
+                is right-handed, Z-axis down (aeronautical frame, NED / north-east-down convention)
+            
  */
 struct LOCAL_POSITION_NED_COV : mavlink::Message {
     static constexpr msgid_t MSG_ID = 64;
@@ -19,8 +21,13 @@ struct LOCAL_POSITION_NED_COV : mavlink::Message {
     static constexpr auto NAME = "LOCAL_POSITION_NED_COV";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
-    uint8_t estimator_type; /*<  Class id of the estimator this estimate originated from. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
+    uint8_t estimator_type; /*<  Class id of the estimator this
+                estimate originated from.
+             */
     float x; /*< [m] X Position */
     float y; /*< [m] Y Position */
     float z; /*< [m] Z Position */
@@ -30,7 +37,11 @@ struct LOCAL_POSITION_NED_COV : mavlink::Message {
     float ax; /*< [m/s/s] X Acceleration */
     float ay; /*< [m/s/s] Y Acceleration */
     float az; /*< [m/s/s] Z Acceleration */
-    std::array<float, 45> covariance; /*<  Row-major representation of position, velocity and acceleration 9x9 cross-covariance matrix upper right triangle (states: x, y, z, vx, vy, vz, ax, ay, az; first nine entries are the first ROW, next eight entries are the second row, etc.). If unknown, assign NaN value to first element in the array. */
+    std::array<float, 45> covariance; /*<  Row-major representation of position, velocity
+                and acceleration 9x9 cross-covariance matrix upper right triangle (states: x, y, z, vx, vy, vz, ax, ay,
+                az; first nine entries are the first ROW, next eight entries are the second row, etc.). If unknown,
+                assign NaN value to first element in the array.
+             */
 
 
     inline std::string get_name(void) const override

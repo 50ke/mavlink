@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief RAW_IMU message
  *
- * The RAW IMU readings for a 9DOF sensor, which is identified by the id (default IMU1). This message should always contain the true raw values without any scaling to allow data capture and system debugging.
+ * The RAW IMU readings for a 9DOF sensor, which is identified by the id (default IMU1). This
+                message should always contain the true raw values without any scaling to allow data capture and system
+                debugging.
+            
  */
 struct RAW_IMU : mavlink::Message {
     static constexpr msgid_t MSG_ID = 27;
@@ -19,7 +22,10 @@ struct RAW_IMU : mavlink::Message {
     static constexpr auto NAME = "RAW_IMU";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     int16_t xacc; /*<  X acceleration (raw) */
     int16_t yacc; /*<  Y acceleration (raw) */
     int16_t zacc; /*<  Z acceleration (raw) */
@@ -29,8 +35,12 @@ struct RAW_IMU : mavlink::Message {
     int16_t xmag; /*<  X Magnetic field (raw) */
     int16_t ymag; /*<  Y Magnetic field (raw) */
     int16_t zmag; /*<  Z Magnetic field (raw) */
-    uint8_t id; /*<  Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0) */
-    int16_t temperature; /*< [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C). */
+    uint8_t id; /*<  Id. Ids are numbered from 0 and map to IMUs numbered from 1
+                (e.g. IMU1 will have a message with id=0)
+             */
+    int16_t temperature; /*< [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+             */
 
 
     inline std::string get_name(void) const override

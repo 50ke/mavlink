@@ -6,7 +6,9 @@
 
 typedef struct __mavlink_command_cancel_t {
  uint16_t command; /*<  Command ID (of command to cancel).*/
- uint8_t target_system; /*<  System executing long running command. Should not be broadcast (0).*/
+ uint8_t target_system; /*<  System executing long running command. Should not be broadcast
+                (0).
+            */
  uint8_t target_component; /*<  Component executing long running command.*/
 } mavlink_command_cancel_t;
 
@@ -47,7 +49,9 @@ typedef struct __mavlink_command_cancel_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param target_system  System executing long running command. Should not be broadcast (0).
+ * @param target_system  System executing long running command. Should not be broadcast
+                (0).
+            
  * @param target_component  Component executing long running command.
  * @param command  Command ID (of command to cancel).
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -82,7 +86,9 @@ static inline uint16_t mavlink_msg_command_cancel_pack(uint8_t system_id, uint8_
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param target_system  System executing long running command. Should not be broadcast (0).
+ * @param target_system  System executing long running command. Should not be broadcast
+                (0).
+            
  * @param target_component  Component executing long running command.
  * @param command  Command ID (of command to cancel).
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -120,7 +126,9 @@ static inline uint16_t mavlink_msg_command_cancel_pack_status(uint8_t system_id,
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param target_system  System executing long running command. Should not be broadcast (0).
+ * @param target_system  System executing long running command. Should not be broadcast
+                (0).
+            
  * @param target_component  Component executing long running command.
  * @param command  Command ID (of command to cancel).
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -194,7 +202,9 @@ static inline uint16_t mavlink_msg_command_cancel_encode_status(uint8_t system_i
  * @brief Send a command_cancel message
  * @param chan MAVLink channel to send the message
  *
- * @param target_system  System executing long running command. Should not be broadcast (0).
+ * @param target_system  System executing long running command. Should not be broadcast
+                (0).
+            
  * @param target_component  Component executing long running command.
  * @param command  Command ID (of command to cancel).
  */
@@ -269,7 +279,9 @@ static inline void mavlink_msg_command_cancel_send_buf(mavlink_message_t *msgbuf
 /**
  * @brief Get field target_system from command_cancel message
  *
- * @return  System executing long running command. Should not be broadcast (0).
+ * @return  System executing long running command. Should not be broadcast
+                (0).
+            
  */
 static inline uint8_t mavlink_msg_command_cancel_get_target_system(const mavlink_message_t* msg)
 {

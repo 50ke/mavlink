@@ -19,9 +19,13 @@ struct WHEEL_DISTANCE : mavlink::Message {
     static constexpr auto NAME = "WHEEL_DISTANCE";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (synced to UNIX time or since system boot). */
+    uint64_t time_usec; /*< [us] Timestamp (synced to UNIX time or since system boot).
+             */
     uint8_t count; /*<  Number of wheels reported. */
-    std::array<double, 16> distance; /*< [m] Distance reported by individual wheel encoders. Forward rotations increase values, reverse rotations decrease them. Not all wheels will necessarily have wheel encoders; the mapping of encoders to wheel positions must be agreed/understood by the endpoints. */
+    std::array<double, 16> distance; /*< [m] Distance reported by individual wheel encoders. Forward
+                rotations increase values, reverse rotations decrease them. Not all wheels will necessarily have wheel
+                encoders; the mapping of encoders to wheel positions must be agreed/understood by the endpoints.
+             */
 
 
     inline std::string get_name(void) const override

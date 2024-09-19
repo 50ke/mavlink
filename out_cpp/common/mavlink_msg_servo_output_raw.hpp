@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief SERVO_OUTPUT_RAW message
  *
- * Superseded by ACTUATOR_OUTPUT_STATUS. The RAW values of the servo outputs (for RC input from the remote, use the RC_CHANNELS messages). The standard PPM modulation is as follows: 1000 microseconds: 0%, 2000 microseconds: 100%.
+ * Superseded by ACTUATOR_OUTPUT_STATUS. The RAW values of the servo outputs (for RC input from
+                the remote, use the RC_CHANNELS messages). The standard PPM modulation is as follows: 1000 microseconds:
+                0%, 2000 microseconds: 100%.
+            
  */
 struct SERVO_OUTPUT_RAW : mavlink::Message {
     static constexpr msgid_t MSG_ID = 36;
@@ -19,8 +22,13 @@ struct SERVO_OUTPUT_RAW : mavlink::Message {
     static constexpr auto NAME = "SERVO_OUTPUT_RAW";
 
 
-    uint32_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
-    uint8_t port; /*<  Servo output port (set of 8 outputs = 1 port). Flight stacks running on Pixhawk should use: 0 = MAIN, 1 = AUX. */
+    uint32_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
+    uint8_t port; /*<  Servo output port (set of 8 outputs = 1 port). Flight stacks running on
+                Pixhawk should use: 0 = MAIN, 1 = AUX.
+             */
     uint16_t servo1_raw; /*< [us] Servo output 1 value */
     uint16_t servo2_raw; /*< [us] Servo output 2 value */
     uint16_t servo3_raw; /*< [us] Servo output 3 value */

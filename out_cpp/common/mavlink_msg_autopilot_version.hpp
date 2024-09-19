@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief AUTOPILOT_VERSION message
  *
- * Version and capability of autopilot software. This should be emitted in response to a request with MAV_CMD_REQUEST_MESSAGE.
+ * Version and capability of autopilot software. This should be emitted in response to a request
+                with MAV_CMD_REQUEST_MESSAGE.
+            
  */
 struct AUTOPILOT_VERSION : mavlink::Message {
     static constexpr msgid_t MSG_ID = 148;
@@ -19,18 +21,34 @@ struct AUTOPILOT_VERSION : mavlink::Message {
     static constexpr auto NAME = "AUTOPILOT_VERSION";
 
 
-    uint64_t capabilities; /*<  Bitmap of capabilities */
+    uint64_t capabilities; /*<  Bitmap of
+                capabilities
+             */
     uint32_t flight_sw_version; /*<  Firmware version number */
     uint32_t middleware_sw_version; /*<  Middleware version number */
     uint32_t os_sw_version; /*<  Operating system version number */
-    uint32_t board_version; /*<  HW / board version (last 8 bits should be silicon ID, if any). The first 16 bits of this field specify https://github.com/PX4/PX4-Bootloader/blob/master/board_types.txt */
-    std::array<uint8_t, 8> flight_custom_version; /*<  Custom version field, commonly the first 8 bytes of the git hash. This is not an unique identifier, but should allow to identify the commit using the main version number even for very large code bases. */
-    std::array<uint8_t, 8> middleware_custom_version; /*<  Custom version field, commonly the first 8 bytes of the git hash. This is not an unique identifier, but should allow to identify the commit using the main version number even for very large code bases. */
-    std::array<uint8_t, 8> os_custom_version; /*<  Custom version field, commonly the first 8 bytes of the git hash. This is not an unique identifier, but should allow to identify the commit using the main version number even for very large code bases. */
+    uint32_t board_version; /*<  HW / board version (last 8 bits should be silicon ID, if any).
+                The first 16 bits of this field specify
+                https://github.com/PX4/PX4-Bootloader/blob/master/board_types.txt
+             */
+    std::array<uint8_t, 8> flight_custom_version; /*<  Custom version field, commonly the first 8 bytes of
+                the git hash. This is not an unique identifier, but should allow to identify the commit using the main
+                version number even for very large code bases.
+             */
+    std::array<uint8_t, 8> middleware_custom_version; /*<  Custom version field, commonly the first 8 bytes
+                of the git hash. This is not an unique identifier, but should allow to identify the commit using the
+                main version number even for very large code bases.
+             */
+    std::array<uint8_t, 8> os_custom_version; /*<  Custom version field, commonly the first 8 bytes of the
+                git hash. This is not an unique identifier, but should allow to identify the commit using the main
+                version number even for very large code bases.
+             */
     uint16_t vendor_id; /*<  ID of the board vendor */
     uint16_t product_id; /*<  ID of the product */
     uint64_t uid; /*<  UID if provided by hardware (see uid2) */
-    std::array<uint8_t, 18> uid2; /*<  UID if provided by hardware (supersedes the uid field. If this is non-zero, use this field, otherwise use uid) */
+    std::array<uint8_t, 18> uid2; /*<  UID if provided by hardware (supersedes the uid field. If this is
+                non-zero, use this field, otherwise use uid)
+             */
 
 
     inline std::string get_name(void) const override

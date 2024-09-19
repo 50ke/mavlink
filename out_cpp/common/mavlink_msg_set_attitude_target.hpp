@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief SET_ATTITUDE_TARGET message
  *
- * Sets a desired vehicle attitude. Used by an external controller to command the vehicle (manual controller or other system).
+ * Sets a desired vehicle attitude. Used by an external controller to command the vehicle (manual
+                controller or other system).
+            
  */
 struct SET_ATTITUDE_TARGET : mavlink::Message {
     static constexpr msgid_t MSG_ID = 82;
@@ -22,13 +24,20 @@ struct SET_ATTITUDE_TARGET : mavlink::Message {
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
     uint8_t target_system; /*<  System ID */
     uint8_t target_component; /*<  Component ID */
-    uint8_t type_mask; /*<  Bitmap to indicate which dimensions should be ignored by the vehicle. */
-    std::array<float, 4> q; /*<  Attitude quaternion (w, x, y, z order, zero-rotation is 1, 0, 0, 0) from MAV_FRAME_LOCAL_NED to MAV_FRAME_BODY_FRD */
+    uint8_t type_mask; /*<  Bitmap to indicate
+                which dimensions should be ignored by the vehicle.
+             */
+    std::array<float, 4> q; /*<  Attitude quaternion (w, x, y, z order, zero-rotation is 1, 0, 0, 0) from
+                MAV_FRAME_LOCAL_NED to MAV_FRAME_BODY_FRD
+             */
     float body_roll_rate; /*< [rad/s] Body roll rate */
     float body_pitch_rate; /*< [rad/s] Body pitch rate */
     float body_yaw_rate; /*< [rad/s] Body yaw rate */
-    float thrust; /*<  Collective thrust, normalized to 0 .. 1 (-1 .. 1 for vehicles capable of reverse trust) */
-    std::array<float, 3> thrust_body; /*<  3D thrust setpoint in the body NED frame, normalized to -1 .. 1 */
+    float thrust; /*<  Collective thrust, normalized to 0 .. 1 (-1 .. 1 for vehicles capable of
+                reverse trust)
+             */
+    std::array<float, 3> thrust_body; /*<  3D thrust setpoint in the body NED frame, normalized to -1 .. 1
+             */
 
 
     inline std::string get_name(void) const override

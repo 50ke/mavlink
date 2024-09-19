@@ -22,8 +22,12 @@ typedef struct __mavlink_efi_status_t {
  float throttle_out; /*< [%] Output throttle*/
  float pt_compensation; /*<  Pressure/temperature compensation*/
  uint8_t health; /*<  EFI health status*/
- float ignition_voltage; /*< [V] Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.*/
- float fuel_pressure; /*< [kPa] Fuel pressure. Zero in this value means "unknown", so if the fuel pressure really is zero kPa use 0.0001 instead.*/
+ float ignition_voltage; /*< [V] Supply voltage to EFI sparking system. Zero in this
+                value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
+            */
+ float fuel_pressure; /*< [kPa] Fuel pressure. Zero in this value means "unknown", so
+                if the fuel pressure really is zero kPa use 0.0001 instead.
+            */
 }) mavlink_efi_status_t;
 
 #define MAVLINK_MSG_ID_EFI_STATUS_LEN 73
@@ -112,8 +116,12 @@ typedef struct __mavlink_efi_status_t {
  * @param exhaust_gas_temperature [degC] Exhaust gas temperature
  * @param throttle_out [%] Output throttle
  * @param pt_compensation  Pressure/temperature compensation
- * @param ignition_voltage [V] Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
- * @param fuel_pressure [kPa] Fuel pressure. Zero in this value means "unknown", so if the fuel pressure really is zero kPa use 0.0001 instead.
+ * @param ignition_voltage [V] Supply voltage to EFI sparking system. Zero in this
+                value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
+            
+ * @param fuel_pressure [kPa] Fuel pressure. Zero in this value means "unknown", so
+                if the fuel pressure really is zero kPa use 0.0001 instead.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_efi_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -195,8 +203,12 @@ static inline uint16_t mavlink_msg_efi_status_pack(uint8_t system_id, uint8_t co
  * @param exhaust_gas_temperature [degC] Exhaust gas temperature
  * @param throttle_out [%] Output throttle
  * @param pt_compensation  Pressure/temperature compensation
- * @param ignition_voltage [V] Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
- * @param fuel_pressure [kPa] Fuel pressure. Zero in this value means "unknown", so if the fuel pressure really is zero kPa use 0.0001 instead.
+ * @param ignition_voltage [V] Supply voltage to EFI sparking system. Zero in this
+                value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
+            
+ * @param fuel_pressure [kPa] Fuel pressure. Zero in this value means "unknown", so
+                if the fuel pressure really is zero kPa use 0.0001 instead.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_efi_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -281,8 +293,12 @@ static inline uint16_t mavlink_msg_efi_status_pack_status(uint8_t system_id, uin
  * @param exhaust_gas_temperature [degC] Exhaust gas temperature
  * @param throttle_out [%] Output throttle
  * @param pt_compensation  Pressure/temperature compensation
- * @param ignition_voltage [V] Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
- * @param fuel_pressure [kPa] Fuel pressure. Zero in this value means "unknown", so if the fuel pressure really is zero kPa use 0.0001 instead.
+ * @param ignition_voltage [V] Supply voltage to EFI sparking system. Zero in this
+                value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
+            
+ * @param fuel_pressure [kPa] Fuel pressure. Zero in this value means "unknown", so
+                if the fuel pressure really is zero kPa use 0.0001 instead.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_efi_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -403,8 +419,12 @@ static inline uint16_t mavlink_msg_efi_status_encode_status(uint8_t system_id, u
  * @param exhaust_gas_temperature [degC] Exhaust gas temperature
  * @param throttle_out [%] Output throttle
  * @param pt_compensation  Pressure/temperature compensation
- * @param ignition_voltage [V] Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
- * @param fuel_pressure [kPa] Fuel pressure. Zero in this value means "unknown", so if the fuel pressure really is zero kPa use 0.0001 instead.
+ * @param ignition_voltage [V] Supply voltage to EFI sparking system. Zero in this
+                value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
+            
+ * @param fuel_pressure [kPa] Fuel pressure. Zero in this value means "unknown", so
+                if the fuel pressure really is zero kPa use 0.0001 instead.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -711,7 +731,9 @@ static inline float mavlink_msg_efi_status_get_pt_compensation(const mavlink_mes
 /**
  * @brief Get field ignition_voltage from efi_status message
  *
- * @return [V] Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
+ * @return [V] Supply voltage to EFI sparking system. Zero in this
+                value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
+            
  */
 static inline float mavlink_msg_efi_status_get_ignition_voltage(const mavlink_message_t* msg)
 {
@@ -721,7 +743,9 @@ static inline float mavlink_msg_efi_status_get_ignition_voltage(const mavlink_me
 /**
  * @brief Get field fuel_pressure from efi_status message
  *
- * @return [kPa] Fuel pressure. Zero in this value means "unknown", so if the fuel pressure really is zero kPa use 0.0001 instead.
+ * @return [kPa] Fuel pressure. Zero in this value means "unknown", so
+                if the fuel pressure really is zero kPa use 0.0001 instead.
+            
  */
 static inline float mavlink_msg_efi_status_get_fuel_pressure(const mavlink_message_t* msg)
 {

@@ -5,10 +5,17 @@
 
 MAVPACKED(
 typedef struct __mavlink_statustext_t {
- uint8_t severity; /*<  Severity of status. Relies on the definitions within RFC-5424.*/
+ uint8_t severity; /*<  Severity of status. Relies on the definitions
+                within RFC-5424.
+            */
  char text[50]; /*<  Status text message, without null termination character*/
- uint16_t id; /*<  Unique (opaque) identifier for this statustext message.  May be used to reassemble a logical long-statustext message from a sequence of chunks.  A value of zero indicates this is the only chunk in the sequence and the message can be emitted immediately.*/
- uint8_t chunk_seq; /*<  This chunk's sequence number; indexing is from zero.  Any null character in the text field is taken to mean this was the last chunk.*/
+ uint16_t id; /*<  Unique (opaque) identifier for this statustext message. May be used to
+                reassemble a logical long-statustext message from a sequence of chunks. A value of zero indicates this
+                is the only chunk in the sequence and the message can be emitted immediately.
+            */
+ uint8_t chunk_seq; /*<  This chunk's sequence number; indexing is from zero. Any null
+                character in the text field is taken to mean this was the last chunk.
+            */
 }) mavlink_statustext_t;
 
 #define MAVLINK_MSG_ID_STATUSTEXT_LEN 54
@@ -50,10 +57,17 @@ typedef struct __mavlink_statustext_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param severity  Severity of status. Relies on the definitions within RFC-5424.
+ * @param severity  Severity of status. Relies on the definitions
+                within RFC-5424.
+            
  * @param text  Status text message, without null termination character
- * @param id  Unique (opaque) identifier for this statustext message.  May be used to reassemble a logical long-statustext message from a sequence of chunks.  A value of zero indicates this is the only chunk in the sequence and the message can be emitted immediately.
- * @param chunk_seq  This chunk's sequence number; indexing is from zero.  Any null character in the text field is taken to mean this was the last chunk.
+ * @param id  Unique (opaque) identifier for this statustext message. May be used to
+                reassemble a logical long-statustext message from a sequence of chunks. A value of zero indicates this
+                is the only chunk in the sequence and the message can be emitted immediately.
+            
+ * @param chunk_seq  This chunk's sequence number; indexing is from zero. Any null
+                character in the text field is taken to mean this was the last chunk.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_statustext_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -86,10 +100,17 @@ static inline uint16_t mavlink_msg_statustext_pack(uint8_t system_id, uint8_t co
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param severity  Severity of status. Relies on the definitions within RFC-5424.
+ * @param severity  Severity of status. Relies on the definitions
+                within RFC-5424.
+            
  * @param text  Status text message, without null termination character
- * @param id  Unique (opaque) identifier for this statustext message.  May be used to reassemble a logical long-statustext message from a sequence of chunks.  A value of zero indicates this is the only chunk in the sequence and the message can be emitted immediately.
- * @param chunk_seq  This chunk's sequence number; indexing is from zero.  Any null character in the text field is taken to mean this was the last chunk.
+ * @param id  Unique (opaque) identifier for this statustext message. May be used to
+                reassemble a logical long-statustext message from a sequence of chunks. A value of zero indicates this
+                is the only chunk in the sequence and the message can be emitted immediately.
+            
+ * @param chunk_seq  This chunk's sequence number; indexing is from zero. Any null
+                character in the text field is taken to mean this was the last chunk.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_statustext_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -125,10 +146,17 @@ static inline uint16_t mavlink_msg_statustext_pack_status(uint8_t system_id, uin
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param severity  Severity of status. Relies on the definitions within RFC-5424.
+ * @param severity  Severity of status. Relies on the definitions
+                within RFC-5424.
+            
  * @param text  Status text message, without null termination character
- * @param id  Unique (opaque) identifier for this statustext message.  May be used to reassemble a logical long-statustext message from a sequence of chunks.  A value of zero indicates this is the only chunk in the sequence and the message can be emitted immediately.
- * @param chunk_seq  This chunk's sequence number; indexing is from zero.  Any null character in the text field is taken to mean this was the last chunk.
+ * @param id  Unique (opaque) identifier for this statustext message. May be used to
+                reassemble a logical long-statustext message from a sequence of chunks. A value of zero indicates this
+                is the only chunk in the sequence and the message can be emitted immediately.
+            
+ * @param chunk_seq  This chunk's sequence number; indexing is from zero. Any null
+                character in the text field is taken to mean this was the last chunk.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_statustext_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -200,10 +228,17 @@ static inline uint16_t mavlink_msg_statustext_encode_status(uint8_t system_id, u
  * @brief Send a statustext message
  * @param chan MAVLink channel to send the message
  *
- * @param severity  Severity of status. Relies on the definitions within RFC-5424.
+ * @param severity  Severity of status. Relies on the definitions
+                within RFC-5424.
+            
  * @param text  Status text message, without null termination character
- * @param id  Unique (opaque) identifier for this statustext message.  May be used to reassemble a logical long-statustext message from a sequence of chunks.  A value of zero indicates this is the only chunk in the sequence and the message can be emitted immediately.
- * @param chunk_seq  This chunk's sequence number; indexing is from zero.  Any null character in the text field is taken to mean this was the last chunk.
+ * @param id  Unique (opaque) identifier for this statustext message. May be used to
+                reassemble a logical long-statustext message from a sequence of chunks. A value of zero indicates this
+                is the only chunk in the sequence and the message can be emitted immediately.
+            
+ * @param chunk_seq  This chunk's sequence number; indexing is from zero. Any null
+                character in the text field is taken to mean this was the last chunk.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -276,7 +311,9 @@ static inline void mavlink_msg_statustext_send_buf(mavlink_message_t *msgbuf, ma
 /**
  * @brief Get field severity from statustext message
  *
- * @return  Severity of status. Relies on the definitions within RFC-5424.
+ * @return  Severity of status. Relies on the definitions
+                within RFC-5424.
+            
  */
 static inline uint8_t mavlink_msg_statustext_get_severity(const mavlink_message_t* msg)
 {
@@ -296,7 +333,10 @@ static inline uint16_t mavlink_msg_statustext_get_text(const mavlink_message_t* 
 /**
  * @brief Get field id from statustext message
  *
- * @return  Unique (opaque) identifier for this statustext message.  May be used to reassemble a logical long-statustext message from a sequence of chunks.  A value of zero indicates this is the only chunk in the sequence and the message can be emitted immediately.
+ * @return  Unique (opaque) identifier for this statustext message. May be used to
+                reassemble a logical long-statustext message from a sequence of chunks. A value of zero indicates this
+                is the only chunk in the sequence and the message can be emitted immediately.
+            
  */
 static inline uint16_t mavlink_msg_statustext_get_id(const mavlink_message_t* msg)
 {
@@ -306,7 +346,9 @@ static inline uint16_t mavlink_msg_statustext_get_id(const mavlink_message_t* ms
 /**
  * @brief Get field chunk_seq from statustext message
  *
- * @return  This chunk's sequence number; indexing is from zero.  Any null character in the text field is taken to mean this was the last chunk.
+ * @return  This chunk's sequence number; indexing is from zero. Any null
+                character in the text field is taken to mean this was the last chunk.
+            
  */
 static inline uint8_t mavlink_msg_statustext_get_chunk_seq(const mavlink_message_t* msg)
 {

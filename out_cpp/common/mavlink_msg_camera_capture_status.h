@@ -7,12 +7,24 @@ MAVPACKED(
 typedef struct __mavlink_camera_capture_status_t {
  uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot).*/
  float image_interval; /*< [s] Image capture interval*/
- uint32_t recording_time_ms; /*< [ms] Elapsed time since recording started (0: Not supported/available). A GCS should compute recording time and use non-zero values of this field to correct any discrepancy.*/
+ uint32_t recording_time_ms; /*< [ms] Elapsed time since recording started (0: Not
+                supported/available). A GCS should compute recording time and use non-zero values of this field to
+                correct any discrepancy.
+            */
  float available_capacity; /*< [MiB] Available storage capacity.*/
- uint8_t image_status; /*<  Current status of image capturing (0: idle, 1: capture in progress, 2: interval set but idle, 3: interval set and capture in progress)*/
- uint8_t video_status; /*<  Current status of video capturing (0: idle, 1: capture in progress)*/
- int32_t image_count; /*<  Total number of images captured ('forever', or until reset using MAV_CMD_STORAGE_FORMAT).*/
- uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).*/
+ uint8_t image_status; /*<  Current status of image capturing (0: idle, 1: capture in
+                progress, 2: interval set but idle, 3: interval set and capture in progress)
+            */
+ uint8_t video_status; /*<  Current status of video capturing (0: idle, 1: capture in
+                progress)
+            */
+ int32_t image_count; /*<  Total number of images captured ('forever', or until reset using
+                MAV_CMD_STORAGE_FORMAT).
+            */
+ uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            */
 }) mavlink_camera_capture_status_t;
 
 #define MAVLINK_MSG_ID_CAMERA_CAPTURE_STATUS_LEN 23
@@ -63,13 +75,25 @@ typedef struct __mavlink_camera_capture_status_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param image_status  Current status of image capturing (0: idle, 1: capture in progress, 2: interval set but idle, 3: interval set and capture in progress)
- * @param video_status  Current status of video capturing (0: idle, 1: capture in progress)
+ * @param image_status  Current status of image capturing (0: idle, 1: capture in
+                progress, 2: interval set but idle, 3: interval set and capture in progress)
+            
+ * @param video_status  Current status of video capturing (0: idle, 1: capture in
+                progress)
+            
  * @param image_interval [s] Image capture interval
- * @param recording_time_ms [ms] Elapsed time since recording started (0: Not supported/available). A GCS should compute recording time and use non-zero values of this field to correct any discrepancy.
+ * @param recording_time_ms [ms] Elapsed time since recording started (0: Not
+                supported/available). A GCS should compute recording time and use non-zero values of this field to
+                correct any discrepancy.
+            
  * @param available_capacity [MiB] Available storage capacity.
- * @param image_count  Total number of images captured ('forever', or until reset using MAV_CMD_STORAGE_FORMAT).
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param image_count  Total number of images captured ('forever', or until reset using
+                MAV_CMD_STORAGE_FORMAT).
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_capture_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -113,13 +137,25 @@ static inline uint16_t mavlink_msg_camera_capture_status_pack(uint8_t system_id,
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param image_status  Current status of image capturing (0: idle, 1: capture in progress, 2: interval set but idle, 3: interval set and capture in progress)
- * @param video_status  Current status of video capturing (0: idle, 1: capture in progress)
+ * @param image_status  Current status of image capturing (0: idle, 1: capture in
+                progress, 2: interval set but idle, 3: interval set and capture in progress)
+            
+ * @param video_status  Current status of video capturing (0: idle, 1: capture in
+                progress)
+            
  * @param image_interval [s] Image capture interval
- * @param recording_time_ms [ms] Elapsed time since recording started (0: Not supported/available). A GCS should compute recording time and use non-zero values of this field to correct any discrepancy.
+ * @param recording_time_ms [ms] Elapsed time since recording started (0: Not
+                supported/available). A GCS should compute recording time and use non-zero values of this field to
+                correct any discrepancy.
+            
  * @param available_capacity [MiB] Available storage capacity.
- * @param image_count  Total number of images captured ('forever', or until reset using MAV_CMD_STORAGE_FORMAT).
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param image_count  Total number of images captured ('forever', or until reset using
+                MAV_CMD_STORAGE_FORMAT).
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_capture_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -166,13 +202,25 @@ static inline uint16_t mavlink_msg_camera_capture_status_pack_status(uint8_t sys
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param image_status  Current status of image capturing (0: idle, 1: capture in progress, 2: interval set but idle, 3: interval set and capture in progress)
- * @param video_status  Current status of video capturing (0: idle, 1: capture in progress)
+ * @param image_status  Current status of image capturing (0: idle, 1: capture in
+                progress, 2: interval set but idle, 3: interval set and capture in progress)
+            
+ * @param video_status  Current status of video capturing (0: idle, 1: capture in
+                progress)
+            
  * @param image_interval [s] Image capture interval
- * @param recording_time_ms [ms] Elapsed time since recording started (0: Not supported/available). A GCS should compute recording time and use non-zero values of this field to correct any discrepancy.
+ * @param recording_time_ms [ms] Elapsed time since recording started (0: Not
+                supported/available). A GCS should compute recording time and use non-zero values of this field to
+                correct any discrepancy.
+            
  * @param available_capacity [MiB] Available storage capacity.
- * @param image_count  Total number of images captured ('forever', or until reset using MAV_CMD_STORAGE_FORMAT).
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param image_count  Total number of images captured ('forever', or until reset using
+                MAV_CMD_STORAGE_FORMAT).
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_capture_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -255,13 +303,25 @@ static inline uint16_t mavlink_msg_camera_capture_status_encode_status(uint8_t s
  * @param chan MAVLink channel to send the message
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param image_status  Current status of image capturing (0: idle, 1: capture in progress, 2: interval set but idle, 3: interval set and capture in progress)
- * @param video_status  Current status of video capturing (0: idle, 1: capture in progress)
+ * @param image_status  Current status of image capturing (0: idle, 1: capture in
+                progress, 2: interval set but idle, 3: interval set and capture in progress)
+            
+ * @param video_status  Current status of video capturing (0: idle, 1: capture in
+                progress)
+            
  * @param image_interval [s] Image capture interval
- * @param recording_time_ms [ms] Elapsed time since recording started (0: Not supported/available). A GCS should compute recording time and use non-zero values of this field to correct any discrepancy.
+ * @param recording_time_ms [ms] Elapsed time since recording started (0: Not
+                supported/available). A GCS should compute recording time and use non-zero values of this field to
+                correct any discrepancy.
+            
  * @param available_capacity [MiB] Available storage capacity.
- * @param image_count  Total number of images captured ('forever', or until reset using MAV_CMD_STORAGE_FORMAT).
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param image_count  Total number of images captured ('forever', or until reset using
+                MAV_CMD_STORAGE_FORMAT).
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -364,7 +424,9 @@ static inline uint32_t mavlink_msg_camera_capture_status_get_time_boot_ms(const 
 /**
  * @brief Get field image_status from camera_capture_status message
  *
- * @return  Current status of image capturing (0: idle, 1: capture in progress, 2: interval set but idle, 3: interval set and capture in progress)
+ * @return  Current status of image capturing (0: idle, 1: capture in
+                progress, 2: interval set but idle, 3: interval set and capture in progress)
+            
  */
 static inline uint8_t mavlink_msg_camera_capture_status_get_image_status(const mavlink_message_t* msg)
 {
@@ -374,7 +436,9 @@ static inline uint8_t mavlink_msg_camera_capture_status_get_image_status(const m
 /**
  * @brief Get field video_status from camera_capture_status message
  *
- * @return  Current status of video capturing (0: idle, 1: capture in progress)
+ * @return  Current status of video capturing (0: idle, 1: capture in
+                progress)
+            
  */
 static inline uint8_t mavlink_msg_camera_capture_status_get_video_status(const mavlink_message_t* msg)
 {
@@ -394,7 +458,10 @@ static inline float mavlink_msg_camera_capture_status_get_image_interval(const m
 /**
  * @brief Get field recording_time_ms from camera_capture_status message
  *
- * @return [ms] Elapsed time since recording started (0: Not supported/available). A GCS should compute recording time and use non-zero values of this field to correct any discrepancy.
+ * @return [ms] Elapsed time since recording started (0: Not
+                supported/available). A GCS should compute recording time and use non-zero values of this field to
+                correct any discrepancy.
+            
  */
 static inline uint32_t mavlink_msg_camera_capture_status_get_recording_time_ms(const mavlink_message_t* msg)
 {
@@ -414,7 +481,9 @@ static inline float mavlink_msg_camera_capture_status_get_available_capacity(con
 /**
  * @brief Get field image_count from camera_capture_status message
  *
- * @return  Total number of images captured ('forever', or until reset using MAV_CMD_STORAGE_FORMAT).
+ * @return  Total number of images captured ('forever', or until reset using
+                MAV_CMD_STORAGE_FORMAT).
+            
  */
 static inline int32_t mavlink_msg_camera_capture_status_get_image_count(const mavlink_message_t* msg)
 {
@@ -424,7 +493,10 @@ static inline int32_t mavlink_msg_camera_capture_status_get_image_count(const ma
 /**
  * @brief Get field camera_device_id from camera_capture_status message
  *
- * @return  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @return  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 static inline uint8_t mavlink_msg_camera_capture_status_get_camera_device_id(const mavlink_message_t* msg)
 {

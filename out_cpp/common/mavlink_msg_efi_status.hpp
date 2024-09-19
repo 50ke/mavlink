@@ -36,8 +36,12 @@ struct EFI_STATUS : mavlink::Message {
     float exhaust_gas_temperature; /*< [degC] Exhaust gas temperature */
     float throttle_out; /*< [%] Output throttle */
     float pt_compensation; /*<  Pressure/temperature compensation */
-    float ignition_voltage; /*< [V] Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead. */
-    float fuel_pressure; /*< [kPa] Fuel pressure. Zero in this value means "unknown", so if the fuel pressure really is zero kPa use 0.0001 instead. */
+    float ignition_voltage; /*< [V] Supply voltage to EFI sparking system. Zero in this
+                value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.
+             */
+    float fuel_pressure; /*< [kPa] Fuel pressure. Zero in this value means "unknown", so
+                if the fuel pressure really is zero kPa use 0.0001 instead.
+             */
 
 
     inline std::string get_name(void) const override

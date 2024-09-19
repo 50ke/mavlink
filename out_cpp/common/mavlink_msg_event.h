@@ -6,11 +6,16 @@
 
 typedef struct __mavlink_event_t {
  uint32_t id; /*<  Event ID (as defined in the component metadata)*/
- uint32_t event_time_boot_ms; /*< [ms] Timestamp (time since system boot when the event happened).*/
+ uint32_t event_time_boot_ms; /*< [ms] Timestamp (time since system boot when the event
+                happened).
+            */
  uint16_t sequence; /*<  Sequence number.*/
  uint8_t destination_component; /*<  Component ID*/
  uint8_t destination_system; /*<  System ID*/
- uint8_t log_levels; /*<  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB: external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6, Debug = 7, Protocol = 8, Disabled = 9*/
+ uint8_t log_levels; /*<  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB:
+                external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6,
+                Debug = 7, Protocol = 8, Disabled = 9
+            */
  uint8_t arguments[40]; /*<  Arguments (depend on event ID).*/
 } mavlink_event_t;
 
@@ -62,9 +67,14 @@ typedef struct __mavlink_event_t {
  * @param destination_component  Component ID
  * @param destination_system  System ID
  * @param id  Event ID (as defined in the component metadata)
- * @param event_time_boot_ms [ms] Timestamp (time since system boot when the event happened).
+ * @param event_time_boot_ms [ms] Timestamp (time since system boot when the event
+                happened).
+            
  * @param sequence  Sequence number.
- * @param log_levels  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB: external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6, Debug = 7, Protocol = 8, Disabled = 9
+ * @param log_levels  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB:
+                external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6,
+                Debug = 7, Protocol = 8, Disabled = 9
+            
  * @param arguments  Arguments (depend on event ID).
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -107,9 +117,14 @@ static inline uint16_t mavlink_msg_event_pack(uint8_t system_id, uint8_t compone
  * @param destination_component  Component ID
  * @param destination_system  System ID
  * @param id  Event ID (as defined in the component metadata)
- * @param event_time_boot_ms [ms] Timestamp (time since system boot when the event happened).
+ * @param event_time_boot_ms [ms] Timestamp (time since system boot when the event
+                happened).
+            
  * @param sequence  Sequence number.
- * @param log_levels  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB: external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6, Debug = 7, Protocol = 8, Disabled = 9
+ * @param log_levels  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB:
+                external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6,
+                Debug = 7, Protocol = 8, Disabled = 9
+            
  * @param arguments  Arguments (depend on event ID).
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -155,9 +170,14 @@ static inline uint16_t mavlink_msg_event_pack_status(uint8_t system_id, uint8_t 
  * @param destination_component  Component ID
  * @param destination_system  System ID
  * @param id  Event ID (as defined in the component metadata)
- * @param event_time_boot_ms [ms] Timestamp (time since system boot when the event happened).
+ * @param event_time_boot_ms [ms] Timestamp (time since system boot when the event
+                happened).
+            
  * @param sequence  Sequence number.
- * @param log_levels  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB: external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6, Debug = 7, Protocol = 8, Disabled = 9
+ * @param log_levels  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB:
+                external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6,
+                Debug = 7, Protocol = 8, Disabled = 9
+            
  * @param arguments  Arguments (depend on event ID).
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -239,9 +259,14 @@ static inline uint16_t mavlink_msg_event_encode_status(uint8_t system_id, uint8_
  * @param destination_component  Component ID
  * @param destination_system  System ID
  * @param id  Event ID (as defined in the component metadata)
- * @param event_time_boot_ms [ms] Timestamp (time since system boot when the event happened).
+ * @param event_time_boot_ms [ms] Timestamp (time since system boot when the event
+                happened).
+            
  * @param sequence  Sequence number.
- * @param log_levels  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB: external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6, Debug = 7, Protocol = 8, Disabled = 9
+ * @param log_levels  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB:
+                external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6,
+                Debug = 7, Protocol = 8, Disabled = 9
+            
  * @param arguments  Arguments (depend on event ID).
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -357,7 +382,9 @@ static inline uint32_t mavlink_msg_event_get_id(const mavlink_message_t* msg)
 /**
  * @brief Get field event_time_boot_ms from event message
  *
- * @return [ms] Timestamp (time since system boot when the event happened).
+ * @return [ms] Timestamp (time since system boot when the event
+                happened).
+            
  */
 static inline uint32_t mavlink_msg_event_get_event_time_boot_ms(const mavlink_message_t* msg)
 {
@@ -377,7 +404,10 @@ static inline uint16_t mavlink_msg_event_get_sequence(const mavlink_message_t* m
 /**
  * @brief Get field log_levels from event message
  *
- * @return  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB: external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6, Debug = 7, Protocol = 8, Disabled = 9
+ * @return  Log levels: 4 bits MSB: internal (for logging purposes), 4 bits LSB:
+                external. Levels: Emergency = 0, Alert = 1, Critical = 2, Error = 3, Warning = 4, Notice = 5, Info = 6,
+                Debug = 7, Protocol = 8, Disabled = 9
+            
  */
 static inline uint8_t mavlink_msg_event_get_log_levels(const mavlink_message_t* msg)
 {

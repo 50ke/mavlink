@@ -9,7 +9,11 @@ namespace msg {
 /**
  * @brief GIMBAL_MANAGER_SET_PITCHYAW message
  *
- * Set gimbal manager pitch and yaw angles (high rate message). This message is to be sent to the gimbal manager (e.g. from a ground station) and will be ignored by gimbal devices. Angles and rates can be set to NaN according to use case. Use MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW for low-rate adjustments that require confirmation.
+ * Set gimbal manager pitch and yaw angles (high rate message). This message is to be sent to the
+                gimbal manager (e.g. from a ground station) and will be ignored by gimbal devices. Angles and rates can
+                be set to NaN according to use case. Use MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW for low-rate adjustments
+                that require confirmation.
+            
  */
 struct GIMBAL_MANAGER_SET_PITCHYAW : mavlink::Message {
     static constexpr msgid_t MSG_ID = 287;
@@ -21,12 +25,24 @@ struct GIMBAL_MANAGER_SET_PITCHYAW : mavlink::Message {
 
     uint8_t target_system; /*<  System ID */
     uint8_t target_component; /*<  Component ID */
-    uint32_t flags; /*<  High level gimbal manager flags to use. */
-    uint8_t gimbal_device_id; /*<  Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals). */
-    float pitch; /*< [rad] Pitch angle (positive: up, negative: down, NaN to be ignored). */
-    float yaw; /*< [rad] Yaw angle (positive: to the right, negative: to the left, NaN to be ignored). */
-    float pitch_rate; /*< [rad/s] Pitch angular rate (positive: up, negative: down, NaN to be ignored). */
-    float yaw_rate; /*< [rad/s] Yaw angular rate (positive: to the right, negative: to the left, NaN to be ignored). */
+    uint32_t flags; /*<  High level gimbal manager flags to use.
+             */
+    uint8_t gimbal_device_id; /*<  Component ID of gimbal device to address (or
+                1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more
+                than one gimbal (but not all gimbals).
+             */
+    float pitch; /*< [rad] Pitch angle (positive: up, negative: down, NaN to
+                be ignored).
+             */
+    float yaw; /*< [rad] Yaw angle (positive: to the right, negative: to the
+                left, NaN to be ignored).
+             */
+    float pitch_rate; /*< [rad/s] Pitch angular rate (positive: up,
+                negative: down, NaN to be ignored).
+             */
+    float yaw_rate; /*< [rad/s] Yaw angular rate (positive: to the right,
+                negative: to the left, NaN to be ignored).
+             */
 
 
     inline std::string get_name(void) const override

@@ -9,25 +9,39 @@ typedef struct __mavlink_sim_state_t {
  float q2; /*<  True attitude quaternion component 2, x (0 in null-rotation)*/
  float q3; /*<  True attitude quaternion component 3, y (0 in null-rotation)*/
  float q4; /*<  True attitude quaternion component 4, z (0 in null-rotation)*/
- float roll; /*< [rad] Attitude roll expressed as Euler angles, not recommended except for human-readable outputs*/
- float pitch; /*< [rad] Attitude pitch expressed as Euler angles, not recommended except for human-readable outputs*/
- float yaw; /*< [rad] Attitude yaw expressed as Euler angles, not recommended except for human-readable outputs*/
+ float roll; /*< [rad] Attitude roll expressed as Euler angles, not recommended except
+                for human-readable outputs
+            */
+ float pitch; /*< [rad] Attitude pitch expressed as Euler angles, not recommended
+                except for human-readable outputs
+            */
+ float yaw; /*< [rad] Attitude yaw expressed as Euler angles, not recommended except
+                for human-readable outputs
+            */
  float xacc; /*< [m/s/s] X acceleration*/
  float yacc; /*< [m/s/s] Y acceleration*/
  float zacc; /*< [m/s/s] Z acceleration*/
  float xgyro; /*< [rad/s] Angular speed around X axis*/
  float ygyro; /*< [rad/s] Angular speed around Y axis*/
  float zgyro; /*< [rad/s] Angular speed around Z axis*/
- float lat; /*< [deg] Latitude (lower precision). Both this and the lat_int field should be set.*/
- float lon; /*< [deg] Longitude (lower precision). Both this and the lon_int field should be set.*/
+ float lat; /*< [deg] Latitude (lower precision). Both this and the lat_int field
+                should be set.
+            */
+ float lon; /*< [deg] Longitude (lower precision). Both this and the lon_int field
+                should be set.
+            */
  float alt; /*< [m] Altitude*/
  float std_dev_horz; /*<  Horizontal position standard deviation*/
  float std_dev_vert; /*<  Vertical position standard deviation*/
  float vn; /*< [m/s] True velocity in north direction in earth-fixed NED frame*/
  float ve; /*< [m/s] True velocity in east direction in earth-fixed NED frame*/
  float vd; /*< [m/s] True velocity in down direction in earth-fixed NED frame*/
- int32_t lat_int; /*< [degE7] Latitude (higher precision). If 0, recipients should use the lat field value (otherwise this field is preferred).*/
- int32_t lon_int; /*< [degE7] Longitude (higher precision). If 0, recipients should use the lon field value (otherwise this field is preferred).*/
+ int32_t lat_int; /*< [degE7] Latitude (higher precision). If 0, recipients
+                should use the lat field value (otherwise this field is preferred).
+            */
+ int32_t lon_int; /*< [degE7] Longitude (higher precision). If 0,
+                recipients should use the lon field value (otherwise this field is preferred).
+            */
 } mavlink_sim_state_t;
 
 #define MAVLINK_MSG_ID_SIM_STATE_LEN 92
@@ -111,25 +125,39 @@ typedef struct __mavlink_sim_state_t {
  * @param q2  True attitude quaternion component 2, x (0 in null-rotation)
  * @param q3  True attitude quaternion component 3, y (0 in null-rotation)
  * @param q4  True attitude quaternion component 4, z (0 in null-rotation)
- * @param roll [rad] Attitude roll expressed as Euler angles, not recommended except for human-readable outputs
- * @param pitch [rad] Attitude pitch expressed as Euler angles, not recommended except for human-readable outputs
- * @param yaw [rad] Attitude yaw expressed as Euler angles, not recommended except for human-readable outputs
+ * @param roll [rad] Attitude roll expressed as Euler angles, not recommended except
+                for human-readable outputs
+            
+ * @param pitch [rad] Attitude pitch expressed as Euler angles, not recommended
+                except for human-readable outputs
+            
+ * @param yaw [rad] Attitude yaw expressed as Euler angles, not recommended except
+                for human-readable outputs
+            
  * @param xacc [m/s/s] X acceleration
  * @param yacc [m/s/s] Y acceleration
  * @param zacc [m/s/s] Z acceleration
  * @param xgyro [rad/s] Angular speed around X axis
  * @param ygyro [rad/s] Angular speed around Y axis
  * @param zgyro [rad/s] Angular speed around Z axis
- * @param lat [deg] Latitude (lower precision). Both this and the lat_int field should be set.
- * @param lon [deg] Longitude (lower precision). Both this and the lon_int field should be set.
+ * @param lat [deg] Latitude (lower precision). Both this and the lat_int field
+                should be set.
+            
+ * @param lon [deg] Longitude (lower precision). Both this and the lon_int field
+                should be set.
+            
  * @param alt [m] Altitude
  * @param std_dev_horz  Horizontal position standard deviation
  * @param std_dev_vert  Vertical position standard deviation
  * @param vn [m/s] True velocity in north direction in earth-fixed NED frame
  * @param ve [m/s] True velocity in east direction in earth-fixed NED frame
  * @param vd [m/s] True velocity in down direction in earth-fixed NED frame
- * @param lat_int [degE7] Latitude (higher precision). If 0, recipients should use the lat field value (otherwise this field is preferred).
- * @param lon_int [degE7] Longitude (higher precision). If 0, recipients should use the lon field value (otherwise this field is preferred).
+ * @param lat_int [degE7] Latitude (higher precision). If 0, recipients
+                should use the lat field value (otherwise this field is preferred).
+            
+ * @param lon_int [degE7] Longitude (higher precision). If 0,
+                recipients should use the lon field value (otherwise this field is preferred).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_sim_state_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -206,25 +234,39 @@ static inline uint16_t mavlink_msg_sim_state_pack(uint8_t system_id, uint8_t com
  * @param q2  True attitude quaternion component 2, x (0 in null-rotation)
  * @param q3  True attitude quaternion component 3, y (0 in null-rotation)
  * @param q4  True attitude quaternion component 4, z (0 in null-rotation)
- * @param roll [rad] Attitude roll expressed as Euler angles, not recommended except for human-readable outputs
- * @param pitch [rad] Attitude pitch expressed as Euler angles, not recommended except for human-readable outputs
- * @param yaw [rad] Attitude yaw expressed as Euler angles, not recommended except for human-readable outputs
+ * @param roll [rad] Attitude roll expressed as Euler angles, not recommended except
+                for human-readable outputs
+            
+ * @param pitch [rad] Attitude pitch expressed as Euler angles, not recommended
+                except for human-readable outputs
+            
+ * @param yaw [rad] Attitude yaw expressed as Euler angles, not recommended except
+                for human-readable outputs
+            
  * @param xacc [m/s/s] X acceleration
  * @param yacc [m/s/s] Y acceleration
  * @param zacc [m/s/s] Z acceleration
  * @param xgyro [rad/s] Angular speed around X axis
  * @param ygyro [rad/s] Angular speed around Y axis
  * @param zgyro [rad/s] Angular speed around Z axis
- * @param lat [deg] Latitude (lower precision). Both this and the lat_int field should be set.
- * @param lon [deg] Longitude (lower precision). Both this and the lon_int field should be set.
+ * @param lat [deg] Latitude (lower precision). Both this and the lat_int field
+                should be set.
+            
+ * @param lon [deg] Longitude (lower precision). Both this and the lon_int field
+                should be set.
+            
  * @param alt [m] Altitude
  * @param std_dev_horz  Horizontal position standard deviation
  * @param std_dev_vert  Vertical position standard deviation
  * @param vn [m/s] True velocity in north direction in earth-fixed NED frame
  * @param ve [m/s] True velocity in east direction in earth-fixed NED frame
  * @param vd [m/s] True velocity in down direction in earth-fixed NED frame
- * @param lat_int [degE7] Latitude (higher precision). If 0, recipients should use the lat field value (otherwise this field is preferred).
- * @param lon_int [degE7] Longitude (higher precision). If 0, recipients should use the lon field value (otherwise this field is preferred).
+ * @param lat_int [degE7] Latitude (higher precision). If 0, recipients
+                should use the lat field value (otherwise this field is preferred).
+            
+ * @param lon_int [degE7] Longitude (higher precision). If 0,
+                recipients should use the lon field value (otherwise this field is preferred).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_sim_state_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -304,25 +346,39 @@ static inline uint16_t mavlink_msg_sim_state_pack_status(uint8_t system_id, uint
  * @param q2  True attitude quaternion component 2, x (0 in null-rotation)
  * @param q3  True attitude quaternion component 3, y (0 in null-rotation)
  * @param q4  True attitude quaternion component 4, z (0 in null-rotation)
- * @param roll [rad] Attitude roll expressed as Euler angles, not recommended except for human-readable outputs
- * @param pitch [rad] Attitude pitch expressed as Euler angles, not recommended except for human-readable outputs
- * @param yaw [rad] Attitude yaw expressed as Euler angles, not recommended except for human-readable outputs
+ * @param roll [rad] Attitude roll expressed as Euler angles, not recommended except
+                for human-readable outputs
+            
+ * @param pitch [rad] Attitude pitch expressed as Euler angles, not recommended
+                except for human-readable outputs
+            
+ * @param yaw [rad] Attitude yaw expressed as Euler angles, not recommended except
+                for human-readable outputs
+            
  * @param xacc [m/s/s] X acceleration
  * @param yacc [m/s/s] Y acceleration
  * @param zacc [m/s/s] Z acceleration
  * @param xgyro [rad/s] Angular speed around X axis
  * @param ygyro [rad/s] Angular speed around Y axis
  * @param zgyro [rad/s] Angular speed around Z axis
- * @param lat [deg] Latitude (lower precision). Both this and the lat_int field should be set.
- * @param lon [deg] Longitude (lower precision). Both this and the lon_int field should be set.
+ * @param lat [deg] Latitude (lower precision). Both this and the lat_int field
+                should be set.
+            
+ * @param lon [deg] Longitude (lower precision). Both this and the lon_int field
+                should be set.
+            
  * @param alt [m] Altitude
  * @param std_dev_horz  Horizontal position standard deviation
  * @param std_dev_vert  Vertical position standard deviation
  * @param vn [m/s] True velocity in north direction in earth-fixed NED frame
  * @param ve [m/s] True velocity in east direction in earth-fixed NED frame
  * @param vd [m/s] True velocity in down direction in earth-fixed NED frame
- * @param lat_int [degE7] Latitude (higher precision). If 0, recipients should use the lat field value (otherwise this field is preferred).
- * @param lon_int [degE7] Longitude (higher precision). If 0, recipients should use the lon field value (otherwise this field is preferred).
+ * @param lat_int [degE7] Latitude (higher precision). If 0, recipients
+                should use the lat field value (otherwise this field is preferred).
+            
+ * @param lon_int [degE7] Longitude (higher precision). If 0,
+                recipients should use the lon field value (otherwise this field is preferred).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_sim_state_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -438,25 +494,39 @@ static inline uint16_t mavlink_msg_sim_state_encode_status(uint8_t system_id, ui
  * @param q2  True attitude quaternion component 2, x (0 in null-rotation)
  * @param q3  True attitude quaternion component 3, y (0 in null-rotation)
  * @param q4  True attitude quaternion component 4, z (0 in null-rotation)
- * @param roll [rad] Attitude roll expressed as Euler angles, not recommended except for human-readable outputs
- * @param pitch [rad] Attitude pitch expressed as Euler angles, not recommended except for human-readable outputs
- * @param yaw [rad] Attitude yaw expressed as Euler angles, not recommended except for human-readable outputs
+ * @param roll [rad] Attitude roll expressed as Euler angles, not recommended except
+                for human-readable outputs
+            
+ * @param pitch [rad] Attitude pitch expressed as Euler angles, not recommended
+                except for human-readable outputs
+            
+ * @param yaw [rad] Attitude yaw expressed as Euler angles, not recommended except
+                for human-readable outputs
+            
  * @param xacc [m/s/s] X acceleration
  * @param yacc [m/s/s] Y acceleration
  * @param zacc [m/s/s] Z acceleration
  * @param xgyro [rad/s] Angular speed around X axis
  * @param ygyro [rad/s] Angular speed around Y axis
  * @param zgyro [rad/s] Angular speed around Z axis
- * @param lat [deg] Latitude (lower precision). Both this and the lat_int field should be set.
- * @param lon [deg] Longitude (lower precision). Both this and the lon_int field should be set.
+ * @param lat [deg] Latitude (lower precision). Both this and the lat_int field
+                should be set.
+            
+ * @param lon [deg] Longitude (lower precision). Both this and the lon_int field
+                should be set.
+            
  * @param alt [m] Altitude
  * @param std_dev_horz  Horizontal position standard deviation
  * @param std_dev_vert  Vertical position standard deviation
  * @param vn [m/s] True velocity in north direction in earth-fixed NED frame
  * @param ve [m/s] True velocity in east direction in earth-fixed NED frame
  * @param vd [m/s] True velocity in down direction in earth-fixed NED frame
- * @param lat_int [degE7] Latitude (higher precision). If 0, recipients should use the lat field value (otherwise this field is preferred).
- * @param lon_int [degE7] Longitude (higher precision). If 0, recipients should use the lon field value (otherwise this field is preferred).
+ * @param lat_int [degE7] Latitude (higher precision). If 0, recipients
+                should use the lat field value (otherwise this field is preferred).
+            
+ * @param lon_int [degE7] Longitude (higher precision). If 0,
+                recipients should use the lon field value (otherwise this field is preferred).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -649,7 +719,9 @@ static inline float mavlink_msg_sim_state_get_q4(const mavlink_message_t* msg)
 /**
  * @brief Get field roll from sim_state message
  *
- * @return [rad] Attitude roll expressed as Euler angles, not recommended except for human-readable outputs
+ * @return [rad] Attitude roll expressed as Euler angles, not recommended except
+                for human-readable outputs
+            
  */
 static inline float mavlink_msg_sim_state_get_roll(const mavlink_message_t* msg)
 {
@@ -659,7 +731,9 @@ static inline float mavlink_msg_sim_state_get_roll(const mavlink_message_t* msg)
 /**
  * @brief Get field pitch from sim_state message
  *
- * @return [rad] Attitude pitch expressed as Euler angles, not recommended except for human-readable outputs
+ * @return [rad] Attitude pitch expressed as Euler angles, not recommended
+                except for human-readable outputs
+            
  */
 static inline float mavlink_msg_sim_state_get_pitch(const mavlink_message_t* msg)
 {
@@ -669,7 +743,9 @@ static inline float mavlink_msg_sim_state_get_pitch(const mavlink_message_t* msg
 /**
  * @brief Get field yaw from sim_state message
  *
- * @return [rad] Attitude yaw expressed as Euler angles, not recommended except for human-readable outputs
+ * @return [rad] Attitude yaw expressed as Euler angles, not recommended except
+                for human-readable outputs
+            
  */
 static inline float mavlink_msg_sim_state_get_yaw(const mavlink_message_t* msg)
 {
@@ -739,7 +815,9 @@ static inline float mavlink_msg_sim_state_get_zgyro(const mavlink_message_t* msg
 /**
  * @brief Get field lat from sim_state message
  *
- * @return [deg] Latitude (lower precision). Both this and the lat_int field should be set.
+ * @return [deg] Latitude (lower precision). Both this and the lat_int field
+                should be set.
+            
  */
 static inline float mavlink_msg_sim_state_get_lat(const mavlink_message_t* msg)
 {
@@ -749,7 +827,9 @@ static inline float mavlink_msg_sim_state_get_lat(const mavlink_message_t* msg)
 /**
  * @brief Get field lon from sim_state message
  *
- * @return [deg] Longitude (lower precision). Both this and the lon_int field should be set.
+ * @return [deg] Longitude (lower precision). Both this and the lon_int field
+                should be set.
+            
  */
 static inline float mavlink_msg_sim_state_get_lon(const mavlink_message_t* msg)
 {
@@ -819,7 +899,9 @@ static inline float mavlink_msg_sim_state_get_vd(const mavlink_message_t* msg)
 /**
  * @brief Get field lat_int from sim_state message
  *
- * @return [degE7] Latitude (higher precision). If 0, recipients should use the lat field value (otherwise this field is preferred).
+ * @return [degE7] Latitude (higher precision). If 0, recipients
+                should use the lat field value (otherwise this field is preferred).
+            
  */
 static inline int32_t mavlink_msg_sim_state_get_lat_int(const mavlink_message_t* msg)
 {
@@ -829,7 +911,9 @@ static inline int32_t mavlink_msg_sim_state_get_lat_int(const mavlink_message_t*
 /**
  * @brief Get field lon_int from sim_state message
  *
- * @return [degE7] Longitude (higher precision). If 0, recipients should use the lon field value (otherwise this field is preferred).
+ * @return [degE7] Longitude (higher precision). If 0,
+                recipients should use the lon field value (otherwise this field is preferred).
+            
  */
 static inline int32_t mavlink_msg_sim_state_get_lon_int(const mavlink_message_t* msg)
 {

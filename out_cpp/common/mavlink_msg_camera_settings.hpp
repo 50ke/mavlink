@@ -21,9 +21,16 @@ struct CAMERA_SETTINGS : mavlink::Message {
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
     uint8_t mode_id; /*<  Camera mode */
-    float zoomLevel; /*<  Current zoom level as a percentage of the full range (0.0 to 100.0, NaN if not known) */
-    float focusLevel; /*<  Current focus level as a percentage of the full range (0.0 to 100.0, NaN if not known) */
-    uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id). */
+    float zoomLevel; /*<  Current zoom level as a percentage of the full range (0.0
+                to 100.0, NaN if not known)
+             */
+    float focusLevel; /*<  Current focus level as a percentage of the full range
+                (0.0 to 100.0, NaN if not known)
+             */
+    uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+             */
 
 
     inline std::string get_name(void) const override

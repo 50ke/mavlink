@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief LOCAL_POSITION_NED message
  *
- * The filtered local position (e.g. fused computer vision and accelerometers). Coordinate frame is right-handed, Z-axis down (aeronautical frame, NED / north-east-down convention)
+ * The filtered local position (e.g. fused computer vision and accelerometers). Coordinate frame
+                is right-handed, Z-axis down (aeronautical frame, NED / north-east-down convention)
+            
  */
 struct LOCAL_POSITION_NED : mavlink::Message {
     static constexpr msgid_t MSG_ID = 32;

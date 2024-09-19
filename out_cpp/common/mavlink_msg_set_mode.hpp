@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief SET_MODE message
  *
- * Set the system mode, as defined by enum MAV_MODE. There is no target component id as the mode is by definition for the overall aircraft, not only for one component.
+ * Set the system mode, as defined by enum MAV_MODE. There is no target component id as the mode
+                is by definition for the overall aircraft, not only for one component.
+            
  */
 struct SET_MODE : mavlink::Message {
     static constexpr msgid_t MSG_ID = 11;
@@ -21,7 +23,9 @@ struct SET_MODE : mavlink::Message {
 
     uint8_t target_system; /*<  The system setting the mode */
     uint8_t base_mode; /*<  The new base mode. */
-    uint32_t custom_mode; /*<  The new autopilot-specific mode. This field can be ignored by an autopilot. */
+    uint32_t custom_mode; /*<  The new autopilot-specific mode. This field can be ignored by an
+                autopilot.
+             */
 
 
     inline std::string get_name(void) const override

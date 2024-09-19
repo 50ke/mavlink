@@ -7,7 +7,11 @@
 typedef struct __mavlink_component_metadata_t {
  uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot).*/
  uint32_t file_crc; /*<  CRC32 of the general metadata file.*/
- char uri[100]; /*<  MAVLink FTP URI for the general metadata file (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is static from boot, and may be generated at compile time. The string needs to be zero terminated.*/
+ char uri[100]; /*<  MAVLink FTP URI for the general metadata file
+                (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component
+                metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is
+                static from boot, and may be generated at compile time. The string needs to be zero terminated.
+            */
 } mavlink_component_metadata_t;
 
 #define MAVLINK_MSG_ID_COMPONENT_METADATA_LEN 108
@@ -49,7 +53,11 @@ typedef struct __mavlink_component_metadata_t {
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param file_crc  CRC32 of the general metadata file.
- * @param uri  MAVLink FTP URI for the general metadata file (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is static from boot, and may be generated at compile time. The string needs to be zero terminated.
+ * @param uri  MAVLink FTP URI for the general metadata file
+                (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component
+                metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is
+                static from boot, and may be generated at compile time. The string needs to be zero terminated.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_component_metadata_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -82,7 +90,11 @@ static inline uint16_t mavlink_msg_component_metadata_pack(uint8_t system_id, ui
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param file_crc  CRC32 of the general metadata file.
- * @param uri  MAVLink FTP URI for the general metadata file (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is static from boot, and may be generated at compile time. The string needs to be zero terminated.
+ * @param uri  MAVLink FTP URI for the general metadata file
+                (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component
+                metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is
+                static from boot, and may be generated at compile time. The string needs to be zero terminated.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_component_metadata_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -118,7 +130,11 @@ static inline uint16_t mavlink_msg_component_metadata_pack_status(uint8_t system
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param file_crc  CRC32 of the general metadata file.
- * @param uri  MAVLink FTP URI for the general metadata file (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is static from boot, and may be generated at compile time. The string needs to be zero terminated.
+ * @param uri  MAVLink FTP URI for the general metadata file
+                (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component
+                metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is
+                static from boot, and may be generated at compile time. The string needs to be zero terminated.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_component_metadata_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -190,7 +206,11 @@ static inline uint16_t mavlink_msg_component_metadata_encode_status(uint8_t syst
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param file_crc  CRC32 of the general metadata file.
- * @param uri  MAVLink FTP URI for the general metadata file (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is static from boot, and may be generated at compile time. The string needs to be zero terminated.
+ * @param uri  MAVLink FTP URI for the general metadata file
+                (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component
+                metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is
+                static from boot, and may be generated at compile time. The string needs to be zero terminated.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -279,7 +299,11 @@ static inline uint32_t mavlink_msg_component_metadata_get_file_crc(const mavlink
 /**
  * @brief Get field uri from component_metadata message
  *
- * @return  MAVLink FTP URI for the general metadata file (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is static from boot, and may be generated at compile time. The string needs to be zero terminated.
+ * @return  MAVLink FTP URI for the general metadata file
+                (COMP_METADATA_TYPE_GENERAL), which may be compressed with xz. The file contains general component
+                metadata, and may contain URI links for additional metadata (see COMP_METADATA_TYPE). The information is
+                static from boot, and may be generated at compile time. The string needs to be zero terminated.
+            
  */
 static inline uint16_t mavlink_msg_component_metadata_get_uri(const mavlink_message_t* msg, char *uri)
 {

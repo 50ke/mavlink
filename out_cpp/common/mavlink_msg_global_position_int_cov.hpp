@@ -9,7 +9,12 @@ namespace msg {
 /**
  * @brief GLOBAL_POSITION_INT_COV message
  *
- * The filtered global position (e.g. fused GPS and accelerometers). The position is in GPS-frame (right-handed, Z-up). It  is designed as scaled integer message since the resolution of float is not sufficient. NOTE: This message is intended for onboard networks / companion computers and higher-bandwidth links and optimized for accuracy and completeness. Please use the GLOBAL_POSITION_INT message for a minimal subset.
+ * The filtered global position (e.g. fused GPS and accelerometers). The position is in GPS-frame
+                (right-handed, Z-up). It is designed as scaled integer message since the resolution of float is not
+                sufficient. NOTE: This message is intended for onboard networks / companion computers and
+                higher-bandwidth links and optimized for accuracy and completeness. Please use the GLOBAL_POSITION_INT
+                message for a minimal subset.
+            
  */
 struct GLOBAL_POSITION_INT_COV : mavlink::Message {
     static constexpr msgid_t MSG_ID = 63;
@@ -19,8 +24,13 @@ struct GLOBAL_POSITION_INT_COV : mavlink::Message {
     static constexpr auto NAME = "GLOBAL_POSITION_INT_COV";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
-    uint8_t estimator_type; /*<  Class id of the estimator this estimate originated from. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
+    uint8_t estimator_type; /*<  Class id of the estimator this
+                estimate originated from.
+             */
     int32_t lat; /*< [degE7] Latitude */
     int32_t lon; /*< [degE7] Longitude */
     int32_t alt; /*< [mm] Altitude in meters above MSL */
@@ -28,7 +38,11 @@ struct GLOBAL_POSITION_INT_COV : mavlink::Message {
     float vx; /*< [m/s] Ground X Speed (Latitude) */
     float vy; /*< [m/s] Ground Y Speed (Longitude) */
     float vz; /*< [m/s] Ground Z Speed (Altitude) */
-    std::array<float, 36> covariance; /*<  Row-major representation of a 6x6 position and velocity 6x6 cross-covariance matrix (states: lat, lon, alt, vx, vy, vz; first six entries are the first ROW, next six entries are the second row, etc.). If unknown, assign NaN value to first element in the array. */
+    std::array<float, 36> covariance; /*<  Row-major representation of a 6x6 position and
+                velocity 6x6 cross-covariance matrix (states: lat, lon, alt, vx, vy, vz; first six entries are the first
+                ROW, next six entries are the second row, etc.). If unknown, assign NaN value to first element in the
+                array.
+             */
 
 
     inline std::string get_name(void) const override

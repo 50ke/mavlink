@@ -31,11 +31,15 @@ struct AIS_VESSEL : mavlink::Message {
     uint16_t dimension_bow; /*< [m] Distance from lat/lon location to bow */
     uint16_t dimension_stern; /*< [m] Distance from lat/lon location to stern */
     uint8_t dimension_port; /*< [m] Distance from lat/lon location to port side */
-    uint8_t dimension_starboard; /*< [m] Distance from lat/lon location to starboard side */
+    uint8_t dimension_starboard; /*< [m] Distance from lat/lon location to starboard
+                side
+             */
     std::array<char, 7> callsign; /*<  The vessel callsign */
     std::array<char, 20> name; /*<  The vessel name */
     uint16_t tslc; /*< [s] Time since last communication in seconds */
-    uint16_t flags; /*<  Bitmask to indicate various statuses including valid data fields */
+    uint16_t flags; /*<  Bitmask to indicate various statuses
+                including valid data fields
+             */
 
 
     inline std::string get_name(void) const override

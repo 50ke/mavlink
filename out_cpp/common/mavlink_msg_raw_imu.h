@@ -5,7 +5,10 @@
 
 MAVPACKED(
 typedef struct __mavlink_raw_imu_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
  int16_t xacc; /*<  X acceleration (raw)*/
  int16_t yacc; /*<  Y acceleration (raw)*/
  int16_t zacc; /*<  Z acceleration (raw)*/
@@ -15,8 +18,12 @@ typedef struct __mavlink_raw_imu_t {
  int16_t xmag; /*<  X Magnetic field (raw)*/
  int16_t ymag; /*<  Y Magnetic field (raw)*/
  int16_t zmag; /*<  Z Magnetic field (raw)*/
- uint8_t id; /*<  Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0)*/
- int16_t temperature; /*< [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).*/
+ uint8_t id; /*<  Id. Ids are numbered from 0 and map to IMUs numbered from 1
+                (e.g. IMU1 will have a message with id=0)
+            */
+ int16_t temperature; /*< [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            */
 }) mavlink_raw_imu_t;
 
 #define MAVLINK_MSG_ID_RAW_IMU_LEN 29
@@ -74,7 +81,10 @@ typedef struct __mavlink_raw_imu_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param xacc  X acceleration (raw)
  * @param yacc  Y acceleration (raw)
  * @param zacc  Z acceleration (raw)
@@ -84,8 +94,12 @@ typedef struct __mavlink_raw_imu_t {
  * @param xmag  X Magnetic field (raw)
  * @param ymag  Y Magnetic field (raw)
  * @param zmag  Z Magnetic field (raw)
- * @param id  Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0)
- * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).
+ * @param id  Id. Ids are numbered from 0 and map to IMUs numbered from 1
+                (e.g. IMU1 will have a message with id=0)
+            
+ * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_raw_imu_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -136,7 +150,10 @@ static inline uint16_t mavlink_msg_raw_imu_pack(uint8_t system_id, uint8_t compo
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param xacc  X acceleration (raw)
  * @param yacc  Y acceleration (raw)
  * @param zacc  Z acceleration (raw)
@@ -146,8 +163,12 @@ static inline uint16_t mavlink_msg_raw_imu_pack(uint8_t system_id, uint8_t compo
  * @param xmag  X Magnetic field (raw)
  * @param ymag  Y Magnetic field (raw)
  * @param zmag  Z Magnetic field (raw)
- * @param id  Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0)
- * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).
+ * @param id  Id. Ids are numbered from 0 and map to IMUs numbered from 1
+                (e.g. IMU1 will have a message with id=0)
+            
+ * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_raw_imu_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -201,7 +222,10 @@ static inline uint16_t mavlink_msg_raw_imu_pack_status(uint8_t system_id, uint8_
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param xacc  X acceleration (raw)
  * @param yacc  Y acceleration (raw)
  * @param zacc  Z acceleration (raw)
@@ -211,8 +235,12 @@ static inline uint16_t mavlink_msg_raw_imu_pack_status(uint8_t system_id, uint8_
  * @param xmag  X Magnetic field (raw)
  * @param ymag  Y Magnetic field (raw)
  * @param zmag  Z Magnetic field (raw)
- * @param id  Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0)
- * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).
+ * @param id  Id. Ids are numbered from 0 and map to IMUs numbered from 1
+                (e.g. IMU1 will have a message with id=0)
+            
+ * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_raw_imu_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -302,7 +330,10 @@ static inline uint16_t mavlink_msg_raw_imu_encode_status(uint8_t system_id, uint
  * @brief Send a raw_imu message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param xacc  X acceleration (raw)
  * @param yacc  Y acceleration (raw)
  * @param zacc  Z acceleration (raw)
@@ -312,8 +343,12 @@ static inline uint16_t mavlink_msg_raw_imu_encode_status(uint8_t system_id, uint
  * @param xmag  X Magnetic field (raw)
  * @param ymag  Y Magnetic field (raw)
  * @param zmag  Z Magnetic field (raw)
- * @param id  Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0)
- * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).
+ * @param id  Id. Ids are numbered from 0 and map to IMUs numbered from 1
+                (e.g. IMU1 will have a message with id=0)
+            
+ * @param temperature [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -422,7 +457,10 @@ static inline void mavlink_msg_raw_imu_send_buf(mavlink_message_t *msgbuf, mavli
 /**
  * @brief Get field time_usec from raw_imu message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_raw_imu_get_time_usec(const mavlink_message_t* msg)
 {
@@ -522,7 +560,9 @@ static inline int16_t mavlink_msg_raw_imu_get_zmag(const mavlink_message_t* msg)
 /**
  * @brief Get field id from raw_imu message
  *
- * @return  Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0)
+ * @return  Id. Ids are numbered from 0 and map to IMUs numbered from 1
+                (e.g. IMU1 will have a message with id=0)
+            
  */
 static inline uint8_t mavlink_msg_raw_imu_get_id(const mavlink_message_t* msg)
 {
@@ -532,7 +572,9 @@ static inline uint8_t mavlink_msg_raw_imu_get_id(const mavlink_message_t* msg)
 /**
  * @brief Get field temperature from raw_imu message
  *
- * @return [cdegC] Temperature, 0: IMU does not provide temperature values. If the IMU is at 0C it must send 1 (0.01C).
+ * @return [cdegC] Temperature, 0: IMU does not provide temperature
+                values. If the IMU is at 0C it must send 1 (0.01C).
+            
  */
 static inline int16_t mavlink_msg_raw_imu_get_temperature(const mavlink_message_t* msg)
 {

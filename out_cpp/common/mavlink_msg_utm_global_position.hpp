@@ -19,7 +19,9 @@ struct UTM_GLOBAL_POSITION : mavlink::Message {
     static constexpr auto NAME = "UTM_GLOBAL_POSITION";
 
 
-    uint64_t time; /*< [us] Time of applicability of position (microseconds since UNIX epoch). */
+    uint64_t time; /*< [us] Time of applicability of position (microseconds since UNIX
+                epoch).
+             */
     std::array<uint8_t, 18> uas_id; /*<  Unique UAS ID. */
     int32_t lat; /*< [degE7] Latitude (WGS84) */
     int32_t lon; /*< [degE7] Longitude (WGS84) */
@@ -34,9 +36,13 @@ struct UTM_GLOBAL_POSITION : mavlink::Message {
     int32_t next_lat; /*< [degE7] Next waypoint, latitude (WGS84) */
     int32_t next_lon; /*< [degE7] Next waypoint, longitude (WGS84) */
     int32_t next_alt; /*< [mm] Next waypoint, altitude (WGS84) */
-    uint16_t update_rate; /*< [cs] Time until next update. Set to 0 if unknown or in data driven mode. */
+    uint16_t update_rate; /*< [cs] Time until next update. Set to 0 if unknown
+                or in data driven mode.
+             */
     uint8_t flight_state; /*<  Flight state */
-    uint8_t flags; /*<  Bitwise OR combination of the data available flags. */
+    uint8_t flags; /*<  Bitwise OR combination of
+                the data available flags.
+             */
 
 
     inline std::string get_name(void) const override

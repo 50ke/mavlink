@@ -6,20 +6,33 @@
 
 typedef struct __mavlink_storage_information_t {
  uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot).*/
- float total_capacity; /*< [MiB] Total capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.*/
- float used_capacity; /*< [MiB] Used capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.*/
- float available_capacity; /*< [MiB] Available storage capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.*/
+ float total_capacity; /*< [MiB] Total capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            */
+ float used_capacity; /*< [MiB] Used capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            */
+ float available_capacity; /*< [MiB] Available storage capacity. If storage is not
+                ready (STORAGE_STATUS_READY) value will be ignored.
+            */
  float read_speed; /*< [MiB/s] Read speed.*/
  float write_speed; /*< [MiB/s] Write speed.*/
  uint8_t storage_id; /*<  Storage ID (1 for first, 2 for second, etc.)*/
  uint8_t storage_count; /*<  Number of storage devices*/
  uint8_t status; /*<  Status of storage*/
  uint8_t type; /*<  Type of storage*/
- char name[32]; /*<  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.) This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this string is empty, the generic type is shown to the user.*/
- uint8_t storage_usage; /*<  Flags indicating whether this instance is preferred storage for photos, videos, etc.
-        Note: Implementations should initially set the flags on the system-default storage id used for saving media (if possible/supported).
-        This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
-        If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media types.*/
+ char name[32]; /*<  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.)
+                This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this
+                string is empty, the generic type is shown to the user.
+            */
+ uint8_t storage_usage; /*<  Flags indicating whether this instance
+                is preferred storage for photos, videos, etc.
+                Note: Implementations should initially set the flags on the system-default storage id used for saving
+                media (if possible/supported).
+                This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
+                If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media
+                types.
+            */
 } mavlink_storage_information_t;
 
 #define MAVLINK_MSG_ID_STORAGE_INFORMATION_LEN 61
@@ -81,17 +94,30 @@ typedef struct __mavlink_storage_information_t {
  * @param storage_id  Storage ID (1 for first, 2 for second, etc.)
  * @param storage_count  Number of storage devices
  * @param status  Status of storage
- * @param total_capacity [MiB] Total capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
- * @param used_capacity [MiB] Used capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
- * @param available_capacity [MiB] Available storage capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
+ * @param total_capacity [MiB] Total capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            
+ * @param used_capacity [MiB] Used capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            
+ * @param available_capacity [MiB] Available storage capacity. If storage is not
+                ready (STORAGE_STATUS_READY) value will be ignored.
+            
  * @param read_speed [MiB/s] Read speed.
  * @param write_speed [MiB/s] Write speed.
  * @param type  Type of storage
- * @param name  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.) This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this string is empty, the generic type is shown to the user.
- * @param storage_usage  Flags indicating whether this instance is preferred storage for photos, videos, etc.
-        Note: Implementations should initially set the flags on the system-default storage id used for saving media (if possible/supported).
-        This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
-        If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media types.
+ * @param name  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.)
+                This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this
+                string is empty, the generic type is shown to the user.
+            
+ * @param storage_usage  Flags indicating whether this instance
+                is preferred storage for photos, videos, etc.
+                Note: Implementations should initially set the flags on the system-default storage id used for saving
+                media (if possible/supported).
+                This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
+                If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media
+                types.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_storage_information_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -144,17 +170,30 @@ static inline uint16_t mavlink_msg_storage_information_pack(uint8_t system_id, u
  * @param storage_id  Storage ID (1 for first, 2 for second, etc.)
  * @param storage_count  Number of storage devices
  * @param status  Status of storage
- * @param total_capacity [MiB] Total capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
- * @param used_capacity [MiB] Used capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
- * @param available_capacity [MiB] Available storage capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
+ * @param total_capacity [MiB] Total capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            
+ * @param used_capacity [MiB] Used capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            
+ * @param available_capacity [MiB] Available storage capacity. If storage is not
+                ready (STORAGE_STATUS_READY) value will be ignored.
+            
  * @param read_speed [MiB/s] Read speed.
  * @param write_speed [MiB/s] Write speed.
  * @param type  Type of storage
- * @param name  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.) This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this string is empty, the generic type is shown to the user.
- * @param storage_usage  Flags indicating whether this instance is preferred storage for photos, videos, etc.
-        Note: Implementations should initially set the flags on the system-default storage id used for saving media (if possible/supported).
-        This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
-        If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media types.
+ * @param name  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.)
+                This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this
+                string is empty, the generic type is shown to the user.
+            
+ * @param storage_usage  Flags indicating whether this instance
+                is preferred storage for photos, videos, etc.
+                Note: Implementations should initially set the flags on the system-default storage id used for saving
+                media (if possible/supported).
+                This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
+                If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media
+                types.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_storage_information_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -210,17 +249,30 @@ static inline uint16_t mavlink_msg_storage_information_pack_status(uint8_t syste
  * @param storage_id  Storage ID (1 for first, 2 for second, etc.)
  * @param storage_count  Number of storage devices
  * @param status  Status of storage
- * @param total_capacity [MiB] Total capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
- * @param used_capacity [MiB] Used capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
- * @param available_capacity [MiB] Available storage capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
+ * @param total_capacity [MiB] Total capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            
+ * @param used_capacity [MiB] Used capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            
+ * @param available_capacity [MiB] Available storage capacity. If storage is not
+                ready (STORAGE_STATUS_READY) value will be ignored.
+            
  * @param read_speed [MiB/s] Read speed.
  * @param write_speed [MiB/s] Write speed.
  * @param type  Type of storage
- * @param name  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.) This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this string is empty, the generic type is shown to the user.
- * @param storage_usage  Flags indicating whether this instance is preferred storage for photos, videos, etc.
-        Note: Implementations should initially set the flags on the system-default storage id used for saving media (if possible/supported).
-        This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
-        If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media types.
+ * @param name  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.)
+                This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this
+                string is empty, the generic type is shown to the user.
+            
+ * @param storage_usage  Flags indicating whether this instance
+                is preferred storage for photos, videos, etc.
+                Note: Implementations should initially set the flags on the system-default storage id used for saving
+                media (if possible/supported).
+                This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
+                If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media
+                types.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_storage_information_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -312,17 +364,30 @@ static inline uint16_t mavlink_msg_storage_information_encode_status(uint8_t sys
  * @param storage_id  Storage ID (1 for first, 2 for second, etc.)
  * @param storage_count  Number of storage devices
  * @param status  Status of storage
- * @param total_capacity [MiB] Total capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
- * @param used_capacity [MiB] Used capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
- * @param available_capacity [MiB] Available storage capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
+ * @param total_capacity [MiB] Total capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            
+ * @param used_capacity [MiB] Used capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            
+ * @param available_capacity [MiB] Available storage capacity. If storage is not
+                ready (STORAGE_STATUS_READY) value will be ignored.
+            
  * @param read_speed [MiB/s] Read speed.
  * @param write_speed [MiB/s] Write speed.
  * @param type  Type of storage
- * @param name  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.) This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this string is empty, the generic type is shown to the user.
- * @param storage_usage  Flags indicating whether this instance is preferred storage for photos, videos, etc.
-        Note: Implementations should initially set the flags on the system-default storage id used for saving media (if possible/supported).
-        This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
-        If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media types.
+ * @param name  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.)
+                This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this
+                string is empty, the generic type is shown to the user.
+            
+ * @param storage_usage  Flags indicating whether this instance
+                is preferred storage for photos, videos, etc.
+                Note: Implementations should initially set the flags on the system-default storage id used for saving
+                media (if possible/supported).
+                This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
+                If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media
+                types.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -467,7 +532,9 @@ static inline uint8_t mavlink_msg_storage_information_get_status(const mavlink_m
 /**
  * @brief Get field total_capacity from storage_information message
  *
- * @return [MiB] Total capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
+ * @return [MiB] Total capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            
  */
 static inline float mavlink_msg_storage_information_get_total_capacity(const mavlink_message_t* msg)
 {
@@ -477,7 +544,9 @@ static inline float mavlink_msg_storage_information_get_total_capacity(const mav
 /**
  * @brief Get field used_capacity from storage_information message
  *
- * @return [MiB] Used capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
+ * @return [MiB] Used capacity. If storage is not ready
+                (STORAGE_STATUS_READY) value will be ignored.
+            
  */
 static inline float mavlink_msg_storage_information_get_used_capacity(const mavlink_message_t* msg)
 {
@@ -487,7 +556,9 @@ static inline float mavlink_msg_storage_information_get_used_capacity(const mavl
 /**
  * @brief Get field available_capacity from storage_information message
  *
- * @return [MiB] Available storage capacity. If storage is not ready (STORAGE_STATUS_READY) value will be ignored.
+ * @return [MiB] Available storage capacity. If storage is not
+                ready (STORAGE_STATUS_READY) value will be ignored.
+            
  */
 static inline float mavlink_msg_storage_information_get_available_capacity(const mavlink_message_t* msg)
 {
@@ -527,7 +598,10 @@ static inline uint8_t mavlink_msg_storage_information_get_type(const mavlink_mes
 /**
  * @brief Get field name from storage_information message
  *
- * @return  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.) This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this string is empty, the generic type is shown to the user.
+ * @return  Textual storage name to be used in UI (microSD 1, Internal Memory, etc.)
+                This is a NULL terminated string. If it is exactly 32 characters long, add a terminating NULL. If this
+                string is empty, the generic type is shown to the user.
+            
  */
 static inline uint16_t mavlink_msg_storage_information_get_name(const mavlink_message_t* msg, char *name)
 {
@@ -537,10 +611,14 @@ static inline uint16_t mavlink_msg_storage_information_get_name(const mavlink_me
 /**
  * @brief Get field storage_usage from storage_information message
  *
- * @return  Flags indicating whether this instance is preferred storage for photos, videos, etc.
-        Note: Implementations should initially set the flags on the system-default storage id used for saving media (if possible/supported).
-        This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
-        If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media types.
+ * @return  Flags indicating whether this instance
+                is preferred storage for photos, videos, etc.
+                Note: Implementations should initially set the flags on the system-default storage id used for saving
+                media (if possible/supported).
+                This setting can then be overridden using MAV_CMD_SET_STORAGE_USAGE.
+                If the media usage flags are not set, a GCS may assume storage ID 1 is the default storage for all media
+                types.
+            
  */
 static inline uint8_t mavlink_msg_storage_information_get_storage_usage(const mavlink_message_t* msg)
 {

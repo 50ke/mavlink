@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief GPS_INPUT message
  *
- * GPS sensor input message.  This is a raw sensor value sent by the GPS. This is NOT the global position estimate of the system.
+ * GPS sensor input message. This is a raw sensor value sent by the GPS. This is NOT the global
+                position estimate of the system.
+            
  */
 struct GPS_INPUT : mavlink::Message {
     static constexpr msgid_t MSG_ID = 232;
@@ -19,17 +21,27 @@ struct GPS_INPUT : mavlink::Message {
     static constexpr auto NAME = "GPS_INPUT";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     uint8_t gps_id; /*<  ID of the GPS for multiple GPS inputs */
-    uint16_t ignore_flags; /*<  Bitmap indicating which GPS input flags fields to ignore.  All other fields must be provided. */
+    uint16_t ignore_flags; /*<  Bitmap indicating
+                which GPS input flags fields to ignore. All other fields must be provided.
+             */
     uint32_t time_week_ms; /*< [ms] GPS time (from start of GPS week) */
     uint16_t time_week; /*<  GPS week number */
-    uint8_t fix_type; /*<  0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK */
+    uint8_t fix_type; /*<  0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK
+             */
     int32_t lat; /*< [degE7] Latitude (WGS84) */
     int32_t lon; /*< [degE7] Longitude (WGS84) */
     float alt; /*< [m] Altitude (MSL). Positive for up. */
-    float hdop; /*<  GPS HDOP horizontal dilution of position (unitless). If unknown, set to: UINT16_MAX */
-    float vdop; /*<  GPS VDOP vertical dilution of position (unitless). If unknown, set to: UINT16_MAX */
+    float hdop; /*<  GPS HDOP horizontal dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+             */
+    float vdop; /*<  GPS VDOP vertical dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+             */
     float vn; /*< [m/s] GPS velocity in north direction in earth-fixed NED frame */
     float ve; /*< [m/s] GPS velocity in east direction in earth-fixed NED frame */
     float vd; /*< [m/s] GPS velocity in down direction in earth-fixed NED frame */
@@ -37,7 +49,9 @@ struct GPS_INPUT : mavlink::Message {
     float horiz_accuracy; /*< [m] GPS horizontal accuracy */
     float vert_accuracy; /*< [m] GPS vertical accuracy */
     uint8_t satellites_visible; /*<  Number of satellites visible. */
-    uint16_t yaw; /*< [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north */
+    uint16_t yaw; /*< [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+             */
 
 
     inline std::string get_name(void) const override

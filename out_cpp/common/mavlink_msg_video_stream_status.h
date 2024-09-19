@@ -12,8 +12,12 @@ typedef struct __mavlink_video_stream_status_t {
  uint16_t resolution_v; /*< [pix] Vertical resolution*/
  uint16_t rotation; /*< [deg] Video image rotation clockwise*/
  uint16_t hfov; /*< [deg] Horizontal Field of view*/
- uint8_t stream_id; /*<  Video Stream ID (1 for first, 2 for second, etc.)*/
- uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).*/
+ uint8_t stream_id; /*<  Video Stream ID (1 for first, 2 for second, etc.)
+            */
+ uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            */
 } mavlink_video_stream_status_t;
 
 #define MAVLINK_MSG_ID_VIDEO_STREAM_STATUS_LEN 20
@@ -66,6 +70,7 @@ typedef struct __mavlink_video_stream_status_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param stream_id  Video Stream ID (1 for first, 2 for second, etc.)
+            
  * @param flags  Bitmap of stream status flags
  * @param framerate [Hz] Frame rate
  * @param resolution_h [pix] Horizontal resolution
@@ -73,7 +78,10 @@ typedef struct __mavlink_video_stream_status_t {
  * @param bitrate [bits/s] Bit rate
  * @param rotation [deg] Video image rotation clockwise
  * @param hfov [deg] Horizontal Field of view
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_video_stream_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -119,6 +127,7 @@ static inline uint16_t mavlink_msg_video_stream_status_pack(uint8_t system_id, u
  * @param msg The MAVLink message to compress the data into
  *
  * @param stream_id  Video Stream ID (1 for first, 2 for second, etc.)
+            
  * @param flags  Bitmap of stream status flags
  * @param framerate [Hz] Frame rate
  * @param resolution_h [pix] Horizontal resolution
@@ -126,7 +135,10 @@ static inline uint16_t mavlink_msg_video_stream_status_pack(uint8_t system_id, u
  * @param bitrate [bits/s] Bit rate
  * @param rotation [deg] Video image rotation clockwise
  * @param hfov [deg] Horizontal Field of view
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_video_stream_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -175,6 +187,7 @@ static inline uint16_t mavlink_msg_video_stream_status_pack_status(uint8_t syste
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param stream_id  Video Stream ID (1 for first, 2 for second, etc.)
+            
  * @param flags  Bitmap of stream status flags
  * @param framerate [Hz] Frame rate
  * @param resolution_h [pix] Horizontal resolution
@@ -182,7 +195,10 @@ static inline uint16_t mavlink_msg_video_stream_status_pack_status(uint8_t syste
  * @param bitrate [bits/s] Bit rate
  * @param rotation [deg] Video image rotation clockwise
  * @param hfov [deg] Horizontal Field of view
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_video_stream_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -267,6 +283,7 @@ static inline uint16_t mavlink_msg_video_stream_status_encode_status(uint8_t sys
  * @param chan MAVLink channel to send the message
  *
  * @param stream_id  Video Stream ID (1 for first, 2 for second, etc.)
+            
  * @param flags  Bitmap of stream status flags
  * @param framerate [Hz] Frame rate
  * @param resolution_h [pix] Horizontal resolution
@@ -274,7 +291,10 @@ static inline uint16_t mavlink_msg_video_stream_status_encode_status(uint8_t sys
  * @param bitrate [bits/s] Bit rate
  * @param rotation [deg] Video image rotation clockwise
  * @param hfov [deg] Horizontal Field of view
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -372,6 +392,7 @@ static inline void mavlink_msg_video_stream_status_send_buf(mavlink_message_t *m
  * @brief Get field stream_id from video_stream_status message
  *
  * @return  Video Stream ID (1 for first, 2 for second, etc.)
+            
  */
 static inline uint8_t mavlink_msg_video_stream_status_get_stream_id(const mavlink_message_t* msg)
 {
@@ -451,7 +472,10 @@ static inline uint16_t mavlink_msg_video_stream_status_get_hfov(const mavlink_me
 /**
  * @brief Get field camera_device_id from video_stream_status message
  *
- * @return  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @return  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 static inline uint8_t mavlink_msg_video_stream_status_get_camera_device_id(const mavlink_message_t* msg)
 {

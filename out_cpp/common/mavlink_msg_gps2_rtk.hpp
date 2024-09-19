@@ -10,6 +10,7 @@ namespace msg {
  * @brief GPS2_RTK message
  *
  * RTK GPS data. Gives information on the relative baseline calculation the GPS is reporting
+            
  */
 struct GPS2_RTK : mavlink::Message {
     static constexpr msgid_t MSG_ID = 128;
@@ -19,17 +20,24 @@ struct GPS2_RTK : mavlink::Message {
     static constexpr auto NAME = "GPS2_RTK";
 
 
-    uint32_t time_last_baseline_ms; /*< [ms] Time since boot of last baseline message received. */
+    uint32_t time_last_baseline_ms; /*< [ms] Time since boot of last baseline message
+                received.
+             */
     uint8_t rtk_receiver_id; /*<  Identification of connected RTK receiver. */
     uint16_t wn; /*<  GPS Week Number of last baseline */
     uint32_t tow; /*< [ms] GPS Time of Week of last baseline */
     uint8_t rtk_health; /*<  GPS-specific health report for RTK data. */
     uint8_t rtk_rate; /*< [Hz] Rate of baseline messages being received by GPS */
     uint8_t nsats; /*<  Current number of sats used for RTK calculation. */
-    uint8_t baseline_coords_type; /*<  Coordinate system of baseline */
-    int32_t baseline_a_mm; /*< [mm] Current baseline in ECEF x or NED north component. */
-    int32_t baseline_b_mm; /*< [mm] Current baseline in ECEF y or NED east component. */
-    int32_t baseline_c_mm; /*< [mm] Current baseline in ECEF z or NED down component. */
+    uint8_t baseline_coords_type; /*<  Coordinate system of
+                baseline
+             */
+    int32_t baseline_a_mm; /*< [mm] Current baseline in ECEF x or NED north component.
+             */
+    int32_t baseline_b_mm; /*< [mm] Current baseline in ECEF y or NED east component.
+             */
+    int32_t baseline_c_mm; /*< [mm] Current baseline in ECEF z or NED down component.
+             */
     uint32_t accuracy; /*<  Current estimate of baseline accuracy. */
     int32_t iar_num_hypotheses; /*<  Current number of integer ambiguity hypotheses. */
 

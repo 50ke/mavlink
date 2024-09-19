@@ -10,7 +10,12 @@ namespace msg {
  * @brief MISSION_ITEM message
  *
  * Message encoding a mission item. This message is emitted to announce
-                the presence of a mission item and to set a mission item on the system. The mission item can be either in x, y, z meters (type: LOCAL) or x:lat, y:lon, z:altitude. Local frame is Z-down, right handed (NED), global frame is Z-up, right handed (ENU). NaN may be used to indicate an optional/default value (e.g. to use the system's current latitude or yaw rather than a specific value). See also https://mavlink.io/en/services/mission.html.
+                the presence of a mission item and to set a mission item on the system. The mission item can be either
+                in x, y, z meters (type: LOCAL) or x:lat, y:lon, z:altitude. Local frame is Z-down, right handed (NED),
+                global frame is Z-up, right handed (ENU). NaN may be used to indicate an optional/default value (e.g. to
+                use the system's current latitude or yaw rather than a specific value). See also
+                https://mavlink.io/en/services/mission.html.
+            
  */
 struct MISSION_ITEM : mavlink::Message {
     static constexpr msgid_t MSG_ID = 39;
@@ -26,14 +31,18 @@ struct MISSION_ITEM : mavlink::Message {
     uint8_t frame; /*<  The coordinate system of the waypoint. */
     uint16_t command; /*<  The scheduled action for the waypoint. */
     uint8_t current; /*<  false:0, true:1 */
-    uint8_t autocontinue; /*<  Autocontinue to next waypoint. 0: false, 1: true. Set false to pause mission after the item completes. */
+    uint8_t autocontinue; /*<  Autocontinue to next waypoint. 0: false, 1: true. Set false to
+                pause mission after the item completes.
+             */
     float param1; /*<  PARAM1, see MAV_CMD enum */
     float param2; /*<  PARAM2, see MAV_CMD enum */
     float param3; /*<  PARAM3, see MAV_CMD enum */
     float param4; /*<  PARAM4, see MAV_CMD enum */
     float x; /*<  PARAM5 / local: X coordinate, global: latitude */
     float y; /*<  PARAM6 / local: Y coordinate, global: longitude */
-    float z; /*<  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending on frame). */
+    float z; /*<  PARAM7 / local: Z coordinate, global: altitude (relative or absolute, depending
+                on frame).
+             */
     uint8_t mission_type; /*<  Mission type. */
 
 

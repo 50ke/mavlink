@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief ATTITUDE_TARGET message
  *
- * Reports the current commanded attitude of the vehicle as specified by the autopilot. This should match the commands sent in a SET_ATTITUDE_TARGET message if the vehicle is being controlled this way.
+ * Reports the current commanded attitude of the vehicle as specified by the autopilot. This
+                should match the commands sent in a SET_ATTITUDE_TARGET message if the vehicle is being controlled this
+                way.
+            
  */
 struct ATTITUDE_TARGET : mavlink::Message {
     static constexpr msgid_t MSG_ID = 83;
@@ -20,12 +23,16 @@ struct ATTITUDE_TARGET : mavlink::Message {
 
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
-    uint8_t type_mask; /*<  Bitmap to indicate which dimensions should be ignored by the vehicle. */
+    uint8_t type_mask; /*<  Bitmap to indicate
+                which dimensions should be ignored by the vehicle.
+             */
     std::array<float, 4> q; /*<  Attitude quaternion (w, x, y, z order, zero-rotation is 1, 0, 0, 0) */
     float body_roll_rate; /*< [rad/s] Body roll rate */
     float body_pitch_rate; /*< [rad/s] Body pitch rate */
     float body_yaw_rate; /*< [rad/s] Body yaw rate */
-    float thrust; /*<  Collective thrust, normalized to 0 .. 1 (-1 .. 1 for vehicles capable of reverse trust) */
+    float thrust; /*<  Collective thrust, normalized to 0 .. 1 (-1 .. 1 for vehicles capable of
+                reverse trust)
+             */
 
 
     inline std::string get_name(void) const override

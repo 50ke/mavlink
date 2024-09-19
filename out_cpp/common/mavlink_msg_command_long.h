@@ -14,8 +14,12 @@ typedef struct __mavlink_command_long_t {
  float param7; /*<  Parameter 7 (for the specific command).*/
  uint16_t command; /*<  Command ID (of command to send).*/
  uint8_t target_system; /*<  System which should execute the command*/
- uint8_t target_component; /*<  Component which should execute the command, 0 for all components*/
- uint8_t confirmation; /*<  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)*/
+ uint8_t target_component; /*<  Component which should execute the command, 0 for all
+                components
+            */
+ uint8_t confirmation; /*<  0: First transmission of this command. 1-255: Confirmation
+                transmissions (e.g. for kill command)
+            */
 } mavlink_command_long_t;
 
 #define MAVLINK_MSG_ID_COMMAND_LONG_LEN 33
@@ -72,9 +76,13 @@ typedef struct __mavlink_command_long_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param target_system  System which should execute the command
- * @param target_component  Component which should execute the command, 0 for all components
+ * @param target_component  Component which should execute the command, 0 for all
+                components
+            
  * @param command  Command ID (of command to send).
- * @param confirmation  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
+ * @param confirmation  0: First transmission of this command. 1-255: Confirmation
+                transmissions (e.g. for kill command)
+            
  * @param param1  Parameter 1 (for the specific command).
  * @param param2  Parameter 2 (for the specific command).
  * @param param3  Parameter 3 (for the specific command).
@@ -131,9 +139,13 @@ static inline uint16_t mavlink_msg_command_long_pack(uint8_t system_id, uint8_t 
  * @param msg The MAVLink message to compress the data into
  *
  * @param target_system  System which should execute the command
- * @param target_component  Component which should execute the command, 0 for all components
+ * @param target_component  Component which should execute the command, 0 for all
+                components
+            
  * @param command  Command ID (of command to send).
- * @param confirmation  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
+ * @param confirmation  0: First transmission of this command. 1-255: Confirmation
+                transmissions (e.g. for kill command)
+            
  * @param param1  Parameter 1 (for the specific command).
  * @param param2  Parameter 2 (for the specific command).
  * @param param3  Parameter 3 (for the specific command).
@@ -193,9 +205,13 @@ static inline uint16_t mavlink_msg_command_long_pack_status(uint8_t system_id, u
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param target_system  System which should execute the command
- * @param target_component  Component which should execute the command, 0 for all components
+ * @param target_component  Component which should execute the command, 0 for all
+                components
+            
  * @param command  Command ID (of command to send).
- * @param confirmation  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
+ * @param confirmation  0: First transmission of this command. 1-255: Confirmation
+                transmissions (e.g. for kill command)
+            
  * @param param1  Parameter 1 (for the specific command).
  * @param param2  Parameter 2 (for the specific command).
  * @param param3  Parameter 3 (for the specific command).
@@ -291,9 +307,13 @@ static inline uint16_t mavlink_msg_command_long_encode_status(uint8_t system_id,
  * @param chan MAVLink channel to send the message
  *
  * @param target_system  System which should execute the command
- * @param target_component  Component which should execute the command, 0 for all components
+ * @param target_component  Component which should execute the command, 0 for all
+                components
+            
  * @param command  Command ID (of command to send).
- * @param confirmation  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
+ * @param confirmation  0: First transmission of this command. 1-255: Confirmation
+                transmissions (e.g. for kill command)
+            
  * @param param1  Parameter 1 (for the specific command).
  * @param param2  Parameter 2 (for the specific command).
  * @param param3  Parameter 3 (for the specific command).
@@ -415,7 +435,9 @@ static inline uint8_t mavlink_msg_command_long_get_target_system(const mavlink_m
 /**
  * @brief Get field target_component from command_long message
  *
- * @return  Component which should execute the command, 0 for all components
+ * @return  Component which should execute the command, 0 for all
+                components
+            
  */
 static inline uint8_t mavlink_msg_command_long_get_target_component(const mavlink_message_t* msg)
 {
@@ -435,7 +457,9 @@ static inline uint16_t mavlink_msg_command_long_get_command(const mavlink_messag
 /**
  * @brief Get field confirmation from command_long message
  *
- * @return  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
+ * @return  0: First transmission of this command. 1-255: Confirmation
+                transmissions (e.g. for kill command)
+            
  */
 static inline uint8_t mavlink_msg_command_long_get_confirmation(const mavlink_message_t* msg)
 {

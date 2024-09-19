@@ -5,20 +5,50 @@
 
 MAVPACKED(
 typedef struct __mavlink_battery_status_t {
- int32_t current_consumed; /*< [mAh] Consumed charge, -1: autopilot does not provide consumption estimate*/
- int32_t energy_consumed; /*< [hJ] Consumed energy, -1: autopilot does not provide energy consumption estimate*/
- int16_t temperature; /*< [cdegC] Temperature of the battery. INT16_MAX for unknown temperature.*/
- uint16_t voltages[10]; /*< [mV] Battery voltage of cells 1 to 10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX. If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage is greater than 2 * (UINT16_MAX - 1).*/
- int16_t current_battery; /*< [cA] Battery current, -1: autopilot does not measure the current*/
+ int32_t current_consumed; /*< [mAh] Consumed charge, -1: autopilot does
+                not provide consumption estimate
+            */
+ int32_t energy_consumed; /*< [hJ] Consumed energy, -1: autopilot does not
+                provide energy consumption estimate
+            */
+ int16_t temperature; /*< [cdegC] Temperature of the battery.
+                INT16_MAX for unknown temperature.
+            */
+ uint16_t voltages[10]; /*< [mV] Battery voltage of cells 1 to
+                10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery
+                should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this
+                battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX.
+                If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX
+                - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage
+                is greater than 2 * (UINT16_MAX - 1).
+            */
+ int16_t current_battery; /*< [cA] Battery current, -1: autopilot does not
+                measure the current
+            */
  uint8_t id; /*<  Battery ID*/
  uint8_t battery_function; /*<  Function of the battery*/
  uint8_t type; /*<  Type (chemistry) of the battery*/
- int8_t battery_remaining; /*< [%] Remaining battery energy. Values: [0-100], -1: autopilot does not estimate the remaining battery.*/
- int32_t time_remaining; /*< [s] Remaining battery time, 0: autopilot does not provide remaining battery time estimate*/
- uint8_t charge_state; /*<  State for extent of discharge, provided by autopilot for warning or external reactions*/
- uint16_t voltages_ext[4]; /*< [mV] Battery voltages for cells 11 to 14. Cells above the valid cell count for this battery should have a value of 0, where zero indicates not supported (note, this is different than for the voltages field and allows empty byte truncation). If the measured value is 0 then 1 should be sent instead.*/
- uint8_t mode; /*<  Battery mode. Default (0) is that battery mode reporting is not supported or battery is in normal-use mode.*/
- uint32_t fault_bitmask; /*<  Fault/health indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).*/
+ int8_t battery_remaining; /*< [%] Remaining battery energy. Values:
+                [0-100], -1: autopilot does not estimate the remaining battery.
+            */
+ int32_t time_remaining; /*< [s] Remaining battery time, 0: autopilot does
+                not provide remaining battery time estimate
+            */
+ uint8_t charge_state; /*<  State for extent of discharge,
+                provided by autopilot for warning or external reactions
+            */
+ uint16_t voltages_ext[4]; /*< [mV] Battery voltages for cells 11 to 14.
+                Cells above the valid cell count for this battery should have a value of 0, where zero indicates not
+                supported (note, this is different than for the voltages field and allows empty byte truncation). If the
+                measured value is 0 then 1 should be sent instead.
+            */
+ uint8_t mode; /*<  Battery mode. Default (0) is that battery mode
+                reporting is not supported or battery is in normal-use mode.
+            */
+ uint32_t fault_bitmask; /*<  Fault/health
+                indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or
+                MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+            */
 }) mavlink_battery_status_t;
 
 #define MAVLINK_MSG_ID_BATTERY_STATUS_LEN 54
@@ -84,17 +114,47 @@ typedef struct __mavlink_battery_status_t {
  * @param id  Battery ID
  * @param battery_function  Function of the battery
  * @param type  Type (chemistry) of the battery
- * @param temperature [cdegC] Temperature of the battery. INT16_MAX for unknown temperature.
- * @param voltages [mV] Battery voltage of cells 1 to 10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX. If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage is greater than 2 * (UINT16_MAX - 1).
- * @param current_battery [cA] Battery current, -1: autopilot does not measure the current
- * @param current_consumed [mAh] Consumed charge, -1: autopilot does not provide consumption estimate
- * @param energy_consumed [hJ] Consumed energy, -1: autopilot does not provide energy consumption estimate
- * @param battery_remaining [%] Remaining battery energy. Values: [0-100], -1: autopilot does not estimate the remaining battery.
- * @param time_remaining [s] Remaining battery time, 0: autopilot does not provide remaining battery time estimate
- * @param charge_state  State for extent of discharge, provided by autopilot for warning or external reactions
- * @param voltages_ext [mV] Battery voltages for cells 11 to 14. Cells above the valid cell count for this battery should have a value of 0, where zero indicates not supported (note, this is different than for the voltages field and allows empty byte truncation). If the measured value is 0 then 1 should be sent instead.
- * @param mode  Battery mode. Default (0) is that battery mode reporting is not supported or battery is in normal-use mode.
- * @param fault_bitmask  Fault/health indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+ * @param temperature [cdegC] Temperature of the battery.
+                INT16_MAX for unknown temperature.
+            
+ * @param voltages [mV] Battery voltage of cells 1 to
+                10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery
+                should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this
+                battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX.
+                If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX
+                - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage
+                is greater than 2 * (UINT16_MAX - 1).
+            
+ * @param current_battery [cA] Battery current, -1: autopilot does not
+                measure the current
+            
+ * @param current_consumed [mAh] Consumed charge, -1: autopilot does
+                not provide consumption estimate
+            
+ * @param energy_consumed [hJ] Consumed energy, -1: autopilot does not
+                provide energy consumption estimate
+            
+ * @param battery_remaining [%] Remaining battery energy. Values:
+                [0-100], -1: autopilot does not estimate the remaining battery.
+            
+ * @param time_remaining [s] Remaining battery time, 0: autopilot does
+                not provide remaining battery time estimate
+            
+ * @param charge_state  State for extent of discharge,
+                provided by autopilot for warning or external reactions
+            
+ * @param voltages_ext [mV] Battery voltages for cells 11 to 14.
+                Cells above the valid cell count for this battery should have a value of 0, where zero indicates not
+                supported (note, this is different than for the voltages field and allows empty byte truncation). If the
+                measured value is 0 then 1 should be sent instead.
+            
+ * @param mode  Battery mode. Default (0) is that battery mode
+                reporting is not supported or battery is in normal-use mode.
+            
+ * @param fault_bitmask  Fault/health
+                indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or
+                MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_battery_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -150,17 +210,47 @@ static inline uint16_t mavlink_msg_battery_status_pack(uint8_t system_id, uint8_
  * @param id  Battery ID
  * @param battery_function  Function of the battery
  * @param type  Type (chemistry) of the battery
- * @param temperature [cdegC] Temperature of the battery. INT16_MAX for unknown temperature.
- * @param voltages [mV] Battery voltage of cells 1 to 10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX. If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage is greater than 2 * (UINT16_MAX - 1).
- * @param current_battery [cA] Battery current, -1: autopilot does not measure the current
- * @param current_consumed [mAh] Consumed charge, -1: autopilot does not provide consumption estimate
- * @param energy_consumed [hJ] Consumed energy, -1: autopilot does not provide energy consumption estimate
- * @param battery_remaining [%] Remaining battery energy. Values: [0-100], -1: autopilot does not estimate the remaining battery.
- * @param time_remaining [s] Remaining battery time, 0: autopilot does not provide remaining battery time estimate
- * @param charge_state  State for extent of discharge, provided by autopilot for warning or external reactions
- * @param voltages_ext [mV] Battery voltages for cells 11 to 14. Cells above the valid cell count for this battery should have a value of 0, where zero indicates not supported (note, this is different than for the voltages field and allows empty byte truncation). If the measured value is 0 then 1 should be sent instead.
- * @param mode  Battery mode. Default (0) is that battery mode reporting is not supported or battery is in normal-use mode.
- * @param fault_bitmask  Fault/health indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+ * @param temperature [cdegC] Temperature of the battery.
+                INT16_MAX for unknown temperature.
+            
+ * @param voltages [mV] Battery voltage of cells 1 to
+                10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery
+                should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this
+                battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX.
+                If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX
+                - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage
+                is greater than 2 * (UINT16_MAX - 1).
+            
+ * @param current_battery [cA] Battery current, -1: autopilot does not
+                measure the current
+            
+ * @param current_consumed [mAh] Consumed charge, -1: autopilot does
+                not provide consumption estimate
+            
+ * @param energy_consumed [hJ] Consumed energy, -1: autopilot does not
+                provide energy consumption estimate
+            
+ * @param battery_remaining [%] Remaining battery energy. Values:
+                [0-100], -1: autopilot does not estimate the remaining battery.
+            
+ * @param time_remaining [s] Remaining battery time, 0: autopilot does
+                not provide remaining battery time estimate
+            
+ * @param charge_state  State for extent of discharge,
+                provided by autopilot for warning or external reactions
+            
+ * @param voltages_ext [mV] Battery voltages for cells 11 to 14.
+                Cells above the valid cell count for this battery should have a value of 0, where zero indicates not
+                supported (note, this is different than for the voltages field and allows empty byte truncation). If the
+                measured value is 0 then 1 should be sent instead.
+            
+ * @param mode  Battery mode. Default (0) is that battery mode
+                reporting is not supported or battery is in normal-use mode.
+            
+ * @param fault_bitmask  Fault/health
+                indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or
+                MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_battery_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -219,17 +309,47 @@ static inline uint16_t mavlink_msg_battery_status_pack_status(uint8_t system_id,
  * @param id  Battery ID
  * @param battery_function  Function of the battery
  * @param type  Type (chemistry) of the battery
- * @param temperature [cdegC] Temperature of the battery. INT16_MAX for unknown temperature.
- * @param voltages [mV] Battery voltage of cells 1 to 10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX. If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage is greater than 2 * (UINT16_MAX - 1).
- * @param current_battery [cA] Battery current, -1: autopilot does not measure the current
- * @param current_consumed [mAh] Consumed charge, -1: autopilot does not provide consumption estimate
- * @param energy_consumed [hJ] Consumed energy, -1: autopilot does not provide energy consumption estimate
- * @param battery_remaining [%] Remaining battery energy. Values: [0-100], -1: autopilot does not estimate the remaining battery.
- * @param time_remaining [s] Remaining battery time, 0: autopilot does not provide remaining battery time estimate
- * @param charge_state  State for extent of discharge, provided by autopilot for warning or external reactions
- * @param voltages_ext [mV] Battery voltages for cells 11 to 14. Cells above the valid cell count for this battery should have a value of 0, where zero indicates not supported (note, this is different than for the voltages field and allows empty byte truncation). If the measured value is 0 then 1 should be sent instead.
- * @param mode  Battery mode. Default (0) is that battery mode reporting is not supported or battery is in normal-use mode.
- * @param fault_bitmask  Fault/health indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+ * @param temperature [cdegC] Temperature of the battery.
+                INT16_MAX for unknown temperature.
+            
+ * @param voltages [mV] Battery voltage of cells 1 to
+                10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery
+                should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this
+                battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX.
+                If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX
+                - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage
+                is greater than 2 * (UINT16_MAX - 1).
+            
+ * @param current_battery [cA] Battery current, -1: autopilot does not
+                measure the current
+            
+ * @param current_consumed [mAh] Consumed charge, -1: autopilot does
+                not provide consumption estimate
+            
+ * @param energy_consumed [hJ] Consumed energy, -1: autopilot does not
+                provide energy consumption estimate
+            
+ * @param battery_remaining [%] Remaining battery energy. Values:
+                [0-100], -1: autopilot does not estimate the remaining battery.
+            
+ * @param time_remaining [s] Remaining battery time, 0: autopilot does
+                not provide remaining battery time estimate
+            
+ * @param charge_state  State for extent of discharge,
+                provided by autopilot for warning or external reactions
+            
+ * @param voltages_ext [mV] Battery voltages for cells 11 to 14.
+                Cells above the valid cell count for this battery should have a value of 0, where zero indicates not
+                supported (note, this is different than for the voltages field and allows empty byte truncation). If the
+                measured value is 0 then 1 should be sent instead.
+            
+ * @param mode  Battery mode. Default (0) is that battery mode
+                reporting is not supported or battery is in normal-use mode.
+            
+ * @param fault_bitmask  Fault/health
+                indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or
+                MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_battery_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -324,17 +444,47 @@ static inline uint16_t mavlink_msg_battery_status_encode_status(uint8_t system_i
  * @param id  Battery ID
  * @param battery_function  Function of the battery
  * @param type  Type (chemistry) of the battery
- * @param temperature [cdegC] Temperature of the battery. INT16_MAX for unknown temperature.
- * @param voltages [mV] Battery voltage of cells 1 to 10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX. If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage is greater than 2 * (UINT16_MAX - 1).
- * @param current_battery [cA] Battery current, -1: autopilot does not measure the current
- * @param current_consumed [mAh] Consumed charge, -1: autopilot does not provide consumption estimate
- * @param energy_consumed [hJ] Consumed energy, -1: autopilot does not provide energy consumption estimate
- * @param battery_remaining [%] Remaining battery energy. Values: [0-100], -1: autopilot does not estimate the remaining battery.
- * @param time_remaining [s] Remaining battery time, 0: autopilot does not provide remaining battery time estimate
- * @param charge_state  State for extent of discharge, provided by autopilot for warning or external reactions
- * @param voltages_ext [mV] Battery voltages for cells 11 to 14. Cells above the valid cell count for this battery should have a value of 0, where zero indicates not supported (note, this is different than for the voltages field and allows empty byte truncation). If the measured value is 0 then 1 should be sent instead.
- * @param mode  Battery mode. Default (0) is that battery mode reporting is not supported or battery is in normal-use mode.
- * @param fault_bitmask  Fault/health indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+ * @param temperature [cdegC] Temperature of the battery.
+                INT16_MAX for unknown temperature.
+            
+ * @param voltages [mV] Battery voltage of cells 1 to
+                10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery
+                should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this
+                battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX.
+                If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX
+                - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage
+                is greater than 2 * (UINT16_MAX - 1).
+            
+ * @param current_battery [cA] Battery current, -1: autopilot does not
+                measure the current
+            
+ * @param current_consumed [mAh] Consumed charge, -1: autopilot does
+                not provide consumption estimate
+            
+ * @param energy_consumed [hJ] Consumed energy, -1: autopilot does not
+                provide energy consumption estimate
+            
+ * @param battery_remaining [%] Remaining battery energy. Values:
+                [0-100], -1: autopilot does not estimate the remaining battery.
+            
+ * @param time_remaining [s] Remaining battery time, 0: autopilot does
+                not provide remaining battery time estimate
+            
+ * @param charge_state  State for extent of discharge,
+                provided by autopilot for warning or external reactions
+            
+ * @param voltages_ext [mV] Battery voltages for cells 11 to 14.
+                Cells above the valid cell count for this battery should have a value of 0, where zero indicates not
+                supported (note, this is different than for the voltages field and allows empty byte truncation). If the
+                measured value is 0 then 1 should be sent instead.
+            
+ * @param mode  Battery mode. Default (0) is that battery mode
+                reporting is not supported or battery is in normal-use mode.
+            
+ * @param fault_bitmask  Fault/health
+                indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or
+                MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -477,7 +627,9 @@ static inline uint8_t mavlink_msg_battery_status_get_type(const mavlink_message_
 /**
  * @brief Get field temperature from battery_status message
  *
- * @return [cdegC] Temperature of the battery. INT16_MAX for unknown temperature.
+ * @return [cdegC] Temperature of the battery.
+                INT16_MAX for unknown temperature.
+            
  */
 static inline int16_t mavlink_msg_battery_status_get_temperature(const mavlink_message_t* msg)
 {
@@ -487,7 +639,14 @@ static inline int16_t mavlink_msg_battery_status_get_temperature(const mavlink_m
 /**
  * @brief Get field voltages from battery_status message
  *
- * @return [mV] Battery voltage of cells 1 to 10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX. If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage is greater than 2 * (UINT16_MAX - 1).
+ * @return [mV] Battery voltage of cells 1 to
+                10 (see voltages_ext for cells 11-14). Cells in this field above the valid cell count for this battery
+                should have the UINT16_MAX value. If individual cell voltages are unknown or not measured for this
+                battery, then the overall battery voltage should be filled in cell 0, with all others set to UINT16_MAX.
+                If the voltage of the battery is greater than (UINT16_MAX - 1), then cell 0 should be set to (UINT16_MAX
+                - 1), and cell 1 to the remaining voltage. This can be extended to multiple cells if the total voltage
+                is greater than 2 * (UINT16_MAX - 1).
+            
  */
 static inline uint16_t mavlink_msg_battery_status_get_voltages(const mavlink_message_t* msg, uint16_t *voltages)
 {
@@ -497,7 +656,9 @@ static inline uint16_t mavlink_msg_battery_status_get_voltages(const mavlink_mes
 /**
  * @brief Get field current_battery from battery_status message
  *
- * @return [cA] Battery current, -1: autopilot does not measure the current
+ * @return [cA] Battery current, -1: autopilot does not
+                measure the current
+            
  */
 static inline int16_t mavlink_msg_battery_status_get_current_battery(const mavlink_message_t* msg)
 {
@@ -507,7 +668,9 @@ static inline int16_t mavlink_msg_battery_status_get_current_battery(const mavli
 /**
  * @brief Get field current_consumed from battery_status message
  *
- * @return [mAh] Consumed charge, -1: autopilot does not provide consumption estimate
+ * @return [mAh] Consumed charge, -1: autopilot does
+                not provide consumption estimate
+            
  */
 static inline int32_t mavlink_msg_battery_status_get_current_consumed(const mavlink_message_t* msg)
 {
@@ -517,7 +680,9 @@ static inline int32_t mavlink_msg_battery_status_get_current_consumed(const mavl
 /**
  * @brief Get field energy_consumed from battery_status message
  *
- * @return [hJ] Consumed energy, -1: autopilot does not provide energy consumption estimate
+ * @return [hJ] Consumed energy, -1: autopilot does not
+                provide energy consumption estimate
+            
  */
 static inline int32_t mavlink_msg_battery_status_get_energy_consumed(const mavlink_message_t* msg)
 {
@@ -527,7 +692,9 @@ static inline int32_t mavlink_msg_battery_status_get_energy_consumed(const mavli
 /**
  * @brief Get field battery_remaining from battery_status message
  *
- * @return [%] Remaining battery energy. Values: [0-100], -1: autopilot does not estimate the remaining battery.
+ * @return [%] Remaining battery energy. Values:
+                [0-100], -1: autopilot does not estimate the remaining battery.
+            
  */
 static inline int8_t mavlink_msg_battery_status_get_battery_remaining(const mavlink_message_t* msg)
 {
@@ -537,7 +704,9 @@ static inline int8_t mavlink_msg_battery_status_get_battery_remaining(const mavl
 /**
  * @brief Get field time_remaining from battery_status message
  *
- * @return [s] Remaining battery time, 0: autopilot does not provide remaining battery time estimate
+ * @return [s] Remaining battery time, 0: autopilot does
+                not provide remaining battery time estimate
+            
  */
 static inline int32_t mavlink_msg_battery_status_get_time_remaining(const mavlink_message_t* msg)
 {
@@ -547,7 +716,9 @@ static inline int32_t mavlink_msg_battery_status_get_time_remaining(const mavlin
 /**
  * @brief Get field charge_state from battery_status message
  *
- * @return  State for extent of discharge, provided by autopilot for warning or external reactions
+ * @return  State for extent of discharge,
+                provided by autopilot for warning or external reactions
+            
  */
 static inline uint8_t mavlink_msg_battery_status_get_charge_state(const mavlink_message_t* msg)
 {
@@ -557,7 +728,11 @@ static inline uint8_t mavlink_msg_battery_status_get_charge_state(const mavlink_
 /**
  * @brief Get field voltages_ext from battery_status message
  *
- * @return [mV] Battery voltages for cells 11 to 14. Cells above the valid cell count for this battery should have a value of 0, where zero indicates not supported (note, this is different than for the voltages field and allows empty byte truncation). If the measured value is 0 then 1 should be sent instead.
+ * @return [mV] Battery voltages for cells 11 to 14.
+                Cells above the valid cell count for this battery should have a value of 0, where zero indicates not
+                supported (note, this is different than for the voltages field and allows empty byte truncation). If the
+                measured value is 0 then 1 should be sent instead.
+            
  */
 static inline uint16_t mavlink_msg_battery_status_get_voltages_ext(const mavlink_message_t* msg, uint16_t *voltages_ext)
 {
@@ -567,7 +742,9 @@ static inline uint16_t mavlink_msg_battery_status_get_voltages_ext(const mavlink
 /**
  * @brief Get field mode from battery_status message
  *
- * @return  Battery mode. Default (0) is that battery mode reporting is not supported or battery is in normal-use mode.
+ * @return  Battery mode. Default (0) is that battery mode
+                reporting is not supported or battery is in normal-use mode.
+            
  */
 static inline uint8_t mavlink_msg_battery_status_get_mode(const mavlink_message_t* msg)
 {
@@ -577,7 +754,10 @@ static inline uint8_t mavlink_msg_battery_status_get_mode(const mavlink_message_
 /**
  * @brief Get field fault_bitmask from battery_status message
  *
- * @return  Fault/health indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+ * @return  Fault/health
+                indications. These should be set when charge_state is MAV_BATTERY_CHARGE_STATE_FAILED or
+                MAV_BATTERY_CHARGE_STATE_UNHEALTHY (if not, fault reporting is not supported).
+            
  */
 static inline uint32_t mavlink_msg_battery_status_get_fault_bitmask(const mavlink_message_t* msg)
 {

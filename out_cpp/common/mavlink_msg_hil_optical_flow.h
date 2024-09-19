@@ -5,18 +5,33 @@
 
 
 typedef struct __mavlink_hil_optical_flow_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
- uint32_t integration_time_us; /*< [us] Integration time. Divide integrated_x and integrated_y by the integration time to obtain average flow. The integration time also indicates the.*/
- float integrated_x; /*< [rad] Flow in radians around X axis (Sensor RH rotation about the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative flow.)*/
- float integrated_y; /*< [rad] Flow in radians around Y axis (Sensor RH rotation about the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive flow.)*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
+ uint32_t integration_time_us; /*< [us] Integration time. Divide integrated_x and
+                integrated_y by the integration time to obtain average flow. The integration time also indicates the.
+            */
+ float integrated_x; /*< [rad] Flow in radians around X axis (Sensor RH rotation about
+                the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative
+                flow.)
+            */
+ float integrated_y; /*< [rad] Flow in radians around Y axis (Sensor RH rotation about
+                the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive
+                flow.)
+            */
  float integrated_xgyro; /*< [rad] RH rotation around X axis*/
  float integrated_ygyro; /*< [rad] RH rotation around Y axis*/
  float integrated_zgyro; /*< [rad] RH rotation around Z axis*/
  uint32_t time_delta_distance_us; /*< [us] Time since the distance was sampled.*/
- float distance; /*< [m] Distance to the center of the flow field. Positive value (including zero): distance known. Negative value: Unknown distance.*/
+ float distance; /*< [m] Distance to the center of the flow field.
+                Positive value (including zero): distance known. Negative value: Unknown distance.
+            */
  int16_t temperature; /*< [cdegC] Temperature*/
  uint8_t sensor_id; /*<  Sensor ID*/
- uint8_t quality; /*<  Optical flow quality / confidence. 0: no valid flow, 255: maximum quality*/
+ uint8_t quality; /*<  Optical flow quality / confidence. 0: no valid flow, 255: maximum
+                quality
+            */
 } mavlink_hil_optical_flow_t;
 
 #define MAVLINK_MSG_ID_HIL_OPTICAL_FLOW_LEN 44
@@ -74,18 +89,33 @@ typedef struct __mavlink_hil_optical_flow_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param sensor_id  Sensor ID
- * @param integration_time_us [us] Integration time. Divide integrated_x and integrated_y by the integration time to obtain average flow. The integration time also indicates the.
- * @param integrated_x [rad] Flow in radians around X axis (Sensor RH rotation about the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative flow.)
- * @param integrated_y [rad] Flow in radians around Y axis (Sensor RH rotation about the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive flow.)
+ * @param integration_time_us [us] Integration time. Divide integrated_x and
+                integrated_y by the integration time to obtain average flow. The integration time also indicates the.
+            
+ * @param integrated_x [rad] Flow in radians around X axis (Sensor RH rotation about
+                the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative
+                flow.)
+            
+ * @param integrated_y [rad] Flow in radians around Y axis (Sensor RH rotation about
+                the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive
+                flow.)
+            
  * @param integrated_xgyro [rad] RH rotation around X axis
  * @param integrated_ygyro [rad] RH rotation around Y axis
  * @param integrated_zgyro [rad] RH rotation around Z axis
  * @param temperature [cdegC] Temperature
- * @param quality  Optical flow quality / confidence. 0: no valid flow, 255: maximum quality
+ * @param quality  Optical flow quality / confidence. 0: no valid flow, 255: maximum
+                quality
+            
  * @param time_delta_distance_us [us] Time since the distance was sampled.
- * @param distance [m] Distance to the center of the flow field. Positive value (including zero): distance known. Negative value: Unknown distance.
+ * @param distance [m] Distance to the center of the flow field.
+                Positive value (including zero): distance known. Negative value: Unknown distance.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_hil_optical_flow_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -136,18 +166,33 @@ static inline uint16_t mavlink_msg_hil_optical_flow_pack(uint8_t system_id, uint
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param sensor_id  Sensor ID
- * @param integration_time_us [us] Integration time. Divide integrated_x and integrated_y by the integration time to obtain average flow. The integration time also indicates the.
- * @param integrated_x [rad] Flow in radians around X axis (Sensor RH rotation about the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative flow.)
- * @param integrated_y [rad] Flow in radians around Y axis (Sensor RH rotation about the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive flow.)
+ * @param integration_time_us [us] Integration time. Divide integrated_x and
+                integrated_y by the integration time to obtain average flow. The integration time also indicates the.
+            
+ * @param integrated_x [rad] Flow in radians around X axis (Sensor RH rotation about
+                the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative
+                flow.)
+            
+ * @param integrated_y [rad] Flow in radians around Y axis (Sensor RH rotation about
+                the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive
+                flow.)
+            
  * @param integrated_xgyro [rad] RH rotation around X axis
  * @param integrated_ygyro [rad] RH rotation around Y axis
  * @param integrated_zgyro [rad] RH rotation around Z axis
  * @param temperature [cdegC] Temperature
- * @param quality  Optical flow quality / confidence. 0: no valid flow, 255: maximum quality
+ * @param quality  Optical flow quality / confidence. 0: no valid flow, 255: maximum
+                quality
+            
  * @param time_delta_distance_us [us] Time since the distance was sampled.
- * @param distance [m] Distance to the center of the flow field. Positive value (including zero): distance known. Negative value: Unknown distance.
+ * @param distance [m] Distance to the center of the flow field.
+                Positive value (including zero): distance known. Negative value: Unknown distance.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_hil_optical_flow_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -201,18 +246,33 @@ static inline uint16_t mavlink_msg_hil_optical_flow_pack_status(uint8_t system_i
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param sensor_id  Sensor ID
- * @param integration_time_us [us] Integration time. Divide integrated_x and integrated_y by the integration time to obtain average flow. The integration time also indicates the.
- * @param integrated_x [rad] Flow in radians around X axis (Sensor RH rotation about the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative flow.)
- * @param integrated_y [rad] Flow in radians around Y axis (Sensor RH rotation about the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive flow.)
+ * @param integration_time_us [us] Integration time. Divide integrated_x and
+                integrated_y by the integration time to obtain average flow. The integration time also indicates the.
+            
+ * @param integrated_x [rad] Flow in radians around X axis (Sensor RH rotation about
+                the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative
+                flow.)
+            
+ * @param integrated_y [rad] Flow in radians around Y axis (Sensor RH rotation about
+                the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive
+                flow.)
+            
  * @param integrated_xgyro [rad] RH rotation around X axis
  * @param integrated_ygyro [rad] RH rotation around Y axis
  * @param integrated_zgyro [rad] RH rotation around Z axis
  * @param temperature [cdegC] Temperature
- * @param quality  Optical flow quality / confidence. 0: no valid flow, 255: maximum quality
+ * @param quality  Optical flow quality / confidence. 0: no valid flow, 255: maximum
+                quality
+            
  * @param time_delta_distance_us [us] Time since the distance was sampled.
- * @param distance [m] Distance to the center of the flow field. Positive value (including zero): distance known. Negative value: Unknown distance.
+ * @param distance [m] Distance to the center of the flow field.
+                Positive value (including zero): distance known. Negative value: Unknown distance.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_hil_optical_flow_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -302,18 +362,33 @@ static inline uint16_t mavlink_msg_hil_optical_flow_encode_status(uint8_t system
  * @brief Send a hil_optical_flow message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param sensor_id  Sensor ID
- * @param integration_time_us [us] Integration time. Divide integrated_x and integrated_y by the integration time to obtain average flow. The integration time also indicates the.
- * @param integrated_x [rad] Flow in radians around X axis (Sensor RH rotation about the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative flow.)
- * @param integrated_y [rad] Flow in radians around Y axis (Sensor RH rotation about the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive flow.)
+ * @param integration_time_us [us] Integration time. Divide integrated_x and
+                integrated_y by the integration time to obtain average flow. The integration time also indicates the.
+            
+ * @param integrated_x [rad] Flow in radians around X axis (Sensor RH rotation about
+                the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative
+                flow.)
+            
+ * @param integrated_y [rad] Flow in radians around Y axis (Sensor RH rotation about
+                the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive
+                flow.)
+            
  * @param integrated_xgyro [rad] RH rotation around X axis
  * @param integrated_ygyro [rad] RH rotation around Y axis
  * @param integrated_zgyro [rad] RH rotation around Z axis
  * @param temperature [cdegC] Temperature
- * @param quality  Optical flow quality / confidence. 0: no valid flow, 255: maximum quality
+ * @param quality  Optical flow quality / confidence. 0: no valid flow, 255: maximum
+                quality
+            
  * @param time_delta_distance_us [us] Time since the distance was sampled.
- * @param distance [m] Distance to the center of the flow field. Positive value (including zero): distance known. Negative value: Unknown distance.
+ * @param distance [m] Distance to the center of the flow field.
+                Positive value (including zero): distance known. Negative value: Unknown distance.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -422,7 +497,10 @@ static inline void mavlink_msg_hil_optical_flow_send_buf(mavlink_message_t *msgb
 /**
  * @brief Get field time_usec from hil_optical_flow message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_hil_optical_flow_get_time_usec(const mavlink_message_t* msg)
 {
@@ -442,7 +520,9 @@ static inline uint8_t mavlink_msg_hil_optical_flow_get_sensor_id(const mavlink_m
 /**
  * @brief Get field integration_time_us from hil_optical_flow message
  *
- * @return [us] Integration time. Divide integrated_x and integrated_y by the integration time to obtain average flow. The integration time also indicates the.
+ * @return [us] Integration time. Divide integrated_x and
+                integrated_y by the integration time to obtain average flow. The integration time also indicates the.
+            
  */
 static inline uint32_t mavlink_msg_hil_optical_flow_get_integration_time_us(const mavlink_message_t* msg)
 {
@@ -452,7 +532,10 @@ static inline uint32_t mavlink_msg_hil_optical_flow_get_integration_time_us(cons
 /**
  * @brief Get field integrated_x from hil_optical_flow message
  *
- * @return [rad] Flow in radians around X axis (Sensor RH rotation about the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative flow.)
+ * @return [rad] Flow in radians around X axis (Sensor RH rotation about
+                the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative
+                flow.)
+            
  */
 static inline float mavlink_msg_hil_optical_flow_get_integrated_x(const mavlink_message_t* msg)
 {
@@ -462,7 +545,10 @@ static inline float mavlink_msg_hil_optical_flow_get_integrated_x(const mavlink_
 /**
  * @brief Get field integrated_y from hil_optical_flow message
  *
- * @return [rad] Flow in radians around Y axis (Sensor RH rotation about the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive flow.)
+ * @return [rad] Flow in radians around Y axis (Sensor RH rotation about
+                the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive
+                flow.)
+            
  */
 static inline float mavlink_msg_hil_optical_flow_get_integrated_y(const mavlink_message_t* msg)
 {
@@ -512,7 +598,9 @@ static inline int16_t mavlink_msg_hil_optical_flow_get_temperature(const mavlink
 /**
  * @brief Get field quality from hil_optical_flow message
  *
- * @return  Optical flow quality / confidence. 0: no valid flow, 255: maximum quality
+ * @return  Optical flow quality / confidence. 0: no valid flow, 255: maximum
+                quality
+            
  */
 static inline uint8_t mavlink_msg_hil_optical_flow_get_quality(const mavlink_message_t* msg)
 {
@@ -532,7 +620,9 @@ static inline uint32_t mavlink_msg_hil_optical_flow_get_time_delta_distance_us(c
 /**
  * @brief Get field distance from hil_optical_flow message
  *
- * @return [m] Distance to the center of the flow field. Positive value (including zero): distance known. Negative value: Unknown distance.
+ * @return [m] Distance to the center of the flow field.
+                Positive value (including zero): distance known. Negative value: Unknown distance.
+            
  */
 static inline float mavlink_msg_hil_optical_flow_get_distance(const mavlink_message_t* msg)
 {

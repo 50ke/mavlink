@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief SET_POSITION_TARGET_LOCAL_NED message
  *
- * Sets a desired vehicle position in a local north-east-down coordinate frame. Used by an external controller to command the vehicle (manual controller or other system).
+ * Sets a desired vehicle position in a local north-east-down coordinate frame. Used by an
+                external controller to command the vehicle (manual controller or other system).
+            
  */
 struct SET_POSITION_TARGET_LOCAL_NED : mavlink::Message {
     static constexpr msgid_t MSG_ID = 84;
@@ -22,17 +24,27 @@ struct SET_POSITION_TARGET_LOCAL_NED : mavlink::Message {
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
     uint8_t target_system; /*<  System ID */
     uint8_t target_component; /*<  Component ID */
-    uint8_t coordinate_frame; /*<  Valid options are: MAV_FRAME_LOCAL_NED = 1, MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9 */
-    uint16_t type_mask; /*<  Bitmap to indicate which dimensions should be ignored by the vehicle. */
+    uint8_t coordinate_frame; /*<  Valid options are: MAV_FRAME_LOCAL_NED = 1,
+                MAV_FRAME_LOCAL_OFFSET_NED = 7, MAV_FRAME_BODY_NED = 8, MAV_FRAME_BODY_OFFSET_NED = 9
+             */
+    uint16_t type_mask; /*<  Bitmap to indicate
+                which dimensions should be ignored by the vehicle.
+             */
     float x; /*< [m] X Position in NED frame */
     float y; /*< [m] Y Position in NED frame */
     float z; /*< [m] Z Position in NED frame (note, altitude is negative in NED) */
     float vx; /*< [m/s] X velocity in NED frame */
     float vy; /*< [m/s] Y velocity in NED frame */
     float vz; /*< [m/s] Z velocity in NED frame */
-    float afx; /*< [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N */
-    float afy; /*< [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N */
-    float afz; /*< [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N */
+    float afx; /*< [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+             */
+    float afy; /*< [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+             */
+    float afz; /*< [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+             */
     float yaw; /*< [rad] yaw setpoint */
     float yaw_rate; /*< [rad/s] yaw rate setpoint */
 

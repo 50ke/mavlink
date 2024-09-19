@@ -7,7 +7,9 @@
 typedef struct __mavlink_power_status_t {
  uint16_t Vcc; /*< [mV] 5V rail voltage.*/
  uint16_t Vservo; /*< [mV] Servo rail voltage.*/
- uint16_t flags; /*<  Bitmap of power supply status flags.*/
+ uint16_t flags; /*<  Bitmap of power supply status
+                flags.
+            */
 } mavlink_power_status_t;
 
 #define MAVLINK_MSG_ID_POWER_STATUS_LEN 6
@@ -49,7 +51,9 @@ typedef struct __mavlink_power_status_t {
  *
  * @param Vcc [mV] 5V rail voltage.
  * @param Vservo [mV] Servo rail voltage.
- * @param flags  Bitmap of power supply status flags.
+ * @param flags  Bitmap of power supply status
+                flags.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_power_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -84,7 +88,9 @@ static inline uint16_t mavlink_msg_power_status_pack(uint8_t system_id, uint8_t 
  *
  * @param Vcc [mV] 5V rail voltage.
  * @param Vservo [mV] Servo rail voltage.
- * @param flags  Bitmap of power supply status flags.
+ * @param flags  Bitmap of power supply status
+                flags.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_power_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -122,7 +128,9 @@ static inline uint16_t mavlink_msg_power_status_pack_status(uint8_t system_id, u
  * @param msg The MAVLink message to compress the data into
  * @param Vcc [mV] 5V rail voltage.
  * @param Vservo [mV] Servo rail voltage.
- * @param flags  Bitmap of power supply status flags.
+ * @param flags  Bitmap of power supply status
+                flags.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_power_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -196,7 +204,9 @@ static inline uint16_t mavlink_msg_power_status_encode_status(uint8_t system_id,
  *
  * @param Vcc [mV] 5V rail voltage.
  * @param Vservo [mV] Servo rail voltage.
- * @param flags  Bitmap of power supply status flags.
+ * @param flags  Bitmap of power supply status
+                flags.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -289,7 +299,9 @@ static inline uint16_t mavlink_msg_power_status_get_Vservo(const mavlink_message
 /**
  * @brief Get field flags from power_status message
  *
- * @return  Bitmap of power supply status flags.
+ * @return  Bitmap of power supply status
+                flags.
+            
  */
 static inline uint16_t mavlink_msg_power_status_get_flags(const mavlink_message_t* msg)
 {

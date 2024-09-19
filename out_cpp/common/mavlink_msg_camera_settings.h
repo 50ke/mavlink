@@ -7,9 +7,16 @@ MAVPACKED(
 typedef struct __mavlink_camera_settings_t {
  uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot).*/
  uint8_t mode_id; /*<  Camera mode*/
- float zoomLevel; /*<  Current zoom level as a percentage of the full range (0.0 to 100.0, NaN if not known)*/
- float focusLevel; /*<  Current focus level as a percentage of the full range (0.0 to 100.0, NaN if not known)*/
- uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).*/
+ float zoomLevel; /*<  Current zoom level as a percentage of the full range (0.0
+                to 100.0, NaN if not known)
+            */
+ float focusLevel; /*<  Current focus level as a percentage of the full range
+                (0.0 to 100.0, NaN if not known)
+            */
+ uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            */
 }) mavlink_camera_settings_t;
 
 #define MAVLINK_MSG_ID_CAMERA_SETTINGS_LEN 14
@@ -55,9 +62,16 @@ typedef struct __mavlink_camera_settings_t {
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param mode_id  Camera mode
- * @param zoomLevel  Current zoom level as a percentage of the full range (0.0 to 100.0, NaN if not known)
- * @param focusLevel  Current focus level as a percentage of the full range (0.0 to 100.0, NaN if not known)
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param zoomLevel  Current zoom level as a percentage of the full range (0.0
+                to 100.0, NaN if not known)
+            
+ * @param focusLevel  Current focus level as a percentage of the full range
+                (0.0 to 100.0, NaN if not known)
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_settings_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -96,9 +110,16 @@ static inline uint16_t mavlink_msg_camera_settings_pack(uint8_t system_id, uint8
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param mode_id  Camera mode
- * @param zoomLevel  Current zoom level as a percentage of the full range (0.0 to 100.0, NaN if not known)
- * @param focusLevel  Current focus level as a percentage of the full range (0.0 to 100.0, NaN if not known)
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param zoomLevel  Current zoom level as a percentage of the full range (0.0
+                to 100.0, NaN if not known)
+            
+ * @param focusLevel  Current focus level as a percentage of the full range
+                (0.0 to 100.0, NaN if not known)
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_settings_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -140,9 +161,16 @@ static inline uint16_t mavlink_msg_camera_settings_pack_status(uint8_t system_id
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param mode_id  Camera mode
- * @param zoomLevel  Current zoom level as a percentage of the full range (0.0 to 100.0, NaN if not known)
- * @param focusLevel  Current focus level as a percentage of the full range (0.0 to 100.0, NaN if not known)
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param zoomLevel  Current zoom level as a percentage of the full range (0.0
+                to 100.0, NaN if not known)
+            
+ * @param focusLevel  Current focus level as a percentage of the full range
+                (0.0 to 100.0, NaN if not known)
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_settings_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -220,9 +248,16 @@ static inline uint16_t mavlink_msg_camera_settings_encode_status(uint8_t system_
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
  * @param mode_id  Camera mode
- * @param zoomLevel  Current zoom level as a percentage of the full range (0.0 to 100.0, NaN if not known)
- * @param focusLevel  Current focus level as a percentage of the full range (0.0 to 100.0, NaN if not known)
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param zoomLevel  Current zoom level as a percentage of the full range (0.0
+                to 100.0, NaN if not known)
+            
+ * @param focusLevel  Current focus level as a percentage of the full range
+                (0.0 to 100.0, NaN if not known)
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -323,7 +358,9 @@ static inline uint8_t mavlink_msg_camera_settings_get_mode_id(const mavlink_mess
 /**
  * @brief Get field zoomLevel from camera_settings message
  *
- * @return  Current zoom level as a percentage of the full range (0.0 to 100.0, NaN if not known)
+ * @return  Current zoom level as a percentage of the full range (0.0
+                to 100.0, NaN if not known)
+            
  */
 static inline float mavlink_msg_camera_settings_get_zoomLevel(const mavlink_message_t* msg)
 {
@@ -333,7 +370,9 @@ static inline float mavlink_msg_camera_settings_get_zoomLevel(const mavlink_mess
 /**
  * @brief Get field focusLevel from camera_settings message
  *
- * @return  Current focus level as a percentage of the full range (0.0 to 100.0, NaN if not known)
+ * @return  Current focus level as a percentage of the full range
+                (0.0 to 100.0, NaN if not known)
+            
  */
 static inline float mavlink_msg_camera_settings_get_focusLevel(const mavlink_message_t* msg)
 {
@@ -343,7 +382,10 @@ static inline float mavlink_msg_camera_settings_get_focusLevel(const mavlink_mes
 /**
  * @brief Get field camera_device_id from camera_settings message
  *
- * @return  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @return  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 static inline uint8_t mavlink_msg_camera_settings_get_camera_device_id(const mavlink_message_t* msg)
 {

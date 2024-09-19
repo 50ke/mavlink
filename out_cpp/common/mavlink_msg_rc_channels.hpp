@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief RC_CHANNELS message
  *
- * The PPM values of the RC channels received. The standard PPM modulation is as follows: 1000 microseconds: 0%, 2000 microseconds: 100%.  A value of UINT16_MAX implies the channel is unused. Individual receivers/transmitters might violate this specification.
+ * The PPM values of the RC channels received. The standard PPM modulation is as follows: 1000
+                microseconds: 0%, 2000 microseconds: 100%. A value of UINT16_MAX implies the channel is unused.
+                Individual receivers/transmitters might violate this specification.
+            
  */
 struct RC_CHANNELS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 65;
@@ -20,7 +23,10 @@ struct RC_CHANNELS : mavlink::Message {
 
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
-    uint8_t chancount; /*<  Total number of RC channels being received. This can be larger than 18, indicating that more channels are available but not given in this message. This value should be 0 when no RC channels are available. */
+    uint8_t chancount; /*<  Total number of RC channels being received. This can be larger than
+                18, indicating that more channels are available but not given in this message. This value should be 0
+                when no RC channels are available.
+             */
     uint16_t chan1_raw; /*< [us] RC channel 1 value. */
     uint16_t chan2_raw; /*< [us] RC channel 2 value. */
     uint16_t chan3_raw; /*< [us] RC channel 3 value. */
@@ -39,7 +45,9 @@ struct RC_CHANNELS : mavlink::Message {
     uint16_t chan16_raw; /*< [us] RC channel 16 value. */
     uint16_t chan17_raw; /*< [us] RC channel 17 value. */
     uint16_t chan18_raw; /*< [us] RC channel 18 value. */
-    uint8_t rssi; /*<  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown. */
+    uint8_t rssi; /*<  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+             */
 
 
     inline std::string get_name(void) const override

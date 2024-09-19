@@ -5,17 +5,40 @@
 
 
 typedef struct __mavlink_generator_status_t {
- uint64_t status; /*<  Status flags.*/
- float battery_current; /*< [A] Current into/out of battery. Positive for out. Negative for in. NaN: field not provided.*/
- float load_current; /*< [A] Current going to the UAV. If battery current not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field not provided*/
- float power_generated; /*< [W] The power being generated. NaN: field not provided*/
- float bus_voltage; /*< [V] Voltage of the bus seen at the generator, or battery bus if battery bus is controlled by generator and at a different voltage to main bus.*/
- float bat_current_setpoint; /*< [A] The target battery current. Positive for out. Negative for in. NaN: field not provided*/
- uint32_t runtime; /*< [s] Seconds this generator has run since it was rebooted. UINT32_MAX: field not provided.*/
- int32_t time_until_maintenance; /*< [s] Seconds until this generator requires maintenance.  A negative value indicates maintenance is past-due. INT32_MAX: field not provided.*/
- uint16_t generator_speed; /*< [rpm] Speed of electrical generator or alternator. UINT16_MAX: field not provided.*/
- int16_t rectifier_temperature; /*< [degC] The temperature of the rectifier or power converter. INT16_MAX: field not provided.*/
- int16_t generator_temperature; /*< [degC] The temperature of the mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.*/
+ uint64_t status; /*<  Status flags.
+            */
+ float battery_current; /*< [A] Current into/out of battery. Positive for
+                out. Negative for in. NaN: field not provided.
+            */
+ float load_current; /*< [A] Current going to the UAV. If battery current
+                not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field
+                not provided
+            */
+ float power_generated; /*< [W] The power being generated. NaN: field not
+                provided
+            */
+ float bus_voltage; /*< [V] Voltage of the bus seen at the generator, or battery bus if
+                battery bus is controlled by generator and at a different voltage to main bus.
+            */
+ float bat_current_setpoint; /*< [A] The target battery current. Positive
+                for out. Negative for in. NaN: field not provided
+            */
+ uint32_t runtime; /*< [s] Seconds this generator has run since it
+                was rebooted. UINT32_MAX: field not provided.
+            */
+ int32_t time_until_maintenance; /*< [s] Seconds until this
+                generator requires maintenance. A negative value indicates maintenance is past-due. INT32_MAX: field not
+                provided.
+            */
+ uint16_t generator_speed; /*< [rpm] Speed of electrical generator
+                or alternator. UINT16_MAX: field not provided.
+            */
+ int16_t rectifier_temperature; /*< [degC] The temperature of the
+                rectifier or power converter. INT16_MAX: field not provided.
+            */
+ int16_t generator_temperature; /*< [degC] The temperature of the
+                mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
+            */
 } mavlink_generator_status_t;
 
 #define MAVLINK_MSG_ID_GENERATOR_STATUS_LEN 42
@@ -72,16 +95,39 @@ typedef struct __mavlink_generator_status_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param status  Status flags.
- * @param generator_speed [rpm] Speed of electrical generator or alternator. UINT16_MAX: field not provided.
- * @param battery_current [A] Current into/out of battery. Positive for out. Negative for in. NaN: field not provided.
- * @param load_current [A] Current going to the UAV. If battery current not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field not provided
- * @param power_generated [W] The power being generated. NaN: field not provided
- * @param bus_voltage [V] Voltage of the bus seen at the generator, or battery bus if battery bus is controlled by generator and at a different voltage to main bus.
- * @param rectifier_temperature [degC] The temperature of the rectifier or power converter. INT16_MAX: field not provided.
- * @param bat_current_setpoint [A] The target battery current. Positive for out. Negative for in. NaN: field not provided
- * @param generator_temperature [degC] The temperature of the mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
- * @param runtime [s] Seconds this generator has run since it was rebooted. UINT32_MAX: field not provided.
- * @param time_until_maintenance [s] Seconds until this generator requires maintenance.  A negative value indicates maintenance is past-due. INT32_MAX: field not provided.
+            
+ * @param generator_speed [rpm] Speed of electrical generator
+                or alternator. UINT16_MAX: field not provided.
+            
+ * @param battery_current [A] Current into/out of battery. Positive for
+                out. Negative for in. NaN: field not provided.
+            
+ * @param load_current [A] Current going to the UAV. If battery current
+                not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field
+                not provided
+            
+ * @param power_generated [W] The power being generated. NaN: field not
+                provided
+            
+ * @param bus_voltage [V] Voltage of the bus seen at the generator, or battery bus if
+                battery bus is controlled by generator and at a different voltage to main bus.
+            
+ * @param rectifier_temperature [degC] The temperature of the
+                rectifier or power converter. INT16_MAX: field not provided.
+            
+ * @param bat_current_setpoint [A] The target battery current. Positive
+                for out. Negative for in. NaN: field not provided
+            
+ * @param generator_temperature [degC] The temperature of the
+                mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
+            
+ * @param runtime [s] Seconds this generator has run since it
+                was rebooted. UINT32_MAX: field not provided.
+            
+ * @param time_until_maintenance [s] Seconds until this
+                generator requires maintenance. A negative value indicates maintenance is past-due. INT32_MAX: field not
+                provided.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_generator_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -131,16 +177,39 @@ static inline uint16_t mavlink_msg_generator_status_pack(uint8_t system_id, uint
  * @param msg The MAVLink message to compress the data into
  *
  * @param status  Status flags.
- * @param generator_speed [rpm] Speed of electrical generator or alternator. UINT16_MAX: field not provided.
- * @param battery_current [A] Current into/out of battery. Positive for out. Negative for in. NaN: field not provided.
- * @param load_current [A] Current going to the UAV. If battery current not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field not provided
- * @param power_generated [W] The power being generated. NaN: field not provided
- * @param bus_voltage [V] Voltage of the bus seen at the generator, or battery bus if battery bus is controlled by generator and at a different voltage to main bus.
- * @param rectifier_temperature [degC] The temperature of the rectifier or power converter. INT16_MAX: field not provided.
- * @param bat_current_setpoint [A] The target battery current. Positive for out. Negative for in. NaN: field not provided
- * @param generator_temperature [degC] The temperature of the mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
- * @param runtime [s] Seconds this generator has run since it was rebooted. UINT32_MAX: field not provided.
- * @param time_until_maintenance [s] Seconds until this generator requires maintenance.  A negative value indicates maintenance is past-due. INT32_MAX: field not provided.
+            
+ * @param generator_speed [rpm] Speed of electrical generator
+                or alternator. UINT16_MAX: field not provided.
+            
+ * @param battery_current [A] Current into/out of battery. Positive for
+                out. Negative for in. NaN: field not provided.
+            
+ * @param load_current [A] Current going to the UAV. If battery current
+                not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field
+                not provided
+            
+ * @param power_generated [W] The power being generated. NaN: field not
+                provided
+            
+ * @param bus_voltage [V] Voltage of the bus seen at the generator, or battery bus if
+                battery bus is controlled by generator and at a different voltage to main bus.
+            
+ * @param rectifier_temperature [degC] The temperature of the
+                rectifier or power converter. INT16_MAX: field not provided.
+            
+ * @param bat_current_setpoint [A] The target battery current. Positive
+                for out. Negative for in. NaN: field not provided
+            
+ * @param generator_temperature [degC] The temperature of the
+                mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
+            
+ * @param runtime [s] Seconds this generator has run since it
+                was rebooted. UINT32_MAX: field not provided.
+            
+ * @param time_until_maintenance [s] Seconds until this
+                generator requires maintenance. A negative value indicates maintenance is past-due. INT32_MAX: field not
+                provided.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_generator_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -193,16 +262,39 @@ static inline uint16_t mavlink_msg_generator_status_pack_status(uint8_t system_i
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param status  Status flags.
- * @param generator_speed [rpm] Speed of electrical generator or alternator. UINT16_MAX: field not provided.
- * @param battery_current [A] Current into/out of battery. Positive for out. Negative for in. NaN: field not provided.
- * @param load_current [A] Current going to the UAV. If battery current not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field not provided
- * @param power_generated [W] The power being generated. NaN: field not provided
- * @param bus_voltage [V] Voltage of the bus seen at the generator, or battery bus if battery bus is controlled by generator and at a different voltage to main bus.
- * @param rectifier_temperature [degC] The temperature of the rectifier or power converter. INT16_MAX: field not provided.
- * @param bat_current_setpoint [A] The target battery current. Positive for out. Negative for in. NaN: field not provided
- * @param generator_temperature [degC] The temperature of the mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
- * @param runtime [s] Seconds this generator has run since it was rebooted. UINT32_MAX: field not provided.
- * @param time_until_maintenance [s] Seconds until this generator requires maintenance.  A negative value indicates maintenance is past-due. INT32_MAX: field not provided.
+            
+ * @param generator_speed [rpm] Speed of electrical generator
+                or alternator. UINT16_MAX: field not provided.
+            
+ * @param battery_current [A] Current into/out of battery. Positive for
+                out. Negative for in. NaN: field not provided.
+            
+ * @param load_current [A] Current going to the UAV. If battery current
+                not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field
+                not provided
+            
+ * @param power_generated [W] The power being generated. NaN: field not
+                provided
+            
+ * @param bus_voltage [V] Voltage of the bus seen at the generator, or battery bus if
+                battery bus is controlled by generator and at a different voltage to main bus.
+            
+ * @param rectifier_temperature [degC] The temperature of the
+                rectifier or power converter. INT16_MAX: field not provided.
+            
+ * @param bat_current_setpoint [A] The target battery current. Positive
+                for out. Negative for in. NaN: field not provided
+            
+ * @param generator_temperature [degC] The temperature of the
+                mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
+            
+ * @param runtime [s] Seconds this generator has run since it
+                was rebooted. UINT32_MAX: field not provided.
+            
+ * @param time_until_maintenance [s] Seconds until this
+                generator requires maintenance. A negative value indicates maintenance is past-due. INT32_MAX: field not
+                provided.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_generator_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -291,16 +383,39 @@ static inline uint16_t mavlink_msg_generator_status_encode_status(uint8_t system
  * @param chan MAVLink channel to send the message
  *
  * @param status  Status flags.
- * @param generator_speed [rpm] Speed of electrical generator or alternator. UINT16_MAX: field not provided.
- * @param battery_current [A] Current into/out of battery. Positive for out. Negative for in. NaN: field not provided.
- * @param load_current [A] Current going to the UAV. If battery current not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field not provided
- * @param power_generated [W] The power being generated. NaN: field not provided
- * @param bus_voltage [V] Voltage of the bus seen at the generator, or battery bus if battery bus is controlled by generator and at a different voltage to main bus.
- * @param rectifier_temperature [degC] The temperature of the rectifier or power converter. INT16_MAX: field not provided.
- * @param bat_current_setpoint [A] The target battery current. Positive for out. Negative for in. NaN: field not provided
- * @param generator_temperature [degC] The temperature of the mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
- * @param runtime [s] Seconds this generator has run since it was rebooted. UINT32_MAX: field not provided.
- * @param time_until_maintenance [s] Seconds until this generator requires maintenance.  A negative value indicates maintenance is past-due. INT32_MAX: field not provided.
+            
+ * @param generator_speed [rpm] Speed of electrical generator
+                or alternator. UINT16_MAX: field not provided.
+            
+ * @param battery_current [A] Current into/out of battery. Positive for
+                out. Negative for in. NaN: field not provided.
+            
+ * @param load_current [A] Current going to the UAV. If battery current
+                not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field
+                not provided
+            
+ * @param power_generated [W] The power being generated. NaN: field not
+                provided
+            
+ * @param bus_voltage [V] Voltage of the bus seen at the generator, or battery bus if
+                battery bus is controlled by generator and at a different voltage to main bus.
+            
+ * @param rectifier_temperature [degC] The temperature of the
+                rectifier or power converter. INT16_MAX: field not provided.
+            
+ * @param bat_current_setpoint [A] The target battery current. Positive
+                for out. Negative for in. NaN: field not provided
+            
+ * @param generator_temperature [degC] The temperature of the
+                mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
+            
+ * @param runtime [s] Seconds this generator has run since it
+                was rebooted. UINT32_MAX: field not provided.
+            
+ * @param time_until_maintenance [s] Seconds until this
+                generator requires maintenance. A negative value indicates maintenance is past-due. INT32_MAX: field not
+                provided.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -406,6 +521,7 @@ static inline void mavlink_msg_generator_status_send_buf(mavlink_message_t *msgb
  * @brief Get field status from generator_status message
  *
  * @return  Status flags.
+            
  */
 static inline uint64_t mavlink_msg_generator_status_get_status(const mavlink_message_t* msg)
 {
@@ -415,7 +531,9 @@ static inline uint64_t mavlink_msg_generator_status_get_status(const mavlink_mes
 /**
  * @brief Get field generator_speed from generator_status message
  *
- * @return [rpm] Speed of electrical generator or alternator. UINT16_MAX: field not provided.
+ * @return [rpm] Speed of electrical generator
+                or alternator. UINT16_MAX: field not provided.
+            
  */
 static inline uint16_t mavlink_msg_generator_status_get_generator_speed(const mavlink_message_t* msg)
 {
@@ -425,7 +543,9 @@ static inline uint16_t mavlink_msg_generator_status_get_generator_speed(const ma
 /**
  * @brief Get field battery_current from generator_status message
  *
- * @return [A] Current into/out of battery. Positive for out. Negative for in. NaN: field not provided.
+ * @return [A] Current into/out of battery. Positive for
+                out. Negative for in. NaN: field not provided.
+            
  */
 static inline float mavlink_msg_generator_status_get_battery_current(const mavlink_message_t* msg)
 {
@@ -435,7 +555,10 @@ static inline float mavlink_msg_generator_status_get_battery_current(const mavli
 /**
  * @brief Get field load_current from generator_status message
  *
- * @return [A] Current going to the UAV. If battery current not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field not provided
+ * @return [A] Current going to the UAV. If battery current
+                not available this is the DC current from the generator. Positive for out. Negative for in. NaN: field
+                not provided
+            
  */
 static inline float mavlink_msg_generator_status_get_load_current(const mavlink_message_t* msg)
 {
@@ -445,7 +568,9 @@ static inline float mavlink_msg_generator_status_get_load_current(const mavlink_
 /**
  * @brief Get field power_generated from generator_status message
  *
- * @return [W] The power being generated. NaN: field not provided
+ * @return [W] The power being generated. NaN: field not
+                provided
+            
  */
 static inline float mavlink_msg_generator_status_get_power_generated(const mavlink_message_t* msg)
 {
@@ -455,7 +580,9 @@ static inline float mavlink_msg_generator_status_get_power_generated(const mavli
 /**
  * @brief Get field bus_voltage from generator_status message
  *
- * @return [V] Voltage of the bus seen at the generator, or battery bus if battery bus is controlled by generator and at a different voltage to main bus.
+ * @return [V] Voltage of the bus seen at the generator, or battery bus if
+                battery bus is controlled by generator and at a different voltage to main bus.
+            
  */
 static inline float mavlink_msg_generator_status_get_bus_voltage(const mavlink_message_t* msg)
 {
@@ -465,7 +592,9 @@ static inline float mavlink_msg_generator_status_get_bus_voltage(const mavlink_m
 /**
  * @brief Get field rectifier_temperature from generator_status message
  *
- * @return [degC] The temperature of the rectifier or power converter. INT16_MAX: field not provided.
+ * @return [degC] The temperature of the
+                rectifier or power converter. INT16_MAX: field not provided.
+            
  */
 static inline int16_t mavlink_msg_generator_status_get_rectifier_temperature(const mavlink_message_t* msg)
 {
@@ -475,7 +604,9 @@ static inline int16_t mavlink_msg_generator_status_get_rectifier_temperature(con
 /**
  * @brief Get field bat_current_setpoint from generator_status message
  *
- * @return [A] The target battery current. Positive for out. Negative for in. NaN: field not provided
+ * @return [A] The target battery current. Positive
+                for out. Negative for in. NaN: field not provided
+            
  */
 static inline float mavlink_msg_generator_status_get_bat_current_setpoint(const mavlink_message_t* msg)
 {
@@ -485,7 +616,9 @@ static inline float mavlink_msg_generator_status_get_bat_current_setpoint(const 
 /**
  * @brief Get field generator_temperature from generator_status message
  *
- * @return [degC] The temperature of the mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
+ * @return [degC] The temperature of the
+                mechanical motor, fuel cell core or generator. INT16_MAX: field not provided.
+            
  */
 static inline int16_t mavlink_msg_generator_status_get_generator_temperature(const mavlink_message_t* msg)
 {
@@ -495,7 +628,9 @@ static inline int16_t mavlink_msg_generator_status_get_generator_temperature(con
 /**
  * @brief Get field runtime from generator_status message
  *
- * @return [s] Seconds this generator has run since it was rebooted. UINT32_MAX: field not provided.
+ * @return [s] Seconds this generator has run since it
+                was rebooted. UINT32_MAX: field not provided.
+            
  */
 static inline uint32_t mavlink_msg_generator_status_get_runtime(const mavlink_message_t* msg)
 {
@@ -505,7 +640,10 @@ static inline uint32_t mavlink_msg_generator_status_get_runtime(const mavlink_me
 /**
  * @brief Get field time_until_maintenance from generator_status message
  *
- * @return [s] Seconds until this generator requires maintenance.  A negative value indicates maintenance is past-due. INT32_MAX: field not provided.
+ * @return [s] Seconds until this
+                generator requires maintenance. A negative value indicates maintenance is past-due. INT32_MAX: field not
+                provided.
+            
  */
 static inline int32_t mavlink_msg_generator_status_get_time_until_maintenance(const mavlink_message_t* msg)
 {

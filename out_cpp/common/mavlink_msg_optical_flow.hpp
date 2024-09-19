@@ -19,14 +19,21 @@ struct OPTICAL_FLOW : mavlink::Message {
     static constexpr auto NAME = "OPTICAL_FLOW";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     uint8_t sensor_id; /*<  Sensor ID */
     int16_t flow_x; /*< [dpix] Flow in x-sensor direction */
     int16_t flow_y; /*< [dpix] Flow in y-sensor direction */
-    float flow_comp_m_x; /*< [m/s] Flow in x-sensor direction, angular-speed compensated */
-    float flow_comp_m_y; /*< [m/s] Flow in y-sensor direction, angular-speed compensated */
+    float flow_comp_m_x; /*< [m/s] Flow in x-sensor direction, angular-speed compensated
+             */
+    float flow_comp_m_y; /*< [m/s] Flow in y-sensor direction, angular-speed compensated
+             */
     uint8_t quality; /*<  Optical flow quality / confidence. 0: bad, 255: maximum quality */
-    float ground_distance; /*< [m] Ground distance. Positive value: distance known. Negative value: Unknown distance */
+    float ground_distance; /*< [m] Ground distance. Positive value: distance known.
+                Negative value: Unknown distance
+             */
     float flow_rate_x; /*< [rad/s] Flow rate about X axis */
     float flow_rate_y; /*< [rad/s] Flow rate about Y axis */
 

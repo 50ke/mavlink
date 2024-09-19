@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief ESC_STATUS message
  *
- * ESC information for higher rate streaming. Recommended streaming rate is ~10 Hz. Information that changes more slowly is sent in ESC_INFO. It should typically only be streamed on high-bandwidth links (i.e. to a companion computer).
+ * ESC information for higher rate streaming. Recommended streaming rate is ~10 Hz. Information
+                that changes more slowly is sent in ESC_INFO. It should typically only be streamed on high-bandwidth
+                links (i.e. to a companion computer).
+            
  */
 struct ESC_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 291;
@@ -19,9 +22,16 @@ struct ESC_STATUS : mavlink::Message {
     static constexpr auto NAME = "ESC_STATUS";
 
 
-    uint8_t index; /*<  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4. */
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number. */
-    std::array<int32_t, 4> rpm; /*< [rpm] Reported motor RPM from each ESC (negative for reverse rotation). */
+    uint8_t index; /*<  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+             */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+             */
+    std::array<int32_t, 4> rpm; /*< [rpm] Reported motor RPM from each ESC (negative for reverse
+                rotation).
+             */
     std::array<float, 4> voltage; /*< [V] Voltage measured from each ESC. */
     std::array<float, 4> current; /*< [A] Current measured from each ESC. */
 

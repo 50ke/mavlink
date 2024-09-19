@@ -6,18 +6,39 @@
 MAVPACKED(
 typedef struct __mavlink_autopilot_state_for_gimbal_device_t {
  uint64_t time_boot_us; /*< [us] Timestamp (time since system boot).*/
- float q[4]; /*<  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the null-rotation, Hamilton convention).*/
- uint32_t q_estimated_delay_us; /*< [us] Estimated delay of the attitude data. 0 if unknown.*/
- float vx; /*< [m/s] X Speed in NED (North, East, Down). NAN if unknown.*/
- float vy; /*< [m/s] Y Speed in NED (North, East, Down). NAN if unknown.*/
- float vz; /*< [m/s] Z Speed in NED (North, East, Down). NAN if unknown.*/
- uint32_t v_estimated_delay_us; /*< [us] Estimated delay of the speed data. 0 if unknown.*/
- float feed_forward_angular_velocity_z; /*< [rad/s] Feed forward Z component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if the autopilot is actively yawing.*/
- uint16_t estimator_status; /*<  Bitmap indicating which estimator outputs are valid.*/
+ float q[4]; /*<  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the
+                null-rotation, Hamilton convention).
+            */
+ uint32_t q_estimated_delay_us; /*< [us] Estimated delay of the attitude
+                data. 0 if unknown.
+            */
+ float vx; /*< [m/s] X Speed in NED (North, East, Down). NAN if
+                unknown.
+            */
+ float vy; /*< [m/s] Y Speed in NED (North, East, Down). NAN if
+                unknown.
+            */
+ float vz; /*< [m/s] Z Speed in NED (North, East, Down). NAN if
+                unknown.
+            */
+ uint32_t v_estimated_delay_us; /*< [us] Estimated delay of the speed data.
+                0 if unknown.
+            */
+ float feed_forward_angular_velocity_z; /*< [rad/s] Feed forward Z
+                component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if
+                the autopilot is actively yawing.
+            */
+ uint16_t estimator_status; /*<  Bitmap
+                indicating which estimator outputs are valid.
+            */
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
- uint8_t landed_state; /*<  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.*/
- float angular_velocity_z; /*< [rad/s] Z component of angular velocity in NED (North, East, Down). NaN if unknown.*/
+ uint8_t landed_state; /*<  The
+                landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            */
+ float angular_velocity_z; /*< [rad/s] Z component of angular velocity in
+                NED (North, East, Down). NaN if unknown.
+            */
 }) mavlink_autopilot_state_for_gimbal_device_t;
 
 #define MAVLINK_MSG_ID_AUTOPILOT_STATE_FOR_GIMBAL_DEVICE_LEN 57
@@ -80,16 +101,37 @@ typedef struct __mavlink_autopilot_state_for_gimbal_device_t {
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param time_boot_us [us] Timestamp (time since system boot).
- * @param q  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the null-rotation, Hamilton convention).
- * @param q_estimated_delay_us [us] Estimated delay of the attitude data. 0 if unknown.
- * @param vx [m/s] X Speed in NED (North, East, Down). NAN if unknown.
- * @param vy [m/s] Y Speed in NED (North, East, Down). NAN if unknown.
- * @param vz [m/s] Z Speed in NED (North, East, Down). NAN if unknown.
- * @param v_estimated_delay_us [us] Estimated delay of the speed data. 0 if unknown.
- * @param feed_forward_angular_velocity_z [rad/s] Feed forward Z component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if the autopilot is actively yawing.
- * @param estimator_status  Bitmap indicating which estimator outputs are valid.
- * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
- * @param angular_velocity_z [rad/s] Z component of angular velocity in NED (North, East, Down). NaN if unknown.
+ * @param q  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the
+                null-rotation, Hamilton convention).
+            
+ * @param q_estimated_delay_us [us] Estimated delay of the attitude
+                data. 0 if unknown.
+            
+ * @param vx [m/s] X Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param vy [m/s] Y Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param vz [m/s] Z Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param v_estimated_delay_us [us] Estimated delay of the speed data.
+                0 if unknown.
+            
+ * @param feed_forward_angular_velocity_z [rad/s] Feed forward Z
+                component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if
+                the autopilot is actively yawing.
+            
+ * @param estimator_status  Bitmap
+                indicating which estimator outputs are valid.
+            
+ * @param landed_state  The
+                landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            
+ * @param angular_velocity_z [rad/s] Z component of angular velocity in
+                NED (North, East, Down). NaN if unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -143,16 +185,37 @@ static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_pack(uint8_
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param time_boot_us [us] Timestamp (time since system boot).
- * @param q  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the null-rotation, Hamilton convention).
- * @param q_estimated_delay_us [us] Estimated delay of the attitude data. 0 if unknown.
- * @param vx [m/s] X Speed in NED (North, East, Down). NAN if unknown.
- * @param vy [m/s] Y Speed in NED (North, East, Down). NAN if unknown.
- * @param vz [m/s] Z Speed in NED (North, East, Down). NAN if unknown.
- * @param v_estimated_delay_us [us] Estimated delay of the speed data. 0 if unknown.
- * @param feed_forward_angular_velocity_z [rad/s] Feed forward Z component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if the autopilot is actively yawing.
- * @param estimator_status  Bitmap indicating which estimator outputs are valid.
- * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
- * @param angular_velocity_z [rad/s] Z component of angular velocity in NED (North, East, Down). NaN if unknown.
+ * @param q  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the
+                null-rotation, Hamilton convention).
+            
+ * @param q_estimated_delay_us [us] Estimated delay of the attitude
+                data. 0 if unknown.
+            
+ * @param vx [m/s] X Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param vy [m/s] Y Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param vz [m/s] Z Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param v_estimated_delay_us [us] Estimated delay of the speed data.
+                0 if unknown.
+            
+ * @param feed_forward_angular_velocity_z [rad/s] Feed forward Z
+                component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if
+                the autopilot is actively yawing.
+            
+ * @param estimator_status  Bitmap
+                indicating which estimator outputs are valid.
+            
+ * @param landed_state  The
+                landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            
+ * @param angular_velocity_z [rad/s] Z component of angular velocity in
+                NED (North, East, Down). NaN if unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -209,16 +272,37 @@ static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_pack_status
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param time_boot_us [us] Timestamp (time since system boot).
- * @param q  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the null-rotation, Hamilton convention).
- * @param q_estimated_delay_us [us] Estimated delay of the attitude data. 0 if unknown.
- * @param vx [m/s] X Speed in NED (North, East, Down). NAN if unknown.
- * @param vy [m/s] Y Speed in NED (North, East, Down). NAN if unknown.
- * @param vz [m/s] Z Speed in NED (North, East, Down). NAN if unknown.
- * @param v_estimated_delay_us [us] Estimated delay of the speed data. 0 if unknown.
- * @param feed_forward_angular_velocity_z [rad/s] Feed forward Z component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if the autopilot is actively yawing.
- * @param estimator_status  Bitmap indicating which estimator outputs are valid.
- * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
- * @param angular_velocity_z [rad/s] Z component of angular velocity in NED (North, East, Down). NaN if unknown.
+ * @param q  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the
+                null-rotation, Hamilton convention).
+            
+ * @param q_estimated_delay_us [us] Estimated delay of the attitude
+                data. 0 if unknown.
+            
+ * @param vx [m/s] X Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param vy [m/s] Y Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param vz [m/s] Z Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param v_estimated_delay_us [us] Estimated delay of the speed data.
+                0 if unknown.
+            
+ * @param feed_forward_angular_velocity_z [rad/s] Feed forward Z
+                component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if
+                the autopilot is actively yawing.
+            
+ * @param estimator_status  Bitmap
+                indicating which estimator outputs are valid.
+            
+ * @param landed_state  The
+                landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            
+ * @param angular_velocity_z [rad/s] Z component of angular velocity in
+                NED (North, East, Down). NaN if unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -311,16 +395,37 @@ static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_encode_stat
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param time_boot_us [us] Timestamp (time since system boot).
- * @param q  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the null-rotation, Hamilton convention).
- * @param q_estimated_delay_us [us] Estimated delay of the attitude data. 0 if unknown.
- * @param vx [m/s] X Speed in NED (North, East, Down). NAN if unknown.
- * @param vy [m/s] Y Speed in NED (North, East, Down). NAN if unknown.
- * @param vz [m/s] Z Speed in NED (North, East, Down). NAN if unknown.
- * @param v_estimated_delay_us [us] Estimated delay of the speed data. 0 if unknown.
- * @param feed_forward_angular_velocity_z [rad/s] Feed forward Z component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if the autopilot is actively yawing.
- * @param estimator_status  Bitmap indicating which estimator outputs are valid.
- * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
- * @param angular_velocity_z [rad/s] Z component of angular velocity in NED (North, East, Down). NaN if unknown.
+ * @param q  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the
+                null-rotation, Hamilton convention).
+            
+ * @param q_estimated_delay_us [us] Estimated delay of the attitude
+                data. 0 if unknown.
+            
+ * @param vx [m/s] X Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param vy [m/s] Y Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param vz [m/s] Z Speed in NED (North, East, Down). NAN if
+                unknown.
+            
+ * @param v_estimated_delay_us [us] Estimated delay of the speed data.
+                0 if unknown.
+            
+ * @param feed_forward_angular_velocity_z [rad/s] Feed forward Z
+                component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if
+                the autopilot is actively yawing.
+            
+ * @param estimator_status  Bitmap
+                indicating which estimator outputs are valid.
+            
+ * @param landed_state  The
+                landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            
+ * @param angular_velocity_z [rad/s] Z component of angular velocity in
+                NED (North, East, Down). NaN if unknown.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -459,7 +564,9 @@ static inline uint64_t mavlink_msg_autopilot_state_for_gimbal_device_get_time_bo
 /**
  * @brief Get field q from autopilot_state_for_gimbal_device message
  *
- * @return  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the null-rotation, Hamilton convention).
+ * @return  Quaternion components of autopilot attitude: w, x, y, z (1 0 0 0 is the
+                null-rotation, Hamilton convention).
+            
  */
 static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_get_q(const mavlink_message_t* msg, float *q)
 {
@@ -469,7 +576,9 @@ static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_get_q(const
 /**
  * @brief Get field q_estimated_delay_us from autopilot_state_for_gimbal_device message
  *
- * @return [us] Estimated delay of the attitude data. 0 if unknown.
+ * @return [us] Estimated delay of the attitude
+                data. 0 if unknown.
+            
  */
 static inline uint32_t mavlink_msg_autopilot_state_for_gimbal_device_get_q_estimated_delay_us(const mavlink_message_t* msg)
 {
@@ -479,7 +588,9 @@ static inline uint32_t mavlink_msg_autopilot_state_for_gimbal_device_get_q_estim
 /**
  * @brief Get field vx from autopilot_state_for_gimbal_device message
  *
- * @return [m/s] X Speed in NED (North, East, Down). NAN if unknown.
+ * @return [m/s] X Speed in NED (North, East, Down). NAN if
+                unknown.
+            
  */
 static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vx(const mavlink_message_t* msg)
 {
@@ -489,7 +600,9 @@ static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vx(const m
 /**
  * @brief Get field vy from autopilot_state_for_gimbal_device message
  *
- * @return [m/s] Y Speed in NED (North, East, Down). NAN if unknown.
+ * @return [m/s] Y Speed in NED (North, East, Down). NAN if
+                unknown.
+            
  */
 static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vy(const mavlink_message_t* msg)
 {
@@ -499,7 +612,9 @@ static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vy(const m
 /**
  * @brief Get field vz from autopilot_state_for_gimbal_device message
  *
- * @return [m/s] Z Speed in NED (North, East, Down). NAN if unknown.
+ * @return [m/s] Z Speed in NED (North, East, Down). NAN if
+                unknown.
+            
  */
 static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vz(const mavlink_message_t* msg)
 {
@@ -509,7 +624,9 @@ static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_vz(const m
 /**
  * @brief Get field v_estimated_delay_us from autopilot_state_for_gimbal_device message
  *
- * @return [us] Estimated delay of the speed data. 0 if unknown.
+ * @return [us] Estimated delay of the speed data.
+                0 if unknown.
+            
  */
 static inline uint32_t mavlink_msg_autopilot_state_for_gimbal_device_get_v_estimated_delay_us(const mavlink_message_t* msg)
 {
@@ -519,7 +636,10 @@ static inline uint32_t mavlink_msg_autopilot_state_for_gimbal_device_get_v_estim
 /**
  * @brief Get field feed_forward_angular_velocity_z from autopilot_state_for_gimbal_device message
  *
- * @return [rad/s] Feed forward Z component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if the autopilot is actively yawing.
+ * @return [rad/s] Feed forward Z
+                component of angular velocity (positive: yawing to the right). NaN to be ignored. This is to indicate if
+                the autopilot is actively yawing.
+            
  */
 static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_feed_forward_angular_velocity_z(const mavlink_message_t* msg)
 {
@@ -529,7 +649,9 @@ static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_feed_forwa
 /**
  * @brief Get field estimator_status from autopilot_state_for_gimbal_device message
  *
- * @return  Bitmap indicating which estimator outputs are valid.
+ * @return  Bitmap
+                indicating which estimator outputs are valid.
+            
  */
 static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_get_estimator_status(const mavlink_message_t* msg)
 {
@@ -539,7 +661,9 @@ static inline uint16_t mavlink_msg_autopilot_state_for_gimbal_device_get_estimat
 /**
  * @brief Get field landed_state from autopilot_state_for_gimbal_device message
  *
- * @return  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+ * @return  The
+                landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
+            
  */
 static inline uint8_t mavlink_msg_autopilot_state_for_gimbal_device_get_landed_state(const mavlink_message_t* msg)
 {
@@ -549,7 +673,9 @@ static inline uint8_t mavlink_msg_autopilot_state_for_gimbal_device_get_landed_s
 /**
  * @brief Get field angular_velocity_z from autopilot_state_for_gimbal_device message
  *
- * @return [rad/s] Z component of angular velocity in NED (North, East, Down). NaN if unknown.
+ * @return [rad/s] Z component of angular velocity in
+                NED (North, East, Down). NaN if unknown.
+            
  */
 static inline float mavlink_msg_autopilot_state_for_gimbal_device_get_angular_velocity_z(const mavlink_message_t* msg)
 {

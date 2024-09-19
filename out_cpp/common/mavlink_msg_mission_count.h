@@ -9,13 +9,16 @@ typedef struct __mavlink_mission_count_t {
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
  uint8_t mission_type; /*<  Mission type.*/
- uint32_t opaque_id; /*<  Id of current on-vehicle mission, fence, or rally point plan (on download from vehicle).
-        This field is used when downloading a plan from a vehicle to a GCS.
-        0 on upload to the vehicle from GCS.
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-        The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
-      */
+ uint32_t opaque_id; /*<  Id of current on-vehicle mission, fence, or rally point
+                plan (on download from vehicle).
+                This field is used when downloading a plan from a vehicle to a GCS.
+                0 on upload to the vehicle from GCS.
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+                The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is
+                uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
+            */
 }) mavlink_mission_count_t;
 
 #define MAVLINK_MSG_ID_MISSION_COUNT_LEN 9
@@ -63,13 +66,16 @@ typedef struct __mavlink_mission_count_t {
  * @param target_component  Component ID
  * @param count  Number of mission items in the sequence
  * @param mission_type  Mission type.
- * @param opaque_id  Id of current on-vehicle mission, fence, or rally point plan (on download from vehicle).
-        This field is used when downloading a plan from a vehicle to a GCS.
-        0 on upload to the vehicle from GCS.
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-        The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
-      
+ * @param opaque_id  Id of current on-vehicle mission, fence, or rally point
+                plan (on download from vehicle).
+                This field is used when downloading a plan from a vehicle to a GCS.
+                0 on upload to the vehicle from GCS.
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+                The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is
+                uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_count_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -110,13 +116,16 @@ static inline uint16_t mavlink_msg_mission_count_pack(uint8_t system_id, uint8_t
  * @param target_component  Component ID
  * @param count  Number of mission items in the sequence
  * @param mission_type  Mission type.
- * @param opaque_id  Id of current on-vehicle mission, fence, or rally point plan (on download from vehicle).
-        This field is used when downloading a plan from a vehicle to a GCS.
-        0 on upload to the vehicle from GCS.
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-        The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
-      
+ * @param opaque_id  Id of current on-vehicle mission, fence, or rally point
+                plan (on download from vehicle).
+                This field is used when downloading a plan from a vehicle to a GCS.
+                0 on upload to the vehicle from GCS.
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+                The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is
+                uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_count_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -160,13 +169,16 @@ static inline uint16_t mavlink_msg_mission_count_pack_status(uint8_t system_id, 
  * @param target_component  Component ID
  * @param count  Number of mission items in the sequence
  * @param mission_type  Mission type.
- * @param opaque_id  Id of current on-vehicle mission, fence, or rally point plan (on download from vehicle).
-        This field is used when downloading a plan from a vehicle to a GCS.
-        0 on upload to the vehicle from GCS.
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-        The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
-      
+ * @param opaque_id  Id of current on-vehicle mission, fence, or rally point
+                plan (on download from vehicle).
+                This field is used when downloading a plan from a vehicle to a GCS.
+                0 on upload to the vehicle from GCS.
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+                The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is
+                uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_count_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -246,13 +258,16 @@ static inline uint16_t mavlink_msg_mission_count_encode_status(uint8_t system_id
  * @param target_component  Component ID
  * @param count  Number of mission items in the sequence
  * @param mission_type  Mission type.
- * @param opaque_id  Id of current on-vehicle mission, fence, or rally point plan (on download from vehicle).
-        This field is used when downloading a plan from a vehicle to a GCS.
-        0 on upload to the vehicle from GCS.
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-        The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
-      
+ * @param opaque_id  Id of current on-vehicle mission, fence, or rally point
+                plan (on download from vehicle).
+                This field is used when downloading a plan from a vehicle to a GCS.
+                0 on upload to the vehicle from GCS.
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+                The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is
+                uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -373,13 +388,16 @@ static inline uint8_t mavlink_msg_mission_count_get_mission_type(const mavlink_m
 /**
  * @brief Get field opaque_id from mission_count message
  *
- * @return  Id of current on-vehicle mission, fence, or rally point plan (on download from vehicle).
-        This field is used when downloading a plan from a vehicle to a GCS.
-        0 on upload to the vehicle from GCS.
-        0 if plan ids are not supported.
-        The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any part of the plan has changed and needs to be re-uploaded.
-        The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
-      
+ * @return  Id of current on-vehicle mission, fence, or rally point
+                plan (on download from vehicle).
+                This field is used when downloading a plan from a vehicle to a GCS.
+                0 on upload to the vehicle from GCS.
+                0 if plan ids are not supported.
+                The current on-vehicle plan ids are streamed in `MISSION_CURRENT`, allowing a GCS to determine if any
+                part of the plan has changed and needs to be re-uploaded.
+                The ids are recalculated by the vehicle when any part of the on-vehicle plan changes (when a new plan is
+                uploaded, the vehicle returns the new id to the GCS in MISSION_ACK).
+            
  */
 static inline uint32_t mavlink_msg_mission_count_get_opaque_id(const mavlink_message_t* msg)
 {

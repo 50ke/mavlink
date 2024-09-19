@@ -19,7 +19,10 @@ struct HIGHRES_IMU : mavlink::Message {
     static constexpr auto NAME = "HIGHRES_IMU";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     float xacc; /*< [m/s/s] X acceleration */
     float yacc; /*< [m/s/s] Y acceleration */
     float zacc; /*< [m/s/s] Z acceleration */
@@ -33,8 +36,12 @@ struct HIGHRES_IMU : mavlink::Message {
     float diff_pressure; /*< [hPa] Differential pressure */
     float pressure_alt; /*<  Altitude calculated from pressure */
     float temperature; /*< [degC] Temperature */
-    uint16_t fields_updated; /*<  Bitmap for fields that have updated since last message */
-    uint8_t id; /*<  Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0) */
+    uint16_t fields_updated; /*<  Bitmap for
+                fields that have updated since last message
+             */
+    uint8_t id; /*<  Id. Ids are numbered from 0 and map to IMUs numbered from 1
+                (e.g. IMU1 will have a message with id=0)
+             */
 
 
     inline std::string get_name(void) const override

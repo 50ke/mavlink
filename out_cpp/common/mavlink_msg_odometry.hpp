@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief ODOMETRY message
  *
- * Odometry message to communicate odometry information with an external interface. Fits ROS REP 147 standard for aerial vehicles (http://www.ros.org/reps/rep-0147.html).
+ * Odometry message to communicate odometry information with an external interface. Fits ROS REP
+                147 standard for aerial vehicles (http://www.ros.org/reps/rep-0147.html).
+            
  */
 struct ODOMETRY : mavlink::Message {
     static constexpr msgid_t MSG_ID = 331;
@@ -19,9 +21,15 @@ struct ODOMETRY : mavlink::Message {
     static constexpr auto NAME = "ODOMETRY";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
-    uint8_t frame_id; /*<  Coordinate frame of reference for the pose data. */
-    uint8_t child_frame_id; /*<  Coordinate frame of reference for the velocity in free space (twist) data. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
+    uint8_t frame_id; /*<  Coordinate frame of reference for the pose data.
+             */
+    uint8_t child_frame_id; /*<  Coordinate frame of reference for the velocity
+                in free space (twist) data.
+             */
     float x; /*< [m] X Position */
     float y; /*< [m] Y Position */
     float z; /*< [m] Z Position */
@@ -32,11 +40,26 @@ struct ODOMETRY : mavlink::Message {
     float rollspeed; /*< [rad/s] Roll angular speed */
     float pitchspeed; /*< [rad/s] Pitch angular speed */
     float yawspeed; /*< [rad/s] Yaw angular speed */
-    std::array<float, 21> pose_covariance; /*<  Row-major representation of a 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array. */
-    std::array<float, 21> velocity_covariance; /*<  Row-major representation of a 6x6 velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed, yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array. */
-    uint8_t reset_counter; /*<  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps. */
-    uint8_t estimator_type; /*<  Type of estimator that is providing the odometry. */
-    int8_t quality; /*< [%] Optional odometry quality metric as a percentage. -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality */
+    std::array<float, 21> pose_covariance; /*<  Row-major representation of a 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+             */
+    std::array<float, 21> velocity_covariance; /*<  Row-major representation of a 6x6
+                velocity cross-covariance matrix upper right triangle (states: vx, vy, vz, rollspeed, pitchspeed,
+                yawspeed; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown,
+                assign NaN value to first element in the array.
+             */
+    uint8_t reset_counter; /*<  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+             */
+    uint8_t estimator_type; /*<  Type of estimator that is providing
+                the odometry.
+             */
+    int8_t quality; /*< [%] Optional odometry quality metric as a percentage.
+                -1 = odometry has failed, 0 = unknown/unset quality, 1 = worst quality, 100 = best quality
+             */
 
 
     inline std::string get_name(void) const override

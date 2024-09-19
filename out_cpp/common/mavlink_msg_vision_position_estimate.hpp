@@ -26,8 +26,15 @@ struct VISION_POSITION_ESTIMATE : mavlink::Message {
     float roll; /*< [rad] Roll angle */
     float pitch; /*< [rad] Pitch angle */
     float yaw; /*< [rad] Yaw angle */
-    std::array<float, 21> covariance; /*<  Row-major representation of pose 6x6 cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array. */
-    uint8_t reset_counter; /*<  Estimate reset counter. This should be incremented when the estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps. */
+    std::array<float, 21> covariance; /*<  Row-major representation of pose 6x6
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+             */
+    uint8_t reset_counter; /*<  Estimate reset counter. This should be incremented when the
+                estimate resets in any of the dimensions (position, velocity, attitude, angular speed). This is designed
+                to be used when e.g an external SLAM system detects a loop-closure and the estimate jumps.
+             */
 
 
     inline std::string get_name(void) const override

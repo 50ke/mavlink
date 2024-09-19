@@ -7,10 +7,20 @@
 typedef struct __mavlink_command_ack_t {
  uint16_t command; /*<  Command ID (of acknowledged command).*/
  uint8_t result; /*<  Result of command.*/
- uint8_t progress; /*< [%] The progress percentage when result is MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.*/
- int32_t result_param2; /*<  Additional result information. Can be set with a command-specific enum containing command-specific error reasons for why the command might be denied. If used, the associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to indicate "unused" or "unknown").*/
- uint8_t target_system; /*<  System ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.*/
- uint8_t target_component; /*<  Component ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.*/
+ uint8_t progress; /*< [%] The progress percentage when result is
+                MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
+            */
+ int32_t result_param2; /*<  Additional result information. Can be set with a command-specific
+                enum containing command-specific error reasons for why the command might be denied. If used, the
+                associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to
+                indicate "unused" or "unknown").
+            */
+ uint8_t target_system; /*<  System ID of the target recipient. This is the ID of the system
+                that sent the command for which this COMMAND_ACK is an acknowledgement.
+            */
+ uint8_t target_component; /*<  Component ID of the target recipient. This is the ID of the
+                system that sent the command for which this COMMAND_ACK is an acknowledgement.
+            */
 } mavlink_command_ack_t;
 
 #define MAVLINK_MSG_ID_COMMAND_ACK_LEN 10
@@ -58,10 +68,20 @@ typedef struct __mavlink_command_ack_t {
  *
  * @param command  Command ID (of acknowledged command).
  * @param result  Result of command.
- * @param progress [%] The progress percentage when result is MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
- * @param result_param2  Additional result information. Can be set with a command-specific enum containing command-specific error reasons for why the command might be denied. If used, the associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to indicate "unused" or "unknown").
- * @param target_system  System ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.
- * @param target_component  Component ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.
+ * @param progress [%] The progress percentage when result is
+                MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
+            
+ * @param result_param2  Additional result information. Can be set with a command-specific
+                enum containing command-specific error reasons for why the command might be denied. If used, the
+                associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to
+                indicate "unused" or "unknown").
+            
+ * @param target_system  System ID of the target recipient. This is the ID of the system
+                that sent the command for which this COMMAND_ACK is an acknowledgement.
+            
+ * @param target_component  Component ID of the target recipient. This is the ID of the
+                system that sent the command for which this COMMAND_ACK is an acknowledgement.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_command_ack_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -102,10 +122,20 @@ static inline uint16_t mavlink_msg_command_ack_pack(uint8_t system_id, uint8_t c
  *
  * @param command  Command ID (of acknowledged command).
  * @param result  Result of command.
- * @param progress [%] The progress percentage when result is MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
- * @param result_param2  Additional result information. Can be set with a command-specific enum containing command-specific error reasons for why the command might be denied. If used, the associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to indicate "unused" or "unknown").
- * @param target_system  System ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.
- * @param target_component  Component ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.
+ * @param progress [%] The progress percentage when result is
+                MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
+            
+ * @param result_param2  Additional result information. Can be set with a command-specific
+                enum containing command-specific error reasons for why the command might be denied. If used, the
+                associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to
+                indicate "unused" or "unknown").
+            
+ * @param target_system  System ID of the target recipient. This is the ID of the system
+                that sent the command for which this COMMAND_ACK is an acknowledgement.
+            
+ * @param target_component  Component ID of the target recipient. This is the ID of the
+                system that sent the command for which this COMMAND_ACK is an acknowledgement.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_command_ack_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -149,10 +179,20 @@ static inline uint16_t mavlink_msg_command_ack_pack_status(uint8_t system_id, ui
  * @param msg The MAVLink message to compress the data into
  * @param command  Command ID (of acknowledged command).
  * @param result  Result of command.
- * @param progress [%] The progress percentage when result is MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
- * @param result_param2  Additional result information. Can be set with a command-specific enum containing command-specific error reasons for why the command might be denied. If used, the associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to indicate "unused" or "unknown").
- * @param target_system  System ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.
- * @param target_component  Component ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.
+ * @param progress [%] The progress percentage when result is
+                MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
+            
+ * @param result_param2  Additional result information. Can be set with a command-specific
+                enum containing command-specific error reasons for why the command might be denied. If used, the
+                associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to
+                indicate "unused" or "unknown").
+            
+ * @param target_system  System ID of the target recipient. This is the ID of the system
+                that sent the command for which this COMMAND_ACK is an acknowledgement.
+            
+ * @param target_component  Component ID of the target recipient. This is the ID of the
+                system that sent the command for which this COMMAND_ACK is an acknowledgement.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_command_ack_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -232,10 +272,20 @@ static inline uint16_t mavlink_msg_command_ack_encode_status(uint8_t system_id, 
  *
  * @param command  Command ID (of acknowledged command).
  * @param result  Result of command.
- * @param progress [%] The progress percentage when result is MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
- * @param result_param2  Additional result information. Can be set with a command-specific enum containing command-specific error reasons for why the command might be denied. If used, the associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to indicate "unused" or "unknown").
- * @param target_system  System ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.
- * @param target_component  Component ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.
+ * @param progress [%] The progress percentage when result is
+                MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
+            
+ * @param result_param2  Additional result information. Can be set with a command-specific
+                enum containing command-specific error reasons for why the command might be denied. If used, the
+                associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to
+                indicate "unused" or "unknown").
+            
+ * @param target_system  System ID of the target recipient. This is the ID of the system
+                that sent the command for which this COMMAND_ACK is an acknowledgement.
+            
+ * @param target_component  Component ID of the target recipient. This is the ID of the
+                system that sent the command for which this COMMAND_ACK is an acknowledgement.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -340,7 +390,9 @@ static inline uint8_t mavlink_msg_command_ack_get_result(const mavlink_message_t
 /**
  * @brief Get field progress from command_ack message
  *
- * @return [%] The progress percentage when result is MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
+ * @return [%] The progress percentage when result is
+                MAV_RESULT_IN_PROGRESS. Values: [0-100], or UINT8_MAX if the progress is unknown.
+            
  */
 static inline uint8_t mavlink_msg_command_ack_get_progress(const mavlink_message_t* msg)
 {
@@ -350,7 +402,11 @@ static inline uint8_t mavlink_msg_command_ack_get_progress(const mavlink_message
 /**
  * @brief Get field result_param2 from command_ack message
  *
- * @return  Additional result information. Can be set with a command-specific enum containing command-specific error reasons for why the command might be denied. If used, the associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to indicate "unused" or "unknown").
+ * @return  Additional result information. Can be set with a command-specific
+                enum containing command-specific error reasons for why the command might be denied. If used, the
+                associated enum must be documented in the corresponding MAV_CMD (this enum should have a 0 value to
+                indicate "unused" or "unknown").
+            
  */
 static inline int32_t mavlink_msg_command_ack_get_result_param2(const mavlink_message_t* msg)
 {
@@ -360,7 +416,9 @@ static inline int32_t mavlink_msg_command_ack_get_result_param2(const mavlink_me
 /**
  * @brief Get field target_system from command_ack message
  *
- * @return  System ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.
+ * @return  System ID of the target recipient. This is the ID of the system
+                that sent the command for which this COMMAND_ACK is an acknowledgement.
+            
  */
 static inline uint8_t mavlink_msg_command_ack_get_target_system(const mavlink_message_t* msg)
 {
@@ -370,7 +428,9 @@ static inline uint8_t mavlink_msg_command_ack_get_target_system(const mavlink_me
 /**
  * @brief Get field target_component from command_ack message
  *
- * @return  Component ID of the target recipient. This is the ID of the system that sent the command for which this COMMAND_ACK is an acknowledgement.
+ * @return  Component ID of the target recipient. This is the ID of the
+                system that sent the command for which this COMMAND_ACK is an acknowledgement.
+            
  */
 static inline uint8_t mavlink_msg_command_ack_get_target_component(const mavlink_message_t* msg)
 {

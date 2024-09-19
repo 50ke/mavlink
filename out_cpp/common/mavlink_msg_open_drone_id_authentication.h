@@ -5,15 +5,30 @@
 
 
 typedef struct __mavlink_open_drone_id_authentication_t {
- uint32_t timestamp; /*< [s] This field is only present for page 0. 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.*/
+ uint32_t timestamp; /*< [s] This field is only present for page 0. 32 bit Unix
+                Timestamp in seconds since 00:00:00 01/01/2019.
+            */
  uint8_t target_system; /*<  System ID (0 for broadcast).*/
  uint8_t target_component; /*<  Component ID (0 for broadcast).*/
- uint8_t id_or_mac[20]; /*<  Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html. */
- uint8_t authentication_type; /*<  Indicates the type of authentication.*/
+ uint8_t id_or_mac[20]; /*<  Only used for drone ID data received from other UAs. See detailed
+                description at https://mavlink.io/en/services/opendroneid.html.
+            */
+ uint8_t authentication_type; /*<  Indicates the type of
+                authentication.
+            */
  uint8_t data_page; /*<  Allowed range is 0 - 15.*/
- uint8_t last_page_index; /*<  This field is only present for page 0. Allowed range is 0 - 15. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.*/
- uint8_t length; /*< [bytes] This field is only present for page 0. Total bytes of authentication_data from all data pages. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.*/
- uint8_t authentication_data[23]; /*<  Opaque authentication data. For page 0, the size is only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion of the field.*/
+ uint8_t last_page_index; /*<  This field is only present for page 0. Allowed range is 0 - 15.
+                See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            */
+ uint8_t length; /*< [bytes] This field is only present for page 0. Total bytes of
+                authentication_data from all data pages. See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            */
+ uint8_t authentication_data[23]; /*<  Opaque authentication data. For page 0, the size is
+                only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion
+                of the field.
+            */
 } mavlink_open_drone_id_authentication_t;
 
 #define MAVLINK_MSG_ID_OPEN_DRONE_ID_AUTHENTICATION_LEN 53
@@ -68,13 +83,28 @@ typedef struct __mavlink_open_drone_id_authentication_t {
  *
  * @param target_system  System ID (0 for broadcast).
  * @param target_component  Component ID (0 for broadcast).
- * @param id_or_mac  Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html. 
- * @param authentication_type  Indicates the type of authentication.
+ * @param id_or_mac  Only used for drone ID data received from other UAs. See detailed
+                description at https://mavlink.io/en/services/opendroneid.html.
+            
+ * @param authentication_type  Indicates the type of
+                authentication.
+            
  * @param data_page  Allowed range is 0 - 15.
- * @param last_page_index  This field is only present for page 0. Allowed range is 0 - 15. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
- * @param length [bytes] This field is only present for page 0. Total bytes of authentication_data from all data pages. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
- * @param timestamp [s] This field is only present for page 0. 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.
- * @param authentication_data  Opaque authentication data. For page 0, the size is only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion of the field.
+ * @param last_page_index  This field is only present for page 0. Allowed range is 0 - 15.
+                See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            
+ * @param length [bytes] This field is only present for page 0. Total bytes of
+                authentication_data from all data pages. See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            
+ * @param timestamp [s] This field is only present for page 0. 32 bit Unix
+                Timestamp in seconds since 00:00:00 01/01/2019.
+            
+ * @param authentication_data  Opaque authentication data. For page 0, the size is
+                only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion
+                of the field.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_open_drone_id_authentication_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -119,13 +149,28 @@ static inline uint16_t mavlink_msg_open_drone_id_authentication_pack(uint8_t sys
  *
  * @param target_system  System ID (0 for broadcast).
  * @param target_component  Component ID (0 for broadcast).
- * @param id_or_mac  Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html. 
- * @param authentication_type  Indicates the type of authentication.
+ * @param id_or_mac  Only used for drone ID data received from other UAs. See detailed
+                description at https://mavlink.io/en/services/opendroneid.html.
+            
+ * @param authentication_type  Indicates the type of
+                authentication.
+            
  * @param data_page  Allowed range is 0 - 15.
- * @param last_page_index  This field is only present for page 0. Allowed range is 0 - 15. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
- * @param length [bytes] This field is only present for page 0. Total bytes of authentication_data from all data pages. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
- * @param timestamp [s] This field is only present for page 0. 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.
- * @param authentication_data  Opaque authentication data. For page 0, the size is only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion of the field.
+ * @param last_page_index  This field is only present for page 0. Allowed range is 0 - 15.
+                See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            
+ * @param length [bytes] This field is only present for page 0. Total bytes of
+                authentication_data from all data pages. See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            
+ * @param timestamp [s] This field is only present for page 0. 32 bit Unix
+                Timestamp in seconds since 00:00:00 01/01/2019.
+            
+ * @param authentication_data  Opaque authentication data. For page 0, the size is
+                only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion
+                of the field.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_open_drone_id_authentication_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -173,13 +218,28 @@ static inline uint16_t mavlink_msg_open_drone_id_authentication_pack_status(uint
  * @param msg The MAVLink message to compress the data into
  * @param target_system  System ID (0 for broadcast).
  * @param target_component  Component ID (0 for broadcast).
- * @param id_or_mac  Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html. 
- * @param authentication_type  Indicates the type of authentication.
+ * @param id_or_mac  Only used for drone ID data received from other UAs. See detailed
+                description at https://mavlink.io/en/services/opendroneid.html.
+            
+ * @param authentication_type  Indicates the type of
+                authentication.
+            
  * @param data_page  Allowed range is 0 - 15.
- * @param last_page_index  This field is only present for page 0. Allowed range is 0 - 15. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
- * @param length [bytes] This field is only present for page 0. Total bytes of authentication_data from all data pages. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
- * @param timestamp [s] This field is only present for page 0. 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.
- * @param authentication_data  Opaque authentication data. For page 0, the size is only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion of the field.
+ * @param last_page_index  This field is only present for page 0. Allowed range is 0 - 15.
+                See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            
+ * @param length [bytes] This field is only present for page 0. Total bytes of
+                authentication_data from all data pages. See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            
+ * @param timestamp [s] This field is only present for page 0. 32 bit Unix
+                Timestamp in seconds since 00:00:00 01/01/2019.
+            
+ * @param authentication_data  Opaque authentication data. For page 0, the size is
+                only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion
+                of the field.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_open_drone_id_authentication_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -263,13 +323,28 @@ static inline uint16_t mavlink_msg_open_drone_id_authentication_encode_status(ui
  *
  * @param target_system  System ID (0 for broadcast).
  * @param target_component  Component ID (0 for broadcast).
- * @param id_or_mac  Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html. 
- * @param authentication_type  Indicates the type of authentication.
+ * @param id_or_mac  Only used for drone ID data received from other UAs. See detailed
+                description at https://mavlink.io/en/services/opendroneid.html.
+            
+ * @param authentication_type  Indicates the type of
+                authentication.
+            
  * @param data_page  Allowed range is 0 - 15.
- * @param last_page_index  This field is only present for page 0. Allowed range is 0 - 15. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
- * @param length [bytes] This field is only present for page 0. Total bytes of authentication_data from all data pages. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
- * @param timestamp [s] This field is only present for page 0. 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.
- * @param authentication_data  Opaque authentication data. For page 0, the size is only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion of the field.
+ * @param last_page_index  This field is only present for page 0. Allowed range is 0 - 15.
+                See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            
+ * @param length [bytes] This field is only present for page 0. Total bytes of
+                authentication_data from all data pages. See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            
+ * @param timestamp [s] This field is only present for page 0. 32 bit Unix
+                Timestamp in seconds since 00:00:00 01/01/2019.
+            
+ * @param authentication_data  Opaque authentication data. For page 0, the size is
+                only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion
+                of the field.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -382,7 +457,9 @@ static inline uint8_t mavlink_msg_open_drone_id_authentication_get_target_compon
 /**
  * @brief Get field id_or_mac from open_drone_id_authentication message
  *
- * @return  Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html. 
+ * @return  Only used for drone ID data received from other UAs. See detailed
+                description at https://mavlink.io/en/services/opendroneid.html.
+            
  */
 static inline uint16_t mavlink_msg_open_drone_id_authentication_get_id_or_mac(const mavlink_message_t* msg, uint8_t *id_or_mac)
 {
@@ -392,7 +469,9 @@ static inline uint16_t mavlink_msg_open_drone_id_authentication_get_id_or_mac(co
 /**
  * @brief Get field authentication_type from open_drone_id_authentication message
  *
- * @return  Indicates the type of authentication.
+ * @return  Indicates the type of
+                authentication.
+            
  */
 static inline uint8_t mavlink_msg_open_drone_id_authentication_get_authentication_type(const mavlink_message_t* msg)
 {
@@ -412,7 +491,10 @@ static inline uint8_t mavlink_msg_open_drone_id_authentication_get_data_page(con
 /**
  * @brief Get field last_page_index from open_drone_id_authentication message
  *
- * @return  This field is only present for page 0. Allowed range is 0 - 15. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+ * @return  This field is only present for page 0. Allowed range is 0 - 15.
+                See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            
  */
 static inline uint8_t mavlink_msg_open_drone_id_authentication_get_last_page_index(const mavlink_message_t* msg)
 {
@@ -422,7 +504,10 @@ static inline uint8_t mavlink_msg_open_drone_id_authentication_get_last_page_ind
 /**
  * @brief Get field length from open_drone_id_authentication message
  *
- * @return [bytes] This field is only present for page 0. Total bytes of authentication_data from all data pages. See the description of struct ODID_Auth_data at https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+ * @return [bytes] This field is only present for page 0. Total bytes of
+                authentication_data from all data pages. See the description of struct ODID_Auth_data at
+                https://github.com/opendroneid/opendroneid-core-c/blob/master/libopendroneid/opendroneid.h.
+            
  */
 static inline uint8_t mavlink_msg_open_drone_id_authentication_get_length(const mavlink_message_t* msg)
 {
@@ -432,7 +517,9 @@ static inline uint8_t mavlink_msg_open_drone_id_authentication_get_length(const 
 /**
  * @brief Get field timestamp from open_drone_id_authentication message
  *
- * @return [s] This field is only present for page 0. 32 bit Unix Timestamp in seconds since 00:00:00 01/01/2019.
+ * @return [s] This field is only present for page 0. 32 bit Unix
+                Timestamp in seconds since 00:00:00 01/01/2019.
+            
  */
 static inline uint32_t mavlink_msg_open_drone_id_authentication_get_timestamp(const mavlink_message_t* msg)
 {
@@ -442,7 +529,10 @@ static inline uint32_t mavlink_msg_open_drone_id_authentication_get_timestamp(co
 /**
  * @brief Get field authentication_data from open_drone_id_authentication message
  *
- * @return  Opaque authentication data. For page 0, the size is only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion of the field.
+ * @return  Opaque authentication data. For page 0, the size is
+                only 17 bytes. For other pages, the size is 23 bytes. Shall be filled with nulls in the unused portion
+                of the field.
+            
  */
 static inline uint16_t mavlink_msg_open_drone_id_authentication_get_authentication_data(const mavlink_message_t* msg, uint8_t *authentication_data)
 {

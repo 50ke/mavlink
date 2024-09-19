@@ -11,9 +11,15 @@ typedef struct __mavlink_link_node_status_t {
  uint32_t messages_sent; /*<  Messages sent*/
  uint32_t messages_received; /*<  Messages received (estimated from counting seq)*/
  uint32_t messages_lost; /*<  Messages lost (estimated from counting seq)*/
- uint16_t rx_parse_err; /*< [bytes] Number of bytes that could not be parsed correctly.*/
- uint16_t tx_overflows; /*< [bytes] Transmit buffer overflows. This number wraps around as it reaches UINT16_MAX*/
- uint16_t rx_overflows; /*< [bytes] Receive buffer overflows. This number wraps around as it reaches UINT16_MAX*/
+ uint16_t rx_parse_err; /*< [bytes] Number of bytes that could not be parsed
+                correctly.
+            */
+ uint16_t tx_overflows; /*< [bytes] Transmit buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            */
+ uint16_t rx_overflows; /*< [bytes] Receive buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            */
  uint8_t tx_buf; /*< [%] Remaining free transmit buffer space*/
  uint8_t rx_buf; /*< [%] Remaining free receive buffer space*/
 } mavlink_link_node_status_t;
@@ -76,9 +82,15 @@ typedef struct __mavlink_link_node_status_t {
  * @param rx_buf [%] Remaining free receive buffer space
  * @param tx_rate [bytes/s] Transmit rate
  * @param rx_rate [bytes/s] Receive rate
- * @param rx_parse_err [bytes] Number of bytes that could not be parsed correctly.
- * @param tx_overflows [bytes] Transmit buffer overflows. This number wraps around as it reaches UINT16_MAX
- * @param rx_overflows [bytes] Receive buffer overflows. This number wraps around as it reaches UINT16_MAX
+ * @param rx_parse_err [bytes] Number of bytes that could not be parsed
+                correctly.
+            
+ * @param tx_overflows [bytes] Transmit buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            
+ * @param rx_overflows [bytes] Receive buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            
  * @param messages_sent  Messages sent
  * @param messages_received  Messages received (estimated from counting seq)
  * @param messages_lost  Messages lost (estimated from counting seq)
@@ -135,9 +147,15 @@ static inline uint16_t mavlink_msg_link_node_status_pack(uint8_t system_id, uint
  * @param rx_buf [%] Remaining free receive buffer space
  * @param tx_rate [bytes/s] Transmit rate
  * @param rx_rate [bytes/s] Receive rate
- * @param rx_parse_err [bytes] Number of bytes that could not be parsed correctly.
- * @param tx_overflows [bytes] Transmit buffer overflows. This number wraps around as it reaches UINT16_MAX
- * @param rx_overflows [bytes] Receive buffer overflows. This number wraps around as it reaches UINT16_MAX
+ * @param rx_parse_err [bytes] Number of bytes that could not be parsed
+                correctly.
+            
+ * @param tx_overflows [bytes] Transmit buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            
+ * @param rx_overflows [bytes] Receive buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            
  * @param messages_sent  Messages sent
  * @param messages_received  Messages received (estimated from counting seq)
  * @param messages_lost  Messages lost (estimated from counting seq)
@@ -197,9 +215,15 @@ static inline uint16_t mavlink_msg_link_node_status_pack_status(uint8_t system_i
  * @param rx_buf [%] Remaining free receive buffer space
  * @param tx_rate [bytes/s] Transmit rate
  * @param rx_rate [bytes/s] Receive rate
- * @param rx_parse_err [bytes] Number of bytes that could not be parsed correctly.
- * @param tx_overflows [bytes] Transmit buffer overflows. This number wraps around as it reaches UINT16_MAX
- * @param rx_overflows [bytes] Receive buffer overflows. This number wraps around as it reaches UINT16_MAX
+ * @param rx_parse_err [bytes] Number of bytes that could not be parsed
+                correctly.
+            
+ * @param tx_overflows [bytes] Transmit buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            
+ * @param rx_overflows [bytes] Receive buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            
  * @param messages_sent  Messages sent
  * @param messages_received  Messages received (estimated from counting seq)
  * @param messages_lost  Messages lost (estimated from counting seq)
@@ -295,9 +319,15 @@ static inline uint16_t mavlink_msg_link_node_status_encode_status(uint8_t system
  * @param rx_buf [%] Remaining free receive buffer space
  * @param tx_rate [bytes/s] Transmit rate
  * @param rx_rate [bytes/s] Receive rate
- * @param rx_parse_err [bytes] Number of bytes that could not be parsed correctly.
- * @param tx_overflows [bytes] Transmit buffer overflows. This number wraps around as it reaches UINT16_MAX
- * @param rx_overflows [bytes] Receive buffer overflows. This number wraps around as it reaches UINT16_MAX
+ * @param rx_parse_err [bytes] Number of bytes that could not be parsed
+                correctly.
+            
+ * @param tx_overflows [bytes] Transmit buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            
+ * @param rx_overflows [bytes] Receive buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            
  * @param messages_sent  Messages sent
  * @param messages_received  Messages received (estimated from counting seq)
  * @param messages_lost  Messages lost (estimated from counting seq)
@@ -455,7 +485,9 @@ static inline uint32_t mavlink_msg_link_node_status_get_rx_rate(const mavlink_me
 /**
  * @brief Get field rx_parse_err from link_node_status message
  *
- * @return [bytes] Number of bytes that could not be parsed correctly.
+ * @return [bytes] Number of bytes that could not be parsed
+                correctly.
+            
  */
 static inline uint16_t mavlink_msg_link_node_status_get_rx_parse_err(const mavlink_message_t* msg)
 {
@@ -465,7 +497,9 @@ static inline uint16_t mavlink_msg_link_node_status_get_rx_parse_err(const mavli
 /**
  * @brief Get field tx_overflows from link_node_status message
  *
- * @return [bytes] Transmit buffer overflows. This number wraps around as it reaches UINT16_MAX
+ * @return [bytes] Transmit buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            
  */
 static inline uint16_t mavlink_msg_link_node_status_get_tx_overflows(const mavlink_message_t* msg)
 {
@@ -475,7 +509,9 @@ static inline uint16_t mavlink_msg_link_node_status_get_tx_overflows(const mavli
 /**
  * @brief Get field rx_overflows from link_node_status message
  *
- * @return [bytes] Receive buffer overflows. This number wraps around as it reaches UINT16_MAX
+ * @return [bytes] Receive buffer overflows. This number wraps around
+                as it reaches UINT16_MAX
+            
  */
 static inline uint16_t mavlink_msg_link_node_status_get_rx_overflows(const mavlink_message_t* msg)
 {

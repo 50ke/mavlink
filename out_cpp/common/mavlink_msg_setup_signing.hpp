@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief SETUP_SIGNING message
  *
- * Setup a MAVLink2 signing key. If called with secret_key of all zero and zero initial_timestamp will disable signing
+ * Setup a MAVLink2 signing key. If called with secret_key of all zero and zero initial_timestamp
+                will disable signing
+            
  */
 struct SETUP_SIGNING : mavlink::Message {
     static constexpr msgid_t MSG_ID = 256;

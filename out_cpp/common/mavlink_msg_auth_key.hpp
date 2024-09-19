@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief AUTH_KEY message
  *
- * Emit an encrypted signature / key identifying this system. PLEASE NOTE: This protocol has been kept simple, so transmitting the key requires an encrypted channel for true safety.
+ * Emit an encrypted signature / key identifying this system. PLEASE NOTE: This protocol has been
+                kept simple, so transmitting the key requires an encrypted channel for true safety.
+            
  */
 struct AUTH_KEY : mavlink::Message {
     static constexpr msgid_t MSG_ID = 7;

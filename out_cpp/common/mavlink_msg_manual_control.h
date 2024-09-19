@@ -5,22 +5,66 @@
 
 MAVPACKED(
 typedef struct __mavlink_manual_control_t {
- int16_t x; /*<  X-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000) movement on a joystick and the pitch of a vehicle.*/
- int16_t y; /*<  Y-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement on a joystick and the roll of a vehicle.*/
- int16_t z; /*<  Z-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values are positive thrust, negative values are negative thrust.*/
- int16_t r; /*<  R-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.*/
- uint16_t buttons; /*<  A bitfield corresponding to the joystick buttons' 0-15 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 1.*/
+ int16_t x; /*<  X-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000)
+                movement on a joystick and the pitch of a vehicle.
+            */
+ int16_t y; /*<  Y-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement
+                on a joystick and the roll of a vehicle.
+            */
+ int16_t z; /*<  Z-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with
+                maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values
+                are positive thrust, negative values are negative thrust.
+            */
+ int16_t r; /*<  R-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with
+                counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
+            */
+ uint16_t buttons; /*<  A bitfield corresponding to the joystick buttons' 0-15 current state,
+                1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
+            */
  uint8_t target; /*<  The system to be controlled.*/
- uint16_t buttons2; /*<  A bitfield corresponding to the joystick buttons' 16-31 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.*/
- uint8_t enabled_extensions; /*<  Set bits to 1 to indicate which of the following extension fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5: aux4, bit 6: aux5, bit 7: aux6*/
- int16_t s; /*<  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is set. Set to 0 if invalid.*/
- int16_t t; /*<  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is set. Set to 0 if invalid.*/
- int16_t aux1; /*<  Aux continuous input field 1. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is unset.*/
- int16_t aux2; /*<  Aux continuous input field 2. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is unset.*/
- int16_t aux3; /*<  Aux continuous input field 3. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is unset.*/
- int16_t aux4; /*<  Aux continuous input field 4. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is unset.*/
- int16_t aux5; /*<  Aux continuous input field 5. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is unset.*/
- int16_t aux6; /*<  Aux continuous input field 6. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is unset.*/
+ uint16_t buttons2; /*<  A bitfield corresponding to the joystick buttons' 16-31 current
+                state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
+            */
+ uint8_t enabled_extensions; /*<  Set bits to 1 to indicate which of the following extension
+                fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5:
+                aux4, bit 6: aux5, bit 7: aux6
+            */
+ int16_t s; /*<  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            */
+ int16_t t; /*<  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            */
+ int16_t aux1; /*<  Aux continuous input field 1. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is
+                unset.
+            */
+ int16_t aux2; /*<  Aux continuous input field 2. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is
+                unset.
+            */
+ int16_t aux3; /*<  Aux continuous input field 3. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is
+                unset.
+            */
+ int16_t aux4; /*<  Aux continuous input field 4. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is
+                unset.
+            */
+ int16_t aux5; /*<  Aux continuous input field 5. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is
+                unset.
+            */
+ int16_t aux6; /*<  Aux continuous input field 6. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is
+                unset.
+            */
 }) mavlink_manual_control_t;
 
 #define MAVLINK_MSG_ID_MANUAL_CONTROL_LEN 30
@@ -87,21 +131,65 @@ typedef struct __mavlink_manual_control_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param target  The system to be controlled.
- * @param x  X-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000) movement on a joystick and the pitch of a vehicle.
- * @param y  Y-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement on a joystick and the roll of a vehicle.
- * @param z  Z-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values are positive thrust, negative values are negative thrust.
- * @param r  R-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
- * @param buttons  A bitfield corresponding to the joystick buttons' 0-15 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
- * @param buttons2  A bitfield corresponding to the joystick buttons' 16-31 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
- * @param enabled_extensions  Set bits to 1 to indicate which of the following extension fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5: aux4, bit 6: aux5, bit 7: aux6
- * @param s  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is set. Set to 0 if invalid.
- * @param t  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is set. Set to 0 if invalid.
- * @param aux1  Aux continuous input field 1. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is unset.
- * @param aux2  Aux continuous input field 2. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is unset.
- * @param aux3  Aux continuous input field 3. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is unset.
- * @param aux4  Aux continuous input field 4. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is unset.
- * @param aux5  Aux continuous input field 5. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is unset.
- * @param aux6  Aux continuous input field 6. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is unset.
+ * @param x  X-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000)
+                movement on a joystick and the pitch of a vehicle.
+            
+ * @param y  Y-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement
+                on a joystick and the roll of a vehicle.
+            
+ * @param z  Z-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with
+                maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values
+                are positive thrust, negative values are negative thrust.
+            
+ * @param r  R-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with
+                counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
+            
+ * @param buttons  A bitfield corresponding to the joystick buttons' 0-15 current state,
+                1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
+            
+ * @param buttons2  A bitfield corresponding to the joystick buttons' 16-31 current
+                state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
+            
+ * @param enabled_extensions  Set bits to 1 to indicate which of the following extension
+                fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5:
+                aux4, bit 6: aux5, bit 7: aux6
+            
+ * @param s  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            
+ * @param t  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            
+ * @param aux1  Aux continuous input field 1. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is
+                unset.
+            
+ * @param aux2  Aux continuous input field 2. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is
+                unset.
+            
+ * @param aux3  Aux continuous input field 3. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is
+                unset.
+            
+ * @param aux4  Aux continuous input field 4. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is
+                unset.
+            
+ * @param aux5  Aux continuous input field 5. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is
+                unset.
+            
+ * @param aux6  Aux continuous input field 6. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is
+                unset.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_manual_control_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -161,21 +249,65 @@ static inline uint16_t mavlink_msg_manual_control_pack(uint8_t system_id, uint8_
  * @param msg The MAVLink message to compress the data into
  *
  * @param target  The system to be controlled.
- * @param x  X-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000) movement on a joystick and the pitch of a vehicle.
- * @param y  Y-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement on a joystick and the roll of a vehicle.
- * @param z  Z-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values are positive thrust, negative values are negative thrust.
- * @param r  R-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
- * @param buttons  A bitfield corresponding to the joystick buttons' 0-15 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
- * @param buttons2  A bitfield corresponding to the joystick buttons' 16-31 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
- * @param enabled_extensions  Set bits to 1 to indicate which of the following extension fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5: aux4, bit 6: aux5, bit 7: aux6
- * @param s  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is set. Set to 0 if invalid.
- * @param t  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is set. Set to 0 if invalid.
- * @param aux1  Aux continuous input field 1. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is unset.
- * @param aux2  Aux continuous input field 2. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is unset.
- * @param aux3  Aux continuous input field 3. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is unset.
- * @param aux4  Aux continuous input field 4. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is unset.
- * @param aux5  Aux continuous input field 5. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is unset.
- * @param aux6  Aux continuous input field 6. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is unset.
+ * @param x  X-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000)
+                movement on a joystick and the pitch of a vehicle.
+            
+ * @param y  Y-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement
+                on a joystick and the roll of a vehicle.
+            
+ * @param z  Z-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with
+                maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values
+                are positive thrust, negative values are negative thrust.
+            
+ * @param r  R-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with
+                counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
+            
+ * @param buttons  A bitfield corresponding to the joystick buttons' 0-15 current state,
+                1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
+            
+ * @param buttons2  A bitfield corresponding to the joystick buttons' 16-31 current
+                state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
+            
+ * @param enabled_extensions  Set bits to 1 to indicate which of the following extension
+                fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5:
+                aux4, bit 6: aux5, bit 7: aux6
+            
+ * @param s  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            
+ * @param t  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            
+ * @param aux1  Aux continuous input field 1. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is
+                unset.
+            
+ * @param aux2  Aux continuous input field 2. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is
+                unset.
+            
+ * @param aux3  Aux continuous input field 3. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is
+                unset.
+            
+ * @param aux4  Aux continuous input field 4. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is
+                unset.
+            
+ * @param aux5  Aux continuous input field 5. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is
+                unset.
+            
+ * @param aux6  Aux continuous input field 6. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is
+                unset.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_manual_control_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -238,21 +370,65 @@ static inline uint16_t mavlink_msg_manual_control_pack_status(uint8_t system_id,
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param target  The system to be controlled.
- * @param x  X-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000) movement on a joystick and the pitch of a vehicle.
- * @param y  Y-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement on a joystick and the roll of a vehicle.
- * @param z  Z-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values are positive thrust, negative values are negative thrust.
- * @param r  R-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
- * @param buttons  A bitfield corresponding to the joystick buttons' 0-15 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
- * @param buttons2  A bitfield corresponding to the joystick buttons' 16-31 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
- * @param enabled_extensions  Set bits to 1 to indicate which of the following extension fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5: aux4, bit 6: aux5, bit 7: aux6
- * @param s  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is set. Set to 0 if invalid.
- * @param t  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is set. Set to 0 if invalid.
- * @param aux1  Aux continuous input field 1. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is unset.
- * @param aux2  Aux continuous input field 2. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is unset.
- * @param aux3  Aux continuous input field 3. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is unset.
- * @param aux4  Aux continuous input field 4. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is unset.
- * @param aux5  Aux continuous input field 5. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is unset.
- * @param aux6  Aux continuous input field 6. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is unset.
+ * @param x  X-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000)
+                movement on a joystick and the pitch of a vehicle.
+            
+ * @param y  Y-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement
+                on a joystick and the roll of a vehicle.
+            
+ * @param z  Z-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with
+                maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values
+                are positive thrust, negative values are negative thrust.
+            
+ * @param r  R-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with
+                counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
+            
+ * @param buttons  A bitfield corresponding to the joystick buttons' 0-15 current state,
+                1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
+            
+ * @param buttons2  A bitfield corresponding to the joystick buttons' 16-31 current
+                state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
+            
+ * @param enabled_extensions  Set bits to 1 to indicate which of the following extension
+                fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5:
+                aux4, bit 6: aux5, bit 7: aux6
+            
+ * @param s  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            
+ * @param t  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            
+ * @param aux1  Aux continuous input field 1. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is
+                unset.
+            
+ * @param aux2  Aux continuous input field 2. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is
+                unset.
+            
+ * @param aux3  Aux continuous input field 3. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is
+                unset.
+            
+ * @param aux4  Aux continuous input field 4. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is
+                unset.
+            
+ * @param aux5  Aux continuous input field 5. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is
+                unset.
+            
+ * @param aux6  Aux continuous input field 6. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is
+                unset.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_manual_control_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -351,21 +527,65 @@ static inline uint16_t mavlink_msg_manual_control_encode_status(uint8_t system_i
  * @param chan MAVLink channel to send the message
  *
  * @param target  The system to be controlled.
- * @param x  X-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000) movement on a joystick and the pitch of a vehicle.
- * @param y  Y-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement on a joystick and the roll of a vehicle.
- * @param z  Z-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values are positive thrust, negative values are negative thrust.
- * @param r  R-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
- * @param buttons  A bitfield corresponding to the joystick buttons' 0-15 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
- * @param buttons2  A bitfield corresponding to the joystick buttons' 16-31 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
- * @param enabled_extensions  Set bits to 1 to indicate which of the following extension fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5: aux4, bit 6: aux5, bit 7: aux6
- * @param s  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is set. Set to 0 if invalid.
- * @param t  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is set. Set to 0 if invalid.
- * @param aux1  Aux continuous input field 1. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is unset.
- * @param aux2  Aux continuous input field 2. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is unset.
- * @param aux3  Aux continuous input field 3. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is unset.
- * @param aux4  Aux continuous input field 4. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is unset.
- * @param aux5  Aux continuous input field 5. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is unset.
- * @param aux6  Aux continuous input field 6. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is unset.
+ * @param x  X-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000)
+                movement on a joystick and the pitch of a vehicle.
+            
+ * @param y  Y-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement
+                on a joystick and the roll of a vehicle.
+            
+ * @param z  Z-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with
+                maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values
+                are positive thrust, negative values are negative thrust.
+            
+ * @param r  R-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with
+                counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
+            
+ * @param buttons  A bitfield corresponding to the joystick buttons' 0-15 current state,
+                1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
+            
+ * @param buttons2  A bitfield corresponding to the joystick buttons' 16-31 current
+                state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
+            
+ * @param enabled_extensions  Set bits to 1 to indicate which of the following extension
+                fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5:
+                aux4, bit 6: aux5, bit 7: aux6
+            
+ * @param s  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            
+ * @param t  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            
+ * @param aux1  Aux continuous input field 1. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is
+                unset.
+            
+ * @param aux2  Aux continuous input field 2. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is
+                unset.
+            
+ * @param aux3  Aux continuous input field 3. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is
+                unset.
+            
+ * @param aux4  Aux continuous input field 4. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is
+                unset.
+            
+ * @param aux5  Aux continuous input field 5. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is
+                unset.
+            
+ * @param aux6  Aux continuous input field 6. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is
+                unset.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -500,7 +720,10 @@ static inline uint8_t mavlink_msg_manual_control_get_target(const mavlink_messag
 /**
  * @brief Get field x from manual_control message
  *
- * @return  X-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000) movement on a joystick and the pitch of a vehicle.
+ * @return  X-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to forward(1000)-backward(-1000)
+                movement on a joystick and the pitch of a vehicle.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_x(const mavlink_message_t* msg)
 {
@@ -510,7 +733,10 @@ static inline int16_t mavlink_msg_manual_control_get_x(const mavlink_message_t* 
 /**
  * @brief Get field y from manual_control message
  *
- * @return  Y-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement on a joystick and the roll of a vehicle.
+ * @return  Y-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to left(-1000)-right(1000) movement
+                on a joystick and the roll of a vehicle.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_y(const mavlink_message_t* msg)
 {
@@ -520,7 +746,11 @@ static inline int16_t mavlink_msg_manual_control_get_y(const mavlink_message_t* 
 /**
  * @brief Get field z from manual_control message
  *
- * @return  Z-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values are positive thrust, negative values are negative thrust.
+ * @return  Z-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a separate slider movement with
+                maximum being 1000 and minimum being -1000 on a joystick and the thrust of a vehicle. Positive values
+                are positive thrust, negative values are negative thrust.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_z(const mavlink_message_t* msg)
 {
@@ -530,7 +760,10 @@ static inline int16_t mavlink_msg_manual_control_get_z(const mavlink_message_t* 
 /**
  * @brief Get field r from manual_control message
  *
- * @return  R-axis, normalized to the range [-1000,1000]. A value of INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
+ * @return  R-axis, normalized to the range [-1000,1000]. A value of
+                INT16_MAX indicates that this axis is invalid. Generally corresponds to a twisting of the joystick, with
+                counter-clockwise being 1000 and clockwise being -1000, and the yaw of a vehicle.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_r(const mavlink_message_t* msg)
 {
@@ -540,7 +773,9 @@ static inline int16_t mavlink_msg_manual_control_get_r(const mavlink_message_t* 
 /**
  * @brief Get field buttons from manual_control message
  *
- * @return  A bitfield corresponding to the joystick buttons' 0-15 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
+ * @return  A bitfield corresponding to the joystick buttons' 0-15 current state,
+                1 for pressed, 0 for released. The lowest bit corresponds to Button 1.
+            
  */
 static inline uint16_t mavlink_msg_manual_control_get_buttons(const mavlink_message_t* msg)
 {
@@ -550,7 +785,9 @@ static inline uint16_t mavlink_msg_manual_control_get_buttons(const mavlink_mess
 /**
  * @brief Get field buttons2 from manual_control message
  *
- * @return  A bitfield corresponding to the joystick buttons' 16-31 current state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
+ * @return  A bitfield corresponding to the joystick buttons' 16-31 current
+                state, 1 for pressed, 0 for released. The lowest bit corresponds to Button 16.
+            
  */
 static inline uint16_t mavlink_msg_manual_control_get_buttons2(const mavlink_message_t* msg)
 {
@@ -560,7 +797,10 @@ static inline uint16_t mavlink_msg_manual_control_get_buttons2(const mavlink_mes
 /**
  * @brief Get field enabled_extensions from manual_control message
  *
- * @return  Set bits to 1 to indicate which of the following extension fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5: aux4, bit 6: aux5, bit 7: aux6
+ * @return  Set bits to 1 to indicate which of the following extension
+                fields contain valid data: bit 0: pitch, bit 1: roll, bit 2: aux1, bit 3: aux2, bit 4: aux3, bit 5:
+                aux4, bit 6: aux5, bit 7: aux6
+            
  */
 static inline uint8_t mavlink_msg_manual_control_get_enabled_extensions(const mavlink_message_t* msg)
 {
@@ -570,7 +810,10 @@ static inline uint8_t mavlink_msg_manual_control_get_enabled_extensions(const ma
 /**
  * @brief Get field s from manual_control message
  *
- * @return  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is set. Set to 0 if invalid.
+ * @return  Pitch-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to pitch on vehicles with additional degrees of freedom. Valid if bit 0 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_s(const mavlink_message_t* msg)
 {
@@ -580,7 +823,10 @@ static inline int16_t mavlink_msg_manual_control_get_s(const mavlink_message_t* 
 /**
  * @brief Get field t from manual_control message
  *
- * @return  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is set. Set to 0 if invalid.
+ * @return  Roll-only-axis, normalized to the range [-1000,1000]. Generally corresponds
+                to roll on vehicles with additional degrees of freedom. Valid if bit 1 of enabled_extensions field is
+                set. Set to 0 if invalid.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_t(const mavlink_message_t* msg)
 {
@@ -590,7 +836,10 @@ static inline int16_t mavlink_msg_manual_control_get_t(const mavlink_message_t* 
 /**
  * @brief Get field aux1 from manual_control message
  *
- * @return  Aux continuous input field 1. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is unset.
+ * @return  Aux continuous input field 1. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 2 of enabled_extensions field is set. 0 if bit 2 is
+                unset.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_aux1(const mavlink_message_t* msg)
 {
@@ -600,7 +849,10 @@ static inline int16_t mavlink_msg_manual_control_get_aux1(const mavlink_message_
 /**
  * @brief Get field aux2 from manual_control message
  *
- * @return  Aux continuous input field 2. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is unset.
+ * @return  Aux continuous input field 2. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 3 of enabled_extensions field is set. 0 if bit 3 is
+                unset.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_aux2(const mavlink_message_t* msg)
 {
@@ -610,7 +862,10 @@ static inline int16_t mavlink_msg_manual_control_get_aux2(const mavlink_message_
 /**
  * @brief Get field aux3 from manual_control message
  *
- * @return  Aux continuous input field 3. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is unset.
+ * @return  Aux continuous input field 3. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 4 of enabled_extensions field is set. 0 if bit 4 is
+                unset.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_aux3(const mavlink_message_t* msg)
 {
@@ -620,7 +875,10 @@ static inline int16_t mavlink_msg_manual_control_get_aux3(const mavlink_message_
 /**
  * @brief Get field aux4 from manual_control message
  *
- * @return  Aux continuous input field 4. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is unset.
+ * @return  Aux continuous input field 4. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 5 of enabled_extensions field is set. 0 if bit 5 is
+                unset.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_aux4(const mavlink_message_t* msg)
 {
@@ -630,7 +888,10 @@ static inline int16_t mavlink_msg_manual_control_get_aux4(const mavlink_message_
 /**
  * @brief Get field aux5 from manual_control message
  *
- * @return  Aux continuous input field 5. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is unset.
+ * @return  Aux continuous input field 5. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 6 of enabled_extensions field is set. 0 if bit 6 is
+                unset.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_aux5(const mavlink_message_t* msg)
 {
@@ -640,7 +901,10 @@ static inline int16_t mavlink_msg_manual_control_get_aux5(const mavlink_message_
 /**
  * @brief Get field aux6 from manual_control message
  *
- * @return  Aux continuous input field 6. Normalized in the range [-1000,1000]. Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is unset.
+ * @return  Aux continuous input field 6. Normalized in the range [-1000,1000].
+                Purpose defined by recipient. Valid data if bit 7 of enabled_extensions field is set. 0 if bit 7 is
+                unset.
+            
  */
 static inline int16_t mavlink_msg_manual_control_get_aux6(const mavlink_message_t* msg)
 {

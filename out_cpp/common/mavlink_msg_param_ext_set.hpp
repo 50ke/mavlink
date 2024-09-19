@@ -9,7 +9,11 @@ namespace msg {
 /**
  * @brief PARAM_EXT_SET message
  *
- * Set a parameter value. In order to deal with message loss (and retransmission of PARAM_EXT_SET), when setting a parameter value and the new value is the same as the current value, you will immediately get a PARAM_ACK_ACCEPTED response. If the current state is PARAM_ACK_IN_PROGRESS, you will accordingly receive a PARAM_ACK_IN_PROGRESS in response.
+ * Set a parameter value. In order to deal with message loss (and retransmission of
+                PARAM_EXT_SET), when setting a parameter value and the new value is the same as the current value, you
+                will immediately get a PARAM_ACK_ACCEPTED response. If the current state is PARAM_ACK_IN_PROGRESS, you
+                will accordingly receive a PARAM_ACK_IN_PROGRESS in response.
+            
  */
 struct PARAM_EXT_SET : mavlink::Message {
     static constexpr msgid_t MSG_ID = 323;
@@ -21,7 +25,10 @@ struct PARAM_EXT_SET : mavlink::Message {
 
     uint8_t target_system; /*<  System ID */
     uint8_t target_component; /*<  Component ID */
-    std::array<char, 16> param_id; /*<  Parameter id, terminated by NULL if the length is less than 16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars - applications have to provide 16+1 bytes storage if the ID is stored as string */
+    std::array<char, 16> param_id; /*<  Parameter id, terminated by NULL if the length is less than 16
+                human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars -
+                applications have to provide 16+1 bytes storage if the ID is stored as string
+             */
     std::array<char, 128> param_value; /*<  Parameter value */
     uint8_t param_type; /*<  Parameter type. */
 

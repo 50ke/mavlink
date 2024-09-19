@@ -21,8 +21,12 @@ struct HIGH_LATENCY2 : mavlink::Message {
 
     uint32_t timestamp; /*< [ms] Timestamp (milliseconds since boot or Unix epoch) */
     uint8_t type; /*<  Type of the MAV (quadrotor, helicopter, etc.) */
-    uint8_t autopilot; /*<  Autopilot type / class. Use MAV_AUTOPILOT_INVALID for components that are not flight controllers. */
-    uint16_t custom_mode; /*<  A bitfield for use for autopilot-specific flags (2 byte version). */
+    uint8_t autopilot; /*<  Autopilot type / class. Use
+                MAV_AUTOPILOT_INVALID for components that are not flight controllers.
+             */
+    uint16_t custom_mode; /*<  A bitfield for use for autopilot-specific flags
+                (2 byte version).
+             */
     int32_t latitude; /*< [degE7] Latitude */
     int32_t longitude; /*< [degE7] Longitude */
     int16_t altitude; /*< [m] Altitude above mean sea level */
@@ -42,7 +46,9 @@ struct HIGH_LATENCY2 : mavlink::Message {
     int8_t climb_rate; /*< [dm/s] Maximum climb rate magnitude since last message */
     int8_t battery; /*< [%] Battery level (-1 if field not provided). */
     uint16_t wp_num; /*<  Current waypoint number */
-    uint16_t failure_flags; /*<  Bitmap of failure flags. */
+    uint16_t failure_flags; /*<  Bitmap of failure
+                flags.
+             */
     int8_t custom0; /*<  Field for custom payload. */
     int8_t custom1; /*<  Field for custom payload. */
     int8_t custom2; /*<  Field for custom payload. */

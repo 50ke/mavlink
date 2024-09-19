@@ -21,11 +21,19 @@ struct COLLISION : mavlink::Message {
 
     uint8_t src; /*<  Collision data source */
     uint32_t id; /*<  Unique identifier, domain based on src field */
-    uint8_t action; /*<  Action that is being taken to avoid this collision */
-    uint8_t threat_level; /*<  How concerned the aircraft is about this collision */
+    uint8_t action; /*<  Action that is being taken to avoid this
+                collision
+             */
+    uint8_t threat_level; /*<  How concerned the aircraft is
+                about this collision
+             */
     float time_to_minimum_delta; /*< [s] Estimated time until collision occurs */
-    float altitude_minimum_delta; /*< [m] Closest vertical distance between vehicle and object */
-    float horizontal_minimum_delta; /*< [m] Closest horizontal distance between vehicle and object */
+    float altitude_minimum_delta; /*< [m] Closest vertical distance between vehicle and
+                object
+             */
+    float horizontal_minimum_delta; /*< [m] Closest horizontal distance between vehicle
+                and object
+             */
 
 
     inline std::string get_name(void) const override

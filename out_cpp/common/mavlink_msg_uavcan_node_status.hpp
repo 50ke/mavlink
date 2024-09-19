@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief UAVCAN_NODE_STATUS message
  *
- * General status information of an UAVCAN node. Please refer to the definition of the UAVCAN message "uavcan.protocol.NodeStatus" for the background information. The UAVCAN specification is available at http://uavcan.org.
+ * General status information of an UAVCAN node. Please refer to the definition of the UAVCAN
+                message "uavcan.protocol.NodeStatus" for the background information. The UAVCAN specification is
+                available at http://uavcan.org.
+            
  */
 struct UAVCAN_NODE_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 310;
@@ -19,7 +22,10 @@ struct UAVCAN_NODE_STATUS : mavlink::Message {
     static constexpr auto NAME = "UAVCAN_NODE_STATUS";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     uint32_t uptime_sec; /*< [s] Time since the start-up of the node. */
     uint8_t health; /*<  Generalized node health status. */
     uint8_t mode; /*<  Generalized operating mode. */

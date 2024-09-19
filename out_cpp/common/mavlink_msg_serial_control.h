@@ -8,7 +8,9 @@ typedef struct __mavlink_serial_control_t {
  uint32_t baudrate; /*< [bits/s] Baudrate of transfer. Zero means no change.*/
  uint16_t timeout; /*< [ms] Timeout for reply data*/
  uint8_t device; /*<  Serial control device type.*/
- uint8_t flags; /*<  Bitmap of serial control flags.*/
+ uint8_t flags; /*<  Bitmap of serial control
+                flags.
+            */
  uint8_t count; /*< [bytes] how many bytes in this transfer*/
  uint8_t data[70]; /*<  serial data*/
  uint8_t target_system; /*<  System ID*/
@@ -63,7 +65,9 @@ typedef struct __mavlink_serial_control_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param device  Serial control device type.
- * @param flags  Bitmap of serial control flags.
+ * @param flags  Bitmap of serial control
+                flags.
+            
  * @param timeout [ms] Timeout for reply data
  * @param baudrate [bits/s] Baudrate of transfer. Zero means no change.
  * @param count [bytes] how many bytes in this transfer
@@ -111,7 +115,9 @@ static inline uint16_t mavlink_msg_serial_control_pack(uint8_t system_id, uint8_
  * @param msg The MAVLink message to compress the data into
  *
  * @param device  Serial control device type.
- * @param flags  Bitmap of serial control flags.
+ * @param flags  Bitmap of serial control
+                flags.
+            
  * @param timeout [ms] Timeout for reply data
  * @param baudrate [bits/s] Baudrate of transfer. Zero means no change.
  * @param count [bytes] how many bytes in this transfer
@@ -162,7 +168,9 @@ static inline uint16_t mavlink_msg_serial_control_pack_status(uint8_t system_id,
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param device  Serial control device type.
- * @param flags  Bitmap of serial control flags.
+ * @param flags  Bitmap of serial control
+                flags.
+            
  * @param timeout [ms] Timeout for reply data
  * @param baudrate [bits/s] Baudrate of transfer. Zero means no change.
  * @param count [bytes] how many bytes in this transfer
@@ -249,7 +257,9 @@ static inline uint16_t mavlink_msg_serial_control_encode_status(uint8_t system_i
  * @param chan MAVLink channel to send the message
  *
  * @param device  Serial control device type.
- * @param flags  Bitmap of serial control flags.
+ * @param flags  Bitmap of serial control
+                flags.
+            
  * @param timeout [ms] Timeout for reply data
  * @param baudrate [bits/s] Baudrate of transfer. Zero means no change.
  * @param count [bytes] how many bytes in this transfer
@@ -354,7 +364,9 @@ static inline uint8_t mavlink_msg_serial_control_get_device(const mavlink_messag
 /**
  * @brief Get field flags from serial_control message
  *
- * @return  Bitmap of serial control flags.
+ * @return  Bitmap of serial control
+                flags.
+            
  */
 static inline uint8_t mavlink_msg_serial_control_get_flags(const mavlink_message_t* msg)
 {

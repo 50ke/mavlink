@@ -7,13 +7,24 @@
 typedef struct __mavlink_param_map_rc_t {
  float param_value0; /*<  Initial parameter value*/
  float scale; /*<  Scale, maps the RC range [-1, 1] to a parameter value*/
- float param_value_min; /*<  Minimum param value. The protocol does not define if this overwrites an onboard minimum value. (Depends on implementation)*/
- float param_value_max; /*<  Maximum param value. The protocol does not define if this overwrites an onboard maximum value. (Depends on implementation)*/
- int16_t param_index; /*<  Parameter index. Send -1 to use the param ID field as identifier (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.*/
+ float param_value_min; /*<  Minimum param value. The protocol does not define if this
+                overwrites an onboard minimum value. (Depends on implementation)
+            */
+ float param_value_max; /*<  Maximum param value. The protocol does not define if this
+                overwrites an onboard maximum value. (Depends on implementation)
+            */
+ int16_t param_index; /*<  Parameter index. Send -1 to use the param ID field as identifier
+                (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
+            */
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
- char param_id[16]; /*<  Onboard parameter id, terminated by NULL if the length is less than 16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars - applications have to provide 16+1 bytes storage if the ID is stored as string*/
- uint8_t parameter_rc_channel_index; /*<  Index of parameter RC channel. Not equal to the RC channel id. Typically corresponds to a potentiometer-knob on the RC.*/
+ char param_id[16]; /*<  Onboard parameter id, terminated by NULL if the length is less than
+                16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars -
+                applications have to provide 16+1 bytes storage if the ID is stored as string
+            */
+ uint8_t parameter_rc_channel_index; /*<  Index of parameter RC channel. Not equal to the RC
+                channel id. Typically corresponds to a potentiometer-knob on the RC.
+            */
 } mavlink_param_map_rc_t;
 
 #define MAVLINK_MSG_ID_PARAM_MAP_RC_LEN 37
@@ -67,13 +78,24 @@ typedef struct __mavlink_param_map_rc_t {
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param param_id  Onboard parameter id, terminated by NULL if the length is less than 16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars - applications have to provide 16+1 bytes storage if the ID is stored as string
- * @param param_index  Parameter index. Send -1 to use the param ID field as identifier (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
- * @param parameter_rc_channel_index  Index of parameter RC channel. Not equal to the RC channel id. Typically corresponds to a potentiometer-knob on the RC.
+ * @param param_id  Onboard parameter id, terminated by NULL if the length is less than
+                16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars -
+                applications have to provide 16+1 bytes storage if the ID is stored as string
+            
+ * @param param_index  Parameter index. Send -1 to use the param ID field as identifier
+                (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
+            
+ * @param parameter_rc_channel_index  Index of parameter RC channel. Not equal to the RC
+                channel id. Typically corresponds to a potentiometer-knob on the RC.
+            
  * @param param_value0  Initial parameter value
  * @param scale  Scale, maps the RC range [-1, 1] to a parameter value
- * @param param_value_min  Minimum param value. The protocol does not define if this overwrites an onboard minimum value. (Depends on implementation)
- * @param param_value_max  Maximum param value. The protocol does not define if this overwrites an onboard maximum value. (Depends on implementation)
+ * @param param_value_min  Minimum param value. The protocol does not define if this
+                overwrites an onboard minimum value. (Depends on implementation)
+            
+ * @param param_value_max  Maximum param value. The protocol does not define if this
+                overwrites an onboard maximum value. (Depends on implementation)
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_param_map_rc_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -118,13 +140,24 @@ static inline uint16_t mavlink_msg_param_map_rc_pack(uint8_t system_id, uint8_t 
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param param_id  Onboard parameter id, terminated by NULL if the length is less than 16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars - applications have to provide 16+1 bytes storage if the ID is stored as string
- * @param param_index  Parameter index. Send -1 to use the param ID field as identifier (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
- * @param parameter_rc_channel_index  Index of parameter RC channel. Not equal to the RC channel id. Typically corresponds to a potentiometer-knob on the RC.
+ * @param param_id  Onboard parameter id, terminated by NULL if the length is less than
+                16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars -
+                applications have to provide 16+1 bytes storage if the ID is stored as string
+            
+ * @param param_index  Parameter index. Send -1 to use the param ID field as identifier
+                (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
+            
+ * @param parameter_rc_channel_index  Index of parameter RC channel. Not equal to the RC
+                channel id. Typically corresponds to a potentiometer-knob on the RC.
+            
  * @param param_value0  Initial parameter value
  * @param scale  Scale, maps the RC range [-1, 1] to a parameter value
- * @param param_value_min  Minimum param value. The protocol does not define if this overwrites an onboard minimum value. (Depends on implementation)
- * @param param_value_max  Maximum param value. The protocol does not define if this overwrites an onboard maximum value. (Depends on implementation)
+ * @param param_value_min  Minimum param value. The protocol does not define if this
+                overwrites an onboard minimum value. (Depends on implementation)
+            
+ * @param param_value_max  Maximum param value. The protocol does not define if this
+                overwrites an onboard maximum value. (Depends on implementation)
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_param_map_rc_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -172,13 +205,24 @@ static inline uint16_t mavlink_msg_param_map_rc_pack_status(uint8_t system_id, u
  * @param msg The MAVLink message to compress the data into
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param param_id  Onboard parameter id, terminated by NULL if the length is less than 16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars - applications have to provide 16+1 bytes storage if the ID is stored as string
- * @param param_index  Parameter index. Send -1 to use the param ID field as identifier (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
- * @param parameter_rc_channel_index  Index of parameter RC channel. Not equal to the RC channel id. Typically corresponds to a potentiometer-knob on the RC.
+ * @param param_id  Onboard parameter id, terminated by NULL if the length is less than
+                16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars -
+                applications have to provide 16+1 bytes storage if the ID is stored as string
+            
+ * @param param_index  Parameter index. Send -1 to use the param ID field as identifier
+                (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
+            
+ * @param parameter_rc_channel_index  Index of parameter RC channel. Not equal to the RC
+                channel id. Typically corresponds to a potentiometer-knob on the RC.
+            
  * @param param_value0  Initial parameter value
  * @param scale  Scale, maps the RC range [-1, 1] to a parameter value
- * @param param_value_min  Minimum param value. The protocol does not define if this overwrites an onboard minimum value. (Depends on implementation)
- * @param param_value_max  Maximum param value. The protocol does not define if this overwrites an onboard maximum value. (Depends on implementation)
+ * @param param_value_min  Minimum param value. The protocol does not define if this
+                overwrites an onboard minimum value. (Depends on implementation)
+            
+ * @param param_value_max  Maximum param value. The protocol does not define if this
+                overwrites an onboard maximum value. (Depends on implementation)
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_param_map_rc_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -262,13 +306,24 @@ static inline uint16_t mavlink_msg_param_map_rc_encode_status(uint8_t system_id,
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param param_id  Onboard parameter id, terminated by NULL if the length is less than 16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars - applications have to provide 16+1 bytes storage if the ID is stored as string
- * @param param_index  Parameter index. Send -1 to use the param ID field as identifier (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
- * @param parameter_rc_channel_index  Index of parameter RC channel. Not equal to the RC channel id. Typically corresponds to a potentiometer-knob on the RC.
+ * @param param_id  Onboard parameter id, terminated by NULL if the length is less than
+                16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars -
+                applications have to provide 16+1 bytes storage if the ID is stored as string
+            
+ * @param param_index  Parameter index. Send -1 to use the param ID field as identifier
+                (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
+            
+ * @param parameter_rc_channel_index  Index of parameter RC channel. Not equal to the RC
+                channel id. Typically corresponds to a potentiometer-knob on the RC.
+            
  * @param param_value0  Initial parameter value
  * @param scale  Scale, maps the RC range [-1, 1] to a parameter value
- * @param param_value_min  Minimum param value. The protocol does not define if this overwrites an onboard minimum value. (Depends on implementation)
- * @param param_value_max  Maximum param value. The protocol does not define if this overwrites an onboard maximum value. (Depends on implementation)
+ * @param param_value_min  Minimum param value. The protocol does not define if this
+                overwrites an onboard minimum value. (Depends on implementation)
+            
+ * @param param_value_max  Maximum param value. The protocol does not define if this
+                overwrites an onboard maximum value. (Depends on implementation)
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -381,7 +436,10 @@ static inline uint8_t mavlink_msg_param_map_rc_get_target_component(const mavlin
 /**
  * @brief Get field param_id from param_map_rc message
  *
- * @return  Onboard parameter id, terminated by NULL if the length is less than 16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars - applications have to provide 16+1 bytes storage if the ID is stored as string
+ * @return  Onboard parameter id, terminated by NULL if the length is less than
+                16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars -
+                applications have to provide 16+1 bytes storage if the ID is stored as string
+            
  */
 static inline uint16_t mavlink_msg_param_map_rc_get_param_id(const mavlink_message_t* msg, char *param_id)
 {
@@ -391,7 +449,9 @@ static inline uint16_t mavlink_msg_param_map_rc_get_param_id(const mavlink_messa
 /**
  * @brief Get field param_index from param_map_rc message
  *
- * @return  Parameter index. Send -1 to use the param ID field as identifier (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
+ * @return  Parameter index. Send -1 to use the param ID field as identifier
+                (else the param id will be ignored), send -2 to disable any existing map for this rc_channel_index.
+            
  */
 static inline int16_t mavlink_msg_param_map_rc_get_param_index(const mavlink_message_t* msg)
 {
@@ -401,7 +461,9 @@ static inline int16_t mavlink_msg_param_map_rc_get_param_index(const mavlink_mes
 /**
  * @brief Get field parameter_rc_channel_index from param_map_rc message
  *
- * @return  Index of parameter RC channel. Not equal to the RC channel id. Typically corresponds to a potentiometer-knob on the RC.
+ * @return  Index of parameter RC channel. Not equal to the RC
+                channel id. Typically corresponds to a potentiometer-knob on the RC.
+            
  */
 static inline uint8_t mavlink_msg_param_map_rc_get_parameter_rc_channel_index(const mavlink_message_t* msg)
 {
@@ -431,7 +493,9 @@ static inline float mavlink_msg_param_map_rc_get_scale(const mavlink_message_t* 
 /**
  * @brief Get field param_value_min from param_map_rc message
  *
- * @return  Minimum param value. The protocol does not define if this overwrites an onboard minimum value. (Depends on implementation)
+ * @return  Minimum param value. The protocol does not define if this
+                overwrites an onboard minimum value. (Depends on implementation)
+            
  */
 static inline float mavlink_msg_param_map_rc_get_param_value_min(const mavlink_message_t* msg)
 {
@@ -441,7 +505,9 @@ static inline float mavlink_msg_param_map_rc_get_param_value_min(const mavlink_m
 /**
  * @brief Get field param_value_max from param_map_rc message
  *
- * @return  Maximum param value. The protocol does not define if this overwrites an onboard maximum value. (Depends on implementation)
+ * @return  Maximum param value. The protocol does not define if this
+                overwrites an onboard maximum value. (Depends on implementation)
+            
  */
 static inline float mavlink_msg_param_map_rc_get_param_value_max(const mavlink_message_t* msg)
 {

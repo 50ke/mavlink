@@ -5,26 +5,59 @@
 
 
 typedef struct __mavlink_battery_info_t {
- float discharge_minimum_voltage; /*< [V] Minimum per-cell voltage when discharging. 0: field not provided.*/
- float charging_minimum_voltage; /*< [V] Minimum per-cell voltage when charging. 0: field not provided.*/
- float resting_minimum_voltage; /*< [V] Minimum per-cell voltage when resting. 0: field not provided.*/
- float charging_maximum_voltage; /*< [V] Maximum per-cell voltage when charged. 0: field not provided.*/
- float charging_maximum_current; /*< [A] Maximum pack continuous charge current. 0: field not provided.*/
- float nominal_voltage; /*< [V] Battery nominal voltage. Used for conversion between Wh and Ah. 0: field not provided.*/
- float discharge_maximum_current; /*< [A] Maximum pack discharge current. 0: field not provided.*/
- float discharge_maximum_burst_current; /*< [A] Maximum pack discharge burst current. 0: field not provided.*/
- float design_capacity; /*< [Ah] Fully charged design capacity. 0: field not provided.*/
- float full_charge_capacity; /*< [Ah] Predicted battery capacity when fully charged (accounting for battery degradation). NAN: field not provided.*/
- uint16_t cycle_count; /*<  Lifetime count of the number of charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.*/
+ float discharge_minimum_voltage; /*< [V] Minimum per-cell voltage when
+                discharging. 0: field not provided.
+            */
+ float charging_minimum_voltage; /*< [V] Minimum per-cell voltage when
+                charging. 0: field not provided.
+            */
+ float resting_minimum_voltage; /*< [V] Minimum per-cell voltage when
+                resting. 0: field not provided.
+            */
+ float charging_maximum_voltage; /*< [V] Maximum per-cell voltage when
+                charged. 0: field not provided.
+            */
+ float charging_maximum_current; /*< [A] Maximum pack continuous charge
+                current. 0: field not provided.
+            */
+ float nominal_voltage; /*< [V] Battery nominal voltage. Used for
+                conversion between Wh and Ah. 0: field not provided.
+            */
+ float discharge_maximum_current; /*< [A] Maximum pack discharge current.
+                0: field not provided.
+            */
+ float discharge_maximum_burst_current; /*< [A] Maximum pack discharge
+                burst current. 0: field not provided.
+            */
+ float design_capacity; /*< [Ah] Fully charged design capacity. 0: field
+                not provided.
+            */
+ float full_charge_capacity; /*< [Ah] Predicted battery capacity when
+                fully charged (accounting for battery degradation). NAN: field not provided.
+            */
+ uint16_t cycle_count; /*<  Lifetime count of the number of
+                charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+            */
  uint16_t weight; /*< [g] Battery weight. 0: field not provided.*/
  uint8_t id; /*<  Battery ID*/
  uint8_t battery_function; /*<  Function of the battery.*/
  uint8_t type; /*<  Type (chemistry) of the battery.*/
- uint8_t state_of_health; /*< [%] State of Health (SOH) estimate. Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.*/
- uint8_t cells_in_series; /*<  Number of battery cells in series. 0: field not provided.*/
- char manufacture_date[9]; /*<  Manufacture date (DDMMYYYY) in ASCII characters, 0 terminated. All 0: field not provided.*/
- char serial_number[32]; /*<  Serial number in ASCII characters, 0 terminated. All 0: field not provided.*/
- char name[50]; /*<  Battery device name. Formatted as manufacturer name then product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not provided.*/
+ uint8_t state_of_health; /*< [%] State of Health (SOH) estimate.
+                Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
+            */
+ uint8_t cells_in_series; /*<  Number of battery cells in series. 0: field not
+                provided.
+            */
+ char manufacture_date[9]; /*<  Manufacture date (DDMMYYYY) in ASCII characters,
+                0 terminated. All 0: field not provided.
+            */
+ char serial_number[32]; /*<  Serial number in ASCII characters, 0 terminated.
+                All 0: field not provided.
+            */
+ char name[50]; /*<  Battery device name. Formatted as manufacturer name then
+                product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not
+                provided.
+            */
 } mavlink_battery_info_t;
 
 #define MAVLINK_MSG_ID_BATTERY_INFO_LEN 140
@@ -103,23 +136,56 @@ typedef struct __mavlink_battery_info_t {
  * @param id  Battery ID
  * @param battery_function  Function of the battery.
  * @param type  Type (chemistry) of the battery.
- * @param state_of_health [%] State of Health (SOH) estimate. Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
- * @param cells_in_series  Number of battery cells in series. 0: field not provided.
- * @param cycle_count  Lifetime count of the number of charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+ * @param state_of_health [%] State of Health (SOH) estimate.
+                Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
+            
+ * @param cells_in_series  Number of battery cells in series. 0: field not
+                provided.
+            
+ * @param cycle_count  Lifetime count of the number of
+                charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+            
  * @param weight [g] Battery weight. 0: field not provided.
- * @param discharge_minimum_voltage [V] Minimum per-cell voltage when discharging. 0: field not provided.
- * @param charging_minimum_voltage [V] Minimum per-cell voltage when charging. 0: field not provided.
- * @param resting_minimum_voltage [V] Minimum per-cell voltage when resting. 0: field not provided.
- * @param charging_maximum_voltage [V] Maximum per-cell voltage when charged. 0: field not provided.
- * @param charging_maximum_current [A] Maximum pack continuous charge current. 0: field not provided.
- * @param nominal_voltage [V] Battery nominal voltage. Used for conversion between Wh and Ah. 0: field not provided.
- * @param discharge_maximum_current [A] Maximum pack discharge current. 0: field not provided.
- * @param discharge_maximum_burst_current [A] Maximum pack discharge burst current. 0: field not provided.
- * @param design_capacity [Ah] Fully charged design capacity. 0: field not provided.
- * @param full_charge_capacity [Ah] Predicted battery capacity when fully charged (accounting for battery degradation). NAN: field not provided.
- * @param manufacture_date  Manufacture date (DDMMYYYY) in ASCII characters, 0 terminated. All 0: field not provided.
- * @param serial_number  Serial number in ASCII characters, 0 terminated. All 0: field not provided.
- * @param name  Battery device name. Formatted as manufacturer name then product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not provided.
+ * @param discharge_minimum_voltage [V] Minimum per-cell voltage when
+                discharging. 0: field not provided.
+            
+ * @param charging_minimum_voltage [V] Minimum per-cell voltage when
+                charging. 0: field not provided.
+            
+ * @param resting_minimum_voltage [V] Minimum per-cell voltage when
+                resting. 0: field not provided.
+            
+ * @param charging_maximum_voltage [V] Maximum per-cell voltage when
+                charged. 0: field not provided.
+            
+ * @param charging_maximum_current [A] Maximum pack continuous charge
+                current. 0: field not provided.
+            
+ * @param nominal_voltage [V] Battery nominal voltage. Used for
+                conversion between Wh and Ah. 0: field not provided.
+            
+ * @param discharge_maximum_current [A] Maximum pack discharge current.
+                0: field not provided.
+            
+ * @param discharge_maximum_burst_current [A] Maximum pack discharge
+                burst current. 0: field not provided.
+            
+ * @param design_capacity [Ah] Fully charged design capacity. 0: field
+                not provided.
+            
+ * @param full_charge_capacity [Ah] Predicted battery capacity when
+                fully charged (accounting for battery degradation). NAN: field not provided.
+            
+ * @param manufacture_date  Manufacture date (DDMMYYYY) in ASCII characters,
+                0 terminated. All 0: field not provided.
+            
+ * @param serial_number  Serial number in ASCII characters, 0 terminated.
+                All 0: field not provided.
+            
+ * @param name  Battery device name. Formatted as manufacturer name then
+                product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not
+                provided.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_battery_info_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -187,23 +253,56 @@ static inline uint16_t mavlink_msg_battery_info_pack(uint8_t system_id, uint8_t 
  * @param id  Battery ID
  * @param battery_function  Function of the battery.
  * @param type  Type (chemistry) of the battery.
- * @param state_of_health [%] State of Health (SOH) estimate. Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
- * @param cells_in_series  Number of battery cells in series. 0: field not provided.
- * @param cycle_count  Lifetime count of the number of charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+ * @param state_of_health [%] State of Health (SOH) estimate.
+                Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
+            
+ * @param cells_in_series  Number of battery cells in series. 0: field not
+                provided.
+            
+ * @param cycle_count  Lifetime count of the number of
+                charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+            
  * @param weight [g] Battery weight. 0: field not provided.
- * @param discharge_minimum_voltage [V] Minimum per-cell voltage when discharging. 0: field not provided.
- * @param charging_minimum_voltage [V] Minimum per-cell voltage when charging. 0: field not provided.
- * @param resting_minimum_voltage [V] Minimum per-cell voltage when resting. 0: field not provided.
- * @param charging_maximum_voltage [V] Maximum per-cell voltage when charged. 0: field not provided.
- * @param charging_maximum_current [A] Maximum pack continuous charge current. 0: field not provided.
- * @param nominal_voltage [V] Battery nominal voltage. Used for conversion between Wh and Ah. 0: field not provided.
- * @param discharge_maximum_current [A] Maximum pack discharge current. 0: field not provided.
- * @param discharge_maximum_burst_current [A] Maximum pack discharge burst current. 0: field not provided.
- * @param design_capacity [Ah] Fully charged design capacity. 0: field not provided.
- * @param full_charge_capacity [Ah] Predicted battery capacity when fully charged (accounting for battery degradation). NAN: field not provided.
- * @param manufacture_date  Manufacture date (DDMMYYYY) in ASCII characters, 0 terminated. All 0: field not provided.
- * @param serial_number  Serial number in ASCII characters, 0 terminated. All 0: field not provided.
- * @param name  Battery device name. Formatted as manufacturer name then product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not provided.
+ * @param discharge_minimum_voltage [V] Minimum per-cell voltage when
+                discharging. 0: field not provided.
+            
+ * @param charging_minimum_voltage [V] Minimum per-cell voltage when
+                charging. 0: field not provided.
+            
+ * @param resting_minimum_voltage [V] Minimum per-cell voltage when
+                resting. 0: field not provided.
+            
+ * @param charging_maximum_voltage [V] Maximum per-cell voltage when
+                charged. 0: field not provided.
+            
+ * @param charging_maximum_current [A] Maximum pack continuous charge
+                current. 0: field not provided.
+            
+ * @param nominal_voltage [V] Battery nominal voltage. Used for
+                conversion between Wh and Ah. 0: field not provided.
+            
+ * @param discharge_maximum_current [A] Maximum pack discharge current.
+                0: field not provided.
+            
+ * @param discharge_maximum_burst_current [A] Maximum pack discharge
+                burst current. 0: field not provided.
+            
+ * @param design_capacity [Ah] Fully charged design capacity. 0: field
+                not provided.
+            
+ * @param full_charge_capacity [Ah] Predicted battery capacity when
+                fully charged (accounting for battery degradation). NAN: field not provided.
+            
+ * @param manufacture_date  Manufacture date (DDMMYYYY) in ASCII characters,
+                0 terminated. All 0: field not provided.
+            
+ * @param serial_number  Serial number in ASCII characters, 0 terminated.
+                All 0: field not provided.
+            
+ * @param name  Battery device name. Formatted as manufacturer name then
+                product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not
+                provided.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_battery_info_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -274,23 +373,56 @@ static inline uint16_t mavlink_msg_battery_info_pack_status(uint8_t system_id, u
  * @param id  Battery ID
  * @param battery_function  Function of the battery.
  * @param type  Type (chemistry) of the battery.
- * @param state_of_health [%] State of Health (SOH) estimate. Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
- * @param cells_in_series  Number of battery cells in series. 0: field not provided.
- * @param cycle_count  Lifetime count of the number of charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+ * @param state_of_health [%] State of Health (SOH) estimate.
+                Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
+            
+ * @param cells_in_series  Number of battery cells in series. 0: field not
+                provided.
+            
+ * @param cycle_count  Lifetime count of the number of
+                charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+            
  * @param weight [g] Battery weight. 0: field not provided.
- * @param discharge_minimum_voltage [V] Minimum per-cell voltage when discharging. 0: field not provided.
- * @param charging_minimum_voltage [V] Minimum per-cell voltage when charging. 0: field not provided.
- * @param resting_minimum_voltage [V] Minimum per-cell voltage when resting. 0: field not provided.
- * @param charging_maximum_voltage [V] Maximum per-cell voltage when charged. 0: field not provided.
- * @param charging_maximum_current [A] Maximum pack continuous charge current. 0: field not provided.
- * @param nominal_voltage [V] Battery nominal voltage. Used for conversion between Wh and Ah. 0: field not provided.
- * @param discharge_maximum_current [A] Maximum pack discharge current. 0: field not provided.
- * @param discharge_maximum_burst_current [A] Maximum pack discharge burst current. 0: field not provided.
- * @param design_capacity [Ah] Fully charged design capacity. 0: field not provided.
- * @param full_charge_capacity [Ah] Predicted battery capacity when fully charged (accounting for battery degradation). NAN: field not provided.
- * @param manufacture_date  Manufacture date (DDMMYYYY) in ASCII characters, 0 terminated. All 0: field not provided.
- * @param serial_number  Serial number in ASCII characters, 0 terminated. All 0: field not provided.
- * @param name  Battery device name. Formatted as manufacturer name then product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not provided.
+ * @param discharge_minimum_voltage [V] Minimum per-cell voltage when
+                discharging. 0: field not provided.
+            
+ * @param charging_minimum_voltage [V] Minimum per-cell voltage when
+                charging. 0: field not provided.
+            
+ * @param resting_minimum_voltage [V] Minimum per-cell voltage when
+                resting. 0: field not provided.
+            
+ * @param charging_maximum_voltage [V] Maximum per-cell voltage when
+                charged. 0: field not provided.
+            
+ * @param charging_maximum_current [A] Maximum pack continuous charge
+                current. 0: field not provided.
+            
+ * @param nominal_voltage [V] Battery nominal voltage. Used for
+                conversion between Wh and Ah. 0: field not provided.
+            
+ * @param discharge_maximum_current [A] Maximum pack discharge current.
+                0: field not provided.
+            
+ * @param discharge_maximum_burst_current [A] Maximum pack discharge
+                burst current. 0: field not provided.
+            
+ * @param design_capacity [Ah] Fully charged design capacity. 0: field
+                not provided.
+            
+ * @param full_charge_capacity [Ah] Predicted battery capacity when
+                fully charged (accounting for battery degradation). NAN: field not provided.
+            
+ * @param manufacture_date  Manufacture date (DDMMYYYY) in ASCII characters,
+                0 terminated. All 0: field not provided.
+            
+ * @param serial_number  Serial number in ASCII characters, 0 terminated.
+                All 0: field not provided.
+            
+ * @param name  Battery device name. Formatted as manufacturer name then
+                product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not
+                provided.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_battery_info_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -397,23 +529,56 @@ static inline uint16_t mavlink_msg_battery_info_encode_status(uint8_t system_id,
  * @param id  Battery ID
  * @param battery_function  Function of the battery.
  * @param type  Type (chemistry) of the battery.
- * @param state_of_health [%] State of Health (SOH) estimate. Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
- * @param cells_in_series  Number of battery cells in series. 0: field not provided.
- * @param cycle_count  Lifetime count of the number of charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+ * @param state_of_health [%] State of Health (SOH) estimate.
+                Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
+            
+ * @param cells_in_series  Number of battery cells in series. 0: field not
+                provided.
+            
+ * @param cycle_count  Lifetime count of the number of
+                charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+            
  * @param weight [g] Battery weight. 0: field not provided.
- * @param discharge_minimum_voltage [V] Minimum per-cell voltage when discharging. 0: field not provided.
- * @param charging_minimum_voltage [V] Minimum per-cell voltage when charging. 0: field not provided.
- * @param resting_minimum_voltage [V] Minimum per-cell voltage when resting. 0: field not provided.
- * @param charging_maximum_voltage [V] Maximum per-cell voltage when charged. 0: field not provided.
- * @param charging_maximum_current [A] Maximum pack continuous charge current. 0: field not provided.
- * @param nominal_voltage [V] Battery nominal voltage. Used for conversion between Wh and Ah. 0: field not provided.
- * @param discharge_maximum_current [A] Maximum pack discharge current. 0: field not provided.
- * @param discharge_maximum_burst_current [A] Maximum pack discharge burst current. 0: field not provided.
- * @param design_capacity [Ah] Fully charged design capacity. 0: field not provided.
- * @param full_charge_capacity [Ah] Predicted battery capacity when fully charged (accounting for battery degradation). NAN: field not provided.
- * @param manufacture_date  Manufacture date (DDMMYYYY) in ASCII characters, 0 terminated. All 0: field not provided.
- * @param serial_number  Serial number in ASCII characters, 0 terminated. All 0: field not provided.
- * @param name  Battery device name. Formatted as manufacturer name then product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not provided.
+ * @param discharge_minimum_voltage [V] Minimum per-cell voltage when
+                discharging. 0: field not provided.
+            
+ * @param charging_minimum_voltage [V] Minimum per-cell voltage when
+                charging. 0: field not provided.
+            
+ * @param resting_minimum_voltage [V] Minimum per-cell voltage when
+                resting. 0: field not provided.
+            
+ * @param charging_maximum_voltage [V] Maximum per-cell voltage when
+                charged. 0: field not provided.
+            
+ * @param charging_maximum_current [A] Maximum pack continuous charge
+                current. 0: field not provided.
+            
+ * @param nominal_voltage [V] Battery nominal voltage. Used for
+                conversion between Wh and Ah. 0: field not provided.
+            
+ * @param discharge_maximum_current [A] Maximum pack discharge current.
+                0: field not provided.
+            
+ * @param discharge_maximum_burst_current [A] Maximum pack discharge
+                burst current. 0: field not provided.
+            
+ * @param design_capacity [Ah] Fully charged design capacity. 0: field
+                not provided.
+            
+ * @param full_charge_capacity [Ah] Predicted battery capacity when
+                fully charged (accounting for battery degradation). NAN: field not provided.
+            
+ * @param manufacture_date  Manufacture date (DDMMYYYY) in ASCII characters,
+                0 terminated. All 0: field not provided.
+            
+ * @param serial_number  Serial number in ASCII characters, 0 terminated.
+                All 0: field not provided.
+            
+ * @param name  Battery device name. Formatted as manufacturer name then
+                product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not
+                provided.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -580,7 +745,9 @@ static inline uint8_t mavlink_msg_battery_info_get_type(const mavlink_message_t*
 /**
  * @brief Get field state_of_health from battery_info message
  *
- * @return [%] State of Health (SOH) estimate. Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
+ * @return [%] State of Health (SOH) estimate.
+                Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
+            
  */
 static inline uint8_t mavlink_msg_battery_info_get_state_of_health(const mavlink_message_t* msg)
 {
@@ -590,7 +757,9 @@ static inline uint8_t mavlink_msg_battery_info_get_state_of_health(const mavlink
 /**
  * @brief Get field cells_in_series from battery_info message
  *
- * @return  Number of battery cells in series. 0: field not provided.
+ * @return  Number of battery cells in series. 0: field not
+                provided.
+            
  */
 static inline uint8_t mavlink_msg_battery_info_get_cells_in_series(const mavlink_message_t* msg)
 {
@@ -600,7 +769,9 @@ static inline uint8_t mavlink_msg_battery_info_get_cells_in_series(const mavlink
 /**
  * @brief Get field cycle_count from battery_info message
  *
- * @return  Lifetime count of the number of charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+ * @return  Lifetime count of the number of
+                charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+            
  */
 static inline uint16_t mavlink_msg_battery_info_get_cycle_count(const mavlink_message_t* msg)
 {
@@ -620,7 +791,9 @@ static inline uint16_t mavlink_msg_battery_info_get_weight(const mavlink_message
 /**
  * @brief Get field discharge_minimum_voltage from battery_info message
  *
- * @return [V] Minimum per-cell voltage when discharging. 0: field not provided.
+ * @return [V] Minimum per-cell voltage when
+                discharging. 0: field not provided.
+            
  */
 static inline float mavlink_msg_battery_info_get_discharge_minimum_voltage(const mavlink_message_t* msg)
 {
@@ -630,7 +803,9 @@ static inline float mavlink_msg_battery_info_get_discharge_minimum_voltage(const
 /**
  * @brief Get field charging_minimum_voltage from battery_info message
  *
- * @return [V] Minimum per-cell voltage when charging. 0: field not provided.
+ * @return [V] Minimum per-cell voltage when
+                charging. 0: field not provided.
+            
  */
 static inline float mavlink_msg_battery_info_get_charging_minimum_voltage(const mavlink_message_t* msg)
 {
@@ -640,7 +815,9 @@ static inline float mavlink_msg_battery_info_get_charging_minimum_voltage(const 
 /**
  * @brief Get field resting_minimum_voltage from battery_info message
  *
- * @return [V] Minimum per-cell voltage when resting. 0: field not provided.
+ * @return [V] Minimum per-cell voltage when
+                resting. 0: field not provided.
+            
  */
 static inline float mavlink_msg_battery_info_get_resting_minimum_voltage(const mavlink_message_t* msg)
 {
@@ -650,7 +827,9 @@ static inline float mavlink_msg_battery_info_get_resting_minimum_voltage(const m
 /**
  * @brief Get field charging_maximum_voltage from battery_info message
  *
- * @return [V] Maximum per-cell voltage when charged. 0: field not provided.
+ * @return [V] Maximum per-cell voltage when
+                charged. 0: field not provided.
+            
  */
 static inline float mavlink_msg_battery_info_get_charging_maximum_voltage(const mavlink_message_t* msg)
 {
@@ -660,7 +839,9 @@ static inline float mavlink_msg_battery_info_get_charging_maximum_voltage(const 
 /**
  * @brief Get field charging_maximum_current from battery_info message
  *
- * @return [A] Maximum pack continuous charge current. 0: field not provided.
+ * @return [A] Maximum pack continuous charge
+                current. 0: field not provided.
+            
  */
 static inline float mavlink_msg_battery_info_get_charging_maximum_current(const mavlink_message_t* msg)
 {
@@ -670,7 +851,9 @@ static inline float mavlink_msg_battery_info_get_charging_maximum_current(const 
 /**
  * @brief Get field nominal_voltage from battery_info message
  *
- * @return [V] Battery nominal voltage. Used for conversion between Wh and Ah. 0: field not provided.
+ * @return [V] Battery nominal voltage. Used for
+                conversion between Wh and Ah. 0: field not provided.
+            
  */
 static inline float mavlink_msg_battery_info_get_nominal_voltage(const mavlink_message_t* msg)
 {
@@ -680,7 +863,9 @@ static inline float mavlink_msg_battery_info_get_nominal_voltage(const mavlink_m
 /**
  * @brief Get field discharge_maximum_current from battery_info message
  *
- * @return [A] Maximum pack discharge current. 0: field not provided.
+ * @return [A] Maximum pack discharge current.
+                0: field not provided.
+            
  */
 static inline float mavlink_msg_battery_info_get_discharge_maximum_current(const mavlink_message_t* msg)
 {
@@ -690,7 +875,9 @@ static inline float mavlink_msg_battery_info_get_discharge_maximum_current(const
 /**
  * @brief Get field discharge_maximum_burst_current from battery_info message
  *
- * @return [A] Maximum pack discharge burst current. 0: field not provided.
+ * @return [A] Maximum pack discharge
+                burst current. 0: field not provided.
+            
  */
 static inline float mavlink_msg_battery_info_get_discharge_maximum_burst_current(const mavlink_message_t* msg)
 {
@@ -700,7 +887,9 @@ static inline float mavlink_msg_battery_info_get_discharge_maximum_burst_current
 /**
  * @brief Get field design_capacity from battery_info message
  *
- * @return [Ah] Fully charged design capacity. 0: field not provided.
+ * @return [Ah] Fully charged design capacity. 0: field
+                not provided.
+            
  */
 static inline float mavlink_msg_battery_info_get_design_capacity(const mavlink_message_t* msg)
 {
@@ -710,7 +899,9 @@ static inline float mavlink_msg_battery_info_get_design_capacity(const mavlink_m
 /**
  * @brief Get field full_charge_capacity from battery_info message
  *
- * @return [Ah] Predicted battery capacity when fully charged (accounting for battery degradation). NAN: field not provided.
+ * @return [Ah] Predicted battery capacity when
+                fully charged (accounting for battery degradation). NAN: field not provided.
+            
  */
 static inline float mavlink_msg_battery_info_get_full_charge_capacity(const mavlink_message_t* msg)
 {
@@ -720,7 +911,9 @@ static inline float mavlink_msg_battery_info_get_full_charge_capacity(const mavl
 /**
  * @brief Get field manufacture_date from battery_info message
  *
- * @return  Manufacture date (DDMMYYYY) in ASCII characters, 0 terminated. All 0: field not provided.
+ * @return  Manufacture date (DDMMYYYY) in ASCII characters,
+                0 terminated. All 0: field not provided.
+            
  */
 static inline uint16_t mavlink_msg_battery_info_get_manufacture_date(const mavlink_message_t* msg, char *manufacture_date)
 {
@@ -730,7 +923,9 @@ static inline uint16_t mavlink_msg_battery_info_get_manufacture_date(const mavli
 /**
  * @brief Get field serial_number from battery_info message
  *
- * @return  Serial number in ASCII characters, 0 terminated. All 0: field not provided.
+ * @return  Serial number in ASCII characters, 0 terminated.
+                All 0: field not provided.
+            
  */
 static inline uint16_t mavlink_msg_battery_info_get_serial_number(const mavlink_message_t* msg, char *serial_number)
 {
@@ -740,7 +935,10 @@ static inline uint16_t mavlink_msg_battery_info_get_serial_number(const mavlink_
 /**
  * @brief Get field name from battery_info message
  *
- * @return  Battery device name. Formatted as manufacturer name then product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not provided.
+ * @return  Battery device name. Formatted as manufacturer name then
+                product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not
+                provided.
+            
  */
 static inline uint16_t mavlink_msg_battery_info_get_name(const mavlink_message_t* msg, char *name)
 {

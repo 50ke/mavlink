@@ -7,13 +7,26 @@
 typedef struct __mavlink_camera_thermal_range_t {
  uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot).*/
  float max; /*< [degC] Temperature max.*/
- float max_point_x; /*<  Temperature max point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.*/
- float max_point_y; /*<  Temperature max point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.*/
+ float max_point_x; /*<  Temperature max point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            */
+ float max_point_y; /*<  Temperature max point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            */
  float min; /*< [degC] Temperature min.*/
- float min_point_x; /*<  Temperature min point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.*/
- float min_point_y; /*<  Temperature min point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.*/
- uint8_t stream_id; /*<  Video Stream ID (1 for first, 2 for second, etc.)*/
- uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).*/
+ float min_point_x; /*<  Temperature min point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            */
+ float min_point_y; /*<  Temperature min point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            */
+ uint8_t stream_id; /*<  Video Stream ID (1 for first, 2 for
+                second, etc.)
+            */
+ uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            */
 } mavlink_camera_thermal_range_t;
 
 #define MAVLINK_MSG_ID_CAMERA_THERMAL_RANGE_LEN 30
@@ -66,14 +79,27 @@ typedef struct __mavlink_camera_thermal_range_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param stream_id  Video Stream ID (1 for first, 2 for second, etc.)
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param stream_id  Video Stream ID (1 for first, 2 for
+                second, etc.)
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @param max [degC] Temperature max.
- * @param max_point_x  Temperature max point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.
- * @param max_point_y  Temperature max point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.
+ * @param max_point_x  Temperature max point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            
+ * @param max_point_y  Temperature max point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            
  * @param min [degC] Temperature min.
- * @param min_point_x  Temperature min point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.
- * @param min_point_y  Temperature min point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.
+ * @param min_point_x  Temperature min point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            
+ * @param min_point_y  Temperature min point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_thermal_range_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -119,14 +145,27 @@ static inline uint16_t mavlink_msg_camera_thermal_range_pack(uint8_t system_id, 
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param stream_id  Video Stream ID (1 for first, 2 for second, etc.)
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param stream_id  Video Stream ID (1 for first, 2 for
+                second, etc.)
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @param max [degC] Temperature max.
- * @param max_point_x  Temperature max point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.
- * @param max_point_y  Temperature max point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.
+ * @param max_point_x  Temperature max point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            
+ * @param max_point_y  Temperature max point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            
  * @param min [degC] Temperature min.
- * @param min_point_x  Temperature min point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.
- * @param min_point_y  Temperature min point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.
+ * @param min_point_x  Temperature min point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            
+ * @param min_point_y  Temperature min point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_thermal_range_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -175,14 +214,27 @@ static inline uint16_t mavlink_msg_camera_thermal_range_pack_status(uint8_t syst
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param stream_id  Video Stream ID (1 for first, 2 for second, etc.)
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param stream_id  Video Stream ID (1 for first, 2 for
+                second, etc.)
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @param max [degC] Temperature max.
- * @param max_point_x  Temperature max point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.
- * @param max_point_y  Temperature max point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.
+ * @param max_point_x  Temperature max point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            
+ * @param max_point_y  Temperature max point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            
  * @param min [degC] Temperature min.
- * @param min_point_x  Temperature min point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.
- * @param min_point_y  Temperature min point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.
+ * @param min_point_x  Temperature min point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            
+ * @param min_point_y  Temperature min point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_thermal_range_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -267,14 +319,27 @@ static inline uint16_t mavlink_msg_camera_thermal_range_encode_status(uint8_t sy
  * @param chan MAVLink channel to send the message
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param stream_id  Video Stream ID (1 for first, 2 for second, etc.)
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param stream_id  Video Stream ID (1 for first, 2 for
+                second, etc.)
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @param max [degC] Temperature max.
- * @param max_point_x  Temperature max point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.
- * @param max_point_y  Temperature max point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.
+ * @param max_point_x  Temperature max point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            
+ * @param max_point_y  Temperature max point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            
  * @param min [degC] Temperature min.
- * @param min_point_x  Temperature min point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.
- * @param min_point_y  Temperature min point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.
+ * @param min_point_x  Temperature min point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            
+ * @param min_point_y  Temperature min point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -381,7 +446,9 @@ static inline uint32_t mavlink_msg_camera_thermal_range_get_time_boot_ms(const m
 /**
  * @brief Get field stream_id from camera_thermal_range message
  *
- * @return  Video Stream ID (1 for first, 2 for second, etc.)
+ * @return  Video Stream ID (1 for first, 2 for
+                second, etc.)
+            
  */
 static inline uint8_t mavlink_msg_camera_thermal_range_get_stream_id(const mavlink_message_t* msg)
 {
@@ -391,7 +458,10 @@ static inline uint8_t mavlink_msg_camera_thermal_range_get_stream_id(const mavli
 /**
  * @brief Get field camera_device_id from camera_thermal_range message
  *
- * @return  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @return  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 static inline uint8_t mavlink_msg_camera_thermal_range_get_camera_device_id(const mavlink_message_t* msg)
 {
@@ -411,7 +481,9 @@ static inline float mavlink_msg_camera_thermal_range_get_max(const mavlink_messa
 /**
  * @brief Get field max_point_x from camera_thermal_range message
  *
- * @return  Temperature max point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.
+ * @return  Temperature max point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            
  */
 static inline float mavlink_msg_camera_thermal_range_get_max_point_x(const mavlink_message_t* msg)
 {
@@ -421,7 +493,9 @@ static inline float mavlink_msg_camera_thermal_range_get_max_point_x(const mavli
 /**
  * @brief Get field max_point_y from camera_thermal_range message
  *
- * @return  Temperature max point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.
+ * @return  Temperature max point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            
  */
 static inline float mavlink_msg_camera_thermal_range_get_max_point_y(const mavlink_message_t* msg)
 {
@@ -441,7 +515,9 @@ static inline float mavlink_msg_camera_thermal_range_get_min(const mavlink_messa
 /**
  * @brief Get field min_point_x from camera_thermal_range message
  *
- * @return  Temperature min point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown.
+ * @return  Temperature min point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+            
  */
 static inline float mavlink_msg_camera_thermal_range_get_min_point_x(const mavlink_message_t* msg)
 {
@@ -451,7 +527,9 @@ static inline float mavlink_msg_camera_thermal_range_get_min_point_x(const mavli
 /**
  * @brief Get field min_point_y from camera_thermal_range message
  *
- * @return  Temperature min point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown.
+ * @return  Temperature min point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+            
  */
 static inline float mavlink_msg_camera_thermal_range_get_min_point_y(const mavlink_message_t* msg)
 {

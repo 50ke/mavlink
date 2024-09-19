@@ -6,12 +6,28 @@
 MAVPACKED(
 typedef struct __mavlink_mission_current_t {
  uint16_t seq; /*<  Sequence*/
- uint16_t total; /*<  Total number of mission items on vehicle (on last item, sequence == total). If the autopilot stores its home location as part of the mission this will be excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.*/
- uint8_t mission_state; /*<  Mission state machine state. MISSION_STATE_UNKNOWN if state reporting not supported.*/
- uint8_t mission_mode; /*<  Vehicle is in a mode that can execute mission items or suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).*/
- uint32_t mission_id; /*<  Id of current on-vehicle mission plan, or 0 if IDs are not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type. The same value is returned on mission upload (in the MISSION_ACK).*/
- uint32_t fence_id; /*<  Id of current on-vehicle fence plan, or 0 if IDs are not supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The same value is returned on fence upload (in the MISSION_ACK).*/
- uint32_t rally_points_id; /*<  Id of current on-vehicle rally point plan, or 0 if IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).*/
+ uint16_t total; /*<  Total number of mission items on vehicle (on last
+                item, sequence == total). If the autopilot stores its home location as part of the mission this will be
+                excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
+            */
+ uint8_t mission_state; /*<  Mission state machine state.
+                MISSION_STATE_UNKNOWN if state reporting not supported.
+            */
+ uint8_t mission_mode; /*<  Vehicle is in a mode that can execute mission items or
+                suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
+            */
+ uint32_t mission_id; /*<  Id of current on-vehicle mission plan, or 0 if IDs are
+                not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type.
+                The same value is returned on mission upload (in the MISSION_ACK).
+            */
+ uint32_t fence_id; /*<  Id of current on-vehicle fence plan, or 0 if IDs are not
+                supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The
+                same value is returned on fence upload (in the MISSION_ACK).
+            */
+ uint32_t rally_points_id; /*<  Id of current on-vehicle rally point plan, or 0 if
+                IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the
+                rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+            */
 }) mavlink_mission_current_t;
 
 #define MAVLINK_MSG_ID_MISSION_CURRENT_LEN 18
@@ -60,12 +76,28 @@ typedef struct __mavlink_mission_current_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param seq  Sequence
- * @param total  Total number of mission items on vehicle (on last item, sequence == total). If the autopilot stores its home location as part of the mission this will be excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
- * @param mission_state  Mission state machine state. MISSION_STATE_UNKNOWN if state reporting not supported.
- * @param mission_mode  Vehicle is in a mode that can execute mission items or suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
- * @param mission_id  Id of current on-vehicle mission plan, or 0 if IDs are not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type. The same value is returned on mission upload (in the MISSION_ACK).
- * @param fence_id  Id of current on-vehicle fence plan, or 0 if IDs are not supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The same value is returned on fence upload (in the MISSION_ACK).
- * @param rally_points_id  Id of current on-vehicle rally point plan, or 0 if IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+ * @param total  Total number of mission items on vehicle (on last
+                item, sequence == total). If the autopilot stores its home location as part of the mission this will be
+                excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
+            
+ * @param mission_state  Mission state machine state.
+                MISSION_STATE_UNKNOWN if state reporting not supported.
+            
+ * @param mission_mode  Vehicle is in a mode that can execute mission items or
+                suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
+            
+ * @param mission_id  Id of current on-vehicle mission plan, or 0 if IDs are
+                not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type.
+                The same value is returned on mission upload (in the MISSION_ACK).
+            
+ * @param fence_id  Id of current on-vehicle fence plan, or 0 if IDs are not
+                supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The
+                same value is returned on fence upload (in the MISSION_ACK).
+            
+ * @param rally_points_id  Id of current on-vehicle rally point plan, or 0 if
+                IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the
+                rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_current_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -107,12 +139,28 @@ static inline uint16_t mavlink_msg_mission_current_pack(uint8_t system_id, uint8
  * @param msg The MAVLink message to compress the data into
  *
  * @param seq  Sequence
- * @param total  Total number of mission items on vehicle (on last item, sequence == total). If the autopilot stores its home location as part of the mission this will be excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
- * @param mission_state  Mission state machine state. MISSION_STATE_UNKNOWN if state reporting not supported.
- * @param mission_mode  Vehicle is in a mode that can execute mission items or suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
- * @param mission_id  Id of current on-vehicle mission plan, or 0 if IDs are not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type. The same value is returned on mission upload (in the MISSION_ACK).
- * @param fence_id  Id of current on-vehicle fence plan, or 0 if IDs are not supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The same value is returned on fence upload (in the MISSION_ACK).
- * @param rally_points_id  Id of current on-vehicle rally point plan, or 0 if IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+ * @param total  Total number of mission items on vehicle (on last
+                item, sequence == total). If the autopilot stores its home location as part of the mission this will be
+                excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
+            
+ * @param mission_state  Mission state machine state.
+                MISSION_STATE_UNKNOWN if state reporting not supported.
+            
+ * @param mission_mode  Vehicle is in a mode that can execute mission items or
+                suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
+            
+ * @param mission_id  Id of current on-vehicle mission plan, or 0 if IDs are
+                not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type.
+                The same value is returned on mission upload (in the MISSION_ACK).
+            
+ * @param fence_id  Id of current on-vehicle fence plan, or 0 if IDs are not
+                supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The
+                same value is returned on fence upload (in the MISSION_ACK).
+            
+ * @param rally_points_id  Id of current on-vehicle rally point plan, or 0 if
+                IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the
+                rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_current_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -157,12 +205,28 @@ static inline uint16_t mavlink_msg_mission_current_pack_status(uint8_t system_id
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param seq  Sequence
- * @param total  Total number of mission items on vehicle (on last item, sequence == total). If the autopilot stores its home location as part of the mission this will be excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
- * @param mission_state  Mission state machine state. MISSION_STATE_UNKNOWN if state reporting not supported.
- * @param mission_mode  Vehicle is in a mode that can execute mission items or suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
- * @param mission_id  Id of current on-vehicle mission plan, or 0 if IDs are not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type. The same value is returned on mission upload (in the MISSION_ACK).
- * @param fence_id  Id of current on-vehicle fence plan, or 0 if IDs are not supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The same value is returned on fence upload (in the MISSION_ACK).
- * @param rally_points_id  Id of current on-vehicle rally point plan, or 0 if IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+ * @param total  Total number of mission items on vehicle (on last
+                item, sequence == total). If the autopilot stores its home location as part of the mission this will be
+                excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
+            
+ * @param mission_state  Mission state machine state.
+                MISSION_STATE_UNKNOWN if state reporting not supported.
+            
+ * @param mission_mode  Vehicle is in a mode that can execute mission items or
+                suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
+            
+ * @param mission_id  Id of current on-vehicle mission plan, or 0 if IDs are
+                not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type.
+                The same value is returned on mission upload (in the MISSION_ACK).
+            
+ * @param fence_id  Id of current on-vehicle fence plan, or 0 if IDs are not
+                supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The
+                same value is returned on fence upload (in the MISSION_ACK).
+            
+ * @param rally_points_id  Id of current on-vehicle rally point plan, or 0 if
+                IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the
+                rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_current_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -243,12 +307,28 @@ static inline uint16_t mavlink_msg_mission_current_encode_status(uint8_t system_
  * @param chan MAVLink channel to send the message
  *
  * @param seq  Sequence
- * @param total  Total number of mission items on vehicle (on last item, sequence == total). If the autopilot stores its home location as part of the mission this will be excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
- * @param mission_state  Mission state machine state. MISSION_STATE_UNKNOWN if state reporting not supported.
- * @param mission_mode  Vehicle is in a mode that can execute mission items or suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
- * @param mission_id  Id of current on-vehicle mission plan, or 0 if IDs are not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type. The same value is returned on mission upload (in the MISSION_ACK).
- * @param fence_id  Id of current on-vehicle fence plan, or 0 if IDs are not supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The same value is returned on fence upload (in the MISSION_ACK).
- * @param rally_points_id  Id of current on-vehicle rally point plan, or 0 if IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+ * @param total  Total number of mission items on vehicle (on last
+                item, sequence == total). If the autopilot stores its home location as part of the mission this will be
+                excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
+            
+ * @param mission_state  Mission state machine state.
+                MISSION_STATE_UNKNOWN if state reporting not supported.
+            
+ * @param mission_mode  Vehicle is in a mode that can execute mission items or
+                suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
+            
+ * @param mission_id  Id of current on-vehicle mission plan, or 0 if IDs are
+                not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type.
+                The same value is returned on mission upload (in the MISSION_ACK).
+            
+ * @param fence_id  Id of current on-vehicle fence plan, or 0 if IDs are not
+                supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The
+                same value is returned on fence upload (in the MISSION_ACK).
+            
+ * @param rally_points_id  Id of current on-vehicle rally point plan, or 0 if
+                IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the
+                rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -347,7 +427,10 @@ static inline uint16_t mavlink_msg_mission_current_get_seq(const mavlink_message
 /**
  * @brief Get field total from mission_current message
  *
- * @return  Total number of mission items on vehicle (on last item, sequence == total). If the autopilot stores its home location as part of the mission this will be excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
+ * @return  Total number of mission items on vehicle (on last
+                item, sequence == total). If the autopilot stores its home location as part of the mission this will be
+                excluded from the total. 0: Not supported, UINT16_MAX if no mission is present on the vehicle.
+            
  */
 static inline uint16_t mavlink_msg_mission_current_get_total(const mavlink_message_t* msg)
 {
@@ -357,7 +440,9 @@ static inline uint16_t mavlink_msg_mission_current_get_total(const mavlink_messa
 /**
  * @brief Get field mission_state from mission_current message
  *
- * @return  Mission state machine state. MISSION_STATE_UNKNOWN if state reporting not supported.
+ * @return  Mission state machine state.
+                MISSION_STATE_UNKNOWN if state reporting not supported.
+            
  */
 static inline uint8_t mavlink_msg_mission_current_get_mission_state(const mavlink_message_t* msg)
 {
@@ -367,7 +452,9 @@ static inline uint8_t mavlink_msg_mission_current_get_mission_state(const mavlin
 /**
  * @brief Get field mission_mode from mission_current message
  *
- * @return  Vehicle is in a mode that can execute mission items or suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
+ * @return  Vehicle is in a mode that can execute mission items or
+                suspended. 0: Unknown, 1: In mission mode, 2: Suspended (not in mission mode).
+            
  */
 static inline uint8_t mavlink_msg_mission_current_get_mission_mode(const mavlink_message_t* msg)
 {
@@ -377,7 +464,10 @@ static inline uint8_t mavlink_msg_mission_current_get_mission_mode(const mavlink
 /**
  * @brief Get field mission_id from mission_current message
  *
- * @return  Id of current on-vehicle mission plan, or 0 if IDs are not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type. The same value is returned on mission upload (in the MISSION_ACK).
+ * @return  Id of current on-vehicle mission plan, or 0 if IDs are
+                not supported or there is no mission loaded. GCS can use this to track changes to the mission plan type.
+                The same value is returned on mission upload (in the MISSION_ACK).
+            
  */
 static inline uint32_t mavlink_msg_mission_current_get_mission_id(const mavlink_message_t* msg)
 {
@@ -387,7 +477,10 @@ static inline uint32_t mavlink_msg_mission_current_get_mission_id(const mavlink_
 /**
  * @brief Get field fence_id from mission_current message
  *
- * @return  Id of current on-vehicle fence plan, or 0 if IDs are not supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The same value is returned on fence upload (in the MISSION_ACK).
+ * @return  Id of current on-vehicle fence plan, or 0 if IDs are not
+                supported or there is no fence loaded. GCS can use this to track changes to the fence plan type. The
+                same value is returned on fence upload (in the MISSION_ACK).
+            
  */
 static inline uint32_t mavlink_msg_mission_current_get_fence_id(const mavlink_message_t* msg)
 {
@@ -397,7 +490,10 @@ static inline uint32_t mavlink_msg_mission_current_get_fence_id(const mavlink_me
 /**
  * @brief Get field rally_points_id from mission_current message
  *
- * @return  Id of current on-vehicle rally point plan, or 0 if IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+ * @return  Id of current on-vehicle rally point plan, or 0 if
+                IDs are not supported or there are no rally points loaded. GCS can use this to track changes to the
+                rally point plan type. The same value is returned on rally point upload (in the MISSION_ACK).
+            
  */
 static inline uint32_t mavlink_msg_mission_current_get_rally_points_id(const mavlink_message_t* msg)
 {

@@ -10,6 +10,7 @@ namespace msg {
  * @brief RESPONSE_EVENT_ERROR message
  *
  * Response to a REQUEST_EVENT in case of an error (e.g. the event is not available anymore).
+            
  */
 struct RESPONSE_EVENT_ERROR : mavlink::Message {
     static constexpr msgid_t MSG_ID = 413;
@@ -22,7 +23,9 @@ struct RESPONSE_EVENT_ERROR : mavlink::Message {
     uint8_t target_system; /*<  System ID */
     uint8_t target_component; /*<  Component ID */
     uint16_t sequence; /*<  Sequence number. */
-    uint16_t sequence_oldest_available; /*<  Oldest Sequence number that is still available after the sequence set in REQUEST_EVENT. */
+    uint16_t sequence_oldest_available; /*<  Oldest Sequence number that is still available after
+                the sequence set in REQUEST_EVENT.
+             */
     uint8_t reason; /*<  Error reason. */
 
 

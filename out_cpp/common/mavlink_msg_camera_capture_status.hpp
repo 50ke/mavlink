@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief CAMERA_CAPTURE_STATUS message
  *
- * Information about the status of a capture. Can be requested with a MAV_CMD_REQUEST_MESSAGE command.
+ * Information about the status of a capture. Can be requested with a MAV_CMD_REQUEST_MESSAGE
+                command.
+            
  */
 struct CAMERA_CAPTURE_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 262;
@@ -20,13 +22,25 @@ struct CAMERA_CAPTURE_STATUS : mavlink::Message {
 
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
-    uint8_t image_status; /*<  Current status of image capturing (0: idle, 1: capture in progress, 2: interval set but idle, 3: interval set and capture in progress) */
-    uint8_t video_status; /*<  Current status of video capturing (0: idle, 1: capture in progress) */
+    uint8_t image_status; /*<  Current status of image capturing (0: idle, 1: capture in
+                progress, 2: interval set but idle, 3: interval set and capture in progress)
+             */
+    uint8_t video_status; /*<  Current status of video capturing (0: idle, 1: capture in
+                progress)
+             */
     float image_interval; /*< [s] Image capture interval */
-    uint32_t recording_time_ms; /*< [ms] Elapsed time since recording started (0: Not supported/available). A GCS should compute recording time and use non-zero values of this field to correct any discrepancy. */
+    uint32_t recording_time_ms; /*< [ms] Elapsed time since recording started (0: Not
+                supported/available). A GCS should compute recording time and use non-zero values of this field to
+                correct any discrepancy.
+             */
     float available_capacity; /*< [MiB] Available storage capacity. */
-    int32_t image_count; /*<  Total number of images captured ('forever', or until reset using MAV_CMD_STORAGE_FORMAT). */
-    uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id). */
+    int32_t image_count; /*<  Total number of images captured ('forever', or until reset using
+                MAV_CMD_STORAGE_FORMAT).
+             */
+    uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+             */
 
 
     inline std::string get_name(void) const override

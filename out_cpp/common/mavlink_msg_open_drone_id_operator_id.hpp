@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief OPEN_DRONE_ID_OPERATOR_ID message
  *
- * Data for filling the OpenDroneID Operator ID message, which contains the CAA (Civil Aviation Authority) issued operator ID.
+ * Data for filling the OpenDroneID Operator ID message, which contains the CAA (Civil Aviation
+                Authority) issued operator ID.
+            
  */
 struct OPEN_DRONE_ID_OPERATOR_ID : mavlink::Message {
     static constexpr msgid_t MSG_ID = 12905;
@@ -21,9 +23,15 @@ struct OPEN_DRONE_ID_OPERATOR_ID : mavlink::Message {
 
     uint8_t target_system; /*<  System ID (0 for broadcast). */
     uint8_t target_component; /*<  Component ID (0 for broadcast). */
-    std::array<uint8_t, 20> id_or_mac; /*<  Only used for drone ID data received from other UAs. See detailed description at https://mavlink.io/en/services/opendroneid.html.  */
-    uint8_t operator_id_type; /*<  Indicates the type of the operator_id field. */
-    std::array<char, 20> operator_id; /*<  Text description or numeric value expressed as ASCII characters. Shall be filled with nulls in the unused portion of the field. */
+    std::array<uint8_t, 20> id_or_mac; /*<  Only used for drone ID data received from other UAs. See detailed
+                description at https://mavlink.io/en/services/opendroneid.html.
+             */
+    uint8_t operator_id_type; /*<  Indicates the type of the
+                operator_id field.
+             */
+    std::array<char, 20> operator_id; /*<  Text description or numeric value expressed as ASCII characters.
+                Shall be filled with nulls in the unused portion of the field.
+             */
 
 
     inline std::string get_name(void) const override

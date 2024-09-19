@@ -9,7 +9,9 @@ typedef struct __mavlink_can_filter_modify_t {
  uint8_t target_system; /*<  System ID.*/
  uint8_t target_component; /*<  Component ID.*/
  uint8_t bus; /*<  bus number*/
- uint8_t operation; /*<  what operation to perform on the filter list. See CAN_FILTER_OP enum.*/
+ uint8_t operation; /*<  what operation to perform on the filter list.
+                See CAN_FILTER_OP enum.
+            */
  uint8_t num_ids; /*<  number of IDs in filter list*/
 } mavlink_can_filter_modify_t;
 
@@ -59,7 +61,9 @@ typedef struct __mavlink_can_filter_modify_t {
  * @param target_system  System ID.
  * @param target_component  Component ID.
  * @param bus  bus number
- * @param operation  what operation to perform on the filter list. See CAN_FILTER_OP enum.
+ * @param operation  what operation to perform on the filter list.
+                See CAN_FILTER_OP enum.
+            
  * @param num_ids  number of IDs in filter list
  * @param ids  filter IDs, length num_ids
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -101,7 +105,9 @@ static inline uint16_t mavlink_msg_can_filter_modify_pack(uint8_t system_id, uin
  * @param target_system  System ID.
  * @param target_component  Component ID.
  * @param bus  bus number
- * @param operation  what operation to perform on the filter list. See CAN_FILTER_OP enum.
+ * @param operation  what operation to perform on the filter list.
+                See CAN_FILTER_OP enum.
+            
  * @param num_ids  number of IDs in filter list
  * @param ids  filter IDs, length num_ids
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -146,7 +152,9 @@ static inline uint16_t mavlink_msg_can_filter_modify_pack_status(uint8_t system_
  * @param target_system  System ID.
  * @param target_component  Component ID.
  * @param bus  bus number
- * @param operation  what operation to perform on the filter list. See CAN_FILTER_OP enum.
+ * @param operation  what operation to perform on the filter list.
+                See CAN_FILTER_OP enum.
+            
  * @param num_ids  number of IDs in filter list
  * @param ids  filter IDs, length num_ids
  * @return length of the message in bytes (excluding serial stream start sign)
@@ -227,7 +235,9 @@ static inline uint16_t mavlink_msg_can_filter_modify_encode_status(uint8_t syste
  * @param target_system  System ID.
  * @param target_component  Component ID.
  * @param bus  bus number
- * @param operation  what operation to perform on the filter list. See CAN_FILTER_OP enum.
+ * @param operation  what operation to perform on the filter list.
+                See CAN_FILTER_OP enum.
+            
  * @param num_ids  number of IDs in filter list
  * @param ids  filter IDs, length num_ids
  */
@@ -340,7 +350,9 @@ static inline uint8_t mavlink_msg_can_filter_modify_get_bus(const mavlink_messag
 /**
  * @brief Get field operation from can_filter_modify message
  *
- * @return  what operation to perform on the filter list. See CAN_FILTER_OP enum.
+ * @return  what operation to perform on the filter list.
+                See CAN_FILTER_OP enum.
+            
  */
 static inline uint8_t mavlink_msg_can_filter_modify_get_operation(const mavlink_message_t* msg)
 {

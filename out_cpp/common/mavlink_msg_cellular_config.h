@@ -5,14 +5,30 @@
 
 
 typedef struct __mavlink_cellular_config_t {
- uint8_t enable_lte; /*<  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.*/
- uint8_t enable_pin; /*<  Enable/disable PIN on the SIM card. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.*/
- char pin[16]; /*<  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message is sent back as a response.*/
- char new_pin[16]; /*<  New PIN when changing the PIN. Blank to leave it unchanged. Empty when message is sent back as a response.*/
- char apn[32]; /*<  Name of the cellular APN. Blank to leave it unchanged. Current APN when sent back as a response.*/
- char puk[16]; /*<  Required PUK code in case the user failed to authenticate 3 times with the PIN. Empty when message is sent back as a response.*/
- uint8_t roaming; /*<  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.*/
- uint8_t response; /*<  Message acceptance response (sent back to GS).*/
+ uint8_t enable_lte; /*<  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            */
+ uint8_t enable_pin; /*<  Enable/disable PIN on the SIM card. 0: setting unchanged, 1:
+                disabled, 2: enabled. Current setting when sent back as a response.
+            */
+ char pin[16]; /*<  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message
+                is sent back as a response.
+            */
+ char new_pin[16]; /*<  New PIN when changing the PIN. Blank to leave it unchanged. Empty when
+                message is sent back as a response.
+            */
+ char apn[32]; /*<  Name of the cellular APN. Blank to leave it unchanged. Current APN when
+                sent back as a response.
+            */
+ char puk[16]; /*<  Required PUK code in case the user failed to authenticate 3 times with the
+                PIN. Empty when message is sent back as a response.
+            */
+ uint8_t roaming; /*<  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            */
+ uint8_t response; /*<  Message acceptance response (sent back
+                to GS).
+            */
 } mavlink_cellular_config_t;
 
 #define MAVLINK_MSG_ID_CELLULAR_CONFIG_LEN 84
@@ -65,14 +81,30 @@ typedef struct __mavlink_cellular_config_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param enable_lte  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param enable_pin  Enable/disable PIN on the SIM card. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param pin  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message is sent back as a response.
- * @param new_pin  New PIN when changing the PIN. Blank to leave it unchanged. Empty when message is sent back as a response.
- * @param apn  Name of the cellular APN. Blank to leave it unchanged. Current APN when sent back as a response.
- * @param puk  Required PUK code in case the user failed to authenticate 3 times with the PIN. Empty when message is sent back as a response.
- * @param roaming  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param response  Message acceptance response (sent back to GS).
+ * @param enable_lte  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            
+ * @param enable_pin  Enable/disable PIN on the SIM card. 0: setting unchanged, 1:
+                disabled, 2: enabled. Current setting when sent back as a response.
+            
+ * @param pin  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message
+                is sent back as a response.
+            
+ * @param new_pin  New PIN when changing the PIN. Blank to leave it unchanged. Empty when
+                message is sent back as a response.
+            
+ * @param apn  Name of the cellular APN. Blank to leave it unchanged. Current APN when
+                sent back as a response.
+            
+ * @param puk  Required PUK code in case the user failed to authenticate 3 times with the
+                PIN. Empty when message is sent back as a response.
+            
+ * @param roaming  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            
+ * @param response  Message acceptance response (sent back
+                to GS).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_cellular_config_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -113,14 +145,30 @@ static inline uint16_t mavlink_msg_cellular_config_pack(uint8_t system_id, uint8
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param enable_lte  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param enable_pin  Enable/disable PIN on the SIM card. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param pin  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message is sent back as a response.
- * @param new_pin  New PIN when changing the PIN. Blank to leave it unchanged. Empty when message is sent back as a response.
- * @param apn  Name of the cellular APN. Blank to leave it unchanged. Current APN when sent back as a response.
- * @param puk  Required PUK code in case the user failed to authenticate 3 times with the PIN. Empty when message is sent back as a response.
- * @param roaming  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param response  Message acceptance response (sent back to GS).
+ * @param enable_lte  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            
+ * @param enable_pin  Enable/disable PIN on the SIM card. 0: setting unchanged, 1:
+                disabled, 2: enabled. Current setting when sent back as a response.
+            
+ * @param pin  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message
+                is sent back as a response.
+            
+ * @param new_pin  New PIN when changing the PIN. Blank to leave it unchanged. Empty when
+                message is sent back as a response.
+            
+ * @param apn  Name of the cellular APN. Blank to leave it unchanged. Current APN when
+                sent back as a response.
+            
+ * @param puk  Required PUK code in case the user failed to authenticate 3 times with the
+                PIN. Empty when message is sent back as a response.
+            
+ * @param roaming  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            
+ * @param response  Message acceptance response (sent back
+                to GS).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_cellular_config_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -164,14 +212,30 @@ static inline uint16_t mavlink_msg_cellular_config_pack_status(uint8_t system_id
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param enable_lte  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param enable_pin  Enable/disable PIN on the SIM card. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param pin  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message is sent back as a response.
- * @param new_pin  New PIN when changing the PIN. Blank to leave it unchanged. Empty when message is sent back as a response.
- * @param apn  Name of the cellular APN. Blank to leave it unchanged. Current APN when sent back as a response.
- * @param puk  Required PUK code in case the user failed to authenticate 3 times with the PIN. Empty when message is sent back as a response.
- * @param roaming  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param response  Message acceptance response (sent back to GS).
+ * @param enable_lte  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            
+ * @param enable_pin  Enable/disable PIN on the SIM card. 0: setting unchanged, 1:
+                disabled, 2: enabled. Current setting when sent back as a response.
+            
+ * @param pin  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message
+                is sent back as a response.
+            
+ * @param new_pin  New PIN when changing the PIN. Blank to leave it unchanged. Empty when
+                message is sent back as a response.
+            
+ * @param apn  Name of the cellular APN. Blank to leave it unchanged. Current APN when
+                sent back as a response.
+            
+ * @param puk  Required PUK code in case the user failed to authenticate 3 times with the
+                PIN. Empty when message is sent back as a response.
+            
+ * @param roaming  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            
+ * @param response  Message acceptance response (sent back
+                to GS).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_cellular_config_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -251,14 +315,30 @@ static inline uint16_t mavlink_msg_cellular_config_encode_status(uint8_t system_
  * @brief Send a cellular_config message
  * @param chan MAVLink channel to send the message
  *
- * @param enable_lte  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param enable_pin  Enable/disable PIN on the SIM card. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param pin  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message is sent back as a response.
- * @param new_pin  New PIN when changing the PIN. Blank to leave it unchanged. Empty when message is sent back as a response.
- * @param apn  Name of the cellular APN. Blank to leave it unchanged. Current APN when sent back as a response.
- * @param puk  Required PUK code in case the user failed to authenticate 3 times with the PIN. Empty when message is sent back as a response.
- * @param roaming  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
- * @param response  Message acceptance response (sent back to GS).
+ * @param enable_lte  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            
+ * @param enable_pin  Enable/disable PIN on the SIM card. 0: setting unchanged, 1:
+                disabled, 2: enabled. Current setting when sent back as a response.
+            
+ * @param pin  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message
+                is sent back as a response.
+            
+ * @param new_pin  New PIN when changing the PIN. Blank to leave it unchanged. Empty when
+                message is sent back as a response.
+            
+ * @param apn  Name of the cellular APN. Blank to leave it unchanged. Current APN when
+                sent back as a response.
+            
+ * @param puk  Required PUK code in case the user failed to authenticate 3 times with the
+                PIN. Empty when message is sent back as a response.
+            
+ * @param roaming  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            
+ * @param response  Message acceptance response (sent back
+                to GS).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -347,7 +427,9 @@ static inline void mavlink_msg_cellular_config_send_buf(mavlink_message_t *msgbu
 /**
  * @brief Get field enable_lte from cellular_config message
  *
- * @return  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
+ * @return  Enable/disable LTE. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            
  */
 static inline uint8_t mavlink_msg_cellular_config_get_enable_lte(const mavlink_message_t* msg)
 {
@@ -357,7 +439,9 @@ static inline uint8_t mavlink_msg_cellular_config_get_enable_lte(const mavlink_m
 /**
  * @brief Get field enable_pin from cellular_config message
  *
- * @return  Enable/disable PIN on the SIM card. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
+ * @return  Enable/disable PIN on the SIM card. 0: setting unchanged, 1:
+                disabled, 2: enabled. Current setting when sent back as a response.
+            
  */
 static inline uint8_t mavlink_msg_cellular_config_get_enable_pin(const mavlink_message_t* msg)
 {
@@ -367,7 +451,9 @@ static inline uint8_t mavlink_msg_cellular_config_get_enable_pin(const mavlink_m
 /**
  * @brief Get field pin from cellular_config message
  *
- * @return  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message is sent back as a response.
+ * @return  PIN sent to the SIM card. Blank when PIN is disabled. Empty when message
+                is sent back as a response.
+            
  */
 static inline uint16_t mavlink_msg_cellular_config_get_pin(const mavlink_message_t* msg, char *pin)
 {
@@ -377,7 +463,9 @@ static inline uint16_t mavlink_msg_cellular_config_get_pin(const mavlink_message
 /**
  * @brief Get field new_pin from cellular_config message
  *
- * @return  New PIN when changing the PIN. Blank to leave it unchanged. Empty when message is sent back as a response.
+ * @return  New PIN when changing the PIN. Blank to leave it unchanged. Empty when
+                message is sent back as a response.
+            
  */
 static inline uint16_t mavlink_msg_cellular_config_get_new_pin(const mavlink_message_t* msg, char *new_pin)
 {
@@ -387,7 +475,9 @@ static inline uint16_t mavlink_msg_cellular_config_get_new_pin(const mavlink_mes
 /**
  * @brief Get field apn from cellular_config message
  *
- * @return  Name of the cellular APN. Blank to leave it unchanged. Current APN when sent back as a response.
+ * @return  Name of the cellular APN. Blank to leave it unchanged. Current APN when
+                sent back as a response.
+            
  */
 static inline uint16_t mavlink_msg_cellular_config_get_apn(const mavlink_message_t* msg, char *apn)
 {
@@ -397,7 +487,9 @@ static inline uint16_t mavlink_msg_cellular_config_get_apn(const mavlink_message
 /**
  * @brief Get field puk from cellular_config message
  *
- * @return  Required PUK code in case the user failed to authenticate 3 times with the PIN. Empty when message is sent back as a response.
+ * @return  Required PUK code in case the user failed to authenticate 3 times with the
+                PIN. Empty when message is sent back as a response.
+            
  */
 static inline uint16_t mavlink_msg_cellular_config_get_puk(const mavlink_message_t* msg, char *puk)
 {
@@ -407,7 +499,9 @@ static inline uint16_t mavlink_msg_cellular_config_get_puk(const mavlink_message
 /**
  * @brief Get field roaming from cellular_config message
  *
- * @return  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled. Current setting when sent back as a response.
+ * @return  Enable/disable roaming. 0: setting unchanged, 1: disabled, 2: enabled.
+                Current setting when sent back as a response.
+            
  */
 static inline uint8_t mavlink_msg_cellular_config_get_roaming(const mavlink_message_t* msg)
 {
@@ -417,7 +511,9 @@ static inline uint8_t mavlink_msg_cellular_config_get_roaming(const mavlink_mess
 /**
  * @brief Get field response from cellular_config message
  *
- * @return  Message acceptance response (sent back to GS).
+ * @return  Message acceptance response (sent back
+                to GS).
+            
  */
 static inline uint8_t mavlink_msg_cellular_config_get_response(const mavlink_message_t* msg)
 {

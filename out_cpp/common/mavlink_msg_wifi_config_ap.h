@@ -5,10 +5,16 @@
 
 
 typedef struct __mavlink_wifi_config_ap_t {
- char ssid[32]; /*<  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting. Current SSID when sent back as a response.*/
- char password[64]; /*<  Password. Blank for an open AP. MD5 hash when message is sent back as a response.*/
+ char ssid[32]; /*<  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting.
+                Current SSID when sent back as a response.
+            */
+ char password[64]; /*<  Password. Blank for an open AP. MD5 hash when message is sent back as
+                a response.
+            */
  int8_t mode; /*<  WiFi Mode.*/
- int8_t response; /*<  Message acceptance response (sent back to GS).*/
+ int8_t response; /*<  Message acceptance response (sent back
+                to GS).
+            */
 } mavlink_wifi_config_ap_t;
 
 #define MAVLINK_MSG_ID_WIFI_CONFIG_AP_LEN 98
@@ -51,10 +57,16 @@ typedef struct __mavlink_wifi_config_ap_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param ssid  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting. Current SSID when sent back as a response.
- * @param password  Password. Blank for an open AP. MD5 hash when message is sent back as a response.
+ * @param ssid  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting.
+                Current SSID when sent back as a response.
+            
+ * @param password  Password. Blank for an open AP. MD5 hash when message is sent back as
+                a response.
+            
  * @param mode  WiFi Mode.
- * @param response  Message acceptance response (sent back to GS).
+ * @param response  Message acceptance response (sent back
+                to GS).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_wifi_config_ap_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -87,10 +99,16 @@ static inline uint16_t mavlink_msg_wifi_config_ap_pack(uint8_t system_id, uint8_
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param ssid  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting. Current SSID when sent back as a response.
- * @param password  Password. Blank for an open AP. MD5 hash when message is sent back as a response.
+ * @param ssid  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting.
+                Current SSID when sent back as a response.
+            
+ * @param password  Password. Blank for an open AP. MD5 hash when message is sent back as
+                a response.
+            
  * @param mode  WiFi Mode.
- * @param response  Message acceptance response (sent back to GS).
+ * @param response  Message acceptance response (sent back
+                to GS).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_wifi_config_ap_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -126,10 +144,16 @@ static inline uint16_t mavlink_msg_wifi_config_ap_pack_status(uint8_t system_id,
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param ssid  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting. Current SSID when sent back as a response.
- * @param password  Password. Blank for an open AP. MD5 hash when message is sent back as a response.
+ * @param ssid  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting.
+                Current SSID when sent back as a response.
+            
+ * @param password  Password. Blank for an open AP. MD5 hash when message is sent back as
+                a response.
+            
  * @param mode  WiFi Mode.
- * @param response  Message acceptance response (sent back to GS).
+ * @param response  Message acceptance response (sent back
+                to GS).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_wifi_config_ap_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -201,10 +225,16 @@ static inline uint16_t mavlink_msg_wifi_config_ap_encode_status(uint8_t system_i
  * @brief Send a wifi_config_ap message
  * @param chan MAVLink channel to send the message
  *
- * @param ssid  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting. Current SSID when sent back as a response.
- * @param password  Password. Blank for an open AP. MD5 hash when message is sent back as a response.
+ * @param ssid  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting.
+                Current SSID when sent back as a response.
+            
+ * @param password  Password. Blank for an open AP. MD5 hash when message is sent back as
+                a response.
+            
  * @param mode  WiFi Mode.
- * @param response  Message acceptance response (sent back to GS).
+ * @param response  Message acceptance response (sent back
+                to GS).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -277,7 +307,9 @@ static inline void mavlink_msg_wifi_config_ap_send_buf(mavlink_message_t *msgbuf
 /**
  * @brief Get field ssid from wifi_config_ap message
  *
- * @return  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting. Current SSID when sent back as a response.
+ * @return  Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting.
+                Current SSID when sent back as a response.
+            
  */
 static inline uint16_t mavlink_msg_wifi_config_ap_get_ssid(const mavlink_message_t* msg, char *ssid)
 {
@@ -287,7 +319,9 @@ static inline uint16_t mavlink_msg_wifi_config_ap_get_ssid(const mavlink_message
 /**
  * @brief Get field password from wifi_config_ap message
  *
- * @return  Password. Blank for an open AP. MD5 hash when message is sent back as a response.
+ * @return  Password. Blank for an open AP. MD5 hash when message is sent back as
+                a response.
+            
  */
 static inline uint16_t mavlink_msg_wifi_config_ap_get_password(const mavlink_message_t* msg, char *password)
 {
@@ -307,7 +341,9 @@ static inline int8_t mavlink_msg_wifi_config_ap_get_mode(const mavlink_message_t
 /**
  * @brief Get field response from wifi_config_ap message
  *
- * @return  Message acceptance response (sent back to GS).
+ * @return  Message acceptance response (sent back
+                to GS).
+            
  */
 static inline int8_t mavlink_msg_wifi_config_ap_get_response(const mavlink_message_t* msg)
 {

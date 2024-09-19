@@ -7,9 +7,11 @@
 typedef struct __mavlink_fence_status_t {
  uint32_t breach_time; /*< [ms] Time (since boot) of last breach.*/
  uint16_t breach_count; /*<  Number of fence breaches.*/
- uint8_t breach_status; /*<  Breach status (0 if currently inside fence, 1 if outside).*/
+ uint8_t breach_status; /*<  Breach status (0 if currently inside fence, 1 if outside).
+            */
  uint8_t breach_type; /*<  Last breach type.*/
- uint8_t breach_mitigation; /*<  Active action to prevent fence breach*/
+ uint8_t breach_mitigation; /*<  Active action to prevent fence breach
+            */
 } mavlink_fence_status_t;
 
 #define MAVLINK_MSG_ID_FENCE_STATUS_LEN 9
@@ -54,10 +56,12 @@ typedef struct __mavlink_fence_status_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param breach_status  Breach status (0 if currently inside fence, 1 if outside).
+            
  * @param breach_count  Number of fence breaches.
  * @param breach_type  Last breach type.
  * @param breach_time [ms] Time (since boot) of last breach.
  * @param breach_mitigation  Active action to prevent fence breach
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_fence_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -95,10 +99,12 @@ static inline uint16_t mavlink_msg_fence_status_pack(uint8_t system_id, uint8_t 
  * @param msg The MAVLink message to compress the data into
  *
  * @param breach_status  Breach status (0 if currently inside fence, 1 if outside).
+            
  * @param breach_count  Number of fence breaches.
  * @param breach_type  Last breach type.
  * @param breach_time [ms] Time (since boot) of last breach.
  * @param breach_mitigation  Active action to prevent fence breach
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_fence_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -139,10 +145,12 @@ static inline uint16_t mavlink_msg_fence_status_pack_status(uint8_t system_id, u
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param breach_status  Breach status (0 if currently inside fence, 1 if outside).
+            
  * @param breach_count  Number of fence breaches.
  * @param breach_type  Last breach type.
  * @param breach_time [ms] Time (since boot) of last breach.
  * @param breach_mitigation  Active action to prevent fence breach
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_fence_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -219,10 +227,12 @@ static inline uint16_t mavlink_msg_fence_status_encode_status(uint8_t system_id,
  * @param chan MAVLink channel to send the message
  *
  * @param breach_status  Breach status (0 if currently inside fence, 1 if outside).
+            
  * @param breach_count  Number of fence breaches.
  * @param breach_type  Last breach type.
  * @param breach_time [ms] Time (since boot) of last breach.
  * @param breach_mitigation  Active action to prevent fence breach
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -304,6 +314,7 @@ static inline void mavlink_msg_fence_status_send_buf(mavlink_message_t *msgbuf, 
  * @brief Get field breach_status from fence_status message
  *
  * @return  Breach status (0 if currently inside fence, 1 if outside).
+            
  */
 static inline uint8_t mavlink_msg_fence_status_get_breach_status(const mavlink_message_t* msg)
 {
@@ -344,6 +355,7 @@ static inline uint32_t mavlink_msg_fence_status_get_breach_time(const mavlink_me
  * @brief Get field breach_mitigation from fence_status message
  *
  * @return  Active action to prevent fence breach
+            
  */
 static inline uint8_t mavlink_msg_fence_status_get_breach_mitigation(const mavlink_message_t* msg)
 {

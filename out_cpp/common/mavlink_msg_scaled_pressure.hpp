@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief SCALED_PRESSURE message
  *
- * The pressure readings for the typical setup of one absolute and differential pressure sensor. The units are as specified in each field.
+ * The pressure readings for the typical setup of one absolute and differential pressure sensor.
+                The units are as specified in each field.
+            
  */
 struct SCALED_PRESSURE : mavlink::Message {
     static constexpr msgid_t MSG_ID = 29;
@@ -23,7 +25,9 @@ struct SCALED_PRESSURE : mavlink::Message {
     float press_abs; /*< [hPa] Absolute pressure */
     float press_diff; /*< [hPa] Differential pressure 1 */
     int16_t temperature; /*< [cdegC] Absolute pressure temperature */
-    int16_t temperature_press_diff; /*< [cdegC] Differential pressure temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC. */
+    int16_t temperature_press_diff; /*< [cdegC] Differential pressure
+                temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+             */
 
 
     inline std::string get_name(void) const override

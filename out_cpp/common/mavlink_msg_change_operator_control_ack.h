@@ -5,9 +5,13 @@
 
 
 typedef struct __mavlink_change_operator_control_ack_t {
- uint8_t gcs_system_id; /*<  ID of the GCS this message */
- uint8_t control_request; /*<  0: request control of this MAV, 1: Release control of this MAV*/
- uint8_t ack; /*<  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption method, 3: NACK: Already under control*/
+ uint8_t gcs_system_id; /*<  ID of the GCS this message*/
+ uint8_t control_request; /*<  0: request control of this MAV, 1: Release control of this
+                MAV
+            */
+ uint8_t ack; /*<  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption
+                method, 3: NACK: Already under control
+            */
 } mavlink_change_operator_control_ack_t;
 
 #define MAVLINK_MSG_ID_CHANGE_OPERATOR_CONTROL_ACK_LEN 3
@@ -47,9 +51,13 @@ typedef struct __mavlink_change_operator_control_ack_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param gcs_system_id  ID of the GCS this message 
- * @param control_request  0: request control of this MAV, 1: Release control of this MAV
- * @param ack  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption method, 3: NACK: Already under control
+ * @param gcs_system_id  ID of the GCS this message
+ * @param control_request  0: request control of this MAV, 1: Release control of this
+                MAV
+            
+ * @param ack  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption
+                method, 3: NACK: Already under control
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_change_operator_control_ack_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -82,9 +90,13 @@ static inline uint16_t mavlink_msg_change_operator_control_ack_pack(uint8_t syst
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param gcs_system_id  ID of the GCS this message 
- * @param control_request  0: request control of this MAV, 1: Release control of this MAV
- * @param ack  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption method, 3: NACK: Already under control
+ * @param gcs_system_id  ID of the GCS this message
+ * @param control_request  0: request control of this MAV, 1: Release control of this
+                MAV
+            
+ * @param ack  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption
+                method, 3: NACK: Already under control
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_change_operator_control_ack_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -120,9 +132,13 @@ static inline uint16_t mavlink_msg_change_operator_control_ack_pack_status(uint8
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param gcs_system_id  ID of the GCS this message 
- * @param control_request  0: request control of this MAV, 1: Release control of this MAV
- * @param ack  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption method, 3: NACK: Already under control
+ * @param gcs_system_id  ID of the GCS this message
+ * @param control_request  0: request control of this MAV, 1: Release control of this
+                MAV
+            
+ * @param ack  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption
+                method, 3: NACK: Already under control
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_change_operator_control_ack_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -194,9 +210,13 @@ static inline uint16_t mavlink_msg_change_operator_control_ack_encode_status(uin
  * @brief Send a change_operator_control_ack message
  * @param chan MAVLink channel to send the message
  *
- * @param gcs_system_id  ID of the GCS this message 
- * @param control_request  0: request control of this MAV, 1: Release control of this MAV
- * @param ack  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption method, 3: NACK: Already under control
+ * @param gcs_system_id  ID of the GCS this message
+ * @param control_request  0: request control of this MAV, 1: Release control of this
+                MAV
+            
+ * @param ack  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption
+                method, 3: NACK: Already under control
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -269,7 +289,7 @@ static inline void mavlink_msg_change_operator_control_ack_send_buf(mavlink_mess
 /**
  * @brief Get field gcs_system_id from change_operator_control_ack message
  *
- * @return  ID of the GCS this message 
+ * @return  ID of the GCS this message
  */
 static inline uint8_t mavlink_msg_change_operator_control_ack_get_gcs_system_id(const mavlink_message_t* msg)
 {
@@ -279,7 +299,9 @@ static inline uint8_t mavlink_msg_change_operator_control_ack_get_gcs_system_id(
 /**
  * @brief Get field control_request from change_operator_control_ack message
  *
- * @return  0: request control of this MAV, 1: Release control of this MAV
+ * @return  0: request control of this MAV, 1: Release control of this
+                MAV
+            
  */
 static inline uint8_t mavlink_msg_change_operator_control_ack_get_control_request(const mavlink_message_t* msg)
 {
@@ -289,7 +311,9 @@ static inline uint8_t mavlink_msg_change_operator_control_ack_get_control_reques
 /**
  * @brief Get field ack from change_operator_control_ack message
  *
- * @return  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption method, 3: NACK: Already under control
+ * @return  0: ACK, 1: NACK: Wrong passkey, 2: NACK: Unsupported passkey encryption
+                method, 3: NACK: Already under control
+            
  */
 static inline uint8_t mavlink_msg_change_operator_control_ack_get_ack(const mavlink_message_t* msg)
 {

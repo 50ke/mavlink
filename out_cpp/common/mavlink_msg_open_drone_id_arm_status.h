@@ -5,8 +5,12 @@
 
 
 typedef struct __mavlink_open_drone_id_arm_status_t {
- uint8_t status; /*<  Status level indicating if arming is allowed.*/
- char error[50]; /*<  Text error message, should be empty if status is good to arm. Fill with nulls in unused portion.*/
+ uint8_t status; /*<  Status level indicating if arming is
+                allowed.
+            */
+ char error[50]; /*<  Text error message, should be empty if status is good to arm. Fill with
+                nulls in unused portion.
+            */
 } mavlink_open_drone_id_arm_status_t;
 
 #define MAVLINK_MSG_ID_OPEN_DRONE_ID_ARM_STATUS_LEN 51
@@ -44,8 +48,12 @@ typedef struct __mavlink_open_drone_id_arm_status_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param status  Status level indicating if arming is allowed.
- * @param error  Text error message, should be empty if status is good to arm. Fill with nulls in unused portion.
+ * @param status  Status level indicating if arming is
+                allowed.
+            
+ * @param error  Text error message, should be empty if status is good to arm. Fill with
+                nulls in unused portion.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_open_drone_id_arm_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -74,8 +82,12 @@ static inline uint16_t mavlink_msg_open_drone_id_arm_status_pack(uint8_t system_
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param status  Status level indicating if arming is allowed.
- * @param error  Text error message, should be empty if status is good to arm. Fill with nulls in unused portion.
+ * @param status  Status level indicating if arming is
+                allowed.
+            
+ * @param error  Text error message, should be empty if status is good to arm. Fill with
+                nulls in unused portion.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_open_drone_id_arm_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -107,8 +119,12 @@ static inline uint16_t mavlink_msg_open_drone_id_arm_status_pack_status(uint8_t 
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param status  Status level indicating if arming is allowed.
- * @param error  Text error message, should be empty if status is good to arm. Fill with nulls in unused portion.
+ * @param status  Status level indicating if arming is
+                allowed.
+            
+ * @param error  Text error message, should be empty if status is good to arm. Fill with
+                nulls in unused portion.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_open_drone_id_arm_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -176,8 +192,12 @@ static inline uint16_t mavlink_msg_open_drone_id_arm_status_encode_status(uint8_
  * @brief Send a open_drone_id_arm_status message
  * @param chan MAVLink channel to send the message
  *
- * @param status  Status level indicating if arming is allowed.
- * @param error  Text error message, should be empty if status is good to arm. Fill with nulls in unused portion.
+ * @param status  Status level indicating if arming is
+                allowed.
+            
+ * @param error  Text error message, should be empty if status is good to arm. Fill with
+                nulls in unused portion.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -242,7 +262,9 @@ static inline void mavlink_msg_open_drone_id_arm_status_send_buf(mavlink_message
 /**
  * @brief Get field status from open_drone_id_arm_status message
  *
- * @return  Status level indicating if arming is allowed.
+ * @return  Status level indicating if arming is
+                allowed.
+            
  */
 static inline uint8_t mavlink_msg_open_drone_id_arm_status_get_status(const mavlink_message_t* msg)
 {
@@ -252,7 +274,9 @@ static inline uint8_t mavlink_msg_open_drone_id_arm_status_get_status(const mavl
 /**
  * @brief Get field error from open_drone_id_arm_status message
  *
- * @return  Text error message, should be empty if status is good to arm. Fill with nulls in unused portion.
+ * @return  Text error message, should be empty if status is good to arm. Fill with
+                nulls in unused portion.
+            
  */
 static inline uint16_t mavlink_msg_open_drone_id_arm_status_get_error(const mavlink_message_t* msg, char *error)
 {

@@ -19,7 +19,10 @@ struct HIL_SENSOR : mavlink::Message {
     static constexpr auto NAME = "HIL_SENSOR";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     float xacc; /*< [m/s/s] X acceleration */
     float yacc; /*< [m/s/s] Y acceleration */
     float zacc; /*< [m/s/s] Z acceleration */
@@ -33,7 +36,9 @@ struct HIL_SENSOR : mavlink::Message {
     float diff_pressure; /*< [hPa] Differential pressure (airspeed) */
     float pressure_alt; /*<  Altitude calculated from pressure */
     float temperature; /*< [degC] Temperature */
-    uint32_t fields_updated; /*<  Bitmap for fields that have updated since last message */
+    uint32_t fields_updated; /*<  Bitmap for
+                fields that have updated since last message
+             */
     uint8_t id; /*<  Sensor ID (zero indexed). Used for multiple sensor inputs */
 
 

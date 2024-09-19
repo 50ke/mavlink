@@ -10,12 +10,15 @@ namespace msg {
  * @brief CAMERA_IMAGE_CAPTURED message
  *
  * Information about a captured image. This is emitted every time a message is captured.
-        MAV_CMD_REQUEST_MESSAGE can be used to (re)request this message for a specific sequence number or range of sequence numbers:
-        MAV_CMD_REQUEST_MESSAGE.param2 indicates the sequence number the first image to send, or set to -1 to send the message for all sequence numbers.
-        MAV_CMD_REQUEST_MESSAGE.param3 is used to specify a range of messages to send:
-        set to 0 (default) to send just the the message for the sequence number in param 2,
-        set to -1 to send the message for the sequence number in param 2 and all the following sequence numbers,
-        set to the sequence number of the final message in the range.
+                MAV_CMD_REQUEST_MESSAGE can be used to (re)request this message for a specific sequence number or range
+                of sequence numbers:
+                MAV_CMD_REQUEST_MESSAGE.param2 indicates the sequence number the first image to send, or set to -1 to
+                send the message for all sequence numbers.
+                MAV_CMD_REQUEST_MESSAGE.param3 is used to specify a range of messages to send:
+                set to 0 (default) to send just the the message for the sequence number in param 2,
+                set to -1 to send the message for the sequence number in param 2 and all the following sequence numbers,
+                set to the sequence number of the final message in the range.
+            
  */
 struct CAMERA_IMAGE_CAPTURED : mavlink::Message {
     static constexpr msgid_t MSG_ID = 263;
@@ -26,16 +29,28 @@ struct CAMERA_IMAGE_CAPTURED : mavlink::Message {
 
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
-    uint64_t time_utc; /*< [us] Timestamp (time since UNIX epoch) in UTC. 0 for unknown. */
-    uint8_t camera_id; /*<  Deprecated/unused. Component IDs are used to differentiate multiple cameras. */
+    uint64_t time_utc; /*< [us] Timestamp (time since UNIX epoch) in UTC. 0
+                for unknown.
+             */
+    uint8_t camera_id; /*<  Deprecated/unused. Component IDs are used to differentiate multiple
+                cameras.
+             */
     int32_t lat; /*< [degE7] Latitude where image was taken */
     int32_t lon; /*< [degE7] Longitude where capture was taken */
     int32_t alt; /*< [mm] Altitude (MSL) where image was taken */
     int32_t relative_alt; /*< [mm] Altitude above ground */
-    std::array<float, 4> q; /*<  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0, 0, 0) */
-    int32_t image_index; /*<  Zero based index of this image (i.e. a new image will have index CAMERA_CAPTURE_STATUS.image count -1) */
-    int8_t capture_result; /*<  Boolean indicating success (1) or failure (0) while capturing this image. */
-    std::array<char, 205> file_url; /*<  URL of image taken. Either local storage or http://foo.jpg if camera provides an HTTP interface. */
+    std::array<float, 4> q; /*<  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0,
+                0, 0)
+             */
+    int32_t image_index; /*<  Zero based index of this image (i.e. a new image will have index
+                CAMERA_CAPTURE_STATUS.image count -1)
+             */
+    int8_t capture_result; /*<  Boolean indicating success (1) or failure (0) while capturing
+                this image.
+             */
+    std::array<char, 205> file_url; /*<  URL of image taken. Either local storage or http://foo.jpg if camera
+                provides an HTTP interface.
+             */
 
 
     inline std::string get_name(void) const override

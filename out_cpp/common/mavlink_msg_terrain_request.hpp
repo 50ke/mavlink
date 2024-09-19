@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief TERRAIN_REQUEST message
  *
- * Request for terrain data and terrain status. See terrain protocol docs: https://mavlink.io/en/services/terrain.html
+ * Request for terrain data and terrain status. See terrain protocol docs:
+                https://mavlink.io/en/services/terrain.html
+            
  */
 struct TERRAIN_REQUEST : mavlink::Message {
     static constexpr msgid_t MSG_ID = 133;
@@ -22,7 +24,9 @@ struct TERRAIN_REQUEST : mavlink::Message {
     int32_t lat; /*< [degE7] Latitude of SW corner of first grid */
     int32_t lon; /*< [degE7] Longitude of SW corner of first grid */
     uint16_t grid_spacing; /*< [m] Grid spacing */
-    uint64_t mask; /*<  Bitmask of requested 4x4 grids (row major 8x7 array of grids, 56 bits) */
+    uint64_t mask; /*<  Bitmask of requested 4x4 grids
+                (row major 8x7 array of grids, 56 bits)
+             */
 
 
     inline std::string get_name(void) const override

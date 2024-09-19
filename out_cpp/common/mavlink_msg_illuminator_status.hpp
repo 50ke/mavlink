@@ -21,7 +21,9 @@ struct ILLUMINATOR_STATUS : mavlink::Message {
 
     uint32_t uptime_ms; /*< [ms] Time since the start-up of the illuminator in ms */
     uint8_t enable; /*<  0: Illuminators OFF, 1: Illuminators ON */
-    uint8_t mode_bitmask; /*<  Supported illuminator modes */
+    uint8_t mode_bitmask; /*<  Supported illuminator
+                modes
+             */
     uint32_t error_status; /*<  Errors */
     uint8_t mode; /*<  Illuminator mode */
     float brightness; /*< [%] Illuminator brightness */

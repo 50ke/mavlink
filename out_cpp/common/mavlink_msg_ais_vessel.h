@@ -14,12 +14,16 @@ typedef struct __mavlink_ais_vessel_t {
  uint16_t dimension_bow; /*< [m] Distance from lat/lon location to bow*/
  uint16_t dimension_stern; /*< [m] Distance from lat/lon location to stern*/
  uint16_t tslc; /*< [s] Time since last communication in seconds*/
- uint16_t flags; /*<  Bitmask to indicate various statuses including valid data fields*/
+ uint16_t flags; /*<  Bitmask to indicate various statuses
+                including valid data fields
+            */
  int8_t turn_rate; /*< [cdeg/s] Turn rate*/
  uint8_t navigational_status; /*<  Navigational status*/
  uint8_t type; /*<  Type of vessels*/
  uint8_t dimension_port; /*< [m] Distance from lat/lon location to port side*/
- uint8_t dimension_starboard; /*< [m] Distance from lat/lon location to starboard side*/
+ uint8_t dimension_starboard; /*< [m] Distance from lat/lon location to starboard
+                side
+            */
  char callsign[7]; /*<  The vessel callsign*/
  char name[20]; /*<  The vessel name*/
 } mavlink_ais_vessel_t;
@@ -102,11 +106,15 @@ typedef struct __mavlink_ais_vessel_t {
  * @param dimension_bow [m] Distance from lat/lon location to bow
  * @param dimension_stern [m] Distance from lat/lon location to stern
  * @param dimension_port [m] Distance from lat/lon location to port side
- * @param dimension_starboard [m] Distance from lat/lon location to starboard side
+ * @param dimension_starboard [m] Distance from lat/lon location to starboard
+                side
+            
  * @param callsign  The vessel callsign
  * @param name  The vessel name
  * @param tslc [s] Time since last communication in seconds
- * @param flags  Bitmask to indicate various statuses including valid data fields
+ * @param flags  Bitmask to indicate various statuses
+                including valid data fields
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_ais_vessel_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -177,11 +185,15 @@ static inline uint16_t mavlink_msg_ais_vessel_pack(uint8_t system_id, uint8_t co
  * @param dimension_bow [m] Distance from lat/lon location to bow
  * @param dimension_stern [m] Distance from lat/lon location to stern
  * @param dimension_port [m] Distance from lat/lon location to port side
- * @param dimension_starboard [m] Distance from lat/lon location to starboard side
+ * @param dimension_starboard [m] Distance from lat/lon location to starboard
+                side
+            
  * @param callsign  The vessel callsign
  * @param name  The vessel name
  * @param tslc [s] Time since last communication in seconds
- * @param flags  Bitmask to indicate various statuses including valid data fields
+ * @param flags  Bitmask to indicate various statuses
+                including valid data fields
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_ais_vessel_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -255,11 +267,15 @@ static inline uint16_t mavlink_msg_ais_vessel_pack_status(uint8_t system_id, uin
  * @param dimension_bow [m] Distance from lat/lon location to bow
  * @param dimension_stern [m] Distance from lat/lon location to stern
  * @param dimension_port [m] Distance from lat/lon location to port side
- * @param dimension_starboard [m] Distance from lat/lon location to starboard side
+ * @param dimension_starboard [m] Distance from lat/lon location to starboard
+                side
+            
  * @param callsign  The vessel callsign
  * @param name  The vessel name
  * @param tslc [s] Time since last communication in seconds
- * @param flags  Bitmask to indicate various statuses including valid data fields
+ * @param flags  Bitmask to indicate various statuses
+                including valid data fields
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_ais_vessel_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -369,11 +385,15 @@ static inline uint16_t mavlink_msg_ais_vessel_encode_status(uint8_t system_id, u
  * @param dimension_bow [m] Distance from lat/lon location to bow
  * @param dimension_stern [m] Distance from lat/lon location to stern
  * @param dimension_port [m] Distance from lat/lon location to port side
- * @param dimension_starboard [m] Distance from lat/lon location to starboard side
+ * @param dimension_starboard [m] Distance from lat/lon location to starboard
+                side
+            
  * @param callsign  The vessel callsign
  * @param name  The vessel name
  * @param tslc [s] Time since last communication in seconds
- * @param flags  Bitmask to indicate various statuses including valid data fields
+ * @param flags  Bitmask to indicate various statuses
+                including valid data fields
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -618,7 +638,9 @@ static inline uint8_t mavlink_msg_ais_vessel_get_dimension_port(const mavlink_me
 /**
  * @brief Get field dimension_starboard from ais_vessel message
  *
- * @return [m] Distance from lat/lon location to starboard side
+ * @return [m] Distance from lat/lon location to starboard
+                side
+            
  */
 static inline uint8_t mavlink_msg_ais_vessel_get_dimension_starboard(const mavlink_message_t* msg)
 {
@@ -658,7 +680,9 @@ static inline uint16_t mavlink_msg_ais_vessel_get_tslc(const mavlink_message_t* 
 /**
  * @brief Get field flags from ais_vessel message
  *
- * @return  Bitmask to indicate various statuses including valid data fields
+ * @return  Bitmask to indicate various statuses
+                including valid data fields
+            
  */
 static inline uint16_t mavlink_msg_ais_vessel_get_flags(const mavlink_message_t* msg)
 {

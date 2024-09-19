@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief DEBUG_FLOAT_ARRAY message
  *
- * Large debug/prototyping array. The message uses the maximum available payload for data. The array_id and name fields are used to discriminate between messages in code and in user interfaces (respectively). Do not use in production code.
+ * Large debug/prototyping array. The message uses the maximum available payload for data. The
+                array_id and name fields are used to discriminate between messages in code and in user interfaces
+                (respectively). Do not use in production code.
+            
  */
 struct DEBUG_FLOAT_ARRAY : mavlink::Message {
     static constexpr msgid_t MSG_ID = 350;
@@ -19,7 +22,10 @@ struct DEBUG_FLOAT_ARRAY : mavlink::Message {
     static constexpr auto NAME = "DEBUG_FLOAT_ARRAY";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     std::array<char, 10> name; /*<  Name, for human-friendly display in a Ground Control Station */
     uint16_t array_id; /*<  Unique ID used to discriminate between arrays */
     std::array<float, 58> data; /*<  data */

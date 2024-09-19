@@ -6,8 +6,12 @@
 
 typedef struct __mavlink_memory_vect_t {
  uint16_t address; /*<  Starting address of the debug variables*/
- uint8_t ver; /*<  Version code of the type variable. 0=unknown, type ignored and assumed int16_t. 1=as below*/
- uint8_t type; /*<  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x uint16_t, 2=16 x Q15, 3=16 x 1Q14*/
+ uint8_t ver; /*<  Version code of the type variable. 0=unknown, type ignored and
+                assumed int16_t. 1=as below
+            */
+ uint8_t type; /*<  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x
+                uint16_t, 2=16 x Q15, 3=16 x 1Q14
+            */
  int8_t value[32]; /*<  Memory contents at specified address*/
 } mavlink_memory_vect_t;
 
@@ -51,8 +55,12 @@ typedef struct __mavlink_memory_vect_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param address  Starting address of the debug variables
- * @param ver  Version code of the type variable. 0=unknown, type ignored and assumed int16_t. 1=as below
- * @param type  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x uint16_t, 2=16 x Q15, 3=16 x 1Q14
+ * @param ver  Version code of the type variable. 0=unknown, type ignored and
+                assumed int16_t. 1=as below
+            
+ * @param type  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x
+                uint16_t, 2=16 x Q15, 3=16 x 1Q14
+            
  * @param value  Memory contents at specified address
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -87,8 +95,12 @@ static inline uint16_t mavlink_msg_memory_vect_pack(uint8_t system_id, uint8_t c
  * @param msg The MAVLink message to compress the data into
  *
  * @param address  Starting address of the debug variables
- * @param ver  Version code of the type variable. 0=unknown, type ignored and assumed int16_t. 1=as below
- * @param type  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x uint16_t, 2=16 x Q15, 3=16 x 1Q14
+ * @param ver  Version code of the type variable. 0=unknown, type ignored and
+                assumed int16_t. 1=as below
+            
+ * @param type  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x
+                uint16_t, 2=16 x Q15, 3=16 x 1Q14
+            
  * @param value  Memory contents at specified address
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -126,8 +138,12 @@ static inline uint16_t mavlink_msg_memory_vect_pack_status(uint8_t system_id, ui
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param address  Starting address of the debug variables
- * @param ver  Version code of the type variable. 0=unknown, type ignored and assumed int16_t. 1=as below
- * @param type  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x uint16_t, 2=16 x Q15, 3=16 x 1Q14
+ * @param ver  Version code of the type variable. 0=unknown, type ignored and
+                assumed int16_t. 1=as below
+            
+ * @param type  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x
+                uint16_t, 2=16 x Q15, 3=16 x 1Q14
+            
  * @param value  Memory contents at specified address
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -201,8 +217,12 @@ static inline uint16_t mavlink_msg_memory_vect_encode_status(uint8_t system_id, 
  * @param chan MAVLink channel to send the message
  *
  * @param address  Starting address of the debug variables
- * @param ver  Version code of the type variable. 0=unknown, type ignored and assumed int16_t. 1=as below
- * @param type  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x uint16_t, 2=16 x Q15, 3=16 x 1Q14
+ * @param ver  Version code of the type variable. 0=unknown, type ignored and
+                assumed int16_t. 1=as below
+            
+ * @param type  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x
+                uint16_t, 2=16 x Q15, 3=16 x 1Q14
+            
  * @param value  Memory contents at specified address
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -286,7 +306,9 @@ static inline uint16_t mavlink_msg_memory_vect_get_address(const mavlink_message
 /**
  * @brief Get field ver from memory_vect message
  *
- * @return  Version code of the type variable. 0=unknown, type ignored and assumed int16_t. 1=as below
+ * @return  Version code of the type variable. 0=unknown, type ignored and
+                assumed int16_t. 1=as below
+            
  */
 static inline uint8_t mavlink_msg_memory_vect_get_ver(const mavlink_message_t* msg)
 {
@@ -296,7 +318,9 @@ static inline uint8_t mavlink_msg_memory_vect_get_ver(const mavlink_message_t* m
 /**
  * @brief Get field type from memory_vect message
  *
- * @return  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x uint16_t, 2=16 x Q15, 3=16 x 1Q14
+ * @return  Type code of the memory variables. for ver = 1: 0=16 x int16_t, 1=16 x
+                uint16_t, 2=16 x Q15, 3=16 x 1Q14
+            
  */
 static inline uint8_t mavlink_msg_memory_vect_get_type(const mavlink_message_t* msg)
 {

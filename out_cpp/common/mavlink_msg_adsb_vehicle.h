@@ -12,8 +12,12 @@ typedef struct __mavlink_adsb_vehicle_t {
  uint16_t heading; /*< [cdeg] Course over ground*/
  uint16_t hor_velocity; /*< [cm/s] The horizontal velocity*/
  int16_t ver_velocity; /*< [cm/s] The vertical velocity. Positive is up*/
- uint16_t flags; /*<  Bitmap to indicate various statuses including valid data fields*/
- uint16_t squawk; /*<  Squawk code. Note that the code is in decimal: e.g. 7700 (general emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000*/
+ uint16_t flags; /*<  Bitmap to indicate various statuses
+                including valid data fields
+            */
+ uint16_t squawk; /*<  Squawk code. Note that the code is in decimal: e.g. 7700 (general
+                emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+            */
  uint8_t altitude_type; /*<  ADSB altitude type.*/
  char callsign[9]; /*<  The callsign, 8+null*/
  uint8_t emitter_type; /*<  ADSB emitter type.*/
@@ -88,8 +92,12 @@ typedef struct __mavlink_adsb_vehicle_t {
  * @param callsign  The callsign, 8+null
  * @param emitter_type  ADSB emitter type.
  * @param tslc [s] Time since last communication in seconds
- * @param flags  Bitmap to indicate various statuses including valid data fields
- * @param squawk  Squawk code. Note that the code is in decimal: e.g. 7700 (general emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+ * @param flags  Bitmap to indicate various statuses
+                including valid data fields
+            
+ * @param squawk  Squawk code. Note that the code is in decimal: e.g. 7700 (general
+                emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_adsb_vehicle_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -151,8 +159,12 @@ static inline uint16_t mavlink_msg_adsb_vehicle_pack(uint8_t system_id, uint8_t 
  * @param callsign  The callsign, 8+null
  * @param emitter_type  ADSB emitter type.
  * @param tslc [s] Time since last communication in seconds
- * @param flags  Bitmap to indicate various statuses including valid data fields
- * @param squawk  Squawk code. Note that the code is in decimal: e.g. 7700 (general emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+ * @param flags  Bitmap to indicate various statuses
+                including valid data fields
+            
+ * @param squawk  Squawk code. Note that the code is in decimal: e.g. 7700 (general
+                emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_adsb_vehicle_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -217,8 +229,12 @@ static inline uint16_t mavlink_msg_adsb_vehicle_pack_status(uint8_t system_id, u
  * @param callsign  The callsign, 8+null
  * @param emitter_type  ADSB emitter type.
  * @param tslc [s] Time since last communication in seconds
- * @param flags  Bitmap to indicate various statuses including valid data fields
- * @param squawk  Squawk code. Note that the code is in decimal: e.g. 7700 (general emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+ * @param flags  Bitmap to indicate various statuses
+                including valid data fields
+            
+ * @param squawk  Squawk code. Note that the code is in decimal: e.g. 7700 (general
+                emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_adsb_vehicle_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -319,8 +335,12 @@ static inline uint16_t mavlink_msg_adsb_vehicle_encode_status(uint8_t system_id,
  * @param callsign  The callsign, 8+null
  * @param emitter_type  ADSB emitter type.
  * @param tslc [s] Time since last communication in seconds
- * @param flags  Bitmap to indicate various statuses including valid data fields
- * @param squawk  Squawk code. Note that the code is in decimal: e.g. 7700 (general emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+ * @param flags  Bitmap to indicate various statuses
+                including valid data fields
+            
+ * @param squawk  Squawk code. Note that the code is in decimal: e.g. 7700 (general
+                emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -539,7 +559,9 @@ static inline uint8_t mavlink_msg_adsb_vehicle_get_tslc(const mavlink_message_t*
 /**
  * @brief Get field flags from adsb_vehicle message
  *
- * @return  Bitmap to indicate various statuses including valid data fields
+ * @return  Bitmap to indicate various statuses
+                including valid data fields
+            
  */
 static inline uint16_t mavlink_msg_adsb_vehicle_get_flags(const mavlink_message_t* msg)
 {
@@ -549,7 +571,9 @@ static inline uint16_t mavlink_msg_adsb_vehicle_get_flags(const mavlink_message_
 /**
  * @brief Get field squawk from adsb_vehicle message
  *
- * @return  Squawk code. Note that the code is in decimal: e.g. 7700 (general emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+ * @return  Squawk code. Note that the code is in decimal: e.g. 7700 (general
+                emergency) is encoded as binary 0b0001_1110_0001_0100, not(!) as 0b0000_111_111_000_000
+            
  */
 static inline uint16_t mavlink_msg_adsb_vehicle_get_squawk(const mavlink_message_t* msg)
 {

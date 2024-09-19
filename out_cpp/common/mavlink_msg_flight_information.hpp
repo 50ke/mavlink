@@ -10,11 +10,12 @@ namespace msg {
  * @brief FLIGHT_INFORMATION message
  *
  * Flight information.
-        This includes time since boot for arm, takeoff, and land, and a flight number.
-        Takeoff and landing values reset to zero on arm.
-        This can be requested using MAV_CMD_REQUEST_MESSAGE.
-        Note, some fields are misnamed - timestamps are from boot (not UTC) and the flight_uuid is a sequence number.
-      
+                This includes time since boot for arm, takeoff, and land, and a flight number.
+                Takeoff and landing values reset to zero on arm.
+                This can be requested using MAV_CMD_REQUEST_MESSAGE.
+                Note, some fields are misnamed - timestamps are from boot (not UTC) and the flight_uuid is a sequence
+                number.
+            
  */
 struct FLIGHT_INFORMATION : mavlink::Message {
     static constexpr msgid_t MSG_ID = 264;
@@ -25,10 +26,16 @@ struct FLIGHT_INFORMATION : mavlink::Message {
 
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
-    uint64_t arming_time_utc; /*< [us] Timestamp at arming (since system boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC. */
-    uint64_t takeoff_time_utc; /*< [us] Timestamp at takeoff (since system boot). Set to 0 at boot and on arming. Note, field is misnamed UTC. */
+    uint64_t arming_time_utc; /*< [us] Timestamp at arming (since system
+                boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
+             */
+    uint64_t takeoff_time_utc; /*< [us] Timestamp at takeoff (since system
+                boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+             */
     uint64_t flight_uuid; /*<  Flight number. Note, field is misnamed UUID. */
-    uint32_t landing_time; /*< [ms] Timestamp at landing (in ms since system boot). Set to 0 at boot and on arming. */
+    uint32_t landing_time; /*< [ms] Timestamp at landing (in ms since system
+                boot). Set to 0 at boot and on arming.
+             */
 
 
     inline std::string get_name(void) const override

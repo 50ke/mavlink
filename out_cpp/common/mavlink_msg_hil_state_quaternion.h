@@ -5,8 +5,13 @@
 
 
 typedef struct __mavlink_hil_state_quaternion_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
- float attitude_quaternion[4]; /*<  Vehicle attitude expressed as normalized quaternion in w, x, y, z order (with 1 0 0 0 being the null-rotation)*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
+ float attitude_quaternion[4]; /*<  Vehicle attitude expressed as normalized quaternion in w,
+                x, y, z order (with 1 0 0 0 being the null-rotation)
+            */
  float rollspeed; /*< [rad/s] Body frame roll / phi angular speed*/
  float pitchspeed; /*< [rad/s] Body frame pitch / theta angular speed*/
  float yawspeed; /*< [rad/s] Body frame yaw / psi angular speed*/
@@ -86,8 +91,13 @@ typedef struct __mavlink_hil_state_quaternion_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param attitude_quaternion  Vehicle attitude expressed as normalized quaternion in w, x, y, z order (with 1 0 0 0 being the null-rotation)
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param attitude_quaternion  Vehicle attitude expressed as normalized quaternion in w,
+                x, y, z order (with 1 0 0 0 being the null-rotation)
+            
  * @param rollspeed [rad/s] Body frame roll / phi angular speed
  * @param pitchspeed [rad/s] Body frame pitch / theta angular speed
  * @param yawspeed [rad/s] Body frame yaw / psi angular speed
@@ -158,8 +168,13 @@ static inline uint16_t mavlink_msg_hil_state_quaternion_pack(uint8_t system_id, 
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param attitude_quaternion  Vehicle attitude expressed as normalized quaternion in w, x, y, z order (with 1 0 0 0 being the null-rotation)
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param attitude_quaternion  Vehicle attitude expressed as normalized quaternion in w,
+                x, y, z order (with 1 0 0 0 being the null-rotation)
+            
  * @param rollspeed [rad/s] Body frame roll / phi angular speed
  * @param pitchspeed [rad/s] Body frame pitch / theta angular speed
  * @param yawspeed [rad/s] Body frame yaw / psi angular speed
@@ -233,8 +248,13 @@ static inline uint16_t mavlink_msg_hil_state_quaternion_pack_status(uint8_t syst
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param attitude_quaternion  Vehicle attitude expressed as normalized quaternion in w, x, y, z order (with 1 0 0 0 being the null-rotation)
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param attitude_quaternion  Vehicle attitude expressed as normalized quaternion in w,
+                x, y, z order (with 1 0 0 0 being the null-rotation)
+            
  * @param rollspeed [rad/s] Body frame roll / phi angular speed
  * @param pitchspeed [rad/s] Body frame pitch / theta angular speed
  * @param yawspeed [rad/s] Body frame yaw / psi angular speed
@@ -344,8 +364,13 @@ static inline uint16_t mavlink_msg_hil_state_quaternion_encode_status(uint8_t sy
  * @brief Send a hil_state_quaternion message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param attitude_quaternion  Vehicle attitude expressed as normalized quaternion in w, x, y, z order (with 1 0 0 0 being the null-rotation)
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param attitude_quaternion  Vehicle attitude expressed as normalized quaternion in w,
+                x, y, z order (with 1 0 0 0 being the null-rotation)
+            
  * @param rollspeed [rad/s] Body frame roll / phi angular speed
  * @param pitchspeed [rad/s] Body frame pitch / theta angular speed
  * @param yawspeed [rad/s] Body frame yaw / psi angular speed
@@ -480,7 +505,10 @@ static inline void mavlink_msg_hil_state_quaternion_send_buf(mavlink_message_t *
 /**
  * @brief Get field time_usec from hil_state_quaternion message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_hil_state_quaternion_get_time_usec(const mavlink_message_t* msg)
 {
@@ -490,7 +518,9 @@ static inline uint64_t mavlink_msg_hil_state_quaternion_get_time_usec(const mavl
 /**
  * @brief Get field attitude_quaternion from hil_state_quaternion message
  *
- * @return  Vehicle attitude expressed as normalized quaternion in w, x, y, z order (with 1 0 0 0 being the null-rotation)
+ * @return  Vehicle attitude expressed as normalized quaternion in w,
+                x, y, z order (with 1 0 0 0 being the null-rotation)
+            
  */
 static inline uint16_t mavlink_msg_hil_state_quaternion_get_attitude_quaternion(const mavlink_message_t* msg, float *attitude_quaternion)
 {

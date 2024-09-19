@@ -19,13 +19,22 @@ struct WINCH_STATUS : mavlink::Message {
     static constexpr auto NAME = "WINCH_STATUS";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (synced to UNIX time or since system boot). */
-    float line_length; /*< [m] Length of line released. NaN if unknown */
-    float speed; /*< [m/s] Speed line is being released or retracted. Positive values if being released, negative values if being retracted, NaN if unknown */
+    uint64_t time_usec; /*< [us] Timestamp (synced to UNIX time or since system boot).
+             */
+    float line_length; /*< [m] Length of line released. NaN if unknown
+             */
+    float speed; /*< [m/s] Speed line is being released or retracted.
+                Positive values if being released, negative values if being retracted, NaN if unknown
+             */
     float tension; /*< [kg] Tension on the line. NaN if unknown */
-    float voltage; /*< [V] Voltage of the battery supplying the winch. NaN if unknown */
-    float current; /*< [A] Current draw from the winch. NaN if unknown */
-    int16_t temperature; /*< [degC] Temperature of the motor. INT16_MAX if unknown */
+    float voltage; /*< [V] Voltage of the battery supplying the winch. NaN
+                if unknown
+             */
+    float current; /*< [A] Current draw from the winch. NaN if unknown
+             */
+    int16_t temperature; /*< [degC] Temperature of the motor.
+                INT16_MAX if unknown
+             */
     uint32_t status; /*<  Status flags */
 
 

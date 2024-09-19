@@ -5,15 +5,31 @@
 
 
 typedef struct __mavlink_wind_cov_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
- float wind_x; /*< [m/s] Wind in North (NED) direction (NAN if unknown)*/
- float wind_y; /*< [m/s] Wind in East (NED) direction (NAN if unknown)*/
- float wind_z; /*< [m/s] Wind in down (NED) direction (NAN if unknown)*/
- float var_horiz; /*< [m/s] Variability of wind in XY, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)*/
- float var_vert; /*< [m/s] Variability of wind in Z, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)*/
- float wind_alt; /*< [m] Altitude (MSL) that this measurement was taken at (NAN if unknown)*/
- float horiz_accuracy; /*< [m/s] Horizontal speed 1-STD accuracy (0 if unknown)*/
- float vert_accuracy; /*< [m/s] Vertical speed 1-STD accuracy (0 if unknown)*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
+ float wind_x; /*< [m/s] Wind in North (NED) direction (NAN if unknown)
+            */
+ float wind_y; /*< [m/s] Wind in East (NED) direction (NAN if unknown)
+            */
+ float wind_z; /*< [m/s] Wind in down (NED) direction (NAN if unknown)
+            */
+ float var_horiz; /*< [m/s] Variability of wind in XY, 1-STD estimated
+                from a 1 Hz lowpassed wind estimate (NAN if unknown)
+            */
+ float var_vert; /*< [m/s] Variability of wind in Z, 1-STD estimated from
+                a 1 Hz lowpassed wind estimate (NAN if unknown)
+            */
+ float wind_alt; /*< [m] Altitude (MSL) that this measurement was taken
+                at (NAN if unknown)
+            */
+ float horiz_accuracy; /*< [m/s] Horizontal speed 1-STD accuracy (0 if
+                unknown)
+            */
+ float vert_accuracy; /*< [m/s] Vertical speed 1-STD accuracy (0 if
+                unknown)
+            */
 } mavlink_wind_cov_t;
 
 #define MAVLINK_MSG_ID_WIND_COV_LEN 40
@@ -65,15 +81,31 @@ typedef struct __mavlink_wind_cov_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param wind_x [m/s] Wind in North (NED) direction (NAN if unknown)
+            
  * @param wind_y [m/s] Wind in East (NED) direction (NAN if unknown)
+            
  * @param wind_z [m/s] Wind in down (NED) direction (NAN if unknown)
- * @param var_horiz [m/s] Variability of wind in XY, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)
- * @param var_vert [m/s] Variability of wind in Z, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)
- * @param wind_alt [m] Altitude (MSL) that this measurement was taken at (NAN if unknown)
- * @param horiz_accuracy [m/s] Horizontal speed 1-STD accuracy (0 if unknown)
- * @param vert_accuracy [m/s] Vertical speed 1-STD accuracy (0 if unknown)
+            
+ * @param var_horiz [m/s] Variability of wind in XY, 1-STD estimated
+                from a 1 Hz lowpassed wind estimate (NAN if unknown)
+            
+ * @param var_vert [m/s] Variability of wind in Z, 1-STD estimated from
+                a 1 Hz lowpassed wind estimate (NAN if unknown)
+            
+ * @param wind_alt [m] Altitude (MSL) that this measurement was taken
+                at (NAN if unknown)
+            
+ * @param horiz_accuracy [m/s] Horizontal speed 1-STD accuracy (0 if
+                unknown)
+            
+ * @param vert_accuracy [m/s] Vertical speed 1-STD accuracy (0 if
+                unknown)
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_wind_cov_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -118,15 +150,31 @@ static inline uint16_t mavlink_msg_wind_cov_pack(uint8_t system_id, uint8_t comp
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param wind_x [m/s] Wind in North (NED) direction (NAN if unknown)
+            
  * @param wind_y [m/s] Wind in East (NED) direction (NAN if unknown)
+            
  * @param wind_z [m/s] Wind in down (NED) direction (NAN if unknown)
- * @param var_horiz [m/s] Variability of wind in XY, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)
- * @param var_vert [m/s] Variability of wind in Z, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)
- * @param wind_alt [m] Altitude (MSL) that this measurement was taken at (NAN if unknown)
- * @param horiz_accuracy [m/s] Horizontal speed 1-STD accuracy (0 if unknown)
- * @param vert_accuracy [m/s] Vertical speed 1-STD accuracy (0 if unknown)
+            
+ * @param var_horiz [m/s] Variability of wind in XY, 1-STD estimated
+                from a 1 Hz lowpassed wind estimate (NAN if unknown)
+            
+ * @param var_vert [m/s] Variability of wind in Z, 1-STD estimated from
+                a 1 Hz lowpassed wind estimate (NAN if unknown)
+            
+ * @param wind_alt [m] Altitude (MSL) that this measurement was taken
+                at (NAN if unknown)
+            
+ * @param horiz_accuracy [m/s] Horizontal speed 1-STD accuracy (0 if
+                unknown)
+            
+ * @param vert_accuracy [m/s] Vertical speed 1-STD accuracy (0 if
+                unknown)
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_wind_cov_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -174,15 +222,31 @@ static inline uint16_t mavlink_msg_wind_cov_pack_status(uint8_t system_id, uint8
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param wind_x [m/s] Wind in North (NED) direction (NAN if unknown)
+            
  * @param wind_y [m/s] Wind in East (NED) direction (NAN if unknown)
+            
  * @param wind_z [m/s] Wind in down (NED) direction (NAN if unknown)
- * @param var_horiz [m/s] Variability of wind in XY, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)
- * @param var_vert [m/s] Variability of wind in Z, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)
- * @param wind_alt [m] Altitude (MSL) that this measurement was taken at (NAN if unknown)
- * @param horiz_accuracy [m/s] Horizontal speed 1-STD accuracy (0 if unknown)
- * @param vert_accuracy [m/s] Vertical speed 1-STD accuracy (0 if unknown)
+            
+ * @param var_horiz [m/s] Variability of wind in XY, 1-STD estimated
+                from a 1 Hz lowpassed wind estimate (NAN if unknown)
+            
+ * @param var_vert [m/s] Variability of wind in Z, 1-STD estimated from
+                a 1 Hz lowpassed wind estimate (NAN if unknown)
+            
+ * @param wind_alt [m] Altitude (MSL) that this measurement was taken
+                at (NAN if unknown)
+            
+ * @param horiz_accuracy [m/s] Horizontal speed 1-STD accuracy (0 if
+                unknown)
+            
+ * @param vert_accuracy [m/s] Vertical speed 1-STD accuracy (0 if
+                unknown)
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_wind_cov_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -266,15 +330,31 @@ static inline uint16_t mavlink_msg_wind_cov_encode_status(uint8_t system_id, uin
  * @brief Send a wind_cov message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param wind_x [m/s] Wind in North (NED) direction (NAN if unknown)
+            
  * @param wind_y [m/s] Wind in East (NED) direction (NAN if unknown)
+            
  * @param wind_z [m/s] Wind in down (NED) direction (NAN if unknown)
- * @param var_horiz [m/s] Variability of wind in XY, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)
- * @param var_vert [m/s] Variability of wind in Z, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)
- * @param wind_alt [m] Altitude (MSL) that this measurement was taken at (NAN if unknown)
- * @param horiz_accuracy [m/s] Horizontal speed 1-STD accuracy (0 if unknown)
- * @param vert_accuracy [m/s] Vertical speed 1-STD accuracy (0 if unknown)
+            
+ * @param var_horiz [m/s] Variability of wind in XY, 1-STD estimated
+                from a 1 Hz lowpassed wind estimate (NAN if unknown)
+            
+ * @param var_vert [m/s] Variability of wind in Z, 1-STD estimated from
+                a 1 Hz lowpassed wind estimate (NAN if unknown)
+            
+ * @param wind_alt [m] Altitude (MSL) that this measurement was taken
+                at (NAN if unknown)
+            
+ * @param horiz_accuracy [m/s] Horizontal speed 1-STD accuracy (0 if
+                unknown)
+            
+ * @param vert_accuracy [m/s] Vertical speed 1-STD accuracy (0 if
+                unknown)
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -371,7 +451,10 @@ static inline void mavlink_msg_wind_cov_send_buf(mavlink_message_t *msgbuf, mavl
 /**
  * @brief Get field time_usec from wind_cov message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_wind_cov_get_time_usec(const mavlink_message_t* msg)
 {
@@ -382,6 +465,7 @@ static inline uint64_t mavlink_msg_wind_cov_get_time_usec(const mavlink_message_
  * @brief Get field wind_x from wind_cov message
  *
  * @return [m/s] Wind in North (NED) direction (NAN if unknown)
+            
  */
 static inline float mavlink_msg_wind_cov_get_wind_x(const mavlink_message_t* msg)
 {
@@ -392,6 +476,7 @@ static inline float mavlink_msg_wind_cov_get_wind_x(const mavlink_message_t* msg
  * @brief Get field wind_y from wind_cov message
  *
  * @return [m/s] Wind in East (NED) direction (NAN if unknown)
+            
  */
 static inline float mavlink_msg_wind_cov_get_wind_y(const mavlink_message_t* msg)
 {
@@ -402,6 +487,7 @@ static inline float mavlink_msg_wind_cov_get_wind_y(const mavlink_message_t* msg
  * @brief Get field wind_z from wind_cov message
  *
  * @return [m/s] Wind in down (NED) direction (NAN if unknown)
+            
  */
 static inline float mavlink_msg_wind_cov_get_wind_z(const mavlink_message_t* msg)
 {
@@ -411,7 +497,9 @@ static inline float mavlink_msg_wind_cov_get_wind_z(const mavlink_message_t* msg
 /**
  * @brief Get field var_horiz from wind_cov message
  *
- * @return [m/s] Variability of wind in XY, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)
+ * @return [m/s] Variability of wind in XY, 1-STD estimated
+                from a 1 Hz lowpassed wind estimate (NAN if unknown)
+            
  */
 static inline float mavlink_msg_wind_cov_get_var_horiz(const mavlink_message_t* msg)
 {
@@ -421,7 +509,9 @@ static inline float mavlink_msg_wind_cov_get_var_horiz(const mavlink_message_t* 
 /**
  * @brief Get field var_vert from wind_cov message
  *
- * @return [m/s] Variability of wind in Z, 1-STD estimated from a 1 Hz lowpassed wind estimate (NAN if unknown)
+ * @return [m/s] Variability of wind in Z, 1-STD estimated from
+                a 1 Hz lowpassed wind estimate (NAN if unknown)
+            
  */
 static inline float mavlink_msg_wind_cov_get_var_vert(const mavlink_message_t* msg)
 {
@@ -431,7 +521,9 @@ static inline float mavlink_msg_wind_cov_get_var_vert(const mavlink_message_t* m
 /**
  * @brief Get field wind_alt from wind_cov message
  *
- * @return [m] Altitude (MSL) that this measurement was taken at (NAN if unknown)
+ * @return [m] Altitude (MSL) that this measurement was taken
+                at (NAN if unknown)
+            
  */
 static inline float mavlink_msg_wind_cov_get_wind_alt(const mavlink_message_t* msg)
 {
@@ -441,7 +533,9 @@ static inline float mavlink_msg_wind_cov_get_wind_alt(const mavlink_message_t* m
 /**
  * @brief Get field horiz_accuracy from wind_cov message
  *
- * @return [m/s] Horizontal speed 1-STD accuracy (0 if unknown)
+ * @return [m/s] Horizontal speed 1-STD accuracy (0 if
+                unknown)
+            
  */
 static inline float mavlink_msg_wind_cov_get_horiz_accuracy(const mavlink_message_t* msg)
 {
@@ -451,7 +545,9 @@ static inline float mavlink_msg_wind_cov_get_horiz_accuracy(const mavlink_messag
 /**
  * @brief Get field vert_accuracy from wind_cov message
  *
- * @return [m/s] Vertical speed 1-STD accuracy (0 if unknown)
+ * @return [m/s] Vertical speed 1-STD accuracy (0 if
+                unknown)
+            
  */
 static inline float mavlink_msg_wind_cov_get_vert_accuracy(const mavlink_message_t* msg)
 {

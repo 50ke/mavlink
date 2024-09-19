@@ -6,16 +6,33 @@
 
 typedef struct __mavlink_camera_fov_status_t {
  uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot).*/
- int32_t lat_camera; /*< [degE7] Latitude of camera (INT32_MAX if unknown).*/
- int32_t lon_camera; /*< [degE7] Longitude of camera (INT32_MAX if unknown).*/
- int32_t alt_camera; /*< [mm] Altitude (MSL) of camera (INT32_MAX if unknown).*/
- int32_t lat_image; /*< [degE7] Latitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).*/
- int32_t lon_image; /*< [degE7] Longitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).*/
- int32_t alt_image; /*< [mm] Altitude (MSL) of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).*/
- float q[4]; /*<  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0, 0, 0)*/
+ int32_t lat_camera; /*< [degE7] Latitude of camera (INT32_MAX if
+                unknown).
+            */
+ int32_t lon_camera; /*< [degE7] Longitude of camera (INT32_MAX if
+                unknown).
+            */
+ int32_t alt_camera; /*< [mm] Altitude (MSL) of camera (INT32_MAX
+                if unknown).
+            */
+ int32_t lat_image; /*< [degE7] Latitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            */
+ int32_t lon_image; /*< [degE7] Longitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            */
+ int32_t alt_image; /*< [mm] Altitude (MSL) of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            */
+ float q[4]; /*<  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0,
+                0, 0)
+            */
  float hfov; /*< [deg] Horizontal field of view (NaN if unknown).*/
  float vfov; /*< [deg] Vertical field of view (NaN if unknown).*/
- uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).*/
+ uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            */
 } mavlink_camera_fov_status_t;
 
 #define MAVLINK_MSG_ID_CAMERA_FOV_STATUS_LEN 53
@@ -72,16 +89,33 @@ typedef struct __mavlink_camera_fov_status_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param lat_camera [degE7] Latitude of camera (INT32_MAX if unknown).
- * @param lon_camera [degE7] Longitude of camera (INT32_MAX if unknown).
- * @param alt_camera [mm] Altitude (MSL) of camera (INT32_MAX if unknown).
- * @param lat_image [degE7] Latitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param lon_image [degE7] Longitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param alt_image [mm] Altitude (MSL) of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param q  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0, 0, 0)
+ * @param lat_camera [degE7] Latitude of camera (INT32_MAX if
+                unknown).
+            
+ * @param lon_camera [degE7] Longitude of camera (INT32_MAX if
+                unknown).
+            
+ * @param alt_camera [mm] Altitude (MSL) of camera (INT32_MAX
+                if unknown).
+            
+ * @param lat_image [degE7] Latitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param lon_image [degE7] Longitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param alt_image [mm] Altitude (MSL) of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param q  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0,
+                0, 0)
+            
  * @param hfov [deg] Horizontal field of view (NaN if unknown).
  * @param vfov [deg] Vertical field of view (NaN if unknown).
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_fov_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -129,16 +163,33 @@ static inline uint16_t mavlink_msg_camera_fov_status_pack(uint8_t system_id, uin
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param lat_camera [degE7] Latitude of camera (INT32_MAX if unknown).
- * @param lon_camera [degE7] Longitude of camera (INT32_MAX if unknown).
- * @param alt_camera [mm] Altitude (MSL) of camera (INT32_MAX if unknown).
- * @param lat_image [degE7] Latitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param lon_image [degE7] Longitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param alt_image [mm] Altitude (MSL) of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param q  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0, 0, 0)
+ * @param lat_camera [degE7] Latitude of camera (INT32_MAX if
+                unknown).
+            
+ * @param lon_camera [degE7] Longitude of camera (INT32_MAX if
+                unknown).
+            
+ * @param alt_camera [mm] Altitude (MSL) of camera (INT32_MAX
+                if unknown).
+            
+ * @param lat_image [degE7] Latitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param lon_image [degE7] Longitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param alt_image [mm] Altitude (MSL) of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param q  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0,
+                0, 0)
+            
  * @param hfov [deg] Horizontal field of view (NaN if unknown).
  * @param vfov [deg] Vertical field of view (NaN if unknown).
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_fov_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -189,16 +240,33 @@ static inline uint16_t mavlink_msg_camera_fov_status_pack_status(uint8_t system_
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param lat_camera [degE7] Latitude of camera (INT32_MAX if unknown).
- * @param lon_camera [degE7] Longitude of camera (INT32_MAX if unknown).
- * @param alt_camera [mm] Altitude (MSL) of camera (INT32_MAX if unknown).
- * @param lat_image [degE7] Latitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param lon_image [degE7] Longitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param alt_image [mm] Altitude (MSL) of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param q  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0, 0, 0)
+ * @param lat_camera [degE7] Latitude of camera (INT32_MAX if
+                unknown).
+            
+ * @param lon_camera [degE7] Longitude of camera (INT32_MAX if
+                unknown).
+            
+ * @param alt_camera [mm] Altitude (MSL) of camera (INT32_MAX
+                if unknown).
+            
+ * @param lat_image [degE7] Latitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param lon_image [degE7] Longitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param alt_image [mm] Altitude (MSL) of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param q  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0,
+                0, 0)
+            
  * @param hfov [deg] Horizontal field of view (NaN if unknown).
  * @param vfov [deg] Vertical field of view (NaN if unknown).
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_fov_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -285,16 +353,33 @@ static inline uint16_t mavlink_msg_camera_fov_status_encode_status(uint8_t syste
  * @param chan MAVLink channel to send the message
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param lat_camera [degE7] Latitude of camera (INT32_MAX if unknown).
- * @param lon_camera [degE7] Longitude of camera (INT32_MAX if unknown).
- * @param alt_camera [mm] Altitude (MSL) of camera (INT32_MAX if unknown).
- * @param lat_image [degE7] Latitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param lon_image [degE7] Longitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param alt_image [mm] Altitude (MSL) of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
- * @param q  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0, 0, 0)
+ * @param lat_camera [degE7] Latitude of camera (INT32_MAX if
+                unknown).
+            
+ * @param lon_camera [degE7] Longitude of camera (INT32_MAX if
+                unknown).
+            
+ * @param alt_camera [mm] Altitude (MSL) of camera (INT32_MAX
+                if unknown).
+            
+ * @param lat_image [degE7] Latitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param lon_image [degE7] Longitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param alt_image [mm] Altitude (MSL) of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
+ * @param q  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0,
+                0, 0)
+            
  * @param hfov [deg] Horizontal field of view (NaN if unknown).
  * @param vfov [deg] Vertical field of view (NaN if unknown).
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -405,7 +490,9 @@ static inline uint32_t mavlink_msg_camera_fov_status_get_time_boot_ms(const mavl
 /**
  * @brief Get field lat_camera from camera_fov_status message
  *
- * @return [degE7] Latitude of camera (INT32_MAX if unknown).
+ * @return [degE7] Latitude of camera (INT32_MAX if
+                unknown).
+            
  */
 static inline int32_t mavlink_msg_camera_fov_status_get_lat_camera(const mavlink_message_t* msg)
 {
@@ -415,7 +502,9 @@ static inline int32_t mavlink_msg_camera_fov_status_get_lat_camera(const mavlink
 /**
  * @brief Get field lon_camera from camera_fov_status message
  *
- * @return [degE7] Longitude of camera (INT32_MAX if unknown).
+ * @return [degE7] Longitude of camera (INT32_MAX if
+                unknown).
+            
  */
 static inline int32_t mavlink_msg_camera_fov_status_get_lon_camera(const mavlink_message_t* msg)
 {
@@ -425,7 +514,9 @@ static inline int32_t mavlink_msg_camera_fov_status_get_lon_camera(const mavlink
 /**
  * @brief Get field alt_camera from camera_fov_status message
  *
- * @return [mm] Altitude (MSL) of camera (INT32_MAX if unknown).
+ * @return [mm] Altitude (MSL) of camera (INT32_MAX
+                if unknown).
+            
  */
 static inline int32_t mavlink_msg_camera_fov_status_get_alt_camera(const mavlink_message_t* msg)
 {
@@ -435,7 +526,9 @@ static inline int32_t mavlink_msg_camera_fov_status_get_alt_camera(const mavlink
 /**
  * @brief Get field lat_image from camera_fov_status message
  *
- * @return [degE7] Latitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+ * @return [degE7] Latitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
  */
 static inline int32_t mavlink_msg_camera_fov_status_get_lat_image(const mavlink_message_t* msg)
 {
@@ -445,7 +538,9 @@ static inline int32_t mavlink_msg_camera_fov_status_get_lat_image(const mavlink_
 /**
  * @brief Get field lon_image from camera_fov_status message
  *
- * @return [degE7] Longitude of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+ * @return [degE7] Longitude of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
  */
 static inline int32_t mavlink_msg_camera_fov_status_get_lon_image(const mavlink_message_t* msg)
 {
@@ -455,7 +550,9 @@ static inline int32_t mavlink_msg_camera_fov_status_get_lon_image(const mavlink_
 /**
  * @brief Get field alt_image from camera_fov_status message
  *
- * @return [mm] Altitude (MSL) of center of image (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+ * @return [mm] Altitude (MSL) of center of image
+                (INT32_MAX if unknown, INT32_MIN if at infinity, not intersecting with horizon).
+            
  */
 static inline int32_t mavlink_msg_camera_fov_status_get_alt_image(const mavlink_message_t* msg)
 {
@@ -465,7 +562,9 @@ static inline int32_t mavlink_msg_camera_fov_status_get_alt_image(const mavlink_
 /**
  * @brief Get field q from camera_fov_status message
  *
- * @return  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0, 0, 0)
+ * @return  Quaternion of camera orientation (w, x, y, z order, zero-rotation is 1, 0,
+                0, 0)
+            
  */
 static inline uint16_t mavlink_msg_camera_fov_status_get_q(const mavlink_message_t* msg, float *q)
 {
@@ -495,7 +594,10 @@ static inline float mavlink_msg_camera_fov_status_get_vfov(const mavlink_message
 /**
  * @brief Get field camera_device_id from camera_fov_status message
  *
- * @return  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @return  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 static inline uint8_t mavlink_msg_camera_fov_status_get_camera_device_id(const mavlink_message_t* msg)
 {

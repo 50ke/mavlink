@@ -23,7 +23,9 @@ struct SCALED_PRESSURE2 : mavlink::Message {
     float press_abs; /*< [hPa] Absolute pressure */
     float press_diff; /*< [hPa] Differential pressure */
     int16_t temperature; /*< [cdegC] Absolute pressure temperature */
-    int16_t temperature_press_diff; /*< [cdegC] Differential pressure temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC. */
+    int16_t temperature_press_diff; /*< [cdegC] Differential pressure
+                temperature (0, if not available). Report values of 0 (or 1) as 1 cdegC.
+             */
 
 
     inline std::string get_name(void) const override

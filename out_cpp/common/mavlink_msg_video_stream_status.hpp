@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief VIDEO_STREAM_STATUS message
  *
- * Information about the status of a video stream. It may be requested using MAV_CMD_REQUEST_MESSAGE.
+ * Information about the status of a video stream. It may be requested using
+                MAV_CMD_REQUEST_MESSAGE.
+            
  */
 struct VIDEO_STREAM_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 270;
@@ -19,7 +21,8 @@ struct VIDEO_STREAM_STATUS : mavlink::Message {
     static constexpr auto NAME = "VIDEO_STREAM_STATUS";
 
 
-    uint8_t stream_id; /*<  Video Stream ID (1 for first, 2 for second, etc.) */
+    uint8_t stream_id; /*<  Video Stream ID (1 for first, 2 for second, etc.)
+             */
     uint16_t flags; /*<  Bitmap of stream status flags */
     float framerate; /*< [Hz] Frame rate */
     uint16_t resolution_h; /*< [pix] Horizontal resolution */
@@ -27,7 +30,10 @@ struct VIDEO_STREAM_STATUS : mavlink::Message {
     uint32_t bitrate; /*< [bits/s] Bit rate */
     uint16_t rotation; /*< [deg] Video image rotation clockwise */
     uint16_t hfov; /*< [deg] Horizontal Field of view */
-    uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id). */
+    uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+             */
 
 
     inline std::string get_name(void) const override

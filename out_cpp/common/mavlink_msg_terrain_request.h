@@ -5,7 +5,9 @@
 
 
 typedef struct __mavlink_terrain_request_t {
- uint64_t mask; /*<  Bitmask of requested 4x4 grids (row major 8x7 array of grids, 56 bits)*/
+ uint64_t mask; /*<  Bitmask of requested 4x4 grids
+                (row major 8x7 array of grids, 56 bits)
+            */
  int32_t lat; /*< [degE7] Latitude of SW corner of first grid*/
  int32_t lon; /*< [degE7] Longitude of SW corner of first grid*/
  uint16_t grid_spacing; /*< [m] Grid spacing*/
@@ -53,7 +55,9 @@ typedef struct __mavlink_terrain_request_t {
  * @param lat [degE7] Latitude of SW corner of first grid
  * @param lon [degE7] Longitude of SW corner of first grid
  * @param grid_spacing [m] Grid spacing
- * @param mask  Bitmask of requested 4x4 grids (row major 8x7 array of grids, 56 bits)
+ * @param mask  Bitmask of requested 4x4 grids
+                (row major 8x7 array of grids, 56 bits)
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_terrain_request_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -91,7 +95,9 @@ static inline uint16_t mavlink_msg_terrain_request_pack(uint8_t system_id, uint8
  * @param lat [degE7] Latitude of SW corner of first grid
  * @param lon [degE7] Longitude of SW corner of first grid
  * @param grid_spacing [m] Grid spacing
- * @param mask  Bitmask of requested 4x4 grids (row major 8x7 array of grids, 56 bits)
+ * @param mask  Bitmask of requested 4x4 grids
+                (row major 8x7 array of grids, 56 bits)
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_terrain_request_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -132,7 +138,9 @@ static inline uint16_t mavlink_msg_terrain_request_pack_status(uint8_t system_id
  * @param lat [degE7] Latitude of SW corner of first grid
  * @param lon [degE7] Longitude of SW corner of first grid
  * @param grid_spacing [m] Grid spacing
- * @param mask  Bitmask of requested 4x4 grids (row major 8x7 array of grids, 56 bits)
+ * @param mask  Bitmask of requested 4x4 grids
+                (row major 8x7 array of grids, 56 bits)
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_terrain_request_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -209,7 +217,9 @@ static inline uint16_t mavlink_msg_terrain_request_encode_status(uint8_t system_
  * @param lat [degE7] Latitude of SW corner of first grid
  * @param lon [degE7] Longitude of SW corner of first grid
  * @param grid_spacing [m] Grid spacing
- * @param mask  Bitmask of requested 4x4 grids (row major 8x7 array of grids, 56 bits)
+ * @param mask  Bitmask of requested 4x4 grids
+                (row major 8x7 array of grids, 56 bits)
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -316,7 +326,9 @@ static inline uint16_t mavlink_msg_terrain_request_get_grid_spacing(const mavlin
 /**
  * @brief Get field mask from terrain_request message
  *
- * @return  Bitmask of requested 4x4 grids (row major 8x7 array of grids, 56 bits)
+ * @return  Bitmask of requested 4x4 grids
+                (row major 8x7 array of grids, 56 bits)
+            
  */
 static inline uint64_t mavlink_msg_terrain_request_get_mask(const mavlink_message_t* msg)
 {

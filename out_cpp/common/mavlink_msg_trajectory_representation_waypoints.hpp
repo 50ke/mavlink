@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief TRAJECTORY_REPRESENTATION_WAYPOINTS message
  *
- * Describe a trajectory using an array of up-to 5 waypoints in the local frame (MAV_FRAME_LOCAL_NED).
+ * Describe a trajectory using an array of up-to 5 waypoints in the local frame
+                (MAV_FRAME_LOCAL_NED).
+            
  */
 struct TRAJECTORY_REPRESENTATION_WAYPOINTS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 332;
@@ -19,20 +21,45 @@ struct TRAJECTORY_REPRESENTATION_WAYPOINTS : mavlink::Message {
     static constexpr auto NAME = "TRAJECTORY_REPRESENTATION_WAYPOINTS";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
     uint8_t valid_points; /*<  Number of valid points (up-to 5 waypoints are possible) */
-    std::array<float, 5> pos_x; /*< [m] X-coordinate of waypoint, set to NaN if not being used */
-    std::array<float, 5> pos_y; /*< [m] Y-coordinate of waypoint, set to NaN if not being used */
-    std::array<float, 5> pos_z; /*< [m] Z-coordinate of waypoint, set to NaN if not being used */
-    std::array<float, 5> vel_x; /*< [m/s] X-velocity of waypoint, set to NaN if not being used */
-    std::array<float, 5> vel_y; /*< [m/s] Y-velocity of waypoint, set to NaN if not being used */
-    std::array<float, 5> vel_z; /*< [m/s] Z-velocity of waypoint, set to NaN if not being used */
-    std::array<float, 5> acc_x; /*< [m/s/s] X-acceleration of waypoint, set to NaN if not being used */
-    std::array<float, 5> acc_y; /*< [m/s/s] Y-acceleration of waypoint, set to NaN if not being used */
-    std::array<float, 5> acc_z; /*< [m/s/s] Z-acceleration of waypoint, set to NaN if not being used */
-    std::array<float, 5> pos_yaw; /*< [rad] Yaw angle, set to NaN if not being used */
-    std::array<float, 5> vel_yaw; /*< [rad/s] Yaw rate, set to NaN if not being used */
-    std::array<uint16_t, 5> command; /*<  MAV_CMD command id of waypoint, set to UINT16_MAX if not being used. */
+    std::array<float, 5> pos_x; /*< [m] X-coordinate of waypoint, set to NaN if not
+                being used
+             */
+    std::array<float, 5> pos_y; /*< [m] Y-coordinate of waypoint, set to NaN if not
+                being used
+             */
+    std::array<float, 5> pos_z; /*< [m] Z-coordinate of waypoint, set to NaN if not
+                being used
+             */
+    std::array<float, 5> vel_x; /*< [m/s] X-velocity of waypoint, set to NaN if not
+                being used
+             */
+    std::array<float, 5> vel_y; /*< [m/s] Y-velocity of waypoint, set to NaN if not
+                being used
+             */
+    std::array<float, 5> vel_z; /*< [m/s] Z-velocity of waypoint, set to NaN if not
+                being used
+             */
+    std::array<float, 5> acc_x; /*< [m/s/s] X-acceleration of waypoint, set to NaN if
+                not being used
+             */
+    std::array<float, 5> acc_y; /*< [m/s/s] Y-acceleration of waypoint, set to NaN if
+                not being used
+             */
+    std::array<float, 5> acc_z; /*< [m/s/s] Z-acceleration of waypoint, set to NaN if
+                not being used
+             */
+    std::array<float, 5> pos_yaw; /*< [rad] Yaw angle, set to NaN if not being used
+             */
+    std::array<float, 5> vel_yaw; /*< [rad/s] Yaw rate, set to NaN if not being used
+             */
+    std::array<uint16_t, 5> command; /*<  MAV_CMD command id of
+                waypoint, set to UINT16_MAX if not being used.
+             */
 
 
     inline std::string get_name(void) const override

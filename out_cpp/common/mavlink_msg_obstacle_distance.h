@@ -5,15 +5,35 @@
 
 MAVPACKED(
 typedef struct __mavlink_obstacle_distance_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
- uint16_t distances[72]; /*< [cm] Distance of obstacles around the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame. A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array element, one unit corresponds to 1cm.*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
+ uint16_t distances[72]; /*< [cm] Distance of obstacles around
+                the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame.
+                A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of
+                max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array
+                element, one unit corresponds to 1cm.
+            */
  uint16_t min_distance; /*< [cm] Minimum distance the sensor can measure.*/
  uint16_t max_distance; /*< [cm] Maximum distance the sensor can measure.*/
- uint8_t sensor_type; /*<  Class id of the distance sensor type.*/
- uint8_t increment; /*< [deg] Angular width in degrees of each array element. Increment direction is clockwise. This field is ignored if increment_f is non-zero.*/
- float increment_f; /*< [deg] Angular width in degrees of each array element as a float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise direction, negative is counter-clockwise.*/
- float angle_offset; /*< [deg] Relative angle offset of the 0-index element in the distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is counter-clockwise.*/
- uint8_t frame; /*<  Coordinate frame of reference for the yaw rotation and offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.*/
+ uint8_t sensor_type; /*<  Class id of the distance sensor type.
+            */
+ uint8_t increment; /*< [deg] Angular width in degrees of each array element. Increment
+                direction is clockwise. This field is ignored if increment_f is non-zero.
+            */
+ float increment_f; /*< [deg] Angular width in degrees of each array element as a
+                float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise
+                direction, negative is counter-clockwise.
+            */
+ float angle_offset; /*< [deg] Relative angle offset of the 0-index element in the
+                distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is
+                counter-clockwise.
+            */
+ uint8_t frame; /*<  Coordinate frame of reference for the yaw rotation and
+                offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted
+                sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+            */
 }) mavlink_obstacle_distance_t;
 
 #define MAVLINK_MSG_ID_OBSTACLE_DISTANCE_LEN 167
@@ -65,15 +85,35 @@ typedef struct __mavlink_obstacle_distance_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param sensor_type  Class id of the distance sensor type.
- * @param distances [cm] Distance of obstacles around the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame. A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array element, one unit corresponds to 1cm.
- * @param increment [deg] Angular width in degrees of each array element. Increment direction is clockwise. This field is ignored if increment_f is non-zero.
+            
+ * @param distances [cm] Distance of obstacles around
+                the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame.
+                A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of
+                max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array
+                element, one unit corresponds to 1cm.
+            
+ * @param increment [deg] Angular width in degrees of each array element. Increment
+                direction is clockwise. This field is ignored if increment_f is non-zero.
+            
  * @param min_distance [cm] Minimum distance the sensor can measure.
  * @param max_distance [cm] Maximum distance the sensor can measure.
- * @param increment_f [deg] Angular width in degrees of each array element as a float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise direction, negative is counter-clockwise.
- * @param angle_offset [deg] Relative angle offset of the 0-index element in the distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is counter-clockwise.
- * @param frame  Coordinate frame of reference for the yaw rotation and offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+ * @param increment_f [deg] Angular width in degrees of each array element as a
+                float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise
+                direction, negative is counter-clockwise.
+            
+ * @param angle_offset [deg] Relative angle offset of the 0-index element in the
+                distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is
+                counter-clockwise.
+            
+ * @param frame  Coordinate frame of reference for the yaw rotation and
+                offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted
+                sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_obstacle_distance_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -116,15 +156,35 @@ static inline uint16_t mavlink_msg_obstacle_distance_pack(uint8_t system_id, uin
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param sensor_type  Class id of the distance sensor type.
- * @param distances [cm] Distance of obstacles around the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame. A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array element, one unit corresponds to 1cm.
- * @param increment [deg] Angular width in degrees of each array element. Increment direction is clockwise. This field is ignored if increment_f is non-zero.
+            
+ * @param distances [cm] Distance of obstacles around
+                the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame.
+                A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of
+                max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array
+                element, one unit corresponds to 1cm.
+            
+ * @param increment [deg] Angular width in degrees of each array element. Increment
+                direction is clockwise. This field is ignored if increment_f is non-zero.
+            
  * @param min_distance [cm] Minimum distance the sensor can measure.
  * @param max_distance [cm] Maximum distance the sensor can measure.
- * @param increment_f [deg] Angular width in degrees of each array element as a float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise direction, negative is counter-clockwise.
- * @param angle_offset [deg] Relative angle offset of the 0-index element in the distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is counter-clockwise.
- * @param frame  Coordinate frame of reference for the yaw rotation and offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+ * @param increment_f [deg] Angular width in degrees of each array element as a
+                float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise
+                direction, negative is counter-clockwise.
+            
+ * @param angle_offset [deg] Relative angle offset of the 0-index element in the
+                distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is
+                counter-clockwise.
+            
+ * @param frame  Coordinate frame of reference for the yaw rotation and
+                offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted
+                sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_obstacle_distance_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -170,15 +230,35 @@ static inline uint16_t mavlink_msg_obstacle_distance_pack_status(uint8_t system_
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param sensor_type  Class id of the distance sensor type.
- * @param distances [cm] Distance of obstacles around the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame. A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array element, one unit corresponds to 1cm.
- * @param increment [deg] Angular width in degrees of each array element. Increment direction is clockwise. This field is ignored if increment_f is non-zero.
+            
+ * @param distances [cm] Distance of obstacles around
+                the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame.
+                A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of
+                max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array
+                element, one unit corresponds to 1cm.
+            
+ * @param increment [deg] Angular width in degrees of each array element. Increment
+                direction is clockwise. This field is ignored if increment_f is non-zero.
+            
  * @param min_distance [cm] Minimum distance the sensor can measure.
  * @param max_distance [cm] Maximum distance the sensor can measure.
- * @param increment_f [deg] Angular width in degrees of each array element as a float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise direction, negative is counter-clockwise.
- * @param angle_offset [deg] Relative angle offset of the 0-index element in the distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is counter-clockwise.
- * @param frame  Coordinate frame of reference for the yaw rotation and offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+ * @param increment_f [deg] Angular width in degrees of each array element as a
+                float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise
+                direction, negative is counter-clockwise.
+            
+ * @param angle_offset [deg] Relative angle offset of the 0-index element in the
+                distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is
+                counter-clockwise.
+            
+ * @param frame  Coordinate frame of reference for the yaw rotation and
+                offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted
+                sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_obstacle_distance_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -260,15 +340,35 @@ static inline uint16_t mavlink_msg_obstacle_distance_encode_status(uint8_t syste
  * @brief Send a obstacle_distance message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param sensor_type  Class id of the distance sensor type.
- * @param distances [cm] Distance of obstacles around the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame. A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array element, one unit corresponds to 1cm.
- * @param increment [deg] Angular width in degrees of each array element. Increment direction is clockwise. This field is ignored if increment_f is non-zero.
+            
+ * @param distances [cm] Distance of obstacles around
+                the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame.
+                A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of
+                max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array
+                element, one unit corresponds to 1cm.
+            
+ * @param increment [deg] Angular width in degrees of each array element. Increment
+                direction is clockwise. This field is ignored if increment_f is non-zero.
+            
  * @param min_distance [cm] Minimum distance the sensor can measure.
  * @param max_distance [cm] Maximum distance the sensor can measure.
- * @param increment_f [deg] Angular width in degrees of each array element as a float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise direction, negative is counter-clockwise.
- * @param angle_offset [deg] Relative angle offset of the 0-index element in the distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is counter-clockwise.
- * @param frame  Coordinate frame of reference for the yaw rotation and offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+ * @param increment_f [deg] Angular width in degrees of each array element as a
+                float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise
+                direction, negative is counter-clockwise.
+            
+ * @param angle_offset [deg] Relative angle offset of the 0-index element in the
+                distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is
+                counter-clockwise.
+            
+ * @param frame  Coordinate frame of reference for the yaw rotation and
+                offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted
+                sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -361,7 +461,10 @@ static inline void mavlink_msg_obstacle_distance_send_buf(mavlink_message_t *msg
 /**
  * @brief Get field time_usec from obstacle_distance message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_obstacle_distance_get_time_usec(const mavlink_message_t* msg)
 {
@@ -372,6 +475,7 @@ static inline uint64_t mavlink_msg_obstacle_distance_get_time_usec(const mavlink
  * @brief Get field sensor_type from obstacle_distance message
  *
  * @return  Class id of the distance sensor type.
+            
  */
 static inline uint8_t mavlink_msg_obstacle_distance_get_sensor_type(const mavlink_message_t* msg)
 {
@@ -381,7 +485,12 @@ static inline uint8_t mavlink_msg_obstacle_distance_get_sensor_type(const mavlin
 /**
  * @brief Get field distances from obstacle_distance message
  *
- * @return [cm] Distance of obstacles around the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame. A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array element, one unit corresponds to 1cm.
+ * @return [cm] Distance of obstacles around
+                the vehicle with index 0 corresponding to north + angle_offset, unless otherwise specified in the frame.
+                A value of 0 is valid and means that the obstacle is practically touching the sensor. A value of
+                max_distance +1 means no obstacle is present. A value of UINT16_MAX for unknown/not used. In a array
+                element, one unit corresponds to 1cm.
+            
  */
 static inline uint16_t mavlink_msg_obstacle_distance_get_distances(const mavlink_message_t* msg, uint16_t *distances)
 {
@@ -391,7 +500,9 @@ static inline uint16_t mavlink_msg_obstacle_distance_get_distances(const mavlink
 /**
  * @brief Get field increment from obstacle_distance message
  *
- * @return [deg] Angular width in degrees of each array element. Increment direction is clockwise. This field is ignored if increment_f is non-zero.
+ * @return [deg] Angular width in degrees of each array element. Increment
+                direction is clockwise. This field is ignored if increment_f is non-zero.
+            
  */
 static inline uint8_t mavlink_msg_obstacle_distance_get_increment(const mavlink_message_t* msg)
 {
@@ -421,7 +532,10 @@ static inline uint16_t mavlink_msg_obstacle_distance_get_max_distance(const mavl
 /**
  * @brief Get field increment_f from obstacle_distance message
  *
- * @return [deg] Angular width in degrees of each array element as a float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise direction, negative is counter-clockwise.
+ * @return [deg] Angular width in degrees of each array element as a
+                float. If non-zero then this value is used instead of the uint8_t increment field. Positive is clockwise
+                direction, negative is counter-clockwise.
+            
  */
 static inline float mavlink_msg_obstacle_distance_get_increment_f(const mavlink_message_t* msg)
 {
@@ -431,7 +545,10 @@ static inline float mavlink_msg_obstacle_distance_get_increment_f(const mavlink_
 /**
  * @brief Get field angle_offset from obstacle_distance message
  *
- * @return [deg] Relative angle offset of the 0-index element in the distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is counter-clockwise.
+ * @return [deg] Relative angle offset of the 0-index element in the
+                distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is
+                counter-clockwise.
+            
  */
 static inline float mavlink_msg_obstacle_distance_get_angle_offset(const mavlink_message_t* msg)
 {
@@ -441,7 +558,10 @@ static inline float mavlink_msg_obstacle_distance_get_angle_offset(const mavlink
 /**
  * @brief Get field frame from obstacle_distance message
  *
- * @return  Coordinate frame of reference for the yaw rotation and offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+ * @return  Coordinate frame of reference for the yaw rotation and
+                offset of the sensor data. Defaults to MAV_FRAME_GLOBAL, which is north aligned. For body-mounted
+                sensors use MAV_FRAME_BODY_FRD, which is vehicle front aligned.
+            
  */
 static inline uint8_t mavlink_msg_obstacle_distance_get_frame(const mavlink_message_t* msg)
 {

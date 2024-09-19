@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief PARAM_EXT_VALUE message
  *
- * Emit the value of a parameter. The inclusion of param_count and param_index in the message allows the recipient to keep track of received parameters and allows them to re-request missing parameters after a loss or timeout.
+ * Emit the value of a parameter. The inclusion of param_count and param_index in the message
+                allows the recipient to keep track of received parameters and allows them to re-request missing
+                parameters after a loss or timeout.
+            
  */
 struct PARAM_EXT_VALUE : mavlink::Message {
     static constexpr msgid_t MSG_ID = 322;
@@ -19,7 +22,10 @@ struct PARAM_EXT_VALUE : mavlink::Message {
     static constexpr auto NAME = "PARAM_EXT_VALUE";
 
 
-    std::array<char, 16> param_id; /*<  Parameter id, terminated by NULL if the length is less than 16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars - applications have to provide 16+1 bytes storage if the ID is stored as string */
+    std::array<char, 16> param_id; /*<  Parameter id, terminated by NULL if the length is less than 16
+                human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars -
+                applications have to provide 16+1 bytes storage if the ID is stored as string
+             */
     std::array<char, 128> param_value; /*<  Parameter value */
     uint8_t param_type; /*<  Parameter type. */
     uint16_t param_count; /*<  Total number of parameters */

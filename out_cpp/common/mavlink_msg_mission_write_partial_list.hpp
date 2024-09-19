@@ -9,7 +9,10 @@ namespace msg {
 /**
  * @brief MISSION_WRITE_PARTIAL_LIST message
  *
- * This message is sent to the MAV to write a partial list. If start index == end index, only one item will be transmitted / updated. If the start index is NOT 0 and above the current list size, this request should be REJECTED!
+ * This message is sent to the MAV to write a partial list. If start index == end index, only one
+                item will be transmitted / updated. If the start index is NOT 0 and above the current list size, this
+                request should be REJECTED!
+            
  */
 struct MISSION_WRITE_PARTIAL_LIST : mavlink::Message {
     static constexpr msgid_t MSG_ID = 38;
@@ -21,7 +24,9 @@ struct MISSION_WRITE_PARTIAL_LIST : mavlink::Message {
 
     uint8_t target_system; /*<  System ID */
     uint8_t target_component; /*<  Component ID */
-    int16_t start_index; /*<  Start index. Must be smaller / equal to the largest index of the current onboard list. */
+    int16_t start_index; /*<  Start index. Must be smaller / equal to the largest index of the
+                current onboard list.
+             */
     int16_t end_index; /*<  End index, equal or greater than start index. */
     uint8_t mission_type; /*<  Mission type. */
 

@@ -10,15 +10,26 @@ typedef struct __mavlink_camera_tracking_geo_status_t {
  float alt; /*< [m] Altitude of tracked object(AMSL, WGS84)*/
  float h_acc; /*< [m] Horizontal accuracy. NAN if unknown*/
  float v_acc; /*< [m] Vertical accuracy. NAN if unknown*/
- float vel_n; /*< [m/s] North velocity of tracked object. NAN if unknown*/
- float vel_e; /*< [m/s] East velocity of tracked object. NAN if unknown*/
- float vel_d; /*< [m/s] Down velocity of tracked object. NAN if unknown*/
+ float vel_n; /*< [m/s] North velocity of tracked object. NAN if
+                unknown
+            */
+ float vel_e; /*< [m/s] East velocity of tracked object. NAN if unknown
+            */
+ float vel_d; /*< [m/s] Down velocity of tracked object. NAN if unknown
+            */
  float vel_acc; /*< [m/s] Velocity accuracy. NAN if unknown*/
- float dist; /*< [m] Distance between camera and tracked object. NAN if unknown*/
+ float dist; /*< [m] Distance between camera and tracked object. NAN if
+                unknown
+            */
  float hdg; /*< [rad] Heading in radians, in NED. NAN if unknown*/
- float hdg_acc; /*< [rad] Accuracy of heading, in NED. NAN if unknown*/
- uint8_t tracking_status; /*<  Current tracking status*/
- uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).*/
+ float hdg_acc; /*< [rad] Accuracy of heading, in NED. NAN if unknown
+            */
+ uint8_t tracking_status; /*<  Current tracking status
+            */
+ uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            */
 } mavlink_camera_tracking_geo_status_t;
 
 #define MAVLINK_MSG_ID_CAMERA_TRACKING_GEO_STATUS_LEN 50
@@ -81,19 +92,30 @@ typedef struct __mavlink_camera_tracking_geo_status_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param tracking_status  Current tracking status
+            
  * @param lat [degE7] Latitude of tracked object
  * @param lon [degE7] Longitude of tracked object
  * @param alt [m] Altitude of tracked object(AMSL, WGS84)
  * @param h_acc [m] Horizontal accuracy. NAN if unknown
  * @param v_acc [m] Vertical accuracy. NAN if unknown
- * @param vel_n [m/s] North velocity of tracked object. NAN if unknown
+ * @param vel_n [m/s] North velocity of tracked object. NAN if
+                unknown
+            
  * @param vel_e [m/s] East velocity of tracked object. NAN if unknown
+            
  * @param vel_d [m/s] Down velocity of tracked object. NAN if unknown
+            
  * @param vel_acc [m/s] Velocity accuracy. NAN if unknown
- * @param dist [m] Distance between camera and tracked object. NAN if unknown
+ * @param dist [m] Distance between camera and tracked object. NAN if
+                unknown
+            
  * @param hdg [rad] Heading in radians, in NED. NAN if unknown
  * @param hdg_acc [rad] Accuracy of heading, in NED. NAN if unknown
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_tracking_geo_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -149,19 +171,30 @@ static inline uint16_t mavlink_msg_camera_tracking_geo_status_pack(uint8_t syste
  * @param msg The MAVLink message to compress the data into
  *
  * @param tracking_status  Current tracking status
+            
  * @param lat [degE7] Latitude of tracked object
  * @param lon [degE7] Longitude of tracked object
  * @param alt [m] Altitude of tracked object(AMSL, WGS84)
  * @param h_acc [m] Horizontal accuracy. NAN if unknown
  * @param v_acc [m] Vertical accuracy. NAN if unknown
- * @param vel_n [m/s] North velocity of tracked object. NAN if unknown
+ * @param vel_n [m/s] North velocity of tracked object. NAN if
+                unknown
+            
  * @param vel_e [m/s] East velocity of tracked object. NAN if unknown
+            
  * @param vel_d [m/s] Down velocity of tracked object. NAN if unknown
+            
  * @param vel_acc [m/s] Velocity accuracy. NAN if unknown
- * @param dist [m] Distance between camera and tracked object. NAN if unknown
+ * @param dist [m] Distance between camera and tracked object. NAN if
+                unknown
+            
  * @param hdg [rad] Heading in radians, in NED. NAN if unknown
  * @param hdg_acc [rad] Accuracy of heading, in NED. NAN if unknown
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_tracking_geo_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -220,19 +253,30 @@ static inline uint16_t mavlink_msg_camera_tracking_geo_status_pack_status(uint8_
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param tracking_status  Current tracking status
+            
  * @param lat [degE7] Latitude of tracked object
  * @param lon [degE7] Longitude of tracked object
  * @param alt [m] Altitude of tracked object(AMSL, WGS84)
  * @param h_acc [m] Horizontal accuracy. NAN if unknown
  * @param v_acc [m] Vertical accuracy. NAN if unknown
- * @param vel_n [m/s] North velocity of tracked object. NAN if unknown
+ * @param vel_n [m/s] North velocity of tracked object. NAN if
+                unknown
+            
  * @param vel_e [m/s] East velocity of tracked object. NAN if unknown
+            
  * @param vel_d [m/s] Down velocity of tracked object. NAN if unknown
+            
  * @param vel_acc [m/s] Velocity accuracy. NAN if unknown
- * @param dist [m] Distance between camera and tracked object. NAN if unknown
+ * @param dist [m] Distance between camera and tracked object. NAN if
+                unknown
+            
  * @param hdg [rad] Heading in radians, in NED. NAN if unknown
  * @param hdg_acc [rad] Accuracy of heading, in NED. NAN if unknown
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_camera_tracking_geo_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -327,19 +371,30 @@ static inline uint16_t mavlink_msg_camera_tracking_geo_status_encode_status(uint
  * @param chan MAVLink channel to send the message
  *
  * @param tracking_status  Current tracking status
+            
  * @param lat [degE7] Latitude of tracked object
  * @param lon [degE7] Longitude of tracked object
  * @param alt [m] Altitude of tracked object(AMSL, WGS84)
  * @param h_acc [m] Horizontal accuracy. NAN if unknown
  * @param v_acc [m] Vertical accuracy. NAN if unknown
- * @param vel_n [m/s] North velocity of tracked object. NAN if unknown
+ * @param vel_n [m/s] North velocity of tracked object. NAN if
+                unknown
+            
  * @param vel_e [m/s] East velocity of tracked object. NAN if unknown
+            
  * @param vel_d [m/s] Down velocity of tracked object. NAN if unknown
+            
  * @param vel_acc [m/s] Velocity accuracy. NAN if unknown
- * @param dist [m] Distance between camera and tracked object. NAN if unknown
+ * @param dist [m] Distance between camera and tracked object. NAN if
+                unknown
+            
  * @param hdg [rad] Heading in radians, in NED. NAN if unknown
  * @param hdg_acc [rad] Accuracy of heading, in NED. NAN if unknown
- * @param camera_device_id  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+            
+ * @param camera_device_id  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -457,6 +512,7 @@ static inline void mavlink_msg_camera_tracking_geo_status_send_buf(mavlink_messa
  * @brief Get field tracking_status from camera_tracking_geo_status message
  *
  * @return  Current tracking status
+            
  */
 static inline uint8_t mavlink_msg_camera_tracking_geo_status_get_tracking_status(const mavlink_message_t* msg)
 {
@@ -516,7 +572,9 @@ static inline float mavlink_msg_camera_tracking_geo_status_get_v_acc(const mavli
 /**
  * @brief Get field vel_n from camera_tracking_geo_status message
  *
- * @return [m/s] North velocity of tracked object. NAN if unknown
+ * @return [m/s] North velocity of tracked object. NAN if
+                unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_geo_status_get_vel_n(const mavlink_message_t* msg)
 {
@@ -527,6 +585,7 @@ static inline float mavlink_msg_camera_tracking_geo_status_get_vel_n(const mavli
  * @brief Get field vel_e from camera_tracking_geo_status message
  *
  * @return [m/s] East velocity of tracked object. NAN if unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_geo_status_get_vel_e(const mavlink_message_t* msg)
 {
@@ -537,6 +596,7 @@ static inline float mavlink_msg_camera_tracking_geo_status_get_vel_e(const mavli
  * @brief Get field vel_d from camera_tracking_geo_status message
  *
  * @return [m/s] Down velocity of tracked object. NAN if unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_geo_status_get_vel_d(const mavlink_message_t* msg)
 {
@@ -556,7 +616,9 @@ static inline float mavlink_msg_camera_tracking_geo_status_get_vel_acc(const mav
 /**
  * @brief Get field dist from camera_tracking_geo_status message
  *
- * @return [m] Distance between camera and tracked object. NAN if unknown
+ * @return [m] Distance between camera and tracked object. NAN if
+                unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_geo_status_get_dist(const mavlink_message_t* msg)
 {
@@ -577,6 +639,7 @@ static inline float mavlink_msg_camera_tracking_geo_status_get_hdg(const mavlink
  * @brief Get field hdg_acc from camera_tracking_geo_status message
  *
  * @return [rad] Accuracy of heading, in NED. NAN if unknown
+            
  */
 static inline float mavlink_msg_camera_tracking_geo_status_get_hdg_acc(const mavlink_message_t* msg)
 {
@@ -586,7 +649,10 @@ static inline float mavlink_msg_camera_tracking_geo_status_get_hdg_acc(const mav
 /**
  * @brief Get field camera_device_id from camera_tracking_geo_status message
  *
- * @return  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id).
+ * @return  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+            
  */
 static inline uint8_t mavlink_msg_camera_tracking_geo_status_get_camera_device_id(const mavlink_message_t* msg)
 {

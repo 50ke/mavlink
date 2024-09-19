@@ -19,7 +19,9 @@ struct SAFETY_ALLOWED_AREA : mavlink::Message {
     static constexpr auto NAME = "SAFETY_ALLOWED_AREA";
 
 
-    uint8_t frame; /*<  Coordinate frame. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down. */
+    uint8_t frame; /*<  Coordinate frame. Can be either global, GPS,
+                right-handed with Z axis up or local, right handed, Z axis down.
+             */
     float p1x; /*< [m] x position 1 / Latitude 1 */
     float p1y; /*< [m] y position 1 / Longitude 1 */
     float p1z; /*< [m] z position 1 / Altitude 1 */

@@ -21,7 +21,7 @@ namespace common {
 /**
  * Array of msg_entry needed for @p mavlink_parse_char() (through @p mavlink_get_msg_entry())
  */
-constexpr std::array<mavlink_msg_entry_t, 224> MESSAGE_ENTRIES {{ {0, 50, 9, 9, 0, 0, 0}, {1, 124, 31, 43, 0, 0, 0}, {2, 137, 12, 12, 0, 0, 0}, {4, 237, 14, 14, 3, 12, 13}, {5, 217, 28, 28, 1, 0, 0}, {6, 104, 3, 3, 0, 0, 0}, {7, 119, 32, 32, 0, 0, 0}, {8, 117, 36, 36, 0, 0, 0}, {11, 89, 6, 6, 1, 4, 0}, {20, 214, 20, 20, 3, 2, 3}, {21, 159, 2, 2, 3, 0, 1}, {22, 220, 25, 25, 0, 0, 0}, {23, 168, 23, 23, 3, 4, 5}, {24, 24, 30, 52, 0, 0, 0}, {25, 23, 101, 101, 0, 0, 0}, {26, 170, 22, 24, 0, 0, 0}, {27, 144, 26, 29, 0, 0, 0}, {28, 67, 16, 16, 0, 0, 0}, {29, 115, 14, 16, 0, 0, 0}, {30, 39, 28, 28, 0, 0, 0}, {31, 246, 32, 48, 0, 0, 0}, {32, 185, 28, 28, 0, 0, 0}, {33, 104, 28, 28, 0, 0, 0}, {34, 237, 22, 22, 0, 0, 0}, {35, 244, 22, 22, 0, 0, 0}, {36, 222, 21, 37, 0, 0, 0}, {37, 212, 6, 7, 3, 4, 5}, {38, 9, 6, 7, 3, 4, 5}, {39, 254, 37, 38, 3, 32, 33}, {40, 230, 4, 5, 3, 2, 3}, {41, 28, 4, 4, 3, 2, 3}, {42, 28, 2, 18, 0, 0, 0}, {43, 132, 2, 3, 3, 0, 1}, {44, 221, 4, 9, 3, 2, 3}, {45, 232, 2, 3, 3, 0, 1}, {46, 11, 2, 2, 0, 0, 0}, {47, 153, 3, 8, 3, 0, 1}, {48, 41, 13, 21, 1, 12, 0}, {49, 39, 12, 20, 0, 0, 0}, {50, 78, 37, 37, 3, 18, 19}, {51, 196, 4, 5, 3, 2, 3}, {54, 15, 27, 27, 3, 24, 25}, {55, 3, 25, 25, 0, 0, 0}, {61, 167, 72, 72, 0, 0, 0}, {62, 183, 26, 26, 0, 0, 0}, {63, 119, 181, 181, 0, 0, 0}, {64, 191, 225, 225, 0, 0, 0}, {65, 118, 42, 42, 0, 0, 0}, {66, 148, 6, 6, 3, 2, 3}, {67, 21, 4, 4, 0, 0, 0}, {69, 243, 11, 30, 1, 10, 0}, {70, 124, 18, 38, 3, 16, 17}, {73, 38, 37, 38, 3, 32, 33}, {74, 20, 20, 20, 0, 0, 0}, {75, 158, 35, 35, 3, 30, 31}, {76, 152, 33, 33, 3, 30, 31}, {77, 143, 3, 10, 3, 8, 9}, {80, 14, 4, 4, 3, 2, 3}, {81, 106, 22, 22, 0, 0, 0}, {82, 49, 39, 51, 3, 36, 37}, {83, 22, 37, 37, 0, 0, 0}, {84, 143, 53, 53, 3, 50, 51}, {85, 140, 51, 51, 0, 0, 0}, {86, 5, 53, 53, 3, 50, 51}, {87, 150, 51, 51, 0, 0, 0}, {89, 231, 28, 28, 0, 0, 0}, {90, 183, 56, 56, 0, 0, 0}, {91, 63, 42, 42, 0, 0, 0}, {92, 54, 33, 33, 0, 0, 0}, {93, 47, 81, 81, 0, 0, 0}, {100, 175, 26, 34, 0, 0, 0}, {101, 102, 32, 117, 0, 0, 0}, {102, 158, 32, 117, 0, 0, 0}, {103, 208, 20, 57, 0, 0, 0}, {104, 56, 32, 116, 0, 0, 0}, {105, 93, 62, 63, 0, 0, 0}, {106, 138, 44, 44, 0, 0, 0}, {107, 108, 64, 65, 0, 0, 0}, {108, 32, 84, 92, 0, 0, 0}, {109, 185, 9, 9, 0, 0, 0}, {110, 84, 254, 254, 3, 1, 2}, {111, 34, 16, 18, 3, 16, 17}, {112, 174, 12, 12, 0, 0, 0}, {113, 124, 36, 39, 0, 0, 0}, {114, 237, 44, 44, 0, 0, 0}, {115, 4, 64, 64, 0, 0, 0}, {116, 76, 22, 24, 0, 0, 0}, {117, 128, 6, 6, 3, 4, 5}, {118, 56, 14, 14, 0, 0, 0}, {119, 116, 12, 12, 3, 10, 11}, {120, 134, 97, 97, 0, 0, 0}, {121, 237, 2, 2, 3, 0, 1}, {122, 203, 2, 2, 3, 0, 1}, {123, 250, 113, 113, 3, 0, 1}, {124, 87, 35, 57, 0, 0, 0}, {125, 203, 6, 6, 0, 0, 0}, {126, 220, 79, 81, 3, 79, 80}, {127, 25, 35, 35, 0, 0, 0}, {128, 226, 35, 35, 0, 0, 0}, {129, 46, 22, 24, 0, 0, 0}, {130, 29, 13, 13, 0, 0, 0}, {131, 223, 255, 255, 0, 0, 0}, {132, 85, 14, 39, 0, 0, 0}, {133, 6, 18, 18, 0, 0, 0}, {134, 229, 43, 43, 0, 0, 0}, {135, 203, 8, 8, 0, 0, 0}, {136, 1, 22, 22, 0, 0, 0}, {137, 195, 14, 16, 0, 0, 0}, {138, 109, 36, 120, 0, 0, 0}, {139, 168, 43, 43, 3, 41, 42}, {140, 181, 41, 41, 0, 0, 0}, {141, 47, 32, 32, 0, 0, 0}, {142, 72, 243, 243, 0, 0, 0}, {143, 131, 14, 16, 0, 0, 0}, {144, 127, 93, 93, 0, 0, 0}, {146, 103, 100, 100, 0, 0, 0}, {147, 154, 36, 54, 0, 0, 0}, {148, 178, 60, 78, 0, 0, 0}, {149, 200, 30, 60, 0, 0, 0}, {162, 189, 8, 9, 0, 0, 0}, {192, 36, 44, 54, 0, 0, 0}, {225, 208, 65, 73, 0, 0, 0}, {230, 163, 42, 42, 0, 0, 0}, {231, 105, 40, 40, 0, 0, 0}, {232, 151, 63, 65, 0, 0, 0}, {233, 35, 182, 182, 0, 0, 0}, {234, 150, 40, 40, 0, 0, 0}, {235, 179, 42, 42, 0, 0, 0}, {241, 90, 32, 32, 0, 0, 0}, {242, 104, 52, 60, 0, 0, 0}, {243, 85, 53, 61, 1, 52, 0}, {244, 95, 6, 6, 0, 0, 0}, {245, 130, 2, 2, 0, 0, 0}, {246, 184, 38, 38, 0, 0, 0}, {247, 81, 19, 19, 0, 0, 0}, {248, 8, 254, 254, 3, 3, 4}, {249, 204, 36, 36, 0, 0, 0}, {250, 49, 30, 30, 0, 0, 0}, {251, 170, 18, 18, 0, 0, 0}, {252, 44, 18, 18, 0, 0, 0}, {253, 83, 51, 54, 0, 0, 0}, {254, 46, 9, 9, 0, 0, 0}, {256, 71, 42, 42, 3, 8, 9}, {257, 131, 9, 9, 0, 0, 0}, {258, 187, 32, 232, 3, 0, 1}, {259, 92, 235, 237, 0, 0, 0}, {260, 146, 5, 14, 0, 0, 0}, {261, 179, 27, 61, 0, 0, 0}, {262, 12, 18, 23, 0, 0, 0}, {263, 133, 255, 255, 0, 0, 0}, {264, 49, 28, 32, 0, 0, 0}, {265, 26, 16, 20, 0, 0, 0}, {266, 193, 255, 255, 3, 2, 3}, {267, 35, 255, 255, 3, 2, 3}, {268, 14, 4, 4, 3, 2, 3}, {269, 109, 213, 215, 0, 0, 0}, {270, 59, 19, 20, 0, 0, 0}, {271, 22, 52, 53, 0, 0, 0}, {275, 126, 31, 32, 0, 0, 0}, {276, 18, 49, 50, 0, 0, 0}, {277, 62, 30, 30, 0, 0, 0}, {280, 70, 33, 33, 0, 0, 0}, {281, 48, 13, 13, 0, 0, 0}, {282, 123, 35, 35, 3, 32, 33}, {283, 74, 144, 145, 0, 0, 0}, {284, 99, 32, 32, 3, 30, 31}, {285, 137, 40, 49, 3, 38, 39}, {286, 210, 53, 57, 3, 50, 51}, {287, 1, 23, 23, 3, 20, 21}, {288, 20, 23, 23, 3, 20, 21}, {290, 251, 46, 46, 0, 0, 0}, {291, 10, 57, 57, 0, 0, 0}, {299, 19, 96, 98, 0, 0, 0}, {300, 217, 22, 22, 0, 0, 0}, {301, 243, 58, 58, 0, 0, 0}, {310, 28, 17, 17, 0, 0, 0}, {311, 95, 116, 116, 0, 0, 0}, {320, 243, 20, 20, 3, 2, 3}, {321, 88, 2, 2, 3, 0, 1}, {322, 243, 149, 149, 0, 0, 0}, {323, 78, 147, 147, 3, 0, 1}, {324, 132, 146, 146, 0, 0, 0}, {330, 23, 158, 167, 0, 0, 0}, {331, 91, 230, 233, 0, 0, 0}, {332, 236, 239, 239, 0, 0, 0}, {333, 231, 109, 109, 0, 0, 0}, {334, 72, 10, 10, 0, 0, 0}, {335, 225, 24, 24, 0, 0, 0}, {336, 245, 84, 84, 0, 0, 0}, {339, 199, 5, 5, 0, 0, 0}, {340, 99, 70, 70, 0, 0, 0}, {350, 232, 20, 252, 0, 0, 0}, {360, 11, 25, 25, 0, 0, 0}, {370, 26, 140, 140, 0, 0, 0}, {373, 117, 42, 42, 0, 0, 0}, {375, 251, 140, 140, 0, 0, 0}, {380, 232, 20, 20, 0, 0, 0}, {385, 147, 133, 133, 3, 2, 3}, {386, 132, 16, 16, 3, 4, 5}, {387, 4, 72, 72, 3, 4, 5}, {388, 8, 37, 37, 3, 32, 33}, {390, 156, 238, 238, 0, 0, 0}, {395, 0, 212, 212, 0, 0, 0}, {396, 50, 160, 160, 0, 0, 0}, {397, 182, 108, 108, 0, 0, 0}, {400, 110, 254, 254, 3, 4, 5}, {401, 183, 6, 6, 3, 4, 5}, {410, 160, 53, 53, 0, 0, 0}, {411, 106, 3, 3, 0, 0, 0}, {412, 33, 6, 6, 3, 4, 5}, {413, 77, 7, 7, 3, 4, 5}, {440, 66, 35, 35, 0, 0, 0}, {9000, 113, 137, 137, 0, 0, 0}, {9005, 117, 34, 34, 0, 0, 0}, {12900, 114, 44, 44, 3, 0, 1}, {12901, 254, 59, 59, 3, 30, 31}, {12902, 140, 53, 53, 3, 4, 5}, {12903, 249, 46, 46, 3, 0, 1}, {12904, 77, 54, 54, 3, 28, 29}, {12905, 49, 43, 43, 3, 0, 1}, {12915, 94, 249, 249, 3, 0, 1}, {12918, 139, 51, 51, 0, 0, 0}, {12919, 7, 18, 18, 3, 16, 17}, {12920, 20, 5, 5, 0, 0, 0} }};
+constexpr std::array<mavlink_msg_entry_t, 229> MESSAGE_ENTRIES {{ {0, 50, 9, 9, 0, 0, 0}, {1, 124, 31, 43, 0, 0, 0}, {2, 137, 12, 12, 0, 0, 0}, {4, 237, 14, 14, 3, 12, 13}, {5, 217, 28, 28, 1, 0, 0}, {6, 104, 3, 3, 0, 0, 0}, {7, 119, 32, 32, 0, 0, 0}, {8, 117, 36, 36, 0, 0, 0}, {11, 89, 6, 6, 1, 4, 0}, {20, 214, 20, 20, 3, 2, 3}, {21, 159, 2, 2, 3, 0, 1}, {22, 220, 25, 25, 0, 0, 0}, {23, 168, 23, 23, 3, 4, 5}, {24, 24, 30, 52, 0, 0, 0}, {25, 23, 101, 101, 0, 0, 0}, {26, 170, 22, 24, 0, 0, 0}, {27, 144, 26, 29, 0, 0, 0}, {28, 67, 16, 16, 0, 0, 0}, {29, 115, 14, 16, 0, 0, 0}, {30, 39, 28, 28, 0, 0, 0}, {31, 246, 32, 48, 0, 0, 0}, {32, 185, 28, 28, 0, 0, 0}, {33, 104, 28, 28, 0, 0, 0}, {34, 237, 22, 22, 0, 0, 0}, {35, 244, 22, 22, 0, 0, 0}, {36, 222, 21, 37, 0, 0, 0}, {37, 212, 6, 7, 3, 4, 5}, {38, 9, 6, 7, 3, 4, 5}, {39, 254, 37, 38, 3, 32, 33}, {40, 230, 4, 5, 3, 2, 3}, {41, 28, 4, 4, 3, 2, 3}, {42, 28, 2, 18, 0, 0, 0}, {43, 132, 2, 3, 3, 0, 1}, {44, 221, 4, 9, 3, 2, 3}, {45, 232, 2, 3, 3, 0, 1}, {46, 11, 2, 2, 0, 0, 0}, {47, 153, 3, 8, 3, 0, 1}, {48, 41, 13, 21, 1, 12, 0}, {49, 39, 12, 20, 0, 0, 0}, {50, 78, 37, 37, 3, 18, 19}, {51, 196, 4, 5, 3, 2, 3}, {54, 15, 27, 27, 3, 24, 25}, {55, 3, 25, 25, 0, 0, 0}, {61, 167, 72, 72, 0, 0, 0}, {62, 183, 26, 26, 0, 0, 0}, {63, 119, 181, 181, 0, 0, 0}, {64, 191, 225, 225, 0, 0, 0}, {65, 118, 42, 42, 0, 0, 0}, {66, 148, 6, 6, 3, 2, 3}, {67, 21, 4, 4, 0, 0, 0}, {69, 243, 11, 30, 1, 10, 0}, {70, 124, 18, 38, 3, 16, 17}, {73, 38, 37, 38, 3, 32, 33}, {74, 20, 20, 20, 0, 0, 0}, {75, 158, 35, 35, 3, 30, 31}, {76, 152, 33, 33, 3, 30, 31}, {77, 143, 3, 10, 3, 8, 9}, {80, 14, 4, 4, 3, 2, 3}, {81, 106, 22, 22, 0, 0, 0}, {82, 49, 39, 51, 3, 36, 37}, {83, 22, 37, 37, 0, 0, 0}, {84, 143, 53, 53, 3, 50, 51}, {85, 140, 51, 51, 0, 0, 0}, {86, 5, 53, 53, 3, 50, 51}, {87, 150, 51, 51, 0, 0, 0}, {89, 231, 28, 28, 0, 0, 0}, {90, 183, 56, 56, 0, 0, 0}, {91, 63, 42, 42, 0, 0, 0}, {92, 54, 33, 33, 0, 0, 0}, {93, 47, 81, 81, 0, 0, 0}, {100, 175, 26, 34, 0, 0, 0}, {101, 102, 32, 117, 0, 0, 0}, {102, 158, 32, 117, 0, 0, 0}, {103, 208, 20, 57, 0, 0, 0}, {104, 56, 32, 116, 0, 0, 0}, {105, 93, 62, 63, 0, 0, 0}, {106, 138, 44, 44, 0, 0, 0}, {107, 108, 64, 65, 0, 0, 0}, {108, 32, 84, 92, 0, 0, 0}, {109, 185, 9, 9, 0, 0, 0}, {110, 84, 254, 254, 3, 1, 2}, {111, 34, 16, 18, 3, 16, 17}, {112, 174, 12, 12, 0, 0, 0}, {113, 124, 36, 39, 0, 0, 0}, {114, 237, 44, 44, 0, 0, 0}, {115, 4, 64, 64, 0, 0, 0}, {116, 76, 22, 24, 0, 0, 0}, {117, 128, 6, 6, 3, 4, 5}, {118, 56, 14, 14, 0, 0, 0}, {119, 116, 12, 12, 3, 10, 11}, {120, 134, 97, 97, 0, 0, 0}, {121, 237, 2, 2, 3, 0, 1}, {122, 203, 2, 2, 3, 0, 1}, {123, 250, 113, 113, 3, 0, 1}, {124, 87, 35, 57, 0, 0, 0}, {125, 203, 6, 6, 0, 0, 0}, {126, 220, 79, 81, 3, 79, 80}, {127, 25, 35, 35, 0, 0, 0}, {128, 226, 35, 35, 0, 0, 0}, {129, 46, 22, 24, 0, 0, 0}, {130, 29, 13, 13, 0, 0, 0}, {131, 223, 255, 255, 0, 0, 0}, {132, 85, 14, 39, 0, 0, 0}, {133, 6, 18, 18, 0, 0, 0}, {134, 229, 43, 43, 0, 0, 0}, {135, 203, 8, 8, 0, 0, 0}, {136, 1, 22, 22, 0, 0, 0}, {137, 195, 14, 16, 0, 0, 0}, {138, 109, 36, 120, 0, 0, 0}, {139, 168, 43, 43, 3, 41, 42}, {140, 181, 41, 41, 0, 0, 0}, {141, 47, 32, 32, 0, 0, 0}, {142, 72, 243, 243, 0, 0, 0}, {143, 131, 14, 16, 0, 0, 0}, {144, 127, 93, 93, 0, 0, 0}, {146, 103, 100, 100, 0, 0, 0}, {147, 154, 36, 54, 0, 0, 0}, {148, 178, 60, 78, 0, 0, 0}, {149, 200, 30, 60, 0, 0, 0}, {162, 189, 8, 9, 0, 0, 0}, {192, 36, 44, 54, 0, 0, 0}, {225, 208, 65, 73, 0, 0, 0}, {230, 163, 42, 42, 0, 0, 0}, {231, 105, 40, 40, 0, 0, 0}, {232, 151, 63, 65, 0, 0, 0}, {233, 35, 182, 182, 0, 0, 0}, {234, 150, 40, 40, 0, 0, 0}, {235, 179, 42, 42, 0, 0, 0}, {241, 90, 32, 32, 0, 0, 0}, {242, 104, 52, 60, 0, 0, 0}, {243, 85, 53, 61, 1, 52, 0}, {244, 95, 6, 6, 0, 0, 0}, {245, 130, 2, 2, 0, 0, 0}, {246, 184, 38, 38, 0, 0, 0}, {247, 81, 19, 19, 0, 0, 0}, {248, 8, 254, 254, 3, 3, 4}, {249, 204, 36, 36, 0, 0, 0}, {250, 49, 30, 30, 0, 0, 0}, {251, 170, 18, 18, 0, 0, 0}, {252, 44, 18, 18, 0, 0, 0}, {253, 83, 51, 54, 0, 0, 0}, {254, 46, 9, 9, 0, 0, 0}, {256, 71, 42, 42, 3, 8, 9}, {257, 131, 9, 9, 0, 0, 0}, {258, 187, 32, 232, 3, 0, 1}, {259, 92, 235, 237, 0, 0, 0}, {260, 146, 5, 14, 0, 0, 0}, {261, 179, 27, 61, 0, 0, 0}, {262, 12, 18, 23, 0, 0, 0}, {263, 133, 255, 255, 0, 0, 0}, {264, 49, 28, 32, 0, 0, 0}, {265, 26, 16, 20, 0, 0, 0}, {266, 193, 255, 255, 3, 2, 3}, {267, 35, 255, 255, 3, 2, 3}, {268, 14, 4, 4, 3, 2, 3}, {269, 109, 213, 215, 0, 0, 0}, {270, 59, 19, 20, 0, 0, 0}, {271, 22, 52, 53, 0, 0, 0}, {275, 126, 31, 32, 0, 0, 0}, {276, 18, 49, 50, 0, 0, 0}, {277, 62, 30, 30, 0, 0, 0}, {280, 70, 33, 33, 0, 0, 0}, {281, 48, 13, 13, 0, 0, 0}, {282, 123, 35, 35, 3, 32, 33}, {283, 74, 144, 145, 0, 0, 0}, {284, 99, 32, 32, 3, 30, 31}, {285, 137, 40, 49, 3, 38, 39}, {286, 210, 53, 57, 3, 50, 51}, {287, 1, 23, 23, 3, 20, 21}, {288, 20, 23, 23, 3, 20, 21}, {290, 251, 46, 46, 0, 0, 0}, {291, 10, 57, 57, 0, 0, 0}, {299, 19, 96, 98, 0, 0, 0}, {300, 217, 22, 22, 0, 0, 0}, {301, 243, 58, 58, 0, 0, 0}, {310, 28, 17, 17, 0, 0, 0}, {311, 95, 116, 116, 0, 0, 0}, {320, 243, 20, 20, 3, 2, 3}, {321, 88, 2, 2, 3, 0, 1}, {322, 243, 149, 149, 0, 0, 0}, {323, 78, 147, 147, 3, 0, 1}, {324, 132, 146, 146, 0, 0, 0}, {330, 23, 158, 167, 0, 0, 0}, {331, 91, 230, 233, 0, 0, 0}, {332, 236, 239, 239, 0, 0, 0}, {333, 231, 109, 109, 0, 0, 0}, {334, 72, 10, 10, 0, 0, 0}, {335, 225, 24, 24, 0, 0, 0}, {336, 245, 84, 84, 0, 0, 0}, {339, 199, 5, 5, 0, 0, 0}, {340, 99, 70, 70, 0, 0, 0}, {350, 232, 20, 252, 0, 0, 0}, {360, 11, 25, 25, 0, 0, 0}, {370, 26, 140, 140, 0, 0, 0}, {373, 117, 42, 42, 0, 0, 0}, {375, 251, 140, 140, 0, 0, 0}, {380, 232, 20, 20, 0, 0, 0}, {385, 147, 133, 133, 3, 2, 3}, {386, 132, 16, 16, 3, 4, 5}, {387, 4, 72, 72, 3, 4, 5}, {388, 8, 37, 37, 3, 32, 33}, {390, 156, 238, 238, 0, 0, 0}, {395, 0, 212, 212, 0, 0, 0}, {396, 50, 160, 160, 0, 0, 0}, {397, 182, 108, 108, 0, 0, 0}, {400, 110, 254, 254, 3, 4, 5}, {401, 183, 6, 6, 3, 4, 5}, {410, 160, 53, 53, 0, 0, 0}, {411, 106, 3, 3, 0, 0, 0}, {412, 33, 6, 6, 3, 4, 5}, {413, 77, 7, 7, 3, 4, 5}, {440, 66, 35, 35, 0, 0, 0}, {9000, 113, 137, 137, 0, 0, 0}, {9005, 117, 34, 34, 0, 0, 0}, {12900, 114, 44, 44, 3, 0, 1}, {12901, 254, 59, 59, 3, 30, 31}, {12902, 140, 53, 53, 3, 4, 5}, {12903, 249, 46, 46, 3, 0, 1}, {12904, 77, 54, 54, 3, 28, 29}, {12905, 49, 43, 43, 3, 0, 1}, {12915, 94, 249, 249, 3, 0, 1}, {12918, 139, 51, 51, 0, 0, 0}, {12919, 7, 18, 18, 3, 16, 17}, {12920, 20, 5, 5, 0, 0, 0}, {50001, 153, 1, 1, 1, 0, 0}, {50002, 150, 2, 2, 1, 0, 0}, {50003, 62, 1, 1, 1, 0, 0}, {50004, 151, 2, 2, 1, 0, 0}, {50005, 147, 137, 137, 0, 0, 0} }};
 
 //! MAVLINK VERSION
 constexpr auto MAVLINK_VERSION = 3;
@@ -30,7 +30,9 @@ constexpr auto MAVLINK_VERSION = 3;
 // ENUM DEFINITIONS
 
 
-/** @brief These values define the type of firmware release.  These values indicate the first version or release of this type.  For example the first alpha release would be 64, the second would be 65. */
+/** @brief These values define the type of firmware release. These values indicate the first version or
+                release of this type. For example the first alpha release would be 64, the second would be 65.
+             */
 enum class FIRMWARE_VERSION_TYPE
 {
     DEV=0, /* development release | */
@@ -65,7 +67,8 @@ enum class HL_FAILURE_FLAG : uint16_t
 //! HL_FAILURE_FLAG ENUM_END
 constexpr auto HL_FAILURE_FLAG_ENUM_END = 8193;
 
-/** @brief Actions that may be specified in MAV_CMD_OVERRIDE_GOTO to override mission execution. */
+/** @brief Actions that may be specified in MAV_CMD_OVERRIDE_GOTO to override mission execution.
+             */
 enum class MAV_GOTO
 {
     DO_HOLD=0, /* Hold at the current position. | */
@@ -77,21 +80,32 @@ enum class MAV_GOTO
 //! MAV_GOTO ENUM_END
 constexpr auto MAV_GOTO_ENUM_END = 4;
 
-/** @brief These defines are predefined OR-combined mode flags. There is no need to use values from this enum, but it
-               simplifies the use of the mode flags. Note that manual input is enabled in all modes as a safety override. */
+/** @brief These defines are predefined OR-combined mode flags. There is no need to use values from this
+                enum, but it
+                simplifies the use of the mode flags. Note that manual input is enabled in all modes as a safety
+                override.
+             */
 enum class MAV_MODE : uint8_t
 {
     PREFLIGHT=0, /* System is not ready to fly, booting, calibrating, etc. No flag is set. | */
     MANUAL_DISARMED=64, /* System is allowed to be active, under manual (RC) control, no stabilization | */
-    TEST_DISARMED=66, /* UNDEFINED mode. This solely depends on the autopilot - use with caution, intended for developers only. | */
+    TEST_DISARMED=66, /* UNDEFINED mode. This solely depends on the autopilot - use with caution, intended for
+                    developers only.
+                 | */
     STABILIZE_DISARMED=80, /* System is allowed to be active, under assisted RC control. | */
     GUIDED_DISARMED=88, /* System is allowed to be active, under autonomous control, manual setpoint | */
-    AUTO_DISARMED=92, /* System is allowed to be active, under autonomous control and navigation (the trajectory is decided onboard and not pre-programmed by waypoints) | */
+    AUTO_DISARMED=92, /* System is allowed to be active, under autonomous control and navigation (the trajectory is
+                    decided onboard and not pre-programmed by waypoints)
+                 | */
     MANUAL_ARMED=192, /* System is allowed to be active, under manual (RC) control, no stabilization | */
-    TEST_ARMED=194, /* UNDEFINED mode. This solely depends on the autopilot - use with caution, intended for developers only. | */
+    TEST_ARMED=194, /* UNDEFINED mode. This solely depends on the autopilot - use with caution, intended for
+                    developers only.
+                 | */
     STABILIZE_ARMED=208, /* System is allowed to be active, under assisted RC control. | */
     GUIDED_ARMED=216, /* System is allowed to be active, under autonomous control, manual setpoint | */
-    AUTO_ARMED=220, /* System is allowed to be active, under autonomous control and navigation (the trajectory is decided onboard and not pre-programmed by waypoints) | */
+    AUTO_ARMED=220, /* System is allowed to be active, under autonomous control and navigation (the trajectory is
+                    decided onboard and not pre-programmed by waypoints)
+                 | */
 };
 
 //! MAV_MODE ENUM_END
@@ -127,17 +141,21 @@ enum class MAV_SYS_STATUS_SENSOR : uint32_t
     LOGGING=16777216, /* 0x1000000 Logging | */
     BATTERY=33554432, /* 0x2000000 Battery | */
     PROXIMITY=67108864, /* 0x4000000 Proximity | */
-    SATCOM=134217728, /* 0x8000000 Satellite Communication  | */
+    SATCOM=134217728, /* 0x8000000 Satellite Communication | */
     PREARM_CHECK=268435456, /* 0x10000000 pre-arm check status. Always healthy when armed | */
     OBSTACLE_AVOIDANCE=536870912, /* 0x20000000 Avoidance/collision prevention | */
     PROPULSION=1073741824, /* 0x40000000 propulsion (actuator, esc, motor or propellor) | */
-    EXTENSION_USED=2147483648, /* 0x80000000 Extended bit-field are used for further sensor status bits (needs to be set in onboard_control_sensors_present only) | */
+    EXTENSION_USED=2147483648, /* 0x80000000 Extended bit-field are used for further sensor status bits (needs to be set in
+                    onboard_control_sensors_present only)
+                 | */
 };
 
 //! MAV_SYS_STATUS_SENSOR ENUM_END
 constexpr auto MAV_SYS_STATUS_SENSOR_ENUM_END = 2147483649;
 
-/** @brief These encode the sensors whose status is sent as part of the SYS_STATUS message in the extended fields. */
+/** @brief These encode the sensors whose status is sent as part of the SYS_STATUS message in the extended
+                fields.
+             */
 enum class MAV_SYS_STATUS_SENSOR_EXTENDED : uint32_t
 {
     RECOVERY_SYSTEM=1, /* 0x01 Recovery system (parachute, balloon, retracts etc) | */
@@ -146,48 +164,82 @@ enum class MAV_SYS_STATUS_SENSOR_EXTENDED : uint32_t
 //! MAV_SYS_STATUS_SENSOR_EXTENDED ENUM_END
 constexpr auto MAV_SYS_STATUS_SENSOR_EXTENDED_ENUM_END = 2;
 
-/** @brief Coordinate frames used by MAVLink. Not all frames are supported by all commands, messages, or vehicles.
+/** @brief Coordinate frames used by MAVLink. Not all frames are supported by all commands, messages, or
+                vehicles.
 
-      Global frames use the following naming conventions:
-      - "GLOBAL": Global coordinate frame with WGS84 latitude/longitude and altitude positive over mean sea level (MSL) by default.
-        The following modifiers may be used with "GLOBAL":
-        - "RELATIVE_ALT": Altitude is relative to the vehicle home position rather than MSL.
-        - "TERRAIN_ALT": Altitude is relative to ground level rather than MSL.
-        - "INT": Latitude/longitude (in degrees) are scaled by multiplying by 1E7.
+                Global frames use the following naming conventions:
+                - "GLOBAL": Global coordinate frame with WGS84 latitude/longitude and altitude positive over mean sea
+                level (MSL) by default.
+                The following modifiers may be used with "GLOBAL":
+                - "RELATIVE_ALT": Altitude is relative to the vehicle home position rather than MSL.
+                - "TERRAIN_ALT": Altitude is relative to ground level rather than MSL.
+                - "INT": Latitude/longitude (in degrees) are scaled by multiplying by 1E7.
 
-      Local frames use the following naming conventions:
-      - "LOCAL": Origin of local frame is fixed relative to earth. Unless otherwise specified this origin is the origin of the vehicle position-estimator ("EKF").
-      - "BODY": Origin of local frame travels with the vehicle. NOTE, "BODY" does NOT indicate alignment of frame axis with vehicle attitude.
-      - "OFFSET": Deprecated synonym for "BODY" (origin travels with the vehicle). Not to be used for new frames.
+                Local frames use the following naming conventions:
+                - "LOCAL": Origin of local frame is fixed relative to earth. Unless otherwise specified this origin is
+                the origin of the vehicle position-estimator ("EKF").
+                - "BODY": Origin of local frame travels with the vehicle. NOTE, "BODY" does NOT indicate alignment of
+                frame axis with vehicle attitude.
+                - "OFFSET": Deprecated synonym for "BODY" (origin travels with the vehicle). Not to be used for new
+                frames.
 
-      Some deprecated frames do not follow these conventions (e.g. MAV_FRAME_BODY_NED and MAV_FRAME_BODY_OFFSET_NED).
-  */
+                Some deprecated frames do not follow these conventions (e.g. MAV_FRAME_BODY_NED and
+                MAV_FRAME_BODY_OFFSET_NED).
+             */
 enum class MAV_FRAME : uint8_t
 {
     GLOBAL=0, /* Global (WGS84) coordinate frame + altitude relative to mean sea level (MSL). | */
-    LOCAL_NED=1, /* NED local tangent frame (x: North, y: East, z: Down) with origin fixed relative to earth. | */
+    LOCAL_NED=1, /* NED local tangent frame (x: North, y: East, z: Down) with origin fixed relative to earth.
+                 | */
     MISSION=2, /* NOT a coordinate frame, indicates a mission command. | */
     GLOBAL_RELATIVE_ALT=3, /* 
-          Global (WGS84) coordinate frame + altitude relative to the home position.
-         | */
-    LOCAL_ENU=4, /* ENU local tangent frame (x: East, y: North, z: Up) with origin fixed relative to earth. | */
-    GLOBAL_INT=5, /* Global (WGS84) coordinate frame (scaled) + altitude relative to mean sea level (MSL). | */
-    GLOBAL_RELATIVE_ALT_INT=6, /* Global (WGS84) coordinate frame (scaled) + altitude relative to the home position.  | */
-    LOCAL_OFFSET_NED=7, /* NED local tangent frame (x: North, y: East, z: Down) with origin that travels with the vehicle. | */
-    BODY_NED=8, /* Same as MAV_FRAME_LOCAL_NED when used to represent position values. Same as MAV_FRAME_BODY_FRD when used with velocity/acceleration values. | */
+                    Global (WGS84) coordinate frame + altitude relative to the home position.
+                 | */
+    LOCAL_ENU=4, /* ENU local tangent frame (x: East, y: North, z: Up) with origin fixed relative to earth.
+                 | */
+    GLOBAL_INT=5, /* Global (WGS84) coordinate frame (scaled) + altitude relative to mean sea level (MSL).
+                 | */
+    GLOBAL_RELATIVE_ALT_INT=6, /* Global (WGS84) coordinate frame (scaled) + altitude relative to the home position.
+                 | */
+    LOCAL_OFFSET_NED=7, /* NED local tangent frame (x: North, y: East, z: Down) with origin that travels with the
+                    vehicle.
+                 | */
+    BODY_NED=8, /* Same as MAV_FRAME_LOCAL_NED when used to represent position values. Same as
+                    MAV_FRAME_BODY_FRD when used with velocity/acceleration values.
+                 | */
     BODY_OFFSET_NED=9, /* This is the same as MAV_FRAME_BODY_FRD. | */
     GLOBAL_TERRAIN_ALT=10, /* Global (WGS84) coordinate frame with AGL altitude (altitude at ground level). | */
-    GLOBAL_TERRAIN_ALT_INT=11, /* Global (WGS84) coordinate frame (scaled) with AGL altitude (altitude at ground level). | */
-    BODY_FRD=12, /* FRD local frame aligned to the vehicle's attitude (x: Forward, y: Right, z: Down) with an origin that travels with vehicle. | */
-    RESERVED_13=13, /* MAV_FRAME_BODY_FLU - Body fixed frame of reference, Z-up (x: Forward, y: Left, z: Up). | */
-    RESERVED_14=14, /* MAV_FRAME_MOCAP_NED - Odometry local coordinate frame of data given by a motion capture system, Z-down (x: North, y: East, z: Down). | */
-    RESERVED_15=15, /* MAV_FRAME_MOCAP_ENU - Odometry local coordinate frame of data given by a motion capture system, Z-up (x: East, y: North, z: Up). | */
-    RESERVED_16=16, /* MAV_FRAME_VISION_NED - Odometry local coordinate frame of data given by a vision estimation system, Z-down (x: North, y: East, z: Down). | */
-    RESERVED_17=17, /* MAV_FRAME_VISION_ENU - Odometry local coordinate frame of data given by a vision estimation system, Z-up (x: East, y: North, z: Up). | */
-    RESERVED_18=18, /* MAV_FRAME_ESTIM_NED - Odometry local coordinate frame of data given by an estimator running onboard the vehicle, Z-down (x: North, y: East, z: Down). | */
-    RESERVED_19=19, /* MAV_FRAME_ESTIM_ENU - Odometry local coordinate frame of data given by an estimator running onboard the vehicle, Z-up (x: East, y: North, z: Up). | */
-    LOCAL_FRD=20, /* FRD local tangent frame (x: Forward, y: Right, z: Down) with origin fixed relative to earth. The forward axis is aligned to the front of the vehicle in the horizontal plane. | */
-    LOCAL_FLU=21, /* FLU local tangent frame (x: Forward, y: Left, z: Up) with origin fixed relative to earth. The forward axis is aligned to the front of the vehicle in the horizontal plane. | */
+    GLOBAL_TERRAIN_ALT_INT=11, /* Global (WGS84) coordinate frame (scaled) with AGL altitude (altitude at ground level).
+                 | */
+    BODY_FRD=12, /* FRD local frame aligned to the vehicle's attitude (x: Forward, y: Right, z: Down) with an
+                    origin that travels with vehicle.
+                 | */
+    RESERVED_13=13, /* MAV_FRAME_BODY_FLU - Body fixed frame of reference, Z-up (x: Forward, y: Left, z: Up).
+                 | */
+    RESERVED_14=14, /* MAV_FRAME_MOCAP_NED - Odometry local coordinate frame of data given by a motion capture
+                    system, Z-down (x: North, y: East, z: Down).
+                 | */
+    RESERVED_15=15, /* MAV_FRAME_MOCAP_ENU - Odometry local coordinate frame of data given by a motion capture
+                    system, Z-up (x: East, y: North, z: Up).
+                 | */
+    RESERVED_16=16, /* MAV_FRAME_VISION_NED - Odometry local coordinate frame of data given by a vision estimation
+                    system, Z-down (x: North, y: East, z: Down).
+                 | */
+    RESERVED_17=17, /* MAV_FRAME_VISION_ENU - Odometry local coordinate frame of data given by a vision estimation
+                    system, Z-up (x: East, y: North, z: Up).
+                 | */
+    RESERVED_18=18, /* MAV_FRAME_ESTIM_NED - Odometry local coordinate frame of data given by an estimator running
+                    onboard the vehicle, Z-down (x: North, y: East, z: Down).
+                 | */
+    RESERVED_19=19, /* MAV_FRAME_ESTIM_ENU - Odometry local coordinate frame of data given by an estimator running
+                    onboard the vehicle, Z-up (x: East, y: North, z: Up).
+                 | */
+    LOCAL_FRD=20, /* FRD local tangent frame (x: Forward, y: Right, z: Down) with origin fixed relative to
+                    earth. The forward axis is aligned to the front of the vehicle in the horizontal plane.
+                 | */
+    LOCAL_FLU=21, /* FLU local tangent frame (x: Forward, y: Left, z: Up) with origin fixed relative to earth.
+                    The forward axis is aligned to the front of the vehicle in the horizontal plane.
+                 | */
 };
 
 //! MAV_FRAME ENUM_END
@@ -210,13 +262,20 @@ constexpr auto MAVLINK_DATA_STREAM_TYPE_ENUM_END = 6;
 /** @brief Actions following geofence breach. */
 enum class FENCE_ACTION
 {
-    NONE=0, /* Disable fenced mode. If used in a plan this would mean the next fence is disabled. | */
-    GUIDED=1, /* Fly to geofence MAV_CMD_NAV_FENCE_RETURN_POINT in GUIDED mode. Note: This action is only supported by ArduPlane, and may not be supported in all versions. | */
+    NONE=0, /* Disable fenced mode. If used in a plan this would mean the next fence is disabled.
+                 | */
+    GUIDED=1, /* Fly to geofence MAV_CMD_NAV_FENCE_RETURN_POINT in GUIDED mode. Note: This action is only
+                    supported by ArduPlane, and may not be supported in all versions.
+                 | */
     REPORT=2, /* Report fence breach, but don't take action | */
-    GUIDED_THR_PASS=3, /* Fly to geofence MAV_CMD_NAV_FENCE_RETURN_POINT with manual throttle control in GUIDED mode. Note: This action is only supported by ArduPlane, and may not be supported in all versions. | */
+    GUIDED_THR_PASS=3, /* Fly to geofence MAV_CMD_NAV_FENCE_RETURN_POINT with manual throttle control in GUIDED mode.
+                    Note: This action is only supported by ArduPlane, and may not be supported in all versions.
+                 | */
     RTL=4, /* Return/RTL mode. | */
     HOLD=5, /* Hold at current location. | */
-    TERMINATE=6, /* Termination failsafe. Motors are shut down (some flight stacks may trigger other failsafe actions). | */
+    TERMINATE=6, /* Termination failsafe. Motors are shut down (some flight stacks may trigger other failsafe
+                    actions).
+                 | */
     LAND=7, /* Land at current location. | */
 };
 
@@ -259,12 +318,16 @@ enum class FENCE_TYPE
 //! FENCE_TYPE ENUM_END
 constexpr auto FENCE_TYPE_ENUM_END = 9;
 
-/** @brief Enumeration of possible mount operation modes. This message is used by obsolete/deprecated gimbal messages. */
+/** @brief Enumeration of possible mount operation modes. This message is used by obsolete/deprecated
+                gimbal messages.
+             */
 enum class MAV_MOUNT_MODE
 {
-    RETRACT=0, /* Load and keep safe position (Roll,Pitch,Yaw) from permanent memory and stop stabilization | */
+    RETRACT=0, /* Load and keep safe position (Roll,Pitch,Yaw) from permanent memory and stop stabilization
+                 | */
     NEUTRAL=1, /* Load and keep neutral position (Roll,Pitch,Yaw) from permanent memory. | */
-    MAVLINK_TARGETING=2, /* Load neutral position and start MAVLink Roll,Pitch,Yaw control with stabilization | */
+    MAVLINK_TARGETING=2, /* Load neutral position and start MAVLink Roll,Pitch,Yaw control with stabilization
+                 | */
     RC_TARGETING=3, /* Load neutral position and start RC Roll,Pitch,Yaw control with stabilization | */
     GPS_POINT=4, /* Load neutral position and start to point to Lat,Lon,Alt | */
     SYSID_TARGET=5, /* Gimbal tracks system with specified system ID | */
@@ -281,22 +344,39 @@ enum class GIMBAL_DEVICE_CAP_FLAGS : uint16_t
     HAS_NEUTRAL=2, /* Gimbal device supports a horizontal, forward looking position, stabilized. | */
     HAS_ROLL_AXIS=4, /* Gimbal device supports rotating around roll axis. | */
     HAS_ROLL_FOLLOW=8, /* Gimbal device supports to follow a roll angle relative to the vehicle. | */
-    HAS_ROLL_LOCK=16, /* Gimbal device supports locking to a roll angle (generally that's the default with roll stabilized). | */
+    HAS_ROLL_LOCK=16, /* Gimbal device supports locking to a roll angle (generally that's the default with roll
+                    stabilized).
+                 | */
     HAS_PITCH_AXIS=32, /* Gimbal device supports rotating around pitch axis. | */
     HAS_PITCH_FOLLOW=64, /* Gimbal device supports to follow a pitch angle relative to the vehicle. | */
-    HAS_PITCH_LOCK=128, /* Gimbal device supports locking to a pitch angle (generally that's the default with pitch stabilized). | */
+    HAS_PITCH_LOCK=128, /* Gimbal device supports locking to a pitch angle (generally that's the default with pitch
+                    stabilized).
+                 | */
     HAS_YAW_AXIS=256, /* Gimbal device supports rotating around yaw axis. | */
-    HAS_YAW_FOLLOW=512, /* Gimbal device supports to follow a yaw angle relative to the vehicle (generally that's the default). | */
-    HAS_YAW_LOCK=1024, /* Gimbal device supports locking to an absolute heading, i.e., yaw angle relative to North (earth frame, often this is an option available). | */
+    HAS_YAW_FOLLOW=512, /* Gimbal device supports to follow a yaw angle relative to the vehicle (generally that's the
+                    default).
+                 | */
+    HAS_YAW_LOCK=1024, /* Gimbal device supports locking to an absolute heading, i.e., yaw angle relative to North
+                    (earth frame, often this is an option available).
+                 | */
     SUPPORTS_INFINITE_YAW=2048, /* Gimbal device supports yawing/panning infinitely (e.g. using slip disk). | */
-    SUPPORTS_YAW_IN_EARTH_FRAME=4096, /* Gimbal device supports yaw angles and angular velocities relative to North (earth frame). This usually requires support by an autopilot via AUTOPILOT_STATE_FOR_GIMBAL_DEVICE. Support can go on and off during runtime, which is reported by the flag GIMBAL_DEVICE_FLAGS_CAN_ACCEPT_YAW_IN_EARTH_FRAME. | */
-    HAS_RC_INPUTS=8192, /* Gimbal device supports radio control inputs as an alternative input for controlling the gimbal orientation. | */
+    SUPPORTS_YAW_IN_EARTH_FRAME=4096, /* Gimbal device supports yaw angles and angular velocities relative to North (earth frame).
+                    This usually requires support by an autopilot via AUTOPILOT_STATE_FOR_GIMBAL_DEVICE. Support can go
+                    on and off during runtime, which is reported by the flag
+                    GIMBAL_DEVICE_FLAGS_CAN_ACCEPT_YAW_IN_EARTH_FRAME.
+                 | */
+    HAS_RC_INPUTS=8192, /* Gimbal device supports radio control inputs as an alternative input for controlling the
+                    gimbal orientation.
+                 | */
 };
 
 //! GIMBAL_DEVICE_CAP_FLAGS ENUM_END
 constexpr auto GIMBAL_DEVICE_CAP_FLAGS_ENUM_END = 8193;
 
-/** @brief Gimbal manager high level capability flags (bitmap). The first 16 bits are identical to the GIMBAL_DEVICE_CAP_FLAGS. However, the gimbal manager does not need to copy the flags from the gimbal but can also enhance the capabilities and thus add flags. */
+/** @brief Gimbal manager high level capability flags (bitmap). The first 16 bits are identical to the
+                GIMBAL_DEVICE_CAP_FLAGS. However, the gimbal manager does not need to copy the flags from the gimbal but
+                can also enhance the capabilities and thus add flags.
+             */
 enum class GIMBAL_MANAGER_CAP_FLAGS : uint32_t
 {
     HAS_RETRACT=1, /* Based on GIMBAL_DEVICE_CAP_FLAGS_HAS_RETRACT. | */
@@ -314,7 +394,8 @@ enum class GIMBAL_MANAGER_CAP_FLAGS : uint32_t
     SUPPORTS_YAW_IN_EARTH_FRAME=4096, /* Based on GIMBAL_DEVICE_CAP_FLAGS_SUPPORTS_YAW_IN_EARTH_FRAME. | */
     HAS_RC_INPUTS=8192, /* Based on GIMBAL_DEVICE_CAP_FLAGS_HAS_RC_INPUTS. | */
     CAN_POINT_LOCATION_LOCAL=65536, /* Gimbal manager supports to point to a local position. | */
-    CAN_POINT_LOCATION_GLOBAL=131072, /* Gimbal manager supports to point to a global latitude, longitude, altitude position. | */
+    CAN_POINT_LOCATION_GLOBAL=131072, /* Gimbal manager supports to point to a global latitude, longitude, altitude position.
+                 | */
 };
 
 //! GIMBAL_MANAGER_CAP_FLAGS ENUM_END
@@ -323,22 +404,48 @@ constexpr auto GIMBAL_MANAGER_CAP_FLAGS_ENUM_END = 131073;
 /** @brief Flags for gimbal device (lower level) operation. */
 enum class GIMBAL_DEVICE_FLAGS : uint16_t
 {
-    RETRACT=1, /* Set to retracted safe position (no stabilization), takes precedence over all other flags. | */
-    NEUTRAL=2, /* Set to neutral/default position, taking precedence over all other flags except RETRACT. Neutral is commonly forward-facing and horizontal (roll=pitch=yaw=0) but may be any orientation. | */
-    ROLL_LOCK=4, /* Lock roll angle to absolute angle relative to horizon (not relative to vehicle). This is generally the default with a stabilizing gimbal. | */
-    PITCH_LOCK=8, /* Lock pitch angle to absolute angle relative to horizon (not relative to vehicle). This is generally the default with a stabilizing gimbal. | */
-    YAW_LOCK=16, /* Lock yaw angle to absolute angle relative to North (not relative to vehicle). If this flag is set, the yaw angle and z component of angular velocity are relative to North (earth frame, x-axis pointing North), else they are relative to the vehicle heading (vehicle frame, earth frame rotated so that the x-axis is pointing forward). | */
-    YAW_IN_VEHICLE_FRAME=32, /* Yaw angle and z component of angular velocity are relative to the vehicle heading (vehicle frame, earth frame rotated such that the x-axis is pointing forward). | */
-    YAW_IN_EARTH_FRAME=64, /* Yaw angle and z component of angular velocity are relative to North (earth frame, x-axis is pointing North). | */
-    ACCEPTS_YAW_IN_EARTH_FRAME=128, /* Gimbal device can accept yaw angle inputs relative to North (earth frame). This flag is only for reporting (attempts to set this flag are ignored). | */
-    RC_EXCLUSIVE=256, /* The gimbal orientation is set exclusively by the RC signals feed to the gimbal's radio control inputs. MAVLink messages for setting the gimbal orientation (GIMBAL_DEVICE_SET_ATTITUDE) are ignored. | */
-    RC_MIXED=512, /* The gimbal orientation is determined by combining/mixing the RC signals feed to the gimbal's radio control inputs and the MAVLink messages for setting the gimbal orientation (GIMBAL_DEVICE_SET_ATTITUDE). How these two controls are combined or mixed is not defined by the protocol but is up to the implementation. | */
+    RETRACT=1, /* Set to retracted safe position (no stabilization), takes precedence over all other flags.
+                 | */
+    NEUTRAL=2, /* Set to neutral/default position, taking precedence over all other flags except RETRACT.
+                    Neutral is commonly forward-facing and horizontal (roll=pitch=yaw=0) but may be any orientation.
+                 | */
+    ROLL_LOCK=4, /* Lock roll angle to absolute angle relative to horizon (not relative to vehicle). This is
+                    generally the default with a stabilizing gimbal.
+                 | */
+    PITCH_LOCK=8, /* Lock pitch angle to absolute angle relative to horizon (not relative to vehicle). This is
+                    generally the default with a stabilizing gimbal.
+                 | */
+    YAW_LOCK=16, /* Lock yaw angle to absolute angle relative to North (not relative to vehicle). If this flag
+                    is set, the yaw angle and z component of angular velocity are relative to North (earth frame, x-axis
+                    pointing North), else they are relative to the vehicle heading (vehicle frame, earth frame rotated
+                    so that the x-axis is pointing forward).
+                 | */
+    YAW_IN_VEHICLE_FRAME=32, /* Yaw angle and z component of angular velocity are relative to the vehicle heading (vehicle
+                    frame, earth frame rotated such that the x-axis is pointing forward).
+                 | */
+    YAW_IN_EARTH_FRAME=64, /* Yaw angle and z component of angular velocity are relative to North (earth frame, x-axis is
+                    pointing North).
+                 | */
+    ACCEPTS_YAW_IN_EARTH_FRAME=128, /* Gimbal device can accept yaw angle inputs relative to North (earth frame). This flag is
+                    only for reporting (attempts to set this flag are ignored).
+                 | */
+    RC_EXCLUSIVE=256, /* The gimbal orientation is set exclusively by the RC signals feed to the gimbal's radio
+                    control inputs. MAVLink messages for setting the gimbal orientation (GIMBAL_DEVICE_SET_ATTITUDE) are
+                    ignored.
+                 | */
+    RC_MIXED=512, /* The gimbal orientation is determined by combining/mixing the RC signals feed to the
+                    gimbal's radio control inputs and the MAVLink messages for setting the gimbal orientation
+                    (GIMBAL_DEVICE_SET_ATTITUDE). How these two controls are combined or mixed is not defined by the
+                    protocol but is up to the implementation.
+                 | */
 };
 
 //! GIMBAL_DEVICE_FLAGS ENUM_END
 constexpr auto GIMBAL_DEVICE_FLAGS_ENUM_END = 513;
 
-/** @brief Flags for high level gimbal manager operation The first 16 bits are identical to the GIMBAL_DEVICE_FLAGS. */
+/** @brief Flags for high level gimbal manager operation The first 16 bits are identical to the
+                GIMBAL_DEVICE_FLAGS.
+             */
 enum class GIMBAL_MANAGER_FLAGS : uint32_t
 {
     RETRACT=1, /* Based on GIMBAL_DEVICE_FLAGS_RETRACT. | */
@@ -390,13 +497,28 @@ enum class WINCH_ACTIONS
     RELAXED=0, /* Allow motor to freewheel. | */
     RELATIVE_LENGTH_CONTROL=1, /* Wind or unwind specified length of line, optionally using specified rate. | */
     RATE_CONTROL=2, /* Wind or unwind line at specified rate. | */
-    LOCK=3, /* Perform the locking sequence to relieve motor while in the fully retracted position. Only action and instance command parameters are used, others are ignored. | */
-    DELIVER=4, /* Sequence of drop, slow down, touch down, reel up, lock. Only action and instance command parameters are used, others are ignored. | */
-    HOLD=5, /* Engage motor and hold current position. Only action and instance command parameters are used, others are ignored. | */
-    RETRACT=6, /* Return the reel to the fully retracted position. Only action and instance command parameters are used, others are ignored. | */
-    LOAD_LINE=7, /* Load the reel with line. The winch will calculate the total loaded length and stop when the tension exceeds a threshold. Only action and instance command parameters are used, others are ignored. | */
-    ABANDON_LINE=8, /* Spool out the entire length of the line. Only action and instance command parameters are used, others are ignored. | */
-    LOAD_PAYLOAD=9, /* Spools out just enough to present the hook to the user to load the payload. Only action and instance command parameters are used, others are ignored | */
+    LOCK=3, /* Perform the locking sequence to relieve motor while in the fully retracted position. Only
+                    action and instance command parameters are used, others are ignored.
+                 | */
+    DELIVER=4, /* Sequence of drop, slow down, touch down, reel up, lock. Only action and instance command
+                    parameters are used, others are ignored.
+                 | */
+    HOLD=5, /* Engage motor and hold current position. Only action and instance command parameters are
+                    used, others are ignored.
+                 | */
+    RETRACT=6, /* Return the reel to the fully retracted position. Only action and instance command
+                    parameters are used, others are ignored.
+                 | */
+    LOAD_LINE=7, /* Load the reel with line. The winch will calculate the total loaded length and stop when the
+                    tension exceeds a threshold. Only action and instance command parameters are used, others are
+                    ignored.
+                 | */
+    ABANDON_LINE=8, /* Spool out the entire length of the line. Only action and instance command parameters are
+                    used, others are ignored.
+                 | */
+    LOAD_PAYLOAD=9, /* Spools out just enough to present the hook to the user to load the payload. Only action and
+                    instance command parameters are used, others are ignored
+                 | */
 };
 
 //! WINCH_ACTIONS ENUM_END
@@ -406,7 +528,8 @@ constexpr auto WINCH_ACTIONS_ENUM_END = 10;
 enum class UAVCAN_NODE_HEALTH : uint8_t
 {
     OK=0, /* The node is functioning properly. | */
-    WARNING=1, /* A critical parameter went out of range or the node has encountered a minor failure. | */
+    WARNING=1, /* A critical parameter went out of range or the node has encountered a minor failure.
+                 | */
     ERROR=2, /* The node has encountered a major failure. | */
     CRITICAL=3, /* The node has suffered a fatal malfunction. | */
 };
@@ -463,7 +586,9 @@ enum class STORAGE_STATUS : uint8_t
     EMPTY=0, /* Storage is missing (no microSD card loaded for example.) | */
     UNFORMATTED=1, /* Storage present but unformatted. | */
     READY=2, /* Storage present and ready. | */
-    NOT_SUPPORTED=3, /* Camera does not supply storage status information. Capacity information in STORAGE_INFORMATION fields will be ignored. | */
+    NOT_SUPPORTED=3, /* Camera does not supply storage status information. Capacity information in
+                    STORAGE_INFORMATION fields will be ignored.
+                 | */
 };
 
 //! STORAGE_STATUS ENUM_END
@@ -486,7 +611,9 @@ enum class STORAGE_TYPE : uint8_t
 //! STORAGE_TYPE ENUM_END
 constexpr auto STORAGE_TYPE_ENUM_END = 255;
 
-/** @brief Flags to indicate usage for a particular storage (see STORAGE_INFORMATION.storage_usage and MAV_CMD_SET_STORAGE_USAGE). */
+/** @brief Flags to indicate usage for a particular storage (see STORAGE_INFORMATION.storage_usage and
+                MAV_CMD_SET_STORAGE_USAGE).
+             */
 enum class STORAGE_USAGE_FLAG : uint8_t
 {
     SET=1, /* Always set to 1 (indicates STORAGE_INFORMATION.storage_usage is supported). | */
@@ -506,7 +633,9 @@ enum class ORBIT_YAW_BEHAVIOUR
     UNCONTROLLED=2, /* Yaw uncontrolled. | */
     HOLD_FRONT_TANGENT_TO_CIRCLE=3, /* Vehicle front follows flight path (tangential to circle). | */
     RC_CONTROLLED=4, /* Yaw controlled by RC input. | */
-    UNCHANGED=5, /* Vehicle uses current yaw behaviour (unchanged). The vehicle-default yaw behaviour is used if this value is specified when orbit is first commanded. | */
+    UNCHANGED=5, /* Vehicle uses current yaw behaviour (unchanged). The vehicle-default yaw behaviour is used
+                    if this value is specified when orbit is first commanded.
+                 | */
 };
 
 //! ORBIT_YAW_BEHAVIOUR ENUM_END
@@ -515,7 +644,8 @@ constexpr auto ORBIT_YAW_BEHAVIOUR_ENUM_END = 6;
 /** @brief Possible responses from a WIFI_CONFIG_AP message. */
 enum class WIFI_CONFIG_AP_RESPONSE : int8_t
 {
-    UNDEFINED=0, /* Undefined response. Likely an indicative of a system that doesn't support this request. | */
+    UNDEFINED=0, /* Undefined response. Likely an indicative of a system that doesn't support this request.
+                 | */
     ACCEPTED=1, /* Changes accepted. | */
     REJECTED=2, /* Changes rejected. | */
     MODE_ERROR=3, /* Invalid Mode. | */
@@ -551,29 +681,43 @@ enum class WIFI_CONFIG_AP_MODE : int8_t
 //! WIFI_CONFIG_AP_MODE ENUM_END
 constexpr auto WIFI_CONFIG_AP_MODE_ENUM_END = 4;
 
-/** @brief Supported component metadata types. These are used in the "general" metadata file returned by COMPONENT_METADATA to provide information about supported metadata types. The types are not used directly in MAVLink messages. */
+/** @brief Supported component metadata types. These are used in the "general" metadata file returned by
+                COMPONENT_METADATA to provide information about supported metadata types. The types are not used
+                directly in MAVLink messages.
+             */
 enum class COMP_METADATA_TYPE
 {
-    GENERAL=0, /* General information about the component. General metadata includes information about other metadata types supported by the component. Files of this type must be supported, and must be downloadable from vehicle using a MAVLink FTP URI. | */
+    GENERAL=0, /* General information about the component. General metadata includes information about other
+                    metadata types supported by the component. Files of this type must be supported, and must be
+                    downloadable from vehicle using a MAVLink FTP URI.
+                 | */
     PARAMETER=1, /* Parameter meta data. | */
-    COMMANDS=2, /* Meta data that specifies which commands and command parameters the vehicle supports. (WIP) | */
+    COMMANDS=2, /* Meta data that specifies which commands and command parameters the vehicle supports.
+                    (WIP)
+                 | */
     PERIPHERALS=3, /* Meta data that specifies external non-MAVLink peripherals. | */
     EVENTS=4, /* Meta data for the events interface. | */
-    ACTUATORS=5, /* Meta data for actuator configuration (motors, servos and vehicle geometry) and testing. | */
+    ACTUATORS=5, /* Meta data for actuator configuration (motors, servos and vehicle geometry) and testing.
+                 | */
 };
 
 //! COMP_METADATA_TYPE ENUM_END
 constexpr auto COMP_METADATA_TYPE_ENUM_END = 6;
 
-/** @brief Actuator configuration, used to change a setting on an actuator. Component information metadata can be used to know which outputs support which commands. */
+/** @brief Actuator configuration, used to change a setting on an actuator. Component information metadata
+                can be used to know which outputs support which commands.
+             */
 enum class ACTUATOR_CONFIGURATION
 {
     NONE=0, /* Do nothing. | */
     BEEP=1, /* Command the actuator to beep now. | */
     CONFIGURATION_3D_MODE_ON=2, /* Permanently set the actuator (ESC) to 3D mode (reversible thrust). | */
     CONFIGURATION_3D_MODE_OFF=3, /* Permanently set the actuator (ESC) to non 3D mode (non-reversible thrust). | */
-    SPIN_DIRECTION1=4, /* Permanently set the actuator (ESC) to spin direction 1 (which can be clockwise or counter-clockwise). | */
-    SPIN_DIRECTION2=5, /* Permanently set the actuator (ESC) to spin direction 2 (opposite of direction 1). | */
+    SPIN_DIRECTION1=4, /* Permanently set the actuator (ESC) to spin direction 1 (which can be clockwise or
+                    counter-clockwise).
+                 | */
+    SPIN_DIRECTION2=5, /* Permanently set the actuator (ESC) to spin direction 2 (opposite of direction 1).
+                 | */
 };
 
 //! ACTUATOR_CONFIGURATION ENUM_END
@@ -620,7 +764,8 @@ enum class ACTUATOR_OUTPUT_FUNCTION
 //! ACTUATOR_OUTPUT_FUNCTION ENUM_END
 constexpr auto ACTUATOR_OUTPUT_FUNCTION_ENUM_END = 49;
 
-/** @brief Enable axes that will be tuned via autotuning. Used in MAV_CMD_DO_AUTOTUNE_ENABLE. */
+/** @brief Enable axes that will be tuned via autotuning. Used in MAV_CMD_DO_AUTOTUNE_ENABLE.
+             */
 enum class AUTOTUNE_AXIS
 {
     DEFAULT=0, /* Flight stack tunes axis according to its default settings. | */
@@ -633,15 +778,23 @@ enum class AUTOTUNE_AXIS
 constexpr auto AUTOTUNE_AXIS_ENUM_END = 5;
 
 /** @brief 
-        Actions for reading/writing parameters between persistent and volatile storage when using MAV_CMD_PREFLIGHT_STORAGE.
-        (Commonly parameters are loaded from persistent storage (flash/EEPROM) into volatile storage (RAM) on startup and written back when they are changed.)
-       */
+                Actions for reading/writing parameters between persistent and volatile storage when using
+                MAV_CMD_PREFLIGHT_STORAGE.
+                (Commonly parameters are loaded from persistent storage (flash/EEPROM) into volatile storage (RAM) on
+                startup and written back when they are changed.)
+             */
 enum class PREFLIGHT_STORAGE_PARAMETER_ACTION
 {
-    PARAM_READ_PERSISTENT=0, /* Read all parameters from persistent storage. Replaces values in volatile storage. | */
+    PARAM_READ_PERSISTENT=0, /* Read all parameters from persistent storage. Replaces values in volatile storage.
+                 | */
     PARAM_WRITE_PERSISTENT=1, /* Write all parameter values to persistent storage (flash/EEPROM) | */
-    PARAM_RESET_CONFIG_DEFAULT=2, /* Reset all user configurable parameters to their default value (including airframe selection, sensor calibration data, safety settings, and so on). Does not reset values that contain operation counters and vehicle computed statistics. | */
-    PARAM_RESET_SENSOR_DEFAULT=3, /* Reset only sensor calibration parameters to factory defaults (or firmware default if not available) | */
+    PARAM_RESET_CONFIG_DEFAULT=2, /* Reset all user configurable parameters to their default value (including airframe
+                    selection, sensor calibration data, safety settings, and so on). Does not reset values that contain
+                    operation counters and vehicle computed statistics.
+                 | */
+    PARAM_RESET_SENSOR_DEFAULT=3, /* Reset only sensor calibration parameters to factory defaults (or firmware default if not
+                    available)
+                 | */
     PARAM_RESET_ALL_DEFAULT=4, /* Reset all parameters, including operation counters, to default values | */
 };
 
@@ -649,294 +802,1185 @@ enum class PREFLIGHT_STORAGE_PARAMETER_ACTION
 constexpr auto PREFLIGHT_STORAGE_PARAMETER_ACTION_ENUM_END = 5;
 
 /** @brief 
-        Actions for reading and writing plan information (mission, rally points, geofence) between persistent and volatile storage when using MAV_CMD_PREFLIGHT_STORAGE.
-        (Commonly missions are loaded from persistent storage (flash/EEPROM) into volatile storage (RAM) on startup and written back when they are changed.)
-       */
+                Actions for reading and writing plan information (mission, rally points, geofence) between persistent
+                and volatile storage when using MAV_CMD_PREFLIGHT_STORAGE.
+                (Commonly missions are loaded from persistent storage (flash/EEPROM) into volatile storage (RAM) on
+                startup and written back when they are changed.)
+             */
 enum class PREFLIGHT_STORAGE_MISSION_ACTION
 {
     MISSION_READ_PERSISTENT=0, /* Read current mission data from persistent storage | */
     MISSION_WRITE_PERSISTENT=1, /* Write current mission data to persistent storage | */
-    MISSION_RESET_DEFAULT=2, /* Erase all mission data stored on the vehicle (both persistent and volatile storage) | */
+    MISSION_RESET_DEFAULT=2, /* Erase all mission data stored on the vehicle (both persistent and volatile storage)
+                 | */
 };
 
 //! PREFLIGHT_STORAGE_MISSION_ACTION ENUM_END
 constexpr auto PREFLIGHT_STORAGE_MISSION_ACTION_ENUM_END = 3;
 
-/** @brief Commands to be executed by the MAV. They can be executed on user request, or as part of a mission script. If the action is used in a mission, the parameter mapping to the waypoint/mission message is as follows: Param 1, Param 2, Param 3, Param 4, X: Param 5, Y:Param 6, Z:Param 7. This command list is similar what ARINC 424 is for commercial aircraft: A data format how to interpret waypoint/mission data. NaN and INT32_MAX may be used in float/integer params (respectively) to indicate optional/default values (e.g. to use the component's current yaw or latitude rather than a specific value). See https://mavlink.io/en/guide/xml_schema.html#MAV_CMD for information about the structure of the MAV_CMD entries */
+/** @brief Commands to be executed by the MAV. They can be executed on user request, or as part of a
+                mission script. If the action is used in a mission, the parameter mapping to the waypoint/mission
+                message is as follows: Param 1, Param 2, Param 3, Param 4, X: Param 5, Y:Param 6, Z:Param 7. This
+                command list is similar what ARINC 424 is for commercial aircraft: A data format how to interpret
+                waypoint/mission data. NaN and INT32_MAX may be used in float/integer params (respectively) to indicate
+                optional/default values (e.g. to use the component's current yaw or latitude rather than a specific
+                value). See https://mavlink.io/en/guide/xml_schema.html#MAV_CMD for information about the structure of
+                the MAV_CMD entries
+             */
 enum class MAV_CMD : uint16_t
 {
-    NAV_WAYPOINT=16, /* Navigate to waypoint. This is intended for use in missions (for guided commands outside of missions use MAV_CMD_DO_REPOSITION). |Hold time. (ignored by fixed wing, time to stay at waypoint for rotary wing)| Acceptance radius (if the sphere with this radius is hit, the waypoint counts as reached)| 0 to pass through the WP, if > 0 radius to pass by WP. Positive value for clockwise orbit, negative value for counter-clockwise orbit. Allows trajectory control.| Desired yaw angle at waypoint (rotary wing). NaN to use the current system yaw heading mode (e.g. yaw towards next waypoint, yaw to home, etc.).| Latitude| Longitude| Altitude|  */
-    NAV_LOITER_UNLIM=17, /* Loiter around this waypoint an unlimited amount of time |Empty| Empty| Loiter radius around waypoint for forward-only moving vehicles (not multicopters). If positive loiter clockwise, else counter-clockwise| Desired yaw angle. NaN to use the current system yaw heading mode (e.g. yaw towards next waypoint, yaw to home, etc.).| Latitude| Longitude| Altitude|  */
-    NAV_LOITER_TURNS=18, /* Loiter around this waypoint for X turns |Number of turns.| Leave loiter circle only once heading towards the next waypoint (0 = False)| Loiter radius around waypoint for forward-only moving vehicles (not multicopters). If positive loiter clockwise, else counter-clockwise| Loiter circle exit location and/or path to next waypoint ("xtrack") for forward-only moving vehicles (not multicopters). 0 for the vehicle to converge towards the center xtrack when it leaves the loiter (the line between the centers of the current and next waypoint), 1 to converge to the direct line between the location that the vehicle exits the loiter radius and the next waypoint. Otherwise the angle (in degrees) between the tangent of the loiter circle and the center xtrack at which the vehicle must leave the loiter (and converge to the center xtrack). NaN to use the current system default xtrack behaviour.| Latitude| Longitude| Altitude|  */
-    NAV_LOITER_TIME=19, /* Loiter at the specified latitude, longitude and altitude for a certain amount of time. Multicopter vehicles stop at the point (within a vehicle-specific acceptance radius). Forward-only moving vehicles (e.g. fixed-wing) circle the point with the specified radius/direction. If the Heading Required parameter (2) is non-zero forward moving aircraft will only leave the loiter circle once heading towards the next waypoint. |Loiter time (only starts once Lat, Lon and Alt is reached).| Leave loiter circle only once heading towards the next waypoint (0 = False)| Loiter radius around waypoint for forward-only moving vehicles (not multicopters). If positive loiter clockwise, else counter-clockwise.| Loiter circle exit location and/or path to next waypoint ("xtrack") for forward-only moving vehicles (not multicopters). 0 for the vehicle to converge towards the center xtrack when it leaves the loiter (the line between the centers of the current and next waypoint), 1 to converge to the direct line between the location that the vehicle exits the loiter radius and the next waypoint. Otherwise the angle (in degrees) between the tangent of the loiter circle and the center xtrack at which the vehicle must leave the loiter (and converge to the center xtrack). NaN to use the current system default xtrack behaviour.| Latitude| Longitude| Altitude|  */
+    NAV_WAYPOINT=16, /* Navigate to waypoint. This is intended for use in missions (for guided commands outside of
+                    missions use MAV_CMD_DO_REPOSITION).
+                 |Hold time. (ignored by fixed wing, time to stay at
+                    waypoint for rotary wing)
+                | Acceptance radius (if the sphere with this
+                    radius is hit, the waypoint counts as reached)
+                | 0 to pass through the WP, if > 0 radius to pass by WP.
+                    Positive value for clockwise orbit, negative value for counter-clockwise orbit. Allows trajectory
+                    control.
+                | Desired yaw angle at waypoint (rotary wing). NaN to use the
+                    current system yaw heading mode (e.g. yaw towards next waypoint, yaw to home, etc.).
+                | Latitude| Longitude| Altitude|  */
+    NAV_LOITER_UNLIM=17, /* Loiter around this waypoint an unlimited amount of time |Empty| Empty| Loiter radius around waypoint for forward-only moving vehicles
+                    (not multicopters). If positive loiter clockwise, else counter-clockwise
+                | Desired yaw angle. NaN to use the current system yaw heading
+                    mode (e.g. yaw towards next waypoint, yaw to home, etc.).
+                | Latitude| Longitude| Altitude|  */
+    NAV_LOITER_TURNS=18, /* Loiter around this waypoint for X turns |Number of turns.| Leave loiter circle
+                    only once heading towards the next waypoint (0 = False)
+                | Loiter radius around waypoint for forward-only moving vehicles
+                    (not multicopters). If positive loiter clockwise, else counter-clockwise
+                | Loiter circle exit location and/or path to next waypoint
+                    ("xtrack") for forward-only moving vehicles (not multicopters). 0 for the vehicle to converge
+                    towards the center xtrack when it leaves the loiter (the line between the centers of the current and
+                    next waypoint), 1 to converge to the direct line between the location that the vehicle exits the
+                    loiter radius and the next waypoint. Otherwise the angle (in degrees) between the tangent of the
+                    loiter circle and the center xtrack at which the vehicle must leave the loiter (and converge to the
+                    center xtrack). NaN to use the current system default xtrack behaviour.
+                | Latitude| Longitude| Altitude|  */
+    NAV_LOITER_TIME=19, /* Loiter at the specified latitude, longitude and altitude for a certain amount of time.
+                    Multicopter vehicles stop at the point (within a vehicle-specific acceptance radius). Forward-only
+                    moving vehicles (e.g. fixed-wing) circle the point with the specified radius/direction. If the
+                    Heading Required parameter (2) is non-zero forward moving aircraft will only leave the loiter circle
+                    once heading towards the next waypoint.
+                 |Loiter time (only starts once Lat, Lon and Alt is
+                    reached).
+                | Leave loiter circle
+                    only once heading towards the next waypoint (0 = False)
+                | Loiter radius around waypoint for forward-only moving vehicles
+                    (not multicopters). If positive loiter clockwise, else counter-clockwise.
+                | Loiter circle exit location and/or path to next waypoint
+                    ("xtrack") for forward-only moving vehicles (not multicopters). 0 for the vehicle to converge
+                    towards the center xtrack when it leaves the loiter (the line between the centers of the current and
+                    next waypoint), 1 to converge to the direct line between the location that the vehicle exits the
+                    loiter radius and the next waypoint. Otherwise the angle (in degrees) between the tangent of the
+                    loiter circle and the center xtrack at which the vehicle must leave the loiter (and converge to the
+                    center xtrack). NaN to use the current system default xtrack behaviour.
+                | Latitude| Longitude| Altitude|  */
     NAV_RETURN_TO_LAUNCH=20, /* Return to launch location |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    NAV_LAND=21, /* Land at location. |Minimum target altitude if landing is aborted (0 = undefined/use system default).| Precision land mode.| Empty.| Desired yaw angle. NaN to use the current system yaw heading mode (e.g. yaw towards next waypoint, yaw to home, etc.).| Latitude.| Longitude.| Landing altitude (ground level in current frame).|  */
-    NAV_TAKEOFF=22, /* Takeoff from ground / hand. Vehicles that support multiple takeoff modes (e.g. VTOL quadplane) should take off using the currently configured mode. |Minimum pitch (if airspeed sensor present), desired pitch without sensor| Empty| Empty| Yaw angle (if magnetometer present), ignored without magnetometer. NaN to use the current system yaw heading mode (e.g. yaw towards next waypoint, yaw to home, etc.).| Latitude| Longitude| Altitude|  */
-    NAV_LAND_LOCAL=23, /* Land at local position (local frame only) |Landing target number (if available)| Maximum accepted offset from desired landing position - computed magnitude from spherical coordinates: d = sqrt(x^2 + y^2 + z^2), which gives the maximum accepted distance between the desired landing position and the position where the vehicle is about to land| Landing descend rate| Desired yaw angle| Y-axis position| X-axis position| Z-axis / ground level position|  */
-    NAV_TAKEOFF_LOCAL=24, /* Takeoff from local position (local frame only) |Minimum pitch (if airspeed sensor present), desired pitch without sensor| Empty| Takeoff ascend rate| Yaw angle (if magnetometer or another yaw estimation source present), ignored without one of these| Y-axis position| X-axis position| Z-axis position|  */
-    NAV_FOLLOW=25, /* Vehicle following, i.e. this waypoint represents the position of a moving vehicle |Following logic to use (e.g. loitering or sinusoidal following) - depends on specific autopilot implementation| Ground speed of vehicle to be followed| Radius around waypoint. If positive loiter clockwise, else counter-clockwise| Desired yaw angle.| Latitude| Longitude| Altitude|  */
-    NAV_CONTINUE_AND_CHANGE_ALT=30, /* Continue on the current course and climb/descend to specified altitude.  When the altitude is reached continue to the next command (i.e., don't proceed to the next command until the desired altitude is reached. |Climb or Descend (0 = Neutral, command completes when within 5m of this command's altitude, 1 = Climbing, command completes when at or above this command's altitude, 2 = Descending, command completes when at or below this command's altitude.| Empty| Empty| Empty| Empty| Empty| Desired altitude|  */
-    NAV_LOITER_TO_ALT=31, /* Begin loiter at the specified Latitude and Longitude.  If Lat=Lon=0, then loiter at the current position.  Don't consider the navigation command complete (don't leave loiter) until the altitude has been reached. Additionally, if the Heading Required parameter is non-zero the aircraft will not leave the loiter until heading toward the next waypoint. |Leave loiter circle only once heading towards the next waypoint (0 = False)| Loiter radius around waypoint for forward-only moving vehicles (not multicopters). If positive loiter clockwise, negative counter-clockwise, 0 means no change to standard loiter.| Empty| Loiter circle exit location and/or path to next waypoint ("xtrack") for forward-only moving vehicles (not multicopters). 0 for the vehicle to converge towards the center xtrack when it leaves the loiter (the line between the centers of the current and next waypoint), 1 to converge to the direct line between the location that the vehicle exits the loiter radius and the next waypoint. Otherwise the angle (in degrees) between the tangent of the loiter circle and the center xtrack at which the vehicle must leave the loiter (and converge to the center xtrack). NaN to use the current system default xtrack behaviour.| Latitude| Longitude| Altitude|  */
-    DO_FOLLOW=32, /* Begin following a target |System ID (of the FOLLOW_TARGET beacon). Send 0 to disable follow-me and return to the default position hold mode.| Reserved| Reserved| Altitude mode: 0: Keep current altitude, 1: keep altitude difference to target, 2: go to a fixed altitude above home.| Altitude above home. (used if mode=2)| Reserved| Time to land in which the MAV should go to the default position hold mode after a message RX timeout.|  */
-    DO_FOLLOW_REPOSITION=33, /* Reposition the MAV after a follow target command has been sent |Camera q1 (where 0 is on the ray from the camera to the tracking device)| Camera q2| Camera q3| Camera q4| altitude offset from target| X offset from target| Y offset from target|  */
-    DO_ORBIT=34, /* Start orbiting on the circumference of a circle defined by the parameters. Setting values to NaN/INT32_MAX (as appropriate) results in using defaults. |Radius of the circle. Positive: orbit clockwise. Negative: orbit counter-clockwise. NaN: Use vehicle default radius, or current radius if already orbiting.| Tangential Velocity. NaN: Use vehicle default velocity, or current velocity if already orbiting.| Yaw behavior of the vehicle.| Orbit around the centre point for this many radians (i.e. for a three-quarter orbit set 270*Pi/180). 0: Orbit forever. NaN: Use vehicle default, or current value if already orbiting.| Center point latitude (if no MAV_FRAME specified) / X coordinate according to MAV_FRAME. INT32_MAX (or NaN if sent in COMMAND_LONG): Use current vehicle position, or current center if already orbiting.| Center point longitude (if no MAV_FRAME specified) / Y coordinate according to MAV_FRAME. INT32_MAX (or NaN if sent in COMMAND_LONG): Use current vehicle position, or current center if already orbiting.| Center point altitude (MSL) (if no MAV_FRAME specified) / Z coordinate according to MAV_FRAME. NaN: Use current vehicle altitude.|  */
-    NAV_ROI=80, /* Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicle's control system to control the vehicle attitude and the attitude of various sensors such as cameras. |Region of interest mode.| Waypoint index/ target ID. (see MAV_ROI enum)| ROI index (allows a vehicle to manage multiple ROI's)| Empty| x the location of the fixed ROI (see MAV_FRAME)| y| z|  */
-    NAV_PATHPLANNING=81, /* Control autonomous path planning on the MAV. |0: Disable local obstacle avoidance / local path planning (without resetting map), 1: Enable local path planning, 2: Enable and reset local path planning| 0: Disable full path planning (without resetting map), 1: Enable, 2: Enable and reset map/occupancy grid, 3: Enable and reset planned route, but not occupancy grid| Empty| Yaw angle at goal| Latitude/X of goal| Longitude/Y of goal| Altitude/Z of goal|  */
-    NAV_SPLINE_WAYPOINT=82, /* Navigate to waypoint using a spline path. |Hold time. (ignored by fixed wing, time to stay at waypoint for rotary wing)| Empty| Empty| Empty| Latitude/X of goal| Longitude/Y of goal| Altitude/Z of goal|  */
-    NAV_VTOL_TAKEOFF=84, /* Takeoff from ground using VTOL mode, and transition to forward flight with specified heading. The command should be ignored by vehicles that dont support both VTOL and fixed-wing flight (multicopters, boats,etc.). |Empty| Front transition heading.| Empty| Yaw angle. NaN to use the current system yaw heading mode (e.g. yaw towards next waypoint, yaw to home, etc.).| Latitude| Longitude| Altitude|  */
-    NAV_VTOL_LAND=85, /* Land using VTOL mode |Landing behaviour.| Empty| Approach altitude (with the same reference as the Altitude field). NaN if unspecified.| Yaw angle. NaN to use the current system yaw heading mode (e.g. yaw towards next waypoint, yaw to home, etc.).| Latitude| Longitude| Altitude (ground level) relative to the current coordinate frame. NaN to use system default landing altitude (ignore value).|  */
+    NAV_LAND=21, /* Land at location. |Minimum target altitude if landing is aborted (0 =
+                    undefined/use system default).
+                | Precision land mode.| Empty.| Desired yaw angle. NaN to use the current system yaw
+                    heading mode (e.g. yaw towards next waypoint, yaw to home, etc.).
+                | Latitude.| Longitude.| Landing altitude (ground level in current frame).|  */
+    NAV_TAKEOFF=22, /* Takeoff from ground / hand. Vehicles that support multiple takeoff modes (e.g. VTOL
+                    quadplane) should take off using the currently configured mode.
+                 |Minimum pitch (if airspeed sensor present), desired pitch
+                    without sensor
+                | Empty| Empty| Yaw angle (if magnetometer present), ignored without
+                    magnetometer. NaN to use the current system yaw heading mode (e.g. yaw towards next waypoint, yaw to
+                    home, etc.).
+                | Latitude| Longitude| Altitude|  */
+    NAV_LAND_LOCAL=23, /* Land at local position (local frame only) |Landing target number (if available)| Maximum accepted offset from desired landing
+                    position - computed magnitude from spherical coordinates: d = sqrt(x^2 + y^2 + z^2), which gives the
+                    maximum accepted distance between the desired landing position and the position where the vehicle is
+                    about to land
+                | Landing descend rate| Desired yaw angle| Y-axis position| X-axis position| Z-axis / ground level position|  */
+    NAV_TAKEOFF_LOCAL=24, /* Takeoff from local position (local frame only) |Minimum pitch (if airspeed sensor present), desired pitch
+                    without sensor
+                | Empty| Takeoff ascend rate| Yaw angle (if magnetometer or another yaw estimation source
+                    present), ignored without one of these
+                | Y-axis position| X-axis position| Z-axis position|  */
+    NAV_FOLLOW=25, /* Vehicle following, i.e. this waypoint represents the position of a moving vehicle
+                 |Following logic to use (e.g. loitering or sinusoidal
+                    following) - depends on specific autopilot implementation
+                | Ground speed of vehicle to be followed| Radius around waypoint. If positive loiter clockwise, else
+                    counter-clockwise
+                | Desired yaw angle.| Latitude| Longitude| Altitude|  */
+    NAV_CONTINUE_AND_CHANGE_ALT=30, /* Continue on the current course and climb/descend to specified altitude. When the altitude
+                    is reached continue to the next command (i.e., don't proceed to the next command until the desired
+                    altitude is reached.
+                 |Climb or Descend (0 = Neutral,
+                    command completes when within 5m of this command's altitude, 1 = Climbing, command completes when at
+                    or above this command's altitude, 2 = Descending, command completes when at or below this command's
+                    altitude.
+                | Empty| Empty| Empty| Empty| Empty| Desired altitude|  */
+    NAV_LOITER_TO_ALT=31, /* Begin loiter at the specified Latitude and Longitude. If Lat=Lon=0, then loiter at the
+                    current position. Don't consider the navigation command complete (don't leave loiter) until the
+                    altitude has been reached. Additionally, if the Heading Required parameter is non-zero the aircraft
+                    will not leave the loiter until heading toward the next waypoint.
+                 |Leave loiter circle
+                    only once heading towards the next waypoint (0 = False)
+                | Loiter radius around waypoint for forward-only moving vehicles
+                    (not multicopters). If positive loiter clockwise, negative counter-clockwise, 0 means no change to
+                    standard loiter.
+                | Empty| Loiter circle exit
+                    location and/or path to next waypoint ("xtrack") for forward-only moving vehicles (not
+                    multicopters). 0 for the vehicle to converge towards the center xtrack when it leaves the loiter
+                    (the line between the centers of the current and next waypoint), 1 to converge to the direct line
+                    between the location that the vehicle exits the loiter radius and the next waypoint. Otherwise the
+                    angle (in degrees) between the tangent of the loiter circle and the center xtrack at which the
+                    vehicle must leave the loiter (and converge to the center xtrack). NaN to use the current system
+                    default xtrack behaviour.
+                | Latitude| Longitude| Altitude|  */
+    DO_FOLLOW=32, /* Begin following a target |System ID (of the
+                    FOLLOW_TARGET beacon). Send 0 to disable follow-me and return to the default position hold mode.
+                | Reserved| Reserved| Altitude mode: 0: Keep
+                    current altitude, 1: keep altitude difference to target, 2: go to a fixed altitude above home.
+                | Altitude above home. (used if mode=2)| Reserved| Time to land in which the MAV should go to
+                    the default position hold mode after a message RX timeout.
+                |  */
+    DO_FOLLOW_REPOSITION=33, /* Reposition the MAV after a follow target command has been sent |Camera q1 (where 0 is on the ray from the camera to the tracking
+                    device)
+                | Camera q2| Camera q3| Camera q4| altitude offset from target| X offset from target| Y offset from target|  */
+    DO_ORBIT=34, /* Start orbiting on the circumference of a circle defined by the parameters. Setting values
+                    to NaN/INT32_MAX (as appropriate) results in using defaults.
+                 |Radius of the circle. Positive: orbit clockwise. Negative:
+                    orbit counter-clockwise. NaN: Use vehicle default radius, or current radius if already orbiting.
+                | Tangential Velocity. NaN: Use vehicle default velocity, or
+                    current velocity if already orbiting.
+                | Yaw behavior of the vehicle.| Orbit around the centre point for
+                    this many radians (i.e. for a three-quarter orbit set 270*Pi/180). 0: Orbit forever. NaN: Use
+                    vehicle default, or current value if already orbiting.
+                | Center point latitude (if no MAV_FRAME specified) / X coordinate
+                    according to MAV_FRAME. INT32_MAX (or NaN if sent in COMMAND_LONG): Use current vehicle position, or
+                    current center if already orbiting.
+                | Center point longitude (if no MAV_FRAME specified) / Y coordinate
+                    according to MAV_FRAME. INT32_MAX (or NaN if sent in COMMAND_LONG): Use current vehicle position, or
+                    current center if already orbiting.
+                | Center point altitude (MSL) (if no MAV_FRAME specified) / Z
+                    coordinate according to MAV_FRAME. NaN: Use current vehicle altitude.
+                |  */
+    NAV_ROI=80, /* Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be
+                    used by the vehicle's control system to control the vehicle attitude and the attitude of various
+                    sensors such as cameras.
+                 |Region of interest mode.| Waypoint index/ target ID. (see MAV_ROI
+                    enum)
+                | ROI index (allows a vehicle to manage
+                    multiple ROI's)
+                | Empty| x the location of the fixed ROI (see MAV_FRAME)| y| z|  */
+    NAV_PATHPLANNING=81, /* Control autonomous path planning on the MAV. |0: Disable local obstacle
+                    avoidance / local path planning (without resetting map), 1: Enable local path planning, 2: Enable
+                    and reset local path planning
+                | 0: Disable full path
+                    planning (without resetting map), 1: Enable, 2: Enable and reset map/occupancy grid, 3: Enable and
+                    reset planned route, but not occupancy grid
+                | Empty| Yaw angle at goal| Latitude/X of goal| Longitude/Y of goal| Altitude/Z of goal|  */
+    NAV_SPLINE_WAYPOINT=82, /* Navigate to waypoint using a spline path. |Hold time. (ignored by fixed wing, time to stay at
+                    waypoint for rotary wing)
+                | Empty| Empty| Empty| Latitude/X of goal| Longitude/Y of goal| Altitude/Z of goal|  */
+    NAV_VTOL_TAKEOFF=84, /* Takeoff from ground using VTOL mode, and transition to forward flight with specified
+                    heading. The command should be ignored by vehicles that dont support both VTOL and fixed-wing flight
+                    (multicopters, boats,etc.).
+                 |Empty| Front transition heading.
+                | Empty| Yaw angle. NaN to use the current system yaw heading mode
+                    (e.g. yaw towards next waypoint, yaw to home, etc.).
+                | Latitude| Longitude| Altitude|  */
+    NAV_VTOL_LAND=85, /* Land using VTOL mode |Landing behaviour.| Empty| Approach altitude (with the same reference as the
+                    Altitude field). NaN if unspecified.
+                | Yaw angle. NaN to use the current system yaw heading mode (e.g.
+                    yaw towards next waypoint, yaw to home, etc.).
+                | Latitude| Longitude| Altitude (ground level) relative to the current
+                    coordinate frame. NaN to use system default landing altitude (ignore value).
+                |  */
     NAV_GUIDED_ENABLE=92, /* hand control over to an external controller |On / Off (> 0.5f on)| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    NAV_DELAY=93, /* Delay the next navigation command a number of seconds or until a specified time |Delay (-1 to enable time-of-day fields)| hour (24h format, UTC, -1 to ignore)| minute (24h format, UTC, -1 to ignore)| second (24h format, UTC, -1 to ignore)| Empty| Empty| Empty|  */
-    NAV_PAYLOAD_PLACE=94, /* Descend and place payload. Vehicle moves to specified location, descends until it detects a hanging payload has reached the ground, and then releases the payload. If ground is not detected before the reaching the maximum descent value (param1), the command will complete without releasing the payload. |Maximum distance to descend.| Empty| Empty| Empty| Latitude| Longitude| Altitude|  */
-    NAV_LAST=95, /* NOP - This command is only used to mark the upper limit of the NAV/ACTION commands in the enumeration |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
+    NAV_DELAY=93, /* Delay the next navigation command a number of seconds or until a specified time
+                 |Delay (-1 to enable time-of-day
+                    fields)
+                | hour (24h format, UTC, -1 to
+                    ignore)
+                | minute (24h format, UTC, -1 to
+                    ignore)
+                | second (24h format, UTC, -1 to
+                    ignore)
+                | Empty| Empty| Empty|  */
+    NAV_PAYLOAD_PLACE=94, /* Descend and place payload. Vehicle moves to specified location, descends until it detects a
+                    hanging payload has reached the ground, and then releases the payload. If ground is not detected
+                    before the reaching the maximum descent value (param1), the command will complete without releasing
+                    the payload.
+                 |Maximum distance to descend.| Empty| Empty| Empty| Latitude| Longitude| Altitude|  */
+    NAV_LAST=95, /* NOP - This command is only used to mark the upper limit of the NAV/ACTION commands in the
+                    enumeration
+                 |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
     CONDITION_DELAY=112, /* Delay mission state machine. |Delay| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    CONDITION_CHANGE_ALT=113, /* Ascend/descend to target altitude at specified rate. Delay mission state machine until desired altitude reached. |Descent / Ascend rate.| Empty| Empty| Empty| Empty| Empty| Target Altitude|  */
+    CONDITION_CHANGE_ALT=113, /* Ascend/descend to target altitude at specified rate. Delay mission state machine until
+                    desired altitude reached.
+                 |Descent / Ascend rate.| Empty| Empty| Empty| Empty| Empty| Target Altitude|  */
     CONDITION_DISTANCE=114, /* Delay mission state machine until within desired distance of next NAV point. |Distance.| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    CONDITION_YAW=115, /* Reach a certain target angle. |target angle [0-360]. Absolute angles: 0 is north. Relative angle: 0 is initial yaw. Direction set by param3.| angular speed| direction: -1: counter clockwise, 0: shortest direction, 1: clockwise| 0: absolute angle, 1: relative offset| Empty| Empty| Empty|  */
-    CONDITION_LAST=159, /* NOP - This command is only used to mark the upper limit of the CONDITION commands in the enumeration |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    DO_SET_MODE=176, /* Set system mode. |Mode| Custom mode - this is system specific, please refer to the individual autopilot specifications for details.| Custom sub mode - this is system specific, please refer to the individual autopilot specifications for details.| Empty| Empty| Empty| Empty|  */
-    DO_JUMP=177, /* Jump to the desired command in the mission list.  Repeat this action only the specified number of times |Sequence number| Repeat count| Empty| Empty| Empty| Empty| Empty|  */
-    DO_CHANGE_SPEED=178, /* Change speed and/or throttle set points. The value persists until it is overridden or there is a mode change |Speed type of value set in param2 (such as airspeed, ground speed, and so on)| Speed (-1 indicates no change, -2 indicates return to default vehicle speed)| Throttle (-1 indicates no change, -2 indicates return to default vehicle throttle value)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    CONDITION_YAW=115, /* Reach a certain target angle. |target angle [0-360]. Absolute
+                    angles: 0 is north. Relative angle: 0 is initial yaw. Direction set by param3.
+                | angular speed| direction: -1: counter
+                    clockwise, 0: shortest direction, 1: clockwise
+                | 0: absolute angle, 1: relative
+                    offset
+                | Empty| Empty| Empty|  */
+    CONDITION_LAST=159, /* NOP - This command is only used to mark the upper limit of the CONDITION commands in the
+                    enumeration
+                 |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
+    DO_SET_MODE=176, /* Set system mode. |Mode| Custom mode - this is system specific, please refer to the
+                    individual autopilot specifications for details.
+                | Custom sub mode - this is system specific, please refer to the
+                    individual autopilot specifications for details.
+                | Empty| Empty| Empty| Empty|  */
+    DO_JUMP=177, /* Jump to the desired command in the mission list. Repeat this action only the specified
+                    number of times
+                 |Sequence number| Repeat count| Empty| Empty| Empty| Empty| Empty|  */
+    DO_CHANGE_SPEED=178, /* Change speed and/or throttle set points. The value persists until it is overridden or there
+                    is a mode change
+                 |Speed type of value set in param2 (such as
+                    airspeed, ground speed, and so on)
+                | Speed (-1 indicates no change, -2 indicates
+                    return to default vehicle speed)
+                | Throttle (-1 indicates no change, -2 indicates
+                    return to default vehicle throttle value)
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     DO_SET_HOME=179, /* 
-          Sets the home position to either to the current position or a specified position.
-          The home position is the default position that the system will return to and land on.
-          The position is set automatically by the system during the takeoff (and may also be set using this command).
-          Note: the current home position may be emitted in a HOME_POSITION message on request (using MAV_CMD_REQUEST_MESSAGE with param1=242).
-         |Use current (1=use current location, 0=use specified location)| Roll angle (of surface). Range: -180..180 degrees. NAN or 0 means value not set. 0.01 indicates zero roll.| Pitch angle (of surface). Range: -90..90 degrees. NAN or 0 means value not set. 0.01 means zero pitch.| Yaw angle. NaN to use default heading. Range: -180..180 degrees.| Latitude| Longitude| Altitude|  */
-    DO_SET_PARAMETER=180, /* Set a system parameter.  Caution!  Use of this command requires knowledge of the numeric enumeration value of the parameter. |Parameter number| Parameter value| Empty| Empty| Empty| Empty| Empty|  */
-    DO_SET_RELAY=181, /* Set a relay to a condition. |Relay instance number.| Setting. (1=on, 0=off, others possible depending on system hardware)| Empty| Empty| Empty| Empty| Empty|  */
-    DO_REPEAT_RELAY=182, /* Cycle a relay on and off for a desired number of cycles with a desired period. |Relay instance number.| Cycle count.| Cycle time.| Empty| Empty| Empty| Empty|  */
+                    Sets the home position to either to the current position or a specified position.
+                    The home position is the default position that the system will return to and land on.
+                    The position is set automatically by the system during the takeoff (and may also be set using this
+                    command).
+                    Note: the current home position may be emitted in a HOME_POSITION message on request (using
+                    MAV_CMD_REQUEST_MESSAGE with param1=242).
+                 |Use current (1=use current
+                    location, 0=use specified location)
+                | Roll angle (of surface). Range:
+                    -180..180 degrees. NAN or 0 means value not set. 0.01 indicates zero roll.
+                | Pitch angle (of surface). Range:
+                    -90..90 degrees. NAN or 0 means value not set. 0.01 means zero pitch.
+                | Yaw angle. NaN to use default
+                    heading. Range: -180..180 degrees.
+                | Latitude| Longitude| Altitude|  */
+    DO_SET_PARAMETER=180, /* Set a system parameter. Caution! Use of this command requires knowledge of the numeric
+                    enumeration value of the parameter.
+                 |Parameter number| Parameter value| Empty| Empty| Empty| Empty| Empty|  */
+    DO_SET_RELAY=181, /* Set a relay to a condition. |Relay instance number.| Setting. (1=on, 0=off, others possible
+                    depending on system hardware)
+                | Empty| Empty| Empty| Empty| Empty|  */
+    DO_REPEAT_RELAY=182, /* Cycle a relay on and off for a desired number of cycles with a desired period.
+                 |Relay instance number.| Cycle count.| Cycle time.| Empty| Empty| Empty| Empty|  */
     DO_SET_SERVO=183, /* Set a servo to a desired PWM value. |Servo instance number.| Pulse Width Modulation.| Empty| Empty| Empty| Empty| Empty|  */
-    DO_REPEAT_SERVO=184, /* Cycle a between its nominal setting and a desired PWM for a desired number of cycles with a desired period. |Servo instance number.| Pulse Width Modulation.| Cycle count.| Cycle time.| Empty| Empty| Empty|  */
+    DO_REPEAT_SERVO=184, /* Cycle a between its nominal setting and a desired PWM for a desired number of cycles with a
+                    desired period.
+                 |Servo instance number.| Pulse Width Modulation.| Cycle count.| Cycle time.| Empty| Empty| Empty|  */
     DO_FLIGHTTERMINATION=185, /* Terminate flight immediately.
-          Flight termination immediately and irreversibly terminates the current flight, returning the vehicle to ground.
-          The vehicle will ignore RC or other input until it has been power-cycled.
-          Termination may trigger safety measures, including: disabling motors and deployment of parachute on multicopters, and setting flight surfaces to initiate a landing pattern on fixed-wing).
-          On multicopters without a parachute it may trigger a crash landing.
-          Support for this command can be tested using the protocol bit: MAV_PROTOCOL_CAPABILITY_FLIGHT_TERMINATION.
-          Support for this command can also be tested by sending the command with param1=0 (< 0.5); the ACK should be either MAV_RESULT_FAILED or MAV_RESULT_UNSUPPORTED.
-         |Flight termination activated if > 0.5. Otherwise not activated and ACK with MAV_RESULT_FAILED.| Empty| Empty| Empty| Empty| Empty| Empty|  */
+                    Flight termination immediately and irreversibly terminates the current flight, returning the vehicle
+                    to ground.
+                    The vehicle will ignore RC or other input until it has been power-cycled.
+                    Termination may trigger safety measures, including: disabling motors and deployment of parachute on
+                    multicopters, and setting flight surfaces to initiate a landing pattern on fixed-wing).
+                    On multicopters without a parachute it may trigger a crash landing.
+                    Support for this command can be tested using the protocol bit:
+                    MAV_PROTOCOL_CAPABILITY_FLIGHT_TERMINATION.
+                    Support for this command can also be tested by sending the command with param1=0 (< 0.5); the ACK
+                    should be either MAV_RESULT_FAILED or MAV_RESULT_UNSUPPORTED.
+                 |Flight termination activated
+                    if > 0.5. Otherwise not activated and ACK with MAV_RESULT_FAILED.
+                | Empty| Empty| Empty| Empty| Empty| Empty|  */
     DO_CHANGE_ALTITUDE=186, /* Change altitude set point. |Altitude.| Frame of new altitude.| Empty| Empty| Empty| Empty| Empty|  */
-    DO_SET_ACTUATOR=187, /* Sets actuators (e.g. servos) to a desired value. The actuator numbers are mapped to specific outputs (e.g. on any MAIN or AUX PWM or UAVCAN) using a flight-stack specific mechanism (i.e. a parameter). |Actuator 1 value, scaled from [-1 to 1]. NaN to ignore.| Actuator 2 value, scaled from [-1 to 1]. NaN to ignore.| Actuator 3 value, scaled from [-1 to 1]. NaN to ignore.| Actuator 4 value, scaled from [-1 to 1]. NaN to ignore.| Actuator 5 value, scaled from [-1 to 1]. NaN to ignore.| Actuator 6 value, scaled from [-1 to 1]. NaN to ignore.| Index of actuator set (i.e if set to 1, Actuator 1 becomes Actuator 7)|  */
-    DO_RETURN_PATH_START=188, /* Mission item to specify the start of a failsafe/landing return-path segment (the end of the segment is the next MAV_CMD_DO_LAND_START item).
-          A vehicle that is using missions for landing (e.g. in a return mode) will join the mission on the closest path of the return-path segment (instead of MAV_CMD_DO_LAND_START or the nearest waypoint).
-          The main use case is to minimize the failsafe flight path in corridor missions, where the inbound/outbound paths are constrained (by geofences) to the same particular path.
-          The MAV_CMD_NAV_RETURN_PATH_START would be placed at the start of the return path.
-          If a failsafe occurs on the outbound path the vehicle will move to the nearest point on the return path (which is parallel for this kind of mission), effectively turning round and following the shortest path to landing.
-          If a failsafe occurs on the inbound path the vehicle is already on the return segment and will continue to landing.
-          The Latitude/Longitude/Altitude are optional, and may be set to 0 if not needed.
-          If specified, the item defines the waypoint at which the return segment starts.
-          If sent using as a command, the vehicle will perform a mission landing (using the land segment if defined) or reject the command if mission landings are not supported, or no mission landing is defined. When used as a command any position information in the command is ignored.
-         |Empty| Empty| Empty| Empty| Latitudee. 0: not used.| Longitudee. 0: not used.| Altitudee. 0: not used.|  */
-    DO_LAND_START=189, /* Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts.
-	  It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used.
-	  The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence.
-	 |Empty| Empty| Empty| Empty| Latitude| Longitude| Altitude|  */
+    DO_SET_ACTUATOR=187, /* Sets actuators (e.g. servos) to a desired value. The actuator numbers are mapped to
+                    specific outputs (e.g. on any MAIN or AUX PWM or UAVCAN) using a flight-stack specific mechanism
+                    (i.e. a parameter).
+                 |Actuator 1 value, scaled from [-1 to 1].
+                    NaN to ignore.
+                | Actuator 2 value, scaled from [-1 to 1].
+                    NaN to ignore.
+                | Actuator 3 value, scaled from [-1 to 1].
+                    NaN to ignore.
+                | Actuator 4 value, scaled from [-1 to 1].
+                    NaN to ignore.
+                | Actuator 5 value, scaled from [-1 to 1].
+                    NaN to ignore.
+                | Actuator 6 value, scaled from [-1 to 1].
+                    NaN to ignore.
+                | Index of actuator set (i.e if set to 1,
+                    Actuator 1 becomes Actuator 7)
+                |  */
+    DO_RETURN_PATH_START=188, /* Mission item to specify the start of a failsafe/landing return-path segment (the end of the
+                    segment is the next MAV_CMD_DO_LAND_START item).
+                    A vehicle that is using missions for landing (e.g. in a return mode) will join the mission on the
+                    closest path of the return-path segment (instead of MAV_CMD_DO_LAND_START or the nearest waypoint).
+                    The main use case is to minimize the failsafe flight path in corridor missions, where the
+                    inbound/outbound paths are constrained (by geofences) to the same particular path.
+                    The MAV_CMD_NAV_RETURN_PATH_START would be placed at the start of the return path.
+                    If a failsafe occurs on the outbound path the vehicle will move to the nearest point on the return
+                    path (which is parallel for this kind of mission), effectively turning round and following the
+                    shortest path to landing.
+                    If a failsafe occurs on the inbound path the vehicle is already on the return segment and will
+                    continue to landing.
+                    The Latitude/Longitude/Altitude are optional, and may be set to 0 if not needed.
+                    If specified, the item defines the waypoint at which the return segment starts.
+                    If sent using as a command, the vehicle will perform a mission landing (using the land segment if
+                    defined) or reject the command if mission landings are not supported, or no mission landing is
+                    defined. When used as a command any position information in the command is ignored.
+                 |Empty| Empty| Empty| Empty| Latitudee. 0: not used.| Longitudee. 0: not used.| Altitudee. 0: not used.|  */
+    DO_LAND_START=189, /* Mission command to perform a landing. This is used as a marker in a mission to tell the
+                    autopilot where a sequence of mission items that represents a landing starts.
+                    It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest
+                    (geographically) landing sequence in the mission will be used.
+                    The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it
+                    will be used to help find the closest landing sequence.
+                 |Empty| Empty| Empty| Empty| Latitude| Longitude| Altitude|  */
     DO_RALLY_LAND=190, /* Mission command to perform a landing from a rally point. |Break altitude| Landing speed| Empty| Empty| Empty| Empty| Empty|  */
     DO_GO_AROUND=191, /* Mission command to safely abort an autonomous landing. |Altitude| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    DO_REPOSITION=192, /* Reposition the vehicle to a specific WGS84 global position. This command is intended for guided commands (for missions use MAV_CMD_NAV_WAYPOINT instead). |Ground speed, less than 0 (-1) for default| Bitmask of option flags.| Loiter radius for planes. Positive values only, direction is controlled by Yaw value. A value of zero or NaN is ignored. | Yaw heading. NaN to use the current system yaw heading mode (e.g. yaw towards next waypoint, yaw to home, etc.). For planes indicates loiter direction (0: clockwise, 1: counter clockwise)| Latitude| Longitude| Altitude|  */
-    DO_PAUSE_CONTINUE=193, /* If in a GPS controlled position mode, hold the current position or continue. |0: Pause current mission or reposition command, hold current position. 1: Continue mission. A VTOL capable vehicle should enter hover mode (multicopter and VTOL planes). A plane should loiter with the default loiter radius.| Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
-    DO_SET_REVERSE=194, /* Set moving direction to forward or reverse. |Direction (0=Forward, 1=Reverse)| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    DO_SET_ROI_LOCATION=195, /* Sets the region of interest (ROI) to a location. This can then be used by the vehicle's control system to control the vehicle attitude and the attitude of various sensors such as cameras. This command can be sent to a gimbal manager but not to a gimbal device. A gimbal is not to react to this message. |Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).| Empty| Empty| Empty| Latitude of ROI location| Longitude of ROI location| Altitude of ROI location|  */
-    DO_SET_ROI_WPNEXT_OFFSET=196, /* Sets the region of interest (ROI) to be toward next waypoint, with optional pitch/roll/yaw offset. This can then be used by the vehicle's control system to control the vehicle attitude and the attitude of various sensors such as cameras. This command can be sent to a gimbal manager but not to a gimbal device. A gimbal device is not to react to this message. |Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).| Empty| Empty| Empty| Pitch offset from next waypoint, positive pitching up| Roll offset from next waypoint, positive rolling to the right| Yaw offset from next waypoint, positive yawing to the right|  */
-    DO_SET_ROI_NONE=197, /* Cancels any previous ROI command returning the vehicle/sensors to default flight characteristics. This can then be used by the vehicle's control system to control the vehicle attitude and the attitude of various sensors such as cameras. This command can be sent to a gimbal manager but not to a gimbal device. A gimbal device is not to react to this message. After this command the gimbal manager should go back to manual input if available, and otherwise assume a neutral position. |Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    DO_SET_ROI_SYSID=198, /* Mount tracks system with specified system ID. Determination of target vehicle position may be done with GLOBAL_POSITION_INT or any other means. This command can be sent to a gimbal manager but not to a gimbal device. A gimbal device is not to react to this message. |System ID| Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    DO_CONTROL_VIDEO=200, /* Control onboard camera system. |Camera ID (-1 for all)| Transmission: 0: disabled, 1: enabled compressed, 2: enabled raw| Transmission mode: 0: video stream, >0: single images every n seconds| Recording: 0: disabled, 1: enabled compressed, 2: enabled raw| Empty| Empty| Empty|  */
-    DO_SET_ROI=201, /* Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicle's control system to control the vehicle attitude and the attitude of various sensors such as cameras. |Region of interest mode.| Waypoint index/ target ID (depends on param 1).| Region of interest index. (allows a vehicle to manage multiple ROI's)| Empty| MAV_ROI_WPNEXT: pitch offset from next waypoint, MAV_ROI_LOCATION: latitude| MAV_ROI_WPNEXT: roll offset from next waypoint, MAV_ROI_LOCATION: longitude| MAV_ROI_WPNEXT: yaw offset from next waypoint, MAV_ROI_LOCATION: altitude|  */
-    DO_DIGICAM_CONFIGURE=202, /* Configure digital camera. This is a fallback message for systems that have not yet implemented PARAM_EXT_XXX messages and camera definition files (see https://mavlink.io/en/services/camera_def.html ). |Modes: P, TV, AV, M, Etc.| Shutter speed: Divisor number for one second.| Aperture: F stop number.| ISO number e.g. 80, 100, 200, Etc.| Exposure type enumerator.| Command Identity.| Main engine cut-off time before camera trigger. (0 means no cut-off)|  */
-    DO_DIGICAM_CONTROL=203, /* Control digital camera. This is a fallback message for systems that have not yet implemented PARAM_EXT_XXX messages and camera definition files (see https://mavlink.io/en/services/camera_def.html ). |Session control e.g. show/hide lens| Zoom's absolute position| Zooming step value to offset zoom from the current position| Focus Locking, Unlocking or Re-locking| Shooting Command| Command Identity| Test shot identifier. If set to 1, image will only be captured, but not counted towards internal frame count.|  */
-    DO_MOUNT_CONFIGURE=204, /* Mission command to configure a camera or antenna mount |Mount operation mode| stabilize roll? (1 = yes, 0 = no)| stabilize pitch? (1 = yes, 0 = no)| stabilize yaw? (1 = yes, 0 = no)| roll input (0 = angle body frame, 1 = angular rate, 2 = angle absolute frame)| pitch input (0 = angle body frame, 1 = angular rate, 2 = angle absolute frame)| yaw input (0 = angle body frame, 1 = angular rate, 2 = angle absolute frame)|  */
-    DO_MOUNT_CONTROL=205, /* Mission command to control a camera or antenna mount |pitch depending on mount mode (degrees or degrees/second depending on pitch input).| roll depending on mount mode (degrees or degrees/second depending on roll input).| yaw depending on mount mode (degrees or degrees/second depending on yaw input).| altitude depending on mount mode.| latitude, set if appropriate mount mode.| longitude, set if appropriate mount mode.| Mount mode.|  */
-    DO_SET_CAM_TRIGG_DIST=206, /* Mission command to set camera trigger distance for this flight. The camera is triggered each time this distance is exceeded. This command can also be used to set the shutter integration time for the camera. |Camera trigger distance. 0 to stop triggering.| Camera shutter integration time. -1 or 0 to ignore| Trigger camera once immediately. (0 = no trigger, 1 = trigger)| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Empty| Empty| Empty|  */
+    DO_REPOSITION=192, /* Reposition the vehicle to a specific WGS84 global position. This command is intended for
+                    guided commands (for missions use MAV_CMD_NAV_WAYPOINT instead).
+                 |Ground speed, less than 0 (-1) for default
+                | Bitmask of option flags.| Loiter radius for planes. Positive values only, direction is
+                    controlled by Yaw value. A value of zero or NaN is ignored.
+                | Yaw heading. NaN to use the current system yaw heading mode
+                    (e.g. yaw towards next waypoint, yaw to home, etc.). For planes indicates loiter direction (0:
+                    clockwise, 1: counter clockwise)
+                | Latitude| Longitude| Altitude|  */
+    DO_PAUSE_CONTINUE=193, /* If in a GPS controlled position mode, hold the current position or continue. |0: Pause current mission or
+                    reposition command, hold current position. 1: Continue mission. A VTOL capable vehicle should enter
+                    hover mode (multicopter and VTOL planes). A plane should loiter with the default loiter radius.
+                | Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
+    DO_SET_REVERSE=194, /* Set moving direction to forward or reverse. |Direction (0=Forward,
+                    1=Reverse)
+                | Empty| Empty| Empty| Empty| Empty| Empty|  */
+    DO_SET_ROI_LOCATION=195, /* Sets the region of interest (ROI) to a location. This can then be used by the vehicle's
+                    control system to control the vehicle attitude and the attitude of various sensors such as cameras.
+                    This command can be sent to a gimbal manager but not to a gimbal device. A gimbal is not to react to
+                    this message.
+                 |Component ID of gimbal device to address (or 1-6 for
+                    non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than
+                    one gimbal (but not all gimbals).
+                | Empty| Empty| Empty| Latitude of ROI location| Longitude of ROI location| Altitude of ROI location|  */
+    DO_SET_ROI_WPNEXT_OFFSET=196, /* Sets the region of interest (ROI) to be toward next waypoint, with optional pitch/roll/yaw
+                    offset. This can then be used by the vehicle's control system to control the vehicle attitude and
+                    the attitude of various sensors such as cameras. This command can be sent to a gimbal manager but
+                    not to a gimbal device. A gimbal device is not to react to this message.
+                 |Component ID of gimbal device to address (or 1-6 for
+                    non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than
+                    one gimbal (but not all gimbals).
+                | Empty| Empty| Empty| Pitch offset from next waypoint, positive pitching
+                    up
+                | Roll offset from next waypoint, positive rolling to the
+                    right
+                | Yaw offset from next waypoint, positive yawing to the
+                    right
+                |  */
+    DO_SET_ROI_NONE=197, /* Cancels any previous ROI command returning the vehicle/sensors to default flight
+                    characteristics. This can then be used by the vehicle's control system to control the vehicle
+                    attitude and the attitude of various sensors such as cameras. This command can be sent to a gimbal
+                    manager but not to a gimbal device. A gimbal device is not to react to this message. After this
+                    command the gimbal manager should go back to manual input if available, and otherwise assume a
+                    neutral position.
+                 |Component ID of gimbal device to address (or 1-6 for
+                    non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than
+                    one gimbal (but not all gimbals).
+                | Empty| Empty| Empty| Empty| Empty| Empty|  */
+    DO_SET_ROI_SYSID=198, /* Mount tracks system with specified system ID. Determination of target vehicle position may
+                    be done with GLOBAL_POSITION_INT or any other means. This command can be sent to a gimbal manager
+                    but not to a gimbal device. A gimbal device is not to react to this message.
+                 |System ID| Component ID of gimbal device to address (or 1-6 for
+                    non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than
+                    one gimbal (but not all gimbals).
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    DO_CONTROL_VIDEO=200, /* Control onboard camera system. |Camera ID (-1 for all)| Transmission: 0: disabled,
+                    1: enabled compressed, 2: enabled raw
+                | Transmission mode: 0: video stream, >0:
+                    single images every n seconds
+                | Recording: 0: disabled, 1:
+                    enabled compressed, 2: enabled raw
+                | Empty| Empty| Empty|  */
+    DO_SET_ROI=201, /* Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be
+                    used by the vehicle's control system to control the vehicle attitude and the attitude of various
+                    sensors such as cameras.
+                 |Region of interest mode.| Waypoint index/ target ID (depends on param
+                    1).
+                | Region of interest index. (allows a
+                    vehicle to manage multiple ROI's)
+                | Empty| MAV_ROI_WPNEXT: pitch offset from next waypoint, MAV_ROI_LOCATION: latitude| MAV_ROI_WPNEXT: roll offset from next waypoint, MAV_ROI_LOCATION: longitude| MAV_ROI_WPNEXT: yaw offset from next waypoint, MAV_ROI_LOCATION: altitude|  */
+    DO_DIGICAM_CONFIGURE=202, /* Configure digital camera. This is a fallback message for systems that have not yet
+                    implemented PARAM_EXT_XXX messages and camera definition files (see
+                    https://mavlink.io/en/services/camera_def.html ).
+                 |Modes: P, TV, AV, M, Etc.| Shutter speed: Divisor number for one
+                    second.
+                | Aperture: F stop number.| ISO number e.g. 80, 100, 200, Etc.| Exposure type enumerator.| Command Identity.| Main engine cut-off time
+                    before camera trigger. (0 means no cut-off)
+                |  */
+    DO_DIGICAM_CONTROL=203, /* Control digital camera. This is a fallback message for systems that have not yet
+                    implemented PARAM_EXT_XXX messages and camera definition files (see
+                    https://mavlink.io/en/services/camera_def.html ).
+                 |Session control e.g. show/hide lens| Zoom's absolute position| Zooming step value to offset zoom from the current position
+                | Focus Locking, Unlocking or Re-locking| Shooting Command| Command Identity| Test shot identifier. If set to 1, image will only be captured, but not
+                    counted towards internal frame count.
+                |  */
+    DO_MOUNT_CONFIGURE=204, /* Mission command to configure a camera or antenna mount |Mount operation mode| stabilize roll? (1 =
+                    yes, 0 = no)
+                | stabilize pitch? (1 =
+                    yes, 0 = no)
+                | stabilize yaw? (1 = yes,
+                    0 = no)
+                | roll input (0 = angle body frame, 1 = angular rate, 2 = angle
+                    absolute frame)
+                | pitch input (0 = angle body frame, 1 = angular rate, 2 = angle
+                    absolute frame)
+                | yaw input (0 = angle body frame, 1 = angular rate, 2 = angle
+                    absolute frame)
+                |  */
+    DO_MOUNT_CONTROL=205, /* Mission command to control a camera or antenna mount |pitch depending on mount mode (degrees or degrees/second depending on
+                    pitch input).
+                | roll depending on mount mode (degrees or degrees/second depending on roll
+                    input).
+                | yaw depending on mount mode (degrees or degrees/second depending on yaw
+                    input).
+                | altitude depending on mount mode.| latitude, set if appropriate mount mode.| longitude, set if appropriate mount mode.| Mount mode.|  */
+    DO_SET_CAM_TRIGG_DIST=206, /* Mission command to set camera trigger distance for this flight. The camera is triggered
+                    each time this distance is exceeded. This command can also be used to set the shutter integration
+                    time for the camera.
+                 |Camera trigger distance. 0 to stop
+                    triggering.
+                | Camera shutter integration time.
+                    -1 or 0 to ignore
+                | Trigger camera once
+                    immediately. (0 = no trigger, 1 = trigger)
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Empty| Empty| Empty|  */
     DO_FENCE_ENABLE=207, /* 
-          Enable the geofence.
-          This can be used in a mission or via the command protocol.
-          The persistence/lifetime of the setting is undefined.
-          Depending on flight stack implementation it may persist until superseded, or it may revert to a system default at the end of a mission.
-          Flight stacks typically reset the setting to system defaults on reboot.
-	 |enable? (0=disable, 1=enable, 2=disable_floor_only)| Fence types to enable or disable as a bitmask. A value of 0 indicates that all fences should be enabled or disabled. This parameter is ignored if param 1 has the value 2| Empty| Empty| Empty| Empty| Empty|  */
+                    Enable the geofence.
+                    This can be used in a mission or via the command protocol.
+                    The persistence/lifetime of the setting is undefined.
+                    Depending on flight stack implementation it may persist until superseded, or it may revert to a
+                    system default at the end of a mission.
+                    Flight stacks typically reset the setting to system defaults on reboot.
+                 |enable? (0=disable, 1=enable,
+                    2=disable_floor_only)
+                | Fence types to enable or disable as a bitmask. A value
+                    of 0 indicates that all fences should be enabled or disabled. This parameter is ignored if param 1
+                    has the value 2
+                | Empty| Empty| Empty| Empty| Empty|  */
     DO_PARACHUTE=208, /* Mission item/command to release a parachute or enable/disable auto release. |Action| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    DO_MOTOR_TEST=209, /* Command to perform motor test. |Motor instance number (from 1 to max number of motors on the vehicle).| Throttle type (whether the Throttle Value in param3 is a percentage, PWM value, etc.)| Throttle value.| Timeout between tests that are run in sequence.| Motor count. Number of motors to test in sequence: 0/1=one motor, 2= two motors, etc. The Timeout (param4) is used between tests.| Motor test order.| Empty|  */
-    DO_INVERTED_FLIGHT=210, /* Change to/from inverted flight. |Inverted flight. (0=normal, 1=inverted)| Empty| Empty| Empty| Empty| Empty| Empty|  */
+    DO_MOTOR_TEST=209, /* Command to perform motor test. |Motor instance number (from 1 to max number
+                    of motors on the vehicle).
+                | Throttle type (whether the
+                    Throttle Value in param3 is a percentage, PWM value, etc.)
+                | Throttle value.| Timeout between tests that are run in
+                    sequence.
+                | Motor count. Number of motors to test in
+                    sequence: 0/1=one motor, 2= two motors, etc. The Timeout (param4) is used between tests.
+                | Motor test order.| Empty|  */
+    DO_INVERTED_FLIGHT=210, /* Change to/from inverted flight. |Inverted flight. (0=normal,
+                    1=inverted)
+                | Empty| Empty| Empty| Empty| Empty| Empty|  */
     DO_GRIPPER=211, /* Mission command to operate a gripper. |Gripper instance number.| Gripper action to perform.| Empty| Empty| Empty| Empty| Empty|  */
-    DO_AUTOTUNE_ENABLE=212, /* Enable/disable autotune. |Enable (1: enable, 0:disable).| Specify which axis are autotuned. 0 indicates autopilot default settings.| Empty.| Empty.| Empty.| Empty.| Empty.|  */
-    NAV_SET_YAW_SPEED=213, /* Sets a desired vehicle turn angle and speed change. |Yaw angle to adjust steering by.| Speed.| Final angle. (0=absolute, 1=relative)| Empty| Empty| Empty| Empty|  */
-    DO_SET_CAM_TRIGG_INTERVAL=214, /* Mission command to set camera trigger interval for this flight. If triggering is enabled, the camera is triggered each time this interval expires. This command can also be used to set the shutter integration time for the camera. |Camera trigger cycle time. -1 or 0 to ignore.| Camera shutter integration time. Should be less than trigger cycle time. -1 or 0 to ignore.| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Empty| Empty| Empty| Empty|  */
-    DO_MOUNT_CONTROL_QUAT=220, /* Mission command to control a camera or antenna mount, using a quaternion as reference. |quaternion param q1, w (1 in null-rotation)| quaternion param q2, x (0 in null-rotation)| quaternion param q3, y (0 in null-rotation)| quaternion param q4, z (0 in null-rotation)| Empty| Empty| Empty|  */
+    DO_AUTOTUNE_ENABLE=212, /* Enable/disable autotune. |Enable (1: enable, 0:disable).
+                | Specify which axis are autotuned. 0 indicates
+                    autopilot default settings.
+                | Empty.| Empty.| Empty.| Empty.| Empty.|  */
+    NAV_SET_YAW_SPEED=213, /* Sets a desired vehicle turn angle and speed change. |Yaw angle to adjust steering by.| Speed.| Final angle. (0=absolute,
+                    1=relative)
+                | Empty| Empty| Empty| Empty|  */
+    DO_SET_CAM_TRIGG_INTERVAL=214, /* Mission command to set camera trigger interval for this flight. If triggering is enabled,
+                    the camera is triggered each time this interval expires. This command can also be used to set the
+                    shutter integration time for the camera.
+                 |Camera trigger cycle time.
+                    -1 or 0 to ignore.
+                | Camera shutter
+                    integration time. Should be less than trigger cycle time. -1 or 0 to ignore.
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Empty| Empty| Empty| Empty|  */
+    DO_MOUNT_CONTROL_QUAT=220, /* Mission command to control a camera or antenna mount, using a quaternion as reference.
+                 |quaternion param q1, w (1 in null-rotation)| quaternion param q2, x (0 in null-rotation)| quaternion param q3, y (0 in null-rotation)| quaternion param q4, z (0 in null-rotation)| Empty| Empty| Empty|  */
     DO_GUIDED_MASTER=221, /* set id of master controller |System ID| Component ID| Empty| Empty| Empty| Empty| Empty|  */
-    DO_GUIDED_LIMITS=222, /* Set limits for external control |Timeout - maximum time that external controller will be allowed to control vehicle. 0 means no timeout.| Altitude (MSL) min - if vehicle moves below this alt, the command will be aborted and the mission will continue. 0 means no lower altitude limit.| Altitude (MSL) max - if vehicle moves above this alt, the command will be aborted and the mission will continue. 0 means no upper altitude limit.| Horizontal move limit - if vehicle moves more than this distance from its location at the moment the command was executed, the command will be aborted and the mission will continue. 0 means no horizontal move limit.| Empty| Empty| Empty|  */
-    DO_ENGINE_CONTROL=223, /* Control vehicle engine. This is interpreted by the vehicles engine controller to change the target engine state. It is intended for vehicles with internal combustion engines |0: Stop engine, 1:Start Engine| 0: Warm start, 1:Cold start. Controls use of choke where applicable| Height delay. This is for commanding engine start only after the vehicle has gained the specified height. Used in VTOL vehicles during takeoff to start engine after the aircraft is off the ground. Zero for no delay.| Empty| Empty| Empty| Empty|  */
+    DO_GUIDED_LIMITS=222, /* Set limits for external control |Timeout - maximum time that external controller
+                    will be allowed to control vehicle. 0 means no timeout.
+                | Altitude (MSL) min - if vehicle moves below this alt,
+                    the command will be aborted and the mission will continue. 0 means no lower altitude limit.
+                | Altitude (MSL) max - if vehicle moves above this alt,
+                    the command will be aborted and the mission will continue. 0 means no upper altitude limit.
+                | Horizontal move limit - if vehicle
+                    moves more than this distance from its location at the moment the command was executed, the command
+                    will be aborted and the mission will continue. 0 means no horizontal move limit.
+                | Empty| Empty| Empty|  */
+    DO_ENGINE_CONTROL=223, /* Control vehicle engine. This is interpreted by the vehicles engine controller to change the
+                    target engine state. It is intended for vehicles with internal combustion engines
+                 |0: Stop engine, 1:Start
+                    Engine
+                | 0: Warm start, 1:Cold start.
+                    Controls use of choke where applicable
+                | Height delay. This is for commanding engine
+                    start only after the vehicle has gained the specified height. Used in VTOL vehicles during takeoff
+                    to start engine after the aircraft is off the ground. Zero for no delay.
+                | Empty| Empty| Empty| Empty|  */
     DO_SET_MISSION_CURRENT=224, /* 
-          Set the mission item with sequence number seq as the current item and emit MISSION_CURRENT (whether or not the mission number changed).
-          If a mission is currently being executed, the system will continue to this new mission item on the shortest path, skipping any intermediate mission items.
-	  Note that mission jump repeat counters are not reset unless param2 is set (see MAV_CMD_DO_JUMP param2).
+                    Set the mission item with sequence number seq as the current item and emit MISSION_CURRENT (whether
+                    or not the mission number changed).
+                    If a mission is currently being executed, the system will continue to this new mission item on the
+                    shortest path, skipping any intermediate mission items.
+                    Note that mission jump repeat counters are not reset unless param2 is set (see MAV_CMD_DO_JUMP
+                    param2).
 
-          This command may trigger a mission state-machine change on some systems: for example from MISSION_STATE_NOT_STARTED or MISSION_STATE_PAUSED to MISSION_STATE_ACTIVE.
-          If the system is in mission mode, on those systems this command might therefore start, restart or resume the mission.
-          If the system is not in mission mode this command must not trigger a switch to mission mode.
+                    This command may trigger a mission state-machine change on some systems: for example from
+                    MISSION_STATE_NOT_STARTED or MISSION_STATE_PAUSED to MISSION_STATE_ACTIVE.
+                    If the system is in mission mode, on those systems this command might therefore start, restart or
+                    resume the mission.
+                    If the system is not in mission mode this command must not trigger a switch to mission mode.
 
-          The mission may be "reset" using param2.
-          Resetting sets jump counters to initial values (to reset counters without changing the current mission item set the param1 to `-1`).
-          Resetting also explicitly changes a mission state of MISSION_STATE_COMPLETE to MISSION_STATE_PAUSED or MISSION_STATE_ACTIVE, potentially allowing it to resume when it is (next) in a mission mode.
+                    The mission may be "reset" using param2.
+                    Resetting sets jump counters to initial values (to reset counters without changing the current
+                    mission item set the param1 to `-1`).
+                    Resetting also explicitly changes a mission state of MISSION_STATE_COMPLETE to MISSION_STATE_PAUSED
+                    or MISSION_STATE_ACTIVE, potentially allowing it to resume when it is (next) in a mission mode.
 
-	  The command will ACK with MAV_RESULT_FAILED if the sequence number is out of range (including if there is no mission item).
-         |Mission sequence value to set. -1 for the current mission item (use to reset mission without changing current mission item).| Resets mission. 1: true, 0: false. Resets jump counters to initial values and changes mission state "completed" to be "active" or "paused".| Empty| Empty| Empty| Empty| Empty|  */
-    DO_LAST=240, /* NOP - This command is only used to mark the upper limit of the DO commands in the enumeration |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    PREFLIGHT_CALIBRATION=241, /* Trigger calibration. This command will be only accepted if in pre-flight mode. Except for Temperature Calibration, only one sensor should be set in a single message and all others should be zero. |1: gyro calibration, 3: gyro temperature calibration| 1: magnetometer calibration| 1: ground pressure calibration| 1: radio RC calibration, 2: RC trim calibration| 1: accelerometer calibration, 2: board level calibration, 3: accelerometer temperature calibration, 4: simple accelerometer calibration| 1: APM: compass/motor interference calibration (PX4: airspeed calibration, deprecated), 2: airspeed calibration| 1: ESC calibration, 3: barometer temperature calibration|  */
-    PREFLIGHT_SET_SENSOR_OFFSETS=242, /* Set sensor offsets. This command will be only accepted if in pre-flight mode. |Sensor to adjust the offsets for: 0: gyros, 1: accelerometer, 2: magnetometer, 3: barometer, 4: optical flow, 5: second magnetometer, 6: third magnetometer| X axis offset (or generic dimension 1), in the sensor's raw units| Y axis offset (or generic dimension 2), in the sensor's raw units| Z axis offset (or generic dimension 3), in the sensor's raw units| Generic dimension 4, in the sensor's raw units| Generic dimension 5, in the sensor's raw units| Generic dimension 6, in the sensor's raw units|  */
-    PREFLIGHT_UAVCAN=243, /* Trigger UAVCAN configuration (actuator ID assignment and direction mapping). Note that this maps to the legacy UAVCAN v0 function UAVCAN_ENUMERATE, which is intended to be executed just once during initial vehicle configuration (it is not a normal pre-flight command and has been poorly named). |1: Trigger actuator ID assignment and direction mapping. 0: Cancel command.| Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
-    PREFLIGHT_STORAGE=245, /* Request storage of different parameter values and logs. This command will be only accepted if in pre-flight mode. |Action to perform on the persistent parameter storage| Action to perform on the persistent mission storage| Onboard logging: 0: Ignore, 1: Start default rate logging, -1: Stop logging, > 1: logging rate (e.g. set to 1000 for 1000 Hz logging)| Reserved| Empty| Empty| Empty|  */
-    PREFLIGHT_REBOOT_SHUTDOWN=246, /* Request the reboot or shutdown of system components. |0: Do nothing for autopilot, 1: Reboot autopilot, 2: Shutdown autopilot, 3: Reboot autopilot and keep it in the bootloader until upgraded.| 0: Do nothing for onboard computer, 1: Reboot onboard computer, 2: Shutdown onboard computer, 3: Reboot onboard computer and keep it in the bootloader until upgraded.| 0: Do nothing for component, 1: Reboot component, 2: Shutdown component, 3: Reboot component and keep it in the bootloader until upgraded| MAVLink Component ID targeted in param3 (0 for all components).| Reserved (set to 0)| Reserved (set to 0)| WIP: ID (e.g. camera ID -1 for all IDs)|  */
-    OVERRIDE_GOTO=252, /* Override current mission with command to pause mission, pause mission and move to position, continue/resume mission. When param 1 indicates that the mission is paused (MAV_GOTO_DO_HOLD), param 2 defines whether it holds in place or moves to another position. |MAV_GOTO_DO_HOLD: pause mission and either hold or move to specified position (depending on param2), MAV_GOTO_DO_CONTINUE: resume mission.| MAV_GOTO_HOLD_AT_CURRENT_POSITION: hold at current position, MAV_GOTO_HOLD_AT_SPECIFIED_POSITION: hold at specified position.| Coordinate frame of hold point.| Desired yaw angle.| Latitude/X position.| Longitude/Y position.| Altitude/Z position.|  */
-    OBLIQUE_SURVEY=260, /* Mission command to set a Camera Auto Mount Pivoting Oblique Survey (Replaces CAM_TRIGG_DIST for this purpose). The camera is triggered each time this distance is exceeded, then the mount moves to the next position. Params 4~6 set-up the angle limits and number of positions for oblique survey, where mount-enabled vehicles automatically roll the camera between shots to emulate an oblique camera setup (providing an increased HFOV). This command can also be used to set the shutter integration time for the camera. |Camera trigger distance. 0 to stop triggering.| Camera shutter integration time. 0 to ignore| The minimum interval in which the camera is capable of taking subsequent pictures repeatedly. 0 to ignore.| Total number of roll positions at which the camera will capture photos (images captures spread evenly across the limits defined by param5).| Angle limits that the camera can be rolled to left and right of center.| Fixed pitch angle that the camera will hold in oblique mode if the mount is actuated in the pitch axis.| Empty|  */
-    MISSION_START=300, /* start running a mission |first_item: the first mission item to run| last_item:  the last mission item to run (after this item is run, the mission ends)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    ACTUATOR_TEST=310, /* Actuator testing command. This is similar to MAV_CMD_DO_MOTOR_TEST but operates on the level of output functions, i.e. it is possible to test Motor1 independent from which output it is configured on. Autopilots typically refuse this command while armed. |Output value: 1 means maximum positive output, 0 to center servos or minimum motor thrust (expected to spin), -1 for maximum negative (if not supported by the motors, i.e. motor is not reversible, smaller than 0 maps to NaN). And NaN maps to disarmed (stop the motors).| Timeout after which the test command expires and the output is restored to the previous value. A timeout has to be set for safety reasons. A timeout of 0 means to restore the previous value immediately.| Reserved (default:0)| Reserved (default:0)| Actuator Output function| Reserved (default:0)| Reserved (default:0)|  */
-    CONFIGURE_ACTUATOR=311, /* Actuator configuration command. |Actuator configuration action| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Actuator Output function| Reserved (default:0)| Reserved (default:0)|  */
-    COMPONENT_ARM_DISARM=400, /* Arms / Disarms a component |0: disarm, 1: arm| 0: arm-disarm unless prevented by safety checks (i.e. when landed), 21196: force arming/disarming (e.g. allow arming to override preflight checks and disarming in flight)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+                    The command will ACK with MAV_RESULT_FAILED if the sequence number is out of range (including if
+                    there is no mission item).
+                 |Mission sequence value to set. -1 for the
+                    current mission item (use to reset mission without changing current mission item).
+                | Resets mission. 1: true,
+                    0: false. Resets jump counters to initial values and changes mission state "completed" to be
+                    "active" or "paused".
+                | Empty| Empty| Empty| Empty| Empty|  */
+    DO_LAST=240, /* NOP - This command is only used to mark the upper limit of the DO commands in the
+                    enumeration
+                 |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
+    PREFLIGHT_CALIBRATION=241, /* Trigger calibration. This command will be only accepted if in pre-flight mode. Except for
+                    Temperature Calibration, only one sensor should be set in a single message and all others should be
+                    zero.
+                 |1: gyro calibration,
+                    3: gyro temperature calibration
+                | 1: magnetometer
+                    calibration
+                | 1: ground pressure
+                    calibration
+                | 1: radio RC calibration,
+                    2: RC trim calibration
+                | 1: accelerometer
+                    calibration, 2: board level calibration, 3: accelerometer temperature calibration, 4: simple
+                    accelerometer calibration
+                | 1: APM:
+                    compass/motor interference calibration (PX4: airspeed calibration, deprecated), 2: airspeed
+                    calibration
+                | 1: ESC calibration, 3:
+                    barometer temperature calibration
+                |  */
+    PREFLIGHT_SET_SENSOR_OFFSETS=242, /* Set sensor offsets. This command will be only accepted if in pre-flight mode. |Sensor to adjust the
+                    offsets for: 0: gyros, 1: accelerometer, 2: magnetometer, 3: barometer, 4: optical flow, 5: second
+                    magnetometer, 6: third magnetometer
+                | X axis offset (or generic dimension 1), in the sensor's raw units
+                | Y axis offset (or generic dimension 2), in the sensor's raw units
+                | Z axis offset (or generic dimension 3), in the sensor's raw units
+                | Generic dimension 4, in the sensor's raw units| Generic dimension 5, in the sensor's raw units| Generic dimension 6, in the sensor's raw units|  */
+    PREFLIGHT_UAVCAN=243, /* Trigger UAVCAN configuration (actuator ID assignment and direction mapping). Note that this
+                    maps to the legacy UAVCAN v0 function UAVCAN_ENUMERATE, which is intended to be executed just once
+                    during initial vehicle configuration (it is not a normal pre-flight command and has been poorly
+                    named).
+                 |1: Trigger actuator ID assignment and direction mapping. 0: Cancel
+                    command.
+                | Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
+    PREFLIGHT_STORAGE=245, /* Request storage of different parameter values and logs. This command will be only accepted
+                    if in pre-flight mode.
+                 |Action to perform
+                    on the persistent parameter storage
+                | Action to perform on
+                    the persistent mission storage
+                | Onboard logging: 0: Ignore,
+                    1: Start default rate logging, -1: Stop logging, > 1: logging rate (e.g. set to 1000 for 1000 Hz
+                    logging)
+                | Reserved| Empty| Empty| Empty|  */
+    PREFLIGHT_REBOOT_SHUTDOWN=246, /* Request the reboot or shutdown of system components. |0: Do nothing for autopilot,
+                    1: Reboot autopilot, 2: Shutdown autopilot, 3: Reboot autopilot and keep it in the bootloader until
+                    upgraded.
+                | 0: Do nothing for onboard
+                    computer, 1: Reboot onboard computer, 2: Shutdown onboard computer, 3: Reboot onboard computer and
+                    keep it in the bootloader until upgraded.
+                | 0: Do nothing for
+                    component, 1: Reboot component, 2: Shutdown component, 3: Reboot component and keep it in the
+                    bootloader until upgraded
+                | MAVLink Component ID
+                    targeted in param3 (0 for all components).
+                | Reserved (set to 0)| Reserved (set to 0)| WIP: ID (e.g. camera ID -1 for all IDs)|  */
+    OVERRIDE_GOTO=252, /* Override current mission with command to pause mission, pause mission and move to position,
+                    continue/resume mission. When param 1 indicates that the mission is paused (MAV_GOTO_DO_HOLD), param
+                    2 defines whether it holds in place or moves to another position.
+                 |MAV_GOTO_DO_HOLD: pause mission and either hold or
+                    move to specified position (depending on param2), MAV_GOTO_DO_CONTINUE: resume mission.
+                | MAV_GOTO_HOLD_AT_CURRENT_POSITION: hold at current
+                    position, MAV_GOTO_HOLD_AT_SPECIFIED_POSITION: hold at specified position.
+                | Coordinate frame of hold point.| Desired yaw angle.| Latitude/X position.| Longitude/Y position.| Altitude/Z position.|  */
+    OBLIQUE_SURVEY=260, /* Mission command to set a Camera Auto Mount Pivoting Oblique Survey (Replaces CAM_TRIGG_DIST
+                    for this purpose). The camera is triggered each time this distance is exceeded, then the mount moves
+                    to the next position. Params 4~6 set-up the angle limits and number of positions for oblique survey,
+                    where mount-enabled vehicles automatically roll the camera between shots to emulate an oblique
+                    camera setup (providing an increased HFOV). This command can also be used to set the shutter
+                    integration time for the camera.
+                 |Camera trigger distance. 0 to stop
+                    triggering.
+                | Camera shutter
+                    integration time. 0 to ignore
+                | The minimum interval in which the camera is capable of taking subsequent pictures
+                    repeatedly. 0 to ignore.
+                | Total number of roll positions at which
+                    the camera will capture photos (images captures spread evenly across the limits defined by param5).
+                | Angle limits that the camera
+                    can be rolled to left and right of center.
+                | Fixed pitch
+                    angle that the camera will hold in oblique mode if the mount is actuated in the pitch axis.
+                | Empty|  */
+    MISSION_START=300, /* start running a mission |first_item: the first mission item to
+                    run
+                | last_item: the last mission item to run
+                    (after this item is run, the mission ends)
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    ACTUATOR_TEST=310, /* Actuator testing command. This is similar to MAV_CMD_DO_MOTOR_TEST but operates on the
+                    level of output functions, i.e. it is possible to test Motor1 independent from which output it is
+                    configured on. Autopilots typically refuse this command while armed.
+                 |Output value: 1 means maximum positive output,
+                    0 to center servos or minimum motor thrust (expected to spin), -1 for maximum negative (if not
+                    supported by the motors, i.e. motor is not reversible, smaller than 0 maps to NaN). And NaN maps to
+                    disarmed (stop the motors).
+                | Timeout after which the test
+                    command expires and the output is restored to the previous value. A timeout has to be set for safety
+                    reasons. A timeout of 0 means to restore the previous value immediately.
+                | Reserved (default:0)| Reserved (default:0)| Actuator Output function
+                | Reserved (default:0)| Reserved (default:0)|  */
+    CONFIGURE_ACTUATOR=311, /* Actuator configuration command. |Actuator configuration action
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Actuator Output function
+                | Reserved (default:0)| Reserved (default:0)|  */
+    COMPONENT_ARM_DISARM=400, /* Arms / Disarms a component |0: disarm, 1: arm| 0: arm-disarm unless
+                    prevented by safety checks (i.e. when landed), 21196: force arming/disarming (e.g. allow arming to
+                    override preflight checks and disarming in flight)
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     RUN_PREARM_CHECKS=401, /* Instructs a target system to run pre-arm checks.
-          This allows preflight checks to be run on demand, which may be useful on systems that normally run them at low rate, or which do not trigger checks when the armable state might have changed.
-          This command should return MAV_RESULT_ACCEPTED if it will run the checks.
-          The results of the checks are usually then reported in SYS_STATUS messages (this is system-specific).
-          The command should return MAV_RESULT_TEMPORARILY_REJECTED if the system is already armed.
-         |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    ILLUMINATOR_ON_OFF=405, /* Turns illuminators ON/OFF. An illuminator is a light source that is used for lighting up dark areas external to the system: e.g. a torch or searchlight (as opposed to a light source for illuminating the system itself, e.g. an indicator light). |0: Illuminators OFF, 1: Illuminators ON| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    DO_ILLUMINATOR_CONFIGURE=406, /* Configures illuminator settings. An illuminator is a light source that is used for lighting up dark areas external to the system: e.g. a torch or searchlight (as opposed to a light source for illuminating the system itself, e.g. an indicator light). |Mode| 0%: Off, 100%: Max Brightness| Strobe period in seconds where 0 means strobing is not used| Strobe duty cycle where 100% means it is on constantly and 0 means strobing is not used| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+                    This allows preflight checks to be run on demand, which may be useful on systems that normally run
+                    them at low rate, or which do not trigger checks when the armable state might have changed.
+                    This command should return MAV_RESULT_ACCEPTED if it will run the checks.
+                    The results of the checks are usually then reported in SYS_STATUS messages (this is
+                    system-specific).
+                    The command should return MAV_RESULT_TEMPORARILY_REJECTED if the system is already armed.
+                 |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    ILLUMINATOR_ON_OFF=405, /* Turns illuminators ON/OFF. An illuminator is a light source that is used for lighting up
+                    dark areas external to the system: e.g. a torch or searchlight (as opposed to a light source for
+                    illuminating the system itself, e.g. an indicator light).
+                 |0: Illuminators OFF, 1:
+                    Illuminators ON
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    DO_ILLUMINATOR_CONFIGURE=406, /* Configures illuminator settings. An illuminator is a light source that is used for lighting
+                    up dark areas external to the system: e.g. a torch or searchlight (as opposed to a light source for
+                    illuminating the system itself, e.g. an indicator light).
+                 |Mode| 0%: Off, 100%: Max
+                    Brightness
+                | Strobe period in seconds where 0 means
+                    strobing is not used
+                | Strobe duty cycle where 100%
+                    means it is on constantly and 0 means strobing is not used
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     GET_HOME_POSITION=410, /* Request the home position from the vehicle.
-	  The vehicle will ACK the command and then emit the HOME_POSITION message. |Reserved| Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
-    INJECT_FAILURE=420, /* Inject artificial failure for testing purposes. Note that autopilots should implement an additional protection before accepting this command such as a specific param setting. |The unit which is affected by the failure.| The type how the failure manifests itself.| Instance affected by failure (0 to signal all).| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+                    The vehicle will ACK the command and then emit the HOME_POSITION message.
+                 |Reserved| Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
+    INJECT_FAILURE=420, /* Inject artificial failure for testing purposes. Note that autopilots should implement an
+                    additional protection before accepting this command such as a specific param setting.
+                 |The unit which is affected by the failure.
+                | The type how the failure manifests itself.
+                | Instance affected by failure (0 to signal all).| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     START_RX_PAIR=500, /* Starts receiver pairing. |0:Spektrum.| RC type.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     GET_MESSAGE_INTERVAL=510, /* 
-          Request the interval between messages for a particular MAVLink message ID.
-          The receiver should ACK the command and then emit its response in a MESSAGE_INTERVAL message.
-         |The MAVLink message ID| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    SET_MESSAGE_INTERVAL=511, /* Set the interval between messages for a particular MAVLink message ID. This interface replaces REQUEST_DATA_STREAM. |The MAVLink message ID| The interval between two messages. -1: disable. 0: request default rate (which may be zero).| Use for index ID, if required. Otherwise, the use of this parameter (if any) must be defined in the requested message. By default assumed not used (0).| The use of this parameter (if any), must be defined in the requested message. By default assumed not used (0).| The use of this parameter (if any), must be defined in the requested message. By default assumed not used (0).| The use of this parameter (if any), must be defined in the requested message. By default assumed not used (0).| Target address of message stream (if message has target address fields). 0: Flight-stack default (recommended), 1: address of requestor, 2: broadcast.|  */
-    REQUEST_MESSAGE=512, /* Request the target system(s) emit a single instance of a specified message (i.e. a "one-shot" version of MAV_CMD_SET_MESSAGE_INTERVAL). |The MAVLink message ID of the requested message.| Use for index ID, if required. Otherwise, the use of this parameter (if any) must be defined in the requested message. By default assumed not used (0).| The use of this parameter (if any), must be defined in the requested message. By default assumed not used (0).| The use of this parameter (if any), must be defined in the requested message. By default assumed not used (0).| The use of this parameter (if any), must be defined in the requested message. By default assumed not used (0).| The use of this parameter (if any), must be defined in the requested message. By default assumed not used (0).| Target address for requested message (if message has target address fields). 0: Flight-stack default, 1: address of requestor, 2: broadcast.|  */
-    REQUEST_PROTOCOL_VERSION=519, /* Request MAVLink protocol version compatibility. All receivers should ACK the command and then emit their capabilities in an PROTOCOL_VERSION message |1: Request supported protocol versions by all nodes on the network| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    REQUEST_AUTOPILOT_CAPABILITIES=520, /* Request autopilot capabilities. The receiver should ACK the command and then emit its capabilities in an AUTOPILOT_VERSION message |1: Request autopilot version| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    REQUEST_CAMERA_INFORMATION=521, /* Request camera information (CAMERA_INFORMATION). |0: No action 1: Request camera capabilities| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    REQUEST_CAMERA_SETTINGS=522, /* Request camera settings (CAMERA_SETTINGS). |0: No Action 1: Request camera settings| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    REQUEST_STORAGE_INFORMATION=525, /* Request storage information (STORAGE_INFORMATION). Use the command's target_component to target a specific component's storage. |Storage ID (0 for all, 1 for first, 2 for second, etc.)| 0: No Action 1: Request storage information| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    STORAGE_FORMAT=526, /* Format a storage medium. Once format is complete, a STORAGE_INFORMATION message is sent. Use the command's target_component to target a specific component's storage. |Storage ID (1 for first, 2 for second, etc.)| Format storage (and reset image log). 0: No action 1: Format storage| Reset Image Log (without formatting storage medium). This will reset CAMERA_CAPTURE_STATUS.image_count and CAMERA_IMAGE_CAPTURED.image_index. 0: No action 1: Reset Image Log| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    REQUEST_CAMERA_CAPTURE_STATUS=527, /* Request camera capture status (CAMERA_CAPTURE_STATUS) |0: No Action 1: Request camera capture status| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    REQUEST_FLIGHT_INFORMATION=528, /* Request flight information (FLIGHT_INFORMATION) |1: Request flight information| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    RESET_CAMERA_SETTINGS=529, /* Reset all camera settings to Factory Default |0: No Action 1: Reset all settings| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    SET_CAMERA_MODE=530, /* Set camera running mode. Use NaN for reserved values. GCS will send a MAV_CMD_REQUEST_VIDEO_STREAM_STATUS command after a mode change if the camera supports video streaming. |Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Camera mode| Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
-    SET_CAMERA_ZOOM=531, /* Set camera zoom. Camera must respond with a CAMERA_SETTINGS message (on success). |Zoom type| Zoom value. The range of valid values depend on the zoom type.| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    SET_CAMERA_FOCUS=532, /* Set camera focus. Camera must respond with a CAMERA_SETTINGS message (on success). |Focus type| Focus value| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    SET_STORAGE_USAGE=533, /* Set that a particular storage is the preferred location for saving photos, videos, and/or other media (e.g. to set that an SD card is used for storing videos).
-          There can only be one preferred save location for each particular media type: setting a media usage flag will clear/reset that same flag if set on any other storage.
-          If no flag is set the system should use its default storage.
-          A target system can choose to always use default storage, in which case it should ACK the command with MAV_RESULT_UNSUPPORTED.
-          A target system can choose to not allow a particular storage to be set as preferred storage, in which case it should ACK the command with MAV_RESULT_DENIED. |Storage ID (1 for first, 2 for second, etc.)| Usage flags| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    SET_CAMERA_SOURCE=534, /* Set camera source. Changes the camera's active sources on cameras with multiple image sensors. |Component Id of camera to address or 1-6 for non-MAVLink cameras, 0 for all cameras.| Primary Source| Secondary Source. If non-zero the second source will be displayed as picture-in-picture.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+                    Request the interval between messages for a particular MAVLink message ID.
+                    The receiver should ACK the command and then emit its response in a MESSAGE_INTERVAL message.
+                 |The MAVLink message
+                    ID
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    SET_MESSAGE_INTERVAL=511, /* Set the interval between messages for a particular MAVLink message ID. This interface
+                    replaces REQUEST_DATA_STREAM.
+                 |The MAVLink message
+                    ID
+                | The interval between two
+                    messages. -1: disable. 0: request default rate (which may be zero).
+                | Use for index ID, if required. Otherwise, the use of this parameter
+                    (if any) must be defined in the requested message. By default assumed not used (0).
+                | The use of this parameter (if any), must be defined in the
+                    requested message. By default assumed not used (0).
+                | The use of this parameter (if any), must be defined in the
+                    requested message. By default assumed not used (0).
+                | The use of this parameter (if any), must be defined in the
+                    requested message. By default assumed not used (0).
+                | Target address of
+                    message stream (if message has target address fields). 0: Flight-stack default (recommended), 1:
+                    address of requestor, 2: broadcast.
+                |  */
+    REQUEST_MESSAGE=512, /* Request the target system(s) emit a single instance of a specified message (i.e. a
+                    "one-shot" version of MAV_CMD_SET_MESSAGE_INTERVAL).
+                 |The MAVLink message
+                    ID of the requested message.
+                | Use for index ID, if required. Otherwise, the use of this parameter
+                    (if any) must be defined in the requested message. By default assumed not used (0).
+                | The use of this parameter (if any), must be defined in the
+                    requested message. By default assumed not used (0).
+                | The use of this parameter (if any), must be defined in the
+                    requested message. By default assumed not used (0).
+                | The use of this parameter (if any), must be defined in the
+                    requested message. By default assumed not used (0).
+                | The use of this parameter (if any), must be defined in the
+                    requested message. By default assumed not used (0).
+                | Target address for
+                    requested message (if message has target address fields). 0: Flight-stack default, 1: address of
+                    requestor, 2: broadcast.
+                |  */
+    REQUEST_PROTOCOL_VERSION=519, /* Request MAVLink protocol version compatibility. All receivers should ACK the command and
+                    then emit their capabilities in an PROTOCOL_VERSION message
+                 |1: Request supported protocol
+                    versions by all nodes on the network
+                | Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_AUTOPILOT_CAPABILITIES=520, /* Request autopilot capabilities. The receiver should ACK the command and then emit its
+                    capabilities in an AUTOPILOT_VERSION message
+                 |1: Request autopilot version
+                | Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_CAMERA_INFORMATION=521, /* Request camera information (CAMERA_INFORMATION). |0: No action 1: Request
+                    camera capabilities
+                | Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_CAMERA_SETTINGS=522, /* Request camera settings (CAMERA_SETTINGS). |0: No Action 1: Request camera
+                    settings
+                | Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_STORAGE_INFORMATION=525, /* Request storage information (STORAGE_INFORMATION). Use the command's target_component to
+                    target a specific component's storage.
+                 |Storage ID (0 for all, 1 for first, 2 for
+                    second, etc.)
+                | 0: No Action 1: Request
+                    storage information
+                | Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    STORAGE_FORMAT=526, /* Format a storage medium. Once format is complete, a STORAGE_INFORMATION message is sent.
+                    Use the command's target_component to target a specific component's storage.
+                 |Storage ID (1 for first, 2 for second,
+                    etc.)
+                | Format storage (and reset image
+                    log). 0: No action 1: Format storage
+                | Reset Image Log
+                    (without formatting storage medium). This will reset CAMERA_CAPTURE_STATUS.image_count and
+                    CAMERA_IMAGE_CAPTURED.image_index. 0: No action 1: Reset Image Log
+                | Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_CAMERA_CAPTURE_STATUS=527, /* Request camera capture status (CAMERA_CAPTURE_STATUS) |0: No Action 1: Request
+                    camera capture status
+                | Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_FLIGHT_INFORMATION=528, /* Request flight information (FLIGHT_INFORMATION) |1: Request flight
+                    information
+                | Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    RESET_CAMERA_SETTINGS=529, /* Reset all camera settings to Factory Default |0: No Action 1: Reset all
+                    settings
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    SET_CAMERA_MODE=530, /* Set camera running mode. Use NaN for reserved values. GCS will send a
+                    MAV_CMD_REQUEST_VIDEO_STREAM_STATUS command after a mode change if the camera supports video
+                    streaming.
+                 |Target camera ID. 7 to 255:
+                    MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a
+                    distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras.
+                    It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Camera mode| Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
+    SET_CAMERA_ZOOM=531, /* Set camera zoom. Camera must respond with a CAMERA_SETTINGS message (on success).
+                 |Zoom type| Zoom value. The range of valid values depend on the zoom type.
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    SET_CAMERA_FOCUS=532, /* Set camera focus. Camera must respond with a CAMERA_SETTINGS message (on success).
+                 |Focus type| Focus value| Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    SET_STORAGE_USAGE=533, /* Set that a particular storage is the preferred location for saving photos, videos, and/or
+                    other media (e.g. to set that an SD card is used for storing videos).
+                    There can only be one preferred save location for each particular media type: setting a media usage
+                    flag will clear/reset that same flag if set on any other storage.
+                    If no flag is set the system should use its default storage.
+                    A target system can choose to always use default storage, in which case it should ACK the command
+                    with MAV_RESULT_UNSUPPORTED.
+                    A target system can choose to not allow a particular storage to be set as preferred storage, in
+                    which case it should ACK the command with MAV_RESULT_DENIED.
+                 |Storage ID (1 for first, 2 for second,
+                    etc.)
+                | Usage flags| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    SET_CAMERA_SOURCE=534, /* Set camera source. Changes the camera's active sources on cameras with multiple image
+                    sensors.
+                 |Component Id of camera to address or 1-6 for non-MAVLink cameras, 0
+                    for all cameras.
+                | Primary Source| Secondary Source. If non-zero the second
+                    source will be displayed as picture-in-picture.
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
     JUMP_TAG=600, /* Tagged jump target. Can be jumped to with MAV_CMD_DO_JUMP_TAG. |Tag.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    DO_JUMP_TAG=601, /* Jump to the matching tag in the mission list. Repeat this action for the specified number of times. A mission should contain a single matching tag for each jump. If this is not the case then a jump to a missing tag should complete the mission, and a jump where there are multiple matching tags should always select the one with the lowest mission sequence number. |Target tag to jump to.| Repeat count.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    DO_GIMBAL_MANAGER_PITCHYAW=1000, /* Set gimbal manager pitch/yaw setpoints (low rate command). It is possible to set combinations of the values below. E.g. an angle as well as a desired angular rate can be used to get to this angle at a certain angular rate, or an angular rate only will result in continuous turning. NaN is to be used to signal unset. Note: only the gimbal manager will react to this command - it will be ignored by a gimbal device. Use GIMBAL_MANAGER_SET_PITCHYAW if you need to stream pitch/yaw setpoints at higher rate.  |Pitch angle (positive to pitch up, relative to vehicle for FOLLOW mode, relative to world horizon for LOCK mode).| Yaw angle (positive to yaw to the right, relative to vehicle for FOLLOW mode, absolute to North for LOCK mode).| Pitch rate (positive to pitch up).| Yaw rate (positive to yaw to the right).| Gimbal manager flags to use.| Reserved (default:0)| Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).|  */
-    DO_GIMBAL_MANAGER_CONFIGURE=1001, /* Gimbal configuration to set which sysid/compid is in primary and secondary control. |Sysid for primary control (0: no one in control, -1: leave unchanged, -2: set itself in control (for missions where the own sysid is still unknown), -3: remove control if currently in control).| Compid for primary control (0: no one in control, -1: leave unchanged, -2: set itself in control (for missions where the own sysid is still unknown), -3: remove control if currently in control).| Sysid for secondary control (0: no one in control, -1: leave unchanged, -2: set itself in control (for missions where the own sysid is still unknown), -3: remove control if currently in control).| Compid for secondary control (0: no one in control, -1: leave unchanged, -2: set itself in control (for missions where the own sysid is still unknown), -3: remove control if currently in control).| Reserved (default:0)| Reserved (default:0)| Component ID of gimbal device to address (or 1-6 for non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than one gimbal (but not all gimbals).|  */
+    DO_JUMP_TAG=601, /* Jump to the matching tag in the mission list. Repeat this action for the specified number
+                    of times. A mission should contain a single matching tag for each jump. If this is not the case then
+                    a jump to a missing tag should complete the mission, and a jump where there are multiple matching
+                    tags should always select the one with the lowest mission sequence number.
+                 |Target tag to jump to.| Repeat count.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    DO_GIMBAL_MANAGER_PITCHYAW=1000, /* Set gimbal manager pitch/yaw setpoints (low rate command). It is possible to set
+                    combinations of the values below. E.g. an angle as well as a desired angular rate can be used to get
+                    to this angle at a certain angular rate, or an angular rate only will result in continuous turning.
+                    NaN is to be used to signal unset. Note: only the gimbal manager will react to this command - it
+                    will be ignored by a gimbal device. Use GIMBAL_MANAGER_SET_PITCHYAW if you need to stream pitch/yaw
+                    setpoints at higher rate.
+                 |Pitch angle (positive to
+                    pitch up, relative to vehicle for FOLLOW mode, relative to world horizon for LOCK mode).
+                | Yaw angle (positive to yaw
+                    to the right, relative to vehicle for FOLLOW mode, absolute to North for LOCK mode).
+                | Pitch rate (positive to pitch up).| Yaw rate (positive to yaw to the right).| Gimbal manager flags to use.
+                | Reserved (default:0)| Component ID of gimbal device to address (or 1-6 for
+                    non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than
+                    one gimbal (but not all gimbals).
+                |  */
+    DO_GIMBAL_MANAGER_CONFIGURE=1001, /* Gimbal configuration to set which sysid/compid is in primary and secondary control.
+                 |Sysid for primary control (0: no one in control, -1:
+                    leave unchanged, -2: set itself in control (for missions where the own sysid is still unknown), -3:
+                    remove control if currently in control).
+                | Compid for primary control (0: no one in control, -1:
+                    leave unchanged, -2: set itself in control (for missions where the own sysid is still unknown), -3:
+                    remove control if currently in control).
+                | Sysid for secondary control (0: no one in control, -1:
+                    leave unchanged, -2: set itself in control (for missions where the own sysid is still unknown), -3:
+                    remove control if currently in control).
+                | Compid for secondary control (0: no one in control,
+                    -1: leave unchanged, -2: set itself in control (for missions where the own sysid is still unknown),
+                    -3: remove control if currently in control).
+                | Reserved (default:0)| Reserved (default:0)| Component ID of gimbal device to address (or 1-6 for
+                    non-MAVLink gimbal), 0 for all gimbal device components. Send command multiple times for more than
+                    one gimbal (but not all gimbals).
+                |  */
     IMAGE_START_CAPTURE=2000, /* Start image capture sequence. CAMERA_IMAGE_CAPTURED must be emitted after each capture.
 
-          Param1 (id) may be used to specify the target camera: 0: all cameras, 1 to 6: autopilot-connected cameras, 7-255: MAVLink camera component ID.
-          It is needed in order to target specific cameras connected to the autopilot, or specific sensors in a multi-sensor camera (neither of which have a distinct MAVLink component ID).
-          It is also needed to specify the target camera in missions.
+                    Param1 (id) may be used to specify the target camera: 0: all cameras, 1 to 6: autopilot-connected
+                    cameras, 7-255: MAVLink camera component ID.
+                    It is needed in order to target specific cameras connected to the autopilot, or specific sensors in
+                    a multi-sensor camera (neither of which have a distinct MAVLink component ID).
+                    It is also needed to specify the target camera in missions.
 
-          When used in a mission, an autopilot should execute the MAV_CMD for a specified local camera (param1 = 1-6), or resend it as a command if it is intended for a MAVLink camera (param1 = 7 - 255), setting the command's target_component as the param1 value (and setting param1 in the command to zero).
-          If the param1 is 0 the autopilot should do both.
+                    When used in a mission, an autopilot should execute the MAV_CMD for a specified local camera (param1
+                    = 1-6), or resend it as a command if it is intended for a MAVLink camera (param1 = 7 - 255), setting
+                    the command's target_component as the param1 value (and setting param1 in the command to zero).
+                    If the param1 is 0 the autopilot should do both.
 
-          When sent in a command the target MAVLink address is set using target_component.
-          If addressed specifically to an autopilot: param1 should be used in the same way as it is for missions (though command should NACK with MAV_RESULT_DENIED if a specified local camera does not exist).
-          If addressed to a MAVLink camera, param 1 can be used to address all cameras (0), or to separately address 1 to 7 individual sensors. Other values should be NACKed with MAV_RESULT_DENIED.
-          If the command is broadcast (target_component is 0) then param 1 should be set to 0 (any other value should be NACKED with MAV_RESULT_DENIED). An autopilot would trigger any local cameras and forward the command to all channels.
-         |Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Desired elapsed time between two consecutive pictures (in seconds). Minimum values depend on hardware (typically greater than 2 seconds).| Total number of images to capture. 0 to capture forever/until MAV_CMD_IMAGE_STOP_CAPTURE.| Capture sequence number starting from 1. This is only valid for single-capture (param3 == 1), otherwise set to 0. Increment the capture ID for each capture command to prevent double captures when a command is re-transmitted.| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
+                    When sent in a command the target MAVLink address is set using target_component.
+                    If addressed specifically to an autopilot: param1 should be used in the same way as it is for
+                    missions (though command should NACK with MAV_RESULT_DENIED if a specified local camera does not
+                    exist).
+                    If addressed to a MAVLink camera, param 1 can be used to address all cameras (0), or to separately
+                    address 1 to 7 individual sensors. Other values should be NACKed with MAV_RESULT_DENIED.
+                    If the command is broadcast (target_component is 0) then param 1 should be set to 0 (any other value
+                    should be NACKED with MAV_RESULT_DENIED). An autopilot would trigger any local cameras and forward
+                    the command to all channels.
+                 |Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Desired elapsed time between two consecutive
+                    pictures (in seconds). Minimum values depend on hardware (typically greater than 2 seconds).
+                | Total number of images to capture. 0 to
+                    capture forever/until MAV_CMD_IMAGE_STOP_CAPTURE.
+                | Capture sequence number starting
+                    from 1. This is only valid for single-capture (param3 == 1), otherwise set to 0. Increment the
+                    capture ID for each capture command to prevent double captures when a command is re-transmitted.
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
     IMAGE_STOP_CAPTURE=2001, /* Stop image capture sequence.
 
-          Param1 (id) may be used to specify the target camera: 0: all cameras, 1 to 6: autopilot-connected cameras, 7-255: MAVLink camera component ID.
-          It is needed in order to target specific cameras connected to the autopilot, or specific sensors in a multi-sensor camera (neither of which have a distinct MAVLink component ID).
-          It is also needed to specify the target camera in missions.
+                    Param1 (id) may be used to specify the target camera: 0: all cameras, 1 to 6: autopilot-connected
+                    cameras, 7-255: MAVLink camera component ID.
+                    It is needed in order to target specific cameras connected to the autopilot, or specific sensors in
+                    a multi-sensor camera (neither of which have a distinct MAVLink component ID).
+                    It is also needed to specify the target camera in missions.
 
-          When used in a mission, an autopilot should execute the MAV_CMD for a specified local camera (param1 = 1-6), or resend it as a command if it is intended for a MAVLink camera (param1 = 7 - 255), setting the command's target_component as the param1 value (and setting param1 in the command to zero).
-          If the param1 is 0 the autopilot should do both.
+                    When used in a mission, an autopilot should execute the MAV_CMD for a specified local camera (param1
+                    = 1-6), or resend it as a command if it is intended for a MAVLink camera (param1 = 7 - 255), setting
+                    the command's target_component as the param1 value (and setting param1 in the command to zero).
+                    If the param1 is 0 the autopilot should do both.
 
-          When sent in a command the target MAVLink address is set using target_component.
-          If addressed specifically to an autopilot: param1 should be used in the same way as it is for missions (though command should NACK with MAV_RESULT_DENIED if a specified local camera does not exist).
-          If addressed to a MAVLink camera, param1 can be used to address all cameras (0), or to separately address 1 to 7 individual sensors. Other values should be NACKed with MAV_RESULT_DENIED.
-          If the command is broadcast (target_component is 0) then param 1 should be set to 0 (any other value should be NACKED with MAV_RESULT_DENIED). An autopilot would trigger any local cameras and forward the command to all channels.
-         |Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
-    REQUEST_CAMERA_IMAGE_CAPTURE=2002, /* Re-request a CAMERA_IMAGE_CAPTURED message. |Sequence number for missing CAMERA_IMAGE_CAPTURED message| Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
-    DO_TRIGGER_CONTROL=2003, /* Enable or disable on-board camera triggering system. |Trigger enable/disable (0 for disable, 1 for start), -1 to ignore| 1 to reset the trigger sequence, -1 or 0 to ignore| 1 to pause triggering, but without switching the camera off or retracting it. -1 to ignore| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    CAMERA_TRACK_POINT=2004, /* If the camera supports point visual tracking (CAMERA_CAP_FLAGS_HAS_TRACKING_POINT is set), this command allows to initiate the tracking. |Point to track x value (normalized 0..1, 0 is left, 1 is right).| Point to track y value (normalized 0..1, 0 is top, 1 is bottom).| Point radius (normalized 0..1, 0 is one pixel, 1 is full image width).| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    CAMERA_TRACK_RECTANGLE=2005, /* If the camera supports rectangle visual tracking (CAMERA_CAP_FLAGS_HAS_TRACKING_RECTANGLE is set), this command allows to initiate the tracking. |Top left corner of rectangle x value (normalized 0..1, 0 is left, 1 is right).| Top left corner of rectangle y value (normalized 0..1, 0 is top, 1 is bottom).| Bottom right corner of rectangle x value (normalized 0..1, 0 is left, 1 is right).| Bottom right corner of rectangle y value (normalized 0..1, 0 is top, 1 is bottom).| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:0)| Reserved (default:0)|  */
-    CAMERA_STOP_TRACKING=2010, /* Stops ongoing tracking. |Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    VIDEO_START_CAPTURE=2500, /* Starts video capture (recording). |Video Stream ID (0 for all streams)| Frequency CAMERA_CAPTURE_STATUS messages should be sent while recording (0 for no messages, otherwise frequency)| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
-    VIDEO_STOP_CAPTURE=2501, /* Stop the current video capture (recording). |Video Stream ID (0 for all streams)| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
-    VIDEO_START_STREAMING=2502, /* Start video streaming |Video Stream ID (0 for all streams, 1 for first, 2 for second, etc.)| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    VIDEO_STOP_STREAMING=2503, /* Stop the given video stream |Video Stream ID (0 for all streams, 1 for first, 2 for second, etc.)| Target camera ID. 7 to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have a distinct component id. 0: all cameras. This is used to target specific autopilot-connected cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    REQUEST_VIDEO_STREAM_INFORMATION=2504, /* Request video stream information (VIDEO_STREAM_INFORMATION) |Video Stream ID (0 for all streams, 1 for first, 2 for second, etc.)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    REQUEST_VIDEO_STREAM_STATUS=2505, /* Request video stream status (VIDEO_STREAM_STATUS) |Video Stream ID (0 for all streams, 1 for first, 2 for second, etc.)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    LOGGING_START=2510, /* Request to start streaming logging data over MAVLink (see also LOGGING_DATA message) |Format: 0: ULog| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)|  */
+                    When sent in a command the target MAVLink address is set using target_component.
+                    If addressed specifically to an autopilot: param1 should be used in the same way as it is for
+                    missions (though command should NACK with MAV_RESULT_DENIED if a specified local camera does not
+                    exist).
+                    If addressed to a MAVLink camera, param1 can be used to address all cameras (0), or to separately
+                    address 1 to 7 individual sensors. Other values should be NACKed with MAV_RESULT_DENIED.
+                    If the command is broadcast (target_component is 0) then param 1 should be set to 0 (any other value
+                    should be NACKED with MAV_RESULT_DENIED). An autopilot would trigger any local cameras and forward
+                    the command to all channels.
+                 |Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
+    REQUEST_CAMERA_IMAGE_CAPTURE=2002, /* Re-request a CAMERA_IMAGE_CAPTURED message. |Sequence number for missing
+                    CAMERA_IMAGE_CAPTURED message
+                | Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
+    DO_TRIGGER_CONTROL=2003, /* Enable or disable on-board camera triggering system. |Trigger enable/disable (0 for
+                    disable, 1 for start), -1 to ignore
+                | 1 to reset the trigger sequence,
+                    -1 or 0 to ignore
+                | 1 to pause triggering, but
+                    without switching the camera off or retracting it. -1 to ignore
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    CAMERA_TRACK_POINT=2004, /* If the camera supports point visual tracking (CAMERA_CAP_FLAGS_HAS_TRACKING_POINT is set),
+                    this command allows to initiate the tracking.
+                 |Point to track x value (normalized 0..1, 0 is
+                    left, 1 is right).
+                | Point to track y value (normalized 0..1, 0 is
+                    top, 1 is bottom).
+                | Point radius (normalized 0..1, 0 is one pixel,
+                    1 is full image width).
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    CAMERA_TRACK_RECTANGLE=2005, /* If the camera supports rectangle visual tracking (CAMERA_CAP_FLAGS_HAS_TRACKING_RECTANGLE
+                    is set), this command allows to initiate the tracking.
+                 |Top left corner of rectangle x
+                    value (normalized 0..1, 0 is left, 1 is right).
+                | Top left corner of rectangle y
+                    value (normalized 0..1, 0 is top, 1 is bottom).
+                | Bottom right corner of
+                    rectangle x value (normalized 0..1, 0 is left, 1 is right).
+                | Bottom right corner of
+                    rectangle y value (normalized 0..1, 0 is top, 1 is bottom).
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:0)| Reserved (default:0)|  */
+    CAMERA_STOP_TRACKING=2010, /* Stops ongoing tracking. |Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    VIDEO_START_CAPTURE=2500, /* Starts video capture (recording). |Video Stream ID (0 for all streams)
+                | Frequency CAMERA_CAPTURE_STATUS
+                    messages should be sent while recording (0 for no messages, otherwise frequency)
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
+    VIDEO_STOP_CAPTURE=2501, /* Stop the current video capture (recording). |Video Stream ID (0 for all streams)
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
+    VIDEO_START_STREAMING=2502, /* Start video streaming |Video Stream ID (0 for all streams, 1 for
+                    first, 2 for second, etc.)
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    VIDEO_STOP_STREAMING=2503, /* Stop the given video stream |Video Stream ID (0 for all streams, 1 for
+                    first, 2 for second, etc.)
+                | Target camera ID. 7
+                    to 255: MAVLink camera component id. 1 to 6 for cameras attached to the autopilot, which don't have
+                    a distinct component id. 0: all cameras. This is used to target specific autopilot-connected
+                    cameras. It is also used to target specific cameras when the MAV_CMD is used in a mission.
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_VIDEO_STREAM_INFORMATION=2504, /* Request video stream information (VIDEO_STREAM_INFORMATION) |Video Stream ID (0 for all streams, 1 for
+                    first, 2 for second, etc.)
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    REQUEST_VIDEO_STREAM_STATUS=2505, /* Request video stream status (VIDEO_STREAM_STATUS) |Video Stream ID (0 for all streams, 1 for
+                    first, 2 for second, etc.)
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    LOGGING_START=2510, /* Request to start streaming logging data over MAVLink (see also LOGGING_DATA message)
+                 |Format: 0: ULog| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)|  */
     LOGGING_STOP=2511, /* Request to stop streaming log data over MAVLink |Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)|  */
-    AIRFRAME_CONFIGURATION=2520, /*  |Landing gear ID (default: 0, -1 for all)| Landing gear position (Down: 0, Up: 1, NaN for no change)| Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
-    CONTROL_HIGH_LATENCY=2600, /* Request to start/stop transmitting over the high latency telemetry |Control transmission over high latency telemetry (0: stop, 1: start)| Empty| Empty| Empty| Empty| Empty| Empty|  */
-    PANORAMA_CREATE=2800, /* Create a panorama at the current position |Viewing angle horizontal of the panorama (+- 0.5 the total angle)| Viewing angle vertical of panorama.| Speed of the horizontal rotation.| Speed of the vertical rotation.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    DO_VTOL_TRANSITION=3000, /* Request VTOL transition |The target VTOL state. For normal transitions, only MAV_VTOL_STATE_MC and MAV_VTOL_STATE_FW can be used.| Force immediate transition to the specified MAV_VTOL_STATE. 1: Force immediate, 0: normal transition. Can be used, for example, to trigger an emergency "Quadchute". Caution: Can be dangerous/damage vehicle, depending on autopilot implementation of this command.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    ARM_AUTHORIZATION_REQUEST=3001, /* Request authorization to arm the vehicle to a external entity, the arm authorizer is responsible to request all data that is needs from the vehicle before authorize or deny the request.
-		If approved the COMMAND_ACK message progress field should be set with period of time that this authorization is valid in seconds.
-		If the authorization is denied COMMAND_ACK.result_param2 should be set with one of the reasons in ARM_AUTH_DENIED_REASON.
-         |Vehicle system id, this way ground station can request arm authorization on behalf of any vehicle| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    SET_GUIDED_SUBMODE_STANDARD=4000, /* This command sets the submode to standard guided when vehicle is in guided mode. The vehicle holds position and altitude and the user can input the desired velocities along all three axes.
-                   |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-    SET_GUIDED_SUBMODE_CIRCLE=4001, /* This command sets submode circle when vehicle is in guided mode. Vehicle flies along a circle facing the center of the circle. The user can input the velocity along the circle and change the radius. If no input is given the vehicle will hold position.
-                   |Radius of desired circle in CIRCLE_MODE| User defined| User defined| User defined| Target latitude of center of circle in CIRCLE_MODE| Target longitude of center of circle in CIRCLE_MODE| Reserved (default:0)|  */
-    CONDITION_GATE=4501, /* Delay mission state machine until gate has been reached. |Geometry: 0: orthogonal to path between previous and next waypoint.| Altitude: 0: ignore altitude| Empty| Empty| Latitude| Longitude| Altitude|  */
-    NAV_FENCE_RETURN_POINT=5000, /* Fence return point (there can only be one such point in a geofence definition). If rally points are supported they should be used instead. |Reserved| Reserved| Reserved| Reserved| Latitude| Longitude| Altitude|  */
-    NAV_FENCE_POLYGON_VERTEX_INCLUSION=5001, /* Fence vertex for an inclusion polygon (the polygon must not be self-intersecting). The vehicle must stay within this area. Minimum of 3 vertices required.
-         |Polygon vertex count| Vehicle must be inside ALL inclusion zones in a single group, vehicle must be inside at least one group, must be the same for all points in each polygon| Reserved| Reserved| Latitude| Longitude| Reserved|  */
-    NAV_FENCE_POLYGON_VERTEX_EXCLUSION=5002, /* Fence vertex for an exclusion polygon (the polygon must not be self-intersecting). The vehicle must stay outside this area. Minimum of 3 vertices required.
-         |Polygon vertex count| Reserved| Reserved| Reserved| Latitude| Longitude| Reserved|  */
+    AIRFRAME_CONFIGURATION=2520, /*  |Landing gear ID (default: 0, -1 for
+                    all)
+                | Landing gear position (Down: 0, Up: 1, NaN for no
+                    change)
+                | Reserved (default:NaN)| Reserved (default:NaN)| Reserved (default:0)| Reserved (default:0)| Reserved (default:NaN)|  */
+    CONTROL_HIGH_LATENCY=2600, /* Request to start/stop transmitting over the high latency telemetry |Control transmission over high
+                    latency telemetry (0: stop, 1: start)
+                | Empty| Empty| Empty| Empty| Empty| Empty|  */
+    PANORAMA_CREATE=2800, /* Create a panorama at the current position |Viewing angle horizontal of the panorama (+- 0.5
+                    the total angle)
+                | Viewing angle vertical of panorama.| Speed of the horizontal rotation.| Speed of the vertical rotation.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    DO_VTOL_TRANSITION=3000, /* Request VTOL transition |The target VTOL state. For normal transitions, only
+                    MAV_VTOL_STATE_MC and MAV_VTOL_STATE_FW can be used.
+                | Force immediate transition to the specified MAV_VTOL_STATE. 1: Force
+                    immediate, 0: normal transition. Can be used, for example, to trigger an emergency "Quadchute".
+                    Caution: Can be dangerous/damage vehicle, depending on autopilot implementation of this command.
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    ARM_AUTHORIZATION_REQUEST=3001, /* Request authorization to arm the vehicle to a external entity, the arm authorizer is
+                    responsible to request all data that is needs from the vehicle before authorize or deny the request.
+                    If approved the COMMAND_ACK message progress field should be set with period of time that this
+                    authorization is valid in seconds.
+                    If the authorization is denied COMMAND_ACK.result_param2 should be set with one of the reasons in
+                    ARM_AUTH_DENIED_REASON.
+                 |Vehicle system id, this way
+                    ground station can request arm authorization on behalf of any vehicle
+                | Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    SET_GUIDED_SUBMODE_STANDARD=4000, /* This command sets the submode to standard guided when vehicle is in guided mode. The
+                    vehicle holds position and altitude and the user can input the desired velocities along all three
+                    axes.
+                 |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+    SET_GUIDED_SUBMODE_CIRCLE=4001, /* This command sets submode circle when vehicle is in guided mode. Vehicle flies along a
+                    circle facing the center of the circle. The user can input the velocity along the circle and change
+                    the radius. If no input is given the vehicle will hold position.
+                 |Radius of desired circle in CIRCLE_MODE| User defined| User defined| User defined| Target latitude of center of circle in CIRCLE_MODE
+                | Target longitude of center of circle in CIRCLE_MODE
+                | Reserved (default:0)|  */
+    CONDITION_GATE=4501, /* Delay mission state machine until gate has been reached. |Geometry: 0: orthogonal to path between
+                    previous and next waypoint.
+                | Altitude: 0: ignore
+                    altitude
+                | Empty| Empty| Latitude| Longitude| Altitude|  */
+    NAV_FENCE_RETURN_POINT=5000, /* Fence return point (there can only be one such point in a geofence definition). If rally
+                    points are supported they should be used instead.
+                 |Reserved| Reserved| Reserved| Reserved| Latitude| Longitude| Altitude|  */
+    NAV_FENCE_POLYGON_VERTEX_INCLUSION=5001, /* Fence vertex for an inclusion polygon (the polygon must not be self-intersecting). The
+                    vehicle must stay within this area. Minimum of 3 vertices required.
+                 |Polygon vertex count| Vehicle must be inside ALL inclusion
+                    zones in a single group, vehicle must be inside at least one group, must be the same for all points
+                    in each polygon
+                | Reserved| Reserved| Latitude| Longitude| Reserved|  */
+    NAV_FENCE_POLYGON_VERTEX_EXCLUSION=5002, /* Fence vertex for an exclusion polygon (the polygon must not be self-intersecting). The
+                    vehicle must stay outside this area. Minimum of 3 vertices required.
+                 |Polygon vertex count| Reserved| Reserved| Reserved| Latitude| Longitude| Reserved|  */
     NAV_FENCE_CIRCLE_INCLUSION=5003, /* Circular fence area. The vehicle must stay inside this area.
-         |Radius.| Vehicle must be inside ALL inclusion zones in a single group, vehicle must be inside at least one group| Reserved| Reserved| Latitude| Longitude| Reserved|  */
+                 |Radius.| Vehicle must be inside ALL inclusion
+                    zones in a single group, vehicle must be inside at least one group
+                | Reserved| Reserved| Latitude| Longitude| Reserved|  */
     NAV_FENCE_CIRCLE_EXCLUSION=5004, /* Circular fence area. The vehicle must stay outside this area.
-         |Radius.| Reserved| Reserved| Reserved| Latitude| Longitude| Reserved|  */
+                 |Radius.| Reserved| Reserved| Reserved| Latitude| Longitude| Reserved|  */
     NAV_RALLY_POINT=5100, /* Rally point. You can have multiple rally points defined.
-         |Reserved| Reserved| Reserved| Reserved| Latitude| Longitude| Altitude|  */
-    UAVCAN_GET_NODE_INFO=5200, /* Commands the vehicle to respond with a sequence of messages UAVCAN_NODE_INFO, one message per every UAVCAN node that is online. Note that some of the response messages can be lost, which the receiver can detect easily by checking whether every received UAVCAN_NODE_STATUS has a matching message UAVCAN_NODE_INFO received earlier; if not, this command should be sent again in order to request re-transmission of the node information messages. |Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)|  */
+                 |Reserved| Reserved| Reserved| Reserved| Latitude| Longitude| Altitude|  */
+    UAVCAN_GET_NODE_INFO=5200, /* Commands the vehicle to respond with a sequence of messages UAVCAN_NODE_INFO, one message
+                    per every UAVCAN node that is online. Note that some of the response messages can be lost, which the
+                    receiver can detect easily by checking whether every received UAVCAN_NODE_STATUS has a matching
+                    message UAVCAN_NODE_INFO received earlier; if not, this command should be sent again in order to
+                    request re-transmission of the node information messages.
+                 |Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)|  */
     DO_SET_SAFETY_SWITCH_STATE=5300, /* Change state of safety switch. |New safety switch state.| Empty.| Empty.| Empty| Empty.| Empty.| Empty.|  */
-    DO_ADSB_OUT_IDENT=10001, /* Trigger the start of an ADSB-out IDENT. This should only be used when requested to do so by an Air Traffic Controller in controlled airspace. This starts the IDENT which is then typically held for 18 seconds by the hardware per the Mode A, C, and S transponder spec. |Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)|  */
-    PAYLOAD_PREPARE_DEPLOY=30001, /* Deploy payload on a Lat / Lon / Alt position. This includes the navigation to reach the required release position and velocity. |Operation mode. 0: prepare single payload deploy (overwriting previous requests), but do not execute it. 1: execute payload deploy immediately (rejecting further deploy commands during execution, but allowing abort). 2: add payload deploy to existing deployment list.| Desired approach vector in compass heading. A negative value indicates the system can define the approach vector at will.| Desired ground speed at release time. This can be overridden by the airframe in case it needs to meet minimum airspeed. A negative value indicates the system can define the ground speed at will.| Minimum altitude clearance to the release position. A negative value indicates the system can define the clearance at will.| Latitude.| Longitude.| Altitude (MSL)|  */
-    PAYLOAD_CONTROL_DEPLOY=30002, /* Control the payload deployment. |Operation mode. 0: Abort deployment, continue normal mission. 1: switch to payload deployment mode. 100: delete first payload deployment request. 101: delete all payload deployment requests.| Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
-    WAYPOINT_USER_1=31000, /* User defined waypoint item. Ground Station will show the Vehicle as flying through this item. |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
-    WAYPOINT_USER_2=31001, /* User defined waypoint item. Ground Station will show the Vehicle as flying through this item. |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
-    WAYPOINT_USER_3=31002, /* User defined waypoint item. Ground Station will show the Vehicle as flying through this item. |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
-    WAYPOINT_USER_4=31003, /* User defined waypoint item. Ground Station will show the Vehicle as flying through this item. |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
-    WAYPOINT_USER_5=31004, /* User defined waypoint item. Ground Station will show the Vehicle as flying through this item. |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
-    SPATIAL_USER_1=31005, /* User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item. |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
-    SPATIAL_USER_2=31006, /* User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item. |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
-    SPATIAL_USER_3=31007, /* User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item. |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
-    SPATIAL_USER_4=31008, /* User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item. |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
-    SPATIAL_USER_5=31009, /* User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item. |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
-    USER_1=31010, /* User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item. |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
-    USER_2=31011, /* User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item. |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
-    USER_3=31012, /* User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item. |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
-    USER_4=31013, /* User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item. |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
-    USER_5=31014, /* User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item. |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
-    CAN_FORWARD=32000, /* Request forwarding of CAN packets from the given CAN bus to this component. CAN Frames are sent using CAN_FRAME and CANFD_FRAME messages |Bus number (0 to disable forwarding, 1 for first bus, 2 for 2nd bus, 3 for 3rd bus).| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  */
-    FIXED_MAG_CAL_YAW=42006, /* Magnetometer calibration based on provided known yaw. This allows for fast calibration using WMM field tables in the vehicle, given only the known yaw of the vehicle. If Latitude and longitude are both zero then use the current vehicle location. |Yaw of vehicle in earth frame.| CompassMask, 0 for all.| Latitude.| Longitude.| Empty.| Empty.| Empty.|  */
+    DO_ADSB_OUT_IDENT=10001, /* Trigger the start of an ADSB-out IDENT. This should only be used when requested to do so by
+                    an Air Traffic Controller in controlled airspace. This starts the IDENT which is then typically held
+                    for 18 seconds by the hardware per the Mode A, C, and S transponder spec.
+                 |Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)| Reserved (set to 0)|  */
+    PAYLOAD_PREPARE_DEPLOY=30001, /* Deploy payload on a Lat / Lon / Alt position. This includes the navigation to reach the
+                    required release position and velocity.
+                 |Operation mode. 0:
+                    prepare single payload deploy (overwriting previous requests), but do not execute it. 1: execute
+                    payload deploy immediately (rejecting further deploy commands during execution, but allowing abort).
+                    2: add payload deploy to existing deployment list.
+                | Desired approach
+                    vector in compass heading. A negative value indicates the system can define the approach vector at
+                    will.
+                | Desired ground speed at release time. This can be
+                    overridden by the airframe in case it needs to meet minimum airspeed. A negative value indicates the
+                    system can define the ground speed at will.
+                | Minimum altitude clearance to the
+                    release position. A negative value indicates the system can define the clearance at will.
+                | Latitude.| Longitude.| Altitude (MSL)|  */
+    PAYLOAD_CONTROL_DEPLOY=30002, /* Control the payload deployment. |Operation mode. 0:
+                    Abort deployment, continue normal mission. 1: switch to payload deployment mode. 100: delete first
+                    payload deployment request. 101: delete all payload deployment requests.
+                | Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
+    WAYPOINT_USER_1=31000, /* User defined waypoint item. Ground Station will show the Vehicle as flying through this
+                    item.
+                 |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
+    WAYPOINT_USER_2=31001, /* User defined waypoint item. Ground Station will show the Vehicle as flying through this
+                    item.
+                 |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
+    WAYPOINT_USER_3=31002, /* User defined waypoint item. Ground Station will show the Vehicle as flying through this
+                    item.
+                 |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
+    WAYPOINT_USER_4=31003, /* User defined waypoint item. Ground Station will show the Vehicle as flying through this
+                    item.
+                 |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
+    WAYPOINT_USER_5=31004, /* User defined waypoint item. Ground Station will show the Vehicle as flying through this
+                    item.
+                 |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
+    SPATIAL_USER_1=31005, /* User defined spatial item. Ground Station will not show the Vehicle as flying through this
+                    item. Example: ROI item.
+                 |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
+    SPATIAL_USER_2=31006, /* User defined spatial item. Ground Station will not show the Vehicle as flying through this
+                    item. Example: ROI item.
+                 |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
+    SPATIAL_USER_3=31007, /* User defined spatial item. Ground Station will not show the Vehicle as flying through this
+                    item. Example: ROI item.
+                 |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
+    SPATIAL_USER_4=31008, /* User defined spatial item. Ground Station will not show the Vehicle as flying through this
+                    item. Example: ROI item.
+                 |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
+    SPATIAL_USER_5=31009, /* User defined spatial item. Ground Station will not show the Vehicle as flying through this
+                    item. Example: ROI item.
+                 |User defined| User defined| User defined| User defined| Latitude unscaled| Longitude unscaled| Altitude (MSL)|  */
+    USER_1=31010, /* User defined command. Ground Station will not show the Vehicle as flying through this item.
+                    Example: MAV_CMD_DO_SET_PARAMETER item.
+                 |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
+    USER_2=31011, /* User defined command. Ground Station will not show the Vehicle as flying through this item.
+                    Example: MAV_CMD_DO_SET_PARAMETER item.
+                 |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
+    USER_3=31012, /* User defined command. Ground Station will not show the Vehicle as flying through this item.
+                    Example: MAV_CMD_DO_SET_PARAMETER item.
+                 |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
+    USER_4=31013, /* User defined command. Ground Station will not show the Vehicle as flying through this item.
+                    Example: MAV_CMD_DO_SET_PARAMETER item.
+                 |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
+    USER_5=31014, /* User defined command. Ground Station will not show the Vehicle as flying through this item.
+                    Example: MAV_CMD_DO_SET_PARAMETER item.
+                 |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
+    CAN_FORWARD=32000, /* Request forwarding of CAN packets from the given CAN bus to this component. CAN Frames are
+                    sent using CAN_FRAME and CANFD_FRAME messages
+                 |Bus number (0 to disable forwarding, 1 for first bus, 2 for 2nd bus, 3 for
+                    3rd bus).
+                | Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  */
+    FIXED_MAG_CAL_YAW=42006, /* Magnetometer calibration based on provided known yaw. This allows for fast calibration
+                    using WMM field tables in the vehicle, given only the known yaw of the vehicle. If Latitude and
+                    longitude are both zero then use the current vehicle location.
+                 |Yaw of vehicle in earth frame.| CompassMask, 0 for all.| Latitude.| Longitude.| Empty.| Empty.| Empty.|  */
     DO_WINCH=42600, /* Command to operate winch. |Winch instance number.| Action to perform.| Length of line to release (negative to wind).| Release rate (negative to wind).| Empty.| Empty.| Empty.|  */
-    EXTERNAL_POSITION_ESTIMATE=43003, /* Provide an external position estimate for use when dead-reckoning. This is meant to be used for occasional position resets that may be provided by a external system such as a remote pilot using landmarks over a video link. |Timestamp that this message was sent as a time in the transmitters time domain. The sender should wrap this time back to zero based on required timing accuracy for the application and the limitations of a 32 bit float. For example, wrapping at 10 hours would give approximately 1ms accuracy. Recipient must handle time wrap in any timing jitter correction applied to this field. Wrap rollover time should not be at not more than 250 seconds, which would give approximately 10 microsecond accuracy.| The time spent in processing the sensor data that is the basis for this position. The recipient can use this to improve time alignment of the data. Set to zero if not known.| estimated one standard deviation accuracy of the measurement. Set to NaN if not known.| Empty| Latitude| Longitude| Altitude, not used. Should be sent as NaN. May be supported in a future version of this message.|  */
+    EXTERNAL_POSITION_ESTIMATE=43003, /* Provide an external position estimate for use when dead-reckoning. This is meant to be used
+                    for occasional position resets that may be provided by a external system such as a remote pilot
+                    using landmarks over a video link.
+                 |Timestamp that this message was sent as a time in
+                    the transmitters time domain. The sender should wrap this time back to zero based on required timing
+                    accuracy for the application and the limitations of a 32 bit float. For example, wrapping at 10
+                    hours would give approximately 1ms accuracy. Recipient must handle time wrap in any timing jitter
+                    correction applied to this field. Wrap rollover time should not be at not more than 250 seconds,
+                    which would give approximately 10 microsecond accuracy.
+                | The time spent in processing the sensor data that is
+                    the basis for this position. The recipient can use this to improve time alignment of the data. Set
+                    to zero if not known.
+                | estimated one standard deviation accuracy of the measurement. Set to
+                    NaN if not known.
+                | Empty| Latitude| Longitude| Altitude, not used. Should be sent as NaN. May be supported
+                    in a future version of this message.
+                |  */
 };
 
 //! MAV_CMD ENUM_END
 constexpr auto MAV_CMD_ENUM_END = 43004;
 
 /** @brief A data stream is not a fixed set of messages, but rather a
-     recommendation to the autopilot software. Individual autopilots may or may not obey
-     the recommended messages. */
+                recommendation to the autopilot software. Individual autopilots may or may not obey
+                the recommended messages.
+             */
 enum class MAV_DATA_STREAM
 {
     ALL=0, /* Enable all data streams | */
     RAW_SENSORS=1, /* Enable IMU_RAW, GPS_RAW, GPS_STATUS packets. | */
     EXTENDED_STATUS=2, /* Enable GPS_STATUS, CONTROL_STATUS, AUX_STATUS | */
     RC_CHANNELS=3, /* Enable RC_CHANNELS_SCALED, RC_CHANNELS_RAW, SERVO_OUTPUT_RAW | */
-    RAW_CONTROLLER=4, /* Enable ATTITUDE_CONTROLLER_OUTPUT, POSITION_CONTROLLER_OUTPUT, NAV_CONTROLLER_OUTPUT. | */
+    RAW_CONTROLLER=4, /* Enable ATTITUDE_CONTROLLER_OUTPUT, POSITION_CONTROLLER_OUTPUT, NAV_CONTROLLER_OUTPUT.
+                 | */
     POSITION=6, /* Enable LOCAL_POSITION, GLOBAL_POSITION_INT messages. | */
     EXTRA1=10, /* Dependent on the autopilot | */
     EXTRA2=11, /* Dependent on the autopilot | */
@@ -948,7 +1992,8 @@ constexpr auto MAV_DATA_STREAM_ENUM_END = 13;
 
 /** @brief The ROI (region of interest) for the vehicle. This can be
                 be used by the vehicle for camera/vehicle attitude alignment (see
-                MAV_CMD_NAV_ROI). */
+                MAV_CMD_NAV_ROI).
+             */
 enum class MAV_ROI
 {
     NONE=0, /* No region of interest. | */
@@ -1002,15 +2047,31 @@ constexpr auto MAV_PARAM_EXT_TYPE_ENUM_END = 12;
 enum class MAV_RESULT : uint8_t
 {
     ACCEPTED=0, /* Command is valid (is supported and has valid parameters), and was executed. | */
-    TEMPORARILY_REJECTED=1, /* Command is valid, but cannot be executed at this time. This is used to indicate a problem that should be fixed just by waiting (e.g. a state machine is busy, can't arm because have not got GPS lock, etc.). Retrying later should work. | */
-    DENIED=2, /* Command is invalid (is supported but has invalid parameters). Retrying same command and parameters will not work. | */
+    TEMPORARILY_REJECTED=1, /* Command is valid, but cannot be executed at this time. This is used to indicate a problem
+                    that should be fixed just by waiting (e.g. a state machine is busy, can't arm because have not got
+                    GPS lock, etc.). Retrying later should work.
+                 | */
+    DENIED=2, /* Command is invalid (is supported but has invalid parameters). Retrying same command and
+                    parameters will not work.
+                 | */
     UNSUPPORTED=3, /* Command is not supported (unknown). | */
-    FAILED=4, /* Command is valid, but execution has failed. This is used to indicate any non-temporary or unexpected problem, i.e. any problem that must be fixed before the command can succeed/be retried. For example, attempting to write a file when out of memory, attempting to arm when sensors are not calibrated, etc. | */
-    IN_PROGRESS=5, /* Command is valid and is being executed. This will be followed by further progress updates, i.e. the component may send further COMMAND_ACK messages with result MAV_RESULT_IN_PROGRESS (at a rate decided by the implementation), and must terminate by sending a COMMAND_ACK message with final result of the operation. The COMMAND_ACK.progress field can be used to indicate the progress of the operation. | */
-    CANCELLED=6, /* Command has been cancelled (as a result of receiving a COMMAND_CANCEL message). | */
+    FAILED=4, /* Command is valid, but execution has failed. This is used to indicate any non-temporary or
+                    unexpected problem, i.e. any problem that must be fixed before the command can succeed/be retried.
+                    For example, attempting to write a file when out of memory, attempting to arm when sensors are not
+                    calibrated, etc.
+                 | */
+    IN_PROGRESS=5, /* Command is valid and is being executed. This will be followed by further progress updates,
+                    i.e. the component may send further COMMAND_ACK messages with result MAV_RESULT_IN_PROGRESS (at a
+                    rate decided by the implementation), and must terminate by sending a COMMAND_ACK message with final
+                    result of the operation. The COMMAND_ACK.progress field can be used to indicate the progress of the
+                    operation.
+                 | */
+    CANCELLED=6, /* Command has been cancelled (as a result of receiving a COMMAND_CANCEL message).
+                 | */
     COMMAND_LONG_ONLY=7, /* Command is only accepted when sent as a COMMAND_LONG. | */
     COMMAND_INT_ONLY=8, /* Command is only accepted when sent as a COMMAND_INT. | */
-    COMMAND_UNSUPPORTED_MAV_FRAME=9, /* Command is invalid because a frame is required and the specified frame is not supported. | */
+    COMMAND_UNSUPPORTED_MAV_FRAME=9, /* Command is invalid because a frame is required and the specified frame is not supported.
+                 | */
 };
 
 //! MAV_RESULT ENUM_END
@@ -1040,17 +2101,28 @@ enum class MAV_MISSION_RESULT : uint8_t
 //! MAV_MISSION_RESULT ENUM_END
 constexpr auto MAV_MISSION_RESULT_ENUM_END = 16;
 
-/** @brief Indicates the severity level, generally used for status messages to indicate their relative urgency. Based on RFC-5424 using expanded definitions at: http://www.kiwisyslog.com/kb/info:-syslog-message-levels/. */
+/** @brief Indicates the severity level, generally used for status messages to indicate their relative
+                urgency. Based on RFC-5424 using expanded definitions at:
+                http://www.kiwisyslog.com/kb/info:-syslog-message-levels/.
+             */
 enum class MAV_SEVERITY : uint8_t
 {
     EMERGENCY=0, /* System is unusable. This is a "panic" condition. | */
     ALERT=1, /* Action should be taken immediately. Indicates error in non-critical systems. | */
     CRITICAL=2, /* Action must be taken immediately. Indicates failure in a primary system. | */
     ERROR=3, /* Indicates an error in secondary/redundant systems. | */
-    WARNING=4, /* Indicates about a possible future error if this is not resolved within a given timeframe. Example would be a low battery warning. | */
-    NOTICE=5, /* An unusual event has occurred, though not an error condition. This should be investigated for the root cause. | */
-    INFO=6, /* Normal operational messages. Useful for logging. No action is required for these messages. | */
-    DEBUG=7, /* Useful non-operational messages that can assist in debugging. These should not occur during normal operation. | */
+    WARNING=4, /* Indicates about a possible future error if this is not resolved within a given timeframe.
+                    Example would be a low battery warning.
+                 | */
+    NOTICE=5, /* An unusual event has occurred, though not an error condition. This should be investigated
+                    for the root cause.
+                 | */
+    INFO=6, /* Normal operational messages. Useful for logging. No action is required for these
+                    messages.
+                 | */
+    DEBUG=7, /* Useful non-operational messages that can assist in debugging. These should not occur during
+                    normal operation.
+                 | */
 };
 
 //! MAV_SEVERITY ENUM_END
@@ -1097,8 +2169,12 @@ constexpr auto SERIAL_CONTROL_DEV_ENUM_END = 110;
 enum class SERIAL_CONTROL_FLAG : uint8_t
 {
     REPLY=1, /* Set if this is a reply | */
-    RESPOND=2, /* Set if the sender wants the receiver to send a response as another SERIAL_CONTROL message | */
-    EXCLUSIVE=4, /* Set if access to the serial port should be removed from whatever driver is currently using it, giving exclusive access to the SERIAL_CONTROL protocol. The port can be handed back by sending a request without this flag set | */
+    RESPOND=2, /* Set if the sender wants the receiver to send a response as another SERIAL_CONTROL message
+                 | */
+    EXCLUSIVE=4, /* Set if access to the serial port should be removed from whatever driver is currently using
+                    it, giving exclusive access to the SERIAL_CONTROL protocol. The port can be handed back by sending a
+                    request without this flag set
+                 | */
     BLOCKING=8, /* Block on writes to the serial port | */
     MULTI=16, /* Send multiple replies until port is drained | */
 };
@@ -1169,35 +2245,47 @@ enum class MAV_SENSOR_ORIENTATION : uint8_t
 //! MAV_SENSOR_ORIENTATION ENUM_END
 constexpr auto MAV_SENSOR_ORIENTATION_ENUM_END = 101;
 
-/** @brief Bitmask of (optional) autopilot capabilities (64 bit). If a bit is set, the autopilot supports this capability. */
+/** @brief Bitmask of (optional) autopilot capabilities (64 bit). If a bit is set, the autopilot supports
+                this capability.
+             */
 enum class MAV_PROTOCOL_CAPABILITY : uint64_t
 {
     MISSION_FLOAT=1, /* Autopilot supports the MISSION_ITEM float message type.
-          Note that MISSION_ITEM is deprecated, and autopilots should use MISSION_INT instead.
-         | */
+                    Note that MISSION_ITEM is deprecated, and autopilots should use MISSION_INT instead.
+                 | */
     PARAM_FLOAT=2, /* Autopilot supports the new param float message type. | */
     MISSION_INT=4, /* Autopilot supports MISSION_ITEM_INT scaled integer message type.
-          Note that this flag must always be set if missions are supported, because missions must always use MISSION_ITEM_INT (rather than MISSION_ITEM, which is deprecated).
-         | */
+                    Note that this flag must always be set if missions are supported, because missions must always use
+                    MISSION_ITEM_INT (rather than MISSION_ITEM, which is deprecated).
+                 | */
     COMMAND_INT=8, /* Autopilot supports COMMAND_INT scaled integer message type. | */
-    PARAM_ENCODE_BYTEWISE=16, /* Parameter protocol uses byte-wise encoding of parameter values into param_value (float) fields: https://mavlink.io/en/services/parameter.html#parameter-encoding.
-          Note that either this flag or MAV_PROTOCOL_CAPABILITY_PARAM_ENCODE_C_CAST should be set if the parameter protocol is supported.
-         | */
-    FTP=32, /* Autopilot supports the File Transfer Protocol v1: https://mavlink.io/en/services/ftp.html. | */
+    PARAM_ENCODE_BYTEWISE=16, /* Parameter protocol uses byte-wise encoding of parameter values into param_value (float)
+                    fields: https://mavlink.io/en/services/parameter.html#parameter-encoding.
+                    Note that either this flag or MAV_PROTOCOL_CAPABILITY_PARAM_ENCODE_C_CAST should be set if the
+                    parameter protocol is supported.
+                 | */
+    FTP=32, /* Autopilot supports the File Transfer Protocol v1:
+                    https://mavlink.io/en/services/ftp.html.
+                 | */
     SET_ATTITUDE_TARGET=64, /* Autopilot supports commanding attitude offboard. | */
-    SET_POSITION_TARGET_LOCAL_NED=128, /* Autopilot supports commanding position and velocity targets in local NED frame. | */
-    SET_POSITION_TARGET_GLOBAL_INT=256, /* Autopilot supports commanding position and velocity targets in global scaled integers. | */
+    SET_POSITION_TARGET_LOCAL_NED=128, /* Autopilot supports commanding position and velocity targets in local NED frame.
+                 | */
+    SET_POSITION_TARGET_GLOBAL_INT=256, /* Autopilot supports commanding position and velocity targets in global scaled integers.
+                 | */
     TERRAIN=512, /* Autopilot supports terrain protocol / data handling. | */
     RESERVED3=1024, /* Reserved for future use. | */
-    FLIGHT_TERMINATION=2048, /* Autopilot supports the MAV_CMD_DO_FLIGHTTERMINATION command (flight termination). | */
+    FLIGHT_TERMINATION=2048, /* Autopilot supports the MAV_CMD_DO_FLIGHTTERMINATION command (flight termination).
+                 | */
     COMPASS_CALIBRATION=4096, /* Autopilot supports onboard compass calibration. | */
     MAVLINK2=8192, /* Autopilot supports MAVLink version 2. | */
     MISSION_FENCE=16384, /* Autopilot supports mission fence protocol. | */
     MISSION_RALLY=32768, /* Autopilot supports mission rally point protocol. | */
     RESERVED2=65536, /* Reserved for future use. | */
-    PARAM_ENCODE_C_CAST=131072, /* Parameter protocol uses C-cast of parameter values to set the param_value (float) fields: https://mavlink.io/en/services/parameter.html#parameter-encoding.
-          Note that either this flag or MAV_PROTOCOL_CAPABILITY_PARAM_ENCODE_BYTEWISE should be set if the parameter protocol is supported.
-         | */
+    PARAM_ENCODE_C_CAST=131072, /* Parameter protocol uses C-cast of parameter values to set the param_value (float) fields:
+                    https://mavlink.io/en/services/parameter.html#parameter-encoding.
+                    Note that either this flag or MAV_PROTOCOL_CAPABILITY_PARAM_ENCODE_BYTEWISE should be set if the
+                    parameter protocol is supported.
+                 | */
 };
 
 //! MAV_PROTOCOL_CAPABILITY ENUM_END
@@ -1208,7 +2296,9 @@ enum class MAV_MISSION_TYPE : uint8_t
 {
     MISSION=0, /* Items are mission commands for main mission. | */
     FENCE=1, /* Specifies GeoFence area(s). Items are MAV_CMD_NAV_FENCE_ GeoFence items. | */
-    RALLY=2, /* Specifies the rally points for the vehicle. Rally points are alternative RTL points. Items are MAV_CMD_NAV_RALLY_POINT rally point items. | */
+    RALLY=2, /* Specifies the rally points for the vehicle. Rally points are alternative RTL points. Items
+                    are MAV_CMD_NAV_RALLY_POINT rally point items.
+                 | */
     ALL=255, /* Only used in MISSION_CLEAR_ALL to clear all mission types. | */
 };
 
@@ -1265,64 +2355,95 @@ enum class MAV_BATTERY_CHARGE_STATE : uint8_t
     OK=1, /* Battery is not in low state. Normal operation. | */
     LOW=2, /* Battery state is low, warn and monitor close. | */
     CRITICAL=3, /* Battery state is critical, return or abort immediately. | */
-    EMERGENCY=4, /* Battery state is too low for ordinary abort sequence. Perform fastest possible emergency stop to prevent damage. | */
-    FAILED=5, /* Battery failed, damage unavoidable. Possible causes (faults) are listed in MAV_BATTERY_FAULT. | */
-    UNHEALTHY=6, /* Battery is diagnosed to be defective or an error occurred, usage is discouraged / prohibited. Possible causes (faults) are listed in MAV_BATTERY_FAULT. | */
+    EMERGENCY=4, /* Battery state is too low for ordinary abort sequence. Perform fastest possible emergency
+                    stop to prevent damage.
+                 | */
+    FAILED=5, /* Battery failed, damage unavoidable. Possible causes (faults) are listed in
+                    MAV_BATTERY_FAULT.
+                 | */
+    UNHEALTHY=6, /* Battery is diagnosed to be defective or an error occurred, usage is discouraged /
+                    prohibited. Possible causes (faults) are listed in MAV_BATTERY_FAULT.
+                 | */
     CHARGING=7, /* Battery is charging. | */
 };
 
 //! MAV_BATTERY_CHARGE_STATE ENUM_END
 constexpr auto MAV_BATTERY_CHARGE_STATE_ENUM_END = 8;
 
-/** @brief Battery mode. Note, the normal operation mode (i.e. when flying) should be reported as MAV_BATTERY_MODE_UNKNOWN to allow message trimming in normal flight. */
+/** @brief Battery mode. Note, the normal operation mode (i.e. when flying) should be reported as
+                MAV_BATTERY_MODE_UNKNOWN to allow message trimming in normal flight.
+             */
 enum class MAV_BATTERY_MODE : uint8_t
 {
     UNKNOWN=0, /* Battery mode not supported/unknown battery mode/normal operation. | */
     AUTO_DISCHARGING=1, /* Battery is auto discharging (towards storage level). | */
-    HOT_SWAP=2, /* Battery in hot-swap mode (current limited to prevent spikes that might damage sensitive electrical circuits). | */
+    HOT_SWAP=2, /* Battery in hot-swap mode (current limited to prevent spikes that might damage sensitive
+                    electrical circuits).
+                 | */
 };
 
 //! MAV_BATTERY_MODE ENUM_END
 constexpr auto MAV_BATTERY_MODE_ENUM_END = 3;
 
-/** @brief Smart battery supply status/fault flags (bitmask) for health indication. The battery must also report either MAV_BATTERY_CHARGE_STATE_FAILED or MAV_BATTERY_CHARGE_STATE_UNHEALTHY if any of these are set. */
+/** @brief Smart battery supply status/fault flags (bitmask) for health indication. The battery must also
+                report either MAV_BATTERY_CHARGE_STATE_FAILED or MAV_BATTERY_CHARGE_STATE_UNHEALTHY if any of these are
+                set.
+             */
 enum class MAV_BATTERY_FAULT : uint32_t
 {
     DEEP_DISCHARGE=1, /* Battery has deep discharged. | */
     SPIKES=2, /* Voltage spikes. | */
-    CELL_FAIL=4, /* One or more cells have failed. Battery should also report MAV_BATTERY_CHARGE_STATE_FAILE (and should not be used). | */
+    CELL_FAIL=4, /* One or more cells have failed. Battery should also report MAV_BATTERY_CHARGE_STATE_FAILE
+                    (and should not be used).
+                 | */
     OVER_CURRENT=8, /* Over-current fault. | */
     OVER_TEMPERATURE=16, /* Over-temperature fault. | */
     UNDER_TEMPERATURE=32, /* Under-temperature fault. | */
-    INCOMPATIBLE_VOLTAGE=64, /* Vehicle voltage is not compatible with this battery (batteries on same power rail should have similar voltage). | */
+    INCOMPATIBLE_VOLTAGE=64, /* Vehicle voltage is not compatible with this battery (batteries on same power rail should
+                    have similar voltage).
+                 | */
     INCOMPATIBLE_FIRMWARE=128, /* Battery firmware is not compatible with current autopilot firmware. | */
-    BATTERY_FAULT_INCOMPATIBLE_CELLS_CONFIGURATION=256, /* Battery is not compatible due to cell configuration (e.g. 5s1p when vehicle requires 6s). | */
+    BATTERY_FAULT_INCOMPATIBLE_CELLS_CONFIGURATION=256, /* Battery is not compatible due to cell configuration (e.g. 5s1p when vehicle requires 6s).
+                 | */
 };
 
 //! MAV_BATTERY_FAULT ENUM_END
 constexpr auto MAV_BATTERY_FAULT_ENUM_END = 257;
 
-/** @brief Flags to report status/failure cases for a power generator (used in GENERATOR_STATUS). Note that FAULTS are conditions that cause the generator to fail. Warnings are conditions that require attention before the next use (they indicate the system is not operating properly). */
+/** @brief Flags to report status/failure cases for a power generator (used in GENERATOR_STATUS). Note
+                that FAULTS are conditions that cause the generator to fail. Warnings are conditions that require
+                attention before the next use (they indicate the system is not operating properly).
+             */
 enum class MAV_GENERATOR_STATUS_FLAG : uint64_t
 {
     OFF=1, /* Generator is off. | */
     READY=2, /* Generator is ready to start generating power. | */
     GENERATING=4, /* Generator is generating power. | */
-    CHARGING=8, /* Generator is charging the batteries (generating enough power to charge and provide the load). | */
+    CHARGING=8, /* Generator is charging the batteries (generating enough power to charge and provide the
+                    load).
+                 | */
     REDUCED_POWER=16, /* Generator is operating at a reduced maximum power. | */
     MAXPOWER=32, /* Generator is providing the maximum output. | */
     OVERTEMP_WARNING=64, /* Generator is near the maximum operating temperature, cooling is insufficient. | */
     OVERTEMP_FAULT=128, /* Generator hit the maximum operating temperature and shutdown. | */
-    ELECTRONICS_OVERTEMP_WARNING=256, /* Power electronics are near the maximum operating temperature, cooling is insufficient. | */
+    ELECTRONICS_OVERTEMP_WARNING=256, /* Power electronics are near the maximum operating temperature, cooling is insufficient.
+                 | */
     ELECTRONICS_OVERTEMP_FAULT=512, /* Power electronics hit the maximum operating temperature and shutdown. | */
     ELECTRONICS_FAULT=1024, /* Power electronics experienced a fault and shutdown. | */
-    POWERSOURCE_FAULT=2048, /* The power source supplying the generator failed e.g. mechanical generator stopped, tether is no longer providing power, solar cell is in shade, hydrogen reaction no longer happening. | */
+    POWERSOURCE_FAULT=2048, /* The power source supplying the generator failed e.g. mechanical generator stopped, tether
+                    is no longer providing power, solar cell is in shade, hydrogen reaction no longer happening.
+                 | */
     COMMUNICATION_WARNING=4096, /* Generator controller having communication problems. | */
     COOLING_WARNING=8192, /* Power electronic or generator cooling system error. | */
     POWER_RAIL_FAULT=16384, /* Generator controller power rail experienced a fault. | */
-    OVERCURRENT_FAULT=32768, /* Generator controller exceeded the overcurrent threshold and shutdown to prevent damage. | */
-    BATTERY_OVERCHARGE_CURRENT_FAULT=65536, /* Generator controller detected a high current going into the batteries and shutdown to prevent battery damage. | */
-    OVERVOLTAGE_FAULT=131072, /* Generator controller exceeded it's overvoltage threshold and shutdown to prevent it exceeding the voltage rating. | */
+    OVERCURRENT_FAULT=32768, /* Generator controller exceeded the overcurrent threshold and shutdown to prevent damage.
+                 | */
+    BATTERY_OVERCHARGE_CURRENT_FAULT=65536, /* Generator controller detected a high current going into the batteries and shutdown to
+                    prevent battery damage.
+                 | */
+    OVERVOLTAGE_FAULT=131072, /* Generator controller exceeded it's overvoltage threshold and shutdown to prevent it
+                    exceeding the voltage rating.
+                 | */
     BATTERY_UNDERVOLT_FAULT=262144, /* Batteries are under voltage (generator will not start). | */
     START_INHIBITED=524288, /* Generator start is inhibited by e.g. a safety switch. | */
     MAINTENANCE_REQUIRED=1048576, /* Generator requires maintenance. | */
@@ -1397,7 +2518,8 @@ enum class ADSB_EMITTER_TYPE : uint8_t
 //! ADSB_EMITTER_TYPE ENUM_END
 constexpr auto ADSB_EMITTER_TYPE_ENUM_END = 20;
 
-/** @brief These flags indicate status such as data validity of each data source. Set = data valid */
+/** @brief These flags indicate status such as data validity of each data source. Set = data valid
+             */
 enum class ADSB_FLAGS : uint16_t
 {
     VALID_COORDS=1, /*  | */
@@ -1418,7 +2540,9 @@ constexpr auto ADSB_FLAGS_ENUM_END = 32769;
 /** @brief Bitmap of options for the MAV_CMD_DO_REPOSITION */
 enum class MAV_DO_REPOSITION_FLAGS
 {
-    CHANGE_MODE=1, /* The aircraft should immediately transition into guided. This should not be set for follow me applications | */
+    CHANGE_MODE=1, /* The aircraft should immediately transition into guided. This should not be set for follow
+                    me applications
+                 | */
 };
 
 //! MAV_DO_REPOSITION_FLAGS ENUM_END
@@ -1441,14 +2565,20 @@ enum class ESTIMATOR_STATUS_FLAGS : uint16_t
 {
     ATTITUDE=1, /* True if the attitude estimate is good | */
     VELOCITY_HORIZ=2, /* True if the horizontal velocity estimate is good | */
-    VELOCITY_VERT=4, /* True if the  vertical velocity estimate is good | */
+    VELOCITY_VERT=4, /* True if the vertical velocity estimate is good | */
     POS_HORIZ_REL=8, /* True if the horizontal position (relative) estimate is good | */
     POS_HORIZ_ABS=16, /* True if the horizontal position (absolute) estimate is good | */
     POS_VERT_ABS=32, /* True if the vertical position (absolute) estimate is good | */
     POS_VERT_AGL=64, /* True if the vertical position (above ground) estimate is good | */
-    CONST_POS_MODE=128, /* True if the EKF is in a constant position mode and is not using external measurements (eg GPS or optical flow) | */
-    PRED_POS_HORIZ_REL=256, /* True if the EKF has sufficient data to enter a mode that will provide a (relative) position estimate | */
-    PRED_POS_HORIZ_ABS=512, /* True if the EKF has sufficient data to enter a mode that will provide a (absolute) position estimate | */
+    CONST_POS_MODE=128, /* True if the EKF is in a constant position mode and is not using external measurements (eg
+                    GPS or optical flow)
+                 | */
+    PRED_POS_HORIZ_REL=256, /* True if the EKF has sufficient data to enter a mode that will provide a (relative) position
+                    estimate
+                 | */
+    PRED_POS_HORIZ_ABS=512, /* True if the EKF has sufficient data to enter a mode that will provide a (absolute) position
+                    estimate
+                 | */
     GPS_GLITCH=1024, /* True if the EKF has detected a GPS glitch | */
     ACCEL_ERROR=2048, /* True if the EKF has detected bad accelerometer data | */
 };
@@ -1460,7 +2590,8 @@ constexpr auto ESTIMATOR_STATUS_FLAGS_ENUM_END = 2049;
 enum class MOTOR_TEST_ORDER
 {
     DEFAULT=0, /* Default autopilot motor test method. | */
-    SEQUENCE=1, /* Motor numbers are specified as their index in a predefined vehicle-specific sequence. | */
+    SEQUENCE=1, /* Motor numbers are specified as their index in a predefined vehicle-specific sequence.
+                 | */
     BOARD=2, /* Motor numbers are specified as the output as labeled on the board. | */
 };
 
@@ -1564,7 +2695,9 @@ enum class LANDING_TARGET_TYPE : uint8_t
     LIGHT_BEACON=0, /* Landing target signaled by light beacon (ex: IR-LOCK) | */
     RADIO_BEACON=1, /* Landing target signaled by radio beacon (ex: ILS, NDB) | */
     VISION_FIDUCIAL=2, /* Landing target represented by a fiducial marker (ex: ARTag) | */
-    VISION_OTHER=3, /* Landing target represented by a pre-defined visual shape/feature (ex: X-marker, H-marker, square) | */
+    VISION_OTHER=3, /* Landing target represented by a pre-defined visual shape/feature (ex: X-marker, H-marker,
+                    square)
+                 | */
 };
 
 //! LANDING_TARGET_TYPE ENUM_END
@@ -1577,7 +2710,9 @@ enum class VTOL_TRANSITION_HEADING
     NEXT_WAYPOINT=1, /* Use the heading pointing towards the next waypoint. | */
     TAKEOFF=2, /* Use the heading on takeoff (while sitting on the ground). | */
     SPECIFIED=3, /* Use the specified heading in parameter 4. | */
-    ANY=4, /* Use the current heading when reaching takeoff altitude (potentially facing the wind when weather-vaning is active). | */
+    ANY=4, /* Use the current heading when reaching takeoff altitude (potentially facing the wind when
+                    weather-vaning is active).
+                 | */
 };
 
 //! VTOL_TRANSITION_HEADING ENUM_END
@@ -1594,11 +2729,15 @@ enum class CAMERA_CAP_FLAGS : uint32_t
     HAS_IMAGE_SURVEY_MODE=32, /* Camera has image survey mode (MAV_CMD_SET_CAMERA_MODE) | */
     HAS_BASIC_ZOOM=64, /* Camera has basic zoom control (MAV_CMD_SET_CAMERA_ZOOM) | */
     HAS_BASIC_FOCUS=128, /* Camera has basic focus control (MAV_CMD_SET_CAMERA_FOCUS) | */
-    HAS_VIDEO_STREAM=256, /* Camera has video streaming capabilities (request VIDEO_STREAM_INFORMATION with MAV_CMD_REQUEST_MESSAGE for video streaming info) | */
+    HAS_VIDEO_STREAM=256, /* Camera has video streaming capabilities (request VIDEO_STREAM_INFORMATION with
+                    MAV_CMD_REQUEST_MESSAGE for video streaming info)
+                 | */
     HAS_TRACKING_POINT=512, /* Camera supports tracking of a point on the camera view. | */
     HAS_TRACKING_RECTANGLE=1024, /* Camera supports tracking of a selection rectangle on the camera view. | */
     HAS_TRACKING_GEO_STATUS=2048, /* Camera supports tracking geo status (CAMERA_TRACKING_GEO_STATUS). | */
-    HAS_THERMAL_RANGE=4096, /* Camera supports absolute thermal range (request CAMERA_THERMAL_RANGE with MAV_CMD_REQUEST_MESSAGE) (WIP). | */
+    HAS_THERMAL_RANGE=4096, /* Camera supports absolute thermal range (request CAMERA_THERMAL_RANGE with
+                    MAV_CMD_REQUEST_MESSAGE) (WIP).
+                 | */
 };
 
 //! CAMERA_CAP_FLAGS ENUM_END
@@ -1676,9 +2815,14 @@ constexpr auto CAMERA_TRACKING_TARGET_DATA_ENUM_END = 5;
 enum class CAMERA_ZOOM_TYPE
 {
     ZOOM_TYPE_STEP=0, /* Zoom one step increment (-1 for wide, 1 for tele) | */
-    ZOOM_TYPE_CONTINUOUS=1, /* Continuous zoom up/down until stopped (-1 for wide, 1 for tele, 0 to stop zooming) | */
-    ZOOM_TYPE_RANGE=2, /* Zoom value as proportion of full camera range (a percentage value between 0.0 and 100.0) | */
-    ZOOM_TYPE_FOCAL_LENGTH=3, /* Zoom value/variable focal length in millimetres. Note that there is no message to get the valid zoom range of the camera, so this can type can only be used for cameras where the zoom range is known (implying that this cannot reliably be used in a GCS for an arbitrary camera) | */
+    ZOOM_TYPE_CONTINUOUS=1, /* Continuous zoom up/down until stopped (-1 for wide, 1 for tele, 0 to stop zooming)
+                 | */
+    ZOOM_TYPE_RANGE=2, /* Zoom value as proportion of full camera range (a percentage value between 0.0 and 100.0)
+                 | */
+    ZOOM_TYPE_FOCAL_LENGTH=3, /* Zoom value/variable focal length in millimetres. Note that there is no message to get the
+                    valid zoom range of the camera, so this can type can only be used for cameras where the zoom range
+                    is known (implying that this cannot reliably be used in a GCS for an arbitrary camera)
+                 | */
     ZOOM_TYPE_HORIZONTAL_FOV=4, /* Zoom value as horizontal field of view in degrees. | */
 };
 
@@ -1688,12 +2832,20 @@ constexpr auto CAMERA_ZOOM_TYPE_ENUM_END = 5;
 /** @brief Focus types for MAV_CMD_SET_CAMERA_FOCUS */
 enum class SET_FOCUS_TYPE
 {
-    FOCUS_TYPE_STEP=0, /* Focus one step increment (-1 for focusing in, 1 for focusing out towards infinity). | */
-    FOCUS_TYPE_CONTINUOUS=1, /* Continuous focus up/down until stopped (-1 for focusing in, 1 for focusing out towards infinity, 0 to stop focusing) | */
-    FOCUS_TYPE_RANGE=2, /* Focus value as proportion of full camera focus range (a value between 0.0 and 100.0) | */
-    FOCUS_TYPE_METERS=3, /* Focus value in metres. Note that there is no message to get the valid focus range of the camera, so this can type can only be used for cameras where the range is known (implying that this cannot reliably be used in a GCS for an arbitrary camera). | */
+    FOCUS_TYPE_STEP=0, /* Focus one step increment (-1 for focusing in, 1 for focusing out towards infinity).
+                 | */
+    FOCUS_TYPE_CONTINUOUS=1, /* Continuous focus up/down until stopped (-1 for focusing in, 1 for focusing out towards
+                    infinity, 0 to stop focusing)
+                 | */
+    FOCUS_TYPE_RANGE=2, /* Focus value as proportion of full camera focus range (a value between 0.0 and 100.0)
+                 | */
+    FOCUS_TYPE_METERS=3, /* Focus value in metres. Note that there is no message to get the valid focus range of the
+                    camera, so this can type can only be used for cameras where the range is known (implying that this
+                    cannot reliably be used in a GCS for an arbitrary camera).
+                 | */
     FOCUS_TYPE_AUTO=4, /* Focus automatically. | */
-    FOCUS_TYPE_AUTO_SINGLE=5, /* Single auto focus. Mainly used for still pictures. Usually abbreviated as AF-S. | */
+    FOCUS_TYPE_AUTO_SINGLE=5, /* Single auto focus. Mainly used for still pictures. Usually abbreviated as AF-S.
+                 | */
     FOCUS_TYPE_AUTO_CONTINUOUS=6, /* Continuous auto focus. Mainly used for dynamic scenes. Abbreviated as AF-C. | */
 };
 
@@ -1718,7 +2870,11 @@ enum class PARAM_ACK : uint8_t
     ACCEPTED=0, /* Parameter value ACCEPTED and SET | */
     VALUE_UNSUPPORTED=1, /* Parameter value UNKNOWN/UNSUPPORTED | */
     FAILED=2, /* Parameter failed to set | */
-    IN_PROGRESS=3, /* Parameter value received but not yet set/accepted. A subsequent PARAM_ACK_TRANSACTION or PARAM_EXT_ACK with the final result will follow once operation is completed. This is returned immediately for parameters that take longer to set, indicating that the the parameter was received and does not need to be resent. | */
+    IN_PROGRESS=3, /* Parameter value received but not yet set/accepted. A subsequent PARAM_ACK_TRANSACTION or
+                    PARAM_EXT_ACK with the final result will follow once operation is completed. This is returned
+                    immediately for parameters that take longer to set, indicating that the the parameter was received
+                    and does not need to be resent.
+                 | */
 };
 
 //! PARAM_ACK ENUM_END
@@ -1729,7 +2885,9 @@ enum class CAMERA_MODE : uint8_t
 {
     IMAGE=0, /* Camera is in image/photo capture mode. | */
     VIDEO=1, /* Camera is in video capture mode. | */
-    IMAGE_SURVEY=2, /* Camera is in image survey capture mode. It allows for camera controller to do specific settings for surveys. | */
+    IMAGE_SURVEY=2, /* Camera is in image survey capture mode. It allows for camera controller to do specific
+                    settings for surveys.
+                 | */
 };
 
 //! CAMERA_MODE ENUM_END
@@ -1742,7 +2900,9 @@ enum class MAV_ARM_AUTH_DENIED_REASON
     NONE=1, /* Authorizer will send the error as string to GCS | */
     INVALID_WAYPOINT=2, /* At least one waypoint have a invalid value | */
     TIMEOUT=3, /* Timeout in the authorizer process(in case it depends on network) | */
-    AIRSPACE_IN_USE=4, /* Airspace of the mission in use by another vehicle, second result parameter can have the waypoint id that caused it to be denied. | */
+    AIRSPACE_IN_USE=4, /* Airspace of the mission in use by another vehicle, second result parameter can have the
+                    waypoint id that caused it to be denied.
+                 | */
     BAD_WEATHER=5, /* Weather is not good to fly | */
 };
 
@@ -1759,7 +2919,10 @@ enum class RC_TYPE
 //! RC_TYPE ENUM_END
 constexpr auto RC_TYPE_ENUM_END = 2;
 
-/** @brief Bitmap to indicate which dimensions should be ignored by the vehicle: a value of 0b0000000000000000 or 0b0000001000000000 indicates that none of the setpoint dimensions should be ignored. If bit 9 is set the floats afx afy afz should be interpreted as force instead of acceleration. */
+/** @brief Bitmap to indicate which dimensions should be ignored by the vehicle: a value of
+                0b0000000000000000 or 0b0000001000000000 indicates that none of the setpoint dimensions should be
+                ignored. If bit 9 is set the floats afx afy afz should be interpreted as force instead of acceleration.
+             */
 enum class POSITION_TARGET_TYPEMASK : uint16_t
 {
     X_IGNORE=1, /* Ignore position x | */
@@ -1779,7 +2942,9 @@ enum class POSITION_TARGET_TYPEMASK : uint16_t
 //! POSITION_TARGET_TYPEMASK ENUM_END
 constexpr auto POSITION_TARGET_TYPEMASK_ENUM_END = 2049;
 
-/** @brief Bitmap to indicate which dimensions should be ignored by the vehicle: a value of 0b00000000 indicates that none of the setpoint dimensions should be ignored. */
+/** @brief Bitmap to indicate which dimensions should be ignored by the vehicle: a value of 0b00000000
+                indicates that none of the setpoint dimensions should be ignored.
+             */
 enum class ATTITUDE_TARGET_TYPEMASK : uint8_t
 {
     BODY_ROLL_RATE_IGNORE=1, /* Ignore body roll rate | */
@@ -1832,11 +2997,20 @@ enum class CELLULAR_STATUS_FLAG : uint8_t
     DISABLED=4, /* Modem is not enabled and is powered down | */
     DISABLING=5, /* Modem is currently transitioning to the CELLULAR_STATUS_FLAG_DISABLED state | */
     ENABLING=6, /* Modem is currently transitioning to the CELLULAR_STATUS_FLAG_ENABLED state | */
-    ENABLED=7, /* Modem is enabled and powered on but not registered with a network provider and not available for data connections | */
+    ENABLED=7, /* Modem is enabled and powered on but not registered with a network provider and not
+                    available for data connections
+                 | */
     SEARCHING=8, /* Modem is searching for a network provider to register | */
-    REGISTERED=9, /* Modem is registered with a network provider, and data connections and messaging may be available for use | */
-    DISCONNECTING=10, /* Modem is disconnecting and deactivating the last active packet data bearer. This state will not be entered if more than one packet data bearer is active and one of the active bearers is deactivated | */
-    CONNECTING=11, /* Modem is activating and connecting the first packet data bearer. Subsequent bearer activations when another bearer is already active do not cause this state to be entered | */
+    REGISTERED=9, /* Modem is registered with a network provider, and data connections and messaging may be
+                    available for use
+                 | */
+    DISCONNECTING=10, /* Modem is disconnecting and deactivating the last active packet data bearer. This state will
+                    not be entered if more than one packet data bearer is active and one of the active bearers is
+                    deactivated
+                 | */
+    CONNECTING=11, /* Modem is activating and connecting the first packet data bearer. Subsequent bearer
+                    activations when another bearer is already active do not cause this state to be entered
+                 | */
     CONNECTED=12, /* One or more packet data bearers is active and connected | */
 };
 
@@ -1872,8 +3046,12 @@ constexpr auto CELLULAR_NETWORK_RADIO_TYPE_ENUM_END = 5;
 enum class PRECISION_LAND_MODE
 {
     DISABLED=0, /* Normal (non-precision) landing. | */
-    OPPORTUNISTIC=1, /* Use precision landing if beacon detected when land command accepted, otherwise land normally. | */
-    REQUIRED=2, /* Use precision landing, searching for beacon if not found when land command accepted (land normally if beacon cannot be found). | */
+    OPPORTUNISTIC=1, /* Use precision landing if beacon detected when land command accepted, otherwise land
+                    normally.
+                 | */
+    REQUIRED=2, /* Use precision landing, searching for beacon if not found when land command accepted (land
+                    normally if beacon cannot be found).
+                 | */
 };
 
 //! PRECISION_LAND_MODE ENUM_END
@@ -1882,7 +3060,8 @@ constexpr auto PRECISION_LAND_MODE_ENUM_END = 3;
 /** @brief Parachute actions. Trigger release and enable/disable auto-release. */
 enum class PARACHUTE_ACTION
 {
-    DISABLE=0, /* Disable auto-release of parachute (i.e. release triggered by crash detectors). | */
+    DISABLE=0, /* Disable auto-release of parachute (i.e. release triggered by crash detectors).
+                 | */
     ENABLE=1, /* Enable auto-release of parachute. | */
     RELEASE=2, /* Release parachute and kill motors. | */
 };
@@ -1914,9 +3093,13 @@ enum class MAV_ODID_ID_TYPE : uint8_t
 {
     NONE=0, /* No type defined. | */
     SERIAL_NUMBER=1, /* Manufacturer Serial Number (ANSI/CTA-2063 format). | */
-    CAA_REGISTRATION_ID=2, /* CAA (Civil Aviation Authority) registered ID. Format: [ICAO Country Code].[CAA Assigned ID]. | */
+    CAA_REGISTRATION_ID=2, /* CAA (Civil Aviation Authority) registered ID. Format: [ICAO Country Code].[CAA Assigned
+                    ID].
+                 | */
     UTM_ASSIGNED_UUID=3, /* UTM (Unmanned Traffic Management) assigned UUID (RFC4122). | */
-    SPECIFIC_SESSION_ID=4, /* A 20 byte ID for a specific flight/session. The exact ID type is indicated by the first byte of uas_id and these type values are managed by ICAO. | */
+    SPECIFIC_SESSION_ID=4, /* A 20 byte ID for a specific flight/session. The exact ID type is indicated by the first
+                    byte of uas_id and these type values are managed by ICAO.
+                 | */
 };
 
 //! MAV_ODID_ID_TYPE ENUM_END
@@ -1929,7 +3112,8 @@ enum class MAV_ODID_UA_TYPE : uint8_t
     AEROPLANE=1, /* Aeroplane/Airplane. Fixed wing. | */
     HELICOPTER_OR_MULTIROTOR=2, /* Helicopter or multirotor. | */
     GYROPLANE=3, /* Gyroplane. | */
-    HYBRID_LIFT=4, /* VTOL (Vertical Take-Off and Landing). Fixed wing aircraft that can take off vertically. | */
+    HYBRID_LIFT=4, /* VTOL (Vertical Take-Off and Landing). Fixed wing aircraft that can take off vertically.
+                 | */
     ORNITHOPTER=5, /* Ornithopter. | */
     GLIDER=6, /* Glider. | */
     KITE=7, /* Kite. | */
@@ -2050,7 +3234,9 @@ enum class MAV_ODID_AUTH_TYPE : uint8_t
     OPERATOR_ID_SIGNATURE=2, /* Signature for the Operator ID. | */
     MESSAGE_SET_SIGNATURE=3, /* Signature for the entire message set. | */
     NETWORK_REMOTE_ID=4, /* Authentication is provided by Network Remote ID. | */
-    SPECIFIC_AUTHENTICATION=5, /* The exact authentication type is indicated by the first byte of authentication_data and these type values are managed by ICAO. | */
+    SPECIFIC_AUTHENTICATION=5, /* The exact authentication type is indicated by the first byte of authentication_data and
+                    these type values are managed by ICAO.
+                 | */
 };
 
 //! MAV_ODID_AUTH_TYPE ENUM_END
@@ -2071,7 +3257,8 @@ constexpr auto MAV_ODID_DESC_TYPE_ENUM_END = 3;
 enum class MAV_ODID_OPERATOR_LOCATION_TYPE : uint8_t
 {
     TAKEOFF=0, /* The location/altitude of the operator is the same as the take-off location. | */
-    LIVE_GNSS=1, /* The location/altitude of the operator is dynamic. E.g. based on live GNSS data. | */
+    LIVE_GNSS=1, /* The location/altitude of the operator is dynamic. E.g. based on live GNSS data.
+                 | */
     FIXED=2, /* The location/altitude of the operator are fixed values. | */
 };
 
@@ -2082,7 +3269,8 @@ constexpr auto MAV_ODID_OPERATOR_LOCATION_TYPE_ENUM_END = 3;
 enum class MAV_ODID_CLASSIFICATION_TYPE : uint8_t
 {
     UNDECLARED=0, /* The classification type for the UA is undeclared. | */
-    EU=1, /* The classification type for the UA follows EU (European Union) specifications. | */
+    EU=1, /* The classification type for the UA follows EU (European Union) specifications.
+                 | */
 };
 
 //! MAV_ODID_CLASSIFICATION_TYPE ENUM_END
@@ -2092,9 +3280,12 @@ constexpr auto MAV_ODID_CLASSIFICATION_TYPE_ENUM_END = 2;
 enum class MAV_ODID_CATEGORY_EU : uint8_t
 {
     UNDECLARED=0, /* The category for the UA, according to the EU specification, is undeclared. | */
-    OPEN=1, /* The category for the UA, according to the EU specification, is the Open category. | */
-    SPECIFIC=2, /* The category for the UA, according to the EU specification, is the Specific category. | */
-    CERTIFIED=3, /* The category for the UA, according to the EU specification, is the Certified category. | */
+    OPEN=1, /* The category for the UA, according to the EU specification, is the Open category.
+                 | */
+    SPECIFIC=2, /* The category for the UA, according to the EU specification, is the Specific category.
+                 | */
+    CERTIFIED=3, /* The category for the UA, according to the EU specification, is the Certified category.
+                 | */
 };
 
 //! MAV_ODID_CATEGORY_EU ENUM_END
@@ -2138,14 +3329,19 @@ constexpr auto MAV_ODID_ARM_STATUS_ENUM_END = 2;
 /** @brief Tune formats (used for vehicle buzzer/tone generation). */
 enum class TUNE_FORMAT : uint32_t
 {
-    QBASIC1_1=1, /* Format is QBasic 1.1 Play: https://www.qbasic.net/en/reference/qb11/Statement/PLAY-006.htm. | */
-    MML_MODERN=2, /* Format is Modern Music Markup Language (MML): https://en.wikipedia.org/wiki/Music_Macro_Language#Modern_MML. | */
+    QBASIC1_1=1, /* Format is QBasic 1.1 Play:
+                    https://www.qbasic.net/en/reference/qb11/Statement/PLAY-006.htm.
+                 | */
+    MML_MODERN=2, /* Format is Modern Music Markup Language (MML):
+                    https://en.wikipedia.org/wiki/Music_Macro_Language#Modern_MML.
+                 | */
 };
 
 //! TUNE_FORMAT ENUM_END
 constexpr auto TUNE_FORMAT_ENUM_END = 3;
 
-/** @brief Type of AIS vessel, enum duplicated from AIS standard, https://gpsd.gitlab.io/gpsd/AIVDM.html */
+/** @brief Type of AIS vessel, enum duplicated from AIS standard, https://gpsd.gitlab.io/gpsd/AIVDM.html
+             */
 enum class AIS_TYPE : uint8_t
 {
     UNKNOWN=0, /* Not available (default). | */
@@ -2253,7 +3449,9 @@ enum class AIS_TYPE : uint8_t
 //! AIS_TYPE ENUM_END
 constexpr auto AIS_TYPE_ENUM_END = 100;
 
-/** @brief Navigational status of AIS vessel, enum duplicated from AIS standard, https://gpsd.gitlab.io/gpsd/AIVDM.html */
+/** @brief Navigational status of AIS vessel, enum duplicated from AIS standard,
+                https://gpsd.gitlab.io/gpsd/AIVDM.html
+             */
 enum class AIS_NAV_STATUS : uint8_t
 {
     UNDER_WAY=0, /* Under way using engine. | */
@@ -2277,7 +3475,9 @@ enum class AIS_NAV_STATUS : uint8_t
 //! AIS_NAV_STATUS ENUM_END
 constexpr auto AIS_NAV_STATUS_ENUM_END = 16;
 
-/** @brief These flags are used in the AIS_VESSEL.fields bitmask to indicate validity of data in the other message fields. When set, the data is valid. */
+/** @brief These flags are used in the AIS_VESSEL.fields bitmask to indicate validity of data in the other
+                message fields. When set, the data is valid.
+             */
 enum class AIS_FLAGS : uint16_t
 {
     POSITION_ACCURACY=1, /* 1 = Position accuracy less than 10m, 0 = position accuracy greater than 10m. | */
@@ -2285,7 +3485,9 @@ enum class AIS_FLAGS : uint16_t
     VALID_VELOCITY=4, /*  | */
     HIGH_VELOCITY=8, /* 1 = Velocity over 52.5765m/s (102.2 knots) | */
     VALID_TURN_RATE=16, /*  | */
-    TURN_RATE_SIGN_ONLY=32, /* Only the sign of the returned turn rate value is valid, either greater than 5deg/30s or less than -5deg/30s | */
+    TURN_RATE_SIGN_ONLY=32, /* Only the sign of the returned turn rate value is valid, either greater than 5deg/30s or
+                    less than -5deg/30s
+                 | */
     VALID_DIMENSIONS=64, /*  | */
     LARGE_BOW_DIMENSION=128, /* Distance to bow is larger than 511m | */
     LARGE_STERN_DIMENSION=256, /* Distance to stern is larger than 511m | */
@@ -2341,10 +3543,14 @@ constexpr auto FAILURE_TYPE_ENUM_END = 8;
 enum class NAV_VTOL_LAND_OPTIONS
 {
     DEFAULT=0, /* Default autopilot landing behaviour. | */
-    FW_DESCENT=1, /* Descend in fixed wing mode, transitioning to multicopter mode for vertical landing when close to the ground.
-          The fixed wing descent pattern is at the discretion of the vehicle (e.g. transition altitude, loiter direction, radius, and speed, etc.).
-         | */
-    HOVER_DESCENT=2, /* Land in multicopter mode on reaching the landing coordinates (the whole landing is by "hover descent"). | */
+    FW_DESCENT=1, /* Descend in fixed wing mode, transitioning to multicopter mode for vertical landing when
+                    close to the ground.
+                    The fixed wing descent pattern is at the discretion of the vehicle (e.g. transition altitude, loiter
+                    direction, radius, and speed, etc.).
+                 | */
+    HOVER_DESCENT=2, /* Land in multicopter mode on reaching the landing coordinates (the whole landing is by
+                    "hover descent").
+                 | */
 };
 
 //! NAV_VTOL_LAND_OPTIONS ENUM_END
@@ -2362,8 +3568,12 @@ enum class MAV_WINCH_STATUS_FLAG : uint32_t
     ARRESTING=64, /* Winch is arresting payload descent. | */
     GROUND_SENSE=128, /* Winch is using torque measurements to sense the ground. | */
     RETRACTING=256, /* Winch is returning to the fully retracted position. | */
-    REDELIVER=512, /* Winch is redelivering the payload. This is a failover state if the line tension goes above a threshold during RETRACTING. | */
-    ABANDON_LINE=1024, /* Winch is abandoning the line and possibly payload. Winch unspools the entire calculated line length. This is a failover state from REDELIVER if the number of attempts exceeds a threshold. | */
+    REDELIVER=512, /* Winch is redelivering the payload. This is a failover state if the line tension goes above
+                    a threshold during RETRACTING.
+                 | */
+    ABANDON_LINE=1024, /* Winch is abandoning the line and possibly payload. Winch unspools the entire calculated
+                    line length. This is a failover state from REDELIVER if the number of attempts exceeds a threshold.
+                 | */
     LOCKING=2048, /* Winch is engaging the locking mechanism. | */
     LOAD_LINE=4096, /* Winch is spooling on line. | */
     LOAD_PAYLOAD=8192, /* Winch is loading a payload. | */
@@ -2406,7 +3616,8 @@ enum class MAV_EVENT_CURRENT_SEQUENCE_FLAGS : uint8_t
 //! MAV_EVENT_CURRENT_SEQUENCE_FLAGS ENUM_END
 constexpr auto MAV_EVENT_CURRENT_SEQUENCE_FLAGS_ENUM_END = 2;
 
-/** @brief Flags in the HIL_SENSOR message indicate which fields have updated since the last message */
+/** @brief Flags in the HIL_SENSOR message indicate which fields have updated since the last message
+             */
 enum class HIL_SENSOR_UPDATED_FLAGS : uint32_t
 {
     NONE=0, /* None of the fields in HIL_SENSOR have been updated | */
@@ -2429,7 +3640,8 @@ enum class HIL_SENSOR_UPDATED_FLAGS : uint32_t
 //! HIL_SENSOR_UPDATED_FLAGS ENUM_END
 constexpr auto HIL_SENSOR_UPDATED_FLAGS_ENUM_END = 2147483649;
 
-/** @brief Flags in the HIGHRES_IMU message indicate which fields have updated since the last message */
+/** @brief Flags in the HIGHRES_IMU message indicate which fields have updated since the last message
+             */
 enum class HIGHRES_IMU_UPDATED_FLAGS : uint16_t
 {
     NONE=0, /* None of the fields in HIGHRES_IMU have been updated | */
@@ -2469,7 +3681,8 @@ enum class MAV_FTP_ERR
     NONE=0, /* None: No error | */
     FAIL=1, /* Fail: Unknown failure | */
     FAILERRNO=2, /* FailErrno: Command failed, Err number sent back in PayloadHeader.data[1].
-		This is a file-system error number understood by the server operating system. | */
+                    This is a file-system error number understood by the server operating system.
+                 | */
     INVALIDDATASIZE=3, /* InvalidDataSize: Payload size is invalid | */
     INVALIDSESSION=4, /* InvalidSession: Session is not currently open | */
     NOSESSIONSAVAILABLE=5, /* NoSessionsAvailable: All available sessions are already in use | */
@@ -2510,15 +3723,18 @@ enum class MAV_FTP_OPCODE
 constexpr auto MAV_FTP_OPCODE_ENUM_END = 130;
 
 /** @brief 
-        States of the mission state machine.
-        Note that these states are independent of whether the mission is in a mode that can execute mission items or not (is suspended).
-        They may not all be relevant on all vehicles.
-       */
+                States of the mission state machine.
+                Note that these states are independent of whether the mission is in a mode that can execute mission
+                items or not (is suspended).
+                They may not all be relevant on all vehicles.
+             */
 enum class MISSION_STATE : uint8_t
 {
     UNKNOWN=0, /* The mission status reporting is not supported. | */
     NO_MISSION=1, /* No mission on the vehicle. | */
-    NOT_STARTED=2, /* Mission has not started. This is the case after a mission has uploaded but not yet started executing. | */
+    NOT_STARTED=2, /* Mission has not started. This is the case after a mission has uploaded but not yet started
+                    executing.
+                 | */
     ACTIVE=3, /* Mission is active, and will execute mission items when in auto mode. | */
     PAUSED=4, /* Mission is paused when in auto mode. | */
     COMPLETE=5, /* Mission has executed all mission items. | */
@@ -2528,12 +3744,14 @@ enum class MISSION_STATE : uint8_t
 constexpr auto MISSION_STATE_ENUM_END = 6;
 
 /** @brief 
-	Possible safety switch states.
-       */
+                Possible safety switch states.
+             */
 enum class SAFETY_SWITCH_STATE
 {
     SAFE=0, /* Safety switch is engaged and vehicle should be safe to approach. | */
-    DANGEROUS=1, /* Safety switch is NOT engaged and motors, propellers and other actuators should be considered active. | */
+    DANGEROUS=1, /* Safety switch is NOT engaged and motors, propellers and other actuators should be
+                    considered active.
+                 | */
 };
 
 //! SAFETY_SWITCH_STATE ENUM_END
@@ -2543,8 +3761,10 @@ constexpr auto SAFETY_SWITCH_STATE_ENUM_END = 2;
 enum class ILLUMINATOR_MODE : uint8_t
 {
     UNKNOWN=0, /* Illuminator mode is not specified/unknown | */
-    INTERNAL_CONTROL=1, /* Illuminator behavior is controlled by MAV_CMD_DO_ILLUMINATOR_CONFIGURE settings | */
-    EXTERNAL_SYNC=2, /* Illuminator behavior is controlled by external factors: e.g. an external hardware signal | */
+    INTERNAL_CONTROL=1, /* Illuminator behavior is controlled by MAV_CMD_DO_ILLUMINATOR_CONFIGURE settings
+                 | */
+    EXTERNAL_SYNC=2, /* Illuminator behavior is controlled by external factors: e.g. an external hardware signal
+                 | */
 };
 
 //! ILLUMINATOR_MODE ENUM_END
@@ -2560,6 +3780,40 @@ enum class ILLUMINATOR_ERROR_FLAGS : uint32_t
 
 //! ILLUMINATOR_ERROR_FLAGS ENUM_END
 constexpr auto ILLUMINATOR_ERROR_FLAGS_ENUM_END = 5;
+
+/** @brief  */
+enum class USV_MSG_SRC
+{
+    USV=0, /* usv | */
+    GCS=1, /* gcs | */
+    SERVER=2, /* server | */
+};
+
+//! USV_MSG_SRC ENUM_END
+constexpr auto USV_MSG_SRC_ENUM_END = 3;
+
+/** @brief  */
+enum class USV_LINK_TYPE
+{
+    NETWORK=0, /* network | */
+    RADIO=1, /* radio | */
+    SATELLITE=2, /* satellite | */
+};
+
+//! USV_LINK_TYPE ENUM_END
+constexpr auto USV_LINK_TYPE_ENUM_END = 3;
+
+/** @brief  */
+enum class USV_CHANNEL_TYPE
+{
+    UDP=0, /* udp | */
+    WS=1, /* websocket | */
+    MQTT=2, /* mqtt | */
+    SERIAL_PORT=3, /* serial port | */
+};
+
+//! USV_CHANNEL_TYPE ENUM_END
+constexpr auto USV_CHANNEL_TYPE_ENUM_END = 4;
 
 
 } // namespace common
@@ -2788,6 +4042,11 @@ constexpr auto ILLUMINATOR_ERROR_FLAGS_ENUM_END = 5;
 #include "./mavlink_msg_open_drone_id_arm_status.hpp"
 #include "./mavlink_msg_open_drone_id_system_update.hpp"
 #include "./mavlink_msg_hygrometer_sensor.hpp"
+#include "./mavlink_msg_usv_connect_request.hpp"
+#include "./mavlink_msg_usv_connect_response.hpp"
+#include "./mavlink_msg_usv_disconnect_request.hpp"
+#include "./mavlink_msg_usv_disconnect_response.hpp"
+#include "./mavlink_msg_usv_system_information.hpp"
 
 // base include
 #include "../standard/standard.hpp"

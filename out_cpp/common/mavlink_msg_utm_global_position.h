@@ -5,7 +5,9 @@
 
 
 typedef struct __mavlink_utm_global_position_t {
- uint64_t time; /*< [us] Time of applicability of position (microseconds since UNIX epoch).*/
+ uint64_t time; /*< [us] Time of applicability of position (microseconds since UNIX
+                epoch).
+            */
  int32_t lat; /*< [degE7] Latitude (WGS84)*/
  int32_t lon; /*< [degE7] Longitude (WGS84)*/
  int32_t alt; /*< [mm] Altitude (WGS84)*/
@@ -19,10 +21,14 @@ typedef struct __mavlink_utm_global_position_t {
  uint16_t h_acc; /*< [mm] Horizontal position uncertainty (standard deviation)*/
  uint16_t v_acc; /*< [mm] Altitude uncertainty (standard deviation)*/
  uint16_t vel_acc; /*< [cm/s] Speed uncertainty (standard deviation)*/
- uint16_t update_rate; /*< [cs] Time until next update. Set to 0 if unknown or in data driven mode.*/
+ uint16_t update_rate; /*< [cs] Time until next update. Set to 0 if unknown
+                or in data driven mode.
+            */
  uint8_t uas_id[18]; /*<  Unique UAS ID.*/
  uint8_t flight_state; /*<  Flight state*/
- uint8_t flags; /*<  Bitwise OR combination of the data available flags.*/
+ uint8_t flags; /*<  Bitwise OR combination of
+                the data available flags.
+            */
 } mavlink_utm_global_position_t;
 
 #define MAVLINK_MSG_ID_UTM_GLOBAL_POSITION_LEN 70
@@ -92,7 +98,9 @@ typedef struct __mavlink_utm_global_position_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time [us] Time of applicability of position (microseconds since UNIX epoch).
+ * @param time [us] Time of applicability of position (microseconds since UNIX
+                epoch).
+            
  * @param uas_id  Unique UAS ID.
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
@@ -107,9 +115,13 @@ typedef struct __mavlink_utm_global_position_t {
  * @param next_lat [degE7] Next waypoint, latitude (WGS84)
  * @param next_lon [degE7] Next waypoint, longitude (WGS84)
  * @param next_alt [mm] Next waypoint, altitude (WGS84)
- * @param update_rate [cs] Time until next update. Set to 0 if unknown or in data driven mode.
+ * @param update_rate [cs] Time until next update. Set to 0 if unknown
+                or in data driven mode.
+            
  * @param flight_state  Flight state
- * @param flags  Bitwise OR combination of the data available flags.
+ * @param flags  Bitwise OR combination of
+                the data available flags.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_utm_global_position_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -170,7 +182,9 @@ static inline uint16_t mavlink_msg_utm_global_position_pack(uint8_t system_id, u
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time [us] Time of applicability of position (microseconds since UNIX epoch).
+ * @param time [us] Time of applicability of position (microseconds since UNIX
+                epoch).
+            
  * @param uas_id  Unique UAS ID.
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
@@ -185,9 +199,13 @@ static inline uint16_t mavlink_msg_utm_global_position_pack(uint8_t system_id, u
  * @param next_lat [degE7] Next waypoint, latitude (WGS84)
  * @param next_lon [degE7] Next waypoint, longitude (WGS84)
  * @param next_alt [mm] Next waypoint, altitude (WGS84)
- * @param update_rate [cs] Time until next update. Set to 0 if unknown or in data driven mode.
+ * @param update_rate [cs] Time until next update. Set to 0 if unknown
+                or in data driven mode.
+            
  * @param flight_state  Flight state
- * @param flags  Bitwise OR combination of the data available flags.
+ * @param flags  Bitwise OR combination of
+                the data available flags.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_utm_global_position_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -251,7 +269,9 @@ static inline uint16_t mavlink_msg_utm_global_position_pack_status(uint8_t syste
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time [us] Time of applicability of position (microseconds since UNIX epoch).
+ * @param time [us] Time of applicability of position (microseconds since UNIX
+                epoch).
+            
  * @param uas_id  Unique UAS ID.
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
@@ -266,9 +286,13 @@ static inline uint16_t mavlink_msg_utm_global_position_pack_status(uint8_t syste
  * @param next_lat [degE7] Next waypoint, latitude (WGS84)
  * @param next_lon [degE7] Next waypoint, longitude (WGS84)
  * @param next_alt [mm] Next waypoint, altitude (WGS84)
- * @param update_rate [cs] Time until next update. Set to 0 if unknown or in data driven mode.
+ * @param update_rate [cs] Time until next update. Set to 0 if unknown
+                or in data driven mode.
+            
  * @param flight_state  Flight state
- * @param flags  Bitwise OR combination of the data available flags.
+ * @param flags  Bitwise OR combination of
+                the data available flags.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_utm_global_position_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -368,7 +392,9 @@ static inline uint16_t mavlink_msg_utm_global_position_encode_status(uint8_t sys
  * @brief Send a utm_global_position message
  * @param chan MAVLink channel to send the message
  *
- * @param time [us] Time of applicability of position (microseconds since UNIX epoch).
+ * @param time [us] Time of applicability of position (microseconds since UNIX
+                epoch).
+            
  * @param uas_id  Unique UAS ID.
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
@@ -383,9 +409,13 @@ static inline uint16_t mavlink_msg_utm_global_position_encode_status(uint8_t sys
  * @param next_lat [degE7] Next waypoint, latitude (WGS84)
  * @param next_lon [degE7] Next waypoint, longitude (WGS84)
  * @param next_alt [mm] Next waypoint, altitude (WGS84)
- * @param update_rate [cs] Time until next update. Set to 0 if unknown or in data driven mode.
+ * @param update_rate [cs] Time until next update. Set to 0 if unknown
+                or in data driven mode.
+            
  * @param flight_state  Flight state
- * @param flags  Bitwise OR combination of the data available flags.
+ * @param flags  Bitwise OR combination of
+                the data available flags.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -514,7 +544,9 @@ static inline void mavlink_msg_utm_global_position_send_buf(mavlink_message_t *m
 /**
  * @brief Get field time from utm_global_position message
  *
- * @return [us] Time of applicability of position (microseconds since UNIX epoch).
+ * @return [us] Time of applicability of position (microseconds since UNIX
+                epoch).
+            
  */
 static inline uint64_t mavlink_msg_utm_global_position_get_time(const mavlink_message_t* msg)
 {
@@ -664,7 +696,9 @@ static inline int32_t mavlink_msg_utm_global_position_get_next_alt(const mavlink
 /**
  * @brief Get field update_rate from utm_global_position message
  *
- * @return [cs] Time until next update. Set to 0 if unknown or in data driven mode.
+ * @return [cs] Time until next update. Set to 0 if unknown
+                or in data driven mode.
+            
  */
 static inline uint16_t mavlink_msg_utm_global_position_get_update_rate(const mavlink_message_t* msg)
 {
@@ -684,7 +718,9 @@ static inline uint8_t mavlink_msg_utm_global_position_get_flight_state(const mav
 /**
  * @brief Get field flags from utm_global_position message
  *
- * @return  Bitwise OR combination of the data available flags.
+ * @return  Bitwise OR combination of
+                the data available flags.
+            
  */
 static inline uint8_t mavlink_msg_utm_global_position_get_flags(const mavlink_message_t* msg)
 {

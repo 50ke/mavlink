@@ -5,11 +5,17 @@
 
 
 typedef struct __mavlink_flight_information_t {
- uint64_t arming_time_utc; /*< [us] Timestamp at arming (since system boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.*/
- uint64_t takeoff_time_utc; /*< [us] Timestamp at takeoff (since system boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.*/
+ uint64_t arming_time_utc; /*< [us] Timestamp at arming (since system
+                boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
+            */
+ uint64_t takeoff_time_utc; /*< [us] Timestamp at takeoff (since system
+                boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+            */
  uint64_t flight_uuid; /*<  Flight number. Note, field is misnamed UUID.*/
  uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot).*/
- uint32_t landing_time; /*< [ms] Timestamp at landing (in ms since system boot). Set to 0 at boot and on arming.*/
+ uint32_t landing_time; /*< [ms] Timestamp at landing (in ms since system
+                boot). Set to 0 at boot and on arming.
+            */
 } mavlink_flight_information_t;
 
 #define MAVLINK_MSG_ID_FLIGHT_INFORMATION_LEN 32
@@ -54,10 +60,16 @@ typedef struct __mavlink_flight_information_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param arming_time_utc [us] Timestamp at arming (since system boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
- * @param takeoff_time_utc [us] Timestamp at takeoff (since system boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+ * @param arming_time_utc [us] Timestamp at arming (since system
+                boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
+            
+ * @param takeoff_time_utc [us] Timestamp at takeoff (since system
+                boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+            
  * @param flight_uuid  Flight number. Note, field is misnamed UUID.
- * @param landing_time [ms] Timestamp at landing (in ms since system boot). Set to 0 at boot and on arming.
+ * @param landing_time [ms] Timestamp at landing (in ms since system
+                boot). Set to 0 at boot and on arming.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_flight_information_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -95,10 +107,16 @@ static inline uint16_t mavlink_msg_flight_information_pack(uint8_t system_id, ui
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param arming_time_utc [us] Timestamp at arming (since system boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
- * @param takeoff_time_utc [us] Timestamp at takeoff (since system boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+ * @param arming_time_utc [us] Timestamp at arming (since system
+                boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
+            
+ * @param takeoff_time_utc [us] Timestamp at takeoff (since system
+                boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+            
  * @param flight_uuid  Flight number. Note, field is misnamed UUID.
- * @param landing_time [ms] Timestamp at landing (in ms since system boot). Set to 0 at boot and on arming.
+ * @param landing_time [ms] Timestamp at landing (in ms since system
+                boot). Set to 0 at boot and on arming.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_flight_information_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -139,10 +157,16 @@ static inline uint16_t mavlink_msg_flight_information_pack_status(uint8_t system
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param arming_time_utc [us] Timestamp at arming (since system boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
- * @param takeoff_time_utc [us] Timestamp at takeoff (since system boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+ * @param arming_time_utc [us] Timestamp at arming (since system
+                boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
+            
+ * @param takeoff_time_utc [us] Timestamp at takeoff (since system
+                boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+            
  * @param flight_uuid  Flight number. Note, field is misnamed UUID.
- * @param landing_time [ms] Timestamp at landing (in ms since system boot). Set to 0 at boot and on arming.
+ * @param landing_time [ms] Timestamp at landing (in ms since system
+                boot). Set to 0 at boot and on arming.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_flight_information_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -219,10 +243,16 @@ static inline uint16_t mavlink_msg_flight_information_encode_status(uint8_t syst
  * @param chan MAVLink channel to send the message
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param arming_time_utc [us] Timestamp at arming (since system boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
- * @param takeoff_time_utc [us] Timestamp at takeoff (since system boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+ * @param arming_time_utc [us] Timestamp at arming (since system
+                boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
+            
+ * @param takeoff_time_utc [us] Timestamp at takeoff (since system
+                boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+            
  * @param flight_uuid  Flight number. Note, field is misnamed UUID.
- * @param landing_time [ms] Timestamp at landing (in ms since system boot). Set to 0 at boot and on arming.
+ * @param landing_time [ms] Timestamp at landing (in ms since system
+                boot). Set to 0 at boot and on arming.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -313,7 +343,9 @@ static inline uint32_t mavlink_msg_flight_information_get_time_boot_ms(const mav
 /**
  * @brief Get field arming_time_utc from flight_information message
  *
- * @return [us] Timestamp at arming (since system boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
+ * @return [us] Timestamp at arming (since system
+                boot). Set to 0 on boot. Set value on arming. Note, field is misnamed UTC.
+            
  */
 static inline uint64_t mavlink_msg_flight_information_get_arming_time_utc(const mavlink_message_t* msg)
 {
@@ -323,7 +355,9 @@ static inline uint64_t mavlink_msg_flight_information_get_arming_time_utc(const 
 /**
  * @brief Get field takeoff_time_utc from flight_information message
  *
- * @return [us] Timestamp at takeoff (since system boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+ * @return [us] Timestamp at takeoff (since system
+                boot). Set to 0 at boot and on arming. Note, field is misnamed UTC.
+            
  */
 static inline uint64_t mavlink_msg_flight_information_get_takeoff_time_utc(const mavlink_message_t* msg)
 {
@@ -343,7 +377,9 @@ static inline uint64_t mavlink_msg_flight_information_get_flight_uuid(const mavl
 /**
  * @brief Get field landing_time from flight_information message
  *
- * @return [ms] Timestamp at landing (in ms since system boot). Set to 0 at boot and on arming.
+ * @return [ms] Timestamp at landing (in ms since system
+                boot). Set to 0 at boot and on arming.
+            
  */
 static inline uint32_t mavlink_msg_flight_information_get_landing_time(const mavlink_message_t* msg)
 {

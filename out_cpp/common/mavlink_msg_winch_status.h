@@ -5,14 +5,23 @@
 
 
 typedef struct __mavlink_winch_status_t {
- uint64_t time_usec; /*< [us] Timestamp (synced to UNIX time or since system boot).*/
- float line_length; /*< [m] Length of line released. NaN if unknown*/
- float speed; /*< [m/s] Speed line is being released or retracted. Positive values if being released, negative values if being retracted, NaN if unknown*/
+ uint64_t time_usec; /*< [us] Timestamp (synced to UNIX time or since system boot).
+            */
+ float line_length; /*< [m] Length of line released. NaN if unknown
+            */
+ float speed; /*< [m/s] Speed line is being released or retracted.
+                Positive values if being released, negative values if being retracted, NaN if unknown
+            */
  float tension; /*< [kg] Tension on the line. NaN if unknown*/
- float voltage; /*< [V] Voltage of the battery supplying the winch. NaN if unknown*/
- float current; /*< [A] Current draw from the winch. NaN if unknown*/
+ float voltage; /*< [V] Voltage of the battery supplying the winch. NaN
+                if unknown
+            */
+ float current; /*< [A] Current draw from the winch. NaN if unknown
+            */
  uint32_t status; /*<  Status flags*/
- int16_t temperature; /*< [degC] Temperature of the motor. INT16_MAX if unknown*/
+ int16_t temperature; /*< [degC] Temperature of the motor.
+                INT16_MAX if unknown
+            */
 } mavlink_winch_status_t;
 
 #define MAVLINK_MSG_ID_WINCH_STATUS_LEN 34
@@ -63,12 +72,21 @@ typedef struct __mavlink_winch_status_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_usec [us] Timestamp (synced to UNIX time or since system boot).
+            
  * @param line_length [m] Length of line released. NaN if unknown
- * @param speed [m/s] Speed line is being released or retracted. Positive values if being released, negative values if being retracted, NaN if unknown
+            
+ * @param speed [m/s] Speed line is being released or retracted.
+                Positive values if being released, negative values if being retracted, NaN if unknown
+            
  * @param tension [kg] Tension on the line. NaN if unknown
- * @param voltage [V] Voltage of the battery supplying the winch. NaN if unknown
+ * @param voltage [V] Voltage of the battery supplying the winch. NaN
+                if unknown
+            
  * @param current [A] Current draw from the winch. NaN if unknown
- * @param temperature [degC] Temperature of the motor. INT16_MAX if unknown
+            
+ * @param temperature [degC] Temperature of the motor.
+                INT16_MAX if unknown
+            
  * @param status  Status flags
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -113,12 +131,21 @@ static inline uint16_t mavlink_msg_winch_status_pack(uint8_t system_id, uint8_t 
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_usec [us] Timestamp (synced to UNIX time or since system boot).
+            
  * @param line_length [m] Length of line released. NaN if unknown
- * @param speed [m/s] Speed line is being released or retracted. Positive values if being released, negative values if being retracted, NaN if unknown
+            
+ * @param speed [m/s] Speed line is being released or retracted.
+                Positive values if being released, negative values if being retracted, NaN if unknown
+            
  * @param tension [kg] Tension on the line. NaN if unknown
- * @param voltage [V] Voltage of the battery supplying the winch. NaN if unknown
+ * @param voltage [V] Voltage of the battery supplying the winch. NaN
+                if unknown
+            
  * @param current [A] Current draw from the winch. NaN if unknown
- * @param temperature [degC] Temperature of the motor. INT16_MAX if unknown
+            
+ * @param temperature [degC] Temperature of the motor.
+                INT16_MAX if unknown
+            
  * @param status  Status flags
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -166,12 +193,21 @@ static inline uint16_t mavlink_msg_winch_status_pack_status(uint8_t system_id, u
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param time_usec [us] Timestamp (synced to UNIX time or since system boot).
+            
  * @param line_length [m] Length of line released. NaN if unknown
- * @param speed [m/s] Speed line is being released or retracted. Positive values if being released, negative values if being retracted, NaN if unknown
+            
+ * @param speed [m/s] Speed line is being released or retracted.
+                Positive values if being released, negative values if being retracted, NaN if unknown
+            
  * @param tension [kg] Tension on the line. NaN if unknown
- * @param voltage [V] Voltage of the battery supplying the winch. NaN if unknown
+ * @param voltage [V] Voltage of the battery supplying the winch. NaN
+                if unknown
+            
  * @param current [A] Current draw from the winch. NaN if unknown
- * @param temperature [degC] Temperature of the motor. INT16_MAX if unknown
+            
+ * @param temperature [degC] Temperature of the motor.
+                INT16_MAX if unknown
+            
  * @param status  Status flags
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -255,12 +291,21 @@ static inline uint16_t mavlink_msg_winch_status_encode_status(uint8_t system_id,
  * @param chan MAVLink channel to send the message
  *
  * @param time_usec [us] Timestamp (synced to UNIX time or since system boot).
+            
  * @param line_length [m] Length of line released. NaN if unknown
- * @param speed [m/s] Speed line is being released or retracted. Positive values if being released, negative values if being retracted, NaN if unknown
+            
+ * @param speed [m/s] Speed line is being released or retracted.
+                Positive values if being released, negative values if being retracted, NaN if unknown
+            
  * @param tension [kg] Tension on the line. NaN if unknown
- * @param voltage [V] Voltage of the battery supplying the winch. NaN if unknown
+ * @param voltage [V] Voltage of the battery supplying the winch. NaN
+                if unknown
+            
  * @param current [A] Current draw from the winch. NaN if unknown
- * @param temperature [degC] Temperature of the motor. INT16_MAX if unknown
+            
+ * @param temperature [degC] Temperature of the motor.
+                INT16_MAX if unknown
+            
  * @param status  Status flags
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -355,6 +400,7 @@ static inline void mavlink_msg_winch_status_send_buf(mavlink_message_t *msgbuf, 
  * @brief Get field time_usec from winch_status message
  *
  * @return [us] Timestamp (synced to UNIX time or since system boot).
+            
  */
 static inline uint64_t mavlink_msg_winch_status_get_time_usec(const mavlink_message_t* msg)
 {
@@ -365,6 +411,7 @@ static inline uint64_t mavlink_msg_winch_status_get_time_usec(const mavlink_mess
  * @brief Get field line_length from winch_status message
  *
  * @return [m] Length of line released. NaN if unknown
+            
  */
 static inline float mavlink_msg_winch_status_get_line_length(const mavlink_message_t* msg)
 {
@@ -374,7 +421,9 @@ static inline float mavlink_msg_winch_status_get_line_length(const mavlink_messa
 /**
  * @brief Get field speed from winch_status message
  *
- * @return [m/s] Speed line is being released or retracted. Positive values if being released, negative values if being retracted, NaN if unknown
+ * @return [m/s] Speed line is being released or retracted.
+                Positive values if being released, negative values if being retracted, NaN if unknown
+            
  */
 static inline float mavlink_msg_winch_status_get_speed(const mavlink_message_t* msg)
 {
@@ -394,7 +443,9 @@ static inline float mavlink_msg_winch_status_get_tension(const mavlink_message_t
 /**
  * @brief Get field voltage from winch_status message
  *
- * @return [V] Voltage of the battery supplying the winch. NaN if unknown
+ * @return [V] Voltage of the battery supplying the winch. NaN
+                if unknown
+            
  */
 static inline float mavlink_msg_winch_status_get_voltage(const mavlink_message_t* msg)
 {
@@ -405,6 +456,7 @@ static inline float mavlink_msg_winch_status_get_voltage(const mavlink_message_t
  * @brief Get field current from winch_status message
  *
  * @return [A] Current draw from the winch. NaN if unknown
+            
  */
 static inline float mavlink_msg_winch_status_get_current(const mavlink_message_t* msg)
 {
@@ -414,7 +466,9 @@ static inline float mavlink_msg_winch_status_get_current(const mavlink_message_t
 /**
  * @brief Get field temperature from winch_status message
  *
- * @return [degC] Temperature of the motor. INT16_MAX if unknown
+ * @return [degC] Temperature of the motor.
+                INT16_MAX if unknown
+            
  */
 static inline int16_t mavlink_msg_winch_status_get_temperature(const mavlink_message_t* msg)
 {

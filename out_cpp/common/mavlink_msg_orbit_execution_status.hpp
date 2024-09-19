@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief ORBIT_EXECUTION_STATUS message
  *
- * Vehicle status report that is sent out while orbit execution is in progress (see MAV_CMD_DO_ORBIT).
+ * Vehicle status report that is sent out while orbit execution is in progress (see
+                MAV_CMD_DO_ORBIT).
+            
  */
 struct ORBIT_EXECUTION_STATUS : mavlink::Message {
     static constexpr msgid_t MSG_ID = 360;
@@ -19,12 +21,22 @@ struct ORBIT_EXECUTION_STATUS : mavlink::Message {
     static constexpr auto NAME = "ORBIT_EXECUTION_STATUS";
 
 
-    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number. */
-    float radius; /*< [m] Radius of the orbit circle. Positive values orbit clockwise, negative values orbit counter-clockwise. */
+    uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+             */
+    float radius; /*< [m] Radius of the orbit circle. Positive values orbit clockwise,
+                negative values orbit counter-clockwise.
+             */
     uint8_t frame; /*<  The coordinate system of the fields: x, y, z. */
-    int32_t x; /*<  X coordinate of center point. Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7. */
-    int32_t y; /*<  Y coordinate of center point.  Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7. */
-    float z; /*< [m] Altitude of center point. Coordinate system depends on frame field. */
+    int32_t x; /*<  X coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+             */
+    int32_t y; /*<  Y coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+             */
+    float z; /*< [m] Altitude of center point. Coordinate system depends on frame field.
+             */
 
 
     inline std::string get_name(void) const override

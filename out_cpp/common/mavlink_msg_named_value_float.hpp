@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief NAMED_VALUE_FLOAT message
  *
- * Send a key-value pair as float. The use of this message is discouraged for normal packets, but a quite efficient way for testing new messages and getting experimental debug output.
+ * Send a key-value pair as float. The use of this message is discouraged for normal packets, but
+                a quite efficient way for testing new messages and getting experimental debug output.
+            
  */
 struct NAMED_VALUE_FLOAT : mavlink::Message {
     static constexpr msgid_t MSG_ID = 251;

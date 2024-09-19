@@ -23,7 +23,10 @@ struct LOGGING_DATA : mavlink::Message {
     uint8_t target_component; /*<  component ID of the target */
     uint16_t sequence; /*<  sequence number (can wrap) */
     uint8_t length; /*< [bytes] data length */
-    uint8_t first_message_offset; /*< [bytes] offset into data where first message starts. This can be used for recovery, when a previous message got lost (set to UINT8_MAX if no start exists). */
+    uint8_t first_message_offset; /*< [bytes] offset into data where
+                first message starts. This can be used for recovery, when a previous message got lost (set to UINT8_MAX
+                if no start exists).
+             */
     std::array<uint8_t, 249> data; /*<  logged data */
 
 

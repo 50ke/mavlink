@@ -26,7 +26,11 @@ struct VICON_POSITION_ESTIMATE : mavlink::Message {
     float roll; /*< [rad] Roll angle */
     float pitch; /*< [rad] Pitch angle */
     float yaw; /*< [rad] Yaw angle */
-    std::array<float, 21> covariance; /*<  Row-major representation of 6x6 pose cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first element in the array. */
+    std::array<float, 21> covariance; /*<  Row-major representation of 6x6 pose
+                cross-covariance matrix upper right triangle (states: x, y, z, roll, pitch, yaw; first six entries are
+                the first ROW, next five entries are the second ROW, etc.). If unknown, assign NaN value to first
+                element in the array.
+             */
 
 
     inline std::string get_name(void) const override

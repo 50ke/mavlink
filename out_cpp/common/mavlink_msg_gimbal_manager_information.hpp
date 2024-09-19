@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief GIMBAL_MANAGER_INFORMATION message
  *
- * Information about a high level gimbal manager. This message should be requested by a ground station using MAV_CMD_REQUEST_MESSAGE.
+ * Information about a high level gimbal manager. This message should be requested by a ground
+                station using MAV_CMD_REQUEST_MESSAGE.
+            
  */
 struct GIMBAL_MANAGER_INFORMATION : mavlink::Message {
     static constexpr msgid_t MSG_ID = 280;
@@ -20,14 +22,26 @@ struct GIMBAL_MANAGER_INFORMATION : mavlink::Message {
 
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
-    uint32_t cap_flags; /*<  Bitmap of gimbal capability flags. */
-    uint8_t gimbal_device_id; /*<  Gimbal device ID that this gimbal manager is responsible for. Component ID of gimbal device (or 1-6 for non-MAVLink gimbal). */
-    float roll_min; /*< [rad] Minimum hardware roll angle (positive: rolling to the right, negative: rolling to the left) */
-    float roll_max; /*< [rad] Maximum hardware roll angle (positive: rolling to the right, negative: rolling to the left) */
+    uint32_t cap_flags; /*<  Bitmap of gimbal
+                capability flags.
+             */
+    uint8_t gimbal_device_id; /*<  Gimbal device ID that this gimbal manager is
+                responsible for. Component ID of gimbal device (or 1-6 for non-MAVLink gimbal).
+             */
+    float roll_min; /*< [rad] Minimum hardware roll angle (positive: rolling to the right,
+                negative: rolling to the left)
+             */
+    float roll_max; /*< [rad] Maximum hardware roll angle (positive: rolling to the right,
+                negative: rolling to the left)
+             */
     float pitch_min; /*< [rad] Minimum pitch angle (positive: up, negative: down) */
     float pitch_max; /*< [rad] Maximum pitch angle (positive: up, negative: down) */
-    float yaw_min; /*< [rad] Minimum yaw angle (positive: to the right, negative: to the left) */
-    float yaw_max; /*< [rad] Maximum yaw angle (positive: to the right, negative: to the left) */
+    float yaw_min; /*< [rad] Minimum yaw angle (positive: to the right, negative: to the
+                left)
+             */
+    float yaw_max; /*< [rad] Maximum yaw angle (positive: to the right, negative: to the
+                left)
+             */
 
 
     inline std::string get_name(void) const override

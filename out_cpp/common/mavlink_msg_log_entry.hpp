@@ -22,7 +22,9 @@ struct LOG_ENTRY : mavlink::Message {
     uint16_t id; /*<  Log id */
     uint16_t num_logs; /*<  Total number of logs */
     uint16_t last_log_num; /*<  High log number */
-    uint32_t time_utc; /*< [s] UTC timestamp of log since 1970, or 0 if not available */
+    uint32_t time_utc; /*< [s] UTC timestamp of log since 1970, or 0 if not
+                available
+             */
     uint32_t size; /*< [bytes] Size of the log (may be approximate) */
 
 

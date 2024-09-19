@@ -5,11 +5,21 @@
 
 
 typedef struct __mavlink_orbit_execution_status_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
- float radius; /*< [m] Radius of the orbit circle. Positive values orbit clockwise, negative values orbit counter-clockwise.*/
- int32_t x; /*<  X coordinate of center point. Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.*/
- int32_t y; /*<  Y coordinate of center point.  Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.*/
- float z; /*< [m] Altitude of center point. Coordinate system depends on frame field.*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
+ float radius; /*< [m] Radius of the orbit circle. Positive values orbit clockwise,
+                negative values orbit counter-clockwise.
+            */
+ int32_t x; /*<  X coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            */
+ int32_t y; /*<  Y coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            */
+ float z; /*< [m] Altitude of center point. Coordinate system depends on frame field.
+            */
  uint8_t frame; /*<  The coordinate system of the fields: x, y, z.*/
 } mavlink_orbit_execution_status_t;
 
@@ -56,12 +66,22 @@ typedef struct __mavlink_orbit_execution_status_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param radius [m] Radius of the orbit circle. Positive values orbit clockwise, negative values orbit counter-clockwise.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param radius [m] Radius of the orbit circle. Positive values orbit clockwise,
+                negative values orbit counter-clockwise.
+            
  * @param frame  The coordinate system of the fields: x, y, z.
- * @param x  X coordinate of center point. Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.
- * @param y  Y coordinate of center point.  Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.
+ * @param x  X coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            
+ * @param y  Y coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            
  * @param z [m] Altitude of center point. Coordinate system depends on frame field.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_orbit_execution_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -100,12 +120,22 @@ static inline uint16_t mavlink_msg_orbit_execution_status_pack(uint8_t system_id
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param radius [m] Radius of the orbit circle. Positive values orbit clockwise, negative values orbit counter-clockwise.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param radius [m] Radius of the orbit circle. Positive values orbit clockwise,
+                negative values orbit counter-clockwise.
+            
  * @param frame  The coordinate system of the fields: x, y, z.
- * @param x  X coordinate of center point. Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.
- * @param y  Y coordinate of center point.  Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.
+ * @param x  X coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            
+ * @param y  Y coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            
  * @param z [m] Altitude of center point. Coordinate system depends on frame field.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_orbit_execution_status_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -147,12 +177,22 @@ static inline uint16_t mavlink_msg_orbit_execution_status_pack_status(uint8_t sy
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param radius [m] Radius of the orbit circle. Positive values orbit clockwise, negative values orbit counter-clockwise.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param radius [m] Radius of the orbit circle. Positive values orbit clockwise,
+                negative values orbit counter-clockwise.
+            
  * @param frame  The coordinate system of the fields: x, y, z.
- * @param x  X coordinate of center point. Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.
- * @param y  Y coordinate of center point.  Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.
+ * @param x  X coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            
+ * @param y  Y coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            
  * @param z [m] Altitude of center point. Coordinate system depends on frame field.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_orbit_execution_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -230,12 +270,22 @@ static inline uint16_t mavlink_msg_orbit_execution_status_encode_status(uint8_t 
  * @brief Send a orbit_execution_status message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param radius [m] Radius of the orbit circle. Positive values orbit clockwise, negative values orbit counter-clockwise.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param radius [m] Radius of the orbit circle. Positive values orbit clockwise,
+                negative values orbit counter-clockwise.
+            
  * @param frame  The coordinate system of the fields: x, y, z.
- * @param x  X coordinate of center point. Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.
- * @param y  Y coordinate of center point.  Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.
+ * @param x  X coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            
+ * @param y  Y coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            
  * @param z [m] Altitude of center point. Coordinate system depends on frame field.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -320,7 +370,10 @@ static inline void mavlink_msg_orbit_execution_status_send_buf(mavlink_message_t
 /**
  * @brief Get field time_usec from orbit_execution_status message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_orbit_execution_status_get_time_usec(const mavlink_message_t* msg)
 {
@@ -330,7 +383,9 @@ static inline uint64_t mavlink_msg_orbit_execution_status_get_time_usec(const ma
 /**
  * @brief Get field radius from orbit_execution_status message
  *
- * @return [m] Radius of the orbit circle. Positive values orbit clockwise, negative values orbit counter-clockwise.
+ * @return [m] Radius of the orbit circle. Positive values orbit clockwise,
+                negative values orbit counter-clockwise.
+            
  */
 static inline float mavlink_msg_orbit_execution_status_get_radius(const mavlink_message_t* msg)
 {
@@ -350,7 +405,9 @@ static inline uint8_t mavlink_msg_orbit_execution_status_get_frame(const mavlink
 /**
  * @brief Get field x from orbit_execution_status message
  *
- * @return  X coordinate of center point. Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.
+ * @return  X coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            
  */
 static inline int32_t mavlink_msg_orbit_execution_status_get_x(const mavlink_message_t* msg)
 {
@@ -360,7 +417,9 @@ static inline int32_t mavlink_msg_orbit_execution_status_get_x(const mavlink_mes
 /**
  * @brief Get field y from orbit_execution_status message
  *
- * @return  Y coordinate of center point.  Coordinate system depends on frame field: local = x position in meters * 1e4, global = latitude in degrees * 1e7.
+ * @return  Y coordinate of center point. Coordinate system depends on frame field: local
+                = x position in meters * 1e4, global = latitude in degrees * 1e7.
+            
  */
 static inline int32_t mavlink_msg_orbit_execution_status_get_y(const mavlink_message_t* msg)
 {
@@ -371,6 +430,7 @@ static inline int32_t mavlink_msg_orbit_execution_status_get_y(const mavlink_mes
  * @brief Get field z from orbit_execution_status message
  *
  * @return [m] Altitude of center point. Coordinate system depends on frame field.
+            
  */
 static inline float mavlink_msg_orbit_execution_status_get_z(const mavlink_message_t* msg)
 {

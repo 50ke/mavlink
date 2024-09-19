@@ -24,8 +24,13 @@ typedef struct __mavlink_rc_channels_t {
  uint16_t chan16_raw; /*< [us] RC channel 16 value.*/
  uint16_t chan17_raw; /*< [us] RC channel 17 value.*/
  uint16_t chan18_raw; /*< [us] RC channel 18 value.*/
- uint8_t chancount; /*<  Total number of RC channels being received. This can be larger than 18, indicating that more channels are available but not given in this message. This value should be 0 when no RC channels are available.*/
- uint8_t rssi; /*<  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.*/
+ uint8_t chancount; /*<  Total number of RC channels being received. This can be larger than
+                18, indicating that more channels are available but not given in this message. This value should be 0
+                when no RC channels are available.
+            */
+ uint8_t rssi; /*<  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            */
 } mavlink_rc_channels_t;
 
 #define MAVLINK_MSG_ID_RC_CHANNELS_LEN 42
@@ -102,7 +107,10 @@ typedef struct __mavlink_rc_channels_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param chancount  Total number of RC channels being received. This can be larger than 18, indicating that more channels are available but not given in this message. This value should be 0 when no RC channels are available.
+ * @param chancount  Total number of RC channels being received. This can be larger than
+                18, indicating that more channels are available but not given in this message. This value should be 0
+                when no RC channels are available.
+            
  * @param chan1_raw [us] RC channel 1 value.
  * @param chan2_raw [us] RC channel 2 value.
  * @param chan3_raw [us] RC channel 3 value.
@@ -121,7 +129,9 @@ typedef struct __mavlink_rc_channels_t {
  * @param chan16_raw [us] RC channel 16 value.
  * @param chan17_raw [us] RC channel 17 value.
  * @param chan18_raw [us] RC channel 18 value.
- * @param rssi  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+ * @param rssi  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_rc_channels_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -191,7 +201,10 @@ static inline uint16_t mavlink_msg_rc_channels_pack(uint8_t system_id, uint8_t c
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param chancount  Total number of RC channels being received. This can be larger than 18, indicating that more channels are available but not given in this message. This value should be 0 when no RC channels are available.
+ * @param chancount  Total number of RC channels being received. This can be larger than
+                18, indicating that more channels are available but not given in this message. This value should be 0
+                when no RC channels are available.
+            
  * @param chan1_raw [us] RC channel 1 value.
  * @param chan2_raw [us] RC channel 2 value.
  * @param chan3_raw [us] RC channel 3 value.
@@ -210,7 +223,9 @@ static inline uint16_t mavlink_msg_rc_channels_pack(uint8_t system_id, uint8_t c
  * @param chan16_raw [us] RC channel 16 value.
  * @param chan17_raw [us] RC channel 17 value.
  * @param chan18_raw [us] RC channel 18 value.
- * @param rssi  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+ * @param rssi  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_rc_channels_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -283,7 +298,10 @@ static inline uint16_t mavlink_msg_rc_channels_pack_status(uint8_t system_id, ui
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param chancount  Total number of RC channels being received. This can be larger than 18, indicating that more channels are available but not given in this message. This value should be 0 when no RC channels are available.
+ * @param chancount  Total number of RC channels being received. This can be larger than
+                18, indicating that more channels are available but not given in this message. This value should be 0
+                when no RC channels are available.
+            
  * @param chan1_raw [us] RC channel 1 value.
  * @param chan2_raw [us] RC channel 2 value.
  * @param chan3_raw [us] RC channel 3 value.
@@ -302,7 +320,9 @@ static inline uint16_t mavlink_msg_rc_channels_pack_status(uint8_t system_id, ui
  * @param chan16_raw [us] RC channel 16 value.
  * @param chan17_raw [us] RC channel 17 value.
  * @param chan18_raw [us] RC channel 18 value.
- * @param rssi  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+ * @param rssi  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_rc_channels_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -411,7 +431,10 @@ static inline uint16_t mavlink_msg_rc_channels_encode_status(uint8_t system_id, 
  * @param chan MAVLink channel to send the message
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param chancount  Total number of RC channels being received. This can be larger than 18, indicating that more channels are available but not given in this message. This value should be 0 when no RC channels are available.
+ * @param chancount  Total number of RC channels being received. This can be larger than
+                18, indicating that more channels are available but not given in this message. This value should be 0
+                when no RC channels are available.
+            
  * @param chan1_raw [us] RC channel 1 value.
  * @param chan2_raw [us] RC channel 2 value.
  * @param chan3_raw [us] RC channel 3 value.
@@ -430,7 +453,9 @@ static inline uint16_t mavlink_msg_rc_channels_encode_status(uint8_t system_id, 
  * @param chan16_raw [us] RC channel 16 value.
  * @param chan17_raw [us] RC channel 17 value.
  * @param chan18_raw [us] RC channel 18 value.
- * @param rssi  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+ * @param rssi  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -585,7 +610,10 @@ static inline uint32_t mavlink_msg_rc_channels_get_time_boot_ms(const mavlink_me
 /**
  * @brief Get field chancount from rc_channels message
  *
- * @return  Total number of RC channels being received. This can be larger than 18, indicating that more channels are available but not given in this message. This value should be 0 when no RC channels are available.
+ * @return  Total number of RC channels being received. This can be larger than
+                18, indicating that more channels are available but not given in this message. This value should be 0
+                when no RC channels are available.
+            
  */
 static inline uint8_t mavlink_msg_rc_channels_get_chancount(const mavlink_message_t* msg)
 {
@@ -775,7 +803,9 @@ static inline uint16_t mavlink_msg_rc_channels_get_chan18_raw(const mavlink_mess
 /**
  * @brief Get field rssi from rc_channels message
  *
- * @return  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+ * @return  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            
  */
 static inline uint8_t mavlink_msg_rc_channels_get_rssi(const mavlink_message_t* msg)
 {

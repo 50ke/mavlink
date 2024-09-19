@@ -11,12 +11,29 @@ typedef struct __mavlink_distance_sensor_t {
  uint16_t current_distance; /*< [cm] Current distance reading*/
  uint8_t type; /*<  Type of distance sensor.*/
  uint8_t id; /*<  Onboard ID of the sensor*/
- uint8_t orientation; /*<  Direction the sensor faces. downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing: ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing: ROTATION_YAW_270*/
- uint8_t covariance; /*< [cm^2] Measurement variance. Max standard deviation is 6cm. UINT8_MAX if unknown.*/
- float horizontal_fov; /*< [rad] Horizontal Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.*/
- float vertical_fov; /*< [rad] Vertical Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.*/
- float quaternion[4]; /*<  Quaternion of the sensor orientation in vehicle body frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis. This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."*/
- uint8_t signal_quality; /*< [%] Signal quality of the sensor. Specific to each sensor type, representing the relation of the signal strength with the target reflectivity, distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid signal, 100 = perfect signal.*/
+ uint8_t orientation; /*<  Direction the sensor faces.
+                downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing:
+                ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing:
+                ROTATION_YAW_270
+            */
+ uint8_t covariance; /*< [cm^2] Measurement variance. Max standard
+                deviation is 6cm. UINT8_MAX if unknown.
+            */
+ float horizontal_fov; /*< [rad] Horizontal Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            */
+ float vertical_fov; /*< [rad] Vertical Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            */
+ float quaternion[4]; /*<  Quaternion of the sensor orientation in vehicle body
+                frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis.
+                This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
+            */
+ uint8_t signal_quality; /*< [%] Signal quality of the sensor. Specific to
+                each sensor type, representing the relation of the signal strength with the target reflectivity,
+                distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid
+                signal, 100 = perfect signal.
+            */
 }) mavlink_distance_sensor_t;
 
 #define MAVLINK_MSG_ID_DISTANCE_SENSOR_LEN 39
@@ -80,12 +97,29 @@ typedef struct __mavlink_distance_sensor_t {
  * @param current_distance [cm] Current distance reading
  * @param type  Type of distance sensor.
  * @param id  Onboard ID of the sensor
- * @param orientation  Direction the sensor faces. downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing: ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing: ROTATION_YAW_270
- * @param covariance [cm^2] Measurement variance. Max standard deviation is 6cm. UINT8_MAX if unknown.
- * @param horizontal_fov [rad] Horizontal Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.
- * @param vertical_fov [rad] Vertical Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.
- * @param quaternion  Quaternion of the sensor orientation in vehicle body frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis. This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
- * @param signal_quality [%] Signal quality of the sensor. Specific to each sensor type, representing the relation of the signal strength with the target reflectivity, distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid signal, 100 = perfect signal.
+ * @param orientation  Direction the sensor faces.
+                downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing:
+                ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing:
+                ROTATION_YAW_270
+            
+ * @param covariance [cm^2] Measurement variance. Max standard
+                deviation is 6cm. UINT8_MAX if unknown.
+            
+ * @param horizontal_fov [rad] Horizontal Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            
+ * @param vertical_fov [rad] Vertical Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            
+ * @param quaternion  Quaternion of the sensor orientation in vehicle body
+                frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis.
+                This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
+            
+ * @param signal_quality [%] Signal quality of the sensor. Specific to
+                each sensor type, representing the relation of the signal strength with the target reflectivity,
+                distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid
+                signal, 100 = perfect signal.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_distance_sensor_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -140,12 +174,29 @@ static inline uint16_t mavlink_msg_distance_sensor_pack(uint8_t system_id, uint8
  * @param current_distance [cm] Current distance reading
  * @param type  Type of distance sensor.
  * @param id  Onboard ID of the sensor
- * @param orientation  Direction the sensor faces. downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing: ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing: ROTATION_YAW_270
- * @param covariance [cm^2] Measurement variance. Max standard deviation is 6cm. UINT8_MAX if unknown.
- * @param horizontal_fov [rad] Horizontal Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.
- * @param vertical_fov [rad] Vertical Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.
- * @param quaternion  Quaternion of the sensor orientation in vehicle body frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis. This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
- * @param signal_quality [%] Signal quality of the sensor. Specific to each sensor type, representing the relation of the signal strength with the target reflectivity, distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid signal, 100 = perfect signal.
+ * @param orientation  Direction the sensor faces.
+                downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing:
+                ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing:
+                ROTATION_YAW_270
+            
+ * @param covariance [cm^2] Measurement variance. Max standard
+                deviation is 6cm. UINT8_MAX if unknown.
+            
+ * @param horizontal_fov [rad] Horizontal Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            
+ * @param vertical_fov [rad] Vertical Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            
+ * @param quaternion  Quaternion of the sensor orientation in vehicle body
+                frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis.
+                This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
+            
+ * @param signal_quality [%] Signal quality of the sensor. Specific to
+                each sensor type, representing the relation of the signal strength with the target reflectivity,
+                distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid
+                signal, 100 = perfect signal.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_distance_sensor_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -203,12 +254,29 @@ static inline uint16_t mavlink_msg_distance_sensor_pack_status(uint8_t system_id
  * @param current_distance [cm] Current distance reading
  * @param type  Type of distance sensor.
  * @param id  Onboard ID of the sensor
- * @param orientation  Direction the sensor faces. downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing: ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing: ROTATION_YAW_270
- * @param covariance [cm^2] Measurement variance. Max standard deviation is 6cm. UINT8_MAX if unknown.
- * @param horizontal_fov [rad] Horizontal Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.
- * @param vertical_fov [rad] Vertical Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.
- * @param quaternion  Quaternion of the sensor orientation in vehicle body frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis. This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
- * @param signal_quality [%] Signal quality of the sensor. Specific to each sensor type, representing the relation of the signal strength with the target reflectivity, distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid signal, 100 = perfect signal.
+ * @param orientation  Direction the sensor faces.
+                downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing:
+                ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing:
+                ROTATION_YAW_270
+            
+ * @param covariance [cm^2] Measurement variance. Max standard
+                deviation is 6cm. UINT8_MAX if unknown.
+            
+ * @param horizontal_fov [rad] Horizontal Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            
+ * @param vertical_fov [rad] Vertical Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            
+ * @param quaternion  Quaternion of the sensor orientation in vehicle body
+                frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis.
+                This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
+            
+ * @param signal_quality [%] Signal quality of the sensor. Specific to
+                each sensor type, representing the relation of the signal strength with the target reflectivity,
+                distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid
+                signal, 100 = perfect signal.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_distance_sensor_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -302,12 +370,29 @@ static inline uint16_t mavlink_msg_distance_sensor_encode_status(uint8_t system_
  * @param current_distance [cm] Current distance reading
  * @param type  Type of distance sensor.
  * @param id  Onboard ID of the sensor
- * @param orientation  Direction the sensor faces. downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing: ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing: ROTATION_YAW_270
- * @param covariance [cm^2] Measurement variance. Max standard deviation is 6cm. UINT8_MAX if unknown.
- * @param horizontal_fov [rad] Horizontal Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.
- * @param vertical_fov [rad] Vertical Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.
- * @param quaternion  Quaternion of the sensor orientation in vehicle body frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis. This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
- * @param signal_quality [%] Signal quality of the sensor. Specific to each sensor type, representing the relation of the signal strength with the target reflectivity, distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid signal, 100 = perfect signal.
+ * @param orientation  Direction the sensor faces.
+                downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing:
+                ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing:
+                ROTATION_YAW_270
+            
+ * @param covariance [cm^2] Measurement variance. Max standard
+                deviation is 6cm. UINT8_MAX if unknown.
+            
+ * @param horizontal_fov [rad] Horizontal Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            
+ * @param vertical_fov [rad] Vertical Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            
+ * @param quaternion  Quaternion of the sensor orientation in vehicle body
+                frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis.
+                This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
+            
+ * @param signal_quality [%] Signal quality of the sensor. Specific to
+                each sensor type, representing the relation of the signal strength with the target reflectivity,
+                distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid
+                signal, 100 = perfect signal.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -472,7 +557,11 @@ static inline uint8_t mavlink_msg_distance_sensor_get_id(const mavlink_message_t
 /**
  * @brief Get field orientation from distance_sensor message
  *
- * @return  Direction the sensor faces. downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing: ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing: ROTATION_YAW_270
+ * @return  Direction the sensor faces.
+                downward-facing: ROTATION_PITCH_270, upward-facing: ROTATION_PITCH_90, backward-facing:
+                ROTATION_PITCH_180, forward-facing: ROTATION_NONE, left-facing: ROTATION_YAW_90, right-facing:
+                ROTATION_YAW_270
+            
  */
 static inline uint8_t mavlink_msg_distance_sensor_get_orientation(const mavlink_message_t* msg)
 {
@@ -482,7 +571,9 @@ static inline uint8_t mavlink_msg_distance_sensor_get_orientation(const mavlink_
 /**
  * @brief Get field covariance from distance_sensor message
  *
- * @return [cm^2] Measurement variance. Max standard deviation is 6cm. UINT8_MAX if unknown.
+ * @return [cm^2] Measurement variance. Max standard
+                deviation is 6cm. UINT8_MAX if unknown.
+            
  */
 static inline uint8_t mavlink_msg_distance_sensor_get_covariance(const mavlink_message_t* msg)
 {
@@ -492,7 +583,9 @@ static inline uint8_t mavlink_msg_distance_sensor_get_covariance(const mavlink_m
 /**
  * @brief Get field horizontal_fov from distance_sensor message
  *
- * @return [rad] Horizontal Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+ * @return [rad] Horizontal Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            
  */
 static inline float mavlink_msg_distance_sensor_get_horizontal_fov(const mavlink_message_t* msg)
 {
@@ -502,7 +595,9 @@ static inline float mavlink_msg_distance_sensor_get_horizontal_fov(const mavlink
 /**
  * @brief Get field vertical_fov from distance_sensor message
  *
- * @return [rad] Vertical Field of View (angle) where the distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+ * @return [rad] Vertical Field of View (angle) where the
+                distance measurement is valid and the field of view is known. Otherwise this is set to 0.
+            
  */
 static inline float mavlink_msg_distance_sensor_get_vertical_fov(const mavlink_message_t* msg)
 {
@@ -512,7 +607,10 @@ static inline float mavlink_msg_distance_sensor_get_vertical_fov(const mavlink_m
 /**
  * @brief Get field quaternion from distance_sensor message
  *
- * @return  Quaternion of the sensor orientation in vehicle body frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis. This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
+ * @return  Quaternion of the sensor orientation in vehicle body
+                frame (w, x, y, z order, zero-rotation is 1, 0, 0, 0). Zero-rotation is along the vehicle body x-axis.
+                This field is required if the orientation is set to MAV_SENSOR_ROTATION_CUSTOM. Set it to 0 if invalid."
+            
  */
 static inline uint16_t mavlink_msg_distance_sensor_get_quaternion(const mavlink_message_t* msg, float *quaternion)
 {
@@ -522,7 +620,11 @@ static inline uint16_t mavlink_msg_distance_sensor_get_quaternion(const mavlink_
 /**
  * @brief Get field signal_quality from distance_sensor message
  *
- * @return [%] Signal quality of the sensor. Specific to each sensor type, representing the relation of the signal strength with the target reflectivity, distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid signal, 100 = perfect signal.
+ * @return [%] Signal quality of the sensor. Specific to
+                each sensor type, representing the relation of the signal strength with the target reflectivity,
+                distance, size or aspect, but normalised as a percentage. 0 = unknown/unset signal quality, 1 = invalid
+                signal, 100 = perfect signal.
+            
  */
 static inline uint8_t mavlink_msg_distance_sensor_get_signal_quality(const mavlink_message_t* msg)
 {

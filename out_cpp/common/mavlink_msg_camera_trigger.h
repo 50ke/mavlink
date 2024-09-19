@@ -5,7 +5,10 @@
 
 
 typedef struct __mavlink_camera_trigger_t {
- uint64_t time_usec; /*< [us] Timestamp for image frame (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
+ uint64_t time_usec; /*< [us] Timestamp for image frame (UNIX Epoch time or time since
+                system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by
+                checking for the magnitude of the number.
+            */
  uint32_t seq; /*<  Image frame sequence*/
 } mavlink_camera_trigger_t;
 
@@ -44,7 +47,10 @@ typedef struct __mavlink_camera_trigger_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp for image frame (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp for image frame (UNIX Epoch time or time since
+                system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by
+                checking for the magnitude of the number.
+            
  * @param seq  Image frame sequence
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -76,7 +82,10 @@ static inline uint16_t mavlink_msg_camera_trigger_pack(uint8_t system_id, uint8_
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp for image frame (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp for image frame (UNIX Epoch time or time since
+                system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by
+                checking for the magnitude of the number.
+            
  * @param seq  Image frame sequence
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -111,7 +120,10 @@ static inline uint16_t mavlink_msg_camera_trigger_pack_status(uint8_t system_id,
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp for image frame (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp for image frame (UNIX Epoch time or time since
+                system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by
+                checking for the magnitude of the number.
+            
  * @param seq  Image frame sequence
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -182,7 +194,10 @@ static inline uint16_t mavlink_msg_camera_trigger_encode_status(uint8_t system_i
  * @brief Send a camera_trigger message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp for image frame (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp for image frame (UNIX Epoch time or time since
+                system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by
+                checking for the magnitude of the number.
+            
  * @param seq  Image frame sequence
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -252,7 +267,10 @@ static inline void mavlink_msg_camera_trigger_send_buf(mavlink_message_t *msgbuf
 /**
  * @brief Get field time_usec from camera_trigger message
  *
- * @return [us] Timestamp for image frame (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp for image frame (UNIX Epoch time or time since
+                system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by
+                checking for the magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_camera_trigger_get_time_usec(const mavlink_message_t* msg)
 {

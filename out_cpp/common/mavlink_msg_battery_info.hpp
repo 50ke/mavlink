@@ -10,10 +10,10 @@ namespace msg {
  * @brief BATTERY_INFO message
  *
  * 
-        Battery information that is static, or requires infrequent update.
-        This message should requested using MAV_CMD_REQUEST_MESSAGE and/or streamed at very low rate.
-        BATTERY_STATUS_V2 is used for higher-rate battery status information.
-      
+                Battery information that is static, or requires infrequent update.
+                This message should requested using MAV_CMD_REQUEST_MESSAGE and/or streamed at very low rate.
+                BATTERY_STATUS_V2 is used for higher-rate battery status information.
+            
  */
 struct BATTERY_INFO : mavlink::Message {
     static constexpr msgid_t MSG_ID = 370;
@@ -26,23 +26,56 @@ struct BATTERY_INFO : mavlink::Message {
     uint8_t id; /*<  Battery ID */
     uint8_t battery_function; /*<  Function of the battery. */
     uint8_t type; /*<  Type (chemistry) of the battery. */
-    uint8_t state_of_health; /*< [%] State of Health (SOH) estimate. Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided. */
-    uint8_t cells_in_series; /*<  Number of battery cells in series. 0: field not provided. */
-    uint16_t cycle_count; /*<  Lifetime count of the number of charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided. */
+    uint8_t state_of_health; /*< [%] State of Health (SOH) estimate.
+                Typically 100% at the time of manufacture and will decrease over time and use. -1: field not provided.
+             */
+    uint8_t cells_in_series; /*<  Number of battery cells in series. 0: field not
+                provided.
+             */
+    uint16_t cycle_count; /*<  Lifetime count of the number of
+                charge/discharge cycles (https://en.wikipedia.org/wiki/Charge_cycle). UINT16_MAX: field not provided.
+             */
     uint16_t weight; /*< [g] Battery weight. 0: field not provided. */
-    float discharge_minimum_voltage; /*< [V] Minimum per-cell voltage when discharging. 0: field not provided. */
-    float charging_minimum_voltage; /*< [V] Minimum per-cell voltage when charging. 0: field not provided. */
-    float resting_minimum_voltage; /*< [V] Minimum per-cell voltage when resting. 0: field not provided. */
-    float charging_maximum_voltage; /*< [V] Maximum per-cell voltage when charged. 0: field not provided. */
-    float charging_maximum_current; /*< [A] Maximum pack continuous charge current. 0: field not provided. */
-    float nominal_voltage; /*< [V] Battery nominal voltage. Used for conversion between Wh and Ah. 0: field not provided. */
-    float discharge_maximum_current; /*< [A] Maximum pack discharge current. 0: field not provided. */
-    float discharge_maximum_burst_current; /*< [A] Maximum pack discharge burst current. 0: field not provided. */
-    float design_capacity; /*< [Ah] Fully charged design capacity. 0: field not provided. */
-    float full_charge_capacity; /*< [Ah] Predicted battery capacity when fully charged (accounting for battery degradation). NAN: field not provided. */
-    std::array<char, 9> manufacture_date; /*<  Manufacture date (DDMMYYYY) in ASCII characters, 0 terminated. All 0: field not provided. */
-    std::array<char, 32> serial_number; /*<  Serial number in ASCII characters, 0 terminated. All 0: field not provided. */
-    std::array<char, 50> name; /*<  Battery device name. Formatted as manufacturer name then product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not provided. */
+    float discharge_minimum_voltage; /*< [V] Minimum per-cell voltage when
+                discharging. 0: field not provided.
+             */
+    float charging_minimum_voltage; /*< [V] Minimum per-cell voltage when
+                charging. 0: field not provided.
+             */
+    float resting_minimum_voltage; /*< [V] Minimum per-cell voltage when
+                resting. 0: field not provided.
+             */
+    float charging_maximum_voltage; /*< [V] Maximum per-cell voltage when
+                charged. 0: field not provided.
+             */
+    float charging_maximum_current; /*< [A] Maximum pack continuous charge
+                current. 0: field not provided.
+             */
+    float nominal_voltage; /*< [V] Battery nominal voltage. Used for
+                conversion between Wh and Ah. 0: field not provided.
+             */
+    float discharge_maximum_current; /*< [A] Maximum pack discharge current.
+                0: field not provided.
+             */
+    float discharge_maximum_burst_current; /*< [A] Maximum pack discharge
+                burst current. 0: field not provided.
+             */
+    float design_capacity; /*< [Ah] Fully charged design capacity. 0: field
+                not provided.
+             */
+    float full_charge_capacity; /*< [Ah] Predicted battery capacity when
+                fully charged (accounting for battery degradation). NAN: field not provided.
+             */
+    std::array<char, 9> manufacture_date; /*<  Manufacture date (DDMMYYYY) in ASCII characters,
+                0 terminated. All 0: field not provided.
+             */
+    std::array<char, 32> serial_number; /*<  Serial number in ASCII characters, 0 terminated.
+                All 0: field not provided.
+             */
+    std::array<char, 50> name; /*<  Battery device name. Formatted as manufacturer name then
+                product name, separated with an underscore (in ASCII characters), 0 terminated. All 0: field not
+                provided.
+             */
 
 
     inline std::string get_name(void) const override

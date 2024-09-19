@@ -21,7 +21,9 @@ struct POWER_STATUS : mavlink::Message {
 
     uint16_t Vcc; /*< [mV] 5V rail voltage. */
     uint16_t Vservo; /*< [mV] Servo rail voltage. */
-    uint16_t flags; /*<  Bitmap of power supply status flags. */
+    uint16_t flags; /*<  Bitmap of power supply status
+                flags.
+             */
 
 
     inline std::string get_name(void) const override

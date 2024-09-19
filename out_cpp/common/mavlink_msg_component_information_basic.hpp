@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief COMPONENT_INFORMATION_BASIC message
  *
- * Basic component information data. Should be requested using MAV_CMD_REQUEST_MESSAGE on startup, or when required.
+ * Basic component information data. Should be requested using MAV_CMD_REQUEST_MESSAGE on startup,
+                or when required.
+            
  */
 struct COMPONENT_INFORMATION_BASIC : mavlink::Message {
     static constexpr msgid_t MSG_ID = 396;
@@ -20,13 +22,29 @@ struct COMPONENT_INFORMATION_BASIC : mavlink::Message {
 
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
-    uint64_t capabilities; /*<  Component capability flags */
-    uint32_t time_manufacture_s; /*< [s] Date of manufacture as a UNIX Epoch time (since 1.1.1970) in seconds. */
-    std::array<char, 32> vendor_name; /*<  Name of the component vendor. Needs to be zero terminated. The field is optional and can be empty/all zeros. */
-    std::array<char, 32> model_name; /*<  Name of the component model. Needs to be zero terminated. The field is optional and can be empty/all zeros. */
-    std::array<char, 24> software_version; /*<  Software version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros. */
-    std::array<char, 24> hardware_version; /*<  Hardware version. The recommended format is SEMVER: 'major.minor.patch'  (any format may be used). The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros. */
-    std::array<char, 32> serial_number; /*<  Hardware serial number. The field must be zero terminated if it has a value. The field is optional and can be empty/all zeros. */
+    uint64_t capabilities; /*<  Component
+                capability flags
+             */
+    uint32_t time_manufacture_s; /*< [s] Date of manufacture as a UNIX Epoch
+                time (since 1.1.1970) in seconds.
+             */
+    std::array<char, 32> vendor_name; /*<  Name of the component vendor. Needs to be zero terminated. The
+                field is optional and can be empty/all zeros.
+             */
+    std::array<char, 32> model_name; /*<  Name of the component model. Needs to be zero terminated. The field
+                is optional and can be empty/all zeros.
+             */
+    std::array<char, 24> software_version; /*<  Software version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+             */
+    std::array<char, 24> hardware_version; /*<  Hardware version. The recommended format is SEMVER:
+                'major.minor.patch' (any format may be used). The field must be zero terminated if it has a value. The
+                field is optional and can be empty/all zeros.
+             */
+    std::array<char, 32> serial_number; /*<  Hardware serial number. The field must be zero terminated if it
+                has a value. The field is optional and can be empty/all zeros.
+             */
 
 
     inline std::string get_name(void) const override

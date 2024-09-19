@@ -14,8 +14,12 @@ typedef struct __mavlink_rc_channels_scaled_t {
  int16_t chan6_scaled; /*<  RC channel 6 value scaled.*/
  int16_t chan7_scaled; /*<  RC channel 7 value scaled.*/
  int16_t chan8_scaled; /*<  RC channel 8 value scaled.*/
- uint8_t port; /*<  Servo output port (set of 8 outputs = 1 port). Flight stacks running on Pixhawk should use: 0 = MAIN, 1 = AUX.*/
- uint8_t rssi; /*<  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.*/
+ uint8_t port; /*<  Servo output port (set of 8 outputs = 1 port). Flight stacks running on
+                Pixhawk should use: 0 = MAIN, 1 = AUX.
+            */
+ uint8_t rssi; /*<  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            */
 } mavlink_rc_channels_scaled_t;
 
 #define MAVLINK_MSG_ID_RC_CHANNELS_SCALED_LEN 22
@@ -72,7 +76,9 @@ typedef struct __mavlink_rc_channels_scaled_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param port  Servo output port (set of 8 outputs = 1 port). Flight stacks running on Pixhawk should use: 0 = MAIN, 1 = AUX.
+ * @param port  Servo output port (set of 8 outputs = 1 port). Flight stacks running on
+                Pixhawk should use: 0 = MAIN, 1 = AUX.
+            
  * @param chan1_scaled  RC channel 1 value scaled.
  * @param chan2_scaled  RC channel 2 value scaled.
  * @param chan3_scaled  RC channel 3 value scaled.
@@ -81,7 +87,9 @@ typedef struct __mavlink_rc_channels_scaled_t {
  * @param chan6_scaled  RC channel 6 value scaled.
  * @param chan7_scaled  RC channel 7 value scaled.
  * @param chan8_scaled  RC channel 8 value scaled.
- * @param rssi  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+ * @param rssi  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_rc_channels_scaled_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -131,7 +139,9 @@ static inline uint16_t mavlink_msg_rc_channels_scaled_pack(uint8_t system_id, ui
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param port  Servo output port (set of 8 outputs = 1 port). Flight stacks running on Pixhawk should use: 0 = MAIN, 1 = AUX.
+ * @param port  Servo output port (set of 8 outputs = 1 port). Flight stacks running on
+                Pixhawk should use: 0 = MAIN, 1 = AUX.
+            
  * @param chan1_scaled  RC channel 1 value scaled.
  * @param chan2_scaled  RC channel 2 value scaled.
  * @param chan3_scaled  RC channel 3 value scaled.
@@ -140,7 +150,9 @@ static inline uint16_t mavlink_msg_rc_channels_scaled_pack(uint8_t system_id, ui
  * @param chan6_scaled  RC channel 6 value scaled.
  * @param chan7_scaled  RC channel 7 value scaled.
  * @param chan8_scaled  RC channel 8 value scaled.
- * @param rssi  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+ * @param rssi  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_rc_channels_scaled_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -193,7 +205,9 @@ static inline uint16_t mavlink_msg_rc_channels_scaled_pack_status(uint8_t system
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param port  Servo output port (set of 8 outputs = 1 port). Flight stacks running on Pixhawk should use: 0 = MAIN, 1 = AUX.
+ * @param port  Servo output port (set of 8 outputs = 1 port). Flight stacks running on
+                Pixhawk should use: 0 = MAIN, 1 = AUX.
+            
  * @param chan1_scaled  RC channel 1 value scaled.
  * @param chan2_scaled  RC channel 2 value scaled.
  * @param chan3_scaled  RC channel 3 value scaled.
@@ -202,7 +216,9 @@ static inline uint16_t mavlink_msg_rc_channels_scaled_pack_status(uint8_t system
  * @param chan6_scaled  RC channel 6 value scaled.
  * @param chan7_scaled  RC channel 7 value scaled.
  * @param chan8_scaled  RC channel 8 value scaled.
- * @param rssi  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+ * @param rssi  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_rc_channels_scaled_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -291,7 +307,9 @@ static inline uint16_t mavlink_msg_rc_channels_scaled_encode_status(uint8_t syst
  * @param chan MAVLink channel to send the message
  *
  * @param time_boot_ms [ms] Timestamp (time since system boot).
- * @param port  Servo output port (set of 8 outputs = 1 port). Flight stacks running on Pixhawk should use: 0 = MAIN, 1 = AUX.
+ * @param port  Servo output port (set of 8 outputs = 1 port). Flight stacks running on
+                Pixhawk should use: 0 = MAIN, 1 = AUX.
+            
  * @param chan1_scaled  RC channel 1 value scaled.
  * @param chan2_scaled  RC channel 2 value scaled.
  * @param chan3_scaled  RC channel 3 value scaled.
@@ -300,7 +318,9 @@ static inline uint16_t mavlink_msg_rc_channels_scaled_encode_status(uint8_t syst
  * @param chan6_scaled  RC channel 6 value scaled.
  * @param chan7_scaled  RC channel 7 value scaled.
  * @param chan8_scaled  RC channel 8 value scaled.
- * @param rssi  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+ * @param rssi  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -415,7 +435,9 @@ static inline uint32_t mavlink_msg_rc_channels_scaled_get_time_boot_ms(const mav
 /**
  * @brief Get field port from rc_channels_scaled message
  *
- * @return  Servo output port (set of 8 outputs = 1 port). Flight stacks running on Pixhawk should use: 0 = MAIN, 1 = AUX.
+ * @return  Servo output port (set of 8 outputs = 1 port). Flight stacks running on
+                Pixhawk should use: 0 = MAIN, 1 = AUX.
+            
  */
 static inline uint8_t mavlink_msg_rc_channels_scaled_get_port(const mavlink_message_t* msg)
 {
@@ -505,7 +527,9 @@ static inline int16_t mavlink_msg_rc_channels_scaled_get_chan8_scaled(const mavl
 /**
  * @brief Get field rssi from rc_channels_scaled message
  *
- * @return  Receive signal strength indicator in device-dependent units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+ * @return  Receive signal strength indicator in device-dependent
+                units/scale. Values: [0-254], UINT8_MAX: invalid/unknown.
+            
  */
 static inline uint8_t mavlink_msg_rc_channels_scaled_get_rssi(const mavlink_message_t* msg)
 {

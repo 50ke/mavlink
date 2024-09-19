@@ -5,9 +5,18 @@
 
 
 typedef struct __mavlink_actuator_control_target_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
- float controls[8]; /*<  Actuator controls. Normed to -1..+1 where 0 is neutral position. Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers, airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.*/
- uint8_t group_mlx; /*<  Actuator group. The "_mlx" indicates this is a multi-instance message and a MAVLink parser should use this field to difference between instances.*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
+ float controls[8]; /*<  Actuator controls. Normed to -1..+1 where 0 is neutral position.
+                Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard
+                mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers,
+                airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+            */
+ uint8_t group_mlx; /*<  Actuator group. The "_mlx" indicates this is a multi-instance message
+                and a MAVLink parser should use this field to difference between instances.
+            */
 } mavlink_actuator_control_target_t;
 
 #define MAVLINK_MSG_ID_ACTUATOR_CONTROL_TARGET_LEN 41
@@ -47,9 +56,18 @@ typedef struct __mavlink_actuator_control_target_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param group_mlx  Actuator group. The "_mlx" indicates this is a multi-instance message and a MAVLink parser should use this field to difference between instances.
- * @param controls  Actuator controls. Normed to -1..+1 where 0 is neutral position. Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers, airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param group_mlx  Actuator group. The "_mlx" indicates this is a multi-instance message
+                and a MAVLink parser should use this field to difference between instances.
+            
+ * @param controls  Actuator controls. Normed to -1..+1 where 0 is neutral position.
+                Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard
+                mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers,
+                airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_actuator_control_target_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -80,9 +98,18 @@ static inline uint16_t mavlink_msg_actuator_control_target_pack(uint8_t system_i
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param group_mlx  Actuator group. The "_mlx" indicates this is a multi-instance message and a MAVLink parser should use this field to difference between instances.
- * @param controls  Actuator controls. Normed to -1..+1 where 0 is neutral position. Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers, airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param group_mlx  Actuator group. The "_mlx" indicates this is a multi-instance message
+                and a MAVLink parser should use this field to difference between instances.
+            
+ * @param controls  Actuator controls. Normed to -1..+1 where 0 is neutral position.
+                Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard
+                mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers,
+                airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_actuator_control_target_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -116,9 +143,18 @@ static inline uint16_t mavlink_msg_actuator_control_target_pack_status(uint8_t s
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param group_mlx  Actuator group. The "_mlx" indicates this is a multi-instance message and a MAVLink parser should use this field to difference between instances.
- * @param controls  Actuator controls. Normed to -1..+1 where 0 is neutral position. Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers, airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param group_mlx  Actuator group. The "_mlx" indicates this is a multi-instance message
+                and a MAVLink parser should use this field to difference between instances.
+            
+ * @param controls  Actuator controls. Normed to -1..+1 where 0 is neutral position.
+                Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard
+                mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers,
+                airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_actuator_control_target_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -188,9 +224,18 @@ static inline uint16_t mavlink_msg_actuator_control_target_encode_status(uint8_t
  * @brief Send a actuator_control_target message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
- * @param group_mlx  Actuator group. The "_mlx" indicates this is a multi-instance message and a MAVLink parser should use this field to difference between instances.
- * @param controls  Actuator controls. Normed to -1..+1 where 0 is neutral position. Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers, airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
+ * @param group_mlx  Actuator group. The "_mlx" indicates this is a multi-instance message
+                and a MAVLink parser should use this field to difference between instances.
+            
+ * @param controls  Actuator controls. Normed to -1..+1 where 0 is neutral position.
+                Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard
+                mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers,
+                airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -259,7 +304,10 @@ static inline void mavlink_msg_actuator_control_target_send_buf(mavlink_message_
 /**
  * @brief Get field time_usec from actuator_control_target message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_actuator_control_target_get_time_usec(const mavlink_message_t* msg)
 {
@@ -269,7 +317,9 @@ static inline uint64_t mavlink_msg_actuator_control_target_get_time_usec(const m
 /**
  * @brief Get field group_mlx from actuator_control_target message
  *
- * @return  Actuator group. The "_mlx" indicates this is a multi-instance message and a MAVLink parser should use this field to difference between instances.
+ * @return  Actuator group. The "_mlx" indicates this is a multi-instance message
+                and a MAVLink parser should use this field to difference between instances.
+            
  */
 static inline uint8_t mavlink_msg_actuator_control_target_get_group_mlx(const mavlink_message_t* msg)
 {
@@ -279,7 +329,11 @@ static inline uint8_t mavlink_msg_actuator_control_target_get_group_mlx(const ma
 /**
  * @brief Get field controls from actuator_control_target message
  *
- * @return  Actuator controls. Normed to -1..+1 where 0 is neutral position. Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers, airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+ * @return  Actuator controls. Normed to -1..+1 where 0 is neutral position.
+                Throttle for single rotation direction motors is 0..1, negative range for reverse direction. Standard
+                mapping for attitude controls (group 0): (index 0-7): roll, pitch, yaw, throttle, flaps, spoilers,
+                airbrakes, landing gear. Load a pass-through mixer to repurpose them as generic outputs.
+            
  */
 static inline uint16_t mavlink_msg_actuator_control_target_get_controls(const mavlink_message_t* msg, float *controls)
 {

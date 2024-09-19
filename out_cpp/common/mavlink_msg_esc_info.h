@@ -5,15 +5,30 @@
 
 
 typedef struct __mavlink_esc_info_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            */
  uint32_t error_count[4]; /*<  Number of reported errors by each ESC since boot.*/
  uint16_t counter; /*<  Counter of data packets received.*/
- uint16_t failure_flags[4]; /*<  Bitmap of ESC failure flags.*/
- int16_t temperature[4]; /*< [cdegC] Temperature of each ESC. INT16_MAX: if data not supplied by ESC.*/
- uint8_t index; /*<  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.*/
- uint8_t count; /*<  Total number of ESCs in all messages of this type. Message fields with an index higher than this should be ignored because they contain invalid data.*/
- uint8_t connection_type; /*<  Connection type protocol for all ESC.*/
- uint8_t info; /*<  Information regarding online/offline status of each ESC.*/
+ uint16_t failure_flags[4]; /*<  Bitmap of ESC
+                failure flags.
+            */
+ int16_t temperature[4]; /*< [cdegC] Temperature of each ESC.
+                INT16_MAX: if data not supplied by ESC.
+            */
+ uint8_t index; /*<  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            */
+ uint8_t count; /*<  Total number of ESCs in all messages of this type. Message fields with an
+                index higher than this should be ignored because they contain invalid data.
+            */
+ uint8_t connection_type; /*<  Connection type protocol for all
+                ESC.
+            */
+ uint8_t info; /*<  Information regarding online/offline status of each
+                ESC.
+            */
 } mavlink_esc_info_t;
 
 #define MAVLINK_MSG_ID_ESC_INFO_LEN 46
@@ -67,15 +82,30 @@ typedef struct __mavlink_esc_info_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param index  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.
+ * @param index  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            
  * @param counter  Counter of data packets received.
- * @param count  Total number of ESCs in all messages of this type. Message fields with an index higher than this should be ignored because they contain invalid data.
- * @param connection_type  Connection type protocol for all ESC.
- * @param info  Information regarding online/offline status of each ESC.
- * @param failure_flags  Bitmap of ESC failure flags.
+ * @param count  Total number of ESCs in all messages of this type. Message fields with an
+                index higher than this should be ignored because they contain invalid data.
+            
+ * @param connection_type  Connection type protocol for all
+                ESC.
+            
+ * @param info  Information regarding online/offline status of each
+                ESC.
+            
+ * @param failure_flags  Bitmap of ESC
+                failure flags.
+            
  * @param error_count  Number of reported errors by each ESC since boot.
- * @param temperature [cdegC] Temperature of each ESC. INT16_MAX: if data not supplied by ESC.
+ * @param temperature [cdegC] Temperature of each ESC.
+                INT16_MAX: if data not supplied by ESC.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_esc_info_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -118,15 +148,30 @@ static inline uint16_t mavlink_msg_esc_info_pack(uint8_t system_id, uint8_t comp
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param index  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.
+ * @param index  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            
  * @param counter  Counter of data packets received.
- * @param count  Total number of ESCs in all messages of this type. Message fields with an index higher than this should be ignored because they contain invalid data.
- * @param connection_type  Connection type protocol for all ESC.
- * @param info  Information regarding online/offline status of each ESC.
- * @param failure_flags  Bitmap of ESC failure flags.
+ * @param count  Total number of ESCs in all messages of this type. Message fields with an
+                index higher than this should be ignored because they contain invalid data.
+            
+ * @param connection_type  Connection type protocol for all
+                ESC.
+            
+ * @param info  Information regarding online/offline status of each
+                ESC.
+            
+ * @param failure_flags  Bitmap of ESC
+                failure flags.
+            
  * @param error_count  Number of reported errors by each ESC since boot.
- * @param temperature [cdegC] Temperature of each ESC. INT16_MAX: if data not supplied by ESC.
+ * @param temperature [cdegC] Temperature of each ESC.
+                INT16_MAX: if data not supplied by ESC.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_esc_info_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -172,15 +217,30 @@ static inline uint16_t mavlink_msg_esc_info_pack_status(uint8_t system_id, uint8
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param index  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.
+ * @param index  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            
  * @param counter  Counter of data packets received.
- * @param count  Total number of ESCs in all messages of this type. Message fields with an index higher than this should be ignored because they contain invalid data.
- * @param connection_type  Connection type protocol for all ESC.
- * @param info  Information regarding online/offline status of each ESC.
- * @param failure_flags  Bitmap of ESC failure flags.
+ * @param count  Total number of ESCs in all messages of this type. Message fields with an
+                index higher than this should be ignored because they contain invalid data.
+            
+ * @param connection_type  Connection type protocol for all
+                ESC.
+            
+ * @param info  Information regarding online/offline status of each
+                ESC.
+            
+ * @param failure_flags  Bitmap of ESC
+                failure flags.
+            
  * @param error_count  Number of reported errors by each ESC since boot.
- * @param temperature [cdegC] Temperature of each ESC. INT16_MAX: if data not supplied by ESC.
+ * @param temperature [cdegC] Temperature of each ESC.
+                INT16_MAX: if data not supplied by ESC.
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_esc_info_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -262,15 +322,30 @@ static inline uint16_t mavlink_msg_esc_info_encode_status(uint8_t system_id, uin
  * @brief Send a esc_info message
  * @param chan MAVLink channel to send the message
  *
- * @param index  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.
+ * @param index  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            
  * @param counter  Counter of data packets received.
- * @param count  Total number of ESCs in all messages of this type. Message fields with an index higher than this should be ignored because they contain invalid data.
- * @param connection_type  Connection type protocol for all ESC.
- * @param info  Information regarding online/offline status of each ESC.
- * @param failure_flags  Bitmap of ESC failure flags.
+ * @param count  Total number of ESCs in all messages of this type. Message fields with an
+                index higher than this should be ignored because they contain invalid data.
+            
+ * @param connection_type  Connection type protocol for all
+                ESC.
+            
+ * @param info  Information regarding online/offline status of each
+                ESC.
+            
+ * @param failure_flags  Bitmap of ESC
+                failure flags.
+            
  * @param error_count  Number of reported errors by each ESC since boot.
- * @param temperature [cdegC] Temperature of each ESC. INT16_MAX: if data not supplied by ESC.
+ * @param temperature [cdegC] Temperature of each ESC.
+                INT16_MAX: if data not supplied by ESC.
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -363,7 +438,9 @@ static inline void mavlink_msg_esc_info_send_buf(mavlink_message_t *msgbuf, mavl
 /**
  * @brief Get field index from esc_info message
  *
- * @return  Index of the first ESC in this message. minValue = 0, maxValue = 60, increment = 4.
+ * @return  Index of the first ESC in this message. minValue = 0,
+                maxValue = 60, increment = 4.
+            
  */
 static inline uint8_t mavlink_msg_esc_info_get_index(const mavlink_message_t* msg)
 {
@@ -373,7 +450,10 @@ static inline uint8_t mavlink_msg_esc_info_get_index(const mavlink_message_t* ms
 /**
  * @brief Get field time_usec from esc_info message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude the number.
+            
  */
 static inline uint64_t mavlink_msg_esc_info_get_time_usec(const mavlink_message_t* msg)
 {
@@ -393,7 +473,9 @@ static inline uint16_t mavlink_msg_esc_info_get_counter(const mavlink_message_t*
 /**
  * @brief Get field count from esc_info message
  *
- * @return  Total number of ESCs in all messages of this type. Message fields with an index higher than this should be ignored because they contain invalid data.
+ * @return  Total number of ESCs in all messages of this type. Message fields with an
+                index higher than this should be ignored because they contain invalid data.
+            
  */
 static inline uint8_t mavlink_msg_esc_info_get_count(const mavlink_message_t* msg)
 {
@@ -403,7 +485,9 @@ static inline uint8_t mavlink_msg_esc_info_get_count(const mavlink_message_t* ms
 /**
  * @brief Get field connection_type from esc_info message
  *
- * @return  Connection type protocol for all ESC.
+ * @return  Connection type protocol for all
+                ESC.
+            
  */
 static inline uint8_t mavlink_msg_esc_info_get_connection_type(const mavlink_message_t* msg)
 {
@@ -413,7 +497,9 @@ static inline uint8_t mavlink_msg_esc_info_get_connection_type(const mavlink_mes
 /**
  * @brief Get field info from esc_info message
  *
- * @return  Information regarding online/offline status of each ESC.
+ * @return  Information regarding online/offline status of each
+                ESC.
+            
  */
 static inline uint8_t mavlink_msg_esc_info_get_info(const mavlink_message_t* msg)
 {
@@ -423,7 +509,9 @@ static inline uint8_t mavlink_msg_esc_info_get_info(const mavlink_message_t* msg
 /**
  * @brief Get field failure_flags from esc_info message
  *
- * @return  Bitmap of ESC failure flags.
+ * @return  Bitmap of ESC
+                failure flags.
+            
  */
 static inline uint16_t mavlink_msg_esc_info_get_failure_flags(const mavlink_message_t* msg, uint16_t *failure_flags)
 {
@@ -443,7 +531,9 @@ static inline uint16_t mavlink_msg_esc_info_get_error_count(const mavlink_messag
 /**
  * @brief Get field temperature from esc_info message
  *
- * @return [cdegC] Temperature of each ESC. INT16_MAX: if data not supplied by ESC.
+ * @return [cdegC] Temperature of each ESC.
+                INT16_MAX: if data not supplied by ESC.
+            
  */
 static inline uint16_t mavlink_msg_esc_info_get_temperature(const mavlink_message_t* msg, int16_t *temperature)
 {

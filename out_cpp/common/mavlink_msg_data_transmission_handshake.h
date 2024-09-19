@@ -9,8 +9,11 @@ typedef struct __mavlink_data_transmission_handshake_t {
  uint16_t width; /*<  Width of a matrix or image.*/
  uint16_t height; /*<  Height of a matrix or image.*/
  uint16_t packets; /*<  Number of packets being sent (set on ACK only).*/
- uint8_t type; /*<  Type of requested/acknowledged data.*/
- uint8_t payload; /*< [bytes] Payload size per packet (normally 253 byte, see DATA field size in message ENCAPSULATED_DATA) (set on ACK only).*/
+ uint8_t type; /*<  Type of requested/acknowledged data.
+            */
+ uint8_t payload; /*< [bytes] Payload size per packet (normally 253 byte, see DATA
+                field size in message ENCAPSULATED_DATA) (set on ACK only).
+            */
  uint8_t jpg_quality; /*< [%] JPEG quality. Values: [1-100].*/
 } mavlink_data_transmission_handshake_t;
 
@@ -60,11 +63,14 @@ typedef struct __mavlink_data_transmission_handshake_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param type  Type of requested/acknowledged data.
+            
  * @param size [bytes] total data size (set on ACK only).
  * @param width  Width of a matrix or image.
  * @param height  Height of a matrix or image.
  * @param packets  Number of packets being sent (set on ACK only).
- * @param payload [bytes] Payload size per packet (normally 253 byte, see DATA field size in message ENCAPSULATED_DATA) (set on ACK only).
+ * @param payload [bytes] Payload size per packet (normally 253 byte, see DATA
+                field size in message ENCAPSULATED_DATA) (set on ACK only).
+            
  * @param jpg_quality [%] JPEG quality. Values: [1-100].
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -107,11 +113,14 @@ static inline uint16_t mavlink_msg_data_transmission_handshake_pack(uint8_t syst
  * @param msg The MAVLink message to compress the data into
  *
  * @param type  Type of requested/acknowledged data.
+            
  * @param size [bytes] total data size (set on ACK only).
  * @param width  Width of a matrix or image.
  * @param height  Height of a matrix or image.
  * @param packets  Number of packets being sent (set on ACK only).
- * @param payload [bytes] Payload size per packet (normally 253 byte, see DATA field size in message ENCAPSULATED_DATA) (set on ACK only).
+ * @param payload [bytes] Payload size per packet (normally 253 byte, see DATA
+                field size in message ENCAPSULATED_DATA) (set on ACK only).
+            
  * @param jpg_quality [%] JPEG quality. Values: [1-100].
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -157,11 +166,14 @@ static inline uint16_t mavlink_msg_data_transmission_handshake_pack_status(uint8
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param type  Type of requested/acknowledged data.
+            
  * @param size [bytes] total data size (set on ACK only).
  * @param width  Width of a matrix or image.
  * @param height  Height of a matrix or image.
  * @param packets  Number of packets being sent (set on ACK only).
- * @param payload [bytes] Payload size per packet (normally 253 byte, see DATA field size in message ENCAPSULATED_DATA) (set on ACK only).
+ * @param payload [bytes] Payload size per packet (normally 253 byte, see DATA
+                field size in message ENCAPSULATED_DATA) (set on ACK only).
+            
  * @param jpg_quality [%] JPEG quality. Values: [1-100].
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -243,11 +255,14 @@ static inline uint16_t mavlink_msg_data_transmission_handshake_encode_status(uin
  * @param chan MAVLink channel to send the message
  *
  * @param type  Type of requested/acknowledged data.
+            
  * @param size [bytes] total data size (set on ACK only).
  * @param width  Width of a matrix or image.
  * @param height  Height of a matrix or image.
  * @param packets  Number of packets being sent (set on ACK only).
- * @param payload [bytes] Payload size per packet (normally 253 byte, see DATA field size in message ENCAPSULATED_DATA) (set on ACK only).
+ * @param payload [bytes] Payload size per packet (normally 253 byte, see DATA
+                field size in message ENCAPSULATED_DATA) (set on ACK only).
+            
  * @param jpg_quality [%] JPEG quality. Values: [1-100].
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -338,6 +353,7 @@ static inline void mavlink_msg_data_transmission_handshake_send_buf(mavlink_mess
  * @brief Get field type from data_transmission_handshake message
  *
  * @return  Type of requested/acknowledged data.
+            
  */
 static inline uint8_t mavlink_msg_data_transmission_handshake_get_type(const mavlink_message_t* msg)
 {
@@ -387,7 +403,9 @@ static inline uint16_t mavlink_msg_data_transmission_handshake_get_packets(const
 /**
  * @brief Get field payload from data_transmission_handshake message
  *
- * @return [bytes] Payload size per packet (normally 253 byte, see DATA field size in message ENCAPSULATED_DATA) (set on ACK only).
+ * @return [bytes] Payload size per packet (normally 253 byte, see DATA
+                field size in message ENCAPSULATED_DATA) (set on ACK only).
+            
  */
 static inline uint8_t mavlink_msg_data_transmission_handshake_get_payload(const mavlink_message_t* msg)
 {

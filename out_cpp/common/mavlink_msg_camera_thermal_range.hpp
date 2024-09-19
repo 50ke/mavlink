@@ -9,7 +9,12 @@ namespace msg {
 /**
  * @brief CAMERA_THERMAL_RANGE message
  *
- * Camera absolute thermal range. This can be streamed when the associated VIDEO_STREAM_STATUS `flag` field bit VIDEO_STREAM_STATUS_FLAGS_THERMAL_RANGE_ENABLED is set, but a GCS may choose to only request it for the current active stream. Use MAV_CMD_SET_MESSAGE_INTERVAL to define message interval (param3 indicates the stream id of the current camera, or 0 for all streams, param4 indicates the target camera_device_id for autopilot-attached cameras or 0 for MAVLink cameras).
+ * Camera absolute thermal range. This can be streamed when the associated VIDEO_STREAM_STATUS
+                `flag` field bit VIDEO_STREAM_STATUS_FLAGS_THERMAL_RANGE_ENABLED is set, but a GCS may choose to only
+                request it for the current active stream. Use MAV_CMD_SET_MESSAGE_INTERVAL to define message interval
+                (param3 indicates the stream id of the current camera, or 0 for all streams, param4 indicates the target
+                camera_device_id for autopilot-attached cameras or 0 for MAVLink cameras).
+            
  */
 struct CAMERA_THERMAL_RANGE : mavlink::Message {
     static constexpr msgid_t MSG_ID = 277;
@@ -20,14 +25,27 @@ struct CAMERA_THERMAL_RANGE : mavlink::Message {
 
 
     uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). */
-    uint8_t stream_id; /*<  Video Stream ID (1 for first, 2 for second, etc.) */
-    uint8_t camera_device_id; /*<  Camera id of a non-MAVLink camera attached to an autopilot (1-6).  0 if the component is a MAVLink camera (with its own component id). */
+    uint8_t stream_id; /*<  Video Stream ID (1 for first, 2 for
+                second, etc.)
+             */
+    uint8_t camera_device_id; /*<  Camera id of a
+                non-MAVLink camera attached to an autopilot (1-6). 0 if the component is a MAVLink camera (with its own
+                component id).
+             */
     float max; /*< [degC] Temperature max. */
-    float max_point_x; /*<  Temperature max point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown. */
-    float max_point_y; /*<  Temperature max point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown. */
+    float max_point_x; /*<  Temperature max point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+             */
+    float max_point_y; /*<  Temperature max point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+             */
     float min; /*< [degC] Temperature min. */
-    float min_point_x; /*<  Temperature min point x value (normalized 0..1, 0 is left, 1 is right), NAN if unknown. */
-    float min_point_y; /*<  Temperature min point y value (normalized 0..1, 0 is top, 1 is bottom), NAN if unknown. */
+    float min_point_x; /*<  Temperature min point x value (normalized 0..1, 0 is
+                left, 1 is right), NAN if unknown.
+             */
+    float min_point_y; /*<  Temperature min point y value (normalized 0..1, 0 is
+                top, 1 is bottom), NAN if unknown.
+             */
 
 
     inline std::string get_name(void) const override

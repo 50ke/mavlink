@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief SET_POSITION_TARGET_GLOBAL_INT message
  *
- * Sets a desired vehicle position, velocity, and/or acceleration in a global coordinate system (WGS84). Used by an external controller to command the vehicle (manual controller or other system).
+ * Sets a desired vehicle position, velocity, and/or acceleration in a global coordinate system
+                (WGS84). Used by an external controller to command the vehicle (manual controller or other system).
+            
  */
 struct SET_POSITION_TARGET_GLOBAL_INT : mavlink::Message {
     static constexpr msgid_t MSG_ID = 86;
@@ -19,20 +21,36 @@ struct SET_POSITION_TARGET_GLOBAL_INT : mavlink::Message {
     static constexpr auto NAME = "SET_POSITION_TARGET_GLOBAL_INT";
 
 
-    uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). The rationale for the timestamp in the setpoint is to allow the system to compensate for the transport delay of the setpoint. This allows the system to compensate processing latency. */
+    uint32_t time_boot_ms; /*< [ms] Timestamp (time since system boot). The rationale for
+                the timestamp in the setpoint is to allow the system to compensate for the transport delay of the
+                setpoint. This allows the system to compensate processing latency.
+             */
     uint8_t target_system; /*<  System ID */
     uint8_t target_component; /*<  Component ID */
-    uint8_t coordinate_frame; /*<  Valid options are: MAV_FRAME_GLOBAL = 0, MAV_FRAME_GLOBAL_RELATIVE_ALT = 3, MAV_FRAME_GLOBAL_TERRAIN_ALT = 10 (MAV_FRAME_GLOBAL_INT, MAV_FRAME_GLOBAL_RELATIVE_ALT_INT, MAV_FRAME_GLOBAL_TERRAIN_ALT_INT are allowed synonyms, but have been deprecated) */
-    uint16_t type_mask; /*<  Bitmap to indicate which dimensions should be ignored by the vehicle. */
+    uint8_t coordinate_frame; /*<  Valid options are: MAV_FRAME_GLOBAL = 0,
+                MAV_FRAME_GLOBAL_RELATIVE_ALT = 3, MAV_FRAME_GLOBAL_TERRAIN_ALT = 10 (MAV_FRAME_GLOBAL_INT,
+                MAV_FRAME_GLOBAL_RELATIVE_ALT_INT, MAV_FRAME_GLOBAL_TERRAIN_ALT_INT are allowed synonyms, but have been
+                deprecated)
+             */
+    uint16_t type_mask; /*<  Bitmap to indicate
+                which dimensions should be ignored by the vehicle.
+             */
     int32_t lat_int; /*< [degE7] Latitude in WGS84 frame */
     int32_t lon_int; /*< [degE7] Longitude in WGS84 frame */
-    float alt; /*< [m] Altitude (MSL, Relative to home, or AGL - depending on frame) */
+    float alt; /*< [m] Altitude (MSL, Relative to home, or AGL - depending on frame)
+             */
     float vx; /*< [m/s] X velocity in NED frame */
     float vy; /*< [m/s] Y velocity in NED frame */
     float vz; /*< [m/s] Z velocity in NED frame */
-    float afx; /*< [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N */
-    float afy; /*< [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N */
-    float afz; /*< [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED frame in meter / s^2 or N */
+    float afx; /*< [m/s/s] X acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+             */
+    float afy; /*< [m/s/s] Y acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+             */
+    float afz; /*< [m/s/s] Z acceleration or force (if bit 10 of type_mask is set) in NED
+                frame in meter / s^2 or N
+             */
     float yaw; /*< [rad] yaw setpoint */
     float yaw_rate; /*< [rad/s] yaw rate setpoint */
 

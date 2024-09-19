@@ -5,7 +5,9 @@
 
 
 typedef struct __mavlink_log_entry_t {
- uint32_t time_utc; /*< [s] UTC timestamp of log since 1970, or 0 if not available*/
+ uint32_t time_utc; /*< [s] UTC timestamp of log since 1970, or 0 if not
+                available
+            */
  uint32_t size; /*< [bytes] Size of the log (may be approximate)*/
  uint16_t id; /*<  Log id*/
  uint16_t num_logs; /*<  Total number of logs*/
@@ -56,7 +58,9 @@ typedef struct __mavlink_log_entry_t {
  * @param id  Log id
  * @param num_logs  Total number of logs
  * @param last_log_num  High log number
- * @param time_utc [s] UTC timestamp of log since 1970, or 0 if not available
+ * @param time_utc [s] UTC timestamp of log since 1970, or 0 if not
+                available
+            
  * @param size [bytes] Size of the log (may be approximate)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -97,7 +101,9 @@ static inline uint16_t mavlink_msg_log_entry_pack(uint8_t system_id, uint8_t com
  * @param id  Log id
  * @param num_logs  Total number of logs
  * @param last_log_num  High log number
- * @param time_utc [s] UTC timestamp of log since 1970, or 0 if not available
+ * @param time_utc [s] UTC timestamp of log since 1970, or 0 if not
+                available
+            
  * @param size [bytes] Size of the log (may be approximate)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -141,7 +147,9 @@ static inline uint16_t mavlink_msg_log_entry_pack_status(uint8_t system_id, uint
  * @param id  Log id
  * @param num_logs  Total number of logs
  * @param last_log_num  High log number
- * @param time_utc [s] UTC timestamp of log since 1970, or 0 if not available
+ * @param time_utc [s] UTC timestamp of log since 1970, or 0 if not
+                available
+            
  * @param size [bytes] Size of the log (may be approximate)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -221,7 +229,9 @@ static inline uint16_t mavlink_msg_log_entry_encode_status(uint8_t system_id, ui
  * @param id  Log id
  * @param num_logs  Total number of logs
  * @param last_log_num  High log number
- * @param time_utc [s] UTC timestamp of log since 1970, or 0 if not available
+ * @param time_utc [s] UTC timestamp of log since 1970, or 0 if not
+                available
+            
  * @param size [bytes] Size of the log (may be approximate)
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -333,7 +343,9 @@ static inline uint16_t mavlink_msg_log_entry_get_last_log_num(const mavlink_mess
 /**
  * @brief Get field time_utc from log_entry message
  *
- * @return [s] UTC timestamp of log since 1970, or 0 if not available
+ * @return [s] UTC timestamp of log since 1970, or 0 if not
+                available
+            
  */
 static inline uint32_t mavlink_msg_log_entry_get_time_utc(const mavlink_message_t* msg)
 {

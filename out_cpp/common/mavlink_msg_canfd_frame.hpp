@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief CANFD_FRAME message
  *
- * A forwarded CANFD frame as requested by MAV_CMD_CAN_FORWARD. These are separated from CAN_FRAME as they need different handling (eg. TAO handling)
+ * A forwarded CANFD frame as requested by MAV_CMD_CAN_FORWARD. These are separated from CAN_FRAME
+                as they need different handling (eg. TAO handling)
+            
  */
 struct CANFD_FRAME : mavlink::Message {
     static constexpr msgid_t MSG_ID = 387;

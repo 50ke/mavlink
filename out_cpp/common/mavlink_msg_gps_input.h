@@ -5,25 +5,37 @@
 
 MAVPACKED(
 typedef struct __mavlink_gps_input_t {
- uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.*/
+ uint64_t time_usec; /*< [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            */
  uint32_t time_week_ms; /*< [ms] GPS time (from start of GPS week)*/
  int32_t lat; /*< [degE7] Latitude (WGS84)*/
  int32_t lon; /*< [degE7] Longitude (WGS84)*/
  float alt; /*< [m] Altitude (MSL). Positive for up.*/
- float hdop; /*<  GPS HDOP horizontal dilution of position (unitless). If unknown, set to: UINT16_MAX*/
- float vdop; /*<  GPS VDOP vertical dilution of position (unitless). If unknown, set to: UINT16_MAX*/
+ float hdop; /*<  GPS HDOP horizontal dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            */
+ float vdop; /*<  GPS VDOP vertical dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            */
  float vn; /*< [m/s] GPS velocity in north direction in earth-fixed NED frame*/
  float ve; /*< [m/s] GPS velocity in east direction in earth-fixed NED frame*/
  float vd; /*< [m/s] GPS velocity in down direction in earth-fixed NED frame*/
  float speed_accuracy; /*< [m/s] GPS speed accuracy*/
  float horiz_accuracy; /*< [m] GPS horizontal accuracy*/
  float vert_accuracy; /*< [m] GPS vertical accuracy*/
- uint16_t ignore_flags; /*<  Bitmap indicating which GPS input flags fields to ignore.  All other fields must be provided.*/
+ uint16_t ignore_flags; /*<  Bitmap indicating
+                which GPS input flags fields to ignore. All other fields must be provided.
+            */
  uint16_t time_week; /*<  GPS week number*/
  uint8_t gps_id; /*<  ID of the GPS for multiple GPS inputs*/
- uint8_t fix_type; /*<  0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK*/
+ uint8_t fix_type; /*<  0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK
+            */
  uint8_t satellites_visible; /*<  Number of satellites visible.*/
- uint16_t yaw; /*< [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north*/
+ uint16_t yaw; /*< [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            */
 }) mavlink_gps_input_t;
 
 #define MAVLINK_MSG_ID_GPS_INPUT_LEN 65
@@ -95,17 +107,27 @@ typedef struct __mavlink_gps_input_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param gps_id  ID of the GPS for multiple GPS inputs
- * @param ignore_flags  Bitmap indicating which GPS input flags fields to ignore.  All other fields must be provided.
+ * @param ignore_flags  Bitmap indicating
+                which GPS input flags fields to ignore. All other fields must be provided.
+            
  * @param time_week_ms [ms] GPS time (from start of GPS week)
  * @param time_week  GPS week number
  * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [m] Altitude (MSL). Positive for up.
- * @param hdop  GPS HDOP horizontal dilution of position (unitless). If unknown, set to: UINT16_MAX
- * @param vdop  GPS VDOP vertical dilution of position (unitless). If unknown, set to: UINT16_MAX
+ * @param hdop  GPS HDOP horizontal dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            
+ * @param vdop  GPS VDOP vertical dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            
  * @param vn [m/s] GPS velocity in north direction in earth-fixed NED frame
  * @param ve [m/s] GPS velocity in east direction in earth-fixed NED frame
  * @param vd [m/s] GPS velocity in down direction in earth-fixed NED frame
@@ -113,7 +135,9 @@ typedef struct __mavlink_gps_input_t {
  * @param horiz_accuracy [m] GPS horizontal accuracy
  * @param vert_accuracy [m] GPS vertical accuracy
  * @param satellites_visible  Number of satellites visible.
- * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gps_input_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -178,17 +202,27 @@ static inline uint16_t mavlink_msg_gps_input_pack(uint8_t system_id, uint8_t com
  * @param status MAVLink status structure
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param gps_id  ID of the GPS for multiple GPS inputs
- * @param ignore_flags  Bitmap indicating which GPS input flags fields to ignore.  All other fields must be provided.
+ * @param ignore_flags  Bitmap indicating
+                which GPS input flags fields to ignore. All other fields must be provided.
+            
  * @param time_week_ms [ms] GPS time (from start of GPS week)
  * @param time_week  GPS week number
  * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [m] Altitude (MSL). Positive for up.
- * @param hdop  GPS HDOP horizontal dilution of position (unitless). If unknown, set to: UINT16_MAX
- * @param vdop  GPS VDOP vertical dilution of position (unitless). If unknown, set to: UINT16_MAX
+ * @param hdop  GPS HDOP horizontal dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            
+ * @param vdop  GPS VDOP vertical dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            
  * @param vn [m/s] GPS velocity in north direction in earth-fixed NED frame
  * @param ve [m/s] GPS velocity in east direction in earth-fixed NED frame
  * @param vd [m/s] GPS velocity in down direction in earth-fixed NED frame
@@ -196,7 +230,9 @@ static inline uint16_t mavlink_msg_gps_input_pack(uint8_t system_id, uint8_t com
  * @param horiz_accuracy [m] GPS horizontal accuracy
  * @param vert_accuracy [m] GPS vertical accuracy
  * @param satellites_visible  Number of satellites visible.
- * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gps_input_pack_status(uint8_t system_id, uint8_t component_id, mavlink_status_t *_status, mavlink_message_t* msg,
@@ -264,17 +300,27 @@ static inline uint16_t mavlink_msg_gps_input_pack_status(uint8_t system_id, uint
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param gps_id  ID of the GPS for multiple GPS inputs
- * @param ignore_flags  Bitmap indicating which GPS input flags fields to ignore.  All other fields must be provided.
+ * @param ignore_flags  Bitmap indicating
+                which GPS input flags fields to ignore. All other fields must be provided.
+            
  * @param time_week_ms [ms] GPS time (from start of GPS week)
  * @param time_week  GPS week number
  * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [m] Altitude (MSL). Positive for up.
- * @param hdop  GPS HDOP horizontal dilution of position (unitless). If unknown, set to: UINT16_MAX
- * @param vdop  GPS VDOP vertical dilution of position (unitless). If unknown, set to: UINT16_MAX
+ * @param hdop  GPS HDOP horizontal dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            
+ * @param vdop  GPS VDOP vertical dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            
  * @param vn [m/s] GPS velocity in north direction in earth-fixed NED frame
  * @param ve [m/s] GPS velocity in east direction in earth-fixed NED frame
  * @param vd [m/s] GPS velocity in down direction in earth-fixed NED frame
@@ -282,7 +328,9 @@ static inline uint16_t mavlink_msg_gps_input_pack_status(uint8_t system_id, uint
  * @param horiz_accuracy [m] GPS horizontal accuracy
  * @param vert_accuracy [m] GPS vertical accuracy
  * @param satellites_visible  Number of satellites visible.
- * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gps_input_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -386,17 +434,27 @@ static inline uint16_t mavlink_msg_gps_input_encode_status(uint8_t system_id, ui
  * @brief Send a gps_input message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @param time_usec [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  * @param gps_id  ID of the GPS for multiple GPS inputs
- * @param ignore_flags  Bitmap indicating which GPS input flags fields to ignore.  All other fields must be provided.
+ * @param ignore_flags  Bitmap indicating
+                which GPS input flags fields to ignore. All other fields must be provided.
+            
  * @param time_week_ms [ms] GPS time (from start of GPS week)
  * @param time_week  GPS week number
  * @param fix_type  0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK
+            
  * @param lat [degE7] Latitude (WGS84)
  * @param lon [degE7] Longitude (WGS84)
  * @param alt [m] Altitude (MSL). Positive for up.
- * @param hdop  GPS HDOP horizontal dilution of position (unitless). If unknown, set to: UINT16_MAX
- * @param vdop  GPS VDOP vertical dilution of position (unitless). If unknown, set to: UINT16_MAX
+ * @param hdop  GPS HDOP horizontal dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            
+ * @param vdop  GPS VDOP vertical dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            
  * @param vn [m/s] GPS velocity in north direction in earth-fixed NED frame
  * @param ve [m/s] GPS velocity in east direction in earth-fixed NED frame
  * @param vd [m/s] GPS velocity in down direction in earth-fixed NED frame
@@ -404,7 +462,9 @@ static inline uint16_t mavlink_msg_gps_input_encode_status(uint8_t system_id, ui
  * @param horiz_accuracy [m] GPS horizontal accuracy
  * @param vert_accuracy [m] GPS vertical accuracy
  * @param satellites_visible  Number of satellites visible.
- * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
+ * @param yaw [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -541,7 +601,10 @@ static inline void mavlink_msg_gps_input_send_buf(mavlink_message_t *msgbuf, mav
 /**
  * @brief Get field time_usec from gps_input message
  *
- * @return [us] Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.
+ * @return [us] Timestamp (UNIX Epoch time or time since system boot).
+                The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the
+                magnitude of the number.
+            
  */
 static inline uint64_t mavlink_msg_gps_input_get_time_usec(const mavlink_message_t* msg)
 {
@@ -561,7 +624,9 @@ static inline uint8_t mavlink_msg_gps_input_get_gps_id(const mavlink_message_t* 
 /**
  * @brief Get field ignore_flags from gps_input message
  *
- * @return  Bitmap indicating which GPS input flags fields to ignore.  All other fields must be provided.
+ * @return  Bitmap indicating
+                which GPS input flags fields to ignore. All other fields must be provided.
+            
  */
 static inline uint16_t mavlink_msg_gps_input_get_ignore_flags(const mavlink_message_t* msg)
 {
@@ -592,6 +657,7 @@ static inline uint16_t mavlink_msg_gps_input_get_time_week(const mavlink_message
  * @brief Get field fix_type from gps_input message
  *
  * @return  0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK
+            
  */
 static inline uint8_t mavlink_msg_gps_input_get_fix_type(const mavlink_message_t* msg)
 {
@@ -631,7 +697,9 @@ static inline float mavlink_msg_gps_input_get_alt(const mavlink_message_t* msg)
 /**
  * @brief Get field hdop from gps_input message
  *
- * @return  GPS HDOP horizontal dilution of position (unitless). If unknown, set to: UINT16_MAX
+ * @return  GPS HDOP horizontal dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            
  */
 static inline float mavlink_msg_gps_input_get_hdop(const mavlink_message_t* msg)
 {
@@ -641,7 +709,9 @@ static inline float mavlink_msg_gps_input_get_hdop(const mavlink_message_t* msg)
 /**
  * @brief Get field vdop from gps_input message
  *
- * @return  GPS VDOP vertical dilution of position (unitless). If unknown, set to: UINT16_MAX
+ * @return  GPS VDOP vertical dilution of position (unitless). If
+                unknown, set to: UINT16_MAX
+            
  */
 static inline float mavlink_msg_gps_input_get_vdop(const mavlink_message_t* msg)
 {
@@ -721,7 +791,9 @@ static inline uint8_t mavlink_msg_gps_input_get_satellites_visible(const mavlink
 /**
  * @brief Get field yaw from gps_input message
  *
- * @return [cdeg] Yaw of vehicle relative to Earth's North, zero means not available, use 36000 for north
+ * @return [cdeg] Yaw of vehicle relative to Earth's North, zero means not
+                available, use 36000 for north
+            
  */
 static inline uint16_t mavlink_msg_gps_input_get_yaw(const mavlink_message_t* msg)
 {

@@ -8,14 +8,20 @@ typedef struct __mavlink_high_latency2_t {
  uint32_t timestamp; /*< [ms] Timestamp (milliseconds since boot or Unix epoch)*/
  int32_t latitude; /*< [degE7] Latitude*/
  int32_t longitude; /*< [degE7] Longitude*/
- uint16_t custom_mode; /*<  A bitfield for use for autopilot-specific flags (2 byte version).*/
+ uint16_t custom_mode; /*<  A bitfield for use for autopilot-specific flags
+                (2 byte version).
+            */
  int16_t altitude; /*< [m] Altitude above mean sea level*/
  int16_t target_altitude; /*< [m] Altitude setpoint*/
  uint16_t target_distance; /*< [dam] Distance to target waypoint or position*/
  uint16_t wp_num; /*<  Current waypoint number*/
- uint16_t failure_flags; /*<  Bitmap of failure flags.*/
+ uint16_t failure_flags; /*<  Bitmap of failure
+                flags.
+            */
  uint8_t type; /*<  Type of the MAV (quadrotor, helicopter, etc.)*/
- uint8_t autopilot; /*<  Autopilot type / class. Use MAV_AUTOPILOT_INVALID for components that are not flight controllers.*/
+ uint8_t autopilot; /*<  Autopilot type / class. Use
+                MAV_AUTOPILOT_INVALID for components that are not flight controllers.
+            */
  uint8_t heading; /*< [deg/2] Heading*/
  uint8_t target_heading; /*< [deg/2] Heading setpoint*/
  uint8_t throttle; /*< [%] Throttle*/
@@ -121,8 +127,12 @@ typedef struct __mavlink_high_latency2_t {
  *
  * @param timestamp [ms] Timestamp (milliseconds since boot or Unix epoch)
  * @param type  Type of the MAV (quadrotor, helicopter, etc.)
- * @param autopilot  Autopilot type / class. Use MAV_AUTOPILOT_INVALID for components that are not flight controllers.
- * @param custom_mode  A bitfield for use for autopilot-specific flags (2 byte version).
+ * @param autopilot  Autopilot type / class. Use
+                MAV_AUTOPILOT_INVALID for components that are not flight controllers.
+            
+ * @param custom_mode  A bitfield for use for autopilot-specific flags
+                (2 byte version).
+            
  * @param latitude [degE7] Latitude
  * @param longitude [degE7] Longitude
  * @param altitude [m] Altitude above mean sea level
@@ -142,7 +152,9 @@ typedef struct __mavlink_high_latency2_t {
  * @param climb_rate [dm/s] Maximum climb rate magnitude since last message
  * @param battery [%] Battery level (-1 if field not provided).
  * @param wp_num  Current waypoint number
- * @param failure_flags  Bitmap of failure flags.
+ * @param failure_flags  Bitmap of failure
+                flags.
+            
  * @param custom0  Field for custom payload.
  * @param custom1  Field for custom payload.
  * @param custom2  Field for custom payload.
@@ -228,8 +240,12 @@ static inline uint16_t mavlink_msg_high_latency2_pack(uint8_t system_id, uint8_t
  *
  * @param timestamp [ms] Timestamp (milliseconds since boot or Unix epoch)
  * @param type  Type of the MAV (quadrotor, helicopter, etc.)
- * @param autopilot  Autopilot type / class. Use MAV_AUTOPILOT_INVALID for components that are not flight controllers.
- * @param custom_mode  A bitfield for use for autopilot-specific flags (2 byte version).
+ * @param autopilot  Autopilot type / class. Use
+                MAV_AUTOPILOT_INVALID for components that are not flight controllers.
+            
+ * @param custom_mode  A bitfield for use for autopilot-specific flags
+                (2 byte version).
+            
  * @param latitude [degE7] Latitude
  * @param longitude [degE7] Longitude
  * @param altitude [m] Altitude above mean sea level
@@ -249,7 +265,9 @@ static inline uint16_t mavlink_msg_high_latency2_pack(uint8_t system_id, uint8_t
  * @param climb_rate [dm/s] Maximum climb rate magnitude since last message
  * @param battery [%] Battery level (-1 if field not provided).
  * @param wp_num  Current waypoint number
- * @param failure_flags  Bitmap of failure flags.
+ * @param failure_flags  Bitmap of failure
+                flags.
+            
  * @param custom0  Field for custom payload.
  * @param custom1  Field for custom payload.
  * @param custom2  Field for custom payload.
@@ -338,8 +356,12 @@ static inline uint16_t mavlink_msg_high_latency2_pack_status(uint8_t system_id, 
  * @param msg The MAVLink message to compress the data into
  * @param timestamp [ms] Timestamp (milliseconds since boot or Unix epoch)
  * @param type  Type of the MAV (quadrotor, helicopter, etc.)
- * @param autopilot  Autopilot type / class. Use MAV_AUTOPILOT_INVALID for components that are not flight controllers.
- * @param custom_mode  A bitfield for use for autopilot-specific flags (2 byte version).
+ * @param autopilot  Autopilot type / class. Use
+                MAV_AUTOPILOT_INVALID for components that are not flight controllers.
+            
+ * @param custom_mode  A bitfield for use for autopilot-specific flags
+                (2 byte version).
+            
  * @param latitude [degE7] Latitude
  * @param longitude [degE7] Longitude
  * @param altitude [m] Altitude above mean sea level
@@ -359,7 +381,9 @@ static inline uint16_t mavlink_msg_high_latency2_pack_status(uint8_t system_id, 
  * @param climb_rate [dm/s] Maximum climb rate magnitude since last message
  * @param battery [%] Battery level (-1 if field not provided).
  * @param wp_num  Current waypoint number
- * @param failure_flags  Bitmap of failure flags.
+ * @param failure_flags  Bitmap of failure
+                flags.
+            
  * @param custom0  Field for custom payload.
  * @param custom1  Field for custom payload.
  * @param custom2  Field for custom payload.
@@ -484,8 +508,12 @@ static inline uint16_t mavlink_msg_high_latency2_encode_status(uint8_t system_id
  *
  * @param timestamp [ms] Timestamp (milliseconds since boot or Unix epoch)
  * @param type  Type of the MAV (quadrotor, helicopter, etc.)
- * @param autopilot  Autopilot type / class. Use MAV_AUTOPILOT_INVALID for components that are not flight controllers.
- * @param custom_mode  A bitfield for use for autopilot-specific flags (2 byte version).
+ * @param autopilot  Autopilot type / class. Use
+                MAV_AUTOPILOT_INVALID for components that are not flight controllers.
+            
+ * @param custom_mode  A bitfield for use for autopilot-specific flags
+                (2 byte version).
+            
  * @param latitude [degE7] Latitude
  * @param longitude [degE7] Longitude
  * @param altitude [m] Altitude above mean sea level
@@ -505,7 +533,9 @@ static inline uint16_t mavlink_msg_high_latency2_encode_status(uint8_t system_id
  * @param climb_rate [dm/s] Maximum climb rate magnitude since last message
  * @param battery [%] Battery level (-1 if field not provided).
  * @param wp_num  Current waypoint number
- * @param failure_flags  Bitmap of failure flags.
+ * @param failure_flags  Bitmap of failure
+                flags.
+            
  * @param custom0  Field for custom payload.
  * @param custom1  Field for custom payload.
  * @param custom2  Field for custom payload.
@@ -697,7 +727,9 @@ static inline uint8_t mavlink_msg_high_latency2_get_type(const mavlink_message_t
 /**
  * @brief Get field autopilot from high_latency2 message
  *
- * @return  Autopilot type / class. Use MAV_AUTOPILOT_INVALID for components that are not flight controllers.
+ * @return  Autopilot type / class. Use
+                MAV_AUTOPILOT_INVALID for components that are not flight controllers.
+            
  */
 static inline uint8_t mavlink_msg_high_latency2_get_autopilot(const mavlink_message_t* msg)
 {
@@ -707,7 +739,9 @@ static inline uint8_t mavlink_msg_high_latency2_get_autopilot(const mavlink_mess
 /**
  * @brief Get field custom_mode from high_latency2 message
  *
- * @return  A bitfield for use for autopilot-specific flags (2 byte version).
+ * @return  A bitfield for use for autopilot-specific flags
+                (2 byte version).
+            
  */
 static inline uint16_t mavlink_msg_high_latency2_get_custom_mode(const mavlink_message_t* msg)
 {
@@ -907,7 +941,9 @@ static inline uint16_t mavlink_msg_high_latency2_get_wp_num(const mavlink_messag
 /**
  * @brief Get field failure_flags from high_latency2 message
  *
- * @return  Bitmap of failure flags.
+ * @return  Bitmap of failure
+                flags.
+            
  */
 static inline uint16_t mavlink_msg_high_latency2_get_failure_flags(const mavlink_message_t* msg)
 {

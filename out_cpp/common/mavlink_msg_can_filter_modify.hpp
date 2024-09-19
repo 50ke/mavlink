@@ -9,7 +9,11 @@ namespace msg {
 /**
  * @brief CAN_FILTER_MODIFY message
  *
- * Modify the filter of what CAN messages to forward over the mavlink. This can be used to make CAN forwarding work well on low bandwidth links. The filtering is applied on bits 8 to 24 of the CAN id (2nd and 3rd bytes) which corresponds to the DroneCAN message ID for DroneCAN. Filters with more than 16 IDs can be constructed by sending multiple CAN_FILTER_MODIFY messages.
+ * Modify the filter of what CAN messages to forward over the mavlink. This can be used to make
+                CAN forwarding work well on low bandwidth links. The filtering is applied on bits 8 to 24 of the CAN id
+                (2nd and 3rd bytes) which corresponds to the DroneCAN message ID for DroneCAN. Filters with more than 16
+                IDs can be constructed by sending multiple CAN_FILTER_MODIFY messages.
+            
  */
 struct CAN_FILTER_MODIFY : mavlink::Message {
     static constexpr msgid_t MSG_ID = 388;
@@ -22,7 +26,9 @@ struct CAN_FILTER_MODIFY : mavlink::Message {
     uint8_t target_system; /*<  System ID. */
     uint8_t target_component; /*<  Component ID. */
     uint8_t bus; /*<  bus number */
-    uint8_t operation; /*<  what operation to perform on the filter list. See CAN_FILTER_OP enum. */
+    uint8_t operation; /*<  what operation to perform on the filter list.
+                See CAN_FILTER_OP enum.
+             */
     uint8_t num_ids; /*<  number of IDs in filter list */
     std::array<uint16_t, 16> ids; /*<  filter IDs, length num_ids */
 

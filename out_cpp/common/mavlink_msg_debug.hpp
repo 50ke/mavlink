@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief DEBUG message
  *
- * Send a debug value. The index is used to discriminate between values. These values show up in the plot of QGroundControl as DEBUG N.
+ * Send a debug value. The index is used to discriminate between values. These values show up in
+                the plot of QGroundControl as DEBUG N.
+            
  */
 struct DEBUG : mavlink::Message {
     static constexpr msgid_t MSG_ID = 254;

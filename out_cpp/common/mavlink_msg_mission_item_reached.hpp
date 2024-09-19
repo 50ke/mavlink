@@ -9,7 +9,9 @@ namespace msg {
 /**
  * @brief MISSION_ITEM_REACHED message
  *
- * A certain mission item has been reached. The system will either hold this position (or circle on the orbit) or (if the autocontinue on the WP was set) continue to the next waypoint.
+ * A certain mission item has been reached. The system will either hold this position (or circle
+                on the orbit) or (if the autocontinue on the WP was set) continue to the next waypoint.
+            
  */
 struct MISSION_ITEM_REACHED : mavlink::Message {
     static constexpr msgid_t MSG_ID = 46;
